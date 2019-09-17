@@ -17,25 +17,27 @@
 		}
 	#all img{
 		width:100%;
-		height:350px
+		height:450px;
+		margin:0
 		}
-	#cloud{
+	#clouddiv{
 		position:relative;
-		height:350px
+		height:450px;
+		margin:0
 		}
 	#name{
 		border:1px solid gray;
 		width:200px;
 		position:absolute;
 		left:70px;
-		top:40px
+		top:60px
 		}
 	#grade{
 		border:1px solid gray;
 		width:200px;
 		position:absolute;
 		left:70px;
-		top:90px
+		top:110px
 		}
 	#mileage{
 		border:1px solid red;
@@ -45,25 +47,55 @@
 		position:absolute;
 		top:90px
 		}	
+	#mileage>span{
+		font-size:30px	
+		}	
+	
 	#boarding{
 		border:1px solid gray;
 		width:1200px;
 		text-align:center;
 		position:absolute;
-		top:275px
+		top:375px;
+		margin:0
 		}
 	/* 구름 사진 아래 스타일 */
 	#content{
 		background-color:lightgray;
-		height:500px;
+		height:1020px;
+		margin:0;
+		padding:0
 		}
 	#like{
+		background-color:white;
 		border:1px solid gray;
 		width:200px;
-		height:60px;
-		margin:10px;
-		position:absolute;
+		height:150px;
+		top:20px;
+		left:20px;
+		margin:0px;
+		padding:0px;
+		position:relative;
 		}
+	#mg{
+		background-color:white;
+		border:1px solid gray;
+		width:940px;
+		height:150px;
+		left:240px;
+		top:-130px;
+		position:relative;
+		}
+	#reserve{
+		background-color:white;
+		border:1px solid gray;
+		width:1160px;
+		height:800px;
+		left:20px;
+		top:-110px;
+		margin:0;
+		position:relative;
+		}	
 	
 	
 </style>
@@ -71,7 +103,7 @@
 <body>
 <div id="nav"></div>
 <div id="all">
-	<div id="cloud"><img src="../IMG/cloud1.jpg"/>
+	<div id="clouddiv"><img src="../IMG/cloud1.jpg"/>
 		<div id="content">
 			<div id="name">
 				<div><a href="#">최민성 님</a></div>
@@ -83,20 +115,20 @@
 			</div>
 			<div id="mileage">
 				총 잔여 마일리지<br/>
-				0
+				<span>0</span>
 			</div>
 			<div id="boarding">
-				GAZA AIR 탑승<br/>
-				GAZA AIR 외 탑승<br/>
-				일반 제휴 밑 기타<br/>
+				GAZA AIR 탑승 0<br/>
+				GAZA AIR 외 탑승 0<br/>
+				일반 제휴 밑 기타 0<br/>
 			</div>
 		</div>
 	</div>
 	<!-- 구름 사진 아래 -->
 	<div id="content">
 		<div id="like">관심 노선</div>
-		
-	
+		<div id="mg"></div>
+		<div id="reserve"></div>
 	
 	
 	</div>
