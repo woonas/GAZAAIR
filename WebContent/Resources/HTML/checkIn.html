@@ -6,6 +6,16 @@
 <link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <style>
+	hr{
+		border:1px solid gray;
+	}
+	h4{
+		float:left;
+		text-weight:bold;
+		color:black;
+		margin:50px 0 30px;
+		
+	}
 	nav{
 		width:100%;
 		height:70px;
@@ -53,7 +63,27 @@
 		height: 100%;
 	}
 	table{
-		boredr:1px solid gray;
+		width:100%;
+		height:200px;
+		text-align:center;
+		color:black;
+		font-size:17px;
+		
+	}
+	table td{
+		border:1px solid black;	
+	}
+	.mainT{
+		font-size:15px;
+		background:#6d6e70;
+		color:white;
+	}
+
+	li{
+		margin-left:19px;
+		margin-bottom:10px;
+		text-align:left;
+		
 	}
 </style>
 <script>
@@ -66,7 +96,7 @@ function start(){
 	var checkBtnHTML = "";
 	var tabPanelHTML = "";
 	for(i=0; i<paneIdList.length; i++){
-		checkBtnHTML += "<button class='checkBtn' id='"+btnIdList[i]+"' onclick='openPage(\""+paneIdList[i]+"\", this, \""+btnIdList[i]+"\")'><img src='../WebContent.Resources.IMG.icon/check.png'/>"+btnList[i]+"</button> ";
+		checkBtnHTML += "<button class='checkBtn' id='"+btnIdList[i]+"' onclick='openPage(\""+paneIdList[i]+"\", this, \""+btnIdList[i]+"\")'><img src='../IMG/icon/check.png'/>"+btnList[i]+"</button> ";
 	}
 	document.getElementById("checkBtn").innerHTML = checkBtnHTML;
 	
@@ -116,34 +146,35 @@ function openPage(pageName, elmnt, btnId) {
 				<div id="checkBtn"></div>
 				<div id="tabPanel">
 					<div id="noticeAll" class='tabcontent'>
+					<!-- 온라인 체크인 이용안내 테이블 -->
+					<h4>이용 안내</h4>
 						<table> 
-							<colgroup> 
-								<col style="width: 160px;"> 
-								<col style="width: 440px;"> 
-								<col style="width: 160px;"> 
-								<col style="width: 420px;"> 
-							</colgroup> 
 						<thead> 
 							<tr> 
-								<th scope="col">구분</th> 
-								<th scope="col">이용시간</th> 
-								<th scope="col">이용노선</th> 
-								<th scope="col">이용대상</th> 
+								<td class="mainT">구분</td> 
+								<td class="mainT">이용 시간</td> 
+								<td class="mainT">이용 노선</td> 
+								<td class="mainT">이용 대상</td> 
 							</tr> 
 						</thead> 
 						<tbody> 
 							<tr> 
-								<th scope="row">국내선</th> 
+								<td class="mainT">국내선</td> 
 								<td>출발 48시간 ~ 30분 전까지</td> 
-								<th  rowspan="2" scope="row">전 노선</th> 
+								<td  rowspan="2">전 노선</td> 
 								<td rowspan="2">항공권 결제가 완료된 전자항공권(E-Ticket)소지 고객</td> 
 							</tr> 
 						<tr> 
-							<th scope="row">국제선</th> 
+							<td scope="row" class="mainT">국제선</td> 
 							<td>출발 48시간 ~ 1시간 전까지 <br> (미주 노선은 출발 24시간 전부터)</td> 
 						</tr> 
-						</tbody> 
+						</tbody>
 						</table>
+						<ul>
+							<li>이용 제한 노선 : 부산 출발 국내선 및 일부 부정기편</li>
+							<li>이용 제한 대상 : 타사 항공기로 운항하는 공동운항편 이용 고객</li>
+						</ul> 
+						<hr/>
 					</div>
 				</div>
 			</section>
