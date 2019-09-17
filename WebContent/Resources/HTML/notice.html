@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>공지사항</title>
+<link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+	nav{
+		width:100%;
+		height:80px;
+		background-color:gray;
+	}
+	#warp{
+		width: 100%;
+	}
+	#contents{
+		max-width: 1200px;
+		margin: 0px auto;
+	}
+	#title{
+		height: 200px;
+		text-align:center;
+	}
+	#title h1{
+		margin: 55px 0;
+	}
+	.search{
+		width:640px;
+		height:50px;
+		margin: 0px auto;
+	}
+	.searchOption{
+		width:180px;
+		margin-right:10px;
+		cursor:pointer;
+		-webkit-appearance:none; /* Safari and Chrome */  
+		appearance:none;
+		background:url(../img/icon/underArrow.png) no-repeat 95% 50%;
+		background-size:15px;
+		color:#555;
+		font-weight:bold;
+		padding-left:10px;
+	}
+	.searchOption:hover{
+		border:1px solid #36f;
+	}
+	.textField{
+		width:350px;
+		color:#555;
+		font-size:16px;
+		padding-left:10px;
+	}
+	.textField:hover{
+		border:1px solid #36f;
+	}
+	.searchBtn{
+		width:100px;
+		background-color:#36f;
+		border: none;
+		border-radius : 5px;
+		outline : none;
+		color: #fff;
+		font-weight: bold;
+		font-size : 16px;
+		cursor:pointer;
+	}
+	.searchOption, .textField, .searchBtn{
+		height: 50px;
+		float : left;
+	}
+	#board{
+		background-color:lightgray;
+	}
+	.tabBtn{
+		background-color: #777;
+		color: white;
+		float: left;
+		border: 1px solid gray;
+		outline: none;
+		cursor: pointer;
+		padding: 14px 16px;
+		font-size: 17px;
+		font-weight: bold;
+		width: 25%;
+	}
+	.tabBtn>img {
+		width: 20px;
+		height: 20px;
+	}
+	.tabBtn:hover{
+		background-color: #555;
+	}
+	.tabcontent {
+		color: white;
+		display: none;
+		padding: 100px 20px;
+		height: 100%;
+	}
+	.boardTbl{
+		color: black;
+	}
+	tr {
+		border: 1px solid gray;
+	}
+</style>
+<script>
+function start(){
+	//탭메뉴
+	var btnIdList = ['btnAll', 'btnGAZA', 'btnPartner', 'btnOthers'];
+	var paneIdList = ['noticeAll','noticeGAZA','noticePartner','noticeOthers'];
+	var btnList = ['전체','가자항공소식','제휴사소식','기타'];
+	var i;
+	var tabBtnHTML = "";
+	var tabPanelHTML = "";
+	for(i=0; i<paneIdList.length; i++){
+		tabBtnHTML += "<button class='tabBtn' id='"+btnIdList[i]+"' onclick='openPage(\""+paneIdList[i]+"\", this, \""+btnIdList[i]+"\")'><img src='Resources/img/check.png'/>"+btnList[i]+"</button> ";
+	}
+	document.getElementById("tabBtn").innerHTML = tabBtnHTML;
+	
+	// 기본값 선택
+	document.getElementById("noticeAll").click();
+}
+function openPage(pageName, elmnt, btnId) {
+	var i, tabcontent, tabBtns;
+	
+	// 전체 숨김
+	tabcontent = document.getElementsByClassName("tabcontent");
+	for (i = 0; i < tabcontent.length; i++) {
+		tabcontent[i].style.display = "none";
+	}
+
+	// 배경색 삭제
+	
+	tabBtns = document.getElementsByClassName("tabBtn");
+	for (i = 0; i < tabBtns.length; i++) {
+		tabBtns[i].style.backgroundColor = "";
+		tabBtns[i].style.color = "";
+		var imgTag = tabBtns[i].firstChild;
+		imgTag.style.display = "none";
+	}
+
+	// 클릭된 컨텐츠 보이기
+	document.getElementById(pageName).style.display = "block";
+
+	// 클릭된 버튼 색상 변경
+	elmnt.style.backgroundColor = "#fff";
+	elmnt.style.color = "#555";
+}
+
+</script>
+</head>
+<body onload="start()">
+<div id="warp">
+<header>
+	<nav>
+	네비게이션 height 80
+	</nav>
+</header>
+
+		<div id="contents">
+			<section id="title">
+				<h1>공지사항</h1>
+				<div class="search">
+					<select name="searchOption" id="searchOption" class="searchOption" title="검색 분류 선택" value="0">
+					<option value="0">제목 + 내용</option>
+					<option value="1">제목</option>
+					<option value="2">내용</option>
+					</select>
+					<input type="text" class="textField" placeholder="검색어를 입력하세요." title="검색 내용 작성"/>
+					<button class="searchBtn">검색</button>
+				</div>
+			</section>
+			<section id="board">
+				<div id="tabBtn"></div>
+				<div id="tabPanel">
+					<div id="noticeAll" class='tabcontent'>
+						<div class='boardList'>
+							<table class="boardTbl">
+								<tbody>
+									<tr>
+										<td>국제선/국내선 좌석 유료 사전예매 시행 안내</td>
+										<td>조회수 4,528</td>
+										<td>2019.08.28</td>
+									</tr>
+									<tr>
+										<td>국제선/국내선 좌석 유료 사전예매 시행 안내</td>
+										<td>조회수 4,528</td>
+										<td>2019.08.28</td>
+									</tr>
+									<tr>
+										<td>국제선/국내선 좌석 유료 사전예매 시행 안내</td>
+										<td>조회수 4,528</td>
+										<td>2019.08.28</td>
+									</tr>
+									<tr>
+										<td>국제선/국내선 좌석 유료 사전예매 시행 안내</td>
+										<td>조회수 4,528</td>
+										<td>2019.08.28</td>
+									</tr>
+									<tr>
+										<td>국제선/국내선 좌석 유료 사전예매 시행 안내</td>
+										<td>조회수 4,528</td>
+										<td>2019.08.28</td>
+									</tr>
+									<tr>
+										<td>국제선/국내선 좌석 유료 사전예매 시행 안내</td>
+										<td>조회수 4,528</td>
+										<td>2019.08.28</td>
+									</tr>
+									<tr>
+										<td>국제선/국내선 좌석 유료 사전예매 시행 안내</td>
+										<td>조회수 4,528</td>
+										<td>2019.08.28</td>
+									</tr>
+									<tr>
+										<td>국제선/국내선 좌석 유료 사전예매 시행 안내</td>
+										<td>조회수 4,528</td>
+										<td>2019.08.28</td>
+									</tr>
+									<tr>
+										<td>국제선/국내선 좌석 유료 사전예매 시행 안내</td>
+										<td>조회수 4,528</td>
+										<td>2019.08.28</td>
+									</tr>
+									<tr>
+										<td>국제선/국내선 좌석 유료 사전예매 시행 안내</td>
+										<td>조회수 4,528</td>
+										<td>2019.08.28</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div id="noticeGAZA" class='tabcontent'><div class='boardList'></div></div>
+					<div id="noticePartner" class='tabcontent'><div class='boardList'></div></div>
+					<div id="noticeOther" class='tabcontent'><div class='boardList'></div></div>
+				</div>
+			</section>
+			
+		</div>
+		<footer>
+		</footer>
+</div>
+</body>
+</html>

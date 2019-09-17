@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------- */
+/* 기본 세팅 */
+/* ----------------------------------------------- */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus { outline: none; }
+
+html,
+body {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+.clearfix {zoom: 1;}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/* ----------------------------------------------- */
+/* 자주 사용하는 Tags */
+/* ----------------------------------------------- */
+
+h3 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 250%;
+    line-height: 1;
+}
