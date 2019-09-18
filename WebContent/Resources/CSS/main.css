@@ -51,7 +51,6 @@ h3 {
 a,
 a:hover {
     text-decoration: none;
-    color: #555;
 }
 
 .hidden { display: none; }
@@ -329,12 +328,14 @@ footer{
 	margin: 0 16px;
 }
 .footCall {
-	width: 40%;
-	float: left;
+    width: 40%;
+    float: left;
 }
-.footInfo{
-	width: 60%;
-	float: left;
+
+.footInfo {
+    width: 60%;
+    float: left;
+}
 
 .payment .form-label-group>input,
 .payment .form-label-group>label {
@@ -356,6 +357,8 @@ footer{
     height: auto;
     margin: 100px 0 80px;
 }
+
+.login>hr { margin-top: 15px; }
 
 .loginBtn {
     margin-top: 8px;
