@@ -10,7 +10,7 @@
 		max-width:1200px;
 		margin:0 auto;
 		background-color:lightgray;
-		height:800px
+		height:1500px
 		}
 	#nav{
 		width:100%;
@@ -40,10 +40,64 @@
 		font-size:30px;
 		font-weight:bold
 		}
-	#vipstandard{
+	#vipstandardtext{
 		background-color:yellowgreen;
 		width:800px;
+		height:70px;
+		float:left
+		}
+	#vipGradeTotalDiv{
+		width:1200px;
+		height:70px
+		}
+	#vipstandard,#gradeBenfit{
+		border:1px solid gray;
+		width:190px;
+		height:70px;
+		margin:0 5px;
+		float:left;
+		text-align:center;
+		line-height:70px
+		}
+	#totalResult{
+		background-color:#6d6e70;
+		width:1200px;
+		height:70px;
+		text-align:center;
+		float:left;
+		margin:10px 0;
+		padding:10px;
+		color:white;
+		font-size:20px;
+		}
+	#resultText{
+		font-size:35px;
+		font-weight:bold;
+		width:1200px;
+		heigth:30px;
+		float:left
 		
+		}
+	#joinMileCountImg{
+		background-color:white;
+		width:1200px;
+		height:210px;
+		float:left
+		}
+	#joinMileCountImg>div{
+		float:left;
+		margin-left:180px
+		}
+	#joinDiv,#mileDiv, #boardingcountDiv{
+		width:150px;
+		height:210px;
+		text-align:center
+		}
+	#conditionText{
+		font-size:35px;
+		font-weight:bold;
+		width:1200px;
+		heigth:30px;
 		}
 </style>
 </head>
@@ -58,11 +112,35 @@
 	</div>
 	</div>
 	
-	<div id="vipstandard">우수회원 승급 기준 안내 (승급 기준 중 한가지 조건만 충족하셔도 상위 등급으로 승급이 됩니다.)<br/>
+	<div id="vipstandardtext">우수회원 승급 기준 안내 (승급 기준 중 한가지 조건만 충족하셔도 상위 등급으로 승급이 됩니다.)<br/>
 		1) 기준일로부터 매 24개월간의 등급산정 마일리지 적립 실적<br/>
 		2) 가입일로부터의 총 탑승 실적
 	</div>
-	<div></div>
+	<div id="vipGradeTotalDiv">
+		<div id="vipstandard">우수회원 승급 기준 보기</div>
+		<div id="gradeBenfit">회원 등급별 혜택 보기</div>
+		<div id="totalResult">가입일로 부터 총 실적</div>
+	</div>
+	<div id="resultText">회원님의 가입일로부터 총 실적</div>
+	<div id="joinMileCountImg">
+		<div id="joinDiv">
+		<div><img src="../IMG/mypage_Img/joinday.jpg"/></div>
+<!-- 가입일 데이터 들어가야함 -->
+		<div>가입일</div>
+		<div>2019.09.06</div>
+		</div>
+		<div id="mileDiv">
+		<div><img src="../IMG/mypage_Img/mile.jpg"/></div>
+		<div>GAZA AIR 탑승 마일</div>
+		<div>0</div>
+		</div>
+		<div id="boardingcountDiv">
+		<div><img src="../IMG/mypage_Img/boardingcount.jpg"/></div>
+		<div>GAZA AIR 탑승 횟수</div>
+		<div>0</div>
+		</div>
+	</div>
+	<div id="conditionText">회원 등급별 평생회원 승급 조건</div>
 	
 </div>
 <footer>
