@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+      <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      
+      <!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+      <!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      
+      <!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      
+      <!-- Font Awesome CDN -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+      <!-- GeoData CDN -->
+		<script src="../vendor/GeoData/assets/js/geodatasource-cr.min.js"></script>
+		<link rel="stylesheet" href="../vendor/GeoData/assets/css/geodatasource-countryflag.css">
+		<link href="https://fonts.googleapis.com/css?family=Strait|Chonburi" rel="stylesheet">
+      
+      <!-- link to ko language po file -->
+		<link rel="gettext" type="application/x-po" href="../vendor/GeoData/languages/ko/LC_MESSAGES/ko.po" />
+		<script type="text/javascript" src="../vendor/GeoData/assets/js/Gettext.js"></script>
+
+		<link rel="stylesheet" href="../css/main.css">
+	</head>
+	<body>
+
+		<div class="nav" style="background-color: dodgerblue; height: 70px"></div>
+
+		<div class="payment">
+			<h3>결제 방식 선택</h3>
+
+			<ul class="list-type1">
+				<li>신용카드(체크카드 포함) 및 계좌이체로 발권이 가능하며 결제 후 결제수단 변경이 불가합니다.</li>
+				<li>국내 발행 카드 이용시 안전한 신용카드 거래를 위해 신용카드 인증이 필요합니다.</li>
+				<li>신용카드 인증 시 발생한 오류는 반드시 해당 카드사로 문의하여 주시기 바랍니다.</li>
+				<li>해외발행 신용카드는 온라인 인증서비스를 받은 VISA, MASTER, JCB 카드에 한해 구매가능합니다.</li>
+			</ul>
+		
+			<dl class="line_row clearfix">
+				<dt>
+					<span class="title">결제방식</span>
+				</dt>
+				<dd>
+					<div id="divPaymentType" class="payment-type">
+						<ul class="clearfix">
+							<li>
+								<button>
+									<img src="https://img.icons8.com/wired/50/000000/mastercard-credit-card.png">
+									<img src="https://img.icons8.com/dusk/50/000000/mastercard-credit-card.png">
+									<span class="pay_tit">국내발행 신용카드</span>
+								</button>
+							</li>
+							<li>
+								<button>
+									<img src="https://img.icons8.com/dusk/44/000000/bank-building.png">
+									<img src="https://img.icons8.com/dotty/50/000000/bank-building.png">
+									<span class="pay_tit">계좌이체</span>
+								</button>
+							</li>
+						</ul>
+					</div>
+				</dd>
+			</dl>
+			
+			<div id="divPaymentKICC" class="payment_cont">
+				<dl class="line_row clearfix">
+					<dt>
+						<span class="title"><label for="cardClass_KICC">카드정보</label></span>
+					</dt>
+					<dd>
+						<div class="select-area">
+							<span class="select-scroll">
+								<select id="cardClass_KICC" name ="cardClass_KICC" title="카드종류">
+									<option value="">카드종류 선택</option>
+									<option value="026">BC카드</option>
+									<option value="029">신한카드</option>
+									<option value="031">삼성카드</option>
+									<option value="016">KB국민카드</option>
+									<option value="006">하나카드</option>
+									<option value="047">롯데카드</option>
+									<option value="018">NH농협카드</option>
+									<option value="026">우리카드</option>
+									<option value="022">씨티카드</option>
+									<option value="011">제주카드</option>
+									<option value="017">수협카드</option>
+									<option value="010">전북카드</option>
+									<option value="002">광주은행</option>
+									<option value="027">현대카드</option>
+								</select>
+							</span>
+
+							<select id="installment_KICC" name="installment_KICC" title="할부선택">
+								<option value="00">일시불</option>
+								<option value="02">2개월 할부</option>
+								<option value="03">3개월 할부</option>
+								<option value="04">4개월 할부</option>
+								<option value="05">5개월 할부</option>
+								<option value="06">6개월 할부</option>
+								<option value="07">7개월 할부</option>
+								<option value="08">8개월 할부</option>
+								<option value="09">9개월 할부</option>
+								<option value="10">10개월 할부</option>
+								<option value="11">11개월 할부</option>
+								<option value="12">12개월 할부</option>
+							</select>
+						</div>
+					</dd>
+				</dl>
+				<ul class="list-type1">
+					<li>신용카드사로부터 카드가 무효 또는 사용불가의 통지가 있는 경우 체결이 취소될 수 있습니다.</li>
+					<li>타인 명의 혹은 도난이거나, 허위, 정보누락, 오기가 있는 경우 구매자 동의없이 체결 취소가 가능합니다.</li>
+				</ul>
+			</div>
+
+			<div id="divPaymentKFTC" class="payment_cont hidden">
+				<ul class="list-type1">
+					<li>계좌이체 서비스로 구입하신 항공권은 180일 경과시 인터넷 환불처리가 불가 하며 예약센타 또는 지점 방문 후 탑승자 본인에게만 환불이 가능합니다.</li>
+				</ul>
+			</div>
+		
+			<div class="row flex">
+				<button class="left"> &lt; 이전</button>
+				<button class="right">선택 &gt; </button>
+			</div>
+		</div>
+	</body>
+</html>

@@ -101,6 +101,7 @@ li {
 	margin-left: 19px;
 	margin-bottom: 10px;
 	text-align: left;
+	list-style-type:none;
 }
 #n1{
 	width:50px;
@@ -139,12 +140,13 @@ li {
 		for(i=1;i<=4;i++){
 			$("#setImg").append("<img src='../IMG/service/c"+i+".png'/>");
 			$("#ctr").append("<img src='../IMG/service/n"+i+".png' class='circles' id='n"+i+"'/>");
+			$("#acSetImg").append("<img src='../IMG/service/ac"+i+".png'/>");
 		}
 	});	
 	
 	function start() {
 		//탭메뉴
-		var btnIdList = [ 'onCheckAll', 'autoCheckAll;' ];
+		var btnIdList = [ 'onCheckAll', 'autoCheckAll' ];
 		var paneIdList = [ 'onCheck', 'autoCheck' ];
 		var btnList = [ '온라인 체크인', '오토 체크인' ];
 		var i;
@@ -231,8 +233,8 @@ li {
 							</tbody>
 						</table>
 						<ul>
-							<li>이용 제한 노선 : 부산 출발 국내선 및 일부 부정기편</li>
-							<li>이용 제한 대상 : 타사 항공기로 운항하는 공동운항편 이용 고객</li>
+							<li>· 이용 제한 노선 : 부산 출발 국내선 및 일부 부정기편</li>
+							<li>· 이용 제한 대상 : 타사 항공기로 운항하는 공동운항편 이용 고객</li>
 						</ul>
 						<hr />
 						<!-- 이용 안내 div -->
@@ -246,11 +248,8 @@ li {
 						</div>						
 						<div id="idx"></div>
 					</div>
-				</div>
-			</section>
-			<section id="auto">
-						<!-- 오토 체크인 이용안내 테이블 --> 
-						<div id="autoCheck" class="onContent"></div>
+					<!-- 오토 체크인 이용안내 테이블 --> 
+						<div id="autoCheck" class="onContent">
 						<h4>이용 안내</h4>
 						<table>
 							<tbody>
@@ -265,7 +264,18 @@ li {
 								</tr>
 							</tbody>
 						</table>
-			</section>		
+						<!-- 이용 안내 div --> 
+						<h4>이용 방법</h4>
+						<div id="acUseDiv"></div>
+						<div id="acViewImg">
+							<div id="acSetImg"></div>
+							<div id="acCtr">
+								<div></div><div></div><div></div><div></div>
+							</div>
+						</div>
+						</div>
+				</div> 
+			</section>	
 		</div>
 		<footer> </footer>
 	</div>
