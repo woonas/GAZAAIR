@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+/* color #36f */
+
 /* ----------------------------------------------- */
 /* 기본 세팅 */
 /* ----------------------------------------------- */
@@ -49,7 +51,6 @@ h3 {
 a,
 a:hover {
     text-decoration: none;
-    color: #555;
 }
 
 .hidden { display: none; }
@@ -122,14 +123,13 @@ a:hover {
     margin-bottom: 1rem;
 }
 
-.form-label-group > input,
-.form-label-group > label {
-    margin-top: 12px !important;
+.form-label-group>input,
+.form-label-group>label {
     height: 3.125rem;
     padding: .75rem;
 }
 
-.form-label-group > label {
+.form-label-group>label {
     position: absolute;
     top: 0;
     left: 0;
@@ -280,3 +280,101 @@ a:hover {
 }
 
 .card-expire-date>span { margin-top: 25px; }
+
+
+/* ----------------------------------------------- */
+/* footer */
+/* ----------------------------------------------- */
+footer{
+    margin-top: 30px;
+	background-color: #d3d4d6;
+	width:100%;
+}
+#footContainer{
+	padding: 30px 0;
+	width: 1200px;
+	height: 270px;
+	color: #555;
+	margin: 0 auto;
+	line-height: 30px;
+}
+.snsPane {
+	float:right;
+	height:24px;
+}
+.snsBtn {
+	float:left;
+}
+.snsBtn img{
+	margin:0 4px;
+	float: left;
+}
+.snsBtn img:last-child{
+	display: none;
+}
+.snsBtn:hover img:first-child{
+	display: none;
+}
+.snsBtn:hover img:last-child{
+	display: block;
+}
+hr{
+	height: 1px;
+	margin: 5px 0 10px 0;
+	border: none;
+	background-color: #ccc;
+}
+.footContent {
+	width: 1200px;
+	height: 150px;
+	margin: 0 16px;
+}
+.footCall {
+	width: 40%;
+	float: left;
+}
+
+.footInfo {
+    width: 60%;
+    float: left;
+}
+
+.payment .form-label-group>input,
+.payment .form-label-group>label {
+    margin-top: 12px !important;
+}
+
+/* ----------------------------------------------- */
+/* LOGIN */
+/* ----------------------------------------------- */
+
+.login {
+    text-align: center;
+    width: 450px;
+    margin: 0 auto;
+}
+
+.login>img {
+    width: 70%;
+    height: auto;
+    margin: 100px 0 80px;
+}
+
+.loginBtn {
+    margin-top: 8px;
+    width: 100%;
+    height: 60px;
+    background-color: #3366ff;
+}
+
+.loginBtn {
+    vertical-align: middle;
+    font-size: 125%;
+    color: #fff;
+}
+
+.login>a {
+    font-size: 80%;
+    padding-right: 5px;
+>>>>>>> 3a69bfdfafe32ce7033e0329dc2ab6bdb9af4195
+}
