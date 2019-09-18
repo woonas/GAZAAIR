@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+  <!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+  <!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  
+  <!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+  <!-- Font Awesome CDN -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <!-- GeoData CDN -->
+	<script src="../../Vendor/GeoData/assets/js/geodatasource-cr.min.js"></script>
+	<link rel="stylesheet" href="../../Vendor/GeoData/assets/css/geodatasource-countryflag.css">
+	<link href="https://fonts.googleapis.com/css?family=Strait|Chonburi" rel="stylesheet">
+  
+  <!-- link to ko language po file -->
+	<link rel="gettext" type="application/x-po" href="../../Vendor/GeoData/languages/ko/LC_MESSAGES/ko.po" />
+	<script type="text/javascript" src="../../Vendor/GeoData/assets/js/Gettext.js"></script>
+	
+	<link rel="stylesheet" href="../CSS/main.css">
+</head>
+<body>
+	
+	<div class="nav" style="background-color: dodgerblue; height: 70px"></div>
+
+	<div class="payment">
+		<h3>결제 정보 입력 (카드) </h3>
+		<div class="payment-input">
+			
+			<span>국가</span>
+			<select id="countrySelection" class="form-control gds-cr gds-countryflag" country-data-region-id="gds-cr-one" data-language="ko" oninput="this.size=1; this.blur();" onfocus="this.size=14;"></select>
+			<span>카드 번호</span>
+			<div class="form-label-group">
+				<input type="text" id="cardNumber" class="form-control form-size-changer" required>
+			</div>
+			<span>카드 타입</span>
+			
+			<div>
+				<img src="https://img.icons8.com/ios/50/000000/visa.png">
+				<img src="https://img.icons8.com/color/55/000000/visa.png">
+				<img src="https://img.icons8.com/ios-filled/48/000000/mastercard.png">
+				<img src="https://img.icons8.com/officel/53/000000/mastercard.png">
+				<img src="https://img.icons8.com/ios/50/000000/discover.png">
+				<img src="https://img.icons8.com/officel/55/000000/discover.png">
+			</div>
+			
+			
+			
+			<span>만료일</span>
+			<div class="card-expire-date">
+				<div class="form-label-group">
+					<input type="text" id="card-month" class="form-control"  maxlength="2" placeholder="mm" required>
+					<label for="card-month">mm</label>
+				</div>
+				<span>/</span>
+				<div class="form-label-group">
+					<input type="text" id="card-year" class="form-control" maxlength="2" placeholder="yy" required>
+					<label for="card-year">yy</label>
+				</div>
+			</div>
+			
+			<span>CSC</span>
+			<div class="form-label-group">
+				<input type="text" id="cscNumber" class="form-control form-size-changer" maxlength="3" required>
+			</div>
+			
+			<span>이름</span>
+			<div class="form-label-group">
+				<input type="text" id="cName" class="form-control form-size-changer" required>
+			</div>
+			
+			<span>우편번호</span>
+			<div class="form-label-group">
+				<input type="text" id="cPostNumber" class="form-control form-size-changer" required>
+			</div>
+			
+			<span>주소 1</span>
+			<div class="form-label-group">
+				<input type="text" id="cAddress1" class="form-control form-size-changer" required>
+			</div>
+			
+			<span>주소 2 (선택)</span>
+			<div class="form-label-group">
+				<input type="text" id="cAddress2" class="form-control form-size-changer" required>
+			</div>
+			
+			<span>연락처</span>
+			<div class="form-label-group">
+				<input type="text" id="cPhoneNumber" class="form-control form-size-changer" required>
+			</div>
+			
+			<span>이메일</span>
+			<div class="form-label-group">
+				<input type="email" id="cEmail" class="form-control form-size-changer" required>
+			</div>
+		</div>
+		<div class="row flex">
+			<button class="left"> &lt; 이전</button>
+			<button class="right">결제 &gt; </button>
+		</div>
+	</div>
+</body>
+</html>
