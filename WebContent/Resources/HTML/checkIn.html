@@ -2,186 +2,272 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>공지사항</title>
-<link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
+<title>체크인</title>
+<link rel="stylesheet" href="../CSS/main.css" type="text/css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <style>
-	hr{
-		border:1px solid gray;
-	}
-	h4{
-		float:left;
-		text-weight:bold;
-		color:black;
-		margin:50px 0 30px;
-		
-	}
-	nav{
-		width:100%;
-		height:70px;
-		background-color:gray;
-	}
-	#warp{
-		width: 100%;
-	}
-	#contents{
-		max-width: 1200px;
-		margin: 0px auto;
-	}
-	#title{
-		height: 200px;
-		text-align:center;
-	}
-	#title h1{
-		margin: 55px 0;
-	}
-	#board{
-		background-color:lightgray;
-	}
-	.checkBtn{
-		background-color: #777;
-		color: white;
-		float: left;
-		border: 1px solid gray;
-		outline: none;
-		cursor: pointer;
-		padding: 14px 16px;
-		font-size: 17px;
-		font-weight: bold;
-		width: 50%;
-	}
-	.checkBtn>img {
-		width: 20px;
-		height: 20px;
-	}
-	.checkBtn:hover{
-		background-color: #555;
-	}
-	.tabcontent {
-		display: none;
-		padding: 100px 20px;
-		height: 100%;
-	}
-	table{
-		width:100%;
-		height:200px;
-		text-align:center;
-		color:black;
-		font-size:17px;
-		
-	}
-	table td{
-		border:1px solid black;	
-	}
-	.mainT{
-		font-size:15px;
-		background:#6d6e70;
-		color:white;
-	}
+hr {
+	border: 1px solid gray;
+	margin-bottom: 20px;
+}
 
-	li{
-		margin-left:19px;
-		margin-bottom:10px;
-		text-align:left;
-		
-	}
+h4 {
+	float: left;
+	text-weight: bold;
+	color: black;
+	margin: 5px 0 30px;
+}
+
+nav {
+	width: 100%;
+	height: 70px;
+	background-color: gray;
+}
+
+#warp {
+	width: 100%;
+}
+
+#contents {
+	max-width: 1200px;
+	margin: 0px auto;
+}
+
+#title {
+	height: 200px;
+	text-align: center;
+}
+
+#title h1 {
+	margin: 55px 0;
+}
+
+.checkBtn {
+	background-color: #777;
+	color: white;
+	float: left;
+	border: 1px solid gray;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	font-size: 17px;
+	font-weight: bold;
+	width: 50%;
+}
+
+.checkBtn>img {
+	width: 20px;
+	height: 20px;
+}
+
+.checkBtn:hover {
+	background-color: #555;
+}
+
+.onContent {
+	display: none;
+	padding: 100px 20px;
+	height: 100%;
+}
+
+#setImg {
+	border: 1px solid gray;
+	width: 100%;
+	height: 350px;
+	margin-top: 80px;
+	overflow:hidden;
+}
+
+table {
+	width: 100%;
+	height: 200px;
+	text-align: center;
+	color: black;
+	font-size: 17px;
+	border-collapse: collapse;
+}
+
+table td {
+	border: 1px solid black;
+}
+
+.mainT {
+	font-size: 15px;
+	background: #6d6e70;
+	color: white;
+}
+
+li {
+	margin-left: 19px;
+	margin-bottom: 10px;
+	text-align: left;
+}
+#n1{
+	width:50px;
+	height:50px;
+	position:absolute;
+	left:15%;
+	top:107%;
+}
+#n2{
+	width:50px;
+	height:50px;
+	position:absolute;
+	left:30%;
+	top:107%;
+}
+#n3{
+	width:50px;
+	height:50px;
+	position:absolute;
+	left:45%;
+	top:107%;
+}
+#n4{
+	width:50px;
+	height:50px;
+	position:absolute;
+	left:60%;
+	top:107%;
+}
+
 </style>
 <script>
-function start(){
-	//탭메뉴
-	var btnIdList = ['btnAll', 'btnGAZA'];
-	var paneIdList = ['noticeAll','noticeGAZA'];
-	var btnList = ['온라인 체크인','오토 체크인'];
-	var i;
-	var checkBtnHTML = "";
-	var tabPanelHTML = "";
-	for(i=0; i<paneIdList.length; i++){
-		checkBtnHTML += "<button class='checkBtn' id='"+btnIdList[i]+"' onclick='openPage(\""+paneIdList[i]+"\", this, \""+btnIdList[i]+"\")'><img src='../IMG/icon/check.png'/>"+btnList[i]+"</button> ";
-	}
-	document.getElementById("checkBtn").innerHTML = checkBtnHTML;
+
+//이미지 추가
+	$(function(){
+		for(i=1;i<=4;i++){
+			$("#setImg").append("<img src='../IMG/service/c"+i+".png'/>");
+			$("#ctr").append("<img src='../IMG/service/n"+i+".png' class='circles' id='n"+i+"'/>");
+		}
+	});	
 	
-	// 기본값 선택
-	document.getElementById("noticeAll").click();
-}
-function openPage(pageName, elmnt, btnId) {
-	var i, tabcontent, checkBtns;
-	
-	// 전체 숨김
-	tabcontent = document.getElementsByClassName("tabcontent");
-	for (i = 0; i < tabcontent.length; i++) {
-		tabcontent[i].style.display = "none";
+	function start() {
+		//탭메뉴
+		var btnIdList = [ 'onCheckAll', 'autoCheckAll;' ];
+		var paneIdList = [ 'onCheck', 'autoCheck' ];
+		var btnList = [ '온라인 체크인', '오토 체크인' ];
+		var i;
+		var checkBtnHTML = "";
+		var tabPanelHTML = "";
+		for (i = 0; i < paneIdList.length; i++) {
+			checkBtnHTML += "<button class='checkBtn' id='" + btnIdList[i]
+					+ "' onclick='openPage(\"" + paneIdList[i] + "\", this, \""
+					+ btnIdList[i] + "\")'><img src='../IMG/icon/check.png'/>"
+					+ btnList[i] + "</button> ";
+		}
+		document.getElementById("checkBtn").innerHTML = checkBtnHTML;
+
+		// 기본값 선택
+		document.getElementById("onCheckAll").click();
+		
 	}
+	function openPage(pageName, elmnt, btnId) {
+		var i, onContent, checkBtns;
 
-	// 배경색 삭제
-	checkBtns = document.getElementsByClassName("checkBtn");
-	for (i = 0; i < checkBtns.length; i++) {
-		checkBtns[i].style.backgroundColor = "";
-		checkBtns[i].style.color = "";
-		var imgTag = checkBtns[i].firstChild;
-		imgTag.style.display = "none";
+		// 전체 숨김
+		onContent = document.getElementsByClassName("onContent");
+		for (i = 0; i < onContent.length; i++) {
+			onContent[i].style.display = "none";
+		}
+
+		// 배경색 삭제
+		checkBtns = document.getElementsByClassName("checkBtn");
+		for (i = 0; i < checkBtns.length; i++) {
+			checkBtns[i].style.backgroundColor = "";
+			checkBtns[i].style.color = "";
+			var imgTag = checkBtns[i].firstChild;
+			imgTag.style.display = "none";
+		}
+
+		// 클릭된 컨텐츠 보이기
+		document.getElementById(pageName).style.display = "block";
+
+		// 클릭된 버튼 색상 변경
+		elmnt.style.backgroundColor = "#fff";
+		elmnt.style.color = "#555";
+		
+
+		
 	}
-
-	// 클릭된 컨텐츠 보이기
-	document.getElementById(pageName).style.display = "block";
-
-	// 클릭된 버튼 색상 변경
-	elmnt.style.backgroundColor = "#fff";
-	elmnt.style.color = "#555";
-}
-
 </script>
 </head>
 <body onload="start()">
-<div id="warp">
-<header>
-	<nav>
-	네비게이션 넣을 곳 ㅁㄴㅇㅁㄴㅇㅁㅇㅁ
-	</nav>
-</header>
+	<div id="warp">
+		<header>
+			<nav>네비게이션 넣을 곳 ㅁㄴㅇㅁㄴㅇㅁㅇㅁ</nav>
+		</header>
 		<div id="contents">
 			<section id="title">
 				<h1>체크인</h1>
 			</section>
-			<section id="board">
+			<section id="online">
 				<div id="checkBtn"></div>
-				<div id="tabPanel">
-					<div id="noticeAll" class='tabcontent'>
-					<!-- 온라인 체크인 이용안내 테이블 -->
-					<h4>이용 안내</h4>
-						<table> 
-						<thead> 
-							<tr> 
-								<td class="mainT">구분</td> 
-								<td class="mainT">이용 시간</td> 
-								<td class="mainT">이용 노선</td> 
-								<td class="mainT">이용 대상</td> 
-							</tr> 
-						</thead> 
-						<tbody> 
-							<tr> 
-								<td class="mainT">국내선</td> 
-								<td>출발 48시간 ~ 30분 전까지</td> 
-								<td  rowspan="2">전 노선</td> 
-								<td rowspan="2">항공권 결제가 완료된 전자항공권(E-Ticket)소지 고객</td> 
-							</tr> 
-						<tr> 
-							<td scope="row" class="mainT">국제선</td> 
-							<td>출발 48시간 ~ 1시간 전까지 <br> (미주 노선은 출발 24시간 전부터)</td> 
-						</tr> 
-						</tbody>
+				<div id="tabPanel" >
+					<div id="onCheck" class='onContent'	>
+						<!-- 온라인 체크인 이용안내 테이블 -->
+						<h4>이용 안내</h4>
+						<table>
+							<thead>
+								<tr>
+									<td class="mainT">구분</td>
+									<td class="mainT">이용 시간</td>
+									<td class="mainT">이용 노선</td>
+									<td class="mainT">이용 대상</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="mainT">국내선</td>
+									<td>출발 48시간 ~ 30분 전까지</td>
+									<td rowspan="2">전 노선</td>
+									<td rowspan="2">항공권 결제가 완료된 전자항공권(E-Ticket)소지 고객</td>
+								</tr>
+								<tr>
+									<td scope="row" class="mainT">국제선</td>
+									<td>출발 48시간 ~ 1시간 전까지 <br> (미주 노선은 출발 24시간 전부터)
+									</td>
+								</tr>
+							</tbody>
 						</table>
 						<ul>
 							<li>이용 제한 노선 : 부산 출발 국내선 및 일부 부정기편</li>
 							<li>이용 제한 대상 : 타사 항공기로 운항하는 공동운항편 이용 고객</li>
-						</ul> 
-						<hr/>
+						</ul>
+						<hr />
+						<!-- 이용 안내 div -->
+						<h4>이용 방법</h4>
+						<div id="useDiv"></div>
+						<div id="viewImg">
+							<div id="setImg"></div>
+							<div id="ctr">
+								<div></div><div></div><div></div><div></div>
+							</div>
+						</div>						
+						<div id="idx"></div>
 					</div>
 				</div>
 			</section>
-			
+			<section id="auto">
+						<!-- 오토 체크인 이용안내 테이블 -->
+						<div id="autoCheck" class="onContent"></div>
+						<h4>이용 안내</h4>
+						<table>
+							<tbody>
+								<tr>
+									<td class="mainT">이용 시간</td>
+									<td>- 항공권 결제 이후 ~ 출발 48시간 전까지 (국내선 출발 30일 전, 국제선 출발 361일 전부터 가능합니다.)</td>
+								</tr>
+								<tr>
+									<td class="mainT">이용 대상</td>
+									<td>-항공권 결제가 완료된 모든 이용고객 모바일 탑승권 발급 가능한 노선 <br/>* 이용 제한 대상: 단체 예약 및 만 2세 미만 유아 동반 고객, 특별서비스 신청 고객(UM, YPTA 등) 공동운항편 이용 고객)
+									</td>
+								</tr>
+							</tbody>
+						</table>
+			</section>		
 		</div>
-		<footer>
-		</footer>
-</div>
+		<footer> </footer>
+	</div>
 </body>
 </html>
