@@ -15,7 +15,7 @@
 		background-color:gray;
 		margin:0 auto
 		}
-	#all img{
+	#cloudimg{
 		width:100%;
 		height:450px;
 		margin:0
@@ -25,9 +25,13 @@
 		height:450px;
 		margin:0
 		}
-	a:link{text-decoration:none;color:white}
-	a:visited{text-decoration:none;color:white}
-	a:hover{color:white}
+	#name>a:link{text-decoration:none;color:white}
+	#name>a:visited{text-decoration:none;color:white}
+	#name>a:hover{color:white}
+	
+	#grade>a:link{text-decoration:none;color:white}
+	#grade>a:visited{text-decoration:none;color:white}
+	#grade>a:hover{color:white}
 	
 	#name{
 		width:200px;
@@ -36,9 +40,7 @@
 		top:60px;
 		color:white
 		}
-	#name>div:nth-child(1){
-		font-size:22px
-		}
+	#name>div:nth-child(1){ font-size:22px }
 	#name>div:nth-child(2){
 		font-size:12px;
 		opacity:0.5		
@@ -74,30 +76,30 @@
 	/* 구름 사진 아래 스타일 */
 	#content{
 		background-color:lightgray;
-		height:1020px;
+		height:1000px;
 		margin:0;
 		padding:0
 		}
-	#like{
+		
+		#like,
+		#mg {
 		background-color:white;
 		border:1px solid gray;
+		padding:10px;
+		position:relative;
+		}
+	#like{
 		width:200px;
 		height:150px;
 		top:20px;
 		left:20px;
-		margin:0px;
-		padding:10px;
-		position:relative;
+
 		}
 	#mg{
-		background-color:white;
-		border:1px solid gray;
 		width:940px;
 		height:150px;
 		left:240px;
 		top:-130px;
-		position:relative;
-		padding:10px;
 		}
 	#mg>div{width:400px;height:50px;margin-left:200px}
 
@@ -251,7 +253,7 @@
 <body>
 <div id="nav"></div>
 <div id="all">
-	<div id="clouddiv"><img src="../IMG/mypage_Img/cloud1.jpg"/>
+	<div id="clouddiv"><img src="../IMG/mypage_Img/cloud1.jpg" id="cloudimg"/>
 		<div id="content">
 			<div id="name">
 				<div><a href="#">최민성 님</a></div>
@@ -306,13 +308,48 @@
 			<div id="info"><h4>안내사항</h4><br/>
 			● 출발 완료 시각은<br/>
 			● 도착 완료는<br/>
-			● 도착이 30분 이상
+			● 도착이 30분 이상상
 			</div>
 			</div>
 	</div>
-	
-	
 	</div>
 </div>
+<footer>
+	<div id="footContainer">
+		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
+		<div class="snsPane">
+			<div class="snsBtn">
+				<img src="../IMG/icon/facebook_white.png"/>
+				<img src="../IMG/icon/facebook.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/instagram_white.png"/>
+				<img src="../IMG/icon/instagram.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/twitter_white.png"/>
+				<img src="../IMG/icon/twitter.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/youtube_white.png"/>
+				<img src="../IMG/icon/youtube.png"/>
+			</div>
+		</div>
+		<hr/>
+		<div class="footContent">
+			<div class="footCall">
+				
+				<b>고객센터</b><br/>080-0000-0000<br/>운영시간 | 오전 9시~오후 6시<br/>점심시간 | 오후 12시~오후 1시
+			</div>
+			
+			<div class="footInfo">
+				<b>가자에어</b> | 사업자번호 : 203-87-00612<br/>통신판매업신고번호 : 제 2012-서울구로-1560호<br/>
+				서울시 구로구 시흥대로 163길 33 주호타워 2층 가자항공(구로동 1129-1)<br/>
+				대표전화 : 02-837-9922<br/>
+				Copyright&copy; 주식회사가자에어. ALL RIGHTS RESERVED | 개인정보책임자 : 정운하
+			</div>
+		</div>
+	</div>
+</footer>
 </body>
 </html>
