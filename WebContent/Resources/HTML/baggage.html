@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>수하물</title>
+<link rel="stylesheet" href="../CSS/main.css" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+li{
+	list-style-type:none;
+	margin-bottom:5px;
+}
+h4 {
+	float: left;
+	text-weight: bold;
+	color: black;
+	font-size:25px;
+}
+nav {
+	width: 100%;
+	height: 70px;
+	background-color: gray;
+}
+
+#warp {
+	width: 100%;
+}
+
+#contents {
+	max-width: 1200px;
+	margin: 0px auto;
+}
+
+#title {
+	height: 200px;
+	text-align: center;
+}
+
+#title h1 {
+	margin: 55px 0;
+}
+
+.checkBtn {
+	background-color: #777;
+	color: white;
+	float: left;
+	border: 1px solid gray;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	font-size: 17px;
+	font-weight: bold;
+	width: 50%;
+}
+
+.checkBtn>img {
+	width: 20px;
+	height: 20px;
+}
+
+.checkBtn:hover {
+	background-color: #555;
+}
+
+.onContent {
+	display: none;
+	padding: 100px 20px;
+	height: 100%;
+}
+
+</style>
+<script>
+	function start() {
+		//탭메뉴
+		var btnIdList = [ 'cosAll', 'carryAll' ];
+		var paneIdList = [ 'cos', 'carry' ];
+		var btnList = [ '위탁 수하물', '휴대 수하물' ];
+		var i;
+		var checkBtnHTML = "";
+		var tabPanelHTML = "";
+		for (i = 0; i < paneIdList.length; i++) {
+			checkBtnHTML += "<button class='checkBtn' id='" + btnIdList[i]
+					+ "' onclick='openPage(\"" + paneIdList[i] + "\", this, \""
+					+ btnIdList[i] + "\")'><img src='../IMG/icon/check.png'/>"
+					+ btnList[i] + "</button> ";
+		}
+		document.getElementById("checkBtn").innerHTML = checkBtnHTML;
+
+		// 기본값 선택
+		document.getElementById("cosAll").click();
+		
+	}
+	function openPage(pageName, elmnt, btnId) {
+		var i, onContent, checkBtns;
+
+		// 전체 숨김
+		onContent = document.getElementsByClassName("onContent");
+		for (i = 0; i < onContent.length; i++) {
+			onContent[i].style.display = "none";
+		}
+
+		// 배경색 삭제
+		checkBtns = document.getElementsByClassName("checkBtn");
+		for (i = 0; i < checkBtns.length; i++) {
+			checkBtns[i].style.backgroundColor = "";
+			checkBtns[i].style.color = "";
+			var imgTag = checkBtns[i].firstChild;
+			imgTag.style.display = "none";
+		}
+
+		// 클릭된 컨텐츠 보이기
+		document.getElementById(pageName).style.display = "block";
+
+		// 클릭된 버튼 색상 변경
+		elmnt.style.backgroundColor = "#fff";
+		elmnt.style.color = "#555";
+
+	}
+</script>
+</head>
+<body onload="start()">
+	<div id="warp">
+		<header>
+			<nav>네비게이션 넣을 곳 ㅁㄴㅇㅁㄴㅇㅁㅇㅁ</nav>
+		</header>
+		<div id="contents">
+			<section id="title">
+				<h1>수하물</h1>
+			</section>
+			<section id="online">
+				<div id="checkBtn"></div>
+				<div id="tabPanel" >
+					<div id="cos" class='onContent'	>
+					<h4>국제선 이용 시 <font style="color:red">무료수하물</font> 허용기준</h4><br/><br/>
+					타 항공사로 연결시 해당 항공사의  무료수하물 허용량 기준이 당사와 상이 할수 있습니다.<br/>	
+					수하물 위탁은 출국장 입장 전 체크인(수속) 카운터 또는 자동 수하물 위탁 기기에서만 가능합니다.
+					<div><img src="../IMG/service/carrybag.png" style="width:100%"/></div>
+					<h4 style="margin-bottom:10px;">구간별 무료수하물 허용량</h4>
+					<div><img src="../IMG/service/carry2.png" style="width:100%"/></div>
+					<ul>
+						<li>· 소아의 경우,휴대용 유모차,보행기,카시트,운반용 요람 중1개 추가 가능</li>
+						<li>· 비즈니스 스위트 탑승시 비즈니스 클래스 규정 적용</li>	
+						<li>· 미주 외 구간인 경우 이코노미 클래스 허용 개수1개</li>
+					</ul>
+					<hr style="margin:10px 0 10px 0;"/>
+					<h4>국제선 초과수하물 안내</h4><br/><br/>
+					<ul>
+						<li>· 삼삼변의 합이 292cm 이내일 경우라도, 운항 당일 항공기 적재 공간에 따라 운송이 거절될 수 있습니다.</li>
+						<li>· 무료로 부치실 수 있는 수하물 허용량을 초과할 경우 초과 수하물 요금이 부과됩니다.</li>
+						<li>· 초과 수하물 요금은 수하물의 개수, 무게 및 부피에 따라 부과되며, 노선별 비행시간에 따라 차이가 있습니다.</li>
+						<li>· 현지 통화 사정에 따라, 해외 출발편의 초과 수하물 요금이 달라질 수 있습니다.</li>
+						<li>· 위탁 가능한 수하물 최대 무게 및 부피는 출/도착지 국가에 따라 제한될 수 있습니다.</li>
+						<li>· 작업자의 안전사고 예방을 위하여, 개당 최대 무게는 32kg 이내로 준비해 주시기 바라며, 초과할 경우, 운송이 거절될수 있습니다.</li>
+						<li>· 초과 수하물 요금 적용 기준<br/>
+							  &nbsp;&nbsp;&nbsp;* 한국 출발 : 원화(KRW)<br/>
+							  &nbsp;&nbsp;&nbsp;* 미국 출발 : 미국 달러 (USD)<br/>
+							  &nbsp;&nbsp;&nbsp;* 그외 국가 출발 : USD 기준 금액을 당일 은행 대고객 매도율 적용한 현지 통화로 환산 적용<br/></li>					
+					</ul>
+				</div>
+				</div>
+			</section>
+		</div>
+		<footer> </footer>
+	</div>
+</body>
+</html>
