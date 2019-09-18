@@ -51,7 +51,6 @@ h3 {
 a,
 a:hover {
     text-decoration: none;
-    color: #555;
 }
 
 .hidden { display: none; }
@@ -282,11 +281,12 @@ a:hover {
 
 .card-expire-date>span { margin-top: 25px; }
 
-<<<<<<< HEAD
+
 /* ----------------------------------------------- */
 /* footer */
 /* ----------------------------------------------- */
 footer{
+    margin-top: 30px;
 	background-color: #d3d4d6;
 	width:100%;
 }
@@ -333,10 +333,12 @@ hr{
 	width: 40%;
 	float: left;
 }
-.footInfo{
-	width: 60%;
-	float: left;
-=======
+
+.footInfo {
+    width: 60%;
+    float: left;
+}
+
 .payment .form-label-group>input,
 .payment .form-label-group>label {
     margin-top: 12px !important;
