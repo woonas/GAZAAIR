@@ -317,11 +317,11 @@ footer{
 .snsBtn:hover img:last-child{
 	display: block;
 }
-hr{
+.footHr{
 	height: 1px;
 	margin: 5px 0 10px 0;
 	border: none;
-	background-color: #ccc;
+	background-color: #aaa;
 }
 .footContent {
 	width: 1200px;
