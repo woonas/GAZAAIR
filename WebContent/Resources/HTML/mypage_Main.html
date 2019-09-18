@@ -30,7 +30,6 @@
 	a:hover{color:white}
 	
 	#name{
-		border:1px solid gray;
 		width:200px;
 		position:absolute;
 		left:70px;
@@ -46,7 +45,6 @@
 		}
 	
 	#grade{
-		border:1px solid gray;
 		width:200px;
 		position:absolute;
 		left:70px;
@@ -67,11 +65,10 @@
 		}	
 	
 	#boarding{
-		border:1px solid gray;
 		width:1200px;
 		text-align:center;
 		position:absolute;
-		top:375px;
+		top:380px;
 		margin:0
 		}
 	/* 구름 사진 아래 스타일 */
@@ -102,7 +99,8 @@
 		position:relative;
 		padding:10px;
 		}
-	#mg>div{width:300px;height:50px;margin-left:200px}
+	#mg>div{width:400px;height:50px;margin-left:200px}
+
 	
 	#reserve{
 		background-color:white;
@@ -231,16 +229,17 @@
 		padding:10px;
 		float:left
 	}
+	progress{width:500px}
 </style>
 <script>
 	$(function(){
 		$("#promile").delay(500);
-		var val=$("#promile").attr("value");
+		/* var val=$("#promile").attr("value"); */
 		for(var i=0;i<70;i++){
 			$("#promile").animate({"value":70});
 		}
 		$("#prograde").delay(500);
-		var val=$("#prograde").attr("value");
+		/* var val=$("#prograde").attr("value"); */
 		for(var i=0;i<70;i++){
 			$("#prograde").animate({"value":30});
 		}
@@ -252,7 +251,7 @@
 <body>
 <div id="nav"></div>
 <div id="all">
-	<div id="clouddiv"><img src="../IMG/cloud1.jpg"/>
+	<div id="clouddiv"><img src="../IMG/mypage_Img/cloud1.jpg"/>
 		<div id="content">
 			<div id="name">
 				<div><a href="#">최민성 님</a></div>
@@ -268,8 +267,7 @@
 			</div>
 			<div id="boarding">
 				GAZA AIR 탑승 0<br/>
-				GAZA AIR 외 탑승 0<br/>
-				일반 제휴 및 기타 0<br/>
+				일반 제휴 및 기타 0
 			</div>
 		</div>
 	</div>
