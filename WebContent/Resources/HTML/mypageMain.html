@@ -25,27 +25,42 @@
 		height:450px;
 		margin:0
 		}
+	a:link{text-decoration:none;color:white}
+	a:visited{text-decoration:none;color:white}
+	a:hover{color:white}
+	
 	#name{
 		border:1px solid gray;
 		width:200px;
 		position:absolute;
 		left:70px;
-		top:60px
+		top:60px;
+		color:white
 		}
+	#name>div:nth-child(1){
+		font-size:22px
+		}
+	#name>div:nth-child(2){
+		font-size:12px;
+		opacity:0.5		
+		}
+	
 	#grade{
 		border:1px solid gray;
 		width:200px;
 		position:absolute;
 		left:70px;
-		top:110px
+		top:110px;
+		font-size:18px
 		}
 	#mileage{
 		border:1px solid red;
-		width:1200px;
+		width:600px;
 		height:100px;
 		text-align:center;
 		position:absolute;
-		top:90px
+		top:100px;
+		left:300px
 		}	
 	#mileage>span{
 		font-size:30px	
@@ -74,7 +89,7 @@
 		top:20px;
 		left:20px;
 		margin:0px;
-		padding:0px;
+		padding:10px;
 		position:relative;
 		}
 	#mg{
@@ -85,7 +100,10 @@
 		left:240px;
 		top:-130px;
 		position:relative;
+		padding:10px;
 		}
+	#mg>div{width:300px;height:50px;margin-left:200px}
+	
 	#reserve{
 		background-color:white;
 		border:1px solid gray;
@@ -97,6 +115,12 @@
 		padding:10px 0;
 		position:relative;
 		}	
+	#rt{
+		width:1160px;
+		font-size:40px;
+		font-weight:bold;
+		text-align:center
+		}
 	#reserveContent{
 		background-color:white;
 		border:1px solid gray;
@@ -104,21 +128,23 @@
 		height:650px;
 		margin:40px auto
 		}
-	#reserveContent>div:nth-child(2){
-		margin-left:20px
-		}
 	#daTitle{
 		text-align:center;
 		padding:30px
+		}
+	#days{
+		width:900px;
+		height:80px;
+		margin:0;
 		}
 	.daydiv{
 		background-color:#e6e2df;
 		border:1px solid gray;
 		width:200px;
 		height:80px;
-		margin:0 10px;
+		margin:0;
 		text-align:center;
-		float:left
+		float:left;
 		}
 	#standard{
 		text-align:right;
@@ -129,7 +155,7 @@
 		height:200px;
 		margin:0;
 		padding:0;
-		float:left
+		float:left;
 		}
 	.as{
 		background-color:#6d6e70;
@@ -155,7 +181,8 @@
 		}
 	#dr{
 		width:158px;
-		float:left
+		float:left;
+		line-height:20px
 		}
 	#dr div{
 		background-color:#3864ea;
@@ -163,7 +190,9 @@
 		color:white;
 		width:158px;
 		height:80px;
-		text-align:center
+		text-align:center;
+		font-size:25px;
+		line-height:80px
 		}
 	#dr>div:first-child{
 		margin-bottom:10px
@@ -173,7 +202,7 @@
 		width:150px;
 		height:130px;
 		text-align:center;
-		line-height:30px;
+		line-height:120px;
 		margin:0;
 		float:left
 		}
@@ -182,7 +211,7 @@
 		width:220px;
 		height:65px;
 		text-align:center;
-		line-height:30px;
+		line-height:60px;
 		margin:0;
 		float:left
 		}
@@ -191,9 +220,9 @@
 		width:220px;
 		height:65px;
 		text-align:center;
-		line-height:30px;
+		line-height:60px;
 		margin:0;
-		float:left
+		float:left;
 		}
 	#info{
 		background-color:#f7f7f7;
@@ -202,9 +231,23 @@
 		padding:10px;
 		float:left
 	}
-		
-	
 </style>
+<script>
+	$(function(){
+		$("#promile").delay(500);
+		var val=$("#promile").attr("value");
+		for(var i=0;i<70;i++){
+			$("#promile").animate({"value":70});
+		}
+		$("#prograde").delay(500);
+		var val=$("#prograde").attr("value");
+		for(var i=0;i<70;i++){
+			$("#prograde").animate({"value":30});
+		}
+	});
+
+
+</script>
 </head>
 <body>
 <div id="nav"></div>
@@ -226,21 +269,25 @@
 			<div id="boarding">
 				GAZA AIR 탑승 0<br/>
 				GAZA AIR 외 탑승 0<br/>
-				일반 제휴 밑 기타 0<br/>
+				일반 제휴 및 기타 0<br/>
 			</div>
 		</div>
 	</div>
 	<!-- 구름 사진 아래 -->
 	<div id="content">
 		<div id="like">관심 노선</div>
-		<div id="mg"></div>
-		<div id="reserve"><h3>항공권 예약 현황</h3>
+		<div id="mg">마일리지 & 등급 <br/>
+			<div>
+			<div>마일리지 <progress value="0" max="100" id="promile"></progress></div>
+			<div>등급 <progress value="0" max="100" id="prograde"></progress></div>
+			</div>
+		</div>
+		<div id="reserve"><div id="rt">항공권 예약 현황</div>
 			<div id="reserveContent">
 				<div id="daTitle"><h2>ICN 서울/인천 > JFK 뉴욕/존 F 케네디</h2></div>
-				<div class="daydiv">2019.09.05(목)</div>
-				<div class="daydiv">2019.09.06(금)</div>
-				<div class="daydiv">2019.09.07(토)</div>
-				<div class="daydiv">2019.09.08(일)</div>
+				<div id="days">
+					<div class="daydiv">예약한 날짜</div>
+				</div>
 				<div id="standard">(2019.09.07 20:14 한국시간 기준) 출발 다음날 / 출발 다다음날</div>
 				<div id="reserveTitle">
 					<div class="as">편명</div>
@@ -255,7 +302,7 @@
 					<div class="daexpect">도착 예정 11:35</div>
 				</div>
 				<div id="dr">
-					<div>세부 사항</div>
+					<div>상세 보기</div>
 					<div>환불</div>
 				</div>
 			<div id="info"><h4>안내사항</h4><br/>
