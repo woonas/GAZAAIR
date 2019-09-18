@@ -51,7 +51,6 @@ h3 {
 a,
 a:hover {
     text-decoration: none;
-    color: #555;
 }
 
 .hidden { display: none; }
