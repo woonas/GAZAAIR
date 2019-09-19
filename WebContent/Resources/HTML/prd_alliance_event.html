@@ -4,32 +4,42 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../CSS/product.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <style>
-	#top{
-		width:100%;
-		height:70px;
-		border:1px solid gray;	
-	}
-	#all{
-		max-width:1200px;
-		height:900px;
-		margin:auto;
-		border:1px solid gray;	
-	}
 	.evt{
-		margin:50px 7px;
-		width:385px;
-		height:300px;
-		padding-top:70px;
 		text-align:center;
-		border:2px solid #36f;
-		float:left;
+		border:1px solid #36f;
 	}
-	#allianceInfo1, #allianceInfo2{
+	
+	.evt>p { 
+		margin-top: 50px;
+		color: black !important; 
+	}
+	
+	.evt>div { 
+		margin-top: 20px;
+		height: 80px; 
+		line-height: 8;
+	}
+	#allianceInfo1, 
+	#allianceInfo2, 
+	#allianceInfo3, 
+	#allianceInfo4, 
+	#allianceInfo5, 
+	#allianceInfo6,
+	#allianceInfo7,
+	#allianceInfo8,
+	#allianceInfo9,
+	#allianceInfo10,
+	#allianceInfo11,
+	#allianceInfo12{
 		width:780px;
 		height:650px;
 		display:none;
+		position:absolute;
+		left:500px;
+		top:200px;
 	}
 	.actop{
 		width:780px;
@@ -40,6 +50,7 @@
 		width:780px;
 		height:520px;
 		border:1px solid #36f;
+		background-color:#fff;
 	}
 	.acbot1{
 		width:680px;
@@ -47,44 +58,76 @@
 		margin:auto;
 		padding-top:50px;
 	}
+	
+	.seperatorLogo {
+		width: 80%;
+		margin: 20px auto 10px;
+	}
 </style>
 <script>
-	$(function(){
-		$("#eve1").on("click",function(){
-			$("#allianceInfo1").css("display","block");
-		});
-		$("#eve2").on("click",function(){
-			$("#allianceInfo2").css("display","block");
-		});
-	}); 
+ 	$(function(){
+ 		var numOfImg = 12;
+ 		
+  		for(i=1; i<=numOfImg; i++) {
+ 			$("#eve"+i).on("click",function(){
+ 				var num = this.id.substring(3);
+ 				$("#allianceInfo"+num).css("display","block");
+ 			});
+ 		}
+	});   
 </script>
 </head>
 <body>
-<div id="top"></div>
-<div id="all">
+<div class="nav"></div>
+<h3>제휴이벤트</h3>
+<div class="content">
 	<div class="evt" id="eve1">
-		<img src="../IMG/product_Img/g_logo.png"/><br/><br/>
-		<span>구트아카데미<br/>학원 수강료 10% 할인</span>
+		<div><img src="../IMG/product_Img/g_logo.png"/></div><hr class="seperatorLogo">
+		<p>구트아카데미<br/>학원 수강료 10% 할인</p>
 	</div>
 	<div class="evt" id="eve2">
-		<img src="../IMG/product_Img/c_logo.png"/><br/><br/>
-		<span>CGV 영화예매<br/>10%할인</span>
+		<div><img src="../IMG/product_Img/c_logo.png"/></div><hr class="seperatorLogo">
+		<p>CGV 영화예매<br/>10%할인</p>
 	</div>
 	<div class="evt" id="eve3">
-		<img src="../IMG/product_Img/m_logo.png"/><br/><br/>
-		<span>국립현대미술관<br/>전시10%할인</span>
+		<div><img src="../IMG/product_Img/m_logo.png"/></div><hr class="seperatorLogo">
+		<p>국립현대미술관<br/>전시10%할인</p>
 	</div>
 	<div class="evt" id="eve4">
-		<img src="../IMG/product_Img/l_logo.png"/><br/><br/>
-		<span>롯데월드<br/>자유이용권 20%할인</span>
+		<div><img src="../IMG/product_Img/l_logo.png"/></div><hr class="seperatorLogo">
+		<p>롯데월드<br/>자유이용권 20%할인</p>
 	</div>
 	<div class="evt" id="eve5">
-		<img src="../IMG/product_Img/s_logo.png"/><br/><br/>
-		<span>스무디킹<br/>전 메뉴(음료)10%할인</span>
+		<div><img src="../IMG/product_Img/s_logo.png"/></div><hr class="seperatorLogo">
+		<p>스무디킹<br/>전 메뉴(음료)10%할인</p>
 	</div>
-	<div class="evt" onclick="">
-		<img src="../IMG/product_Img/cx_logo.jpg"/><br/><br/>
-		<span>코엑스 아쿠아리움<br/>입장요금 20%할인</span>
+	<div class="evt" id="eve6">
+		<div><img src="../IMG/product_Img/cx_logo.jpg"/></div><hr class="seperatorLogo">
+		<p>코엑스 아쿠아리움<br/>입장요금 20%할인</p>
+	</div>
+	<div class="evt" id="eve7">
+		<div><img src="../IMG/product_Img/g_logo.png"/></div><hr class="seperatorLogo">
+		<p>구트아카데미<br/>학원 수강료 10% 할인</p>
+	</div>
+	<div class="evt" id="eve8">
+		<div><img src="../IMG/product_Img/c_logo.png"/></div><hr class="seperatorLogo">
+		<p>CGV 영화예매<br/>10%할인</p>
+	</div>
+	<div class="evt" id="eve9">
+		<div><img src="../IMG/product_Img/m_logo.png"/></div><hr class="seperatorLogo">
+		<p>국립현대미술관<br/>전시10%할인</p>
+	</div>
+	<div class="evt" id="eve10">
+		<div><img src="../IMG/product_Img/l_logo.png"/></div><hr class="seperatorLogo">
+		<p>롯데월드<br/>자유이용권 20%할인</p>
+	</div>
+	<div class="evt" id="eve11">
+		<div><img src="../IMG/product_Img/s_logo.png"/></div><hr class="seperatorLogo">
+		<p>스무디킹<br/>전 메뉴(음료)10%할인</p>
+	</div>
+	<div class="evt" id="eve12">
+		<div><img src="../IMG/product_Img/cx_logo.jpg"/></div><hr class="seperatorLogo">
+		<p>코엑스 아쿠아리움<br/>입장요금 20%할인</p>
 	</div>
 </div>
 <div id="allianceInfo1">
@@ -96,7 +139,7 @@
 		<div class="acbot1">
 			<h4>제휴사 소개</h4>
 			· 구트아카데미는 이제 첫걸음을 시작했지만구트아카데미를 책임지는 강사진 및 운영진들은 최고의 전문가로 모셨습니다. 
-			구트아카데미를 찾아주시는 모든 분들이 만족할 수 있도록항상 귀 기울이는 구트가 되도록 하겠습니다. 감사합니다.<br/><br/>
+			구트아카데미를 찾아주시는 모든 분들이 만족할 수 있도록 항상 귀 기울이는 구트가 되도록 하겠습니다. 감사합니다.<br/><br/>
 			<h4>할인 혜택</h4>
 			· 학원 수강료 10% 할인<br/><br/>
 			<h4>이용 방법</h4>
@@ -200,5 +243,155 @@
 		</div>
 	</div>
 </div>
+<div id="allianceInfo7">
+	<div class="actop">
+	<div><img src="../IMG/product_Img/g_logo.png"/></div>
+	<span>구트아카데미<br/>학원 수강료 10% 할인</span>
+	</div>
+	<div class="acbot">
+		<div class="acbot1">
+			<h4>제휴사 소개</h4>
+			· 구트아카데미는 이제 첫걸음을 시작했지만구트아카데미를 책임지는 강사진 및 운영진들은 최고의 전문가로 모셨습니다. 
+			구트아카데미를 찾아주시는 모든 분들이 만족할 수 있도록 항상 귀 기울이는 구트가 되도록 하겠습니다. 감사합니다.<br/><br/>
+			<h4>할인 혜택</h4>
+			· 학원 수강료 10% 할인<br/><br/>
+			<h4>이용 방법</h4>
+			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
+			· 타 프로모션 및 제휴 할인과 중복 할인 불가
+		</div>
+	</div>
+</div>
+<div id="allianceInfo8">
+	<div class="actop">
+	<div><img src="../IMG/product_Img/c_logo.png"/></div>
+	<span>CGV 영화예매<br/>10%할인</span>
+	</div>
+	<div class="acbot">
+		<div class="acbot1">
+			<h4>제휴사 소개</h4>
+			· 지속적인 진화를 바탕으로 영화 관람환경뿐만 아니라 그 이상의 서비스와 감동을 전달하고, TOTAL LIFESTYLE을 선도하는 종합생활문화공간으로 도약합니다.<br/>
+			· CGV만이 제공할 수 있는 다양한 즐거움과 특별한 경험을 통해 고객의 Lifestyle을 풍요롭게 합니다.<br/>
+			· CGV는 선진화된 관람문화와 최고의 서비스로 고객에게 잊을 수 없는 감동을 선사합니다.<br/><br/>
+			<h4>할인 혜택</h4>
+			· CGV 영화예매 10%할인<br/><br/>
+			<h4>이용 방법</h4>
+			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
+			· 타 프로모션 및 제휴 할인과 중복 할인 불가
+		</div>
+	</div>
+</div>
+<div id="allianceInfo9">
+	<div class="actop">
+	<div><img src="../IMG/product_Img/m_logo.png"/></div>
+	<span>CGV 영화예매<br/>10%할인</span>
+	</div>
+	<div class="acbot">
+		<div class="acbot1">
+			<h4>제휴사 소개</h4>
+			· 지속적인 진화를 바탕으로 영화 관람환경뿐만 아니라 그 이상의 서비스와 감동을 전달하고, TOTAL LIFESTYLE을 선도하는 종합생활문화공간으로 도약합니다.<br/>
+			· CGV만이 제공할 수 있는 다양한 즐거움과 특별한 경험을 통해 고객의 Lifestyle을 풍요롭게 합니다.<br/>
+			· CGV는 선진화된 관람문화와 최고의 서비스로 고객에게 잊을 수 없는 감동을 선사합니다.<br/><br/>
+			<h4>할인 혜택</h4>
+			· CGV 영화예매 10%할인<br/><br/>
+			<h4>이용 방법</h4>
+			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
+			· 타 프로모션 및 제휴 할인과 중복 할인 불가
+		</div>
+	</div>
+</div>
+<div id="allianceInfo10">
+	<div class="actop">
+	<div><img src="../IMG/product_Img/l_logo.png"/></div>
+	<span>CGV 영화예매<br/>10%할인</span>
+	</div>
+	<div class="acbot">
+		<div class="acbot1">
+			<h4>제휴사 소개</h4>
+			· 지속적인 진화를 바탕으로 영화 관람환경뿐만 아니라 그 이상의 서비스와 감동을 전달하고, TOTAL LIFESTYLE을 선도하는 종합생활문화공간으로 도약합니다.<br/>
+			· CGV만이 제공할 수 있는 다양한 즐거움과 특별한 경험을 통해 고객의 Lifestyle을 풍요롭게 합니다.<br/>
+			· CGV는 선진화된 관람문화와 최고의 서비스로 고객에게 잊을 수 없는 감동을 선사합니다.<br/><br/>
+			<h4>할인 혜택</h4>
+			· CGV 영화예매 10%할인<br/><br/>
+			<h4>이용 방법</h4>
+			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
+			· 타 프로모션 및 제휴 할인과 중복 할인 불가
+		</div>
+	</div>
+</div>
+<div id="allianceInfo11">
+	<div class="actop">
+	<div><img src="../IMG/product_Img/s_logo.png"/></div>
+	<span>CGV 영화예매<br/>10%할인</span>
+	</div>
+	<div class="acbot">
+		<div class="acbot1">
+			<h4>제휴사 소개</h4>
+			· 지속적인 진화를 바탕으로 영화 관람환경뿐만 아니라 그 이상의 서비스와 감동을 전달하고, TOTAL LIFESTYLE을 선도하는 종합생활문화공간으로 도약합니다.<br/>
+			· CGV만이 제공할 수 있는 다양한 즐거움과 특별한 경험을 통해 고객의 Lifestyle을 풍요롭게 합니다.<br/>
+			· CGV는 선진화된 관람문화와 최고의 서비스로 고객에게 잊을 수 없는 감동을 선사합니다.<br/><br/>
+			<h4>할인 혜택</h4>
+			· CGV 영화예매 10%할인<br/><br/>
+			<h4>이용 방법</h4>
+			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
+			· 타 프로모션 및 제휴 할인과 중복 할인 불가
+		</div>
+	</div>
+</div>
+<div id="allianceInfo12">
+	<div class="actop">
+	<div><img src="../IMG/product_Img/cx_logo.jpg"/></div>
+	<span>CGV 영화예매<br/>10%할인</span>
+	</div>
+	<div class="acbot">
+		<div class="acbot1">
+			<h4>제휴사 소개</h4>
+			· 지속적인 진화를 바탕으로 영화 관람환경뿐만 아니라 그 이상의 서비스와 감동을 전달하고, TOTAL LIFESTYLE을 선도하는 종합생활문화공간으로 도약합니다.<br/>
+			· CGV만이 제공할 수 있는 다양한 즐거움과 특별한 경험을 통해 고객의 Lifestyle을 풍요롭게 합니다.<br/>
+			· CGV는 선진화된 관람문화와 최고의 서비스로 고객에게 잊을 수 없는 감동을 선사합니다.<br/><br/>
+			<h4>할인 혜택</h4>
+			· CGV 영화예매 10%할인<br/><br/>
+			<h4>이용 방법</h4>
+			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
+			· 타 프로모션 및 제휴 할인과 중복 할인 불가
+		</div>
+	</div>
+</div>
+<footer>
+	<div id="footContainer">
+		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
+		<div class="snsPane">
+			<div class="snsBtn">
+				<img src="../IMG/icon/facebook_white.png"/>
+				<img src="../IMG/icon/facebook.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/instagram_white.png"/>
+				<img src="../IMG/icon/instagram.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/twitter_white.png"/>
+				<img src="../IMG/icon/twitter.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/youtube_white.png"/>
+				<img src="../IMG/icon/youtube.png"/>
+			</div>
+		</div>
+		<hr class="footHr"/>
+		<div class="footContent">
+			<div class="footCall">
+				
+				<b>고객센터</b><br/>080-0000-0000<br/>운영시간 | 오전 9시~오후 6시<br/>점심시간 | 오후 12시~오후 1시
+			</div>
+			
+			<div class="footInfo">
+				<b>가자에어</b> | 사업자번호 : 203-87-00612<br/>통신판매업신고번호 : 제 2012-서울구로-1560호<br/>
+				서울시 구로구 시흥대로 163길 33 주호타워 2층 가자항공(구로동 1129-1)<br/>
+				대표전화 : 02-837-9922<br/>
+				Copyright&copy; 주식회사가자에어. ALL RIGHTS RESERVED | 개인정보책임자 : 정운하
+			</div>
+		</div>
+	</div>
+</footer>
 </body>
 </html>
