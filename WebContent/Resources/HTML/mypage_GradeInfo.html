@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+	#all{ 
+		max-width:1200px;
+		margin:0 auto;
+		height:2000px;
+		}
+	#nav{
+		background-color:gray;
+		width:100%;
+		height:70px;
+		margin:0 auto
+		}
+	#vipEligibility,#vipGrade{
+		background-color:#6d6e70;
+		border:1px solid gray;
+		width:250px;
+		height:100px;
+		float:left;
+		font-size:22px;
+		text-align:center;
+		color:white
+		}
+	#vipEligibility{padding:15px 0}
+	#vipGrade{padding:30px 0;}
+	#text{
+		width:1100px;
+		height:200px;
+		overflow:hidden;
+		padding:20px
+		}
+	/* 승급기준  */
+	#h2Text{
+		width:1200px;
+		height:50px
+		}
+	#SIMDiv{
+		width:1200px;
+		height:700px
+		}
+	#separation{
+		width:350px;
+		height:850px;
+		float:left
+		}
+	.separationTitle, .inquiryConditionTitle,.maintenancePeriodTitle{
+		background-color:#6d6e70;
+		height:50px;
+		color:white;
+		text-align:center;
+		padding:10px;
+		font-size:18px
+		}
+	#inquiryCondition{
+		width:700px;
+		height:850px;
+		float:left
+		}
+	#maintenancePeriod{
+		width:150px;
+		height:850px;
+		float:left
+		}
+	#platinumImg{
+		border:1px solid gray;
+		width:350px;
+		height:150px;
+		padding:15px 0;
+		float:left
+		}
+	#platinumImg>div{
+		float:left
+		}
+	#platinumImg>div:nth-child(2){
+		padding:45px 0;
+		padding-left:10px
+		}
+	#diamondPlusImg{
+		border:1px solid gray;
+		width:350px;
+		height:350px;
+		padding:15px 0;
+		float:left
+		
+		}
+	#diamondPlusImg>div:first-child{
+		float:left;
+		padding-top:80px
+		
+		}
+	#diamondPlusImg>div:nth-child(2){
+		padding:130px 0;
+		padding-left:10px;
+		float:left
+		}
+	.diamondImg{
+		border:1px solid gray;
+		width:350px;
+		height:150px;
+		padding:15px 0;
+		float:left
+		}
+	.diamondImg>div:first-child{
+		float:left;
+		
+		}
+	.diamondImg>div:nth-child(2){
+		padding:45px 0;
+		float:left;
+		padding-left:10px
+		}
+	.goldImg{
+		border:1px solid gray;
+		width:350px;
+		height:150px;
+		padding:15px 0;
+		float:left
+		}
+	.goldImg>div:first-child{
+		float:left;
+		
+		}
+	.goldImg>div:nth-child(2){
+		padding:45px 0;
+		float:left;
+		padding-left:10px
+		}
+	#plaText{
+		border:1px solid gray;
+		width:700px;
+		height:150px;
+		
+		}
+	#diaplusText1, #diaplusText2{
+		border:1px solid gray;
+		width:700px;
+		height:175px;
+		}
+	.diaText{
+		border:1px solid gray;
+		width:700px;
+		height:150px;
+		}
+	.goldText{
+		border:1px solid gray;
+		width:700px;
+		height:150px;
+		}
+	#lifetime{
+		border:1px solid gray;
+		width:150px;
+		height:325px;
+		}
+	#year2{
+		border:1px solid gray;
+		width:150px;
+		height:475px;
+		}
+	/* 자격 유지 기준 */
+	#inquiryh2Text{
+		margin-top:20px;
+		width:1200px;
+		height:50px;
+		float:left
+		}
+	#inquirySIMDiv{
+		width:1200px;
+		height:500px;
+		overflow:hidden
+		}
+	#inquiryseparation{
+		border:1px solid gray;
+		width:350px;
+		height:500px;
+		float:left
+		}
+	#iinquiryCondition{
+		border:1px solid gray;
+		width:700px;
+		height:500px;
+		float:left
+		}
+	#inquirymaintenancePeriod{
+		width:150px;
+		height:500px;
+		float:left
+		}
+	#inquirydiamondPlusImg{
+		border:1px solid gray;
+		width:350px;
+		height:150px;
+		padding:15px 0;
+		float:left
+		}
+	#inquirydiamondPlusImg>div:first-child{
+		float:left;
+		
+		}
+	#inquirydiamondPlusImg>div:nth-child(2){
+		padding:45px 0;
+		float:left;
+		padding-left:10px
+		}
+	#inquirydiaplusText{
+		border:1px solid gray;
+		width:700px;
+		height:150px;
+		}
+	#inquiryyear2{
+		border:1px solid gray;
+		width:150px;
+		height:450px;
+		}
+</style>
+</head>
+<body>
+<div id="nav"></div>
+<div id="all">
+	<div><h3>회원 안내</h3></div>
+	<div id="vipEligibility">우수회원 승급/자격<br/>유지 기준</div>
+	<div id="vipGrade">우수회원 등급별 혜택</div>
+	<div id="text">● GAZA<br/>
+	● 2018년
+	</div>
+	<div id="h2Text"><h2>승급 기준</h2></div>
+	<div id="SIMDiv">
+		<div id="separation"><div class="separationTitle">구분</div>
+			<div id="platinumImg"><div><img src="../IMG/mypage_Img/platinum.jpg"/></div><div>플래티늄</div></div>
+			<div id="diamondPlusImg"><div><img src="../IMG/mypage_Img/diamondplus.jpg"/></div><div>다이아몬드플러스</div></div>
+			<div class="diamondImg"><div><img src="../IMG/mypage_Img/diamond.jpg"/></div><div>다이아몬드</div></div>
+			<div class="goldImg"><div><img src="../IMG/mypage_Img/gold.jpg"/></div><div>골드</div></div>			
+		</div>
+		<div id="inquiryCondition"><div class="inquiryConditionTitle">자격조건</div>
+			<div id="plaText"></div>
+			<div id="diaplusText1"></div>
+			<div id="diaplusText2"></div>
+			<div class="diaText"></div>
+			<div class="goldText"></div>
+		</div>
+		<div id="maintenancePeriod"><div class="maintenancePeriodTitle">자격 유지 기간</div>
+			<div id="lifetime">평생</div>
+			<div id="year2">조기 승급 기간<br/>+ 24개월</div>
+		</div>
+	</div>
+	<!-- 자격 유지 기준 -->
+	<div id="inquiryh2Text"><h2>자격 유지 기준</h2></div>
+	<div id="inquirySIMDiv">
+		<div id="inquiryseparation"><div class="separationTitle">구분</div>
+			<div id="inquirydiamondPlusImg"><div><img src="../IMG/mypage_Img/diamondplus.jpg"/></div><div>다이아몬드플러스</div></div>
+			<div class="diamondImg"><div><img src="../IMG/mypage_Img/diamond.jpg"/></div><div>다이아몬드</div></div>
+			<div class="goldImg"><div><img src="../IMG/mypage_Img/gold.jpg"/></div><div>골드</div></div>
+		</div>
+		<div id="iinquiryCondition"><div class="inquiryConditionTitle">자격조건</div>
+			<div id="inquirydiaplusText"></div>
+			<div class="diaText">s</div>
+			<div class="goldText">s</div>
+		</div>
+		<div id="inquirymaintenancePeriod"><div class="maintenancePeriodTitle">자격 유지 기간</div>
+			<div id="inquiryyear2">조기 승급 기간<br/>+ 24개월</div>
+		</div>
+	</div>
+</div>
+<footer>
+	<div id="footContainer">
+		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
+		<div class="snsPane">
+			<div class="snsBtn">
+				<img src="../IMG/icon/facebook_white.png"/>
+				<img src="../IMG/icon/facebook.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/instagram_white.png"/>
+				<img src="../IMG/icon/instagram.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/twitter_white.png"/>
+				<img src="../IMG/icon/twitter.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/youtube_white.png"/>
+				<img src="../IMG/icon/youtube.png"/>
+			</div>
+		</div>
+		<hr/>
+		<div class="footContent">
+			<div class="footCall">
+				
+				<b>고객센터</b><br/>080-0000-0000<br/>운영시간 | 오전 9시~오후 6시<br/>점심시간 | 오후 12시~오후 1시
+			</div>
+			
+			<div class="footInfo">
+				<b>가자에어</b> | 사업자번호 : 203-87-00612<br/>통신판매업신고번호 : 제 2012-서울구로-1560호<br/>
+				서울시 구로구 시흥대로 163길 33 주호타워 2층 가자항공(구로동 1129-1)<br/>
+				대표전화 : 02-837-9922<br/>
+				Copyright&copy; 주식회사가자에어. ALL RIGHTS RESERVED | 개인정보책임자 : 정운하
+			</div>
+		</div>
+	</div>
+</footer>
+</body>
+</html>
