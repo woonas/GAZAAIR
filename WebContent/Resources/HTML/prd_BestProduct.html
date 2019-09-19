@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../CSS/product.css" type="text/css"/>
+<style>
+	#prdPopup1{display:none;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	
+	$(function(){
+		var numOfImg = 18;
+		for(i = 1; i<=numOfImg; i++) {
+			$("#prdEve"+i).on("click", function(){
+				var num = this.id.substring(6);
+				$("#prdPopup"+num).css("display","block");
+				$("#prdPopup"+num).css({
+					"top" : (($(window).height()-$("#prdPopup"+num).outerHeight())/2+$(window).scrollTop())+"px",
+					"left" : (($(window).width()-$("#prdPopup"+num).outerWidth())/2+$(window).scrollLeft())+"px"
+				});
+			});
+		}
+	});
+	
+
+</script>
+</head>
+<body>
+<div class="nav"></div>
+	<h3>베스트상품</h3>
+<div class="content product-event">
+	<div id="prdEve1">
+		<img src="../IMG/product_Img/jejudo.jpg" class="productImg"/>
+		<p class="event-destination">서울/김포 ＝＞ 제주<br/>KRW 19,500 ~ </p>
+	</div>
+	<div id="prdEve2">
+		<img src="../IMG/product_Img/hanoi.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 하노이<br/>KRW 195,000 ~ </p>
+	</div>
+	<div id="prdEve3">
+		<img src="../IMG/product_Img/hongkong.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 홍콩<br/>KRW 205,000 ~ </p>
+	</div>
+	<div id="prdEve4">
+		<img src="../IMG/product_Img/sanghai.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 상하이<br/>KRW 350,500 ~ </p>
+	</div>
+	<div id="prdEve5">
+		<img src="../IMG/product_Img/palau.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 팔라우<br/>KRW 756,000 ~ </p>
+	</div>
+	<div id="prdEve6">
+		<img src="../IMG/product_Img/la.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 로스앤젤레스<br/>KRW 999,900 ~ </p>
+	</div>
+	<div id="prdEve7">
+		<img src="../IMG/product_Img/jejudo.jpg" class="productImg"/>
+		<p class="event-destination">서울/김포 ＝＞ 제주<br/>KRW 19,500 ~ </p>
+	</div>
+	<div id="prdEve8">
+		<img src="../IMG/product_Img/hanoi.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 하노이<br/>KRW 195,000 ~ </p>
+	</div>
+	<div id="prdEve9">
+		<img src="../IMG/product_Img/hongkong.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 홍콩<br/>KRW 205,000 ~ </p>
+	</div>
+	<div id="prdEve10">
+		<img src="../IMG/product_Img/sanghai.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 상하이<br/>KRW 350,500 ~ </p>
+	</div>
+	<div id="prdEve11">
+		<img src="../IMG/product_Img/palau.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 팔라우<br/>KRW 756,000 ~ </p>
+	</div>
+	<div id="prdEve12">
+		<img src="../IMG/product_Img/la.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 로스앤젤레스<br/>KRW 999,900 ~ </p>
+	</div>
+	<div id="prdEve13">
+		<img src="../IMG/product_Img/jejudo.jpg" class="productImg"/>
+		<p class="event-destination">서울/김포 ＝＞ 제주<br/>KRW 19,500 ~ </p>
+	</div>
+	<div id="prdEve14">
+		<img src="../IMG/product_Img/hanoi.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 하노이<br/>KRW 195,000 ~ </p>
+	</div>
+	<div id="prdEve15">
+		<img src="../IMG/product_Img/hongkong.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 홍콩<br/>KRW 205,000 ~ </p>
+	</div>
+	<div id="prdEve16">
+		<img src="../IMG/product_Img/sanghai.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 상하이<br/>KRW 350,500 ~ </p>
+	</div>
+	<div id="prdEve17">
+		<img src="../IMG/product_Img/palau.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 팔라우<br/>KRW 756,000 ~ </p>
+	</div>
+	<div id="prdEve18">
+		<img src="../IMG/product_Img/la.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 로스앤젤레스<br/>KRW 999,900 ~ </p>
+	</div>
+</div>
+<div class="prdContent" id="prdPopup1">
+	<div class="route">
+		<div class="stt">
+			<p>GMP</p>
+			<p>서울/김포</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>CJU</p>
+			<p>제주</p>
+		</div>
+	</div>
+	
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>19,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>27,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>27,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>35,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>35,500 ~ </p></div>
+	</div>
+	</a>
+</div>
+<footer>
+	<div id="footContainer">
+		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
+		<div class="snsPane">
+			<div class="snsBtn">
+				<img src="../IMG/icon/facebook_white.png"/>
+				<img src="../IMG/icon/facebook.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/instagram_white.png"/>
+				<img src="../IMG/icon/instagram.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/twitter_white.png"/>
+				<img src="../IMG/icon/twitter.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/youtube_white.png"/>
+				<img src="../IMG/icon/youtube.png"/>
+			</div>
+		</div>
+		<hr/>
+		<div class="footContent">
+			<div class="footCall">
+				
+				<b>고객센터</b><br/>080-0000-0000<br/>운영시간 | 오전 9시~오후 6시<br/>점심시간 | 오후 12시~오후 1시
+			</div>
+			
+			<div class="footInfo">
+				<b>가자에어</b> | 사업자번호 : 203-87-00612<br/>통신판매업신고번호 : 제 2012-서울구로-1560호<br/>
+				서울시 구로구 시흥대로 163길 33 주호타워 2층 가자항공(구로동 1129-1)<br/>
+				대표전화 : 02-837-9922<br/>
+				Copyright&copy; 주식회사가자에어. ALL RIGHTS RESERVED | 개인정보책임자 : 정운하
+			</div>
+		</div>
+	</div>
+</footer>
+</body>
+</html>
