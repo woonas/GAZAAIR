@@ -443,7 +443,9 @@ footer{
 .nav a:visited{
 	color:#222;
 }
-
+.subMenu a:hover{
+	color:#36f;
+}
 
 /* ----------------------------------------------- */
 /* LOGIN */
