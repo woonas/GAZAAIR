@@ -9,8 +9,7 @@
 	#all{ 
 		max-width:1200px;
 		margin:0 auto;
-		background-color:lightgray;
-		height:1500px
+		height:1700px
 		}
 	#nav{
 		width:100%;
@@ -41,14 +40,15 @@
 		font-weight:bold
 		}
 	#vipstandardtext{
-		background-color:yellowgreen;
 		width:800px;
 		height:70px;
+		margin-top:10px;
 		float:left
 		}
 	#vipGradeTotalDiv{
 		width:1200px;
-		height:70px
+		height:70px;
+		margin:10px
 		}
 	#vipstandard,#gradeBenfit{
 		border:1px solid gray;
@@ -99,7 +99,64 @@
 		width:1200px;
 		heigth:30px;
 		}
+	#mileProgress,#countProgress{
+		background-color:#f7f7f7;
+		width:1200px;
+		height:250px;
+		padding:70px
+		
+		}
+	#mileProgressRadius,#countProgressRadius{
+		background-color:#ebebeb;
+		width:800px;
+		height:100px;
+		margin:0 160px;
+		padding:35px;
+		border-radius:50px
+		}
+	#proMile,#proCount{width:700px}
+	#inquiryText{
+		background-color:#f7f7f7;
+		width:1200px;
+		height:100px;
+		font-size:25px;
+		font-weight:bold;
+		padding:15px 10px;
+	
+	}
+	#inquiryText>div:first-child{
+		width:500px;
+		height:50px;
+		float:left;
+		padding:12px
+		}
+	#inquiryText>div:nth-child(2){
+		width:200px;
+		height:50px;
+		float:right
+		
+		}
+	#inquiryButton{
+		background:white;
+		width:190px;
+		height:70px;
+		float:right
+	}
 </style>
+<script>
+	$(function(){
+		$("#proMile").delay(500);
+			for(var i=0;i<70;i++){
+				$("#proMile").animate({"value":70});
+			}
+		$("#proCount").delay(500);
+		for(var i=0;i<70;i++){
+			$("#proCount").animate({"value":30});
+		}
+		
+	});
+
+</script>
 </head>
 <body>
 <div id="nav"></div>
@@ -141,8 +198,24 @@
 		</div>
 	</div>
 	<div id="conditionText">회원 등급별 평생회원 승급 조건</div>
+	<div>
+	<div><h2>마일기준</h2></div>
+	<div id="mileProgress"><div id="mileProgressRadius"><progress value="0" max="100" id="proMile"></progress></div></div>
+	</div>
+	<div>
+	<div><h2>탑승횟수 기준</h2></div>
+	<div id="countProgress"><div id="countProgressRadius"><progress value="0" max="100" id="proCount"></progress></div></div>
+	</div>
+	<div style="margin:10px">● 총 실적 기준<br/>
+	● GAZA 항공 <br/>
+	- 회원님의 <br/>
+	- 부정확한 <br/>
+	- 공동운항편은 <br/>
+	</div>
+	<div id="inquiryText"><div>회원등급 승급 관련 마일리지 실적 조회</div><div><input type="button" value="등급 산정 마일리지 조회"id="inquiryButton"></div></div>
 	
 </div>
+<!--                  -->
 <footer>
 	<div id="footContainer">
 		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
