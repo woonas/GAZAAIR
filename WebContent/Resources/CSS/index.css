@@ -1,0 +1,107 @@
+@charset "UTF-8";
+#main{
+	height:100vh;
+}
+#best{
+	width:100%;
+	height:500px;
+	background-color: #ccc;
+}
+.simple_reservation_wrap{
+	width: 1000px;
+	height: 160px;
+	margin: 400px auto 100px auto;
+	background-color: #fff;
+	padding: 8px 16px;
+	box-shadow : 5px 5px 5px rgb(51,51,51,.7);
+}
+.reservation_contents{
+	width: 20%;
+	height: 144px;
+	border: 1px solid white;
+	float: left;
+	color: #555;
+	text-align: center;
+}
+.reservation_contents img{
+	margin-left:10px;
+	width: 18px;
+}
+.tripLoc{
+	height: 82px;
+	font-size:230%;
+	line-height: 82px;
+}
+.tripDate{
+	height: 62px;
+	font-size:130%;
+	line-height: 62px;
+}
+
+.tripType {
+	position:relative;
+	line-height:40px;
+	text-align:left;
+	font-size:140%;
+	margin-top:25%;
+}
+.tripType img{
+}
+.tripType > p {
+	display:block;
+	padding:0 8px; 
+	overflow:hidden;
+	cursor:pointer;
+	background: 
+	url(../IMG/icon/underArrow2_black.png) 
+	no-repeat 95% 50%;
+	background-size: 10%;
+	border-bottom: 2px solid #555;
+}
+.tripType > p:after,
+.tripType > ul > li:first-child:after {
+	display:block; 
+	float:right;
+}
+.tripType > ul {
+	position:absolute; 
+	width:100%; 
+	top:1px; 
+	background:#fff; 
+	display:none;
+	list-style-type:none;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-top: 2px solid #555;
+}
+.tripType li {
+	cursor:pointer; 
+	padding:0 8px;
+	border-bottom:1px solid #ccc; 
+}
+.tripType li:hover{
+	background-color: #ccc;
+}
+.simple_reservation_submit{
+	width:100px;
+	height:100px;
+	background-color: #36f;
+	border:none;
+	border-radius: 10px;
+	font-size: 150%;
+	color: white;
+	margin-top:20px;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
