@@ -36,7 +36,7 @@
 		padding:20px
 		}
 	/* 승급기준  */
-	#h2Text{
+	.h2Text{
 		width:1200px;
 		height:50px
 		}
@@ -217,7 +217,24 @@
 		width:150px;
 		height:450px;
 		}
+	/* 혜택 페이지 넌 */
+	#benefitPage{
+		display:none;
+		}
 </style>
+<script>
+	$(function(){
+		$("#vipGrade").click(function(){
+			$("#gradePage").css("display","none")
+		});
+		$("#vipEligibility").click(function(){
+			$("#gradePage").css("display","block")
+			
+		});
+		
+	});
+
+</script>
 </head>
 <body>
 <div id="nav"></div>
@@ -225,46 +242,58 @@
 	<div><h3>회원 안내</h3></div>
 	<div id="vipEligibility">우수회원 승급/자격<br/>유지 기준</div>
 	<div id="vipGrade">우수회원 등급별 혜택</div>
-	<div id="text">● GAZA<br/>
-	● 2018년
+	<div id="gradePage">
+		<div id="text">● GAZA<br/>
+		● 2018년
+		</div>
+		<div class="h2Text"><h2>승급 기준</h2></div>
+		<div id="SIMDiv">
+			<div id="separation"><div class="separationTitle">구분</div>
+				<div id="platinumImg"><div><img src="../IMG/mypage_Img/platinum.jpg"/></div><div>플래티늄</div></div>
+				<div id="diamondPlusImg"><div><img src="../IMG/mypage_Img/diamondplus.jpg"/></div><div>다이아몬드플러스</div></div>
+				<div class="diamondImg"><div><img src="../IMG/mypage_Img/diamond.jpg"/></div><div>다이아몬드</div></div>
+				<div class="goldImg"><div><img src="../IMG/mypage_Img/gold.jpg"/></div><div>골드</div></div>			
+			</div>
+			<div id="inquiryCondition"><div class="inquiryConditionTitle">자격조건</div>
+				<div id="plaText"></div>
+				<div id="diaplusText1"></div>
+				<div id="diaplusText2"></div>
+				<div class="diaText"></div>
+				<div class="goldText"></div>
+			</div>
+			<div id="maintenancePeriod"><div class="maintenancePeriodTitle">자격 유지 기간</div>
+				<div id="lifetime">평생</div>
+				<div id="year2">조기 승급 기간<br/>+ 24개월</div>
+			</div>
+		</div>
+		<!-- 자격 유지 기준 -->
+		<div id="inquiryh2Text"><h2>자격 유지 기준</h2></div>
+		<div id="inquirySIMDiv">
+			<div id="inquiryseparation"><div class="separationTitle">구분</div>
+				<div id="inquirydiamondPlusImg"><div><img src="../IMG/mypage_Img/diamondplus.jpg"/></div><div>다이아몬드플러스</div></div>
+				<div class="diamondImg"><div><img src="../IMG/mypage_Img/diamond.jpg"/></div><div>다이아몬드</div></div>
+				<div class="goldImg"><div><img src="../IMG/mypage_Img/gold.jpg"/></div><div>골드</div></div>
+			</div>
+			<div id="iinquiryCondition"><div class="inquiryConditionTitle">자격조건</div>
+				<div id="inquirydiaplusText"></div>
+				<div class="diaText">s</div>
+				<div class="goldText">s</div>
+			</div>
+			<div id="inquirymaintenancePeriod"><div class="maintenancePeriodTitle">자격 유지 기간</div>
+				<div id="inquiryyear2">조기 승급 기간<br/>+ 24개월</div>
+			</div>
+		</div>
 	</div>
-	<div id="h2Text"><h2>승급 기준</h2></div>
-	<div id="SIMDiv">
-		<div id="separation"><div class="separationTitle">구분</div>
-			<div id="platinumImg"><div><img src="../IMG/mypage_Img/platinum.jpg"/></div><div>플래티늄</div></div>
-			<div id="diamondPlusImg"><div><img src="../IMG/mypage_Img/diamondplus.jpg"/></div><div>다이아몬드플러스</div></div>
-			<div class="diamondImg"><div><img src="../IMG/mypage_Img/diamond.jpg"/></div><div>다이아몬드</div></div>
-			<div class="goldImg"><div><img src="../IMG/mypage_Img/gold.jpg"/></div><div>골드</div></div>			
-		</div>
-		<div id="inquiryCondition"><div class="inquiryConditionTitle">자격조건</div>
-			<div id="plaText"></div>
-			<div id="diaplusText1"></div>
-			<div id="diaplusText2"></div>
-			<div class="diaText"></div>
-			<div class="goldText"></div>
-		</div>
-		<div id="maintenancePeriod"><div class="maintenancePeriodTitle">자격 유지 기간</div>
-			<div id="lifetime">평생</div>
-			<div id="year2">조기 승급 기간<br/>+ 24개월</div>
-		</div>
+	<!-- 우수회원 등급별 혜택 -->
+	<div id="benefitPage">
+	<div class="h2Text"><h2>우수 회원 공동 혜택</h2></div>
+	
+	
+	
+	
+	
 	</div>
-	<!-- 자격 유지 기준 -->
-	<div id="inquiryh2Text"><h2>자격 유지 기준</h2></div>
-	<div id="inquirySIMDiv">
-		<div id="inquiryseparation"><div class="separationTitle">구분</div>
-			<div id="inquirydiamondPlusImg"><div><img src="../IMG/mypage_Img/diamondplus.jpg"/></div><div>다이아몬드플러스</div></div>
-			<div class="diamondImg"><div><img src="../IMG/mypage_Img/diamond.jpg"/></div><div>다이아몬드</div></div>
-			<div class="goldImg"><div><img src="../IMG/mypage_Img/gold.jpg"/></div><div>골드</div></div>
-		</div>
-		<div id="iinquiryCondition"><div class="inquiryConditionTitle">자격조건</div>
-			<div id="inquirydiaplusText"></div>
-			<div class="diaText">s</div>
-			<div class="goldText">s</div>
-		</div>
-		<div id="inquirymaintenancePeriod"><div class="maintenancePeriodTitle">자격 유지 기간</div>
-			<div id="inquiryyear2">조기 승급 기간<br/>+ 24개월</div>
-		</div>
-	</div>
+	
 </div>
 <footer>
 	<div id="footContainer">
