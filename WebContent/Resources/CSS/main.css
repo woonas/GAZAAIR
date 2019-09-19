@@ -341,7 +341,101 @@ footer{
 .payment .form-label-group>label {
     margin-top: 12px !important;
 }
-
+/* ----------------------------------------------- */
+/* navigation */
+/* ----------------------------------------------- */
+.nav{
+	width: 100%;
+	height: 70px;
+	color: #333;
+	font-size: 120%;
+	font-weight: 600;
+	border-bottom: 1px solid #aaa;
+}
+.navContainer{
+	width:1200px;
+	margin: 0 auto;
+	position:relative;
+	z-index:20;
+}
+.navMenu{
+	width: 1150px;
+	list-style-type: none;
+	height: 70px;
+	line-height: 70px;
+	float: left;
+	text-align: center;
+	z-index:9999;
+}
+.navMenu>li{
+	width:20%;
+	float:left;
+}
+.navMenu img{
+	width: 200px;
+}
+.translator{
+	width:50px;
+	height:50px;
+	float:right;
+	color: white;
+	background-color: #36f;
+	border: none;
+	font-size: 80%;
+	cursor: pointer;
+}
+.navBar{
+	background-color: #36f;
+	width: 100px;
+	height: 5px;
+	position: absolute;
+	left:-300px;
+	top:65px;
+	z-index:0;
+	-webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    pointer-events: none;/*마우스이벤트 영향 안받게*/
+	
+}
+/*메뉴 마우스 오버 시 식별 바 이동*/
+.navMenu>li:nth-child(2):hover ~ .navBar {
+    left: 24.6%;
+}
+.navMenu>li:nth-child(3):hover ~ .navBar {
+    left: 43.8%;
+}
+.navMenu>li:nth-child(4):hover ~ .navBar {
+    left: 63%;
+}
+.navMenu>li:nth-child(5):hover ~ .navBar {
+    left: 82.2%;
+}
+/*서브메뉴*/
+.subMenu>ul{
+	position:relative;
+	list-style-type:none;
+	font-size:80%;
+	font-weight:500;
+	line-height: 30px;
+	float:left;
+	text-align: left;
+	margin: 0 10%;
+}
+.subMenuWarp {
+	position: absolute;
+	top:65px;
+	left:0;
+	background-color:#f3f3f3;
+	width:1200px;
+	padding: 30px;
+	border-bottom: 1px solid #aaa;
+	display:none;
+	margin-top:5px;
+}
+.subMenu{
+	width: 60%;
+	margin: 0 auto;
+}
 /* ----------------------------------------------- */
 /* LOGIN */
 /* ----------------------------------------------- */
