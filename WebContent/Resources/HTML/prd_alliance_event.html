@@ -72,6 +72,10 @@
  			$("#eve"+i).on("click",function(){
  				var num = this.id.substring(3);
  				$("#allianceInfo"+num).css("display","block");
+				$("#allianceInfo"+num).css({
+					"top" : (($(window).height()-$("#allianceInfo"+num).outerHeight())/2+$(window).scrollTop())+"px",
+					"left" : (($(window).width()-$("#allianceInfo"+num).outerWidth())/2+$(window).scrollLeft())+"px"
+				});
  			});
  		}
 	});   
@@ -133,7 +137,7 @@
 <div id="allianceInfo1">
 	<div class="actop">
 	<div><img src="../IMG/product_Img/g_logo.png"/></div>
-	<span>구트아카데미<br/>학원 수강료 10% 할인</span>
+	<p>구트아카데미<br/>학원 수강료 10% 할인</p>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -151,7 +155,7 @@
 <div id="allianceInfo2">
 	<div class="actop">
 	<div><img src="../IMG/product_Img/c_logo.png"/></div>
-	<span>CGV 영화예매<br/>10%할인</span>
+	<p>CGV 영화예매<br/>10%할인</p>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -170,7 +174,7 @@
 <div id="allianceInfo3">
 	<div class="actop">
 	<div><img src="../IMG/product_Img/m_logo.png"/></div>
-	<span>CGV 영화예매<br/>10%할인</span>
+	<p>CGV 영화예매<br/>10%할인</p>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -189,7 +193,7 @@
 <div id="allianceInfo4">
 	<div class="actop">
 	<div><img src="../IMG/product_Img/l_logo.png"/></div>
-	<span>CGV 영화예매<br/>10%할인</span>
+	<p>CGV 영화예매<br/>10%할인</p>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -208,7 +212,7 @@
 <div id="allianceInfo5">
 	<div class="actop">
 	<div><img src="../IMG/product_Img/s_logo.png"/></div>
-	<span>CGV 영화예매<br/>10%할인</span>
+	<p>CGV 영화예매<br/>10%할인</p>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -227,7 +231,7 @@
 <div id="allianceInfo6">
 	<div class="actop">
 	<div><img src="../IMG/product_Img/cx_logo.jpg"/></div>
-	<span>CGV 영화예매<br/>10%할인</span>
+	<p>CGV 영화예매<br/>10%할인</p>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -246,7 +250,7 @@
 <div id="allianceInfo7">
 	<div class="actop">
 	<div><img src="../IMG/product_Img/g_logo.png"/></div>
-	<span>구트아카데미<br/>학원 수강료 10% 할인</span>
+	<p>구트아카데미<br/>학원 수강료 10% 할인</p>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -264,7 +268,7 @@
 <div id="allianceInfo8">
 	<div class="actop">
 	<div><img src="../IMG/product_Img/c_logo.png"/></div>
-	<span>CGV 영화예매<br/>10%할인</span>
+	<p>CGV 영화예매<br/>10%할인</p>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -283,7 +287,7 @@
 <div id="allianceInfo9">
 	<div class="actop">
 	<div><img src="../IMG/product_Img/m_logo.png"/></div>
-	<span>CGV 영화예매<br/>10%할인</span>
+	<p>CGV 영화예매<br/>10%할인</p>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -302,7 +306,7 @@
 <div id="allianceInfo10">
 	<div class="actop">
 	<div><img src="../IMG/product_Img/l_logo.png"/></div>
-	<span>CGV 영화예매<br/>10%할인</span>
+	<p>CGV 영화예매<br/>10%할인</p>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -321,7 +325,7 @@
 <div id="allianceInfo11">
 	<div class="actop">
 	<div><img src="../IMG/product_Img/s_logo.png"/></div>
-	<span>CGV 영화예매<br/>10%할인</span>
+	<p>CGV 영화예매<br/>10%할인</p>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -340,7 +344,7 @@
 <div id="allianceInfo12">
 	<div class="actop">
 	<div><img src="../IMG/product_Img/cx_logo.jpg"/></div>
-	<span>CGV 영화예매<br/>10%할인</span>
+	<p>CGV 영화예매<br/>10%할인</p>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">

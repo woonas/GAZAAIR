@@ -6,20 +6,25 @@
 <link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/product.css" type="text/css"/>
 <style>
-	#prdPopup{display:none;position:absolute;left:500px;top:300px;}
+	#prdPopup1{display:none;}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
+	
 	$(function(){
-		$("#prdEve1").on("click",function(){
-			$("#prdPopup").css("display","block");
-		});
+		var numOfImg = 18;
+		for(i = 1; i<=numOfImg; i++) {
+			$("#prdEve"+i).on("click", function(){
+				var num = this.id.substring(6);
+				$("#prdPopup"+num).css("display","block");
+				$("#prdPopup"+num).css({
+					"top" : (($(window).height()-$("#prdPopup"+num).outerHeight())/2+$(window).scrollTop())+"px",
+					"left" : (($(window).width()-$("#prdPopup"+num).outerWidth())/2+$(window).scrollLeft())+"px"
+				});
+			});
+		}
 	});
 	
-/* 	$("#prdPopup").css({
-		"top" : (($(window).height()-$("prdPopup").outerHeight())/2+$(window).scrollTop())+"px",
-		"left" : (($(window).width()-$("prdPopup").outerWidth())/2+$(window).scrollLeft())+"px"
-	}); */
 
 </script>
 </head>
@@ -100,7 +105,7 @@
 		<p class="event-destination">서울/인천 ＜＝＞ 로스앤젤레스<br/>KRW 999,900 ~ </p>
 	</div>
 </div>
-<div class="prdContent" id="prdPopup">
+<div class="prdContent" id="prdPopup1">
 	<div class="route">
 		<div class="stt">
 			<p>GMP</p>
