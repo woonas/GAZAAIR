@@ -29,7 +29,7 @@
 		}
 	#vipEligibility{padding:15px 0}
 	#vipGrade{padding:30px 0;}
-	#text{
+	.text{
 		width:1100px;
 		height:200px;
 		overflow:hidden;
@@ -217,22 +217,29 @@
 		width:150px;
 		height:450px;
 		}
-	/* 혜택 페이지 넌 */
+	/* 등급안내 페이지 넌 */
 	#benefitPage{
 		display:none;
 		}
+	#check2{
+		visibility:hidden
+	}
 </style>
 <script>
-	$(function(){
-		$("#vipGrade").click(function(){
-			$("#gradePage").css("display","none")
-		});
-		$("#vipEligibility").click(function(){
-			$("#gradePage").css("display","block")
-			
-		});
+	function eligibilityNoneBlock(){
+		document.getElementById("benefitPage").style.display= "none"
+		document.getElementById("gradePage").style.display= "block"
+		document.getElementById("check1").style.visibility= "visible"
+		document.getElementById("check2").style.visibility= "hidden"
+	};
+	function benefitNoneBlock(){
+		document.getElementById("gradePage").style.display= "none"
+		document.getElementById("benefitPage").style.display= "block"
+		document.getElementById("check1").style.visibility= "hidden"
+		document.getElementById("check2").style.visibility= "visible"
 		
-	});
+	};
+	
 
 </script>
 </head>
@@ -240,10 +247,10 @@
 <div id="nav"></div>
 <div id="all">
 	<div><h3>회원 안내</h3></div>
-	<div id="vipEligibility">우수회원 승급/자격<br/>유지 기준</div>
-	<div id="vipGrade">우수회원 등급별 혜택</div>
+	<div id="vipEligibility" onclick="eligibilityNoneBlock()"><img src="../IMG/icon/check.png" id="check1"/>우수회원 승급/자격<br/>유지 기준</div>
+	<div id="vipGrade" onclick="benefitNoneBlock()"><img src="../IMG/icon/check.png" id="check2"/>우수회원 등급별 혜택</div>
 	<div id="gradePage">
-		<div id="text">● GAZA<br/>
+		<div class="text">● GAZA<br/>
 		● 2018년
 		</div>
 		<div class="h2Text"><h2>승급 기준</h2></div>
@@ -286,7 +293,9 @@
 	</div>
 	<!-- 우수회원 등급별 혜택 -->
 	<div id="benefitPage">
-	<div class="h2Text"><h2>우수 회원 공동 혜택</h2></div>
+		<div class="text">● 아시아나클럽 우수회원에게 제공되는 다양한 우대서비스를 확인하세요.<br/>
+		</div>
+		<div class="h2Text"><h2>우수 회원 공동 혜택</h2></div>
 	
 	
 	
