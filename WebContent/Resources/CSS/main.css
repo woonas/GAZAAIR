@@ -436,6 +436,15 @@ footer{
 	width: 60%;
 	margin: 0 auto;
 }
+.nav a:link{
+	text-decoration:none;
+	color:#222;
+}
+.nav a:visited{
+	color:#222;
+}
+
+
 /* ----------------------------------------------- */
 /* LOGIN */
 /* ----------------------------------------------- */
