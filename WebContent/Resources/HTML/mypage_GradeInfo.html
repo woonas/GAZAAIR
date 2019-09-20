@@ -17,7 +17,7 @@
 		height:70px;
 		margin:0 auto
 		}
-	#vipEligibility,#vipGrade{
+	#vipEligibility{
 		background-color:#6d6e70;
 		border:1px solid gray;
 		width:250px;
@@ -28,7 +28,15 @@
 		color:white
 		}
 	#vipEligibility{padding:15px 0}
-	#vipGrade{padding:30px 0;}
+	#vipGrade{
+		padding:30px 0;
+		border:1px solid gray;
+		width:250px;
+		height:100px;
+		float:left;
+		font-size:22px;
+		text-align:center;
+		}
 	.text{
 		width:1100px;
 		height:200px;
@@ -224,6 +232,7 @@
 	#check2{
 		visibility:hidden
 	}
+	
 </style>
 <script>
 	function eligibilityNoneBlock(){
@@ -231,13 +240,20 @@
 		document.getElementById("gradePage").style.display= "block"
 		document.getElementById("check1").style.visibility= "visible"
 		document.getElementById("check2").style.visibility= "hidden"
+		document.getElementById("vipGrade").style.backgroundColor= "white"
+		document.getElementById("vipGrade").style.color= "#6d6e70"
+		document.getElementById("vipEligibility").style.backgroundColor= "#6d6e70"
+			document.getElementById("vipEligibility").style.color= "white"
 	};
 	function benefitNoneBlock(){
 		document.getElementById("gradePage").style.display= "none"
 		document.getElementById("benefitPage").style.display= "block"
 		document.getElementById("check1").style.visibility= "hidden"
 		document.getElementById("check2").style.visibility= "visible"
-		
+		document.getElementById("vipGrade").style.backgroundColor= "#6d6e70"
+		document.getElementById("vipGrade").style.color= "white"
+		document.getElementById("vipEligibility").style.backgroundColor= "white"
+		document.getElementById("vipEligibility").style.color= "#6d6e70"
 	};
 	
 
