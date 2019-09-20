@@ -145,6 +145,17 @@ li {
 			$("#ctr").append("<img src='../IMG/service/n"+i+".png' class='circles' id='n"+i+"'/>");
 			$("#acSetImg").append("<img src='../IMG/service/ac"+i+".png'/>");
 		}
+		
+			$('#n1').show(); //페이지를 로드할 때 표시할 요소
+			$('#n2').hide(); //페이지를 로드할 때 숨길 요소
+			$('#n1').click(function(){
+			$('#n1').hide(); //클릭 시 첫 번째 요소 숨김
+			$('#n2').show(); //클릭 시 두 번째 요소 표시
+			$('#c1').hide();
+			$('#c2').style("display","block");
+			return false;
+			});
+			
 	});	
 	
 	function start() {

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>운임확인</title>
+<link rel="stylesheet" href="../CSS/main.css" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+h4 {
+	float: left;
+	text-weight: bold;
+	color: black;
+	font-size:25px;
+	margin:10px 0 10px 0;
+}
+nav {
+	width: 100%;
+	height: 70px;
+	background-color: gray;
+}
+
+#warp {
+	width: 100%;
+	height:3700px;
+}
+
+#contents {
+	max-width: 1200px;
+	margin: 0px auto;
+}
+
+#title {
+	height: 200px;	
+}
+
+#title h1 {
+	margin: 55px 0;
+}
+
+.checkBtn {
+	background-color: #777;
+	color: white;
+	float: left;
+	border: 1px solid gray;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	font-size: 17px;
+	font-weight: bold;
+	width: 50%;
+}
+
+.checkBtn>img {
+	width: 20px;
+	height: 20px;
+}
+
+.checkBtn:hover {
+	background-color: #555;
+}
+
+.onContent {
+	display: none;
+	padding: 100px 20px;
+	height: 100%;
+}
+li{
+	list-style-type:none;
+}
+top{
+	float:left;
+	line-height:20px;
+}
+#schedule{
+	width: 100%;
+	height: 400px;
+	font-size: 15px;
+	border-collapse: collapse;
+	text-align:center;
+}
+#schedule td {
+	border: 1px solid black;
+}
+.contentName{
+	float:left;
+	margin-bottom:15px;
+}
+.rules{
+	margin:20px 0 0 10px;
+}
+.rules_name{
+	font-size:17px;
+}
+.rules_content{
+
+}
+.checkBoxes li{
+	display:flex;
+	justify-content:space-between;
+	line-height: 2.5;
+}
+.checkBoxes input[type=checkbox]{
+	margin:10px;
+}
+.buttons{
+	border:1px solid lightgray;
+	border-radius:3px;
+	height:30px;
+	width:70px;
+	float:left;
+	background:#fff;
+	color:black;
+}
+.red_buttons{
+	border:1px solid lightgray;
+	border-radius:3px;
+	height:50px;
+	width:100px;
+	float:right;
+	background:red;
+	color:#fff;
+	
+}
+</style>
+<script>
+</script>
+</head>
+<body>
+	<div id="warp">
+		<header>
+			<nav>네비게이션 넣을 곳 ㅁㄴㅇㅁㄴㅇㅁㅇㅁ</nav>
+		</header>
+		<div id="contents">
+			<section id="title">
+			<div><h3>운임확인</h3></div>
+			<hr/><br/>
+			<div id="top">· 운임이 정상적으로 입력되었는지 최종확인 후, 운임 조건 및 규정을 확인하시기 바랍니다.</div><br/>
+			<hr/><br/><br/>
+			<div>
+				<div class="contentName"><h4>여정</h4></div>
+				<div><h4 style="color:#ab7d55; float:right;">총 1명(성인1명)</h4></div><br/><br/>
+				<div>
+						<table id="schedule">
+							<thead>
+								<tr>
+									<td style="background-color:#6d6e70; color:#fff; height:40px;">구분</td>
+									<td style="background-color:#6d6e70; color:#fff;">출도착시간</td>
+									<td style="background-color:#6d6e70; color:#fff;">편명/기종</td>
+									<td style="background-color:#6d6e70; color:#fff;">운임할인</td>
+									<td style="background-color:#6d6e70; color:#fff;">예약변경</td>
+									<td style="background-color:#6d6e70; color:#fff;">환불</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>01<br/>2019.09.21<br/>(토)</td>
+									<td>asdasdadasd</td>
+									<td>OZ8901<br/>A320</td>
+									<td>정상운임</td>
+									<td>O<br/>수수료 없음</td>
+									<td>O<br/>위약금 있음</td>
+								</tr>
+								<tr>
+									<td>02<br/>2019.09.28<br/>(토)</td>
+									<td>asdasdasd</td>
+									<td>OZ8900<br/>A321</td>
+									<td>정상운임</td>
+									<td>O<br/>수수료 없음</td>
+									<td>O<br/>위약금 있음</td>
+								</tr>
+							</tbody>
+						</table><br/><br/>
+						<div class="contentName"><h4>가격</h4></div>
+						<div style="float:right;">단위 : KRW</div>
+						<div>
+							<table id="schedule">
+							<thead>
+								<tr>
+									<td style="background-color:#6d6e70; color:#fff; height:40px;" colspan="2">구분</td>
+									<td style="background-color:#6d6e70; color:#fff;">가는 여정 (서울 / 김포 -> 제주)</td>
+									<td style="background-color:#6d6e70; color:#fff;">오는 여정 (제주 -> 서울 / 김포)</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td rowspan="5" style="background-color:lightgray">김/동한<br/>성인 MR</td>
+									<td style="background-color:lightgray">항공권 운임</td>
+									<td>120,000</td>
+									<td>100,000</td>				
+								</tr>
+								<tr>
+									<td style="background-color:lightgray">세금 및 제반요금</td>
+									<td>4,000</td>
+									<td>4,000</td>
+									
+								</tr>
+								<tr>
+									<td style="background-color:lightgray">유류할증료</td>
+									<td>5,500</td>
+									<td>5,500</td>
+									
+								</tr>
+								<tr>
+									<td style="background-color:lightgray">구간별 개인할인</td>
+									<td>-</td>
+									<td>-</td>
+									
+								</tr>
+								<tr>
+									<td style="background-color:lightgray">합계</td>
+									<td colspan="2">239,000</td>
+								</tr>
+								<tr>
+									<td colspan="4" style="text-align:left;background-color:lightgray;">총 결제금액</td>
+								</tr>
+							</tbody>
+						</table><br/>
+						<div>
+							<ul>
+								<li>· 2019-09-20 (KST)기준 운임이며, 나중에 구매하시는 경우 선택하신 운임이 적용되지 않을 수 있습니다.</li>
+								<li>· 유류할증료와 세금/제반요금은 구매일/환율에 따라 변동될 수있습니다.</li>
+								<li>· 무료 수하물 허용량을 초과하는 경우 추가 수하물 요금이 부과될 수 있습니다.<a href="service_baggage.html" style="color:#ab7d55"> 수하물 안내</a></li>
+								<li style="color:#ab7d55">· 타항공사 연결 시나 공동운항의 경우 운항항공사 자체 수하물 규정이 적용 될 수 있으므로 사전에 확인하여 주시기 바랍니다.</li>
+							</ul>
+						</div>
+						<div><h4>운임 조건 및 규정</h4><br/><br/></div>
+						</div>
+						<div class="clearfix" style="width:100%;float:left; display:flex; justify-content:space-between">
+							<div style="width:48%; height:100%; background:#f7f7f7;">
+								<h4><font style="color:#ab7d55">01</font>&nbsp;서울 / 김포 -> 제주</h4>
+								<div class="rules"><br/><br/>
+									<h4 class="rules_name">운임종류</h4><br/><br/>
+									<div class="rules_content">정상운임 (Y)</div><br/>
+									
+									<h4 class="rules_content">개인할인</h4><br/><br/><br/>
+									<div>가능</div><br/>
+									
+									<h4 class="rules_content">소아할인</h4><br/><br/><br/>
+									<div>가능</div><br/>
+									
+									<h4 class="rules_content">마일리지 적립</h4><br/><br/><br/>
+									<div><font style="color:red">적립가능</font>(단,장애인소아 등 50%이상 개인할인적용 시 적립 불가)</div><br/>
+									
+									<h4 class="rules_content">구매 조건</h4><br/><br/><br/>
+									<div>아시아나항공 홈페이지(모바일)에서 구매 가능<br/>
+									(예약센터,지점,공항 카운터 불가)<br/>
+									왕복여정의 경우 최초 발권 시의 여정 순서대로 사용 원칙<br/>
+									<font style="color:red">※ 첫번째 여정 미사용시 두번째 여정 사용불가</font></div><br/>
+									
+									<h4 class="rules_content">항공권 유효기간</h4><br/><br/><br/>
+									<div>발행일로 부터 1년 </div><br/>
+									
+									<h4 class="rules_content">여정 변경</h4><br/><br/><br/>
+									<div>가능<br/><font style="color:red">왕복여정 중 사용후 남은 여정 변경 불가 </font></div><br/>
+									
+									<h4 class="rules_content">탑승 후 남은 여정 환불</h4><br/><br/><br/>
+									<div>왕복 여정 중 사용하고 남은 여정 환불 가능 </div><br/>
+									
+									<h4 class="rules_content">부분 변경</h4><br/><br/><br/>
+									<div>홈페이지/모바일에서 2명 이상 동일한 예약 번호로 구매하신 경우 일부<br/>
+									 인원만 변경 및 환불 불가<br/>(일부 인원 예약 변경 및 환불 원할 경우 예약센터 1588-8000번문의)</div><br/>
+									
+									<h4 class="rules_content">부분 환불</h4><br/><br/><br/>
+									<div><font style="color:red">특가운임이 포함된 왕복 항공권 부분 환불 불가</font><br/>
+									특가운임 포함안된 미사용 항공권 왕복여정의 부분환불 수수료 미징수<br/>
+									<font style="color:brown">(단, 부분환불 후 추가 환불시 미징수 된 환불수수료 소급적용)</font></div><br/>
+									
+									<h4 class="rules_content">환불 수수료</h4><br/><br/><br/>
+									<div><font style="color:blue">편도당 2,000원</font><br>
+									유효기간 만료일 이내 환불가능<br/>
+									최초 발행된 항공권 및 각 재발행된 항공권 중 하위클래스 기준의<br/> 환불수수료 징수<br/>
+									<font style="color:brown">(계좌이체 결제시 환불 수수료 부과)</font></div><br/>
+									
+									<h4 class="rules_content">예약부도위약금</h4><br/><br/><br/>
+									<div><font style="color:blue">편도당 8,000원</font></div><br/>
+									
+									<h4 class="rules_content">기타</h4><br/><br/><br/>
+									<div><font style="color:red">기상이나 항공사 사정으로 결항 시 미 탑승 항공권 자동 환불 불가</font><br/>
+									(홈페이지에서 환불 시 환불 수수료/예약부도위약금 부과,예약센터나<br/>
+									 지점,공항 카운터에서 환불 시 환불 수수료/예약부도위약금 면제) </div><br/>
+								</div>
+							</div>
+							
+							<div style="width:48%; height:100%; background:#f7f7f7;">
+								<h4><font style="color:#ab7d55">02</font>&nbsp; 제주 -> 서울 / 김포</h4>
+								<div class="rules"><br/><br/>
+									<h4 class="rules_name">운임종류</h4><br/><br/>
+									<div class="rules_content">정상운임 (Y)</div><br/>
+									
+									<h4 class="rules_content">개인할인</h4><br/><br/><br/>
+									<div>가능</div><br/>
+									
+									<h4 class="rules_content">소아할인</h4><br/><br/><br/>
+									<div>가능</div><br/>
+									
+									<h4 class="rules_content">마일리지 적립</h4><br/><br/><br/>
+									<div><font style="color:red">적립가능</font>(단,장애인소아 등 50%이상 개인할인적용 시 적립 불가)</div><br/>
+									
+									<h4 class="rules_content">구매 조건</h4><br/><br/><br/>
+									<div>아시아나항공 홈페이지(모바일)에서 구매 가능<br/>
+									(예약센터,지점,공항 카운터 불가)<br/>
+									왕복여정의 경우 최초 발권 시의 여정 순서대로 사용 원칙<br/>
+									<font style="color:red">※ 첫번째 여정 미사용시 두번째 여정 사용불가</font></div><br/>
+									
+									<h4 class="rules_content">항공권 유효기간</h4><br/><br/><br/>
+									<div>발행일로 부터 1년 </div><br/>
+									
+									<h4 class="rules_content">여정 변경</h4><br/><br/><br/>
+									<div>가능<br/><font style="color:red">왕복여정 중 사용후 남은 여정 변경 불가 </font></div><br/>
+									
+									<h4 class="rules_content">탑승 후 남은 여정 환불</h4><br/><br/><br/>
+									<div>왕복 여정 중 사용하고 남은 여정 환불 가능 </div><br/>
+									
+									<h4 class="rules_content">부분 변경</h4><br/><br/><br/>
+									<div>홈페이지/모바일에서 2명 이상 동일한 예약 번호로 구매하신 경우 일부<br/>
+									 인원만 변경 및 환불 불가<br/>(일부 인원 예약 변경 및 환불 원할 경우 예약센터 1588-8000번문의)</div><br/>
+									
+									<h4 class="rules_content">부분 환불</h4><br/><br/><br/>
+									<div><font style="color:red">특가운임이 포함된 왕복 항공권 부분 환불 불가</font><br/>
+									특가운임 포함안된 미사용 항공권 왕복여정의 부분환불 수수료 미징수<br/>
+									<font style="color:brown">(단, 부분환불 후 추가 환불시 미징수 된 환불수수료 소급적용)</font></div><br/>
+									
+									<h4 class="rules_content">환불 수수료</h4><br/><br/><br/>
+									<div><font style="color:blue">편도당 2,000원</font><br>
+									유효기간 만료일 이내 환불가능<br/>
+									최초 발행된 항공권 및 각 재발행된 항공권 중 하위클래스 기준의<br/> 환불수수료 징수<br/>
+									<font style="color:brown">(계좌이체 결제시 환불 수수료 부과)</font></div><br/>
+									
+									<h4 class="rules_content">예약부도위약금</h4><br/><br/><br/>
+									<div><font style="color:blue">편도당 8,000원</font></div><br/>
+									
+									<h4 class="rules_content">기타</h4><br/><br/><br/>
+									<div><font style="color:red">기상이나 항공사 사정으로 결항 시 미 탑승 항공권 자동 환불 불가</font><br/>
+									(홈페이지에서 환불 시 환불 수수료/예약부도위약금 부과,예약센터나<br/>
+									 지점,공항 카운터에서 환불 시 환불 수수료/예약부도위약금 면제) </div><br/>								
+								</div>
+							</div>
+							
+							
+				</div>
+				<div class="checkBoxes" style="float:left; width:100%;">
+								<ul>
+									<li>
+										<label >취소/환불/변경 관련 제약조건 및비용(수수료/위약금)을 포함한 운임규정을 확인하고 이에 동의합니다.</label>
+										<input type="checkbox">
+									</li>
+									<li>
+										<label>아시아나 수하물 규정및 타 항공사 공동운항편이 포함된 경우공동운항편 수하물 규정 을 확인하였으며 이에 동의합니다.</label>
+										<input type="checkbox">
+									</li>
+									<li>
+										<label>법적고지문 및 기내휴대 및 위탁수하물 운송 제한 물품 안내 국내운송약관 을 확인하였으며 이에 동의합니다.</label>
+										<input type="checkbox">
+									</li>
+								</ul>
+							</div>
+						<div style="width:97%; margin-top:20px;">
+							<button  class="buttons">예약취소</button>
+							<button  class="red_buttons">예약하기</button>
+						</div>
+						</div>
+			</div>
+			</section>
+		</div>	
+	</div>
+			 <footer>
+	<div id="footContainer">
+		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
+		<div class="snsPane">
+			<div class="snsBtn">
+				<img src="../IMG/icon/facebook_white.png"/>
+				<img src="../IMG/icon/facebook.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/instagram_white.png"/>
+				<img src="../IMG/icon/instagram.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/twitter_white.png"/>
+				<img src="../IMG/icon/twitter.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/youtube_white.png"/>
+				<img src="../IMG/icon/youtube.png"/>
+			</div>
+		</div>
+		<hr class="footHr"/>
+		<div class="footContent">
+			<div class="footCall">
+				
+				<b>고객센터</b><br/>080-0000-0000<br/>운영시간 | 오전 9시~오후 6시<br/>점심시간 | 오후 12시~오후 1시
+			</div>
+			
+			<div class="footInfo">
+				<b>가자에어</b> | 사업자번호 : 203-87-00612<br/>통신판매업신고번호 : 제 2012-서울구로-1560호<br/>
+				서울시 구로구 시흥대로 163길 33 주호타워 2층 가자항공(구로동 1129-1)<br/>
+				대표전화 : 02-837-9922<br/>
+				Copyright&copy; 주식회사가자에어. ALL RIGHTS RESERVED | 개인정보책임자 : 정운하
+			</div>
+		</div>
+	</div>
+</footer>
+</body>
+</html>
