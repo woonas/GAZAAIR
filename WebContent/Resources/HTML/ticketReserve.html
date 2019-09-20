@@ -361,11 +361,20 @@
 	
 	function getValue(){
 		var loc = document.getElementById("location");
- 		var location = loc.options[loc.selectedIndex].innerHTML; 
+ 		var location = loc.options[loc.selectedIndex].innerHTML;
+ 		var locationValue = loc.options[loc.selectedIndex].value;
+
 		var con = document.getElementById("country");
 		var country = con.options[con.selectedIndex].innerHTML
-		document.getElementById("internationalText").value = location+" "+country;
-		internationalSelcetClose();
+		var countryValue = con.options[con.selectedIndex].value;
+		
+		if(locationValue != 0 && countryValue != 0){
+			document.getElementById("internationalText").value = location+" "+country;
+			internationalSelcetClose();
+		}else{
+			alert("지역을 선택해주십시오")
+		}
+		
 	};
 
 </script>
