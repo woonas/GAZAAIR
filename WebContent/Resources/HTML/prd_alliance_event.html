@@ -46,6 +46,7 @@
 		height:130px;
 		background-color:#36f;
 	}
+	
 	.acbot{
 		width:780px;
 		height:520px;
@@ -63,6 +64,37 @@
 		width: 80%;
 		margin: 20px auto 10px;
 	}
+	.actImg{
+		width:220px;
+		height:85px;
+		line-height:115px;
+		background-color:#fff;
+		position:relative;
+		top:-36px;
+		left:500px;
+	}
+	.prdEpn{
+		font-size:1.2em;
+		color:#fff;
+		width:250px;
+		position:relative;
+		top:36px;
+		left:50px;
+	}
+	.cls{
+		width:50px;
+		height:50px;
+		position:relative;
+		left:700px;
+		top:30px;
+	}
+	.prdModal{
+		background-color:gray;
+		display:none;
+		position:absolute;
+		left:0px;
+		top:0px;
+	}
 </style>
 <script>
  	$(function(){
@@ -76,9 +108,39 @@
 					"top" : (($(window).height()-$("#allianceInfo"+num).outerHeight())/2+$(window).scrollTop())+"px",
 					"left" : (($(window).width()-$("#allianceInfo"+num).outerWidth())/2+$(window).scrollLeft())+"px"
 				});
+				
+				var imgHeight = $("#allianceInfo"+num+" div:first-child div:last-child img").height();
+				$("#allianceInfo"+num+" div:first-child div:last-child img").css("margin-top",(85-imgHeight)/2+"px");
+				var imgWidth = $("#allianceInfo"+num+" div:first-child div:last-child img").width();
+				$("#allianceInfo"+num+" div:first-child div:last-child img").css("margin-left",(220-imgWidth)/2+"px");
+				
+				var width = $(document).width();
+				var height = $(document).height();
+				
+				//화면을 가리는 레이어의 사이즈 조정 
+				$(".prdModal").width(width);
+				$(".prdModal").height(height);
+				
+				//화면을 가리는 레이어를 보여준다
+				$(".prdModal").fadeTo(100, 0.7);
+				
+				
+				$(".cls").on("click",function(){
+					$("#allianceInfo"+num).css("display","none");
+					$(".prdModal").css("display","none");
+				});
+				
+				//esc키 누르면 화면 잠김 해제 
+				$(document).keydown(function(event){
+					if(event.which=='27'){
+						$("#allianceInfo"+num).fadeOut(100);
+						$(".prdModal").fadeOut(100);
+					}
+				});
  			});
- 		}
-	});   
+  		}
+	});
+ 
 </script>
 </head>
 <body>
@@ -134,10 +196,11 @@
 		<p>코엑스 아쿠아리움<br/>입장요금 20%할인</p>
 	</div>
 </div>
+<div class="prdModal"></div>
 <div id="allianceInfo1">
 	<div class="actop">
-	<div><img src="../IMG/product_Img/g_logo.png"/></div>
-	<p>구트아카데미<br/>학원 수강료 10% 할인</p>
+	<div class="prdEpn"><p>구트아카데미<br/>학원 수강료 10% 할인</p></div>
+	<div class="actImg"><img src="../IMG/product_Img/g_logo.png"/></div>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -150,12 +213,13 @@
 			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
 			· 타 프로모션 및 제휴 할인과 중복 할인 불가
 		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
 	</div>
 </div>
 <div id="allianceInfo2">
 	<div class="actop">
-	<div><img src="../IMG/product_Img/c_logo.png"/></div>
-	<p>CGV 영화예매<br/>10%할인</p>
+	<div class="prdEpn"><p>CGV 영화예매<br/>10%할인</p></div>
+	<div class="actImg"><img src="../IMG/product_Img/c_logo.png"/></div>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -169,50 +233,52 @@
 			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
 			· 타 프로모션 및 제휴 할인과 중복 할인 불가
 		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
 	</div>
 </div>
 <div id="allianceInfo3">
 	<div class="actop">
-	<div><img src="../IMG/product_Img/m_logo.png"/></div>
-	<p>CGV 영화예매<br/>10%할인</p>
+	<div class="prdEpn"><p>국립현대미술관<br/>전시10%할인</p></div>
+	<div class="actImg"><img src="../IMG/product_Img/m_logo.png"/></div>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
 			<h4>제휴사 소개</h4>
-			· 지속적인 진화를 바탕으로 영화 관람환경뿐만 아니라 그 이상의 서비스와 감동을 전달하고, TOTAL LIFESTYLE을 선도하는 종합생활문화공간으로 도약합니다.<br/>
-			· CGV만이 제공할 수 있는 다양한 즐거움과 특별한 경험을 통해 고객의 Lifestyle을 풍요롭게 합니다.<br/>
-			· CGV는 선진화된 관람문화와 최고의 서비스로 고객에게 잊을 수 없는 감동을 선사합니다.<br/><br/>
+			· 국립현대 미술관은 한국의 근.현대미술과 국외 현대미술을 대표하는 우수한 미술작품을 소장 ∙ 전시하고 연구하는 국내유일의 국립미술관으로 
+			국내외 우수작품의 수집, 보존, 전시는 물론 미술 자료의 조사연구, 국제미술정보 교류 등으로 미술의 산 교육장으로 명실공히 종합 미술센터의 역할을 하고 있습니다.<br/><br/>
 			<h4>할인 혜택</h4>
-			· CGV 영화예매 10%할인<br/><br/>
+			· 일반회원 20% 할인<br/><br/>
 			<h4>이용 방법</h4>
 			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
 			· 타 프로모션 및 제휴 할인과 중복 할인 불가
 		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
 	</div>
 </div>
 <div id="allianceInfo4">
 	<div class="actop">
-	<div><img src="../IMG/product_Img/l_logo.png"/></div>
-	<p>CGV 영화예매<br/>10%할인</p>
+	<div class="prdEpn"><p>구트아카데미<br/>학원 수강료 10% 할인</p></div>
+	<div class="actImg"><img src="../IMG/product_Img/l_logo.png"/></div>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
 			<h4>제휴사 소개</h4>
-			· 지속적인 진화를 바탕으로 영화 관람환경뿐만 아니라 그 이상의 서비스와 감동을 전달하고, TOTAL LIFESTYLE을 선도하는 종합생활문화공간으로 도약합니다.<br/>
-			· CGV만이 제공할 수 있는 다양한 즐거움과 특별한 경험을 통해 고객의 Lifestyle을 풍요롭게 합니다.<br/>
-			· CGV는 선진화된 관람문화와 최고의 서비스로 고객에게 잊을 수 없는 감동을 선사합니다.<br/><br/>
+			· 테마파크, 박물관, 스포츠 시설, 호텔, 쇼핑 시설 및 기타 제반 생활 편의 시설로 구성된 복합 관광 단지인 세계 최대의 실내 테마파크 롯데월드 어드벤처에서 
+			남녀노소 온 가족이 함께 즐거운 시간을 보내시기 바랍니다.<br/><br/>
 			<h4>할인 혜택</h4>
-			· CGV 영화예매 10%할인<br/><br/>
+			· 자유이용권 20%할인<br/>
+			· 연간 회원권 25% 할인<br/><br/>
 			<h4>이용 방법</h4>
 			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
 			· 타 프로모션 및 제휴 할인과 중복 할인 불가
 		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
 	</div>
 </div>
 <div id="allianceInfo5">
 	<div class="actop">
-	<div><img src="../IMG/product_Img/s_logo.png"/></div>
-	<p>CGV 영화예매<br/>10%할인</p>
+	<div class="prdEpn"><p>구트아카데미<br/>학원 수강료 10% 할인</p></div>
+	<div class="actImg"><img src="../IMG/product_Img/s_logo.png"/></div>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -226,12 +292,13 @@
 			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
 			· 타 프로모션 및 제휴 할인과 중복 할인 불가
 		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
 	</div>
 </div>
 <div id="allianceInfo6">
 	<div class="actop">
-	<div><img src="../IMG/product_Img/cx_logo.jpg"/></div>
-	<p>CGV 영화예매<br/>10%할인</p>
+	<div class="prdEpn"><p>구트아카데미<br/>학원 수강료 10% 할인</p></div>
+	<div class="actImg"><img src="../IMG/product_Img/cx_logo.jpg"/></div>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -245,12 +312,13 @@
 			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
 			· 타 프로모션 및 제휴 할인과 중복 할인 불가
 		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
 	</div>
 </div>
 <div id="allianceInfo7">
 	<div class="actop">
-	<div><img src="../IMG/product_Img/g_logo.png"/></div>
-	<p>구트아카데미<br/>학원 수강료 10% 할인</p>
+	<div class="prdEpn"><p>구트아카데미<br/>학원 수강료 10% 할인</p></div>
+	<div class="actImg"><img src="../IMG/product_Img/g_logo.png"/></div>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -263,12 +331,13 @@
 			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
 			· 타 프로모션 및 제휴 할인과 중복 할인 불가
 		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
 	</div>
 </div>
 <div id="allianceInfo8">
 	<div class="actop">
-	<div><img src="../IMG/product_Img/c_logo.png"/></div>
-	<p>CGV 영화예매<br/>10%할인</p>
+	<div class="prdEpn"><p>구트아카데미<br/>학원 수강료 10% 할인</p></div>
+	<div class="actImg"><img src="../IMG/product_Img/c_logo.png"/></div>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -282,12 +351,13 @@
 			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
 			· 타 프로모션 및 제휴 할인과 중복 할인 불가
 		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
 	</div>
 </div>
 <div id="allianceInfo9">
 	<div class="actop">
-	<div><img src="../IMG/product_Img/m_logo.png"/></div>
-	<p>CGV 영화예매<br/>10%할인</p>
+	<div class="prdEpn"><p>구트아카데미<br/>학원 수강료 10% 할인</p></div>
+	<div class="actImg"><img src="../IMG/product_Img/m_logo.png"/></div>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -301,12 +371,13 @@
 			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
 			· 타 프로모션 및 제휴 할인과 중복 할인 불가
 		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
 	</div>
 </div>
 <div id="allianceInfo10">
 	<div class="actop">
-	<div><img src="../IMG/product_Img/l_logo.png"/></div>
-	<p>CGV 영화예매<br/>10%할인</p>
+	<div class="prdEpn"><p>구트아카데미<br/>학원 수강료 10% 할인</p></div>
+	<div class="actImg"><img src="../IMG/product_Img/l_logo.png"/></div>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -320,12 +391,13 @@
 			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
 			· 타 프로모션 및 제휴 할인과 중복 할인 불가
 		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
 	</div>
 </div>
 <div id="allianceInfo11">
 	<div class="actop">
-	<div><img src="../IMG/product_Img/s_logo.png"/></div>
-	<p>CGV 영화예매<br/>10%할인</p>
+	<div class="prdEpn"><p>구트아카데미<br/>학원 수강료 10% 할인</p></div>
+	<div class="actImg"><img src="../IMG/product_Img/s_logo.png"/></div>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -339,12 +411,13 @@
 			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
 			· 타 프로모션 및 제휴 할인과 중복 할인 불가
 		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
 	</div>
 </div>
 <div id="allianceInfo12">
 	<div class="actop">
-	<div><img src="../IMG/product_Img/cx_logo.jpg"/></div>
-	<p>CGV 영화예매<br/>10%할인</p>
+	<div class="prdEpn"><p>구트아카데미<br/>학원 수강료 10% 할인</p></div>
+	<div class="actImg"><img src="../IMG/product_Img/cx_logo.jpg"/></div>
 	</div>
 	<div class="acbot">
 		<div class="acbot1">
@@ -358,6 +431,7 @@
 			· 아시아나클럽 회원카드(모바일 카드 포함) 제시 시 현장 할인<br/>
 			· 타 프로모션 및 제휴 할인과 중복 할인 불가
 		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
 	</div>
 </div>
 <footer>
