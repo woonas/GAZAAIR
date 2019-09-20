@@ -5,29 +5,60 @@
 <title>가자에어 메인</title>
 <link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/index.css" type="text/css"/>
-<link rel="stylesheet" href="../../Vendor/vegas/vegas.min.css">
 <link rel="stylesheet" href="../../Vendor/jqueryUI/jquery-ui.min.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../JS/main.js"></script>
-<script src="../../Vendor/vegas/vegas.min.js"></script>
+<script src="../../Vendor/backstretch/jquery.backstretch.min.js"></script>
 <script src="../../Vendor/jqueryUI/jquery-ui.min.js"></script>
 <script>
 $(function(){
-	//배경이미지슬라이드 vegas
-	$('#main').vegas({
-		timer: false,
-	    slides: [
-	        { src: "../IMG/main/mainBg1.jpg" },
-	        { src: "../IMG/main/mainBg2.jpg" },
-	        { src: "../IMG/main/mainBg3.jpg" },
-	        { src: "../IMG/main/mainBg4.jpg" },
-	        { src: "../IMG/main/mainBg5.jpg" },
-	        { src: "../IMG/main/mainBg6.jpg" },
-	        { src: "../IMG/main/mainBg7.jpg" },
-	        { src: "../IMG/main/mainBg8.jpg" }
-	    ]
+	//배경이미지 슬라이더
+     $("#main").backstretch([
+        "../IMG/main/mainBg1.jpg",
+        "../IMG/main/mainBg2.jpg",
+        "../IMG/main/mainBg3.jpg",
+        "../IMG/main/mainBg4.jpg",
+        "../IMG/main/mainBg5.jpg",
+        "../IMG/main/mainBg6.jpg",
+        "../IMG/main/mainBg7.jpg",
+        "../IMG/main/mainBg8.jpg"
+        ], {
+          fade: 750,
+          duration: 4000
+      });
+      
+	//배경이미지슬라이더 컨트롤러
+	for(i=1; i<=8; i++){
+		$('.dotsWrap').append("<img src='../IMG/icon/control_dots.png'/>");
+	}
+	$('.playState').append("<img src='../IMG/icon/pause_blue.png' title='일시정지'/>");
+	$('.playState').append("<img src='../IMG/icon/play_blue.png' title='재생' style='display:none'/>");
+	$('.dotsWrap>img').on("click", function(){
+		for(i=1; i<=8; i++){
+			$(".dotsWrap>img").css("top", "-15px");
+			
+		}
+		$(this).css("top", "0");
 	});
 	
+	//플레이버튼, 일시중지버튼 변경
+	$('.playState').click(function(){
+		$(this).find('img').toggle();
+	});
+	$('.playState>img').click(function(){
+		if(this.title==="일시정지"){
+			$("#main").backstretch("pause");
+			console.log("일시정지");
+		}else{
+			$("#main").backstretch("resume");
+			console.log("시작");	
+		}
+	});
+	
+	
+	
+	
+	//select 기능구현
 	$(".selectFrm > p").click(function() {
 	    $(this).next("ul").toggle();
 	    return false;
@@ -77,17 +108,16 @@ $(function(){
 				$(".startDialog").dialog("close");
 			}
 		});
-		
-		
-	});
+	});//다이얼로그onclick
 	
-	
+
 });
 
 
 
 </script>
 </head>
+<body>
 <header>
 	<nav class="nav">
 		<div class="navContainer">
@@ -169,6 +199,11 @@ $(function(){
 	</nav>
 </header>
 <section id="main">
+	<!-- 슬라이더 컨트롤러 -->
+	<div class="slideControler">
+		<div class="dotsWrap"><div class="playState"></div></div>
+	</div>
+	<!-- 심플예약폼 -->
 	<div class="simple_reservation_wrap">
 		<div class="reservation_contents">
 			<div class="departure dialogOpen">출발지<img src="../IMG/icon/marker_black.png"/></div>
@@ -732,7 +767,11 @@ $(function(){
 			</ul>
 		</div>
 	</div>
+	
+	
+	
 </section>
+
 <section id="best">
 	베스트상품
 </section>
