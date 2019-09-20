@@ -118,3 +118,80 @@
 	text-align:center;
 	color:#fff;
 }
+
+/*-------------------------------------- recommend popup --------------------*/
+
+#rcmdPopup1, #rcmdPopup7, #rcmdPopup13{
+	width:800px;
+	height:500px;
+	background-image:url(../IMG/product_Img/jejudo.jpg);
+	background-size:800px 500px;
+	position:absolute;
+}
+#rcmdPopup2, #rcmdPopup8, #rcmdPopup14{
+	width:800px;
+	height:500px;
+	background-image:url(../IMG/product_Img/hanoi.jpg);
+	background-size:800px 500px;
+	position:absolute;
+}
+#rcmdPopup3, #rcmdPopup9, #rcmdPopup15{
+	width:800px;
+	height:500px;
+	background-image:url(../IMG/product_Img/hongkong.jpg);
+	background-size:800px 500px;
+	position:absolute;
+}
+#rcmdPopup4, #rcmdPopup10, #rcmdPopup16{
+	width:800px;
+	height:500px;
+	background-image:url(../IMG/product_Img/sanghai.jpg);
+	background-size:800px 500px;
+	position:absolute;
+}
+#rcmdPopup5, #rcmdPopup11, #rcmdPopup17{
+	width:800px;
+	height:500px;
+	background-image:url(../IMG/product_Img/palau.jpg);
+	background-size:800px 500px;
+	position:absolute;
+}
+#rcmdPopup6, #rcmdPopup12, #rcmdPopup18{
+	width:800px;
+	height:500px;
+	background-image:url(../IMG/product_Img/la.jpg);
+	background-size:800px 500px;
+	position:absolute;
+}
+#pTitle{
+	font-size:3em;
+	color:#fff;
+	text-align:center;
+	
+}
+#pTravel{
+	font-size:2em;
+	color:#fff;
+	text-align:center;
+}
+#pseat{
+	text-decoration:underline;
+	text-align:center;
+	font-size:1.7em;
+	color:#fff;
+	padding-bottom:100px;
+}
+#popTitle{padding-top:20px;}
+#pEpn{
+	text-align:center;
+	color:#fff;
+	padding-bottom:50px;
+	
+}
+#prdBtn{
+	width:180px;
+	color:#fff;
+	margin:auto;
+	text-align:center;
+	background-color:#81a1ff;
+}

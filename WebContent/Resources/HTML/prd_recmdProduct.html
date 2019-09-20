@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../CSS/product.css" type="text/css"/>
+<style>
+	#rcmdPopup1,
+	#rcmdPopup2,
+	#rcmdPopup3,
+	#rcmdPopup4,
+	#rcmdPopup5,
+	#rcmdPopup6,
+	#rcmdPopup7,
+	#rcmdPopup8,
+	#rcmdPopup9,
+	#rcmdPopup10,
+	#rcmdPopup11,
+	#rcmdPopup12,
+	#rcmdPopup13,
+	#rcmdPopup14,
+	#rcmdPopup15,
+	#rcmdPopup16,
+	#rcmdPopup17,
+	#rcmdPopup18{
+		display:none;
+	}
+	
+	.cls{
+		width:40px;
+		height:40px;
+		position:relative;
+		top:20px;
+		left:750px;
+	}
+	.prdModal{
+		background-color:gray;
+		display:none;
+		position:absolute;
+		left:0px;
+		top:0px;
+	}
+	
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+	$(function(){
+		var numOfImg = 18;
+		for(i = 1; i<=numOfImg; i++) {
+			$("#prdRcm"+i).on("click", function(){
+				var num = this.id.substring(6);
+				$("#rcmdPopup"+num).css("display","block");
+				$("#rcmdPopup"+num).css({
+					"top" : (($(window).height()-$("#rcmdPopup"+num).outerHeight())/2+$(window).scrollTop())+"px",
+					"left" : (($(window).width()-$("#rcmdPopup"+num).outerWidth())/2+$(window).scrollLeft())+"px"
+				});
+								
+				var width = $(document).width();
+				var height = $(document).height();
+				
+				//화면을 가리는 레이어의 사이즈 조정 
+				$(".prdModal").width(width);
+				$(".prdModal").height(height);
+				
+				//화면을 가리는 레이어를 보여준다
+				$(".prdModal").fadeTo(100, 0.7);
+								
+				$(".cls").on("click",function(){
+					$("#rcmdPopup"+num).css("display","none");
+					$(".prdModal").css("display","none");
+				});
+				
+				//esc키 누르면 화면 잠김 해제 
+				$(document).keydown(function(event){
+					if(event.which=='27'){
+						$("#rcmdPopup"+num).fadeOut(100);
+						$(".prdModal").fadeOut(100);
+					}
+				});
+			});
+		}
+	});
+
+</script>
+</head>
+<body>
+<div class="nav"></div>
+	<h3>추천상품</h3>
+<div class="content product-event">
+	<div id="prdRcm1">
+		<img src="../IMG/product_Img/jejudo.jpg" class="productImg"/>
+		<p class="event-destination">서울/김포 ＝＞ 제주<br/>KRW 19,500 ~ </p>
+	</div>
+	<div id="prdRcm2">
+		<img src="../IMG/product_Img/hanoi.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 하노이<br/>KRW 195,000 ~ </p>
+	</div>
+	<div id="prdRcm3">
+		<img src="../IMG/product_Img/hongkong.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 홍콩<br/>KRW 205,000 ~ </p>
+	</div>
+	<div id="prdRcm4">
+		<img src="../IMG/product_Img/sanghai.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 상하이<br/>KRW 350,500 ~ </p>
+	</div>
+	<div id="prdRcm5">
+		<img src="../IMG/product_Img/palau.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 팔라우<br/>KRW 756,000 ~ </p>
+	</div>
+	<div id="prdRcm6">
+		<img src="../IMG/product_Img/la.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 로스앤젤레스<br/>KRW 999,900 ~ </p>
+	</div>
+	<div id="prdRcm7">
+		<img src="../IMG/product_Img/jejudo.jpg" class="productImg"/>
+		<p class="event-destination">서울/김포 ＝＞ 제주<br/>KRW 19,500 ~ </p>
+	</div>
+	<div id="prdRcm8">
+		<img src="../IMG/product_Img/hanoi.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 하노이<br/>KRW 195,000 ~ </p>
+	</div>
+	<div id="prdRcm9">
+		<img src="../IMG/product_Img/hongkong.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 홍콩<br/>KRW 205,000 ~ </p>
+	</div>
+	<div id="prdRcm10">
+		<img src="../IMG/product_Img/sanghai.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 상하이<br/>KRW 350,500 ~ </p>
+	</div>
+	<div id="prdRcm11">
+		<img src="../IMG/product_Img/palau.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 팔라우<br/>KRW 756,000 ~ </p>
+	</div>
+	<div id="prdRcm12">
+		<img src="../IMG/product_Img/la.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 로스앤젤레스<br/>KRW 999,900 ~ </p>
+	</div>
+	<div id="prdRcm13">
+		<img src="../IMG/product_Img/jejudo.jpg" class="productImg"/>
+		<p class="event-destination">서울/김포 ＝＞ 제주<br/>KRW 19,500 ~ </p>
+	</div>
+	<div id="prdRcm14">
+		<img src="../IMG/product_Img/hanoi.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 하노이<br/>KRW 195,000 ~ </p>
+	</div>
+	<div id="prdRcm15">
+		<img src="../IMG/product_Img/hongkong.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 홍콩<br/>KRW 205,000 ~ </p>
+	</div>
+	<div id="prdRcm16">
+		<img src="../IMG/product_Img/sanghai.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 상하이<br/>KRW 350,500 ~ </p>
+	</div>
+	<div id="prdRcm17">
+		<img src="../IMG/product_Img/palau.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 팔라우<br/>KRW 756,000 ~ </p>
+	</div>
+	<div id="prdRcm18">
+		<img src="../IMG/product_Img/la.jpg" class="productImg"/>
+		<p class="event-destination">서울/인천 ＜＝＞ 로스앤젤레스<br/>KRW 999,900 ~ </p>
+	</div>
+</div>
+<div class="prdModal"></div>
+<div id="rcmdPopup1">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/김포발 제주행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup2">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/인천발 하노이행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup3">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/인천발 홍콩행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup4">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/인천발 상하이/푸동행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup5">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/인천발 팔라우행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup6">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/인천발 로스앤젤레스행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup7">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/김포발 제주행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup8">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/인천발 하노이행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup9">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/인천발 홍콩행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup10">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/인천발 상하이/푸동행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup11">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/인천발 팔라우행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup12">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/인천발 로스앤젤레스행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup13">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/김포발 제주행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup14">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/인천발 하노이행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup15">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/인천발 홍콩행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup16">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/인천발 상하이/푸동행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup17">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/인천발 팔라우행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<div id="rcmdPopup18">
+	<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	<div id="popTitle">
+		<h1 id="pTitle">추천상품 예매 준비✈</h1>
+	</div>
+	<div id="poptravel">
+		<h2 id="pTravel">서울/인천발 로스앤젤레스행 왕복</h2>
+	</div>
+	<div id="popSeat">
+		<h2 id="pseat">일반석</h2>
+	</div>
+	<div id="popexplain">
+		<h4 id="pEpn">전 단계에서 확인하신 운임은 해당하는 예약 클래스에 잔여 좌석이 있을 때만 구매 가능합니다.<br/>
+		따라서 선택 날짜에 따라 구매 가능 여부가 달라질 수 있습니다.
+		</h4>
+	</div>
+	<a href="#">
+	<div id="prdBtn">
+		<h2>예매하기</h2>
+	</div>
+	</a>
+</div>
+<footer>
+	<div id="footContainer">
+		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
+		<div class="snsPane">
+			<div class="snsBtn">
+				<img src="../IMG/icon/facebook_white.png"/>
+				<img src="../IMG/icon/facebook.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/instagram_white.png"/>
+				<img src="../IMG/icon/instagram.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/twitter_white.png"/>
+				<img src="../IMG/icon/twitter.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/youtube_white.png"/>
+				<img src="../IMG/icon/youtube.png"/>
+			</div>
+		</div>
+		<hr/>
+		<div class="footContent">
+			<div class="footCall">
+				
+				<b>고객센터</b><br/>080-0000-0000<br/>운영시간 | 오전 9시~오후 6시<br/>점심시간 | 오후 12시~오후 1시
+			</div>
+			
+			<div class="footInfo">
+				<b>가자에어</b> | 사업자번호 : 203-87-00612<br/>통신판매업신고번호 : 제 2012-서울구로-1560호<br/>
+				서울시 구로구 시흥대로 163길 33 주호타워 2층 가자항공(구로동 1129-1)<br/>
+				대표전화 : 02-837-9922<br/>
+				Copyright&copy; 주식회사가자에어. ALL RIGHTS RESERVED | 개인정보책임자 : 정운하
+			</div>
+		</div>
+	</div>
+</footer>
+</body>
+</html>

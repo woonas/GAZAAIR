@@ -6,7 +6,37 @@
 <link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/product.css" type="text/css"/>
 <style>
-	#prdPopup1{display:none;}
+	#prdPopup1, 
+	#prdPopup2, 
+	#prdPopup3, 
+	#prdPopup4, 
+	#prdPopup5, 
+	#prdPopup6, 
+	#prdPopup7, 
+	#prdPopup8, 
+	#prdPopup9, 
+	#prdPopup10, 
+	#prdPopup11,
+	#prdPopup12,
+	#prdPopup13,
+	#prdPopup14,
+	#prdPopup15,
+	#prdPopup16,
+	#prdPopup17,
+	#prdPopup18{
+		display:none;
+	}
+	.cls{
+		position:absolute;
+		left:520px;
+	}
+	.prdModal{
+		background-color:gray;
+		display:none;
+		position:absolute;
+		left:0px;
+		top:0px;
+	}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
@@ -20,6 +50,30 @@
 				$("#prdPopup"+num).css({
 					"top" : (($(window).height()-$("#prdPopup"+num).outerHeight())/2+$(window).scrollTop())+"px",
 					"left" : (($(window).width()-$("#prdPopup"+num).outerWidth())/2+$(window).scrollLeft())+"px"
+				});
+								
+				var width = $(document).width();
+				var height = $(document).height();
+				
+				//화면을 가리는 레이어의 사이즈 조정 
+				$(".prdModal").width(width);
+				$(".prdModal").height(height);
+				
+				//화면을 가리는 레이어를 보여준다
+				$(".prdModal").fadeTo(100, 0.7);
+				
+				
+				$(".cls").on("click",function(){
+					$("#prdPopup"+num).css("display","none");
+					$(".prdModal").css("display","none");
+				});
+				
+				//esc키 누르면 화면 잠김 해제 
+				$(document).keydown(function(event){
+					if(event.which=='27'){
+						$("#prdPopup"+num).fadeOut(100);
+						$(".prdModal").fadeOut(100);
+					}
 				});
 			});
 		}
@@ -105,6 +159,7 @@
 		<p class="event-destination">서울/인천 ＜＝＞ 로스앤젤레스<br/>KRW 999,900 ~ </p>
 	</div>
 </div>
+<div class="prdModal"></div>
 <div class="prdContent" id="prdPopup1">
 	<div class="route">
 		<div class="stt">
@@ -118,8 +173,8 @@
 			<p>CJU</p>
 			<p>제주</p>
 		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
 	</div>
-	
 	<a href="#">
 	<div class="pricebar1">
 		<div class="pbDate"><p>2019.10</p></div>
@@ -148,6 +203,789 @@
 	<div class="pricebar5">
 		<div class="pbDate"><p>2020.02</p></div>
 		<div class="pbPrice"><p>35,500 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup2">
+	<div class="route">
+		<div class="stt">
+			<p>ICN</p>
+			<p>서울/인천</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>HAN</p>
+			<p>하노이</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>316,000 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>316,000 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>346,000 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>346,000 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>526,000 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup3">
+	<div class="route">
+		<div class="stt">
+			<p>ICN</p>
+			<p>서울/인천</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>HKG</p>
+			<p>홍콩</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>241,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>241,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>271,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>271,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>315,500 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup4">
+	<div class="route">
+		<div class="stt">
+			<p>ICN</p>
+			<p>서울/인천</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>PVG</p>
+			<p>상하이/푸동</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>339,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>419,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>419,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>535,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>535,500 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup5">
+	<div class="route">
+		<div class="stt">
+			<p>ICN</p>
+			<p>서울/인천</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>ROR</p>
+			<p>팔라우</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>
+	
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>1,019,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>727,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>727,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>835,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>835,500 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup6">
+	<div class="route">
+		<div class="stt">
+			<p>ICN</p>
+			<p>서울/인천</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>LAX</p>
+			<p>로스앤젤레스</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>1,119,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>1,119,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>1,267,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>1,267,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>735,500 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup7">
+	<div class="route">
+		<div class="stt">
+			<p>GMP</p>
+			<p>서울/김포</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>CJU</p>
+			<p>제주</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>19,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>27,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>27,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>35,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>35,500 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup8">
+	<div class="route">
+		<div class="stt">
+			<p>ICN</p>
+			<p>서울/인천</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>HAN</p>
+			<p>하노이</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>316,000 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>316,000 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>346,000 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>346,000 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>526,000 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup9">
+	<div class="route">
+		<div class="stt">
+			<p>ICN</p>
+			<p>서울/인천</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>HKG</p>
+			<p>홍콩</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>241,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>241,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>271,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>271,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>315,500 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup10">
+	<div class="route">
+		<div class="stt">
+			<p>ICN</p>
+			<p>서울/인천</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>PVG</p>
+			<p>상하이/푸동</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>339,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>419,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>419,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>535,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>535,500 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup11">
+	<div class="route">
+		<div class="stt">
+			<p>ICN</p>
+			<p>서울/인천</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>ROR</p>
+			<p>팔라우</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>	
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>1,019,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>727,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>727,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>835,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>835,500 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup12">
+	<div class="route">
+		<div class="stt">
+			<p>ICN</p>
+			<p>서울/인천</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>LAX</p>
+			<p>로스앤젤레스</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>	
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>1,119,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>1,119,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>1,267,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>1,267,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>735,500 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup13">
+	<div class="route">
+		<div class="stt">
+			<p>GMP</p>
+			<p>서울/김포</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>CJU</p>
+			<p>제주</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>	
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>19,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>27,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>27,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>35,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>35,500 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup14">
+	<div class="route">
+		<div class="stt">
+			<p>ICN</p>
+			<p>서울/인천</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>HAN</p>
+			<p>하노이</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>316,000 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>316,000 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>346,000 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>346,000 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>526,000 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup15">
+	<div class="route">
+		<div class="stt">
+			<p>ICN</p>
+			<p>서울/인천</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>HKG</p>
+			<p>홍콩</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>241,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>241,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>271,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>271,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>315,500 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup16">
+	<div class="route">
+		<div class="stt">
+			<p>ICN</p>
+			<p>서울/인천</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>PVG</p>
+			<p>상하이/푸동</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>339,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>419,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>419,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>535,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>535,500 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup17">
+	<div class="route">
+		<div class="stt">
+			<p>ICN</p>
+			<p>서울/인천</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>ROR</p>
+			<p>팔라우</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>1,019,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>727,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>727,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>835,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>835,500 ~ </p></div>
+	</div>
+	</a>
+</div>
+<div class="prdContent" id="prdPopup18">
+	<div class="route">
+		<div class="stt">
+			<p>ICN</p>
+			<p>서울/인천</p>
+		</div>
+		<div class="mid">
+			<p>● ------------------✈------------------ ●</p>
+		</div>
+		<div class="arv">
+			<p>LAX</p>
+			<p>로스앤젤레스</p>
+		</div>
+		<div class="cls"><img src="../IMG/icon/close_button.png"/></div>
+	</div>
+	<a href="#">
+	<div class="pricebar1">
+		<div class="pbDate"><p>2019.10</p></div>
+		<div class="pbPrice"><p>1,119,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar2">
+		<div class="pbDate"><p>2019.11</p></div>
+		<div class="pbPrice"><p>1,119,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar3">
+		<div class="pbDate"><p>2019.12</p></div>
+		<div class="pbPrice"><p>1,267,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar4">
+		<div class="pbDate"><p>2020.01</p></div>
+		<div class="pbPrice"><p>1,267,500 ~ </p></div>
+	</div>
+	</a>
+	<a href="#">
+	<div class="pricebar5">
+		<div class="pbDate"><p>2020.02</p></div>
+		<div class="pbPrice"><p>735,500 ~ </p></div>
 	</div>
 	</a>
 </div>
