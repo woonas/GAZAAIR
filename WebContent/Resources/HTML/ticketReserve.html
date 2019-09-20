@@ -9,7 +9,7 @@
 	#all{ 
 		max-width:1200px;
 		margin:0 auto;
-		height:2000px;
+		height:1600px;
 		}
 	#nav{
 		background-color:gray;
@@ -24,7 +24,7 @@
 		float:left
 		}
 	#checkDiv{
-		width:350px;
+		width:400px;
 		height:40px;
 		font-size:20px;
 		float:left;
@@ -208,9 +208,162 @@
 		height:20px;
 		vertical-align:middle
 		}
+	#internationalDiv{
+		width:220px;
+		height:80px;
+		float:left;
+		padding:20px
+		}
+	#internationalText{
+		width:200px;
+		height:60px;
+		font-size:20px;
+		background-color:lightgray;
+		color:gray;
+		padding-left:10px;
+		}
+	#internationalButton{
+		width:150px;
+		height:60px;
+		background-color:#3864ea;
+		margin-top:20px;
+		margin-left:10px;
+		font-size:20px;
+		color:white;
+		border-radius:20px;
+		border:none;
+		cursor:pointer
+		}
+	#buttonDiv{
+		float:left
+		}
+	#telDiv{
+		width:220px;
+		height:80px;
+		float:left;
+		padding:20px
+		}
+	#telText{
+		width:200px;
+		height:60px;
+		font-size:20px;
+		background-color:lightgray;
+		color:gray;
+		padding-left:10px;
+		}
+	#payAttention{
+		width:1200px;
+		height:60px;
+		font-size:30px;
+		text-align:center;
+		margin:50px 0;
+		}
+	#payAttentionContent{
+		width:1200px;
+		height:300px;
+		margin-top:10px;
+		background-color:lightgray
+		}
+	#modal{
+		width:100%;
+		height:2000px;
+		position:absolute;
+		left:0;
+		top:0;
+		background-color:gray;
+		opacity:0.5;
+		display:none;
+		}
+	#internationalSelect{
+		width:500px;
+		height:350px;
+		position:absolute;
+		background-color:white;
+		display:none;
+		}
+	#internationalSelect>div{
+		margin:20px auto 0;
+		width:430px;
+		height:230px;
+		}
+	#internationalSelectText{
+		width:150px;
+		height:50px;
+		font-size:30px;
+		font-weight:bold;
+		float:left
+		}
+	#close{
+		width:50px;
+		height:50px;
+		font-size:30px;
+		font-weight:bold;
+		float:right;
+		cursor:pointer
+		}
+	#internationalSelectContent{
+		width:380px;
+		height:100px;
+		float:left;
+		margin-left:30px;
+		}
+	.locationCountry{
+		width:180px;
+		height:40px;
+		font-size:15px;
+		background-color:lightgray;
+		color:gray;
+		margin:10px 10px;
+		}
+	#locationCheckButton{
+		width:150px;
+		height:60px;
+		background-color:#3864ea;
+		font-size:20px;
+		color:white;
+		border-radius:20px;
+		border:none;
+		cursor:pointer
+		}
+	#locationCheckButtonDiv{
+		text-align:center
+		}
 </style>
+<script>
+	function modalAndIntertional(){
+		document.getElementById("modal").style.display="block"
+		
+		var winWidth = window.innerWidth/2
+		var winHeight = window.innerHeight/2
+		
+		console.log(winWidth);
+		
+		document.getElementById("internationalSelect").style.left = winWidth-250+"px"
+		document.getElementById("internationalSelect").style.top = winHeight-200+"px"
+		document.getElementById("internationalSelect").style.display ="block"
+		document.documentElement.scrollTop =  winHeight+200+"px"
+		
+	};
+	function resizeModal(){
+		
+		var winWidth = window.innerWidth/2
+		var winHeight = window.innerHeight/2
+		
+		document.getElementById("internationalSelect").style.left = winWidth-250+"px"
+		document.getElementById("internationalSelect").style.top = winHeight-200+"px"
+		
+	};
+	function internationalSelcetClose(){
+		document.getElementById("internationalSelect").style.display = "none"
+		document.getElementById("modal").style.display="none"
+		
+	};
+	
+	function 
+
+</script>
 </head>
-<body>
+<body onresize="resizeModal()">
 <div id="nav"></div>
 <div id="all">
 	<div><h3>탑승자 정보</h3></div>
@@ -266,13 +419,76 @@
 					<input type="checkbox" name="email" value="email" id="emailCheck"/>&nbsp;&nbsp;이메일 항공권 수신동의</div>
 				</div>
 			<div class="contactContent">
-				<div id="emailTextDiv"><input type="text" name="emailText" value="이메일" id="emailText"/></div>
-			
-			
+				<div id="internationalDiv"><input type="text" name="internationalText" value="국제 번호" id="internationalText"/></div>
+				<div id="buttonDiv"><input type="button" name="internationalButton" value="국번선택" id="internationalButton" onclick="modalAndIntertional()"/></div>
+				<div id="telDiv"><input type="text" name="telText" value="전화 번호" id="telText"/></div>
 			</div>	
 		</div>
 	</div>
+	<div id="payAttention">유의 사항</div>
+	<div id="payAttentionContent">유의 사항</div>
+	<div id="modal">
+	</div>
+	<div id="internationalSelect">
+		<div>
+			<div id="internationalSelectText">국번선택</div>
+			<div id="close" onclick="internationalSelcetClose()">X</div>
+			<div id="internationalSelectContent">
+				<ul>
+					<li>입력하고자 하는 국번의 지역 및 나라를 선택하시기 바랍니다.
+					<li>선택 후, 확인 클릭 시 해당 국번이 자동으로 입력됩니다.
+				</ul>
+			</div>
+			<select name="location" class="locationCountry">
+				<option value="not">지역 선택</option>
+				<option value="newYork">뉴욕</option>
+			</select>
+			<select name="country" class="locationCountry">
+				<option value="not">나라/지역 선택</option>
+				<option value="USA">미국</option>
+			</select>
+		</div>
+		<hr/>
+		<div id="locationCheckButtonDiv"><input type="button" value="확인" name="locationCheckButton" id="locationCheckButton" onclick="internationalSelcetClose()"/></div>
 	
+	</div>
 </div>
+<footer>
+	<div id="footContainer">
+		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
+		<div class="snsPane">
+			<div class="snsBtn">
+				<img src="../IMG/icon/facebook_white.png"/>
+				<img src="../IMG/icon/facebook.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/instagram_white.png"/>
+				<img src="../IMG/icon/instagram.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/twitter_white.png"/>
+				<img src="../IMG/icon/twitter.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/youtube_white.png"/>
+				<img src="../IMG/icon/youtube.png"/>
+			</div>
+		</div>
+		<hr class="footHr"/>
+		<div class="footContent">
+			<div class="footCall">
+				
+				<b>고객센터</b><br/>080-0000-0000<br/>운영시간 | 오전 9시~오후 6시<br/>점심시간 | 오후 12시~오후 1시
+			</div>
+			
+			<div class="footInfo">
+				<b>가자에어</b> | 사업자번호 : 203-87-00612<br/>통신판매업신고번호 : 제 2012-서울구로-1560호<br/>
+				서울시 구로구 시흥대로 163길 33 주호타워 2층 가자항공(구로동 1129-1)<br/>
+				대표전화 : 02-837-9922<br/>
+				Copyright&copy; 주식회사가자에어. ALL RIGHTS RESERVED | 개인정보책임자 : 정운하
+			</div>
+		</div>
+	</div>
+</footer>
 </body>
 </html>
