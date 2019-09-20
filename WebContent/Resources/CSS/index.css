@@ -27,7 +27,7 @@
 	margin-left:10px;
 	width: 18px;
 }
-.tripLoc{
+.dialogOpen{
 	height: 82px;
 	font-size:230%;
 	line-height: 82px;
@@ -38,16 +38,16 @@
 	line-height: 62px;
 }
 
-.tripType {
+.selectFrm {
 	position:relative;
 	line-height:40px;
 	text-align:left;
 	font-size:140%;
 	margin-top:25%;
 }
-.tripType img{
+.selectFrm img{
 }
-.tripType > p {
+.selectFrm > p {
 	display:block;
 	padding:0 8px; 
 	overflow:hidden;
@@ -58,12 +58,12 @@
 	background-size: 10%;
 	border-bottom: 2px solid #555;
 }
-.tripType > p:after,
-.tripType > ul > li:first-child:after {
+.selectFrm > p:after,
+.selectFrm > ul > li:first-child:after {
 	display:block; 
 	float:right;
 }
-.tripType > ul {
+.selectFrm > ul {
 	position:absolute; 
 	width:100%; 
 	top:1px; 
@@ -73,13 +73,15 @@
 	border-left: 1px solid #ccc;
 	border-right: 1px solid #ccc;
 	border-top: 2px solid #555;
+	
 }
-.tripType li {
+.selectFrm li {
 	cursor:pointer; 
 	padding:0 8px;
 	border-bottom:1px solid #ccc; 
+	z-index:9999;
 }
-.tripType li:hover{
+.selectFrm li:hover{
 	background-color: #ccc;
 }
 .simple_reservation_submit{
@@ -93,12 +95,33 @@
 	margin-top:20px;
 	cursor: pointer;
 }
-
-
-
-
-
-
+/*출발지,도착지 다이얼로그*/
+.dialogOpen{
+	cursor: pointer;
+	white-space:nowrap;
+}
+.startDialog {
+	overflow-x:hidden !important;
+}
+.startDialog>h2 {
+	text-align: center;
+	margin: 10px 0;
+}
+.startDialog>h4 {
+	margin-bottom: 10px;
+}
+.ui-menu {
+	width:200px;
+	line-height: 40px;
+	}
+.locMenu{
+	border:none !important;
+}
+.locMenu>li>ul{
+	border:none !important;
+	width:100%;
+	top:90px !important;
+}
 
 
 
