@@ -6,10 +6,14 @@
 <link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/index.css" type="text/css"/>
 <link rel="stylesheet" href="../../Vendor/jqueryUI/jquery-ui.min.css" type="text/css"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="../JS/main.js"></script>
 <script src="../../Vendor/backstretch/jquery.backstretch.min.js"></script>
 <script src="../../Vendor/jqueryUI/jquery-ui.min.js"></script>
+<script src="../../Vendor/bxSlider/jquery.bxslider.min.js"></script>
+<link href="../../Vendor/bxSlider/jquery.bxslider.css" rel="stylesheet" />
 <script>
 $(function(){
 	//배경이미지 슬라이더
@@ -30,13 +34,20 @@ $(function(){
 	//배경이미지슬라이더 컨트롤러
 	for(i=1; i<=8; i++){
 		$('.dotsWrap').append("<img src='../IMG/icon/control_dots.png'/>");
-	}
+	};
+	$(window).on("backstretch.after", function (e, instance, index) {
+		for(i=1; i<=8; i++){
+			$(".dotsWrap>img").css("top", "-15px");
+		}
+		$('.dotsWrap>img').eq(index).css("top", "0");
+	});
 	$('.playState').append("<img src='../IMG/icon/pause_blue.png' title='일시정지'/>");
 	$('.playState').append("<img src='../IMG/icon/play_blue.png' title='재생' style='display:none'/>");
 	$('.dotsWrap>img').on("click", function(){
+		var idx = $(this).index();
+		$("#main").backstretch("show", idx-1);
 		for(i=1; i<=8; i++){
 			$(".dotsWrap>img").css("top", "-15px");
-			
 		}
 		$(this).css("top", "0");
 	});
@@ -48,15 +59,10 @@ $(function(){
 	$('.playState>img').click(function(){
 		if(this.title==="일시정지"){
 			$("#main").backstretch("pause");
-			console.log("일시정지");
 		}else{
 			$("#main").backstretch("resume");
-			console.log("시작");	
 		}
 	});
-	
-	
-	
 	
 	//select 기능구현
 	$(".selectFrm > p").click(function() {
@@ -109,16 +115,55 @@ $(function(){
 			}
 		});
 	});//다이얼로그onclick
+	/////////////////////////////////////////////////////////////////////
+	//section best
+	/////////////////////////////////////////////////////////////////////
+	$(".bestBanner").bxSlider({
+			mode : 'horizontal'//'horizontal', 'vertical', 'fade'
+			,slideWidth : 1200 //슬라이드 폭
+			,slideHeight : 400 //슬라이드 높이
+			,speed: 1000 //전환속도
+			,auto : false //자동시작(true, false)
+			,captions : true //title 속성에 있는 문자열을 설명으로 표시하기
+			,autoControls : false //정지/ 재생 컨트롤을 보여줌 = true, false : 안보임
+			,pager: false
+			,useCSS : true// css의 easing 사용여부(true, false)
+			,infiniteLoop : true //반복여부 : true, false
+			,adaptiveHeight : true // 이미지 크기에 따라 높이 조절여부
+			,hideControlOnEnd : true //처음과 끝에 컨트롤 표시 여부 : infiniteLoop false
+			,maxSlides: 4 // 표시되는 배너 숫자
+			,moveSlides:1 // 1개씩 이동
+			,slideWidth: 300 //개별배너의 좌우폭
+			,slideMargin: 0 //배너간의 간격
+			,autoHover:true //오버되어있을때 슬라이딩이 멈춤
+	});
+	$(".eventBanner").bxSlider({
+		mode : 'horizontal'//'horizontal', 'vertical', 'fade'
+		,slideWidth : 1200 //슬라이드 폭
+		,slideHeight : 400 //슬라이드 높이
+		,speed: 1000 //전환속도
+		,auto : false //자동시작(true, false)
+		,captions : true //title 속성에 있는 문자열을 설명으로 표시하기
+		,autoControls : false //정지/ 재생 컨트롤을 보여줌 = true, false : 안보임
+		,pager: false
+		,useCSS : true// css의 easing 사용여부(true, false)
+		,infiniteLoop : true //반복여부 : true, false
+		,adaptiveHeight : true // 이미지 크기에 따라 높이 조절여부
+		,hideControlOnEnd : true //처음과 끝에 컨트롤 표시 여부 : infiniteLoop false
+		,maxSlides: 4 // 표시되는 배너 숫자
+		,moveSlides:1 // 1개씩 이동
+		,slideWidth: 300 //개별배너의 좌우폭
+		,slideMargin: 0 //배너간의 간격
+		,autoHover:true //오버되어있을때 슬라이딩이 멈춤
+	});
 	
-
+	
 });
-
-
 
 </script>
 </head>
 <body>
-<header>
+<header id="header">
 	<nav class="nav">
 		<div class="navContainer">
 			<ul class="navMenu">
@@ -197,6 +242,9 @@ $(function(){
 			<button class="translator">EN</button>
 		</div>
 	</nav>
+	<div class="topBtn" title="맨 위로 이동">
+		<a href="#header"><img src="../IMG/logo/logo_top.png"/></a>
+	</div>
 </header>
 <section id="main">
 	<!-- 슬라이더 컨트롤러 -->
@@ -206,15 +254,15 @@ $(function(){
 	<!-- 심플예약폼 -->
 	<div class="simple_reservation_wrap">
 		<div class="reservation_contents">
-			<div class="departure dialogOpen">출발지<img src="../IMG/icon/marker_black.png"/></div>
+			<div class="departure dialogOpen" title="출발지를 선택하세요">출발지<img src="../IMG/icon/marker_black.png"/></div>
 			<div class="tripDate">출발일</div>
 		</div>
 		<div class="reservation_contents">
-			<div class="arrival dialogOpen">도착지<img src="../IMG/icon/marker_black.png"/></div>
+			<div class="arrival dialogOpen" title="도착지를 선택하세요.">도착지<img src="../IMG/icon/marker_black.png"/></div>
 			<div class="tripDate">귀국일</div>
 		</div>
 		<div class="reservation_contents">
-			<div class="tripType selectFrm">
+			<div class="tripType selectFrm" title="여정 종류를 선택하세요.">
 				<p>왕복 여행</p>
 				<ul>
 					<li>왕복 여행</li>
@@ -224,7 +272,7 @@ $(function(){
 			</div>
 		</div>
 		<div class="reservation_contents">
-			<div class="passenger selectFrm">
+			<div class="passenger selectFrm" title="탑승 인원을 선택하세요.">
 				<p>승객 1명</p>
 				<ul>
 					<li>승객 1명</li>
@@ -767,21 +815,174 @@ $(function(){
 			</ul>
 		</div>
 	</div>
-	
-	
-	
 </section>
 
 <section id="best">
-	베스트상품
+	<div>
+		<div><p>베스트 상품</p><a href="prd_BestProduct.html">&nbsp;베스트상품 전체보기 +&nbsp;</a></div>
+		<div class="bestBannerWrap">
+			<ul class="bestBanner">
+				<li><a href="prd_BestProduct.html">
+					<img src='../IMG/product_Img/hanoi.jpg' title="서울/인천 ＜＝＞ 하노이 KRW 195,000 ~"/></a>
+				</li>
+				<li><a href="prd_BestProduct.html">
+					<img src='../IMG/product_Img/hongkong.jpg' title="서울/인천 ＜＝＞ 홍콩 KRW 205,000 ~"/></a>
+				</li>
+				<li><a href="prd_BestProduct.html">
+					<img src='../IMG/product_Img/jejudo.jpg' title="서울/김포 ＝＞ 제주 KRW 19,500 ~"/></a>
+				</li>
+				<li><a href="prd_BestProduct.html">
+					<img src='../IMG/product_Img/palau.jpg' title="서울/인천 ＜＝＞ 팔라우 KRW 756,000 ~"/></a>
+				</li>
+				<li><a href="prd_BestProduct.html">
+					<img src='../IMG/product_Img/sanghai.jpg' title="서울/인천 ＜＝＞ 하노이 KRW 195,000 ~"/></a>
+				</li>
+				<li><a href="prd_BestProduct.html">
+					<img src='../IMG/product_Img/hanoi.jpg' title="서울/인천 ＜＝＞ 하노이 KRW 195,000 ~"/></a>
+				</li>
+				<li><a href="prd_BestProduct.html">
+					<img src='../IMG/product_Img/hongkong.jpg' title="서울/인천 ＜＝＞ 홍콩 KRW 205,000 ~"/></a>
+				</li>
+				<li><a href="prd_BestProduct.html">
+					<img src='../IMG/product_Img/jejudo.jpg' title="서울/김포 ＝＞ 제주<br/>KRW 19,500 ~"/></a>
+				</li>
+			</ul>
+		</div>
+	</div>
 </section>
-<section id="new">
-	신상품
+<section id="event">
+	<div>
+		<div><p>이벤트</p><a href="prd_alliance_event.html">&nbsp;진행중인 이벤트 전체보기 +&nbsp;</a></div>
+		<div class="eventBannerWrap">
+			<ul class="eventBanner">
+				<li><a href="prd_alliance_event.html">
+					<img src='../IMG/event/event1.jpeg' title="가자에어 X 스무디킹 할인 제휴 기념 이벤트"/></a>
+				</li>
+				<li><a href="prd_alliance_event.html">
+					<img src='../IMG/event/event2.jpeg' title="KB국민카드 결제 금액의 5%, 돌려드리는 Special"/></a>
+				</li>
+				<li><a href="prd_alliance_event.html">
+					<img src='../IMG/event/event3.jpeg' title="나의 해외여행 동반자 My Trip 카드 이벤트"/></a>
+				</li>
+				<li><a href="prd_alliance_event.html">
+					<img src='../IMG/event/event4.jpeg' title="뉴욕의 낮과 밤을 가자에어와 함께"/></a>
+				</li>
+				<li><a href="prd_alliance_event.html">
+					<img src='../IMG/event/event5.jpeg' title="AJ렌터카 마일리지 더블적립 이벤트"/></a>
+				</li>
+				<li><a href="prd_alliance_event.html">
+					<img src='../IMG/event/event6.jpeg' title="안녕, 몽골!, 반가워, 골드! 우수회원 체험 이벤트"/></a>
+				</li>
+			</ul>
+		</div>
+	</div>
 </section>
 <section id="info">
-	<div id="notice">공지사항</div>
-	<div id="review">후기게시판</div>
+	<div id="infoWrap">
+		<div id="notice">
+			<p>공지사항</p>
+			<table class="table">
+				<thead>
+					<tr>
+						<td><a href="notice.html">더 보기</a></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a href="#">[공지] 제 13호 태풍 '링링'으로 인한 국제선 결항 안내</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">[공지] 제 13호 태풍 '링링'으로 인한 국내선 결항 안내</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">[공지] KB국민카드 서비스 일시중단 안내</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">[국내선] 추석연휴 기간 김포-부산(GMP-PUS) 노 ...</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">[국제선] 청주-타이베이(CJJ-TPE) 운항시간 변경 ...</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">2019년 9월 신용카드 할부 서비스 안내</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">[공지] 말레이시아 출국세 부과 안내 (2019.09.01~)</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="review">
+			<p>고객의말씀</p>
+			<table class="table">
+				<thead>
+					<tr>
+						<td><a href="#">더 보기</a></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a href="#">[공지] 제 13호 태풍 '링링'으로 인한 국제선 결항 안내</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">[공지] 제 13호 태풍 '링링'으로 인한 국내선 결항 안내</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">[공지] KB국민카드 서비스 일시중단 안내</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">[국내선] 추석연휴 기간 김포-부산(GMP-PUS) 노 ...</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">[국제선] 청주-타이베이(CJJ-TPE) 운항시간 변경 ...</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">2019년 9월 신용카드 할부 서비스 안내</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">[공지] 말레이시아 출국세 부과 안내 (2019.09.01~)</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </section>
-
+<footer>
+	<div id="footContainer">
+		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
+		<div class="snsPane">
+			<div class="snsBtn">
+				<img src="../IMG/icon/facebook_white.png"/>
+				<img src="../IMG/icon/facebook.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/instagram_white.png"/>
+				<img src="../IMG/icon/instagram.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/twitter_white.png"/>
+				<img src="../IMG/icon/twitter.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/youtube_white.png"/>
+				<img src="../IMG/icon/youtube.png"/>
+			</div>
+		</div>
+		<hr class="footHr"/>
+		<div class="footContent">
+			<div class="footCall">
+				
+				<b>고객센터</b><br/>080-0000-0000<br/>운영시간 | 오전 9시~오후 6시<br/>점심시간 | 오후 12시~오후 1시
+			</div>
+			
+			<div class="footInfo">
+				<b>가자에어</b> | 사업자번호 : 203-87-00612<br/>통신판매업신고번호 : 제 2012-서울구로-1560호<br/>
+				서울시 구로구 시흥대로 163길 33 주호타워 2층 가자항공(구로동 1129-1)<br/>
+				대표전화 : 02-837-9922<br/>
+				Copyright&copy; 주식회사가자에어. ALL RIGHTS RESERVED | 개인정보책임자 : 정운하
+			</div>
+		</div>
+	</div>
+</footer>
 </body>
 </html>

@@ -5,9 +5,14 @@
 }
 #best{
 	width:100%;
-	height:500px;
-	background-color: #ccc;
+	background-color: #fff;
 }
+#info{
+	width:100%;
+	background-color: #fff;
+	
+}
+/*section main---------------------------------------------------------*/
 .simple_reservation_wrap{
 	width: 1000px;
 	height: 160px;
@@ -99,10 +104,16 @@
 	margin-top:20px;
 	cursor: pointer;
 }
+.simple_reservation_submit:hover{
+	background-color: #4477ff;
+}
 /*출발지,도착지 다이얼로그*/
 .dialogOpen{
 	cursor: pointer;
 	white-space:nowrap;
+}
+.dialogOpen:hover{
+	color: #333;
 }
 .startDialog {
 	overflow-x:hidden !important;
@@ -162,6 +173,95 @@
 	top:12px;
 	left:-10px;
 }
-
-
-
+/*section best-------------------------------------------------------------------------*/
+#best>div{
+	margin: 100px 0;
+}
+#best>div>div:first-child{
+	width:1200px;
+	height:50px;
+	margin: 20px auto;
+	
+}
+#best p{
+	font-size:200%;
+	float:left;
+	margin-right:20px;
+}
+#best>div>div>a{
+	line-height:4;
+	background-color: #35f;
+	color:#fff;
+}
+#best>div>div>a:hover{
+	text-decoration: underLine;
+}
+.bestBannerWrap{
+	width: 1200px;
+	margin: 0 auto;
+	height:200px;
+}
+/*section event-------------------------------------------------------------------------*/
+#event>div{
+	margin: 100px 0;
+}
+#event>div>div:first-child{
+	width:1200px;
+	height:50px;
+	margin: 20px auto;
+	
+}
+#event p{
+	font-size:200%;
+	float:left;
+	margin-right:20px;
+}
+#event>div>div>a{
+	line-height:4;
+	background-color: #35f;
+	color:#fff;
+}
+#event>div>div>a:hover{
+	text-decoration: underLine;
+}
+.eventBannerWrap{
+	width: 1200px;
+	margin: 0 auto;
+	height:200px;
+}
+/*section info-------------------------------------------------------------------------*/
+#infoWrap{
+	width:1200px;
+	height: 500px;
+	margin:100px auto;
+}
+#infoWrap table{
+	background-color: #eee;
+}
+#infoWrap tr:nth-of-type(2n){
+	background-color: #ddd;
+}
+#infoWrap thead{
+	color: white;
+	text-align:right;
+	background-color: #36f;
+	font-size: 110%;
+}
+#infoWrap thead a{
+	color: white;
+}
+#infoWrap tbody a{
+	color: #555;
+}
+#infoWrap p{
+	font-size:200%;
+}
+#notice{
+	width:550px;
+	margin-right:100px;
+	float:left;
+}
+#review{
+	width:550px;
+	float:left;
+}
