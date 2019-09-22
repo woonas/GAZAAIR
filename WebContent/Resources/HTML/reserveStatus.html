@@ -207,7 +207,9 @@
 	.seatInfo{
 		width:800px;
 		height:150px;
-		background-color:green;
+		color:white;
+		font-size:20px;
+		word-break:break-all
 	}
 	.seatsButton{
 		width:250px;
@@ -295,25 +297,27 @@
 		margin-top:150px;
 		padding-right:40px
 		}
-	.first {
+	#first {
 		position: absolute;
-		top: 930px;
+		top: 920px;
 		left: 345px;
 		width: 100px; 
-		height: 490px; 
+		height: 485px; 
 		margin-bottom: 2px;
-		background-color: red;
+		/* background-color: red; */
+		padding:2px
 		}
 	.first-a {
 		width: 100%;
 		height: 35px;
-		background-color:yellow;
+		/* background-color:yellow; */
+		padding-left:7px
 	}
 	.first-a > span {
 		display: inline-block;
 		width: 29%;
 		height: 100%;
-		background-color: green;
+		/* background-color: green; */
 		margin-right: 2px;
 	}
 	.first-a > span:last-child {
@@ -323,6 +327,47 @@
 		width: 100%;
 		height: 100%;
 	}
+	#second {
+		position: absolute;
+		top: 920px;
+		left: 470px;
+		width: 150px; 
+		height: 485px; 
+		margin-bottom: 2px;
+		/* background-color: red; */
+		padding:2px
+		}
+	.second-a {
+		width: 100%;
+		height: 35px;
+		/* background-color:yellow; */
+		padding-left:7px
+	}
+	.second-a > span {
+		display: inline-block;
+		width: 18%;
+		height: 100%;
+		/* background-color: green; */
+		margin:0 4px;
+	}
+	.second-a > span:last-child {
+		margin-right: 0;
+	}
+	.second-a > span > img {
+		width: 100%;
+		height: 100%;
+	}
+	#third {
+		position: absolute;
+		top: 920px;
+		left: 640px;
+		width: 100px; 
+		height: 485px; 
+		margin-bottom: 2px;
+		/* background-color: red; */
+		padding:2px
+		}
+	
 	
 </style>
 <script>
@@ -334,7 +379,7 @@
 		
 		console.log(winWidth);
 		
-		document.getElementById("seatsSelect").style.left = winWidth-250+"px"
+		document.getElementById("seatsSelect").style.left = winWidth-400+"px"
 		document.getElementById("seatsSelect").style.top = winHeight-200+"px"
 		document.getElementById("seatsSelect").style.display ="block"
 		document.documentElement.scrollTop =  winHeight+200+"px"
@@ -345,7 +390,7 @@
 		var winWidth = window.innerWidth/2
 		var winHeight = window.innerHeight/2
 		
-		document.getElementById("seatsSelect").style.left = winWidth-250+"px"
+		document.getElementById("seatsSelect").style.left = winWidth-400+"px"
 		document.getElementById("seatsSelect").style.top = winHeight-200+"px"
 		
 	};
@@ -354,32 +399,57 @@
 		document.getElementById("modal").style.display="none"
 		
 	};
-	
+	/* 3줄짜리 */
 	var toggle = false;
-	
 	function change(){
-		
-		if (toggle == true){
-			document.getElementById("dd").src = "../IMG/mypage_Img/seat_default.png"
-		} else {
-			document.getElementById("dd").src="../IMG/mypage_Img/seat_gray.png";
+		for(i=1;i<=36;i++){
+			if (toggle == true){
+				document.getElementById("s"+i+"").src = "../IMG/mypage_Img/seat_default.png"
+			} else {
+				document.getElementById("s"+i+"").src="../IMG/mypage_Img/seat_gray.png";
+			}
 		}
-		
-		
-/* 		var img = document.getElementById("dd").src
-		
-		if(img){
-			document.getElementById("dd").src = "../IMG/mypage_Img/seat_default.png";
-		}else if(!img)
-		document.getElementById("dd").src="../IMG/mypage_Img/seat_gray.png"; */
-	
 		toggle = !toggle;
 	};
+	
+	
+	function seatImg(){
+		var seatList = "";
+		for(i=1; i<=36;i++){
+			seatList += "<span><img src='../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick='change()'/></span>"
+		}
+		console.log(seatList)
+		document.getElementById("sl1").innerHTML = seatList;
+		document.getElementById("sl3").innerHTML = seatList;
+		change()
+	};
+	/* 4줄짜리  */
+	function seatImg52(){
+		var seatList = "";
+		for(i=1; i<=52;i++){
+			seatList += "<span><img src='../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick='change()'/></span>"
+		}
+		console.log(seatList)
+		document.getElementById("sl2").innerHTML = seatList;
+		change52()
+	};
+	var toggle2 = false;
+	function change52(){
+		for(i=1;i<=52;i++){
+			if (toggle2 == true){
+				document.getElementById("s"+i+"").src = "../IMG/mypage_Img/seat_default.png"
+			} else {
+				document.getElementById("s"+i+"").src="../IMG/mypage_Img/seat_gray.png";
+			}
+		}
+		toggle2 = !toggle2;
+	};
+
 
 
 </script>
 </head>
-<body onresize="resizeModal()">
+<body onresize="resizeModal()" onload="seatImg(); seatImg52()">
 <div id="nav"></div>
 <div id="all">
 	<div><h3>예약 현황 상세 페이지</h3></div>
@@ -473,12 +543,12 @@
 			</div>
 		</div>
 		<div id="detailPage">
-			<div><h3>예약 현황 상세 페이지</h3></div>
+			<div><h3 style="color:white">예약 현황 상세 페이지</h3></div>
 			<div id="seatSelectAll">
 				<div class="seatSelectText">좌석 선택</div>
 				<div id="seatImgDiv"></div>
 				<div class="border-bt">
-					<div class="seatInfo">asd</div>
+					<div class="seatInfo">asdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
 					<input type="button" value="Select Seats" name="SelectSeats" class="seatsButton" onclick="selectModal()"/>
 				</div>
 			</div>
@@ -486,15 +556,15 @@
 				<div class="seatSelectText">기내식 선택</div>
 				<div id="airlineFoodImgDiv"></div>
 				<div class="border-bt">
-					<div class="seatInfo">asd</div>
+					<div class="seatInfo">asdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
 					<input type="button" value="Select Food" name="SelectFood" class="seatsButton"/>
 				</div>
 			</div>
 			<div id="classAll">
-				<div class="seatSelectText">기내식 선택</div>
+				<div class="seatSelectText">클래스 선택</div>
 				<div id="classImgDiv"></div>
 				<div class="border-bt">
-					<div class="seatInfo">asd</div>
+					<div class="seatInfo">asdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
 					<input type="button" value="Select Class" name="SelectClass" class="seatsButton"/>
 				</div>
 			</div>
@@ -502,18 +572,20 @@
 		<div id="modal">
 	</div>
 	<!-- 팝업 -->
-	<div id="seatsSelect">
+	<div id="seatsSelect" >
 		<div style="overflow:hidden">
 			<div id="seatsSelectText">좌석 선택</div>
 			<div id="close" onclick="seatsSelcetClose()">X</div>
 		</div>	
 			<div id="seatsBackImg">
-				<div class="first">
-					<div class="first-a">
-						<span><img src="../IMG/mypage_Img/seat_default.png" id="dd" onclick="change()"/></span>
-						<span></span>
-						<span></span>
-					</div>
+				<div id="first">
+					<div class="first-a" id="sl1"></div>
+				</div>
+				<div id="second">
+					<div class="second-a" id="sl2"></div>
+				</div>
+				<div id="third">
+					<div class="first-a" id="sl3"></div>
 				</div>
 			</div>
 			
