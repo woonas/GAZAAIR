@@ -9,28 +9,33 @@
         width: 100%;
         z-index: 200;
       }
-      .summary_wrap.fix {
-        position: fixed;
-        top: 0;
-      }
-    
+	  
     .summary_wrap .sm_inner {
       position:relative;
       margin:0 auto;
-      width:1200px;
+      width:1150px;
       padding:20px 0;
     }
+	
+	.sm_inner input[type=button] {
+		height: 40px;
+		width: 80px;
+		border: none;
+		background-color: #36f;
+		color: #fff;
+		margin-left: 10px;
+	}
     
     .sm_top {
-      height: 120px;
+      height: 80px;
       background-color: #6d6e71;
+		opacity: 0.9;
     }
     
     .sm_inner input[type=text] {
       width: 240px;
       padding: 0 15px;
       height: 40px;
-      font-size: 100%;
     }
     
     .sm_alert {
@@ -50,8 +55,10 @@
     }
     
     .booking {
-      max-width: 1200px;
-      margin: 0 auto;
+		max-width: 1200px;
+		max-height: 800px;
+		border: 1px solid black	;
+		margin: 0 auto;
     }
     
     .flight_course {
@@ -112,7 +119,78 @@
           border-bottom: 0;
           background-color: #fff;
       }
-      
+	  
+	  .sort-div {
+		  height: 50px;
+	  }
+	  
+	  .sort-div li {
+		  float: left;
+		  margin: 14px 10px 12px 10px;
+		  padding-right: 10px;
+		  list-style-type: none;
+		  font-size: 0.8em;
+		  border-right: 1px solid #ddd;
+		  transition: color 0.5s ease-in-out;
+	  }
+	  
+	  .sort-div li:first-child { margin-left: 30px; }
+	  .sort-div li:last-child { border: none; }
+	  
+	  .sort-div input[type=radio] { display: none; }
+      .sort-div input[type=radio]:checked + label {
+		  color: #36f;
+	  }
+	  
+	  .col-four-fifth,
+	  .col-two-fifth,
+	  .col-fifth {
+		  float: left;
+		  text-align: center;
+	  }
+	  
+	  .col-fifth { width: 20%; }
+	  
+	  .col-two-fifth { width: 40%; }
+	  
+	  .col-four-fifth { width: 80%; }
+	  
+	  .flight-table-title { color: #fff; line-height: 50px; }
+	  .flight-table-title>div:first-child { background-color: #6d6e70;}
+	  .flight-table-title>div:nth-child(2),
+	  .flight-table-title>div:nth-child(3),
+	  .flight-table-title>div:nth-child(4) { background-color: #36f;}
+
+	  .flight-table-title>div:nth-child(2) { opacity: 0.6; }
+	  .flight-table-title>div:nth-child(3) { opacity: 0.8; }
+	  
+	  .flight-table-schedule {
+		  line-height: 100px;
+		  color: #888;
+	  }
+	  .flight-table-schedule>.col-fifth {
+		  background-color: #ddd;
+		  opacity: 0.5;
+		  border: 1px #aaa solid;
+	  }
+	  .flight-table-schedule>.col-two-fifth>.col-two-fifth>div {
+		  line-height: 50px;
+		  font-size: 90%;
+	  }
+	  .flight-table-schedule>.col-two-fifth>.col-two-fifth>div:first-child {
+		  margin-left: 25px;
+		  padding-top: 7px;
+	  }
+
+	  .flight-table-schedule>.col-two-fifth>.col-two-fifth>div:nth-child(2) {
+		  margin-top: -5px;
+	  }
+	  
+	  .flight-table-schedule>.col-two-fifth>.col-two-fifth {
+		  background-image: url("../IMG/icon/flight-table.png");
+		  background-size: 191px 100px;
+		  height: 100px;
+	  }
   </style>
 </head>
 <body>
@@ -200,7 +278,6 @@
 	</div>
 </header>
   <div class="summary_wrap view">
-	<!-- sm_top -->
 	<div class="sm_top">
 		<div class="sm_inner clearfix">
             <div class="input_wrap">
@@ -208,7 +285,7 @@
                 <input type = "text" placeholder="CJU 제주" title="도착지">
                 <input type = "text" placeholder="19.09.23(월) - 19.09.28(토)" title="탑승일">
                 <input type = "text" placeholder="성인 1" title="승객">
-                <input type = "button">
+                <input type = "button" value="갱신" >
             </div>
 		</div>
 	</div>
@@ -234,7 +311,7 @@
         CJU 제주
       </span>
     </div>
-      
+      <div class="row clearfix">
       <div class="price-compare clearfix">
           <div class="buttons">&lt;</div>
             <div class="price-of-day">
@@ -262,10 +339,67 @@
                 <div class="price">KRW45,500</div>
             </div>
           <div class="price-of-day">
-                <div class="date">09.26 ()</div>
+                <div class="date">09.26 (목)</div>
                 <div class="price">KRW105,500</div>
             </div>
           <div class="buttons">&gt;</div>
+		  </div>
+		  <div class="row sort-div clearfix">
+			  <ul>
+			      <li>
+					  <input type = "radio" id="sort-by-departure-time" name="sort-by" checked>
+					  <label for = "sort-by-departure-time">
+						  출발시간순
+					  </label>
+				  </li>
+			      <li><input type = "radio" id="sort-by-arrival-time" name="sort-by">
+					  <label for = "sort-by-arrival-time">
+						  도착시간순
+					  </label>
+				  </li>
+			      <li>
+					  <input type = "radio" id="sort-by-flight-time" name="sort-by">
+					  <label for = "sort-by-flight-time">
+						  비행시간순
+					  </label>
+				  </li>
+			      <li>
+					  <input type = "radio" id="sort-by-price" name="sort-by">
+					  <label for = "sort-by-price">
+						  요금낮은순
+					  </label>
+				  </li>
+			  </ul>
+		  </div>
+		  <div class="row flight-table-title">
+			  <div class="col-two-fifth">
+				  <div class="col-four-fifth">
+					 	출도착시간 (비행시간)
+				  </div>
+				  <div class="col-fifth">
+					  	편명/기종
+				  </div>
+			  </div>
+			  <div class="col-fifth">특가운임</div>
+			  <div class="col-fifth">할인운임</div>
+			  <div class="col-fifth">정상운임</div>
+		  </div>
+		  <div class="row flight-table-schedule">
+			  <div class="col-two-fifth">
+				  <div class="col-fifth">06:05</div>
+				  <div class="col-two-fifth">
+					  <div class="flight-detail">1시간 10분</div>
+					  <div class="flight-detail">직항</div>
+				  </div>
+				  <div class="col-fifth">07:15</div>
+				  <div class="col-fifth">OZ8901</div>
+			  </div>
+			  <div class="col-fifth">
+				  <input type = "radio">
+			  </div>
+			  <div class="col-fifth">d</div>
+			  <div class="col-fifth">d</div>
+		  </div>
       </div>
   </div>
   
