@@ -368,7 +368,7 @@ footer{
 	z-index:9999;
 }
 .navMenu>li{
-	width:20%;
+	width:18%;
 	float:left;
 }
 .navMenu img{
@@ -378,19 +378,23 @@ footer{
 .translator{
 	width:50px;
 	height:50px;
-	float:right;
 	color: white;
 	background-color: #36f;
 	border: none;
 	font-size: 80%;
 	cursor: pointer;
+	position: absolute;
+	border-radius: 0 0 5px 5px;
+}
+.translator:hover{
+	background-color:#47f;
 }
 .navBar{
 	background-color: #36f;
 	width: 100px;
 	height: 5px;
 	position: absolute;
-	left:-300px;
+	left:-500px;
 	top:65px;
 	z-index:0;
 	-webkit-transition: all 500ms ease;
@@ -400,16 +404,16 @@ footer{
 }
 /*메뉴 마우스 오버 시 식별 바 이동*/
 .navMenu>li:nth-child(2):hover ~ .navBar {
-    left: 24.6%;
+    left: 21.6%;
 }
 .navMenu>li:nth-child(3):hover ~ .navBar {
-    left: 43.8%;
+    left: 39%;
 }
 .navMenu>li:nth-child(4):hover ~ .navBar {
-    left: 63%;
+    left: 56.2%;
 }
 .navMenu>li:nth-child(5):hover ~ .navBar {
-    left: 82.2%;
+    left: 73.5%;
 }
 /*서브메뉴*/
 .subMenu>ul{

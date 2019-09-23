@@ -174,8 +174,6 @@
         
     </style>
         <script>
-			$(function() {
-				// $('input[name="flightDate"]').datepicker();
 				let minus = () => {
 					let num = event.target.parentNode.getElementsByTagName('input')[0];
 					if (num.value <= 0) num.value = '0';
@@ -184,9 +182,7 @@
 				let plus = () => {
 					event.target.parentNode.getElementsByTagName('input')[0].value++;
 				};
-			});
         </script>
-        
 	</head>
 	<body>
       <header id="header">
