@@ -43,21 +43,6 @@
 
 /*-------------------------------------- popup --------------------*/
 
-.prdContent{
-	width:626px;
-	height:408px;
-	background-image:url(../IMG/product_Img/airair.jpg);
-	background-size:626px 408px;
-	position:absolute;
-}
-.route{
-	width:500px;
-	height:100px;
-	position:relative;
-	top:30px;
-	left:30px;
-	text-align:center;
-}
 .stt,
 .arv{
 	float:left;
@@ -68,46 +53,6 @@
 	color:#000;
 	margin:10px;
 }	
-.pricebar1{
-	width:90px;
-	height:150px;
-	position:absolute;
-	left:100px;
-	bottom:0px;
-	background-color:#bfcfff;
-}
-.pricebar2{
-	width:90px;
-	height:150px;
-	position:absolute;
-	left:195px;
-	bottom:0px;
-	background-color:#bfcfff;
-}
-.pricebar3{
-	width:90px;
-	height:150px;
-	position:absolute;
-	left:290px;
-	bottom:0px;
-	background-color:#81a1ff;
-}
-.pricebar4{
-	width:90px;
-	height:150px;
-	position:absolute;
-	left:385px;
-	bottom:0px;
-	background-color:#3366FF;
-}
-.pricebar5{
-	width:90px;
-	height:150px;
-	position:absolute;
-	left:480px;
-	bottom:0px;
-	background-color:#3366FF;
-}
 .pbDate{
 	text-align:center;
 	margin-top:80px;
