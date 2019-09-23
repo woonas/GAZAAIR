@@ -249,19 +249,21 @@
  	/* 팝업 */
  	#modal{
 		width:100%;
-		height:3000px;
+		height:3200px;
 		position:absolute;
 		left:0;
 		top:0;
 		background-color:gray;
 		opacity:0.5;
 		display:none;
+		z-index:3
 		}
 	#seatsSelect{
 		width:900px;
 		position:absolute;
 		background-color:white;
 		display:none;
+		z-index:5
 		}
 	#seatsSelect>div{
 		margin:20px auto 0;
@@ -289,7 +291,6 @@
 	#seatsBackImg{
 		background:url(../IMG/mypage_Img/airplan_bg.png);
 		position: relative;
-		width:1000px;
 		height:3000px;
 		background-size: contain;
 		background-repeat:no-repeat;
@@ -300,7 +301,7 @@
 	#first {
 		position: absolute;
 		top: 920px;
-		left: 345px;
+		left: 295px;
 		width: 100px; 
 		height: 485px; 
 		margin-bottom: 2px;
@@ -315,10 +316,10 @@
 	}
 	.first-a > span {
 		display: inline-block;
-		width: 29%;
+		width: 27%;
 		height: 100%;
 		/* background-color: green; */
-		margin-right: 2px;
+		margin-right: 5px;
 	}
 	.first-a > span:last-child {
 		margin-right: 0;
@@ -330,7 +331,7 @@
 	#second {
 		position: absolute;
 		top: 920px;
-		left: 470px;
+		left: 419px;
 		width: 150px; 
 		height: 485px; 
 		margin-bottom: 2px;
@@ -360,14 +361,83 @@
 	#third {
 		position: absolute;
 		top: 920px;
-		left: 640px;
+		left: 592px;
 		width: 100px; 
 		height: 485px; 
 		margin-bottom: 2px;
 		/* background-color: red; */
 		padding:2px
 		}
-	
+	#nth4 {
+		position: absolute;
+		top: 1665px;
+		left: 295px;
+		width: 100px; 
+		height: 485px; 
+		margin-bottom: 2px;
+		/* background-color: red; */
+		padding:2px
+		}
+	#nth5 {
+		position: absolute;
+		top: 2395px;
+		left: 295px;
+		width: 100px; 
+		height: 485px; 
+		margin-bottom: 2px;
+		/* background-color: red; */
+		padding:2px
+		}
+	#nth6 {
+		position: absolute;
+		top: 1665px;
+		left: 419px;
+		width: 150px; 
+		height: 485px; 
+		margin-bottom: 2px;
+		/* background-color: red; */
+		padding:2px
+		}
+	#nth7 {
+		position: absolute;
+		top: 2395px;
+		left: 419px;
+		width: 150px; 
+		height: 485px; 
+		margin-bottom: 2px;
+		/* background-color: red; */
+		padding:2px
+		}
+	#nth8 {
+		position: absolute;
+		top: 920px;
+		left: 592px;
+		width: 100px; 
+		height: 485px; 
+		margin-bottom: 2px;
+		/* background-color: red; */
+		padding:2px
+		}
+	#nth9 {
+		position: absolute;
+		top: 1665px;
+		left: 592px;
+		width: 100px; 
+		height: 485px; 
+		margin-bottom: 2px;
+		/* background-color: red; */
+		padding:2px
+		}
+	#nth10 {
+		position: absolute;
+		top: 2395px;
+		left: 592px;
+		width: 100px; 
+		height: 485px; 
+		margin-bottom: 2px;
+		/* background-color: red; */
+		padding:2px
+		}
 	
 </style>
 <script>
@@ -379,8 +449,8 @@
 		
 		console.log(winWidth);
 		
-		document.getElementById("seatsSelect").style.left = winWidth-400+"px"
-		document.getElementById("seatsSelect").style.top = winHeight-200+"px"
+		document.getElementById("seatsSelect").style.left = winWidth-500+"px"
+		document.getElementById("seatsSelect").style.top = winHeight-550+"px"
 		document.getElementById("seatsSelect").style.display ="block"
 		document.documentElement.scrollTop =  winHeight+200+"px"
 		
@@ -390,8 +460,8 @@
 		var winWidth = window.innerWidth/2
 		var winHeight = window.innerHeight/2
 		
-		document.getElementById("seatsSelect").style.left = winWidth-400+"px"
-		document.getElementById("seatsSelect").style.top = winHeight-200+"px"
+		document.getElementById("seatsSelect").style.left = winWidth-500+"px"
+		document.getElementById("seatsSelect").style.top = winHeight-550+"px"
 		
 	};
 	function seatsSelcetClose(){
@@ -399,22 +469,9 @@
 		document.getElementById("modal").style.display="none"
 		
 	};
-	/* 3줄짜리 */
-	var toggle = false;
-	function change(i){
-			var imgSrc = document.getElementById("s"+i).src;
-			alert(imgSrc)
-			var imgNew = ".."+imgSrc.substring(imgSrc.indexOf("/IMG/"));
-			
-			if (imgNew== "../IMG/mypage_Img/seat_gray.png"){
-				document.getElementById("s"+i).src = "../IMG/mypage_Img/seat_default.png";
-			} else {
-				document.getElementById("s"+i).src="../IMG/mypage_Img/seat_gray.png";
-			}
-	};
-	
-	
-	function seatImg(){
+	/* A~C 3줄짜리 1 ~ 36석 */
+	function seatImgAC136(){
+		
 		var seatList = "";
 		for(i=1; i<=36;i++){
 			seatList += "<span><img src='../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
@@ -422,36 +479,120 @@
 		}
 		console.log(seatList)
 		document.getElementById("sl1").innerHTML = seatList;
-		document.getElementById("sl3").innerHTML = seatList;
+		
 	};
-	/* 4줄짜리  */
-	function seatImg52(){
+	/* A~C 3줄짜리 37 ~ 72석 */
+	function seatImgAC3772(){
+		
 		var seatList = "";
-		for(i=1; i<=52;i++){
-			seatList += "<span><img src='../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick='change()'/></span>"
+		for(i=37; i<=72;i++){
+			seatList += "<span><img src='../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
+			
 		}
 		console.log(seatList)
-		document.getElementById("sl2").innerHTML = seatList;
-		change52()
+		document.getElementById("sl4").innerHTML = seatList;
+		
+	};
+	/* A~C 3줄짜리 73 ~ 96석 */
+	function seatImgAC7396(){
+		
+		var seatList = "";
+		for(i=73; i<=96;i++){
+			seatList += "<span><img src='../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
+			
+		}
+		console.log(seatList)
+		document.getElementById("sl5").innerHTML = seatList;
+		
+	};
+	function change(i){
+			var imgSrc = document.getElementById("s"+i).src;
+			var imgNew = ".."+imgSrc.substring(imgSrc.indexOf("/IMG/"));
+			if (imgNew === "../IMG/mypage_Img/seat_gray.png"){
+				document.getElementById("s"+i).src = "../IMG/mypage_Img/seat_default.png";
+			} else {
+				document.getElementById("s"+i).src="../IMG/mypage_Img/seat_gray.png";
+			}
 	};
 	
-	var toggle2 = false;
-	function change52(){
-		for(i=1;i<=52;i++){
-			if (toggle2 == true){
-				document.getElementById("s"+i+"").src = "../IMG/mypage_Img/seat_default.png"
-			} else {
-				document.getElementById("s"+i+"").src="../IMG/mypage_Img/seat_gray.png";
-			}
+	
+	/* D~G 4줄짜리  97 ~ 144석*/
+	function seatImgDG97144(){
+		var seatList = "";
+		for(i=97; i<=144;i++){
+			seatList += "<span><img src='../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
 		}
-		toggle2 = !toggle2;
+		document.getElementById("sl2").innerHTML = seatList;
+
 	};
+	
+	/* D~G 4줄짜리  145 ~ 192석*/
+	function seatImgDG145192(){
+		var seatList = "";
+		for(i=145; i<=192;i++){
+			seatList += "<span><img src='../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
+		}
+		document.getElementById("sl6").innerHTML = seatList;
+
+	};
+	
+	/* D~G 4줄짜리  193 ~ 224석*/
+	function seatImgDG193224(){
+		var seatList = "";
+		for(i=193; i<=224;i++){
+			seatList += "<span><img src='../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
+		}
+		document.getElementById("sl7").innerHTML = seatList;
+
+	};
+
+	
+	
+	/* H~K 3줄짜리  226 ~ 261석*/
+	function seatImgHK226361(){
+		
+		var seatList = "";
+		for(i=226; i<=261;i++){
+			seatList += "<span><img src='../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
+			
+		}
+		console.log(seatList)
+		document.getElementById("sl8").innerHTML = seatList;
+		
+	};
+	
+	/* H~K 3줄짜리  262 ~ 297석*/
+	function seatImgHK262297(){
+		
+		var seatList = "";
+		for(i=262; i<=297;i++){
+			seatList += "<span><img src='../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
+			
+		}
+		console.log(seatList)
+		document.getElementById("sl9").innerHTML = seatList;
+		
+	};
+	
+	/* H~K 3줄짜리  298 ~ 321석*/
+	function seatImgHK298231(){
+		
+		var seatList = "";
+		for(i=298; i<=321;i++){
+			seatList += "<span><img src='../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
+			
+		}
+		console.log(seatList)
+		document.getElementById("sl10").innerHTML = seatList;
+		
+	};
+
 
 
 
 </script>
 </head>
-<body onresize="resizeModal()" onload="seatImg(); seatImg52()">
+<body onresize="resizeModal()" onload="seatImgAC136(); seatImgAC3772(); seatImgAC7396(); seatImgDG97144(); seatImgDG145192(); seatImgDG193224(); seatImgHK226361(); seatImgHK262297();seatImgHK298231()">
 <div id="nav"></div>
 <div id="all">
 	<div><h3>예약 현황 상세 페이지</h3></div>
@@ -589,10 +730,68 @@
 				<div id="third">
 					<div class="first-a" id="sl3"></div>
 				</div>
+				<div id="nth4">
+					<div class="first-a" id="sl4"></div>
+				</div>\
+				<div id="nth5">
+					<div class="first-a" id="sl5"></div>
+				</div>
+				<div id="nth6">
+					<div class="second-a" id="sl6"></div>
+				</div>
+				<div id="nth7">
+					<div class="second-a" id="sl7"></div>
+				</div>
+				<div id="nth8">
+					<div class="first-a" id="sl8"></div>
+				</div>
+				<div id="nth9">
+					<div class="first-a" id="sl9"></div>
+				</div>
+					<div id="nth10">
+					<div class="first-a" id="sl10"></div>
+				</div>
 			</div>
 			
 	
 	</div>	
 </div>
+<footer style="overflow:hidden;z-index:1;position:relative;top:61px">
+	<div id="footContainer">
+		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
+		<div class="snsPane">
+			<div class="snsBtn">
+				<img src="../IMG/icon/facebook_white.png"/>
+				<img src="../IMG/icon/facebook.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/instagram_white.png"/>
+				<img src="../IMG/icon/instagram.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/twitter_white.png"/>
+				<img src="../IMG/icon/twitter.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/youtube_white.png"/>
+				<img src="../IMG/icon/youtube.png"/>
+			</div>
+		</div>
+		<hr class="footHr"/>
+		<div class="footContent">
+			<div class="footCall">
+				
+				<b>고객센터</b><br/>080-0000-0000<br/>운영시간 | 오전 9시~오후 6시<br/>점심시간 | 오후 12시~오후 1시
+			</div>
+			
+			<div class="footInfo">
+				<b>가자에어</b> | 사업자번호 : 203-87-00612<br/>통신판매업신고번호 : 제 2012-서울구로-1560호<br/>
+				서울시 구로구 시흥대로 163길 33 주호타워 2층 가자항공(구로동 1129-1)<br/>
+				대표전화 : 02-837-9922<br/>
+				Copyright&copy; 주식회사가자에어. ALL RIGHTS RESERVED | 개인정보책임자 : 정운하
+			</div>
+		</div>
+	</div>
+</footer>
 </body>
 </html>
