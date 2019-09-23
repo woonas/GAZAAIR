@@ -5,6 +5,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../JS/main.js"></script>
 <style>
 	#all{ 
 		max-width:1200px;
@@ -395,7 +396,90 @@
 </script>
 </head>
 <body onresize="resizeModal()">
-<div id="nav"></div>
+<header id="header">
+	<nav class="nav">
+		<div class="navContainer">
+			<ul class="navMenu">
+				<li><a href="index.html"><img src="../IMG/logo/logo_basic.png"/></a></li>
+				<li><a href="#">항공권예매</a>
+					<div class="subMenuWarp">
+						<div class="subMenu">
+							<ul>
+								<li><a href="book.html">항공권예약</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">정기 운항스케줄</a></li>
+								<li><a href="#">실시간 운항스케줄</a></li>
+								<li><a href="routeMap.html">운항노선도</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li><a href="#">마이페이지</a>
+					<div class="subMenuWarp">
+						<div class="subMenu">
+							<ul>
+								<li><a href="AccountInfo.html">회원정보</a></li>
+								<li><a href="mypage_Membergrade.html">회원등급</a></li>
+								<li><a href="reserveStatus.html">항공권 예약 현황</a></li>
+							</ul>
+							<ul>
+								<li><a href="mypage_Main.html">마이 홈</a></li>
+								<li><a href="#">마일리지</a></li>
+								<li><a href="#">관심노선</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li><a href="#">상품페이지</a>
+					<div class="subMenuWarp">
+						<div class="subMenu">
+							<ul>
+								<li><a href="prd_SpecialPrice.html">특가할인</a></li>
+								<li><a href="prd_alliance_event.html">제휴이벤트</a></li>
+							</ul>
+							<ul>
+								<li><a href="prd_BestProduct.html">베스트상품</a></li>
+								<li><a href="prd_recmdProduct.html">추천상품</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">고객의말씀</a></li>
+					
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li><a href="#">서비스안내</a>
+					<div class="subMenuWarp">
+						<div class="subMenu">
+							<ul>
+								<li><a href="service_checkIn.html">체크인</a></li>
+								<li><a href="service_baggage.html">수하물 서비스</a></li>
+								<li><a href="service_pet.html">반려동물동반</a></li>
+							</ul>
+							<ul>
+								<li><a href="service_airline_food.html">기내식안내</a></li>
+								<li><a href="service_class.html">클래스안내</a></li>
+								<li><a href="service_wifi.html">유료부가서비스</a></li>
+							</ul>
+							<ul>
+								<li><a href="service_private_plane.html">전용기</a></li>
+								<li><a href="notice.html">공지사항</a></li>
+								<li><a href="service_faq.html">FAQ</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<div class="navBar"></div>
+			</ul>
+			<a href="signIn.html"><button class="translator" style="right:55px">로그인</button></a>
+			<button class="translator">EN</button>
+		</div>
+	</nav>
+	<div class="topBtn" title="맨 위로 이동">
+		<a href="#header"><img src="../IMG/logo/logo_top.png"/></a>
+	</div>
+</header>
 <div id="all">
 	<div><h3>탑승자 정보</h3></div>
 	<div id="passengerTextAll"><div id="passengerText">성인1</div><div id="checkDiv"><input type="checkbox" name="check" value="check" id="check"/>&nbsp;&nbsp;본인은 탑승에서 제외 <span id="necessary">*는 필수항목입니다.</span></div><input type="button" name="V" value="V" id="V"/></div>
