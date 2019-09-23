@@ -23,19 +23,23 @@
 	width: 200px;
 	float: left;
 }
-#localList>div{
+.localList>div{
 	width: 150px;
 	height: 50px;
-	color: #fff;
 	font-size: 110%;
 	line-height: 50px;
 	text-align: center;
 	margin: 10px auto;
-	background-color: #36f;
+	background-color: #fff;
 	border-radius : 10px;
+	border: 1px solid #ccc;
 }
-#localList>div:hover{
-	background-color: #47f;
+.localList>div:hover{
+	background-color: #ccc !important;
+}
+.localList>div:first-child{
+	background-color: #36f;
+	color: #fff;
 }
 footer{
 	margin-top: 50px;
@@ -97,7 +101,7 @@ footer{
 		var moveLat = [37.448546, 10.633564, 30.050527, 48.091176, -27.460786, 50.894497, 14.265327];
 		var moveLng = [126.451134, 112.727658, -101.118966, 14.552380, 153.027773, 78.540042, 39.362423];
 		
-		$("#localList>div").on("click", function(){
+		$(".localList>div").on("click", function(){
 			var idx = $(this).index();
 			var move = new google.maps.LatLng(moveLat[idx], moveLng[idx]);
 			map.setCenter(move);
@@ -108,8 +112,17 @@ footer{
 		var btnName = ["동북아시아", "동남/서남아시아", "미주", "유럽", "대양주/괌", "러시아/중앙아시아", "중동/아프리카"];
 
 		for(i=0; i<7; i++){
-			$('#localList').append("<div>"+btnName[i]+"</div>");
+			$('.localList').append("<div>"+btnName[i]+"</div>");
 		};
+		var key = false;
+		$(".localList>div").on("click", function(){
+			$(".localList>div").css("background-color", "#fff");
+			$(".localList>div").css("color", "#555");
+			
+			$(this).css("background-color", "#36f");
+			$(this).css("color", "#fff");
+			
+		});
 	});
 </script>
 </head>
@@ -123,14 +136,12 @@ footer{
 					<div class="subMenuWarp">
 						<div class="subMenu">
 							<ul>
-								<li><a href="#">최저가항공권</a></li>
-								<li><a href="#">가격으로조회</a></li>
+								<li><a href="#">항공권예약</a></li>
 							</ul>
 							<ul>
 								<li><a href="#">정기 운항스케줄</a></li>
 								<li><a href="#">실시간 운항스케줄</a></li>
-								<li><a href="#">실시간 출도착</a></li>
-								<li><a href="#">운항노선도</a></li>
+								<li><a href="routeMap.html">운항노선도</a></li>
 							</ul>
 						</div>
 					</div>
@@ -154,12 +165,12 @@ footer{
 					<div class="subMenuWarp">
 						<div class="subMenu">
 							<ul>
-								<li><a href="product_event.html">특가할인</a></li>
+								<li><a href="prd_SpecialPrice.html">특가할인</a></li>
 								<li><a href="prd_alliance_event.html">제휴이벤트</a></li>
 							</ul>
 							<ul>
-								<li><a href="#">베스트상품</a></li>
-								<li><a href="#">추천상품</a></li>
+								<li><a href="prd_BestProduct.html">베스트상품</a></li>
+								<li><a href="prd_recmdProduct.html">추천상품</a></li>
 							</ul>
 							<ul>
 								<li><a href="#">고객의말씀</a></li>
@@ -190,6 +201,7 @@ footer{
 				</li>
 				<div class="navBar"></div>
 			</ul>
+			<a href="signIn.html"><button class="translator" style="right:55px">로그인</button></a>
 			<button class="translator">EN</button>
 		</div>
 	</nav>
@@ -202,7 +214,7 @@ footer{
 	<div id="contents">
 		<div id="map"></div>
 		<div id="localWrap">
-			<div id="localList">
+			<div class="localList">
 			</div>
 		</div>
 	</div>
