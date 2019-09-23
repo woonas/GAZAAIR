@@ -462,6 +462,7 @@ footer{
 	bottom: 20px;
 	right: 20px;
 	cursor: pointer;
+	z-index: 9999;
 }
 .topBtn img:hover{
 	-webkit-transform:scale(1.1);
