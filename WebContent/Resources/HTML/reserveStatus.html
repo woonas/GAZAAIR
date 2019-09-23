@@ -403,6 +403,7 @@
 	var toggle = false;
 	function change(i){
 			var imgSrc = document.getElementById("s"+i).src;
+			alert(imgSrc)
 			var imgNew = ".."+imgSrc.substring(imgSrc.indexOf("/IMG/"));
 			
 			if (imgNew== "../IMG/mypage_Img/seat_gray.png"){
@@ -417,11 +418,11 @@
 		var seatList = "";
 		for(i=1; i<=36;i++){
 			seatList += "<span><img src='../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
+			
 		}
 		console.log(seatList)
 		document.getElementById("sl1").innerHTML = seatList;
 		document.getElementById("sl3").innerHTML = seatList;
-		change()
 	};
 	/* 4줄짜리  */
 	function seatImg52(){
