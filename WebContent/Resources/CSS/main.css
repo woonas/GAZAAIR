@@ -373,6 +373,7 @@ footer{
 }
 .navMenu img{
 	width: 200px;
+	vertical-align: baseline;
 }
 .translator{
 	width:50px;

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>운항노선도</title>
+
+<link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../CSS/index.css" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../JS/main.js"></script>
+<script async defer src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD-r87drTCRcQGSXESQUSisAXRA4cTmIbk&callback=initMap"></script>
+<style>
+#main{
+	max-width:1200px;
+	margin:0px auto;
+}
+#map{
+	width: 1000px;
+	height: 600px;
+	float: left;
+}
+#localWrap{
+	width: 200px;
+	background-color: pink;
+	
+}
+</style>
+<script>
+	var latitude = 37.5529503;//위도
+	var logitude = 126.9793578;//경도
+	function initMap(){
+		//LatLog : 지도의 중심위치
+		var myCenter = new google.maps.LatLng(latitude, logitude);
+		var mapProperty = {
+							//변수  : 상수
+							center : myCenter,
+							zoom : 4, //0~21사이의 값을 사용. 값이 클수록 확대.
+							mapTypeId : google.maps.MapTypeId.ROADMAP //ROADMAP, HYBRID, STELLITE, TERRAIN				
+		}
+		//맵 객체 생성
+		//							  						지도표시할 div, 옵션
+		var map = new google.maps.Map(document.getElementById("map"), mapProperty);
+		
+		//마커 표시하기
+		var markerProperty = {
+								position : myCenter,
+								map : map,
+								icon : "../IMG/icon/marker_blue.png", //마커로 표시할 이미지.
+								title : "서울"
+		};
+		var marker = new google.maps.Marker(markerProperty);
+		marker.setMap(map);
+		
+		var la = [34.858618, 37.558797, 37.459224, 36.721960, 35.899478, 35.925899, 35.593110, 35.984635, 35.139808, 34.993547,
+				34.840152, 35.092319, 35.173202, 33.510619, 33.590368, 33.839219, 31.802871, 33.478501, 34.757895, 
+				34.786329, 36.394650, 35.549428, 37.955010, 40.736438, 42.782279, 43.670786
+				];
+		var lo = [136.811189, 126.802898, 127.977151, 127.495889, 128.638397, 126.615666, 129.355594, 129.433908, 126.810934, 126.387823,
+				127.614014, 128.086461, 128.946470, 126.491300, 130.446655, 131.033048, 130.718013, 131.735931, 133.854475,
+				135.437742, 136.407827, 139.779742, 139.111120, 140.692042, 141.689004, 142.454276
+				];
+		titleList = ['나고야(NGO)', '서울/김포(GMP)', '원주(WJU)', '청주(CJJ)', '대구(TAE)', '군산(KUV)', '울산(USN)', '포항(KPO)', '광주(KWJ)', '무안(MWX)', 
+					'여수/순천(RSU)', '진주/사천(HIN)', '부산/김해(PUS)', '제주(CJU)', '후쿠오카(FUK)', '기타큐슈(KKJ)', '가고시마(KOJ)', '오이타(OIT)', '오카야마(OKJ)', 
+					'오사카(KIS)', '고마스(KMQ)', '도쿄/나리타(NRT)', '니가타(KIJ)', '아오모리(AOJ)', '삿포로(CTS)', '아사히카와(AKJ)'
+					];
+		
+		//다중 마커
+		for(i=0; i<la.length; i++){
+			var marker2 = new google.maps.Marker({
+				position:new google.maps.LatLng(la, lo),
+				title : '나고야공항',
+				icon : "../IMG/icon/marker_blue.png"
+			});
+			marker2.setMap(map);
+		}
+		
+		
+	}
+</script>
+</head>
+<body>
+<header id="header">
+	<nav class="nav">
+		<div class="navContainer">
+			<ul class="navMenu">
+				<li><a href="index.html"><img src="../IMG/logo/logo_basic.png"/></a></li>
+				<li><a href="#">항공권예매</a>
+					<div class="subMenuWarp">
+						<div class="subMenu">
+							<ul>
+								<li><a href="#">최저가항공권</a></li>
+								<li><a href="#">가격으로조회</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">정기 운항스케줄</a></li>
+								<li><a href="#">실시간 운항스케줄</a></li>
+								<li><a href="#">실시간 출도착</a></li>
+								<li><a href="#">운항노선도</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li><a href="mypage_Main.html">마이페이지</a>
+					<div class="subMenuWarp">
+						<div class="subMenu">
+							<ul>
+								<li><a href="#">회원정보</a></li>
+								<li><a href="mypage_Membergrade.html">회원등급</a></li>
+								<li><a href="#">항공권 예약 현황</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">마일리지</a></li>
+								<li><a href="#">관심노선</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li><a href="#">상품페이지</a>
+					<div class="subMenuWarp">
+						<div class="subMenu">
+							<ul>
+								<li><a href="product_event.html">특가할인</a></li>
+								<li><a href="prd_alliance_event.html">제휴이벤트</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">베스트상품</a></li>
+								<li><a href="#">추천상품</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">고객의말씀</a></li>
+					
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li><a href="#">서비스안내</a>
+					<div class="subMenuWarp">
+						<div class="subMenu">
+							<ul>
+								<li><a href="#">체크인</a></li>
+								<li><a href="service_baggage.html">수하물 서비스</a></li>
+								<li><a href="service_pet.html">반려동물동반</a></li>
+							</ul>
+							<ul>
+								<li><a href="service_airline_food.html">기내식안내</a></li>
+								<li><a href="service_class.html">클래스안내</a></li>
+								<li><a href="service_wifi.html">유료부가서비스</a></li>
+							</ul>
+							<ul>
+								<li><a href="notice.html">공지사항</a></li>
+								<li><a href="service_faq.html">FAQ</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<div class="navBar"></div>
+			</ul>
+			<button class="translator">EN</button>
+		</div>
+	</nav>
+	<div class="topBtn" title="맨 위로 이동">
+		<a href="#header"><img src="../IMG/logo/logo_top.png"/></a>
+	</div>
+</header>
+<div id="main">
+	<h3>운항노선도</h3>
+	<div id="contents">
+		<div id="map"></div>
+		<div id="localWrap">
+			<div id="localList">
+			buttons
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
