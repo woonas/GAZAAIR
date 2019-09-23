@@ -16,3 +16,7 @@ $(function(){
 	    return false;
 	  });
 });
+//뒤로가기 기능
+function goBack(){
+	window.history.back();
+};
