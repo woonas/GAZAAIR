@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang>
+<head>
+  <meta charset = "UTF-8">
+  <title>Title</title>
+  <link rel = "stylesheet" href = "../CSS/main.css">
+  <style>
+      .summary_wrap {
+        width: 100%;
+        z-index: 200;
+      }
+      .summary_wrap.fix {
+        position: fixed;
+        top: 0;
+      }
+    
+    .summary_wrap .sm_inner {
+      position:relative;
+      margin:0 auto;
+      width:1200px;
+      padding:20px 0;
+    }
+    
+    .sm_top {
+      height: 120px;
+      background-color: #6d6e71;
+    }
+    
+    .sm_inner input[type=text] {
+      width: 240px;
+      padding: 0 15px;
+      height: 40px;
+      font-size: 100%;
+    }
+    
+    .sm_alert {
+      width: 100%;
+      background-color: #f3f3f3;
+    }
+    
+    .summary_wrap ul>li {
+      list-style-type: circle;
+      list-style-position: inside;
+    }
+    
+    .summary_wrap ul {
+      padding: 16px 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .booking {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .flight_course {
+      display: block;
+      position: relative;
+      margin: 50px 0;
+      text-align: center;
+      line-height: 1;
+      color: #000;
+      font-size: 200%;
+      font-weight: bold;
+    }
+    .flight_course var {
+      font-size: 100%;
+    }
+    
+    .price-compare {
+        height: 120px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        border-bottom: 1px solid #555;
+    }
+      
+      .price-compare>.price-of-day {
+          background-color: #e6e2df;
+          width: 12%;
+          height: 110px;
+          margin-top: 9px;
+          float: left;
+          margin-left: 5px;
+      }
+
+      .price-compare>.price-of-day:first-child {
+          margin-left: 0;
+      }
+      
+      .price-compare>.buttons {
+          height: 110px;
+          width: 50px;
+          float: left;
+          background-color: #fff;
+          padding: 50px 0;
+          margin: 0 13px;
+          font-size: 200%;
+      }
+
+      .price-of-day {
+          text-align: center;
+      }
+      
+      .price-of-day>div:first-child {
+          margin-top: 50px;
+      }
+      
+      .price-of-day:nth-of-type(5) {
+          border: 1px #555 solid;
+          border-bottom: 0;
+          background-color: #fff;
+      }
+      
+  </style>
+</head>
+<body>
+    <header id="header">
+	<nav class="nav">
+		<div class="navContainer">
+			<ul class="navMenu">
+				<li><a href="index.html"><img src="../IMG/logo/logo_basic.png"/></a></li>
+				<li><a href="#">항공권예매</a>
+					<div class="subMenuWarp">
+						<div class="subMenu">
+							<ul>
+								<li><a href="#">최저가항공권</a></li>
+								<li><a href="#">가격으로조회</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">정기 운항스케줄</a></li>
+								<li><a href="#">실시간 운항스케줄</a></li>
+								<li><a href="#">실시간 출도착</a></li>
+								<li><a href="#">운항노선도</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li><a href="mypage_Main.html">마이페이지</a>
+					<div class="subMenuWarp">
+						<div class="subMenu">
+							<ul>
+								<li><a href="#">회원정보</a></li>
+								<li><a href="mypage_Membergrade.html">회원등급</a></li>
+								<li><a href="#">항공권 예약 현황</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">마일리지</a></li>
+								<li><a href="#">관심노선</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li><a href="#">상품페이지</a>
+					<div class="subMenuWarp">
+						<div class="subMenu">
+							<ul>
+								<li><a href="prd_SpecialPrice.html">특가할인</a></li>
+								<li><a href="prd_alliance_event.html">제휴이벤트</a></li>
+							</ul>
+							<ul>
+								<li><a href="prd_BestProduct.html">베스트상품</a></li>
+								<li><a href="prd_recmdProduct.html">추천상품</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">고객의말씀</a></li>
+					
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li><a href="#">서비스안내</a>
+					<div class="subMenuWarp">
+						<div class="subMenu">
+							<ul>
+								<li><a href="#">체크인</a></li>
+								<li><a href="service_baggage.html">수하물 서비스</a></li>
+								<li><a href="service_pet.html">반려동물동반</a></li>
+							</ul>
+							<ul>
+								<li><a href="service_airline_food.html">기내식안내</a></li>
+								<li><a href="service_class.html">클래스안내</a></li>
+								<li><a href="service_wifi.html">유료부가서비스</a></li>
+							</ul>
+							<ul>
+								<li><a href="notice.html">공지사항</a></li>
+								<li><a href="service_faq.html">FAQ</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<div class="navBar"></div>
+			</ul>
+			<button class="translator">EN</button>
+		</div>
+	</nav>
+	<div class="topBtn" title="맨 위로 이동">
+		<a href="#header"><img src="../IMG/logo/logo_top.png"/></a>
+	</div>
+</header>
+  <div class="summary_wrap view">
+	<!-- sm_top -->
+	<div class="sm_top">
+		<div class="sm_inner clearfix">
+            <div class="input_wrap">
+                <input type = "text" placeholder="GMP 서울 / 김포" title="출발지">
+                <input type = "text" placeholder="CJU 제주" title="도착지">
+                <input type = "text" placeholder="19.09.23(월) - 19.09.28(토)" title="탑승일">
+                <input type = "text" placeholder="성인 1" title="승객">
+                <input type = "button">
+            </div>
+		</div>
+	</div>
+      <div class="sm_alert">
+        <div>
+            <ul>
+                <li>항공권 운임은 잔여 좌석에 따라 실시간으로 달라질 수 있습니다.이후 예약상황 및 가격정책의 변경 등으로 인해 스케줄 및 운임의 변동이 있을 수 있습니다.</li>
+                <li>2019-09-20 기준, 유류할증료와 세금 및 제반요금 포함된 성인 1명 기준 운임입니다.</li>
+            </ul>
+        </div>
+    </div>
+  </div>
+  
+  <div class="booking">
+    <div class="flight_course">
+      <span>
+        GMP 서울 / 김포
+      </span>
+      
+      &nbsp; &gt; &nbsp;
+      
+      <span>
+        CJU 제주
+      </span>
+    </div>
+      
+      <div class="price-compare clearfix">
+          <div class="buttons">&lt;</div>
+            <div class="price-of-day">
+                <div class="date">09.20 (금)</div>
+                <div class="price">KRW105,500</div>
+            </div>
+          <div class="price-of-day">
+                <div class="date">09.21 (토)</div>
+                <div class="price">KRW65,500</div>
+            </div>
+          <div class="price-of-day">
+                <div class="date">09.22 (일)</div>
+                <div class="price">KRW65,000</div>
+            </div>
+          <div class="price-of-day">
+                <div class="date">09.23 (월)</div>
+                <div class="price">KRW45,500</div>
+            </div>
+          <div class="price-of-day">
+                <div class="date">09.24 (화)</div>
+                <div class="price">KRW65,500</div>
+            </div>
+          <div class="price-of-day">
+                <div class="date">09.25 (수)</div>
+                <div class="price">KRW45,500</div>
+            </div>
+          <div class="price-of-day">
+                <div class="date">09.26 ()</div>
+                <div class="price">KRW105,500</div>
+            </div>
+          <div class="buttons">&gt;</div>
+      </div>
+  </div>
+  
+</body>
+</html>

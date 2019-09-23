@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang>
+<head>
+<meta charset = "UTF-8">
+             <meta name = "viewport"
+                   content = "width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+                         <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+             <title>Document</title>
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+	<!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+	<!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	
+	<!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="../JS/main.js"></script>
+			<link rel="stylesheet" href="../CSS/main.css">
+	<style>
+		h4 {
+			color: #36f;
+			margin-top: 30px;
+			margin-bottom: 20px;
+		}
+		
+		.row:first-child>h4{
+			margin-top: 0;
+		}
+		
+		input,
+		input[type="button"],
+		input[type="radio"] + label,
+		input[type="checkbox"] + label:before,
+		select option,
+		select {
+			width: 100%;
+			padding: 1em !important;
+			line-height: 1.4 !important;
+			background-color: #fff;
+			border: 1px solid #e5e5e5;
+			border-radius: 3px;
+			transition: all 0.35s ease-in-out;
+		}
+		input:focus {
+			outline: 0;
+			border-color: #36f;
+		}
+		
+		input[type="button"] {
+			background: #36f;
+			opacity: 0.85;
+			color: #fff;
+		}
+		input[type="radio"] {
+			display: none;
+		}
+		input[type="radio"] + label,
+		select {
+			display: inline-block;
+			width: 50%;
+			text-align: center;
+			float: left;
+			border-radius: 0;
+		}
+		input[type="radio"] + label:first-of-type {
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+		}
+		input[type="radio"] + label:last-of-type {
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+		}
+		input[type="radio"] + label i {
+			padding-right: 0.4em;
+		}
+		input[type="radio"]:checked + label,
+		input:checked + label:before,
+		select:focus,
+		select:active {
+			background-color: #36f;
+			color: #fff;
+			border-color: #36f;
+		}
+		input[type="checkbox"] {
+			display: none;
+		}
+		input[type="checkbox"] + label {
+			position: relative;
+			display: block;
+			padding-left: 1.6em;
+		}
+		input[type="checkbox"] + label:before {
+			position: absolute;
+			top: 0.2em;
+			left: 0;
+			display: block;
+			width: 1em;
+			height: 1em;
+			padding: 0;
+			content: "";
+		}
+		input[type="checkbox"] + label:after {
+			position: absolute;
+			top: 0.45em;
+			left: 0.2em;
+			font-size: 0.8em;
+			color: #fff;
+			opacity: 0;
+		}
+		input:checked + label:after {
+			opacity: 1;
+		}
+		select {
+			height: 3.4em;
+			line-height: 2;
+			width: 100%;
+		}
+		select:first-of-type {
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+		}
+		select:last-of-type {
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+		}
+		select:focus,
+		select:active {
+			outline: 0;
+		}
+		select option {
+			background-color: #36f;
+			color: #fff;
+		}
+		.input-group {
+			margin-bottom: 1em;
+		}
+		.input-group:before,
+		.input-group:after {
+			content: "";
+			display: table;
+		}
+		.input-group:after {
+			clear: both;
+		}
+		
+		.container {
+			max-width: 38em;
+			padding: 1em 3em 2em 3em;
+			margin: 20px auto 50px;
+			background-color: #fff;
+			border-radius: 4.2px;
+			box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.2);
+		}
+		
+		.col-half {
+			padding-right: 10px;
+			float: left;
+			width: 50%;
+		}
+		.col-half:last-of-type {
+			padding-right: 0;
+		}
+		.col-third {
+			float: left;
+			width: 33.33333333%;
+		}
+		.col-two-third {
+			float: left;
+			width: 66.666666% !important;
+		}
+		
+	</style>
+	
+</head>
+<body>
+	<header id="header">
+	<nav class="nav">
+		<div class="navContainer">
+			<ul class="navMenu">
+				<li><a href="index.html"><img src="../IMG/logo/logo_basic.png"/></a></li>
+				<li><a href="#">항공권예매</a>
+					<div class="subMenuWarp">
+						<div class="subMenu">
+							<ul>
+								<li><a href="#">최저가항공권</a></li>
+								<li><a href="#">가격으로조회</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">정기 운항스케줄</a></li>
+								<li><a href="#">실시간 운항스케줄</a></li>
+								<li><a href="#">실시간 출도착</a></li>
+								<li><a href="#">운항노선도</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li><a href="mypage_Main.html">마이페이지</a>
+					<div class="subMenuWarp">
+						<div class="subMenu">
+							<ul>
+								<li><a href="#">회원정보</a></li>
+								<li><a href="mypage_Membergrade.html">회원등급</a></li>
+								<li><a href="#">항공권 예약 현황</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">마일리지</a></li>
+								<li><a href="#">관심노선</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li><a href="#">상품페이지</a>
+					<div class="subMenuWarp">
+						<div class="subMenu">
+							<ul>
+								<li><a href="prd_SpecialPrice.html">특가할인</a></li>
+								<li><a href="prd_alliance_event.html">제휴이벤트</a></li>
+							</ul>
+							<ul>
+								<li><a href="prd_BestProduct.html">베스트상품</a></li>
+								<li><a href="prd_recmdProduct.html">추천상품</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">고객의말씀</a></li>
+					
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li><a href="#">서비스안내</a>
+					<div class="subMenuWarp">
+						<div class="subMenu">
+							<ul>
+								<li><a href="#">체크인</a></li>
+								<li><a href="service_baggage.html">수하물 서비스</a></li>
+								<li><a href="service_pet.html">반려동물동반</a></li>
+							</ul>
+							<ul>
+								<li><a href="service_airline_food.html">기내식안내</a></li>
+								<li><a href="service_class.html">클래스안내</a></li>
+								<li><a href="service_wifi.html">유료부가서비스</a></li>
+							</ul>
+							<ul>
+								<li><a href="notice.html">공지사항</a></li>
+								<li><a href="service_faq.html">FAQ</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<div class="navBar"></div>
+			</ul>
+			<button class="translator">EN</button>
+		</div>
+	</nav>
+	<div class="topBtn" title="맨 위로 이동">
+		<a href="#header"><img src="../IMG/logo/logo_top.png"/></a>
+	</div>
+</header>
+
+<div class="container">
+	<h3>회원가입</h3>
+  <form>
+    <div class="row">
+      <h4>계정 정보</h4>
+      <div class="input-group">
+		  <div class="col-two-third"><input type="text" placeholder="아이디" id="userId" class="form-control"/></div>
+		  <div class="col-third"><input type = "button" value="중복검사"></div>
+      </div>
+      <div class="input-group ">
+        <input type="password" placeholder="비밀번호" id="userPw" class="form-control"/>
+      </div>
+      <div class="input-group ">
+        <input type="password" placeholder="비밀번호 확인" id="userPw2" class="form-control"/>
+      </div>
+    </div>
+	<div class="row">
+      <h4>개인 정보</h4>
+		<div class="input-group">
+			<input type="text" placeholder="이름(한글)" id="userNameKor" class="form-control" required/>
+		</div>
+		<div class="input-group">
+			<input type="text" placeholder="이름(영어)" id="userNameEng" class="form-control" required/>
+		</div>
+		<div class="input-group">
+			<input type="text" placeholder="이메일" id="userEmail" class="form-control" required/>
+		</div>
+		<div class="input-group">
+			<div class="col-two-third"><input type="text" placeholder="우편번호" id="postalNumber" class="form-control" required
+			/></div>
+			<div class="col-third"><input type = "button" value="우편번호검색"></div>
+		</div>
+		<div class="input-group">
+			<input type="text" placeholder="주소1" id="addr1" class="form-control" required/>
+		</div>
+		<div class="input-group ">
+			<input type="password" placeholder="주소2" id="addr2" class="form-control"/>
+		</div>
+		<div class="input-group ">
+			<input type="password" placeholder="연락처" id="phone" class="form-control" required/>
+		</div>
+    </div>
+	  
+    <div class="row">
+      <div class="col-half">
+        <h4>생년월일</h4>
+        <div class="input-group">
+          <div class="col-third">
+            <select>
+				<option>- 년 -</option>
+				<option value="2010">2010</option>
+				<option value="2009">2009</option>
+				<option value="2008">2008</option>
+				<option value="2007">2007</option>
+				<option value="2006">2006</option>
+				<option value="2005">2005</option>
+				<option value="2004">2004</option>
+				<option value="2003">2003</option>
+				<option value="2002">2002</option>
+				<option value="2001">2001</option>
+				<option value="2000">2000</option>
+				<option value="1999">1999</option>
+				<option value="1998">1998</option>
+				<option value="1997">1997</option>
+				<option value="1996">1996</option>
+				<option value="1995">1995</option>
+				<option value="1994">1994</option>
+				<option value="1993">1993</option>
+				<option value="1992">1992</option>
+				<option value="1991">1991</option>
+				<option value="1990">1990</option>
+				<option value="1989">1989</option>
+				<option value="1988">1988</option>
+				<option value="1987">1987</option>
+				<option value="1986">1986</option>
+				<option value="1985">1985</option>
+				<option value="1984">1984</option>
+				<option value="1983">1983</option>
+				<option value="1982">1982</option>
+				<option value="1981">1981</option>
+				<option value="1980">1980</option>
+				<option value="1979">1979</option>
+				<option value="1978">1978</option>
+				<option value="1977">1977</option>
+				<option value="1976">1976</option>
+				<option value="1975">1975</option>
+				<option value="1974">1974</option>
+				<option value="1973">1973</option>
+				<option value="1972">1972</option>
+				<option value="1971">1971</option>
+				<option value="1970">1970</option>
+				<option value="1969">1969</option>
+				<option value="1968">1968</option>
+				<option value="1967">1967</option>
+				<option value="1966">1966</option>
+				<option value="1965">1965</option>
+				<option value="1964">1964</option>
+				<option value="1963">1963</option>
+				<option value="1962">1962</option>
+				<option value="1961">1961</option>
+				<option value="1960">1960</option>
+          	</select>
+          </div>
+          <div class="col-third">
+            <select>
+				<option value="0">- 월 -</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+          	</select>
+          </div>
+          <div class="col-third">
+            <select>
+				<option value="0">- 일 -</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+				<option value="31">31</option>
+          	</select>
+          </div>
+        </div>
+      </div>
+      <div class="col-half">
+        <h4>성별</h4>
+        <div class="input-group">
+          <input type="radio" name="gender" value="male" id="gender-male"/>
+          <label for="gender-male">남성</label>
+          <input type="radio" name="gender" value="female" id="gender-female"/>
+          <label for="gender-female">여성</label>
+        </div>
+      </div>
+    </div>
+	  
+	  <div class="row">
+		  <input type = "button" value="회원가입">
+	  </div>
+	  
+  </form>
+</div>
+	<footer>
+	<div id="footContainer">
+		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
+		<div class="snsPane">
+			<div class="snsBtn">
+				<img src="../IMG/icon/facebook_white.png"/>
+				<img src="../IMG/icon/facebook.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/instagram_white.png"/>
+				<img src="../IMG/icon/instagram.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/twitter_white.png"/>
+				<img src="../IMG/icon/twitter.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/youtube_white.png"/>
+				<img src="../IMG/icon/youtube.png"/>
+			</div>
+		</div>
+		<hr class="footHr"/>
+		<div class="footContent">
+			<div class="footCall">
+				
+				<b>고객센터</b><br/>080-0000-0000<br/>운영시간 | 오전 9시~오후 6시<br/>점심시간 | 오후 12시~오후 1시
+			</div>
+			
+			<div class="footInfo">
+				<b>가자에어</b> | 사업자번호 : 203-87-00612<br/>통신판매업신고번호 : 제 2012-서울구로-1560호<br/>
+				서울시 구로구 시흥대로 163길 33 주호타워 2층 가자항공(구로동 1129-1)<br/>
+				대표전화 : 02-837-9922<br/>
+				Copyright&copy; 주식회사가자에어. ALL RIGHTS RESERVED | 개인정보책임자 : 정운하
+			</div>
+		</div>
+	</div>
+</footer>
+<script src="../../Vendor/bootstrap-validate-2.2.0/dist/bootstrap-validate.js"></script>
+        <script>
+            bootstrapValidate('#userId', 'min:5:아이디는 최소 5글자 이상이 필요합니다!|max:12:아이디는 최대 10글자까지 가능합니다! ');
+			bootstrapValidate('#userPw', 'regex:^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$:비밀번호는 최소 8글자가 필요하며, 특수문자, 숫자, 영어알파벳 각각 하나이상이 필요합니다!|max:16:비밀번호는 최대 16글자까지 가능합니다! ');
+			bootstrapValidate('#userPw2', 'matches:#userPw:비밀번호가 다릅니다.');
+			bootstrapValidate(['#userNameKor', '#userNameEng'], 'required:이름을 입력해주십시오');
+			bootstrapValidate('#userEmail', 'email:올바른 이메일 형식이 아닙니다.');
+        </script>
+</body>
+</html>
