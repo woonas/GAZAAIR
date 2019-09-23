@@ -21,9 +21,6 @@
         <link rel="stylesheet" href="../../Vendor/jquery-ui/jquery-ui.min.css" type="text/css" />
         <script src="../../Vendor/jquery-ui/jquery-ui.min.js"></script>
   
-		<link rel = "stylesheet" href = "../../Vendor/datepicker.css">
-		<script src="../../Vendor/datepicker.js"></script>
-		
     <style>
         .section {
           max-width: 1200px;
@@ -55,7 +52,7 @@
             transition: border 0.2s ease-in;
             text-decoration: none;
             color: #555;
-            font-size: 120%;
+            font-size: 130%;
         }
 
         .itinerary-type>li>a:hover {
@@ -179,21 +176,15 @@
         <script>
 			$(function() {
 				// $('input[name="flightDate"]').datepicker();
-				
-				var tripDatePicker = new datePicker({
-					start: document.getElementsByClassName('flightDate'),
-					end: document.getElementsByClassName('endDate'),
-					months: 2,
-				});
+				let minus = () => {
+					let num = event.target.parentNode.getElementsByTagName('input')[0];
+					if (num.value <= 0) num.value = '0';
+					else num.value--;
+				};
+				let plus = () => {
+					event.target.parentNode.getElementsByTagName('input')[0].value++;
+				};
 			});
-			
-			
-			let minus = ()=> {
-            	let num = event.target.parentNode.getElementsByTagName('input')[0];
-            	if (num.value <= 0) num.value = '0';
-            	else num.value--;
-            };
-            let plus = ()=> { event.target.parentNode.getElementsByTagName('input')[0].value++; }
         </script>
         
 	</head>
