@@ -21,16 +21,33 @@
 }
 #localWrap{
 	width: 200px;
-	background-color: pink;
-	
+	float: left;
 }
+#localList>div{
+	width: 150px;
+	height: 50px;
+	color: #fff;
+	font-size: 110%;
+	line-height: 50px;
+	text-align: center;
+	margin: 10px auto;
+	background-color: #36f;
+	border-radius : 10px;
+}
+#localList>div:hover{
+	background-color: #47f;
+}
+footer{
+	margin-top: 50px;
+}
+
 </style>
 <script>
-	var latitude = 37.5529503;//위도
-	var logitude = 126.9793578;//경도
+	var latitude = 37.448546;//위도
+	var logitude = 126.451134;//경도
 	function initMap(){
 		//LatLog : 지도의 중심위치
-		var myCenter = new google.maps.LatLng(latitude, logitude);
+		var myCenter = new google.maps.LatLng(latitude, logitude);//인천공항
 		var mapProperty = {
 							//변수  : 상수
 							center : myCenter,
@@ -45,8 +62,8 @@
 		var markerProperty = {
 								position : myCenter,
 								map : map,
-								icon : "../IMG/icon/marker_blue.png", //마커로 표시할 이미지.
-								title : "서울"
+								icon : "../IMG/icon/marker_blue2.png", //마커로 표시할 이미지.
+								title : "인천(ICN)"
 		};
 		var marker = new google.maps.Marker(markerProperty);
 		marker.setMap(map);
@@ -65,17 +82,35 @@
 					];
 		
 		//다중 마커
+		var marker2;
 		for(i=0; i<la.length; i++){
-			var marker2 = new google.maps.Marker({
-				position:new google.maps.LatLng(la, lo),
-				title : '나고야공항',
-				icon : "../IMG/icon/marker_blue.png"
+				marker2 = new google.maps.Marker({
+					position:new google.maps.LatLng(la[i], lo[i]),
+					title : titleList[i],
+					icon : "../IMG/icon/marker_blue2.png"
+				
 			});
-			marker2.setMap(map);
-		}
+			marker2.setMap(map);	
+		};
 		
+		//클릭이벤트
+		var moveLat = [37.448546, 10.633564, 30.050527, 48.091176, -27.460786, 50.894497, 14.265327];
+		var moveLng = [126.451134, 112.727658, -101.118966, 14.552380, 153.027773, 78.540042, 39.362423];
 		
-	}
+		$("#localList>div").on("click", function(){
+			var idx = $(this).index();
+			var move = new google.maps.LatLng(moveLat[idx], moveLng[idx]);
+			map.setCenter(move);
+		});
+	}//initMap
+	
+	$(function(){
+		var btnName = ["동북아시아", "동남/서남아시아", "미주", "유럽", "대양주/괌", "러시아/중앙아시아", "중동/아프리카"];
+
+		for(i=0; i<7; i++){
+			$('#localList').append("<div>"+btnName[i]+"</div>");
+		};
+	});
 </script>
 </head>
 <body>
@@ -168,10 +203,46 @@
 		<div id="map"></div>
 		<div id="localWrap">
 			<div id="localList">
-			buttons
 			</div>
 		</div>
 	</div>
 </div>
+<footer>
+	<div id="footContainer">
+		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
+		<div class="snsPane">
+			<div class="snsBtn">
+				<img src="../IMG/icon/facebook_white.png"/>
+				<img src="../IMG/icon/facebook.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/instagram_white.png"/>
+				<img src="../IMG/icon/instagram.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/twitter_white.png"/>
+				<img src="../IMG/icon/twitter.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/youtube_white.png"/>
+				<img src="../IMG/icon/youtube.png"/>
+			</div>
+		</div>
+		<hr class="footHr"/>
+		<div class="footContent">
+			<div class="footCall">
+				
+				<b>고객센터</b><br/>080-0000-0000<br/>운영시간 | 오전 9시~오후 6시<br/>점심시간 | 오후 12시~오후 1시
+			</div>
+			
+			<div class="footInfo">
+				<b>가자에어</b> | 사업자번호 : 203-87-00612<br/>통신판매업신고번호 : 제 2012-서울구로-1560호<br/>
+				서울시 구로구 시흥대로 163길 33 주호타워 2층 가자항공(구로동 1129-1)<br/>
+				대표전화 : 02-837-9922<br/>
+				Copyright&copy; 주식회사가자에어. ALL RIGHTS RESERVED | 개인정보책임자 : 정운하
+			</div>
+		</div>
+	</div>
+</footer>
 </body>
 </html>
