@@ -8,7 +8,7 @@
 <style>
 h4 {
 	float: left;
-	text-weight: bold;
+	font-weight: bold;
 	color: black;
 	font-size:25px;
 	margin:10px 0 10px 0;
@@ -37,48 +37,28 @@ nav {
 	margin: 55px 0;
 }
 
-.checkBtn {
-	background-color: #777;
-	color: white;
-	float: left;
-	border: 1px solid gray;
-	outline: none;
-	cursor: pointer;
-	padding: 14px 16px;
-	font-size: 17px;
-	font-weight: bold;
-	width: 50%;
-}
-
 .checkBtn>img {
 	width: 20px;
 	height: 20px;
 }
 
-.checkBtn:hover {
-	background-color: #555;
-}
-
-.onContent {
-	display: none;
-	padding: 100px 20px;
-	height: 100%;
-}
 li{
 	list-style-type:none;
 }
-top{
+#top{
 	float:left;
 	line-height:20px;
 }
-#schedule{
+#schedule1,
+#schedule2 {
 	width: 100%;
 	height: 400px;
 	font-size: 15px;
 	border-collapse: collapse;
 	text-align:center;
 }
-#schedule td {
+#schedule1 td,
+#schedule2 td {
 	border: 1px solid black;
 }
 .contentName{
@@ -139,7 +119,7 @@ top{
 				<div class="contentName"><h4>여정</h4></div>
 				<div><h4 style="color:#ab7d55; float:right;">총 1명(성인1명)</h4></div><br/><br/>
 				<div>
-						<table id="schedule">
+						<table id="schedule1">
 							<thead>
 								<tr>
 									<td style="background-color:#6d6e70; color:#fff; height:40px;">구분</td>
@@ -172,7 +152,7 @@ top{
 						<div class="contentName"><h4>가격</h4></div>
 						<div style="float:right;">단위 : KRW</div>
 						<div>
-							<table id="schedule">
+							<table id="schedule2">
 							<thead>
 								<tr>
 									<td style="background-color:#6d6e70; color:#fff; height:40px;" colspan="2">구분</td>
