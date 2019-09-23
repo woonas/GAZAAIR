@@ -81,9 +81,9 @@ a:hover {
 }
 
 .left { background-color: #fff; }
-.left:focus { outline-color: dodgerblue; }
+.left:focus { outline-color: #36f; }
 
-.right { background-color: dodgerblue; }
+.right { background-color: #36f; }
 
 .left,
 .right {

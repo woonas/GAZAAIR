@@ -9,7 +9,7 @@
 	#all{ 
 		max-width:1200px;
 		margin:0 auto;
-		height:1600px;
+		height:1200px;
 		}
 	#nav{
 		background-color:gray;
@@ -328,6 +328,21 @@
 	#locationCheckButtonDiv{
 		text-align:center
 		}
+	
+	.flex { margin-top: 30px; margin-bottom: 30px; }
+	
+	
+	.list-type1 {
+		background-color: #f3f3f3;
+		margin-top: 50px;
+	}
+	
+	.list-type1>li:first-child {
+		font-size: 130%;
+		list-style-type: none;
+	}
+ 
+
 </style>
 <script>
 	function modalAndIntertional(){
@@ -441,8 +456,15 @@
 			</div>	
 		</div>
 	</div>
-	<div id="payAttention">유의 사항</div>
-	<div id="payAttentionContent">유의 사항</div>
+	
+	<ul class="list-type1">
+              <li>유의사항</li>
+              <li>국내선 항공권 구매 및 예약 변경은 해당 항공편 출발 30분전까지 가능합니다.</li>
+              <li>국내선 유류할증료를 확인하세요.</li>
+              <li>구매 후 탑승시점에 유류할증료가 인상되어도 차액을 징수하지 않으며 인하되어도 환급되지 않습니다.</li>
+              <li>편도로 각각 구매하시거나, 전체 환불 후 재 구매하여 주시기 바랍니다.</li>
+          </ul>
+	
 	<div id="modal">
 	</div>
 	<div id="internationalSelect">
@@ -469,6 +491,12 @@
 	
 	</div>
 </div>
+	
+	<div class="row flex">
+				<button class="left"> &lt; 이전</button>
+				<button class="right">다음 &gt; </button>
+		</div>
+	
 <footer>
 	<div id="footContainer">
 		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
