@@ -401,22 +401,22 @@
 	};
 	/* 3줄짜리 */
 	var toggle = false;
-	function change(){
-		for(i=1;i<=36;i++){
-			if (toggle == true){
-				document.getElementById("s"+i+"").src = "../IMG/mypage_Img/seat_default.png"
+	function change(i){
+			var imgSrc = document.getElementById("s"+i).src;
+			var imgNew = ".."+imgSrc.substring(imgSrc.indexOf("/IMG/"));
+			
+			if (imgNew== "../IMG/mypage_Img/seat_gray.png"){
+				document.getElementById("s"+i).src = "../IMG/mypage_Img/seat_default.png";
 			} else {
-				document.getElementById("s"+i+"").src="../IMG/mypage_Img/seat_gray.png";
+				document.getElementById("s"+i).src="../IMG/mypage_Img/seat_gray.png";
 			}
-		}
-		toggle = !toggle;
 	};
 	
 	
 	function seatImg(){
 		var seatList = "";
 		for(i=1; i<=36;i++){
-			seatList += "<span><img src='../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick='change()'/></span>"
+			seatList += "<span><img src='../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
 		}
 		console.log(seatList)
 		document.getElementById("sl1").innerHTML = seatList;
