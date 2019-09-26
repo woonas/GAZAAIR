@@ -43,9 +43,29 @@ section.content {
 /* ----------------------------------------------- */
 /* 버튼 */
 /* ----------------------------------------------- */
-
-
-
+.blueBtn{
+	background-color: #36f;
+	color: #fff;
+	border-radius : 10px;
+	border: 1px solid #36f;
+	cursor: pointer;
+	transition: all 300ms;
+}
+.blueBtn:hover{
+	background-color: #47f;
+	border : 1px solid #47f;
+}
+.whiteBtn{
+	background-color: #fff;
+	color: #555;
+	border-radius : 10px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	transition: all 300ms;
+}
+.whiteBtn:hover{
+	background-color: #eee;
+}
 
 /* ----------------------------------------------- */
 /* 기본 세팅 */
