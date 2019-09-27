@@ -1,0 +1,208 @@
+@charset "UTF-8";
+
+#warp{
+	width: 100%;
+}
+#contents{
+	max-width: 1200px;
+	margin: 0px auto;
+}
+#title{
+	height: 200px;
+	text-align:center;
+}
+#title h3{
+	margin: 55px 0;
+}
+.search{
+	width:640px;
+	height:50px;
+	margin: 0px auto;
+}
+.searchOption{
+	width:180px;
+	margin-right:10px;
+	cursor:pointer;
+	-webkit-appearance:none; /* Safari and Chrome */  
+	appearance:none;
+	background:url(../IMG/icon/underArrow.png) no-repeat 95% 50%;
+	background-size:15px;
+	color:#555;
+	font-weight:bold;
+	padding-left:10px;
+}
+.searchOption:hover{
+	border:1px solid #36f;
+}
+.textField{
+	width:350px;
+	color:#555;
+	font-size:16px;
+	padding-left:10px;
+}
+.textField:hover{
+	border:1px solid #36f;
+}
+.searchBtn{
+	width:100px;
+	background-color:#36f;
+	border: none;
+	border-radius : 5px;
+	outline : none;
+	color: #fff;
+	font-weight: bold;
+	font-size : 16px;
+	cursor:pointer;
+}
+.searchOption, .textField, .searchBtn{
+	height: 50px;
+	float : left;
+}
+.tabBtn{
+	background-color: #777;
+	color: white;
+	float: left;
+	border: 1px solid gray;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	font-size: 110%;
+	font-weight: bold;
+	width: 50%;
+	text-align: center;
+}
+.tabBtn>img {
+	width: 20px;
+	height: 20px;
+	visibility:hidden;
+}
+.tabBtn:hover{
+	background-color: #555;
+}
+.tabcontent {
+	color: white;
+	display: none;
+	padding-top: 100px;
+	height: 100%;
+}
+.boardList {
+	width: 100%;
+}
+.boardTbl{
+	width: 100%;
+	color: #555;
+	border-collapse: collapse;
+	border-top: 2px solid gray;
+	table-layout:fixed;
+}
+.noticeTag{
+	border: 1.5px solid #36f;
+	color: #36f;
+	width: 40px;
+	height: 25px;
+	text-align:center;
+	line-height: 23px;
+	float:left;
+	margin-right:10px;
+	font-size: 80%;
+	font-weight: bold;
+}
+.boardTbl tr {
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+	height:100px;
+}
+.boardTbl tr:hover{
+	color: #0022cc;
+	background-color:#f7f7fa;
+}
+.boardTbl td {
+	padding: 20px;
+	line-height: 30px;
+}
+.boardTbl thead {
+	background-color:#dee4f7;
+}
+.boardTbl tbody span {
+	color: #81a1ff;
+	border-color: #81a1ff;
+}
+.boardTbl h4 {
+	font-size: 110%;
+	color: #222;
+	font-weight: 500;
+}
+a:link{
+	text-decoration:none;
+	color:#222;
+}
+a:visited{
+	color:#222;
+}
+
+/*문의사항*/
+.askWrap{
+	background-color: #ccc;
+}
+#askForm{
+	color: #555;
+}
+/*quill*/
+#form-container {
+  width: 500px;
+}
+
+.row {
+  margin-top: 15px;
+}
+.row.form-group {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.btn {
+  margin-left: 15px;
+}
+
+.change-link {
+  background-color: #000;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  bottom: 0;
+  color: #fff;
+  opacity: 0.8;
+  padding: 4px;
+  position: absolute;
+  text-align: center;
+  width: 150px;
+}
+.change-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#editor-container {
+  height: 130px;
+}
+/*pagination*/
+.pagingDiv{
+	text-align: center;
+}
+#pagination{
+	display: inline-block;
+	margin: 50px 0;
+}
+#pagination a{
+	float:left;
+	padding: 8px 16px;
+	text-decoration: none;
+	transition: background-color .3s;
+	border: 1px solid lightgray;
+}
+#pagination a.active {
+	background-color: #36f;
+	color: white;
+	border: 1px solid #36f;
+}
+#pagination a:hover:not(.active) {
+	background-color: #ddd;
+}
