@@ -6,6 +6,14 @@ section.content {
     margin: 0 auto 70px;
 }
 
+.clearfix {zoom: 1;}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
 
 
 /* ----------------------------------------------- */
@@ -68,5 +76,37 @@ section.content {
 }
 
 /* ----------------------------------------------- */
-/* 기본 세팅 */
+/* Row, Column */
 /* ----------------------------------------------- */
+
+.row {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.col-half,
+.col-third,
+.col-two-third,
+.col-forth,
+.col-two-forth,
+.col-three-forth,
+.col-fifth,
+.col-two-fifth,
+.col-three-fifth,
+.col-four-fifth { float: left; }
+
+.col-line { width: 100% }
+
+.col-half { width: 50% }
+
+.col-third { width: 33.33% }
+.col-two-third { width: 66.66% }
+
+.col-forth { width: 25% }
+.col-two-forth { width: 50% }
+.col-three-forth { width: 75% }
+
+.col-fifth { width: 20% }
+.col-two-fifth { width: 40% }
+.col-three-fifth { width: 60% }
+.col-four-fifth { width: 80% }
