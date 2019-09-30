@@ -142,46 +142,52 @@ a:visited{
 
 /*문의사항*/
 .askWrap{
-	background-color: #ccc;
-}
-#askForm{
 	color: #555;
 }
-/*quill*/
-#form-container {
-  width: 500px;
+.askWrap>h4{
+	text-align:center;
+	font-size: 150%;
+	margin-bottom: 30px;
 }
-
-.row {
-  margin-top: 15px;
+#askForm{
+	padding: 8px 16px;
+	border-top: 1.5px solid gray;
 }
-.row.form-group {
-  padding-left: 15px;
-  padding-right: 15px;
+#askForm> div:nth-child(1){
+	width:100%;
+	margin: 20px 0;
 }
-.btn {
-  margin-left: 15px;
+#askForm> div:nth-child(1)>div{
+	width:10%;
+	float:left;
+	line-height: 30px;
 }
-
-.change-link {
-  background-color: #000;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-  bottom: 0;
-  color: #fff;
-  opacity: 0.8;
-  padding: 4px;
-  position: absolute;
-  text-align: center;
-  width: 150px;
+#askForm> div:nth-child(1)>select{
+	height: 30px;
+	width: 10%;
 }
-.change-link:hover {
-  color: #fff;
-  text-decoration: none;
+#askForm> div:nth-child(2){
+	width:100%;
+	margin: 10px 0 30px 0;
 }
-
-#editor-container {
-  height: 130px;
+#askForm> div:nth-child(2)>div{
+	width: 10%;
+	float:left;
+	line-height: 30px;
+}
+#askTitle{
+	height: 30px;
+	width: 90%;
+}
+#askSubmit{
+	margin: 50px auto;
+	width: 100px;
+	height: 50px;
+	font-size:100%;
+	font-weight: bold;
+}
+#askForm div:nth-child(4){
+	text-align: center;
 }
 /*pagination*/
 .pagingDiv{

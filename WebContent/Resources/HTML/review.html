@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>고객의 말씀</title>
 <link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../CSS/layout.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/review.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../JS/main.js"></script>
@@ -77,7 +78,6 @@ function openPage(pageName, elmnt, btnId) {//탭메뉴 클릭시 열리는 페�
 }
 $(function(){
 	$("#editor").richText({
-		
 	});
 });
 </script>
@@ -269,21 +269,43 @@ $(function(){
 								</tbody>
 							</table>
 						</div>
+						<div class="pagingDiv">
+							<div id="pagination"></div>
+						</div>
 					</div>
+				</div>
 					<div id="paneAsk" class='tabcontent'>
 						<div class='boardList'>
 							<div class="askWrap">
-								<h4>가자에어는 고객님의 말씀을 경청하겠습니다.</h4>
-								<form>
-								<div>
-									<textarea id="editor"></textarea>
-								</div>
+								<form id="askForm" name="askForm">
+									<div>
+										<div>질문 분류</div>
+										<select>
+											<option>예매/결제</option>
+											<option>취소/환불</option>
+											<option>회원정보</option>
+											<option>이벤트</option>
+											<option>영수증</option>
+											<option>마일리지</option>
+											<option>분쟁</option>
+											<option>신고하기</option>
+											<option>고객의소리</option>
+										</select>
+									</div>
+									<div>
+										<div>제목</div>
+										<input type="text" id="askTitle" name="askTitle" />
+									</div>
+									<div>
+										<textarea id="editor"></textarea>
+									</div>
+									<div>
+										<input type="submit" id="askSubmit" class="blueBtn" value="문의하기"/>
+									</div>
 								</form>
+							</div>
 						</div>
 					</div>
-				<div class="pagingDiv">
-					<div id="pagination"></div>
-				</div>
 			</section>
 			
 		</div>
