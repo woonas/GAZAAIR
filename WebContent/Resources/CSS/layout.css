@@ -478,7 +478,7 @@ i.fa-exclamation:hover {
 .flex {
     display: flex;
     justify-content: space-between;
-    margin: 30px 0;
+    margin: 30px 0 50px;
 }
 
 .left,
