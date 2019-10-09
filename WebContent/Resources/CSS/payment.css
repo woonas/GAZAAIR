@@ -1,0 +1,19 @@
+@import url("../CSS/layout.css") screen;
+
+
+.payment-section {
+    width: 900px;
+    border-top: 3px solid #777;
+    padding: 30px 0;
+}
+
+.section-title {
+    font-size: 120%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.payment-section .list-type2 { margin-left: 0; }
+.payment-section .table-form2,
+.payment-section .table-form2 * { border:0; }
+
