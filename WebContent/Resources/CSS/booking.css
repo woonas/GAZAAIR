@@ -4,6 +4,7 @@
     padding: 25px 40px 20px;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
+    margin-left: 0;
 }
 
 
@@ -571,11 +572,12 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 .journey-name-sticky {
     position: sticky;
     top: 80px;
+    left: 0;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-    padding: 8px 12%;
+    padding: 8px 20vw;
     background-color: #fff;
-    width: 110vw;
-    margin-left: -10vw;
+    width: 120vw;
+    margin-left: -20vw;
     z-index: 90;
 }
 
@@ -705,13 +707,13 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 .sort-div li {
     float: left;
     margin: 14px 10px 12px 10px;
-    padding-right: 10px;
+    padding-right: 20px;
     list-style-type: none;
     font-size: 0.8em;
     border-right: 1px solid #ddd;
     transition: color 0.5s ease-in-out;
 }
-.sort-div li:first-child { margin-left: 30px; }
+.sort-div li:first-child { margin-left: 10px; }
 .sort-div li:last-child { border: none; }
 
 .sort-div input[type=radio] { display: none; }
@@ -779,9 +781,6 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
     font-size: 70%;
     color: #36f;
 }
-
-.list-type2 { margin-left: 0; }
-
 
 /* ----------------------------------------------- */
 /* 탑승자/예약자 정보입력 booking3.html */

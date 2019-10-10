@@ -34,7 +34,7 @@ const calculateAgeInit = () => {
 
     /* 나이 계산기 외 다른 부분 클릭시 */
     overlay.addEventListener('click', () => document.getElementById('btn-ageCalc-window').style.display = 'none' );
-}
+};
 
 const getISODate = date => {
     const year = date.getFullYear();
@@ -56,7 +56,7 @@ const spotChange = () => {
             document.getElementById('airportTo-' + index).value = temp;
         })
     });
-}
+};
 
 /* 탑승객 수 +, - 버튼 */
 const changeNumOfPassengers = () => {
@@ -65,7 +65,7 @@ const changeNumOfPassengers = () => {
 
     let btns_plus = document.querySelectorAll('.plus');
     btns_plus.forEach(element => element.addEventListener('click',plus));
-}
+};
 
 const minus = () => {
     let num = event.target.parentNode.getElementsByTagName('input')[0];
@@ -99,7 +99,7 @@ const totalPassengers = () => {
         return false;
     }
     return true;
-}
+};
 
 /* 캘린더 */
 let calendar;
@@ -113,7 +113,7 @@ const cal_init = () => {
 const insertAfter = (referenceNode, newNode) => {
     if (!!referenceNode.nextSibling) referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
     else referenceNode.parentNode.appendChild(newNode);
-}
+};
 
 (() => {
 
@@ -313,18 +313,18 @@ const insertAfter = (referenceNode, newNode) => {
                 var div = document.createElement("DIV");
                 div.style.height = "80px";
                 if(parent.parentElement.children[1] === parent) {
-                    parent.style.backgroundColor = "#9bf"
-                    parent.style.borderBottomColor = "#9bf"
+                    parent.style.backgroundColor = "#9bf";
+                    parent.style.borderBottomColor = "#9bf";
                     div.style.background = "#9bf";
                     insertAfter(parent.parentElement, div);
                 } else if(parent.parentElement.children[2] === parent) {
                     div.style.background = "#69f";
-                    parent.style.borderBottomColor = "#69f"
+                    parent.style.borderBottomColor = "#69f";
                     insertAfter(parent.parentElement, div);
                     parent.style.backgroundColor = "#69f"
                 } else if(parent.parentElement.children[3] === parent) {
                     div.style.background = "#36f";
-                    parent.style.borderBottomColor = "#36f"
+                    parent.style.borderBottomColor = "#36f";
                     insertAfter(parent.parentElement, div);
                     parent.style.backgroundColor = "#36f"
                 }
@@ -334,7 +334,7 @@ const insertAfter = (referenceNode, newNode) => {
 
 
             });
-        })
+        });
 
 
         /* waypoint */
@@ -374,7 +374,7 @@ const insertAfter = (referenceNode, newNode) => {
             dropdownContainer: document.body,
             initialCountry: "kr",
             preferredCountries: ['kr', 'us', 'cn'],
-            utilsScript: "../../Vendor/intl-tel-input-16.0.0/build/js/utils.js",
+            utilsScript: "../../../Vendor/intl-tel-input-16.0.0/build/js/utils.js",
         });
     }
 })();

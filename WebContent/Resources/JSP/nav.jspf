@@ -10,7 +10,7 @@
 					<div class="subMenuWarp">
 						<div class="subMenu">
 							<ul>
-								<li><a href="../HTML/book.html">항공권예약</a></li>
+								<li><a href="../HTML/not_using/book.html">항공권예약</a></li>
 							</ul>
 							<ul>
 								<li><a href="#">정기 운항스케줄</a></li>
@@ -77,7 +77,7 @@
 				</li>
 				<div class="navBar"></div>
 			</ul>
-			<a href="../HTML/signIn.html"><button class="translator" style="right:55px">로그인</button></a>
+			<a href="../HTML/not_using/signIn.html"><button class="translator" style="right:55px">로그인</button></a>
 			<button class="translator">EN</button>
 		</div>
 	</nav>

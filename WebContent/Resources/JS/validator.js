@@ -178,4 +178,4 @@ const addrSearch = () => {
             document.getElementById("addr2").focus();
         }
     }).open();
-}
+};

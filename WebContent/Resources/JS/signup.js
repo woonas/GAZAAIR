@@ -11,7 +11,7 @@ const verification = () => {
     document.getElementById('phone-verification').addEventListener('click', () => {
         content1.classList.remove('hidden');
         content2.classList.add('hidden');
-    })
+    });
 
     //폰인증 팝업창에서 다음버튼 이벤트
     const nextBtn = document.getElementById('window-next');
@@ -78,7 +78,7 @@ const verification = () => {
             const _window = $(phone_window);
             eventHandler(_window, 'step2');
             setTimeout(function(){
-                _window.removeClass('step1')
+                _window.removeClass('step1');
                 $(phone_window + '>div').fadeOut(123);
             },2800);
             setTimeout(function(){
@@ -95,7 +95,7 @@ const verification = () => {
             const _window = $(ipin_window);
             eventHandler(_window, 'step2-2');
             setTimeout(function(){
-                _window.removeClass('step1')
+                _window.removeClass('step1');
                 $(ipin_window + '>div').fadeOut(123);
 
                 const inputs = document.querySelectorAll(name + ' input[type="text"]');
@@ -107,9 +107,9 @@ const verification = () => {
             },3100);
         }
     });  
-}
+};
 
-//달력용
+//국가선택
 function onChangeCallback(ctr){
     document.getElementById('country').value = ctr;
 }
@@ -122,13 +122,13 @@ const input_check = (name) => {
         if (input.value === "") result =  true;
     });
     return result;
-}
+};
 
 //signup3에서 인증성공 이펙트
 const eventHandler = (_window, step2) => {
     const authent = $('.authent');
 
-    _window.addClass('step1')
+    _window.addClass('step1');
     setTimeout(function(){
         _window.addClass(step2)
     },300);  // 
@@ -144,7 +144,7 @@ const eventHandler = (_window, step2) => {
     setTimeout(function(){
         location.href= 'signup4.html';
     }, 4500);
-}
+};
 
 
 (() => {
@@ -211,7 +211,7 @@ const eventHandler = (_window, step2) => {
         });
         
         document.getElementById('btn-use').addEventListener('click', () => { 
-            if(result.length ===0) alert('중복검사를 해주십시오.')
+            if(result.length ===0) alert('중복검사를 해주십시오.');
             else if(result === "사용할 수 있습니다.") {
                 id.value = insideId.value;
                 document.getElementById('btn-dupCheck-window').style.display = 'none';

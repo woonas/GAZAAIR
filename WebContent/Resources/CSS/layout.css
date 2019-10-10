@@ -491,7 +491,6 @@ i.fa-exclamation:hover {
 
 
 /* 다음 버튼 */
-
 .nextBtn {
     display: flex;
     padding: 10px 30px;
@@ -794,7 +793,7 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
     background-color: #fff;
     padding: 30px;
     max-width: 700px;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .pop-up-window-type1.border { border: 1px solid #aaa; }

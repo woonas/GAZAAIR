@@ -1265,7 +1265,7 @@ windowClose();
 const overlay = document.querySelector('.overlay');
 const pickerWindow = document.getElementById('airport-picker-window');
 let openedBy; // picker를 open한 객체를 저장
-let airportFrom, airportTo // 최신검사 선택시 데이터 저장
+let airportFrom, airportTo; // 최신검사 선택시 데이터 저장
 
 //지역 선택시 이벤트
 document.querySelector('.list-nation').addEventListener('click', () => {
@@ -1282,7 +1282,7 @@ document.querySelector('.list-airport').addEventListener('click', () => {
     if(document.querySelector('.recent-srch-selected')) document.querySelector('.recent-srch-selected').classList.remove('recent-srch-selected');
     if(document.querySelector('.selected')) document.querySelector('.selected').classList.remove('selected');
     if(event.target.tagName === "LI") 
-        event.target.classList.add('selected')
+        event.target.classList.add('selected');
     else if(event.target.tagName === "SPAN")
         event.target.parentElement.classList.add('selected');
     document.getElementById('btn-select').removeAttribute('disabled');
@@ -1301,7 +1301,7 @@ document.querySelector('.recent-srch-box').addEventListener('click', e => {
         if(document.querySelector('.recent-srch-selected')) document.querySelector('.recent-srch-selected').classList.remove('recent-srch-selected');
         if(document.querySelector('.selected')) document.querySelector('.selected').classList.remove('selected');
         if(e.target.tagName === "LI") {
-            e.target.classList.add('recent-srch-selected')
+            e.target.classList.add('recent-srch-selected');
             airportFrom = e.target.firstElementChild.innerText;
             airportTo = e.target.children[1].innerText;
         } else if (e.target.tagName === 'VAR' ) {
@@ -1309,7 +1309,7 @@ document.querySelector('.recent-srch-box').addEventListener('click', e => {
             airportFrom = e.target.parentElement.parentElement.children[0].innerText;
             airportTo = e.target.parentElement.parentElement.children[1].innerText;
         } else {
-            e.target.parentElement.classList.add('recent-srch-selected')
+            e.target.parentElement.classList.add('recent-srch-selected');
             airportFrom = e.target.parentElement.children[0].innerText;
             airportTo = e.target.parentElement.children[1].innerText;
         }
@@ -1324,8 +1324,8 @@ document.getElementById('btn-select').addEventListener('click', () => {
     } else if(document.querySelector('.recent-srch-selected')) {
         const index = openedBy.id.charAt(openedBy.id.length-1);
         
-        airportFrom = `${airportFrom.substring(0, airportFrom.length-3)}   (${airportFrom.substring(airportFrom.length-3)})`
-        airportTo = `${airportTo.substring(0, airportTo.length-3)}   (${airportTo.substring(airportTo.length-3)})`
+        airportFrom = `${airportFrom.substring(0, airportFrom.length-3)}   (${airportFrom.substring(airportFrom.length-3)})`;
+        airportTo = `${airportTo.substring(0, airportTo.length-3)}   (${airportTo.substring(airportTo.length-3)})`;
         
         document.getElementById('airportFrom-' + index).value = airportFrom;
         document.getElementById('airportTo-' + index).value = airportTo;
@@ -1364,7 +1364,7 @@ const openEvent = () => {
            }
         });
     }
-}
+};
 
 
 // picker를 사용할 수 있도록 open이벤트 등록

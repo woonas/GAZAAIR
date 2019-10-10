@@ -3,7 +3,7 @@ const hintWindow = (targetElement, overlayed, centeredX, centeredY) => {
     // 팝업창과 마우스사이의 거리
     let xOffset = 40;
     let yOffset = 40;
-    let overlay = document.querySelector('.overlay')
+    let overlay = document.querySelector('.overlay');
 
     document.getElementById(targetElement).addEventListener('click', e => {
         const tempElement = document.getElementById(`${targetElement}-window`);
@@ -49,7 +49,7 @@ const windowClose = (str) => {
            }
         });
     });
-}
+};
 
 /* 탭 메뉴 이벤트 */
 const tabEvent = (type) => {
@@ -68,16 +68,16 @@ const tabEvent = (type) => {
                 e.target.classList.add('on');
                 document.getElementById(e.target.id+'-container').classList.remove('hidden');
             }
-        })
+        });
     });
-}
+};
 
 /* input number용 maxlength 체크  ex) maxlength="3" oninput="maxLengthCheck(this)" */
 const maxLengthCheck = object => {
     if (object.value.length > object.maxLength){
         object.value = object.value.slice(0, object.maxLength);
     }    
-}
+};
 
 const inputTypeCheck = () => {
     const regex = new RegExp("^[a-zA-Z0-9]+$");
@@ -85,7 +85,7 @@ const inputTypeCheck = () => {
     if (regex.test(str)) return true;
     event.preventDefault();
     return false;
-}
+};
 
 /* 달력 */
 let cal_generator = (strId, startDate, numOfMonths) => {
@@ -147,7 +147,7 @@ let cal_generator = (strId, startDate, numOfMonths) => {
             overlay.style.display = 'none';
         }
     });
-}
+};
 
 /* loader */
 let loader_generator = () => {
@@ -174,7 +174,7 @@ let loader_generator = () => {
         <p>로딩중...</p>
         </div>
        `);
-}
+};
 
 
 (() => {
