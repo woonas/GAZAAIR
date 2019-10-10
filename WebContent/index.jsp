@@ -1,31 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>가자에어 메인</title>
-<link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
-<link rel="stylesheet" href="../CSS/index.css" type="text/css"/>
-<link rel="stylesheet" href="../../Vendor/jqueryUI/jquery-ui.min.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/index.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Vendor/jqueryUI/jquery-ui.min.css" type="text/css"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="../JS/main.js"></script>
-<script src="../../Vendor/backstretch/jquery.backstretch.min.js"></script>
-<script src="../../Vendor/jqueryUI/jquery-ui.min.js"></script>
-<script src="../../Vendor/bxSlider/jquery.bxslider.min.js"></script>
-<link href="../../Vendor/bxSlider/jquery.bxslider.css" rel="stylesheet" />
+<script src="<%=request.getContextPath() %>/Resources/JS/main.js"></script>
+<script src="<%=request.getContextPath() %>/Vendor/backstretch/jquery.backstretch.min.js"></script>
+<script src="<%=request.getContextPath() %>/Vendor/jqueryUI/jquery-ui.min.js"></script>
+<script src="<%=request.getContextPath() %>/Vendor/bxSlider/jquery.bxslider.min.js"></script>
+<link href="<%=request.getContextPath() %>/Vendor/bxSlider/jquery.bxslider.css" rel="stylesheet" />
 <script>
 $(function(){
 	//배경이미지 슬라이더
      $("#main").backstretch([
-        "../IMG/main/mainBg1.jpg",
-        "../IMG/main/mainBg2.jpg",
-        "../IMG/main/mainBg3.jpg",
-        "../IMG/main/mainBg4.jpg",
-        "../IMG/main/mainBg5.jpg",
-        "../IMG/main/mainBg6.jpg",
-        "../IMG/main/mainBg7.jpg",
-        "../IMG/main/mainBg8.jpg"
+        "Resources/IMG/main/mainBg1.jpg",
+        "Resources/IMG/main/mainBg2.jpg",
+        "Resources/IMG/main/mainBg3.jpg",
+        "Resources/IMG/main/mainBg4.jpg",
+        "Resources/IMG/main/mainBg5.jpg",
+        "Resources/IMG/main/mainBg6.jpg",
+        "Resources/IMG/main/mainBg7.jpg",
+        "Resources/IMG/main/mainBg8.jpg"
         ], {
           fade: 750,
           duration: 4000
@@ -33,7 +35,7 @@ $(function(){
       
 	//배경이미지슬라이더 컨트롤러
 	for(i=1; i<=8; i++){
-		$('.dotsWrap').append("<img src='../IMG/icon/control_dots.png'/>");
+		$('.dotsWrap').append("<img src='Resources/IMG/icon/control_dots.png'/>");
 	};
 	$(window).on("backstretch.after", function (e, instance, index) {
 		for(i=1; i<=8; i++){
@@ -41,8 +43,8 @@ $(function(){
 		}
 		$('.dotsWrap>img').eq(index).css("top", "0");
 	});
-	$('.playState').append("<img src='../IMG/icon/pause_blue.png' title='일시정지'/>");
-	$('.playState').append("<img src='../IMG/icon/play_blue.png' title='재생' style='display:none'/>");
+	$('.playState').append("<img src='Resources/IMG/icon/pause_blue.png' title='일시정지'/>");
+	$('.playState').append("<img src='Resources/IMG/icon/play_blue.png' title='재생' style='display:none'/>");
 	$('.dotsWrap>img').on("click", function(){
 		var idx = $(this).index();
 		$("#main").backstretch("show", idx-1);
@@ -163,90 +165,7 @@ $(function(){
 </script>
 </head>
 <body>
-<header id="header">
-	<nav class="nav">
-		<div class="navContainer">
-			<ul class="navMenu">
-				<li><a href="index.html"><img src="../IMG/logo/logo_basic.png"/></a></li>
-				<li><a href="#">항공권예매</a>
-					<div class="subMenuWarp">
-						<div class="subMenu">
-							<ul>
-								<li><a href="booking/booking1.html">항공권예약</a></li>
-							</ul>
-							<ul>
-								<li><a href="#">정기 운항스케줄</a></li>
-								<li><a href="#">실시간 운항스케줄</a></li>
-								<li><a href="routeMap.html">운항노선도</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li><a href="#">마이페이지</a>
-					<div class="subMenuWarp">
-						<div class="subMenu">
-							<ul>
-								<li><a href="AccountInfo.html">회원정보</a></li>
-								<li><a href="mypage_Membergrade.html">회원등급</a></li>
-								<li><a href="#">항공권 예약 현황</a></li>
-							</ul>
-							<ul>
-								<li><a href="mypage_Main.html">마이 홈</a></li>
-								<li><a href="#">마일리지</a></li>
-								<li><a href="#">관심노선</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li><a href="#">상품페이지</a>
-					<div class="subMenuWarp">
-						<div class="subMenu">
-							<ul>
-								<li><a href="prd_SpecialPrice.html">특가할인</a></li>
-								<li><a href="prd_alliance_event.html">제휴이벤트</a></li>
-							</ul>
-							<ul>
-								<li><a href="prd_BestProduct.html">베스트상품</a></li>
-								<li><a href="prd_recmdProduct.html">추천상품</a></li>
-							</ul>
-							<ul>
-								<li><a href="#">고객의말씀</a></li>
-					
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li><a href="#">서비스안내</a>
-					<div class="subMenuWarp">
-						<div class="subMenu">
-							<ul>
-								<li><a href="service_checkIn.html">체크인</a></li>
-								<li><a href="service_baggage.html">수하물 서비스</a></li>
-								<li><a href="service_pet.html">반려동물동반</a></li>
-							</ul>
-							<ul>
-								<li><a href="service_airline_food.html">기내식안내</a></li>
-								<li><a href="service_class.html">클래스안내</a></li>
-								<li><a href="service_wifi.html">유료부가서비스</a></li>
-							</ul>
-							<ul>
-								<li><a href="service_private_plane.html">전용기</a></li>
-								<li><a href="notice.html">공지사항</a></li>
-								<li><a href="service_faq.html">FAQ</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<div class="navBar"></div>
-			</ul>
-			<a href="loginNaccountSearch/login.html"><button class="translator" style="right:55px">로그인</button></a>
-			<button class="translator">EN</button>
-		</div>
-	</nav>
-	<div class="topBtn" title="맨 위로 이동">
-		<a href="#header"><img src="../IMG/logo/logo_top.png"/></a>
-	</div>
-</header>
+<%@ include file="Resources/JSP/nav.jspf" %>
 <section id="main">
 	<!-- 슬라이더 컨트롤러 -->
 	<div class="slideControler">
@@ -255,11 +174,11 @@ $(function(){
 	<!-- 심플예약폼 -->
 	<div class="simple_reservation_wrap">
 		<div class="reservation_contents">
-			<div class="departure dialogOpen" title="출발지를 선택하세요">출발지<img src="../IMG/icon/marker_black.png"/></div>
+			<div class="departure dialogOpen" title="출발지를 선택하세요">출발지<img src="<%=request.getContextPath() %>/Resources/IMG/icon/marker_black.png"/></div>
 			<div class="tripDate">출발일</div>
 		</div>
 		<div class="reservation_contents">
-			<div class="arrival dialogOpen" title="도착지를 선택하세요.">도착지<img src="../IMG/icon/marker_black.png"/></div>
+			<div class="arrival dialogOpen" title="도착지를 선택하세요.">도착지<img src="<%=request.getContextPath() %>/Resources/IMG/icon/marker_black.png"/></div>
 			<div class="tripDate">귀국일</div>
 		</div>
 		<div class="reservation_contents">
@@ -824,28 +743,28 @@ $(function(){
 		<div class="bestBannerWrap">
 			<ul class="bestBanner">
 				<li><a href="prd_BestProduct.html">
-					<img src='../IMG/product_Img/hanoi.jpg' title="서울/인천 ＜＝＞ 하노이 KRW 195,000 ~"/></a>
+					<img src='<%=request.getContextPath() %>/Resources/IMG/product_Img/hanoi.jpg' title="서울/인천 ＜＝＞ 하노이 KRW 195,000 ~"/></a>
 				</li>
 				<li><a href="prd_BestProduct.html">
-					<img src='../IMG/product_Img/hongkong.jpg' title="서울/인천 ＜＝＞ 홍콩 KRW 205,000 ~"/></a>
+					<img src='<%=request.getContextPath() %>/Resources/IMG/product_Img/hongkong.jpg' title="서울/인천 ＜＝＞ 홍콩 KRW 205,000 ~"/></a>
 				</li>
 				<li><a href="prd_BestProduct.html">
-					<img src='../IMG/product_Img/jejudo.jpg' title="서울/김포 ＝＞ 제주 KRW 19,500 ~"/></a>
+					<img src='<%=request.getContextPath() %>/Resources/IMG/product_Img/jejudo.jpg' title="서울/김포 ＝＞ 제주 KRW 19,500 ~"/></a>
 				</li>
 				<li><a href="prd_BestProduct.html">
-					<img src='../IMG/product_Img/palau.jpg' title="서울/인천 ＜＝＞ 팔라우 KRW 756,000 ~"/></a>
+					<img src='<%=request.getContextPath() %>/Resources/IMG/product_Img/palau.jpg' title="서울/인천 ＜＝＞ 팔라우 KRW 756,000 ~"/></a>
 				</li>
 				<li><a href="prd_BestProduct.html">
-					<img src='../IMG/product_Img/sanghai.jpg' title="서울/인천 ＜＝＞ 하노이 KRW 195,000 ~"/></a>
+					<img src='<%=request.getContextPath() %>/Resources/IMG/product_Img/sanghai.jpg' title="서울/인천 ＜＝＞ 하노이 KRW 195,000 ~"/></a>
 				</li>
 				<li><a href="prd_BestProduct.html">
-					<img src='../IMG/product_Img/hanoi.jpg' title="서울/인천 ＜＝＞ 하노이 KRW 195,000 ~"/></a>
+					<img src='<%=request.getContextPath() %>/Resources/IMG/product_Img/hanoi.jpg' title="서울/인천 ＜＝＞ 하노이 KRW 195,000 ~"/></a>
 				</li>
 				<li><a href="prd_BestProduct.html">
-					<img src='../IMG/product_Img/hongkong.jpg' title="서울/인천 ＜＝＞ 홍콩 KRW 205,000 ~"/></a>
+					<img src='<%=request.getContextPath() %>/Resources/IMG/product_Img/hongkong.jpg' title="서울/인천 ＜＝＞ 홍콩 KRW 205,000 ~"/></a>
 				</li>
 				<li><a href="prd_BestProduct.html">
-					<img src='../IMG/product_Img/jejudo.jpg' title="서울/김포 ＝＞ 제주<br/>KRW 19,500 ~"/></a>
+					<img src='<%=request.getContextPath() %>/Resources/IMG/product_Img/jejudo.jpg' title="서울/김포 ＝＞ 제주<br/>KRW 19,500 ~"/></a>
 				</li>
 			</ul>
 		</div>
@@ -857,22 +776,22 @@ $(function(){
 		<div class="eventBannerWrap">
 			<ul class="eventBanner">
 				<li><a href="prd_alliance_event.html">
-					<img src='../IMG/event/event1.jpeg' title="가자에어 X 스무디킹 할인 제휴 기념 이벤트"/></a>
+					<img src='<%=request.getContextPath() %>/Resources/IMG/event/event1.jpeg' title="가자에어 X 스무디킹 할인 제휴 기념 이벤트"/></a>
 				</li>
 				<li><a href="prd_alliance_event.html">
-					<img src='../IMG/event/event2.jpeg' title="KB국민카드 결제 금액의 5%, 돌려드리는 Special"/></a>
+					<img src='<%=request.getContextPath() %>/Resources/IMG/event/event2.jpeg' title="KB국민카드 결제 금액의 5%, 돌려드리는 Special"/></a>
 				</li>
 				<li><a href="prd_alliance_event.html">
-					<img src='../IMG/event/event3.jpeg' title="나의 해외여행 동반자 My Trip 카드 이벤트"/></a>
+					<img src='<%=request.getContextPath() %>/Resources/IMG/event/event3.jpeg' title="나의 해외여행 동반자 My Trip 카드 이벤트"/></a>
 				</li>
 				<li><a href="prd_alliance_event.html">
-					<img src='../IMG/event/event4.jpeg' title="뉴욕의 낮과 밤을 가자에어와 함께"/></a>
+					<img src='<%=request.getContextPath() %>/Resources/IMG/event/event4.jpeg' title="뉴욕의 낮과 밤을 가자에어와 함께"/></a>
 				</li>
 				<li><a href="prd_alliance_event.html">
-					<img src='../IMG/event/event5.jpeg' title="AJ렌터카 마일리지 더블적립 이벤트"/></a>
+					<img src='<%=request.getContextPath() %>/Resources/IMG/event/event5.jpeg' title="AJ렌터카 마일리지 더블적립 이벤트"/></a>
 				</li>
 				<li><a href="prd_alliance_event.html">
-					<img src='../IMG/event/event6.jpeg' title="안녕, 몽골!, 반가워, 골드! 우수회원 체험 이벤트"/></a>
+					<img src='<%=request.getContextPath() %>/Resources/IMG/event/event6.jpeg' title="안녕, 몽골!, 반가워, 골드! 우수회원 체험 이벤트"/></a>
 				</li>
 			</ul>
 		</div>
@@ -948,42 +867,6 @@ $(function(){
 		</div>
 	</div>
 </section>
-<footer>
-	<div id="footContainer">
-		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
-		<div class="snsPane">
-			<div class="snsBtn">
-				<img src="../IMG/icon/facebook_white.png"/>
-				<img src="../IMG/icon/facebook.png"/>
-			</div>
-			<div class="snsBtn">
-				<img src="../IMG/icon/instagram_white.png"/>
-				<img src="../IMG/icon/instagram.png"/>
-			</div>
-			<div class="snsBtn">
-				<img src="../IMG/icon/twitter_white.png"/>
-				<img src="../IMG/icon/twitter.png"/>
-			</div>
-			<div class="snsBtn">
-				<img src="../IMG/icon/youtube_white.png"/>
-				<img src="../IMG/icon/youtube.png"/>
-			</div>
-		</div>
-		<hr class="footHr"/>
-		<div class="footContent">
-			<div class="footCall">
-				
-				<b>고객센터</b><br/>080-0000-0000<br/>운영시간 | 오전 9시~오후 6시<br/>점심시간 | 오후 12시~오후 1시
-			</div>
-			
-			<div class="footInfo">
-				<b>가자에어</b> | 사업자번호 : 203-87-00612<br/>통신판매업신고번호 : 제 2012-서울구로-1560호<br/>
-				서울시 구로구 시흥대로 163길 33 주호타워 2층 가자항공(구로동 1129-1)<br/>
-				대표전화 : 02-837-9922<br/>
-				Copyright&copy; 주식회사가자에어. ALL RIGHTS RESERVED | 개인정보책임자 : 정운하
-			</div>
-		</div>
-	</div>
-</footer>
+<%@ include file="Resources/JSP/footer.jspf" %>
 </body>
 </html>
