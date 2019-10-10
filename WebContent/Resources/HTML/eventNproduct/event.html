@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="../../CSS/color.css">
+ 
     <link rel="stylesheet" href="../../CSS/layout.css">
-
+	<script>window.onbeforeunload=() => window.scrollTo(0, 0)</script>
     <style>
         .best-product .tab-menu1 li.on:before {
             width: 1em;
@@ -25,7 +25,7 @@
         }
         .product-wrapper>div { height: 100%; }
         .change-order>.product-info-wrapper { order: -1; }
-        .img-wrapper>img { width: 100%; margin-top: -100px;}
+        .img-wrapper>img { width: 100%;}
         .product-info-wrapper { 
             background-color: rgba(255, 235, 205, 0.3);
             padding: 60px 30px 20px; 
@@ -46,7 +46,7 @@
         }
         
         .btn-booking {
-            border-radius: 0;
+            border-radius: 0px;
             font-size: 85%;
             margin: 0 6px;
             padding: 12px 46px 12px 46px;
@@ -65,6 +65,7 @@
 <body>
 
    <section class="content best-product">
+   <h3>추천상품</h3>
        <div class="tab-menu1">
            <ul class="clearfix">
                <li class="col-fourth on" id='tab-1'><a href="#none">한국</a></li>
@@ -78,19 +79,19 @@
        <div id="tab-1-container" class="tab-content-container">
            <div id="tab-1-product-1" class="row product-wrapper">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg1.jpg">
+                   <img src="../../IMG/product_Img/jeju1.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>01</p>
-                   <p>이이이이이이</p>
-                   <p>아아ㅣㄹ머ㅣㅏ러ㅣㄴㅁ아릦다ㅡ라즤ㅏㅊ다재ㅔ지츼다즈차ㅣㄷ주차누ㅏㅓㅜㅈ덫ㄷ니ㅢㅏ</p>
+                   <p>서울~제주도</p>
+                   <p>GAZA AIR만의<br/>특별한 혜택!<br/>지금바로 만나보세요</p>
                     <a href="#"><button class="btn-booking blueBtn">예약하기</button></a>
                </div>
            </div>
            
            <div id="tab-1-product-2" class="row product-wrapper change-order">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg2.jpg">
+                   <img src="../../IMG/product_Img/hanoi1.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>02</p>
@@ -102,7 +103,7 @@
            
            <div id="tab-1-product-3" class="row product-wrapper">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg3.jpg">
+                   <img src="../../IMG/product_Img/hongkong1.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>03</p>
@@ -114,7 +115,7 @@
            
            <div id="tab-1-product-4" class="row product-wrapper change-order">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg4.jpg">
+                   <img src="../../IMG/product_Img/la1.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>04</p>
@@ -126,7 +127,7 @@
            
            <div id="tab-1-product-5" class="row product-wrapper">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg5.jpg">
+                   <img src="../../IMG/product_Img/palau1.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>05</p>
@@ -152,7 +153,7 @@
 
            <div id="tab-2-product-2" class="row product-wrapper change-order">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg7.jpg">
+                   <img src="../IMG/main/mainBg7.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>02</p>
@@ -164,7 +165,7 @@
 
            <div id="tab-2-product-3" class="row product-wrapper">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg3.jpg">
+                   <img src="../IMG/main/mainBg3.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>03</p>
@@ -176,7 +177,7 @@
 
            <div id="tab-2-product-4" class="row product-wrapper change-order">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg4.jpg">
+                   <img src="../IMG/main/mainBg4.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>04</p>
@@ -188,7 +189,7 @@
 
            <div id="tab-2-product-5" class="row product-wrapper">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg5.jpg">
+                   <img src="../IMG/main/mainBg5.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>05</p>
@@ -203,7 +204,7 @@
        <div id="tab-3-container" class="tab-content-container hidden">
            <div id="tab-3-product-1" class="row product-wrapper">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg8.jpg">
+                   <img src="../IMG/main/mainBg8.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>01</p>
@@ -215,7 +216,7 @@
 
            <div id="tab-3-product-2" class="row product-wrapper change-order">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg2.jpg">
+                   <img src="../IMG/main/mainBg2.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>02</p>
@@ -227,7 +228,7 @@
 
            <div id="tab-3-product-3" class="row product-wrapper">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg3.jpg">
+                   <img src="../IMG/main/mainBg3.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>03</p>
@@ -239,7 +240,7 @@
 
            <div id="tab-3-product-4" class="row product-wrapper change-order">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg4.jpg">
+                   <img src="../IMG/main/mainBg4.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>04</p>
@@ -251,7 +252,7 @@
 
            <div id="tab-3-product-5" class="row product-wrapper">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg5.jpg">
+                   <img src="../IMG/main/mainBg5.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>05</p>
@@ -266,7 +267,7 @@
        <div id="tab-4-container" class="tab-content-container hidden">
            <div id="tab-4-product-1" class="row product-wrapper">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg1.jpg">
+                   <img src="../IMG/main/mainBg1.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>01</p>
@@ -278,7 +279,7 @@
 
            <div id="tab-4-product-2" class="row product-wrapper change-order">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg2.jpg">
+                   <img src="../IMG/main/mainBg2.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>02</p>
@@ -290,7 +291,7 @@
 
            <div id="tab-4-product-3" class="row product-wrapper">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg3.jpg">
+                   <img src="../IMG/main/mainBg3.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>03</p>
@@ -302,7 +303,7 @@
 
            <div id="tab-4-product-4" class="row product-wrapper change-order">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg4.jpg">
+                   <img src="../IMG/main/mainBg4.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>04</p>
@@ -314,7 +315,7 @@
 
            <div id="tab-4-product-5" class="row product-wrapper">
                <div class="col-three-fourth img-wrapper">
-                   <img src="../../IMG/main/mainBg5.jpg">
+                   <img src="../IMG/main/mainBg5.jpg">
                </div>
                <div class="col-fourth product-info-wrapper">
                    <p>05</p>
@@ -326,7 +327,7 @@
        </div>
        
    </section>
-   
+
     <script src="../../JS/common.js"></script>
     
     <script>

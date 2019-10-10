@@ -5,7 +5,7 @@
 	<nav class="nav">
 		<div class="navContainer">
 			<ul class="navMenu">
-				<li><a href="../HTML/index.html"><img src="../IMG/logo/logo_basic.png"/></a></li>
+				<li><a href="<%=request.getContextPath() %>/"><img src="../IMG/logo/logo_basic.png"/></a></li>
 				<li><a href="#">항공권예매</a>
 					<div class="subMenuWarp">
 						<div class="subMenu">
