@@ -7,19 +7,37 @@
     <style>
         * { margin: 0; padding:0; box-sizing: border-box; }
         
-        .product-row { margin: 20px auto; }
+        .product-row { margin: 10px auto 10px; }
         
-        .col-half div:first-of-type { 
-        	width: 240px;
-        	height: 200px;
-        	background-image: url("../IMG/event/eve8_.jpg");
+        .product-row>div { height: 250px; }
+        
+         .col-two-third div:first-of-type { 
+        	width: calc(100% - 4px);
+        	height: 355px;
+        	background-image: url("../IMG/product_Img/jejudo.jpg");
         	background-size: cover;
         	background-position: center;
-        	overflow:hidden;
+        }
+  
+        .col-two-third div:first-of-type:hover { 
+        	opacity: 0.8;
+        	background-size:  
         }
         
-        .col-half div:first-of-type:hover { opacity: 0.8; }
         
+        .col-half div:first-of-type { 
+        	width: calc(100% - 4px);
+        	height: 250px;
+        	background-image: url("../IMG/product_Img/jejudo.jpg");
+        	background-size: cover;
+        	background-position: center;
+        }
+  
+        .col-half div:first-of-type:hover { 
+        	opacity: 0.8;
+        	background-size:  
+        }
+        .product-row>.col-half:last-of-type {}
         .seperatorLogo {
             width: 80%;
             margin: 5px auto 10px;
@@ -27,22 +45,26 @@
             border-top: 0;
         }
         .product-detail {
-            background-color: rgba(250,250,250,0.9);
-            border-top: 1px solid #aaa;
-            border-bottom: 1px solid #aaa;
-            border-right: 1px solid #aaa;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: relative;
+            top: -125px;
+            left: 0;
+            height: 100px;
+            color: #fff;
+            padding-top: 5px;
         }
-        .product-detail>p {
+        .product-detail>span {
             margin-top: 25px;
             margin-left: 10%;
-            font-size: 150%;
-            color: #555;
+            font-size: 70%;
+            padding: 3px;
+            width:52px;
+            background-color: #36f;
         }
         
         .product-row>div>div:nth-of-type(2) {
             /*background-color: yellow;*/
             width: 55%;
-            height: 200px;
         }
         
         .list-type1 {
@@ -53,7 +75,6 @@
         .list-type1>li {
             margin-left: 5%;
             list-style-type: none;
-            color: #555;
         }
         
     </style>
@@ -61,59 +82,45 @@
 <body>
     <section class="content">
         <div class="row clearfix product-row">
-            <div class="col-half">
-                <div class="col-two-fifth">
-                </div>
+            <div class="col-two-third">
+                <div></div>
                 <div class="col-three-fifth product-detail">
-                    <p>스무디킹</p>
-                    <hr class="seperatorLogo">
+                    <span>특가찬스</span>
                     <ul class="list-type1">
                         <li>전 메뉴(음료) 20% 할인</li>
-                        <li>골드이상회원 추가 10% 할인</li>
                         <li>골드이상회원 추가 10% 할인</li>
                     </ul>
                 </div>
             </div>
             <div class="col-half">
-                <div class="col-two-fifth">
-                    
-                </div>
+                <div></div>
                 <div class="col-three-fifth product-detail">
-                    <p>스무디킹</p>
-                    <hr class="seperatorLogo">
+                    <span>특가찬스</span>
                     <ul class="list-type1">
                         <li>전 메뉴(음료) 20% 할인</li>
-                        <li>골드이상회원 추가 10% 할인</li>
                         <li>골드이상회원 추가 10% 할인</li>
                     </ul>
                 </div>
             </div>
         </div>
         
-        <div class="row clearfix product-row">
+           <div class="row clearfix product-row">
             <div class="col-half">
-                <div class="col-two-fifth">
-                </div>
+                <div></div>
                 <div class="col-three-fifth product-detail">
-                    <p>스무디킹</p>
-                    <hr class="seperatorLogo">
+                    <span>특가찬스</span>
                     <ul class="list-type1">
                         <li>전 메뉴(음료) 20% 할인</li>
-                        <li>골드이상회원 추가 10% 할인</li>
                         <li>골드이상회원 추가 10% 할인</li>
                     </ul>
                 </div>
             </div>
             <div class="col-half">
-                <div class="col-two-fifth">
-                    
-                </div>
+                <div></div>
                 <div class="col-three-fifth product-detail">
-                    <p>스무디킹</p>
-                    <hr class="seperatorLogo">
+                    <span>특가찬스</span>
                     <ul class="list-type1">
                         <li>전 메뉴(음료) 20% 할인</li>
-                        <li>골드이상회원 추가 10% 할인</li>
                         <li>골드이상회원 추가 10% 할인</li>
                     </ul>
                 </div>
