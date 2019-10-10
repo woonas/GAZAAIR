@@ -1,0 +1,116 @@
+@import url("../CSS/layout.css") screen;
+
+
+/* ----------------------------------------------- */
+/* 공통부분 */
+/* ----------------------------------------------- */
+
+
+.info-reservation .tab-menu1 li.on:before {
+    width: 1em;
+    height: 0.5em;
+    margin-left: -30px;
+    margin-top: 20px;
+}
+
+.info-banner { text-align: left; }
+
+.info-banner>div:first-of-type {
+    display: table;
+    min-height: 310px;
+    width: 100%;
+    margin: 50px 0 30px;
+    padding: 40px 440px 40px 70px;
+    background-color: #e6e2df;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+.info-banner>div:first-of-type>div {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 30px;
+    font-size: 110%;
+}
+
+.banner-title {
+    margin-bottom: 20px;
+    line-height: 1;
+    color: #333;
+    font-size: 200%;
+}
+
+.info-banner>div:first-of-type button {
+    margin-top: 15px;
+    padding: 11px 30px;
+    font-size: 90%;
+    min-height: 46px;
+    border-radius: 3px;
+}
+
+.info-banner>div:first-of-type button:hover {
+    background-color: #fff;
+    border-color: #555;
+}
+
+.info-subtitle {
+    margin: 30px 0;
+    font-size: 180%;
+    font-weight: 700;
+}
+
+.table-tab { height: 30px; }
+.table-tab li {
+    float: left;
+    margin: 14px 10px 12px 10px;
+    padding-right: 20px;
+    list-style-type: none;
+    font-size: 0.8em;
+    border-right: 1px solid #ddd;
+    transition: color 0.5s ease-in-out;
+}
+
+.table-tab li:first-child { margin-left: 10px; }
+.table-tab li:last-child { border: none; }
+.table-tab input[type=radio] { display: none; }
+.table-tab input[type=radio]:checked + label { color: #36f; }
+
+.table-form2 .table-row-title { font-size: 140%; }
+.table-form2>.row { padding: 25px 0; }
+.table-form2 .list-type2>li { font-size: 110%; }
+
+.table-form2 .list-type2>li.notice-text {
+    font-size: 90%;
+    color: #888;
+    padding: 0;
+}
+
+.table-form2 .list-type2>li.bigger-text { 
+    font-size: 120%;
+    font-weight: 600;
+    padding: 0;
+    margin-top: 25px;
+}
+.table-form2 .list-type2>li.bigger-text:before, 
+.table-form2 .list-type2>li.notice-text:before { width: 0; }
+
+.table-form span.bold { font-weight: bold; }
+
+.last-note { 
+    padding: 25px 40px 20px; 
+    margin-left: 0;
+    margin-top: 60px;
+}
+
+/* ----------------------------------------------- */
+/* 예약 안내 info_reservation.html */
+/* ----------------------------------------------- */
+
+.banner-reservation-2 { background-image: url(../IMG/information/bg_visual_revInfo01.png); }
+
+
+
+/* ----------------------------------------------- */
+/* 기내식 안내 info_food.html */
+/* ----------------------------------------------- */
+
