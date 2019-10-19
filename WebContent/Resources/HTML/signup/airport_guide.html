@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>공항안내</title>
+<link rel="stylesheet" href="../CSS/main.css" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+
+
+nav {
+	width: 100%;
+	height: 70px;
+	background-color: gray;
+}
+
+#warp {
+	width: 100%;
+}
+
+#contents {
+	max-width: 1200px;
+	margin: 0px auto;
+}
+
+#title {
+	height: 200px;
+	text-align: center;
+}
+
+#title h1 {
+	margin: 55px 0;
+}
+
+.checkBtn {
+	background-color: #777;
+	color: white;
+	float: left;
+	border: 1px solid gray;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	font-size: 17px;
+	font-weight: bold;
+	width: 25%;
+}
+
+.checkBtn>img {
+	width: 20px.;
+	height: 20px;
+}
+
+.checkBtn:hover {
+	background-color: #555;
+}
+
+.onContent {
+	display: none;
+	padding: 100px 20px;
+	height: 100%;
+}
+
+
+
+</style>
+<script>
+
+//이미지 추가
+	$(function(){
+		for(i=1;i<=4;i++){
+			$("#setImg").append("<img src='../IMG/service/c"+i+".png'/>");
+			$("#ctr").append("<img src='../IMG/service/n"+i+".png' class='circles' id='n"+i+"'/>");
+			$("#acSetImg").append("<img src='../IMG/service/ac"+i+".png'/>");
+		}
+	});	
+	
+	function start() {
+		//탭메뉴
+		var btnIdList = [ 'informationAll', 'checkInAll','loungeAll','transfer' ];
+		var paneIdList = [ 'information', 'checkIn','lounge','transfer' ];
+		var btnList = [ '공항정보', '체크인','라운지','환승절차' ];
+		var i;
+		var checkBtnHTML = "";
+		var tabPanelHTML = "";
+		for (i = 0; i < paneIdList.length; i++) {
+			checkBtnHTML += "<button class='checkBtn' id='" + btnIdList[i]
+					+ "' onclick='openPage(\"" + paneIdList[i] + "\", this, \""
+					+ btnIdList[i] + "\")'><img src='../IMG/icon/check.png'/>"
+					+ btnList[i] + "</button> ";
+		}
+		document.getElementById("checkBtn").innerHTML = checkBtnHTML;
+
+		// 기본값 선택
+		document.getElementById("informationAll").click();
+		
+	}
+	function openPage(pageName, elmnt, btnId) {
+		var i, onContent, checkBtns;
+
+		// 전체 숨김
+		onContent = document.getElementsByClassName("onContent");
+		for (i = 0; i < onContent.length; i++) {
+			onContent[i].style.display = "none";
+		}
+
+		// 배경색 삭제
+		checkBtns = document.getElementsByClassName("checkBtn");
+		for (i = 0; i < checkBtns.length; i++) {
+			checkBtns[i].style.backgroundColor = "";
+			checkBtns[i].style.color = "";
+			var imgTag = checkBtns[i].firstChild;
+			imgTag.style.display = "none";
+		}
+
+		// 클릭된 컨텐츠 보이기
+		document.getElementById(pageName).style.display = "block";
+
+		// 클릭된 버튼 색상 변경
+		elmnt.style.backgroundColor = "#fff";
+		elmnt.style.color = "#555";
+		
+
+		
+	}
+</script>
+</head>
+<body onload="start()">
+	<div id="warp">
+		<header>
+			<nav>네비게이션 넣을 곳 ㅁㄴㅇㅁㄴㅇㅁㅇㅁ</nav>
+		</header>
+		<div id="contents">
+			<section id="title">
+				<h3>체크인</h3>
+			</section>
+			<section id="online">
+				<div id="checkBtn"></div>
+				<div id="tabPanel" >
+					<div id="information" class='onContent'	>
+						<!-- 온라인 체크인 이용안내 테이블 -->
+						<h4>이용 안내</h4>
+						
+					</div>
+					<!-- 오토 체크인 이용안내 테이블 --> 
+						<div id="checkIn" class="onContent">
+						
+				</div> 
+				
+					<!-- 라운지 이용안내 테이블 --> 
+						<div id="lounge" class="onContent">
+						
+				</div> 
+				
+					<!-- 환승절차 이용안내 테이블 --> 
+						<div id="transfer" class="onContent">
+						
+				</div> 
+			</section>	
+		</div>
+		<!-- <footer>
+	<div id="footContainer">
+		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
+		<div class="snsPane">
+			<div class="snsBtn">
+				<img src="../IMG/icon/facebook_white.png"/>
+				<img src="../IMG/icon/facebook.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/instagram_white.png"/>
+				<img src="../IMG/icon/instagram.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/twitter_white.png"/>
+				<img src="../IMG/icon/twitter.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../IMG/icon/youtube_white.png"/>
+				<img src="../IMG/icon/youtube.png"/>
+			</div>
+		</div>
+		<hr/>
+		<div class="footContent">
+			<div class="footCall">
+				 
+				<b>고객센터</b><br/>080-0000-0000<br/>운영시간 | 오전 9시~오후 6시<br/>점심시간 | 오후 12시~오후 1시
+			</div>  
+			
+			<div class="footInfo">
+				<b>가자에어</b> | 사업자번호 : 203-87-00612<br/>통신판매업신고번호 : 제 2012-서울구로-1560호<br/>
+				서울시 구로구 시흥대로 163길 33 주호타워 2층 가자항공(구로동 1129-1)<br/>
+				대표전화 : 02-837-9922<br/>
+				Copyright&copy; 주식회사가자에어. ALL RIGHTS RESERVED | 개인정보책임자 : 정운하
+			</div>
+		</div>
+	</div>
+</footer> -->
+	</div>
+</body>
+</html>
