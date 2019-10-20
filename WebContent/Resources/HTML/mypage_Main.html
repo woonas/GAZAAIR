@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../../CSS/booking.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <script src="../JS/main.js"></script>
 <style>
 	#all{ 
@@ -123,7 +125,6 @@
 		}
 	#reserveContent{
 		background-color:white;
-		border:1px solid gray;
 		width:900px;
 		height:650px;
 		margin:40px auto
@@ -136,10 +137,12 @@
 		width:900px;
 		height:80px;
 		margin:0;
+		border-bottom:1px solid gray
 		}
 	.daydiv{
 		background-color:#e6e2df;
 		border:1px solid gray;
+		border-bottom:0;
 		width:200px;
 		height:80px;
 		margin:0;
@@ -159,26 +162,28 @@
 		}
 	.as{
 		background-color:#6d6e70;
-		border:1px solid gray;
+		border-right:1px solid white;
 		color:white;
 		width:150px;
 		height:40px;
 		text-align:center;
-		line-height:30px;
+		line-height:40px;
 		margin:0;
 		float:left
 		}
+
 	.time{
 		background-color:#6d6e70;
-		border:1px solid gray;
+		border-right:1px solid white;
 		color:white;
 		width:220px;
 		height:40px;
 		text-align:center;
-		line-height:30px;
+		line-height:40px;
 		margin:0;
 		float:left
 		}
+
 	#dr{
 		width:158px;
 		float:left;
@@ -186,7 +191,6 @@
 		}
 	#dr div{
 		background-color:#3864ea;
-		border:1px solid gray;
 		color:white;
 		width:158px;
 		height:80px;
@@ -198,7 +202,8 @@
 		margin-bottom:10px
 		}
 	.asReserve{
-		border:1px solid gray;
+		border-right:1px solid gray;
+		border-bottom:1px solid gray;
 		width:150px;
 		height:130px;
 		text-align:center;
@@ -207,7 +212,8 @@
 		float:left
 		}
 	.dasc{
-		border:1px solid gray;
+		border-right:1px solid gray;
+		border-bottom:1px solid gray;
 		width:220px;
 		height:65px;
 		text-align:center;
@@ -216,7 +222,8 @@
 		float:left
 		}
 	.daexpect{
-		border:1px solid gray;
+		border-right:1px solid gray;
+		border-bottom:1px solid gray;
 		width:220px;
 		height:65px;
 		text-align:center;
@@ -228,7 +235,7 @@
 		background-color:#f7f7f7;
 		width:898px;
 		height:200px;
-		padding:10px;
+		padding-left:50px;
 		float:left
 	}
 	#promile,#prograde{width:500px}
@@ -249,6 +256,7 @@
 		for(var i=0;i<70;i++){
 			$("#prograde").animate({"value":30});
 		}
+	
 	});
 
 
@@ -341,7 +349,7 @@
 </header>
 <div id="nav"></div>
 <div id="all">
-	<div id="clouddiv"><img src="../IMG/mypage_Img/cloud1.jpg" id="cloudimg"/>
+	<div id="clouddiv"><img src="../IMG/mypage_Img/cloud3.jpg" id="cloudimg"/>
 		<div class="content">
 			<div id="name">
 				<div><a href="#">최민성 님</a></div>
@@ -393,10 +401,12 @@
 					<div><a href="reserveStatus.html">상세 보기</a></div>
 					<div>환불</div>
 				</div>
-			<div id="info"><h4>안내사항</h4><br/>
-			● 출발 완료 시각은<br/>
-			● 도착 완료는<br/>
-			● 도착이 30분 이상
+			<div id="info"><h2>안내사항</h2>
+				<ul class="list-type2 last-note">
+					<li>출발 완료 시각은</li>
+					<li>도착 완료는</li>
+					<li>도착이 30분 이상</li>
+				</ul>
 			</div>
 			</div>
 	</div>
@@ -439,5 +449,6 @@
 		</div>
 	</div>
 </footer>
+
 </body>
 </html>
