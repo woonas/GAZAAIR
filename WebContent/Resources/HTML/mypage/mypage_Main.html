@@ -2,272 +2,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
-<link rel="stylesheet" href="../../CSS/booking.css">
+<title>마이 홈</title>
+<link rel="stylesheet" href="../../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../../CSS/mypage.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
 <script src="../JS/main.js"></script>
-<style>
-	#all{ 
-		max-width:1200px;
-		margin:0 auto
-	}
-	#nav{
-		margin:0 auto
-		}
-	#cloudimg{
-		width:100%;
-		height:450px;
-		margin:0
-		}
-	#clouddiv{
-		position:relative;
-		height:450px;
-		margin:0
-		}
-	#name>div>a:link{text-decoration:none;color:white}
-	#name>div>a:visited{text-decoration:none;color:white}
-	#name>div>a:hover{color:white}
-	
-	#grade>div>a:link{text-decoration:none;color:white}
-	#grade>div>a:visited{text-decoration:none;color:white}
-	#grade>div>a:hover{color:white}
-	
-	#name{
-		width:200px;
-		position:absolute;
-		left:70px;
-		top:60px;
-		color:white
-		}
-	#name>div:nth-child(1){ font-size:22px }
-	#name>div:nth-child(2){
-		font-size:12px;
-		opacity:0.5		
-		}
-	
-	#grade{
-		width:200px;
-		position:absolute;
-		left:70px;
-		top:110px;
-		font-size:18px
-		}
-	#mileage{
-		width:600px;
-		height:100px;
-		text-align:center;
-		position:absolute;
-		top:100px;
-		left:300px;
-		color:white
-		}	
-	#mileage>span{
-		font-size:40px	
-		}	
-	
-	#boarding{
-		width:1200px;
-		text-align:center;
-		position:absolute;
-		top:380px;
-		margin:0;
-		color:white
-		}
-	/* 구름 사진 아래 스타일 */
-	.content{
-		background-color:lightgray;
-		height:1020px;
-		margin:0;
-		padding:0
-		}
-		
-		#like,
-		#mg {
-		background-color:white;
-		border:1px solid gray;
-		padding:10px;
-		position:relative;
-		}
-	#like{
-		width:200px;
-		height:150px;
-		top:20px;
-		left:20px;
-
-		}
-	#mg{
-		width:940px;
-		height:150px;
-		left:240px;
-		top:-130px;
-		}
-	#mg>div{width:400px;height:50px;margin-left:200px}
-
-	
-	#reserve{
-		background-color:white;
-		border:1px solid gray;
-		width:1160px;
-		height:800px;
-		left:20px;
-		top:-110px;
-		margin:0;
-		padding:0;
-		position:relative;
-		}	
-	#rt{
-		width:1160px;
-		font-size:40px;
-		font-weight:bold;
-		text-align:center
-		}
-	#reserveContent{
-		background-color:white;
-		width:900px;
-		height:650px;
-		margin:40px auto
-		}
-	#daTitle{
-		text-align:center;
-		padding:30px
-		}
-	#days{
-		width:900px;
-		height:80px;
-		margin:0;
-		border-bottom:1px solid gray
-		}
-	.daydiv{
-		background-color:#e6e2df;
-		border:1px solid gray;
-		border-bottom:0;
-		width:200px;
-		height:80px;
-		margin:0;
-		text-align:center;
-		float:left;
-		}
-	#standard{
-		text-align:right;
-		padding:20px
-		}
-	#reserveTitle{
-		width:740px;
-		height:200px;
-		margin:0;
-		padding:0;
-		float:left;
-		}
-	.as{
-		background-color:#6d6e70;
-		border-right:1px solid white;
-		color:white;
-		width:150px;
-		height:40px;
-		text-align:center;
-		line-height:40px;
-		margin:0;
-		float:left
-		}
-
-	.time{
-		background-color:#6d6e70;
-		border-right:1px solid white;
-		color:white;
-		width:220px;
-		height:40px;
-		text-align:center;
-		line-height:40px;
-		margin:0;
-		float:left
-		}
-
-	#dr{
-		width:158px;
-		float:left;
-		line-height:20px
-		}
-	#dr div{
-		background-color:#3864ea;
-		color:white;
-		width:158px;
-		height:80px;
-		text-align:center;
-		font-size:25px;
-		line-height:80px
-		}
-	#dr>div:first-child{
-		margin-bottom:10px
-		}
-	.asReserve{
-		border-right:1px solid gray;
-		border-bottom:1px solid gray;
-		width:150px;
-		height:130px;
-		text-align:center;
-		line-height:120px;
-		margin:0;
-		float:left
-		}
-	.dasc{
-		border-right:1px solid gray;
-		border-bottom:1px solid gray;
-		width:220px;
-		height:65px;
-		text-align:center;
-		line-height:60px;
-		margin:0;
-		float:left
-		}
-	.daexpect{
-		border-right:1px solid gray;
-		border-bottom:1px solid gray;
-		width:220px;
-		height:65px;
-		text-align:center;
-		line-height:60px;
-		margin:0;
-		float:left;
-		}
-	#info{
-		background-color:#f7f7f7;
-		width:898px;
-		height:200px;
-		padding-left:50px;
-		float:left
-	}
-	#promile,#prograde{width:500px}
-	
-	#dr>div>a:link{text-decoration:none;color:white}
-	#dr>div>a:visited{text-decoration:none;color:white}
-	#dr>div>a:hover{color:white}
-</style>
-<script>
-	$(function(){
-		$("#promile").delay(500);
-		/* var val=$("#promile").attr("value"); */
-		for(var i=0;i<70;i++){
-			$("#promile").animate({"value":70});
-		}
-		$("#prograde").delay(500);
-		/* var val=$("#prograde").attr("value"); */
-		for(var i=0;i<70;i++){
-			$("#prograde").animate({"value":30});
-		}
-	
-	});
-
-
-</script>
+<script src="../../JS/mypage.js"></script>
 </head>
 <body>
 <header id="header">
 	<nav class="nav">
 		<div class="navContainer">
 			<ul class="navMenu">
-				<li><a href="index.html"><img src="../IMG/logo/logo_basic.png"/></a></li>
+				<li><a href="index.html"><img src="../../IMG/logo/logo_basic.png"/></a></li>
 				<li><a href="#">항공권예매</a>
 					<div class="subMenuWarp">
 						<div class="subMenu">
@@ -344,12 +91,12 @@
 		</div>
 	</nav>
 	<div class="topBtn" title="맨 위로 이동">
-		<a href="#header"><img src="../IMG/logo/logo_top.png"/></a>
+		<a href="#header"><img src="../../IMG/logo/logo_top.png"/></a>
 	</div>
 </header>
 <div id="nav"></div>
 <div id="all">
-	<div id="clouddiv"><img src="../IMG/mypage_Img/cloud3.jpg" id="cloudimg"/>
+	<div id="clouddiv"><img src="../../IMG/mypage_Img/cloud3.jpg" id="cloudimg"/>
 		<div class="content">
 			<div id="name">
 				<div><a href="#">최민성 님</a></div>
@@ -401,11 +148,12 @@
 					<div><a href="reserveStatus.html">상세 보기</a></div>
 					<div>환불</div>
 				</div>
-			<div id="info"><h2>안내사항</h2>
-				<ul class="list-type2 last-note">
-					<li>출발 완료 시각은</li>
-					<li>도착 완료는</li>
-					<li>도착이 30분 이상</li>
+			<div id="info">
+				<ul class="list-type2 last-note bg-gray6">
+					<li class="list-inside-title">안내 사항</li>
+					<li>출발 완료 시각은 항공기가 비행을 위해 주기장을 출발한 시간을 의미하며, 실제 항공기 이륙시간과는 공항 상황에 따라 15~20분 가량 차이가 있습니다.</li>
+					<li>도착 완료는 항공기 착륙 후 주기장에 도착하여 하기 준비가 된 상태로 실제 활주로 착륙 후 15~20분 가량 소요됩니다.</li>
+					<li>도착이 30분 이상 지연되거나 항공편이 결항될 경우 출도착 조회를 통해 확인서를 출력하실 수 있습니다.</li>
 				</ul>
 			</div>
 			</div>
@@ -414,23 +162,23 @@
 </div>
 <footer>
 	<div id="footContainer">
-		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
+		<a href="index.html" title="홈페이지로 이동"><img src="../../IMG/logo/logo_white2.png" width="170"/></a>
 		<div class="snsPane">
 			<div class="snsBtn">
-				<img src="../IMG/icon/facebook_white.png"/>
-				<img src="../IMG/icon/facebook.png"/>
+				<img src="../../IMG/icon/facebook_white.png"/>
+				<img src="../../IMG/icon/facebook.png"/>
 			</div>
 			<div class="snsBtn">
-				<img src="../IMG/icon/instagram_white.png"/>
-				<img src="../IMG/icon/instagram.png"/>
+				<img src="../../IMG/icon/instagram_white.png"/>
+				<img src="../../IMG/icon/instagram.png"/>
 			</div>
 			<div class="snsBtn">
-				<img src="../IMG/icon/twitter_white.png"/>
-				<img src="../IMG/icon/twitter.png"/>
+				<img src="../../IMG/icon/twitter_white.png"/>
+				<img src="../../IMG/icon/twitter.png"/>
 			</div>
 			<div class="snsBtn">
-				<img src="../IMG/icon/youtube_white.png"/>
-				<img src="../IMG/icon/youtube.png"/>
+				<img src="../../IMG/icon/youtube_white.png"/>
+				<img src="../../IMG/icon/youtube.png"/>
 			</div>
 		</div>
 		<hr/>
