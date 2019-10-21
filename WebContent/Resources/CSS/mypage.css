@@ -9,38 +9,33 @@
     margin-left: 0;
 }
 
-#all{ 
-		max-width:1200px;
-		margin:0 auto
-	}
-	#nav{
-		margin:0 auto
-		}
+#mypage-main section.content { background-color: #ddd; }
+
+/*   */
+	.maintop{color:#fff}
 	#cloudimg{
 		width:100%;
 		height:450px;
-		margin:0
 		}
 	#clouddiv{
 		position:relative;
 		height:450px;
-		margin:0
 		}
-	#name>div>a:link{text-decoration:none;color:white}
-	#name>div>a:visited{text-decoration:none;color:white}
-	#name>div>a:hover{color:white}
+		
+	#name>div>a{text-decoration:none;color:#fff ;cusor:pointer}
 	
-	#grade>div>a:link{text-decoration:none;color:white}
-	#grade>div>a:visited{text-decoration:none;color:white}
-	#grade>div>a:hover{color:white}
+	
+	#grade>div>a{text-decoration:none;color:#fff ;cusor:pointer}
+
 	
 	#name{
 		width:200px;
 		position:absolute;
 		left:70px;
 		top:60px;
-		color:white
 		}
+		
+		
 	#name>div:nth-child(1){ font-size:22px }
 	#name>div:nth-child(2){
 		font-size:12px;
@@ -54,43 +49,64 @@
 		top:110px;
 		font-size:18px
 		}
-	#mileage{
-		width:600px;
-		height:100px;
-		text-align:center;
-		position:absolute;
-		top:100px;
-		left:300px;
-		color:white
-		}	
-	#mileage>span{
-		font-size:40px	
-		}	
+
 	
 	#boarding{
 		width:1200px;
 		text-align:center;
 		position:absolute;
-		top:380px;
-		margin:0;
-		color:white
-		}
-	/* 구름 사진 아래 스타일 */
-	.content{
-		background-color:lightgray;
-		height:1020px;
-		margin:0;
-		padding:0
+		bottom: 50px;
 		}
 		
-		#like,
+		
+		
+		
+		
+	/* 구름 사진 아래 스타일 */
+
+	.favorite,
+	.mg
+	 {
+		margin: 20px;
+		padding: 10px; 
+		background-color: #fff;
+		height: 150px; 
+		font-size: 110%;
+		font-weight: 600;
+		cursor: pointer;
+	 }
+	
+		.favorite + img { 
+			width: 40px;
+		    position: absolute;
+		    margin-top: -70px;
+		    margin-left: 170px;
+		}
+		
+		#promile,#prograde{ width:500px }
+		.mg>div:last-of-type { padding-top: 25px; }
+		.mg>div:last-of-type>div>* { margin-top: 10px; }
+		
+		.reserve {
+			margin: 0 20px 20px;
+			padding: 30px;
+			background-color: #fff;
+			
+		}
+		
+		#rt{
+			font-size:40px;
+			font-weight:bold;
+			text-align:center
+		}
+		
+		#favorite,
 		#mg {
-		background-color:white;
-		border:1px solid gray;
+		background-color: #fff;
 		padding:10px;
 		position:relative;
 		}
-	#like{
+	#favorite{
 		width:200px;
 		height:150px;
 		top:20px;
@@ -108,9 +124,7 @@
 	
 	#reserve{
 		background-color:white;
-		border:1px solid gray;
 		width:1160px;
-		height:800px;
 		left:20px;
 		top:-110px;
 		margin:0;
@@ -243,6 +257,8 @@
 	#dr>div>a:link{text-decoration:none;color:white}
 	#dr>div>a:visited{text-decoration:none;color:white}
 	#dr>div>a:hover{color:white}
+	
+	.list-type2{margin-top:200px}
 
 
 
