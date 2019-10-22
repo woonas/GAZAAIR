@@ -4,259 +4,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../CSS/mypage_GradeInfo.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../JS/main.js"></script>
-<style>
-	#all{ 
-		max-width:1200px;
-		margin:0 auto;
-		height:2000px;
-		}
-	#nav{
-		width:100%;
-		margin:0 auto
-		}
-	#vipEligibility{
-		background-color:#6d6e70;
-		border:1px solid gray;
-		width:250px;
-		height:100px;
-		float:left;
-		font-size:22px;
-		text-align:center;
-		color:white
-		}
-	#vipEligibility{padding:15px 0}
-	#vipGrade{
-		padding:30px 0;
-		border:1px solid gray;
-		width:250px;
-		height:100px;
-		float:left;
-		font-size:22px;
-		text-align:center;
-		}
-	.text{
-		width:1100px;
-		height:200px;
-		overflow:hidden;
-		padding:20px
-		}
-	/* 승급기준  */
-	.h2Text{
-		width:1200px;
-		height:50px
-		}
-	#SIMDiv{
-		width:1200px;
-		height:700px
-		}
-	#separation{
-		width:350px;
-		height:850px;
-		float:left
-		}
-	.separationTitle, .inquiryConditionTitle,.maintenancePeriodTitle{
-		background-color:#6d6e70;
-		height:50px;
-		color:white;
-		text-align:center;
-		padding:10px;
-		font-size:18px
-		}
-	#inquiryCondition{
-		width:700px;
-		height:850px;
-		float:left
-		}
-	#maintenancePeriod{
-		width:150px;
-		height:850px;
-		float:left
-		}
-	#platinumImg{
-		border:1px solid gray;
-		width:350px;
-		height:150px;
-		padding:15px 0;
-		float:left
-		}
-	#platinumImg>div{
-		float:left
-		}
-	#platinumImg>div:nth-child(2){
-		padding:45px 0;
-		padding-left:10px
-		}
-	#diamondPlusImg{
-		border:1px solid gray;
-		width:350px;
-		height:350px;
-		padding:15px 0;
-		float:left
-		
-		}
-	#diamondPlusImg>div:first-child{
-		float:left;
-		padding-top:80px
-		
-		}
-	#diamondPlusImg>div:nth-child(2){
-		padding:130px 0;
-		padding-left:10px;
-		float:left
-		}
-	.diamondImg{
-		border:1px solid gray;
-		width:350px;
-		height:150px;
-		padding:15px 0;
-		float:left
-		}
-	.diamondImg>div:first-child{
-		float:left;
-		
-		}
-	.diamondImg>div:nth-child(2){
-		padding:45px 0;
-		float:left;
-		padding-left:10px
-		}
-	.goldImg{
-		border:1px solid gray;
-		width:350px;
-		height:150px;
-		padding:15px 0;
-		float:left
-		}
-	.goldImg>div:first-child{
-		float:left;
-		
-		}
-	.goldImg>div:nth-child(2){
-		padding:45px 0;
-		float:left;
-		padding-left:10px
-		}
-	#plaText{
-		border:1px solid gray;
-		width:700px;
-		height:150px;
-		
-		}
-	#diaplusText1, #diaplusText2{
-		border:1px solid gray;
-		width:700px;
-		height:175px;
-		}
-	.diaText{
-		border:1px solid gray;
-		width:700px;
-		height:150px;
-		}
-	.goldText{
-		border:1px solid gray;
-		width:700px;
-		height:150px;
-		}
-	#lifetime{
-		border:1px solid gray;
-		width:150px;
-		height:325px;
-		}
-	#year2{
-		border:1px solid gray;
-		width:150px;
-		height:475px;
-		}
-	/* 자격 유지 기준 */
-	#inquiryh2Text{
-		margin-top:20px;
-		width:1200px;
-		height:50px;
-		float:left
-		}
-	#inquirySIMDiv{
-		width:1200px;
-		height:500px;
-		overflow:hidden
-		}
-	#inquiryseparation{
-		border:1px solid gray;
-		width:350px;
-		height:500px;
-		float:left
-		}
-	#iinquiryCondition{
-		border:1px solid gray;
-		width:700px;
-		height:500px;
-		float:left
-		}
-	#inquirymaintenancePeriod{
-		width:150px;
-		height:500px;
-		float:left
-		}
-	#inquirydiamondPlusImg{
-		border:1px solid gray;
-		width:350px;
-		height:150px;
-		padding:15px 0;
-		float:left
-		}
-	#inquirydiamondPlusImg>div:first-child{
-		float:left;
-		
-		}
-	#inquirydiamondPlusImg>div:nth-child(2){
-		padding:45px 0;
-		float:left;
-		padding-left:10px
-		}
-	#inquirydiaplusText{
-		border:1px solid gray;
-		width:700px;
-		height:150px;
-		}
-	#inquiryyear2{
-		border:1px solid gray;
-		width:150px;
-		height:450px;
-		}
-	/* 등급안내 페이지 넌 */
-	#benefitPage{
-		display:none;
-		}
-	#check2{
-		visibility:hidden
-	}
-	
-</style>
-<script>
-	function eligibilityNoneBlock(){
-		document.getElementById("benefitPage").style.display= "none"
-		document.getElementById("gradePage").style.display= "block"
-		document.getElementById("check1").style.visibility= "visible"
-		document.getElementById("check2").style.visibility= "hidden"
-		document.getElementById("vipGrade").style.backgroundColor= "white"
-		document.getElementById("vipGrade").style.color= "#6d6e70"
-		document.getElementById("vipEligibility").style.backgroundColor= "#6d6e70"
-			document.getElementById("vipEligibility").style.color= "white"
-	};
-	function benefitNoneBlock(){
-		document.getElementById("gradePage").style.display= "none"
-		document.getElementById("benefitPage").style.display= "block"
-		document.getElementById("check1").style.visibility= "hidden"
-		document.getElementById("check2").style.visibility= "visible"
-		document.getElementById("vipGrade").style.backgroundColor= "#6d6e70"
-		document.getElementById("vipGrade").style.color= "white"
-		document.getElementById("vipEligibility").style.backgroundColor= "white"
-		document.getElementById("vipEligibility").style.color= "#6d6e70"
-	};
-	
 
-</script>
 </head>
 <body>
 <header id="header">
@@ -361,11 +112,29 @@
 				<div class="goldImg"><div><img src="../IMG/mypage_Img/gold.jpg"/></div><div>골드</div></div>			
 			</div>
 			<div id="inquiryCondition"><div class="inquiryConditionTitle">자격조건</div>
-				<div id="plaText"></div>
-				<div id="diaplusText1"></div>
-				<div id="diaplusText2"></div>
-				<div class="diaText"></div>
-				<div class="goldText"></div>
+				<div id="plaText">가입일로부터 다음의 어느 한 조건을 충족할 경우<br/>
+								1) 100만 탑승 마일 적립<br/>
+								2) 아시아나항공 1,000회 탑승
+				</div>
+				<div id="diaplusText1">가입일로부터 다음의 어느 한 조건을 충족할 경우<br/>
+								1) 50만 탑승 마일 적립<br/>
+								2) 아시아나항공 500회 탑승
+				</div>
+				<div id="diaplusText2">‘기준일*’로부터 매 24개월간 다음의 어느 한 조건을 충족할 경우<br/>
+								1) 10만 탑승 마일 적립<br/>
+								2) 아시아나항공 100회 탑승<br/>
+								3) 탑승 마일이 7만 5천 마일 이상이면서 아시아나 제휴카드 이용 실적과 합하여 10만 마일 적립
+				</div>
+				<div class="diaText">‘기준일*’로부터 매 24개월간 다음의 어느 한 조건을 충족할 경우<br/>
+								1) 4만 탑승 마일 적립<br/>
+								2) 아시아나항공 50회 탑승<br/>
+								3) 탑승 마일이 3만 마일 이상이면서 아시아나 제휴카드 이용 실적과 합하여 4만 마일 적립
+				</div>
+				<div class="goldText">‘기준일*’로부터 매 24개월간 다음의 어느 한 조건을 충족할 경우<br/>
+								1) 2만 탑승 마일 적립<br/>
+								2) 아시아나항공 30회 탑승<br/>
+								3) 탑승 마일이 1만 5천 마일 이상이면서 아시아나 제휴카드 이용 실적과 합하여 2만 마일 적립
+				</div>
 			</div>
 			<div id="maintenancePeriod"><div class="maintenancePeriodTitle">자격 유지 기간</div>
 				<div id="lifetime">평생</div>
@@ -381,9 +150,21 @@
 				<div class="goldImg"><div><img src="../IMG/mypage_Img/gold.jpg"/></div><div>골드</div></div>
 			</div>
 			<div id="iinquiryCondition"><div class="inquiryConditionTitle">자격조건</div>
-				<div id="inquirydiaplusText"></div>
-				<div class="diaText">s</div>
-				<div class="goldText">s</div>
+				<div id="inquirydiaplusText">‘기준일*’로부터 매 24개월간 다음의 어느 한 조건을 충족할 경우<br/>
+								1) 7만 5천 탑승 마일 적립<br/>
+								2) 아시아나항공편 60회 탑승<br/>
+								3) 탑승 마일이 5만 마일 이상이면서 아시아나 제휴카드 이용 실적과 합하여 7만 5천 마일 적립
+				</div>
+				<div class="diaText">‘기준일*’로부터 매 24개월간 다음의 어느 한 조건을 충족할 경우<br/>
+								1) 3만 탑승 마일 적립<br/>
+								2) 아시아나항공 30회 탑승<br/>
+								3) 탑승 마일이 2만 마일 이상이면서 아시아나 제휴카드 이용 실적과 합하여 3만 마일 적립
+				</div>
+				<div class="goldText">‘기준일*’로부터 매 24개월간 다음의 어느 한 조건을 충족할 경우<br/>
+								1) 1만 5천 탑승 마일 적립<br/>
+								2) 아시아나항공편 20회 탑승<br/>
+								3) 탑승 마일이 1만 마일 이상 이면서 아시아나 제휴카드 이용 실적과 합하여 1만 5천 마일 적립
+				</div>
 			</div>
 			<div id="inquirymaintenancePeriod"><div class="maintenancePeriodTitle">자격 유지 기간</div>
 				<div id="inquiryyear2">조기 승급 기간<br/>+ 24개월</div>
@@ -440,5 +221,6 @@
 		</div>
 	</div>
 </footer>
+<script src="../JS/mypage_GradeInfo.js"></script>
 </body>
 </html>
