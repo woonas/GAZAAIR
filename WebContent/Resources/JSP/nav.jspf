@@ -1,87 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%
+	String path = request.getContextPath();
+%>
 <header id="header">
-	<nav class="nav">
-		<div class="navContainer">
-			<ul class="navMenu">
-				<li><a href="<%=request.getContextPath() %>/"><img src="../IMG/logo/logo_basic.png"/></a></li>
-				<li><a href="#">항공권예매</a>
-					<div class="subMenuWarp">
-						<div class="subMenu">
+	<nav>
+		<div id="mainMenu">
+			<ul>
+				<li>
+					<div><a href="<%=path %>/">
+						<img src="<%=path %>/Resources/IMG/logo/logo_basic.png"/>
+					</a>
+					</div>
+					<div><a href="#">항공권예매</a></div>
+					<div><a href="#">상품페이지</a></div>
+					<div><a href="#">서비스안내</a></div>
+					<div><a href="#">고객서비스</a></div>
+					<div><a href="<%=path %>/Resources/HTML/loginNaccountSearch/login.html">로그인</a></div>
+					<div id="navBar"></div>
+					<ul id="subMenuWrap">
+						<li id="subMenu">
 							<ul>
-								<li><a href="../HTML/not_using/book.html">항공권예약</a></li>
+								<li><img src="<%=path %>/Resources/IMG/main/nav_flight.jpg"/></li>
 							</ul>
 							<ul>
+								<li><a href="<%=path %>/Resources/HTML/not_using/book.html">항공권예약</a></li>
 								<li><a href="#">정기 운항스케줄</a></li>
 								<li><a href="#">실시간 운항스케줄</a></li>
-								<li><a href="../HTML/routeMap.html">운항노선도</a></li>
+								<li><a href="<%=path %>/Resources/HTML/routeMap.html">운항노선도</a></li>
 							</ul>
-						</div>
-					</div>
+							<ul>
+								<li><a href="<%=path %>/Resources/HTML/prd_BestProduct.html">베스트상품</a></li>
+								<li><a href="<%=path %>/Resources/HTML/prd_alliance_event.html">제휴이벤트</a></li>							
+								<li><a href="<%=path %>/Resources/HTML/prd_recmdProduct.html">추천상품</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">공항서비스</a></li>
+								<li><a href="#">기내서비스</a></li>
+								<li><a href="#">부가서비스</a></li>
+								<li><a href="#">항공기안내</a></li>
+							</ul>
+							<ul>
+								<li><a href="<%=path %>/Resources/HTML/notice.html">공지사항</a></li>
+								<li><a href="<%=path %>/Resources/HTML/service_faq.html">FAQ</a></li>
+								<li><a href="<%=path %>/Resources/HTML/review.jsp">고객의말씀</a></li>
+							</ul>
+							<ul>
+								<li><a href="<%=path %>/Resources/HTML/AccountInfo.html">회원정보</a></li>
+								<li><a href="<%=path %>/Resources/HTML/reserveStatus.html">예약 현황</a></li>
+								<li><a href="<%=path %>/Resources/HTML/mypage_Main.html">마이 홈</a></li>
+							</ul>
+						</li>
+					</ul>
 				</li>
-				<li><a href="#">마이페이지</a>
-					<div class="subMenuWarp">
-						<div class="subMenu">
-							<ul>
-								<li><a href="../HTML/AccountInfo.html">회원정보</a></li>
-								<li><a href="../HTML/mypage_Membergrade.html">회원등급</a></li>
-								<li><a href="../HTML/reserveStatus.html">항공권 예약 현황</a></li>
-							</ul>
-							<ul>
-								<li><a href="../HTML/mypage_Main.html">마이 홈</a></li>
-								<li><a href="#">마일리지</a></li>
-								<li><a href="#">관심노선</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li><a href="#">상품페이지</a>
-					<div class="subMenuWarp">
-						<div class="subMenu">
-							<ul>
-								<li><a href="../HTML/prd_SpecialPrice.html">특가할인</a></li>
-								<li><a href="../HTML/prd_alliance_event.html">제휴이벤트</a></li>
-							</ul>
-							<ul>
-								<li><a href="../HTML/prd_BestProduct.html">베스트상품</a></li>
-								<li><a href="../HTML/prd_recmdProduct.html">추천상품</a></li>
-							</ul>
-							<ul>
-								<li><a href="review.jsp">고객의말씀</a></li>
-					
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li><a href="#">서비스안내</a>
-					<div class="subMenuWarp">
-						<div class="subMenu">
-							<ul>
-								<li><a href="../HTML/service_checkIn.html">체크인</a></li>
-								<li><a href="../HTML/service_baggage.html">수하물 서비스</a></li>
-								<li><a href="../HTML/service_pet.html">반려동물동반</a></li>
-							</ul>
-							<ul>
-								<li><a href="../HTML/service_airline_food.html">기내식안내</a></li>
-								<li><a href="../HTML/service_class.html">클래스안내</a></li>
-								<li><a href="../HTML/service_wifi.html">유료부가서비스</a></li>
-							</ul>
-							<ul>
-								<li><a href="../HTML/service_private_plane.html">전용기</a></li>
-								<li><a href="../HTML/notice.html">공지사항</a></li>
-								<li><a href="../HTML/service_faq.html">FAQ</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<div class="navBar"></div>
 			</ul>
-			<a href="../HTML/not_using/signIn.html"><button class="translator" style="right:55px">로그인</button></a>
-			<button class="translator">EN</button>
+			
 		</div>
+		<div id="menuBg"></div>
 	</nav>
 	<div class="topBtn" title="맨 위로 이동">
-		<a href="#header"><img src="../IMG/logo/logo_top.png"/></a>
+		<a href="#header"><img src="<%=path %>/Resources/IMG/logo/logo_top.png"/></a>
 	</div>
 </header>
