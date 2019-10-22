@@ -12,29 +12,60 @@
 	background-color: #fff;
 	
 }
+ul, li{
+	list-style-type:none;
+}
+.content {
+	max-width: none !important;
+}
 /*section main---------------------------------------------------------*/
-.simple_reservation_wrap{
+.reserve_wrap{
 	width: 1000px;
 	height: 160px;
 	background-color: #fff;
-	padding: 8px 16px;
 	box-shadow : 5px 5px 5px rgba(51,51,51,0.7);
 	position:absolute;
 	left: 50%;
 	transform:translateX(-50%);
 	bottom: 25vh;
 }
-.reservation_contents{
-	width: 20%;
-	height: 144px;
+.reserve_wrap>div:nth-child(1), .reserve_wrap>div:nth-child(2){
+	width:25%;
+	background-color: yellow;
+}
+.reserve_wrap>div:nth-child(3){
+	width:35%;
+	background-color: pink;
+}
+.reserve_wrap>div:nth-child(4){
+	width:15%;
+	background-color: orange;
+}
+.reserveBox{
+	height: 160px;
 	border: 1px solid white;
 	float: left;
 	color: #555;
 	text-align: center;
 }
-.reservation_contents img{
-	margin-left:10px;
-	width: 18px;
+.reserveBox>div:first-child{
+	width: 100%;
+	height: 80px;
+	line-height: 80px;
+}
+.tripLoc{
+	font-size: 200%;
+	width: 100%;
+	text-align:center;
+	background-color: rgb(255,255,255,0);
+	border: none;
+	background : url('../IMG/icon/marker_black.png') no-repeat;
+	background-size : 10%;
+	background-position: 90% 50%;
+	cursor: pointer;
+}
+.tripLoc::placeholder{
+	color: #555;
 }
 .dialogOpen{
 	height: 82px;
@@ -47,52 +78,14 @@
 	line-height: 62px;
 }
 
-.selectFrm {
-	position:relative;
-	line-height:40px;
-	text-align:left;
-	font-size:140%;
-	margin-top:25%;
+/*구간 선택---------------------*/
+#waySelect{
+	width: 80%;
+	height: 50px !important;
+	margin: 0 auto;
+	background-color: red;
 }
-.selectFrm img{
-}
-.selectFrm > p {
-	display:block;
-	padding:0 8px; 
-	overflow:hidden;
-	cursor:pointer;
-	background: 
-	url(../IMG/icon/underArrow2_black.png) 
-	no-repeat 95% 50%;
-	background-size: 10%;
-	border-bottom: 2px solid #555;
-}
-.selectFrm > p:after,
-.selectFrm > ul > li:first-child:after {
-	display:block; 
-	float:right;
-}
-.selectFrm > ul {
-	position:absolute; 
-	width:100%; 
-	top:1px; 
-	background:#fff; 
-	display:none;
-	list-style-type:none;
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
-	border-top: 2px solid #555;
-	
-}
-.selectFrm li {
-	cursor:pointer; 
-	padding:0 8px;
-	border-bottom:1px solid #ccc; 
-	z-index:9999;
-}
-.selectFrm li:hover{
-	background-color: #ccc;
-}
+
 .simple_reservation_submit{
 	width:100px;
 	height:100px;
@@ -107,39 +100,6 @@
 .simple_reservation_submit:hover{
 	background-color: #4477ff;
 }
-/*출발지,도착지 다이얼로그*/
-.dialogOpen{
-	cursor: pointer;
-	white-space:nowrap;
-}
-.dialogOpen:hover{
-	color: #333;
-}
-.startDialog {
-	overflow-x:hidden !important;
-	display:none;
-}
-.startDialog>h2 {
-	text-align: center;
-	margin: 10px 0;
-}
-.startDialog>h4 {
-	margin-bottom: 10px;
-}
-.ui-menu {
-	width:200px;
-	line-height: 40px;
-	}
-.locMenu{
-	border:none !important;
-}
-.locMenu>li>ul{
-	border:none !important;
-	width:100%;
-	top:90px !important;
-}
-/*배경이미지 슬라이더*/
-
 /*배경이미지 컨트롤러*/
 .slideControler{
 	position:absolute !important;
@@ -196,10 +156,72 @@
 #best>div>div>a:hover{
 	text-decoration: underLine;
 }
-.bestBannerWrap{
+#bestBannerWrap{
 	width: 1200px;
 	margin: 0 auto;
-	height:200px;
+	height:400px;
+}
+#bestBannerWrap a{
+	color: #555;
+	text-decoration: none;
+}
+.imgFrame{
+	width : 250px;
+	height : 170px;
+	overflow : hidden;
+}
+#bestBannerWrap a:hover img{
+	transform: scale(1.1);
+	-webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+#bestBannerWrap a:hover .textBox{
+	background-color: #eee;
+	-webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+#bestBannerWrap li{
+	float: left;
+	width: 25%;
+	margin-top: -50px;
+}
+.imgTag{
+	width: 50px;
+	height: 50px;
+	position: relative;
+	background-color: #35f;
+	color: #fff;
+	text-align: center;
+	line-height: 50px;
+	top: 195px;
+	left: 15px;
+	font-size: 90%;
+	z-index: 500;
+}
+.textBox{
+	width: 250px;
+	height: 200px;
+	position: absolute;
+}
+.textBox h5{
+	margin-top: 30px;
+	font-size: 115%;
+	font-weight: bold;
+}
+.textBox>div{
+	width: 85%;
+	margin: 30px auto 0 auto;
+	margin-top: 30px;
+	height: 170px;
+}
+.textBox>div>div{
+	font-size: 90%;
+	height: 90px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+}
+.textBox h6{
+	text-align: right;
 }
 /*section event-------------------------------------------------------------------------*/
 #event>div{

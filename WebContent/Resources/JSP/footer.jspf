@@ -2,23 +2,23 @@
     pageEncoding="UTF-8"%>
 <footer>
 	<div id="footContainer">
-		<a href="../HTML/index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
+		<a href="<%=path %>/Resources/HTML/index.html" title="홈페이지로 이동"><img src="<%=path %>/Resources/IMG/logo/logo_white2.png" width="170"/></a>
 		<div class="snsPane">
 			<div class="snsBtn">
-				<img src="../IMG/icon/facebook_white.png"/>
-				<img src="../IMG/icon/facebook.png"/>
+				<img src="<%=path %>/Resources/IMG/icon/facebook_white.png"/>
+				<img src="<%=path %>/Resources/IMG/icon/facebook.png"/>
 			</div>
 			<div class="snsBtn">
-				<img src="../IMG/icon/instagram_white.png"/>
-				<img src="../IMG/icon/instagram.png"/>
+				<img src="<%=path %>/Resources/IMG/icon/instagram_white.png"/>
+				<img src="<%=path %>/Resources/IMG/icon/instagram.png"/>
 			</div>
 			<div class="snsBtn">
-				<img src="../IMG/icon/twitter_white.png"/>
-				<img src="../IMG/icon/twitter.png"/>
+				<img src="<%=path %>/Resources/IMG/icon/twitter_white.png"/>
+				<img src="<%=path %>/Resources/IMG/icon/twitter.png"/>
 			</div>
 			<div class="snsBtn">
-				<img src="../IMG/icon/youtube_white.png"/>
-				<img src="../IMG/icon/youtube.png"/>
+				<img src="<%=path %>/Resources/IMG/icon/youtube_white.png"/>
+				<img src="<%=path %>/Resources/IMG/icon/youtube.png"/>
 			</div>
 		</div>
 		<hr class="footHr"/>

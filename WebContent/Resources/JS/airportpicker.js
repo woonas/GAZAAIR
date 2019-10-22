@@ -1377,8 +1377,10 @@ const openPicker = (targetClassName, centeredY) => {
             openedBy = elem;
             openEvent();
             pickerWindow.style.display = 'block';
-            if(centeredY) pickerWindow.classList.add('centeredXY');
-            else {
+            if(centeredY) { 
+            	pickerWindow.classList.add('centeredXY');
+            	overlay.style.display = 'block';
+            } else {
                 const _scrollTop = window.scrollY || document.documentElement.scrollTop;
                 pickerWindow.style.top = _scrollTop + elem.getBoundingClientRect().bottom + 15 + 'px';
                 pickerWindow.classList.add('centeredX');

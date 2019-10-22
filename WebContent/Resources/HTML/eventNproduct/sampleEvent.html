@@ -3,33 +3,23 @@
 <head>
   <meta charset = "UTF-8">
   <title>Title</title>
-    <link rel = "stylesheet" href = "../../CSS/layout.css">
+    <link rel = "stylesheet" href = "../CSS/layout.css">
     <script>window.onbeforeunload=() => window.scrollTo(0, 0)</script>
     <style>
+        * { margin: 0; padding:0; box-sizing: border-box; }
         
         .product-row { margin: 20px auto; }
         
-        .col-half { 
-        	width: calc(50% - 10px) !important; 
-        	border: 1px solid transparent;
-        }
-        
-        .col-half:first-of-type{ margin-right: 10px; }
-        
-        .col-half:last-of-type{ margin-left: 10px; }
-        
-        .col-half div { float: left; }
         .col-half div:first-of-type { 
-        	width: 45%;
+        	width: 240px;
         	height: 200px;
-        	background-image: url("../../IMG/event/eve8_.jpg");
+        	background-image: url("../IMG/event/eve8_.jpg");
+        	background-size: cover;
+        	background-position: center;
         	overflow:hidden;
         }
         
-        .col-half div:last-of-type { width:55%; }       
-       
-        .col-half:hover { border: 1px solid #888; }
-        
+        .col-half div:first-of-type:hover { opacity: 0.8; }
         
         .seperatorLogo {
             width: 80%;
@@ -37,9 +27,12 @@
             border: 1px solid #aaa;
             border-top: 0;
         }
-        
-        .product-detail { background-color: rgba(250,250,250,0.9); }
-        
+        .product-detail {
+            background-color: rgba(250,250,250,0.9);
+            border-top: 1px solid #aaa;
+            border-bottom: 1px solid #aaa;
+            border-right: 1px solid #aaa;
+        }
         .product-detail>p {
             margin-top: 25px;
             margin-left: 10%;
@@ -71,8 +64,9 @@
     <h3>제휴이벤트</h3>
         <div class="row clearfix product-row">
             <div class="col-half">
-                <div></div>
-                <div class="product-detail">
+                <div class="col-two-fifth">
+                </div>
+                <div class="col-three-fifth product-detail">
                     <p>스무디킹</p>
                     <hr class="seperatorLogo">
                     <ul class="list-type1">
@@ -82,36 +76,11 @@
                     </ul>
                 </div>
             </div>
-           <div class="col-half">
-                <div></div>
-                <div class="product-detail">
-                    <p>스무디킹</p>
-                    <hr class="seperatorLogo">
-                    <ul class="list-type1">
-                        <li>전 메뉴(음료) 20% 할인</li>
-                        <li>골드이상회원 추가 10% 할인</li>
-                        <li>골드이상회원 추가 10% 할인</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-                <div class="row clearfix product-row">
             <div class="col-half">
-                <div></div>
-                <div class="product-detail">
-                    <p>스무디킹</p>
-                    <hr class="seperatorLogo">
-                    <ul class="list-type1">
-                        <li>전 메뉴(음료) 20% 할인</li>
-                        <li>골드이상회원 추가 10% 할인</li>
-                        <li>골드이상회원 추가 10% 할인</li>
-                    </ul>
+                <div class="col-two-fifth">
+                    
                 </div>
-            </div>
-           <div class="col-half">
-                <div></div>
-                <div class="product-detail">
+                <div class="col-three-fifth product-detail">
                     <p>스무디킹</p>
                     <hr class="seperatorLogo">
                     <ul class="list-type1">
@@ -123,6 +92,35 @@
             </div>
         </div>
         
+        <div class="row clearfix product-row">
+            <div class="col-half">
+                <div class="col-two-fifth">
+                </div>
+                <div class="col-three-fifth product-detail">
+                    <p>스무디킹</p>
+                    <hr class="seperatorLogo">
+                    <ul class="list-type1">
+                        <li>전 메뉴(음료) 20% 할인</li>
+                        <li>골드이상회원 추가 10% 할인</li>
+                        <li>골드이상회원 추가 10% 할인</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-half">
+                <div class="col-two-fifth">
+                    
+                </div>
+                <div class="col-three-fifth product-detail">
+                    <p>스무디킹</p>
+                    <hr class="seperatorLogo">
+                    <ul class="list-type1">
+                        <li>전 메뉴(음료) 20% 할인</li>
+                        <li>골드이상회원 추가 10% 할인</li>
+                        <li>골드이상회원 추가 10% 할인</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
      <script src="../../JS/common.js"></script>
 </body>
