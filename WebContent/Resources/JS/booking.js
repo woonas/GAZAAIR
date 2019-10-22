@@ -58,48 +58,6 @@ const spotChange = () => {
     });
 };
 
-/* 탑승객 수 +, - 버튼 */
-const changeNumOfPassengers = () => {
-    let btns_minus = document.querySelectorAll('.minus');
-    btns_minus.forEach(element => element.addEventListener('click',minus));
-
-    let btns_plus = document.querySelectorAll('.plus');
-    btns_plus.forEach(element => element.addEventListener('click',plus));
-};
-
-const minus = () => {
-    let num = event.target.parentNode.getElementsByTagName('input')[0];
-    if (num.value <= 0) num.value = '0';
-    else num.value--;
-    document.querySelector('.passengerInfo').classList.remove('font-red');
-};
-const plus = () => {
-
-    const temp = document.querySelectorAll('.number-box');
-    let numOfPassenger = 0;
-    temp.forEach(elem => {
-        numOfPassenger += parseInt(elem.getElementsByTagName('input')[0].value);
-    });
-
-    if (numOfPassenger >= 9) {
-        document.querySelector('.passengerInfo').classList.add('font-red');
-        return false;
-    }
-    event.target.parentNode.getElementsByTagName('input')[0].value++;
-};
-
-/* 총 탑승객 수 */
-
-const totalPassengers = () => {
-    const adultNum = parseInt(document.getElementById('numOfAdult').value);
-    const childNum = parseInt(document.getElementById('numOfChild').value);
-    const infantNum = parseInt(document.getElementById('numOfInfant').value);
-    if(adultNum + childNum + infantNum <= 0 ) {
-        alert('한명이상의 탑승객을 선택하여주십시오.');
-        return false;
-    }
-    return true;
-};
 
 /* 캘린더 */
 let calendar;
