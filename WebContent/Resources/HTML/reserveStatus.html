@@ -10,7 +10,6 @@
 	#all{ 
 		max-width:1200px;
 		margin:0 auto;
-		height:1700px
 		}
 	#nav{
 		width:100%;
@@ -437,6 +436,143 @@
 		/* background-color: red; */
 		padding:2px
 		}
+	/* 예약상세  */
+	#reserve{
+		background-color:white;
+		width:1160px;
+		left:20px;
+		top:-110px;
+		margin:0;
+		padding:0;
+		position:relative;
+		}	
+	#rt{
+		width:1160px;
+		font-size:40px;
+		font-weight:bold;
+		text-align:center
+		}
+	#reserveContent{
+		background-color:white;
+		width:900px;
+		height:650px;
+		margin:40px auto
+		}
+	#daTitle{
+		text-align:center;
+		padding:30px
+		}
+	#days{
+		width:900px;
+		height:80px;
+		margin:0;
+		border-bottom:1px solid gray
+		}
+	.daydiv{
+		background-color:#e6e2df;
+		border:1px solid gray;
+		border-bottom:0;
+		width:200px;
+		height:80px;
+		margin:0;
+		text-align:center;
+		float:left;
+		}
+	#standard{
+		text-align:right;
+		padding:20px
+		}
+	#reserveTitle{
+		width:740px;
+		height:200px;
+		margin:0;
+		padding:0;
+		float:left;
+		}
+	.as{
+		background-color:#6d6e70;
+		border-right:1px solid white;
+		color:white;
+		width:150px;
+		height:40px;
+		text-align:center;
+		line-height:40px;
+		margin:0;
+		float:left
+		}
+
+	.time{
+		background-color:#6d6e70;
+		border-right:1px solid white;
+		color:white;
+		width:220px;
+		height:40px;
+		text-align:center;
+		line-height:40px;
+		margin:0;
+		float:left
+		}
+
+	#dr{
+		width:158px;
+		float:left;
+		line-height:20px
+		}
+	#dr div{
+		background-color:#3864ea;
+		color:white;
+		width:158px;
+		height:80px;
+		text-align:center;
+		font-size:25px;
+		line-height:80px
+		}
+	#dr>div:first-child{
+		margin-bottom:10px
+		}
+	.asReserve{
+		border-right:1px solid gray;
+		border-bottom:1px solid gray;
+		width:150px;
+		height:130px;
+		text-align:center;
+		line-height:120px;
+		margin:0;
+		float:left
+		}
+	.dasc{
+		border-right:1px solid gray;
+		border-bottom:1px solid gray;
+		width:220px;
+		height:65px;
+		text-align:center;
+		line-height:60px;
+		margin:0;
+		float:left
+		}
+	.daexpect{
+		border-right:1px solid gray;
+		border-bottom:1px solid gray;
+		width:220px;
+		height:65px;
+		text-align:center;
+		line-height:60px;
+		margin:0;
+		float:left;
+		}
+/* 	#info{
+		background-color:#f7f7f7;
+		width:898px;
+		height:200px;
+		padding-left:50px;
+		float:left
+	} */
+	
+	#dr>div>a:link{text-decoration:none;color:white}
+	#dr>div>a:visited{text-decoration:none;color:white}
+	#dr>div>a:hover{color:white}
+	
+	.list-type2{margin-top:200px}
 	
 </style>
 <script>
@@ -682,55 +818,38 @@
 	<hr/>
 	<div>운임이 정상적으로 입력되었는지 최종 확인 후, 운임 조건 및 규정을 확인하시기 바랍니다.</div>
 	<hr/>
-		<div id="travelAll">
-			<div id="travelText">여정</div>
-				<table>
-					<colgroup>
-						<col style="width: 200px;" />
-						<col style="width: 600px" />
-						<col style="width: 200px" />
-						<col style="width: 200px" />
-						<col style="width: 200px" />
-						<col style="width: 200px" />
-					</colgroup>
-					<thead>
-						<tr>
-							<th>여정</th>
-							<th>출도착시간</th>
-							<th>편명/기종</th>
-							<th>운임할인</th>
-							<th>예약변경</th>
-							<th>환불</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<div>01</div>
-							</td>
-							<td>
-								<div>서울김포</div>
-								<div>----</div>
-								<div>제주</div>
-							</td>
-							<td>
-								<div>OZ8901</div>
-							</td>
-							<td>
-								<div>정상운임</div>
-							</td>
-							<td>
-								<div>O</div>
-							</td>
-							<td>
-								<div>O</div>
-							</td>
-						</tr>
-						
-						
-					</tbody>
-				</table>
+		<div id="reserveContent">
+				<div id="daTitle"><h2>ICN 서울/인천 > JFK 뉴욕/존 F 케네디</h2></div>
+				<div id="days">
+					<div class="daydiv">예약한 날짜</div>
+				</div>
+				<div id="standard">(2019.09.07 20:14 한국시간 기준) 출발 다음날 / 출발 다다음날</div>
+				<div id="reserveTitle">
+					<div class="as">편명</div>
+					<div class="as">상태</div>
+					<div class="time">출발 시간</div>
+					<div class="time">도착 시간</div>
+					<div class="asReserve">oz</div>
+					<div class="asReserve">상태</div>
+					<div class="dasc">출발 스케쥴 10:20</div>
+					<div class="dasc">도착 스케쥴10:20</div>
+					<div class="daexpect">출발 예정11:35</div>
+					<div class="daexpect">도착 예정 11:35</div>
+				</div>
+				<div id="dr">
+					<div><a href="reserveStatus.html">상세 보기</a></div>
+					<div>환불</div>
+				</div>
+			
+				<ul class="list-type2 last-note bg-gray6">
+					<li class="list-inside-title">안내 사항</li>
+					<li>출발 완료 시각은 항공기가 비행을 위해 주기장을 출발한 시간을 의미하며, 실제 항공기 이륙시간과는 공항 상황에 따라 15~20분 가량 차이가 있습니다.</li>
+					<li>도착 완료는 항공기 착륙 후 주기장에 도착하여 하기 준비가 된 상태로 실제 활주로 착륙 후 15~20분 가량 소요됩니다.</li>
+					<li>도착이 30분 이상 지연되거나 항공편이 결항될 경우 출도착 조회를 통해 확인서를 출력하실 수 있습니다.</li>
+				</ul>
+		
 		</div>
+		
 		<div><h3>탑승자 정보</h3></div>
 		<div id="passengerTextAll"><div id="passengerText">성인1</div><div id="checkDiv"><input type="checkbox" name="check" value="check" id="check"/>&nbsp;&nbsp;본인은 탑승에서 제외 <span id="necessary">*는 필수항목입니다.</span></div><input type="button" name="V" value="V" id="V"/></div>
 		<div id="passengerAllDiv">

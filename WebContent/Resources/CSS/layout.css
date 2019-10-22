@@ -828,6 +828,7 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 .col-three-fifth,
 .col-four-fifth,
 .col-tenth,
+.col-eight-tenth,
 .col-nine-tenth  { float: left; }
 
 .col-line { width: 100% !important; }
@@ -847,6 +848,7 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 .col-four-fifth { width: 80% !important; }
 
 .col-tenth { width: 10% !important; }
+.col-eight-tenth { width: 80% !important; }
 .col-nine-tenth { width: 90% !important; }
 
 

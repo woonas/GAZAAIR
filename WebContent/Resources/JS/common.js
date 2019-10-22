@@ -149,6 +149,7 @@ let cal_generator = (strId, startDate, numOfMonths) => {
     });
 };
 
+
 /* loader */
 let loader_generator = () => {
     document.querySelector('section.content').insertAdjacentHTML('afterend', 
