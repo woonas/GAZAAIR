@@ -4,108 +4,230 @@
     <meta charset="UTF-8">
     <title>결제</title>
     <link rel="stylesheet" href="../../CSS/payment.css">
+    <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
 <body>
     <section class="content">
         <h3>결제</h3>
-        <div style="height: 300px; background-color: beige;"></div>
+        <div class="bag" style="height: 300px; background-color: beige;">
+            <p class="bag-head">결제 대기중인 상품(1)</p>
+            
+            <!--<div class="bag-total">
+		<div class="subtotal">
+			<p class="small">Subtotal:</p>
+			<p class="small">$825.00</p>
+		</div>
+		<div class="delivery">
+			<p class="small">Delivery (Standard - 2 working days):<br>
+				<span class="change-delivery">Change delivery method</span></p>
+			<p class="small">Free</p>
+		</div>
+		<div class="total">
+			<h3>Total:</h3>
+			<h3>$825.00</h3>
+		</div>
+	</div>-->
+            
+        </div>
         
-        <div class="payment-section">
-            <p class="section-title">결제 방식 선택</p>
-            
-            <ul class="list-type2 list-border">
-                <li>신용카드(체크카드 포함) 및 계좌이체로 발권이 가능하며 결제 후 결제수단 변경이 불가합니다.</li>
-                <li>국내 발행 카드 이용시 안전한 신용카드 거래를 위해 신용카드 인증이 필요합니다.</li>
-                <li>신용카드 인증 시 발생한 오류는 반드시 해당 카드사로 문의하여 주시기 바랍니다.</li>
-                <li>해외발행 신용카드는 온라인 인증서비스를 받은 VISA, MASTER, JCB 카드에 한해 구매가능합니다.</li>
-            </ul>
-            
-            <div class="table-form2">
-                <div class="row clearfix">
-                    <div class="col-fourth table-row-title">
-                        결제방식
+        
+        <div class="row clearfix">
+            <div class="payment-section col-three-fourth">
+                <p class="section-title">결제 수단 선택</p>
+                
+                <ul class="list-type2 list-border">
+                    <li>신용카드(체크카드 포함) 및 계좌이체로 발권이 가능하며 결제 후 결제수단 변경이 불가합니다.</li>
+                    <li>국내 발행 카드 이용시 안전한 신용카드 거래를 위해 신용카드 인증이 필요합니다.</li>
+                    <li>신용카드 인증 시 발생한 오류는 반드시 해당 카드사로 문의하여 주시기 바랍니다.</li>
+                    <li>해외발행 신용카드는 온라인 인증서비스를 받은 VISA, MASTER, JCB 카드에 한해 구매가능합니다.</li>
+                </ul>
+                
+                <div class="table-form2">
+                    <div class="row clearfix">
+                        <div class="col-fourth table-row-title">
+                            결제수단
+                        </div>
+                        <div class="col-three-fourth payment-type">
+                            <div class="col-half">
+                                <div>
+                                    <input type = "radio" name="payment-method" id="credit" checked>
+                                    <label for="credit">
+                                        <img src="https://img.icons8.com/wired/50/000000/mastercard-credit-card.png">
+                                        <img src="https://img.icons8.com/dusk/50/000000/mastercard-credit-card.png">
+                                        <div class="pay-tit">신용카드</div>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-half">
+                                <div>
+                                    <input type = "radio" name="payment-method" id="transfer">
+                                    <label for = "transfer">
+                                        <img src="https://img.icons8.com/dotty/50/000000/bank-building.png">
+                                        <img src="https://img.icons8.com/dusk/44/000000/bank-building.png"
+                                             style="margin-top: 4px; margin-bottom: 2px;">
+                                        <div class="pay_tit">계좌이체</div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-three-fourth payment-type">
-                        <ul class="clearfix">
-                            <li class="col-half">
-                                <button>
-                                    <img src="https://img.icons8.com/wired/50/000000/mastercard-credit-card.png">
-                                    <img src="https://img.icons8.com/dusk/50/000000/mastercard-credit-card.png">
-                                    <a href="payment_card.html"><span class="pay_tit">국내발행 신용카드</span></a>
-                                </button>
-                            </li>
-                            <li class="col-half">
-                                <button>
-                                    <img src="https://img.icons8.com/dusk/44/000000/bank-building.png">
-                                    <img src="https://img.icons8.com/dotty/50/000000/bank-building.png">
-                                    <a href="payment_transfer.html"><span class="pay_tit">계좌이체</span></a>
-                                </button>
-                            </li>
+                    <div class="row clearfix" id="payment-method-credit">
+                        <div class="col-fourth table-row-title">
+                            결제정보입력
+                        </div>
+                        <div class="col-three-fourth">
+                            <div class="row clearfix">
+                                <div class="col-fifth info-tit">
+                                    카드회사
+                                </div>
+                                <div class="col-three-fourth">
+                                    <select name = "" id = "">
+                                        <option value = "">카드회사를 선택해주세요.</option>
+                                        <option value = "">비씨카드</option>
+                                        <option value = "">삼성카드</option>
+                                        <option value = "">우리카드</option>
+                                        <option value = "">신한카드</option>
+                                        <option value = "">하나카드</option>
+                                        <option value = "">롯데카드</option>
+                                        <option value = "">현대카드</option>
+                                        <option value = "">KB국민카드</option>
+                                        <option value = "">농협은행</option>
+                                        <option value = "">한국씨티은행</option>
+                                        <option value = "">기업은행</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-fifth info-tit">
+                                    카드번호
+                                </div>
+                                <div class="col-three-fourth">
+                                    <input type = "number" placeholder="0000 0000 0000 0000">
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-fifth info-tit">
+                                    CVC
+                                </div>
+                                <div class="col-three-fourth">
+                                    <input type = "number" placeholder="000">
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-fifth info-tit">
+                                    카드주명
+                                </div>
+                                <div class="col-three-fourth">
+                                    <input type = "text" placeholder="이름을 입력하세요.">
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-fifth info-tit">
+                                    만료일
+                                </div>
+                                <div class="col-three-fourth">
+                                    <input type = "number" placeholder="YYYY"> / <input type = "number"
+                                                                                        placeholder="MM">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <ul class="list-type2">
+                                <li>신용카드사로부터 카드가 무효 또는 사용불가의 통지가 있는 경우 체결이 취소될 수 있습니다.</li>
+                                <li>타인 명의 혹은 도난이거나, 허위, 정보누락, 오기가 있는 경우 구매자 동의없이 체결 취소가 가능합니다.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="row clearfix hidden" id="payment-method-transfer">
+                        <div class="col-fourth table-row-title">
+                            결제정보입력
+                        </div>
+                        <div class="col-three-fourth">
+                            <div class="row clearfix">
+                                <div class="col-fifth info-tit">
+                                    은행명
+                                </div>
+                                <div class="col-three-fourth">
+                                    <select name = "" id = "">
+                                        <option value = "">은행을 선택해주세요.</option>
+                                        <option value = "">비씨카드</option>
+                                        <option value = "">삼성카드</option>
+                                        <option value = "">우리카드</option>
+                                        <option value = "">신한카드</option>
+                                        <option value = "">하나카드</option>
+                                        <option value = "">롯데카드</option>
+                                        <option value = "">현대카드</option>
+                                        <option value = "">KB국민카드</option>
+                                        <option value = "">농협은행</option>
+                                        <option value = "">한국씨티은행</option>
+                                        <option value = "">기업은행</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-fifth info-tit">
+                                    계좌번호
+                                </div>
+                                <div class="col-three-fourth">
+                                    <input type = "number" placeholder="0000 0000 0000 0000">
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-fifth info-tit">
+                                    계좌주명
+                                </div>
+                                <div class="col-three-fourth">
+                                    <input type = "text" placeholder="이름을 입력하세요.">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden">
+                        <ul class="list-type2">
+                            <li>계좌이체 서비스로 구입하신 항공권은 180일 경과시 인터넷 환불처리가 불가 하며 예약센 또는 지점 방문 후 탑승자 본인에게만 환불이 가능합니다.</li>
                         </ul>
                     </div>
                 </div>
-                <div class="payment-card">
+            </div>
+            <div class="payment-sidebar col-fourth">
+                <div>
+                    <p>결제정보</p>
                     <div class="row clearfix">
-                        <div class="col-fourth table-row-title">
-                            카드정보
+                        <div class="col-half">
+                            <div>결제상품금액</div>
+                            <div>총 프로모션 할인금액</div>
+                            <div>총 쿠폰 할인금액</div>
+                            <div>총 마일리지 사용</div>
                         </div>
-                        <div class="col-three-fourth">
-                            <select id="cardClass_KICC" name ="cardClass_KICC" title="카드종류">
-                                <option value="">카드종류 선택</option>
-                                <option value="026">BC카드</option>
-                                <option value="029">신한카드</option>
-                                <option value="031">삼성카드</option>
-                                <option value="016">KB국민카드</option>
-                                <option value="006">하나카드</option>
-                                <option value="047">롯데카드</option>
-                                <option value="018">NH농협카드</option>
-                                <option value="026">우리카드</option>
-                                <option value="022">씨티카드</option>
-                                <option value="011">제주카드</option>
-                                <option value="017">수협카드</option>
-                                <option value="010">전북카드</option>
-                                <option value="002">광주은행</option>
-                                <option value="027">현대카드</option>
-                            </select>
-                            <select id="installment_KICC" name="installment_KICC" title="할부선택">
-                                <option value="00">일시불</option>
-                                <option value="02">2개월 할부</option>
-                                <option value="03">3개월 할부</option>
-                                <option value="04">4개월 할부</option>
-                                <option value="05">5개월 할부</option>
-                                <option value="06">6개월 할부</option>
-                                <option value="07">7개월 할부</option>
-                                <option value="08">8개월 할부</option>
-                                <option value="09">9개월 할부</option>
-                                <option value="10">10개월 할부</option>
-                                <option value="11">11개월 할부</option>
-                                <option value="12">12개월 할부</option>
-                            </select>
+                        <div class="col-half">
+                            <div>354,487 원</div>
+                            <div>- 0 원</div>
+                            <div>- 0 원</div>
+                            <div>- 0 원</div>
                         </div>
                     </div>
-                    <ul class="list-type2">
-                        <li>신용카드사로부터 카드가 무효 또는 사용불가의 통지가 있는 경우 체결이 취소될 수 있습니다.</li>
-                        <li>타인 명의 혹은 도난이거나, 허위, 정보누락, 오기가 있는 경우 구매자 동의없이 체결 취소가 가능합니다.</li>
-                    </ul>
-                </div>
-                <div class="row clearfix payment-transfer hidden">
-                    <ul class="list-type2">
-                        <li>계좌이체 서비스로 구입하신 항공권은 180일 경과시 인터넷 환불처리가 불가 하며 예약센타 또는 지점 방문 후 탑승자 본인에게만 환불이 가능합니다.</li>
-                    </ul>
+                    <div class="row total">
+                        <div>총 결제예정금액</div>
+                        <div><span class="font-red" id="total-pay">354,487</span> 원</div>
+                    </div>
+                    <div class="row">
+                        <div>결제동의</div>
+                        <div>결제할 항공권의 가격 및 주의사항을 확인하였으며, 구매에 동의하시겠습니까? <br>
+                        (전자상거래법 제 8조 제 2항) <br><br>
+                        일부 항공권의 경우 환불이 불가능 하다는 내용을 확인하였으며 이에 동의합니다.</div>
+                        <div class="agree-wrapper">
+                            <input type="checkbox" id="agree" class="checkbox2">
+                            <label for="agree">동의합니다</label>
+                        </div>
+                    </div>
+                    <input type = "button" class="blueBtn" value="결제하기" id="btn-pay">
                 </div>
             </div>
         </div>
-        
-        <div class="payment-section">
-            결제수단 필요정보 입력
-        </div>
-        
-        
-        <div class="payment-sidebar">
-            결제정보 + 결제하기 버튼
-        </div>
     </section>
-    
     <script src="../../JS/common.js"></script>
+    <script src="../../JS/payment.js"></script>
 </body>
 </html>

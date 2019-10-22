@@ -2,11 +2,9 @@
 
 
 .payment-section {
-    width: 900px;
     border-top: 3px solid #777;
     padding: 30px 0;
 }
-
 .section-title {
     font-size: 120%;
     margin-bottom: 20px;
@@ -15,5 +13,127 @@
 
 .payment-section .list-type2 { margin-left: 0; }
 .payment-section .table-form2,
-.payment-section .table-form2 * { border:0; }
+.payment-section .table-form2>* { border:0; }
+.payment-section .table-form2 { margin-top: 30px; }
+.payment-section .table-form2 div:not(.table-row-title) { padding-left: 0; }
+.payment-section .table-form2>.row {
+    border-top: 3px solid #777;
+    padding-top: 30px;
+    margin-top: 50px;
+}
+.payment-section .table-form2>.row:first-of-type {
+    border-top: 0;
+    padding-top: 0;
+}
 
+
+.payment-type>div {
+    padding: 0 30px;
+    text-align: center;
+}
+
+.payment-type label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    padding: 15px 0 5px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.payment-type label:hover { background-color: #f3f3f3; }
+.payment-type input[name=payment-method]:checked + label { border-color: #36f; }
+.payment-type input[name=payment-method] + label>img:last-of-type { display: none; }
+.payment-type input[name=payment-method]:checked + label>img:last-of-type { display: inline-block; }
+.payment-type input[name=payment-method]:checked + label>img:first-of-type { display: none; }
+
+
+
+/* 결제정보입력 */
+
+.info-tit { font-size: 90%; }
+.info-tit + div>input,
+.info-tit + div>select {
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid #aaa;
+    border-radius: 0;
+    padding: 5px;
+    min-width: 150px;
+}
+.info-tit + div>select {
+    font-size: 90%;
+    padding: 10px;
+}
+
+#payment-method-transfer + div,
+#payment-method-credit + div {
+    padding-left: 20px;
+    margin: 30px 0;
+}
+
+/* 사이드 바 */
+
+.payment-sidebar {
+
+}
+
+.payment-sidebar>div {
+    margin-left: 20px;
+    padding: 30px 10px 10px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    position: sticky;
+    top: 100px;
+}
+
+.payment-sidebar>div>p:first-of-type {
+    font-size: 120%;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.payment-sidebar>div p + div>div:last-of-type { text-align: right; }
+
+.payment-sidebar>div>div {
+    color: #888;
+    font-size: 90%;
+    padding-bottom: 20px;
+}
+
+.payment-sidebar>div>div:first-of-type { border-bottom: 1px solid #ddd; }
+
+
+.total {
+    text-align: right;
+    padding: 20px 0;
+}
+.total>div:first-of-type { font-size: 80%; }
+.total #total-pay { font-size: 150%; }
+
+.payment-sidebar>div>div:last-of-type {
+    background-color: #f3f3f3;
+    padding: 15px;
+    font-size: 85%;
+}
+
+.payment-sidebar>div>div:last-of-type>div:first-of-type {
+    font-size: 130%;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.agree-wrapper {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#btn-pay {
+    width: 100%;
+    height: 50px;
+    border-radius: 0;
+    margin: 20px 0 10px;
+    font-size: 130%;
+}
+
+.payment-sidebar {
+    height: 3000px;
+}
