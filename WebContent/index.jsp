@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/index.css" type="text/css"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- Lightpick CSS -->
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Vendor/javascript-datepicker-lightpick/css/lightpick.css">
 <!-- js -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -18,6 +20,8 @@
 <script src="<%=request.getContextPath() %>/Vendor/bxSlider/jquery.bxslider.min.js"></script>
 <link href="<%=request.getContextPath() %>/Vendor/bxSlider/jquery.bxslider.css" rel="stylesheet" />
 <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
+<!-- Lightpick JS -->
+<script src="<%=request.getContextPath() %>/Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
 <script>
 $(function(){
 	//배경이미지 슬라이더
@@ -72,9 +76,9 @@ $(function(){
 	$(".eventBanner").bxSlider({
 		mode : 'horizontal'//'horizontal', 'vertical', 'fade'
 		,slideWidth : 1200 //슬라이드 폭
-		,slideHeight : 400 //슬라이드 높이
+		,slideHeight : 370 //슬라이드 높이
 		,speed: 1000 //전환속도
-		,auto : false //자동시작(true, false)
+		,auto : true //자동시작(true, false)
 		,captions : true //title 속성에 있는 문자열을 설명으로 표시하기
 		,autoControls : false //정지/ 재생 컨트롤을 보여줌 = true, false : 안보임
 		,pager: false
@@ -82,20 +86,20 @@ $(function(){
 		,infiniteLoop : true //반복여부 : true, false
 		,adaptiveHeight : true // 이미지 크기에 따라 높이 조절여부
 		,hideControlOnEnd : true //처음과 끝에 컨트롤 표시 여부 : infiniteLoop false
-		,maxSlides: 4 // 표시되는 배너 숫자
+		,maxSlides: 3 // 표시되는 배너 숫자
 		,moveSlides:1 // 1개씩 이동
-		,slideWidth: 300 //개별배너의 좌우폭
-		,slideMargin: 0 //배너간의 간격
+		,slideWidth: 370 //개별배너의 좌우폭
+		,slideMargin: 45 //배너간의 간격
 		,autoHover:true //오버되어있을때 슬라이딩이 멈춤
 	});
 	
 	$("#btn-select").click(function(){
 		if($(".tripLoc1").val()!== ""){
-			$(".tripLoc1").css("font-size", "100%");
+			$(".tripLoc1").css("font-size", "140%");
 			$(".tripLoc1").css("background-image", "none");
 		}
 		if($(".tripLoc2").val()!== ""){
-			$(".tripLoc2").css("font-size", "100%");
+			$(".tripLoc2").css("font-size", "140%");
 			$(".tripLoc2").css("background-image", "none");
 		}
 	});
@@ -120,30 +124,34 @@ $(function(){
 			<div>
         		<input type="text" id="airportFrom-1" name="airportFrom-1" class="open-airport-picker tripLoc tripLoc1" readonly placeholder="출발지">
        		</div>
-       		<div class="tripDate">출발일</div>
+       		<div class="tripDate">
+       			<input type="text" id="flightDate-1" name="flightDate-1" class="flightDate" placeholder="출발일" readonly>
+       		</div>
        	</div>
 		<div class="reserveBox">
 			<div>
 				<input type = "text" id="airportTo-1" name="airportTo-1" class="open-airport-picker tripLoc tripLoc2" readonly placeholder="도착지">
 			</div>
-			<div class="tripDate">귀국일</div>
+			<div class="tripDate">
+				<input type="text" id="flightDate-1" name="flightDate-1" class="flightDate" placeholder="귀국일" readonly>
+			</div>
 		</div>
 		<div class="reserveBox">
 			<div id="waySelect">
 				<div class="col-third">
 					<input type="radio" class="radio1" name="trip-type" value="round-way" id="round-way" checked>
-					<label for="round-way" class="firstRadio">왕복</label>
+					<label for="round-way" class="firstRadio radioLabel">왕복</label>
 				</div>
 				<div class="col-third">
 					<input type="radio" class="radio1" name="trip-type" value="single-way" id="single-way">
-					<label for="single-way">편도</label>
+					<label for="single-way" class="radioLabel">편도</label>
 				</div>
 				<div class="col-third">
 					<input type="radio" class="radio1 lastRadio" name="trip-type" value="multi-way" id="multi-way">
-					<label for="multi-way">다구간</label>
+					<label for="multi-way"  class="radioLabel">다구간</label>
 				</div>
 			</div>
-			<div>
+			<div id="passengerWrap">
 				<input type="text" id="num-of-passengers" name="num-of-passengers" readonly>
 			</div>
 		</div>
@@ -168,7 +176,7 @@ $(function(){
 							<div>
 								<h5>가자에어의 뉴욕 여행기</h5>
 								<div>인플루언서가 추천한 뉴욕의 핫플레이스, 나도 가보고 싶은 사람 손~들~어~요~</div>
-								<h6>더 보기-></h6>
+								<h6>더 보기<img src="<%=path %>/Resources/IMG/icon/ico_arrow_gray.png"/></h6>
 							</div>
 						</div>
 					</a>
@@ -182,7 +190,7 @@ $(function(){
 						<div>
 							<h5>FUN한 동남아 여행</h5>
 							<div>뻔한 여행 말고 FUN한 동남아 여행, A380타고 동남아 가자!</div>
-							<h6>더 보기-></h6>
+							<h6>더 보기<img src="<%=path %>/Resources/IMG/icon/ico_arrow_gray.png"/></h6>
 						</div>
 					</div>
 					</a>
@@ -196,7 +204,7 @@ $(function(){
 						<div>
 							<h5>감성충만 파리 여행</h5>
 							<div>예술가들의 발자취를 따라 걸으며 파리갬성 가득한 인생샷 찍으러!</div>
-							<h6>더 보기-></h6>
+							<h6>더 보기<img src="<%=path %>/Resources/IMG/icon/ico_arrow_gray.png"/></h6>
 						</div>
 					</div>
 					</a>
@@ -210,12 +218,11 @@ $(function(){
 						<div>
 							<h5>나만 간직하고 싶은 제주</h5>
 							<div>나 홀로 떠나는 제주여행, 어디를 가도 시원하고 높은 하늘과 선선한 바람을 느끼자</div>
-							<h6>더 보기-></h6>
+							<h6>더 보기<img src="<%=path %>/Resources/IMG/icon/ico_arrow_gray.png"/></h6>
 						</div>
 					</div>
 					</a>
 				</li>
-				
 			</ul>
 		</div>
 	</div>
