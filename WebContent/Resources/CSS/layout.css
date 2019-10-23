@@ -1150,7 +1150,7 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 
 #accordian .panel-title a:after,
 #accordian .panel-title a.collapsed:after {
-    font-family: fontawesome;
+    font-family: FontAwesome;
     width: 40px;
     height: 40px;
     line-height: 32px;

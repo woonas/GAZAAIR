@@ -1,31 +1,117 @@
 @import url("../CSS/layout.css") screen;
 
+/* ticket, price  info */
 
+.bag,
 .payment-section {
     border-top: 3px solid #777;
-    padding: 30px 0;
-}
-.section-title {
-    font-size: 120%;
-    margin-bottom: 20px;
-    text-align: center;
+    padding: 50px 0 40px;
+    margin-top: 30px;
 }
 
-.payment-section .list-type2 { margin-left: 0; }
-.payment-section .table-form2,
-.payment-section .table-form2>* { border:0; }
-.payment-section .table-form2 { margin-top: 30px; }
-.payment-section .table-form2 div:not(.table-row-title) { padding-left: 0; }
-.payment-section .table-form2>.row {
-    border-top: 3px solid #777;
+.bag-head {
+    color: #333;
+    font-size: 110%;
+    margin-bottom: 20px;
+}
+
+.bag-content-title {
+    background-color: #ccc;
+    color: #333;
+}
+
+.bag-content-title>div { padding: 7px;}
+
+.currency {
+    font-size: 60%;
+    color: #555;
+}
+
+.airport-name,
+.flight-date,
+.flight-time { text-align: center; }
+
+.airport-name {
+    font-size: 150%;
+    margin-top: 65px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.flight-date {
+    font-size: 90%;
+    margin-top: 10px;
+}
+
+.flight-image {
+    margin-top: 65px;
+    padding-left: 50px;
+}
+
+
+.bag-content>div>div {
+    border-top: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+}
+.bag-content>div>div:first-of-type { border-left: 0; }
+
+.detailed-price>div {
+    border-bottom: 1px solid #ddd;
+    padding: 7px;
+    font-size: 90%;
+}
+.detailed-price>div:last-of-type { border-bottom: 0; }
+.detailed-price:not(:last-of-type) { background-color: #f3f3f3; }
+
+
+.total-price {
+    height: 100px;
+    line-height: 100px;
+    padding: 0 50px;
+    margin: 30px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    background-color: #f7f7f7;
+}
+.total-price span { margin-left: 10px;}
+.total-price>div>div:not(:last-of-type):before {
+    position: relative;
+    left: -60px;
+    font-family: FontAwesome;
+}
+.total-price>div>div:last-of-type:before {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 4px;
+    border-top: 3px solid #555;
+    border-bottom: 3px solid #555;
+    margin-left: -70px;
+    margin-top: 45px;
+}
+
+.total-price>div>div:nth-of-type(2):before,
+.total-price>div>div:nth-of-type(3):before { content: '\f068'; }
+
+
+/* 결제 */
+
+.section-title {
+    font-size: 140%;
+    margin-bottom: 40px;
+    padding-left: 8%;
+}
+
+.payment-section:first-of-type>p { text-align: center; }
+
+.payment-method {
     padding-top: 30px;
     margin-top: 50px;
 }
-.payment-section .table-form2>.row:first-of-type {
-    border-top: 0;
-    padding-top: 0;
-}
 
+.payment-method-title {
+    text-align: center;
+    line-height: 100px;
+}
 
 .payment-type>div {
     padding: 0 30px;
@@ -51,39 +137,54 @@
 
 /* 결제정보입력 */
 
-.info-tit { font-size: 90%; }
-.info-tit + div>input,
-.info-tit + div>select {
+div[id^="payment-method-"]>.row { margin-bottom: 20px; }
+div[id^="payment-method-"]>ul { margin: 60px 30px; }
+
+.payment-row-title { text-align: center; }
+
+.payment-row-title + div>input[type=number],
+.payment-row-title + div>input[type=text],
+.payment-row-title + div>select {
     border: none;
     box-shadow: none;
     border-bottom: 1px solid #aaa;
     border-radius: 0;
     padding: 5px;
-    min-width: 150px;
+    min-width: 200px;
 }
-.info-tit + div>select {
+.payment-row-title + div>select {
     font-size: 90%;
     padding: 10px;
 }
 
-#payment-method-transfer + div,
-#payment-method-credit + div {
-    padding-left: 20px;
-    margin: 30px 0;
+/* 마일리지 */
+
+.payment-row-title + div>input + span {
+    margin-left: 10px;
+    font-size: 70%;
+    color: #888;
 }
+
+#coupon {
+    border-radius: 0;
+    width: 80px;
+    height: 25px;
+    margin-left: 10px;
+}
+
 
 /* 사이드 바 */
 
 .payment-sidebar {
-
+    margin-top: 30px;
+    position: sticky;
+    top: 100px;
 }
 
 .payment-sidebar>div {
     margin-left: 20px;
     padding: 30px 10px 10px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
-    position: sticky;
-    top: 100px;
 }
 
 .payment-sidebar>div>p:first-of-type {
@@ -100,7 +201,6 @@
 }
 
 .payment-sidebar>div>div:first-of-type { border-bottom: 1px solid #ddd; }
-
 
 .total {
     text-align: right;
@@ -132,8 +232,4 @@
     border-radius: 0;
     margin: 20px 0 10px;
     font-size: 130%;
-}
-
-.payment-sidebar {
-    height: 3000px;
 }
