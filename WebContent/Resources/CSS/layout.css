@@ -827,7 +827,8 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 .col-two-fifth,
 .col-three-fifth,
 .col-four-fifth,
-.col-tenth { float: left; }
+.col-tenth,
+.col-nine-tenth { float: left; }
 
 .col-line { width: 100% !important; }
 
@@ -846,7 +847,7 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 .col-four-fifth { width: 80% !important; }
 
 .col-tenth { width: 10% !important; }
-
+.col-nine-tenth { width: 90% !important; }
 
 /* ----------------------------------------------- */
 /* 달력 */
