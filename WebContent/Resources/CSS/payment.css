@@ -47,7 +47,7 @@
 
 .flight-image {
     margin-top: 65px;
-    padding-left: 20px;
+    text-align: center;
 }
 
 .bag-content>div>div {
@@ -55,16 +55,14 @@
     border-left: 1px solid #aaa;
 }
 .bag-content>div>div:first-of-type { border-left: 0; }
-
+.bag-content>div.row:last-of-type { border-bottom: 1px solid #aaa; }
 .detailed-price>div {
     border-bottom: 1px solid #ddd;
     padding: 7px;
     padding-left: 15px;
     font-size: 90%;
 }
-.detailed-price>div:last-of-type { border-bottom: 0; }
 .detailed-price:not(:last-of-type) { background-color: #f3f3f3; }
-
 
 .total-price {
     height: 100px;
@@ -176,7 +174,6 @@ div[id^="payment-method-"]>ul { margin: 60px 30px; }
     margin-left: 10px;
 }
 
-
 /* 사이드 바 */
 
 .payment-sidebar {
@@ -237,3 +234,75 @@ div[id^="payment-method-"]>ul { margin: 60px 30px; }
     margin: 20px 0 10px;
     font-size: 130%;
 }
+
+/* 결제완료창 */
+
+.payment-complete-section {
+    margin: 70px auto 40px;
+    width: 800px;
+}
+
+.price-table>div {
+    border: 1px solid #ddd;
+    border-top: 0;
+}
+.price-table>div:first-of-type {
+    background-color: #f3f3f3;
+    border-top: 1px solid #ddd;
+    color: #333;
+    font-size: 115%;
+}
+
+.price-table>div>div {
+    padding: 25px;
+    border-left: 1px solid #ddd;
+    text-align: center;
+}
+.price-table>div>div:first-of-type { border-left: 0; }
+
+.price-table>div:not(:first-of-type)>div:not(:first-of-type):before {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #ddd;
+    border: 1px solid #ddd;
+    color: #fff;
+    margin-left: -103px;
+    line-height: 28px;
+    font-size: 140%;
+    content: "ㅡ";
+}
+.price-table>div:not(:first-of-type)>div:last-of-type:before {
+    content: "=";
+    margin-left: -79px;
+    font-size: 170%;
+}
+
+.payment-complete-section>p {
+    margin-bottom: 15px;
+    font-size: 130%;
+    color: #333;
+}
+
+.payment-complete-table>div>div {
+    padding: 15px;
+}
+.payment-complete-table>div>div:first-of-type {
+    background-color: #f3f3f3;
+    border: 1px solid #f3f3f3;
+    font-size: 110%;
+}
+.payment-complete-table>div { border-top: 1px solid #ddd; }
+.payment-complete-table>div:last-of-type { border-bottom: 1px solid #ddd; }
+
+.button-wrapper { text-align: center; }
+.button-wrapper>a>input[type=button] {
+    width: 100px;
+    height: 40px;
+    border-radius: 0;
+    font-size: 90%;
+    margin-right: 20px;
+}
+
+.button-wrapper>a>input[type=button]:last-of-type { margin-right: 0; }

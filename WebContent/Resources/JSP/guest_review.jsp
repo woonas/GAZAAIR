@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,16 +8,15 @@
 <link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/layout.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/board.css" type="text/css"/>
-
 </head>
 <body>
-	<h3>공지사항</h3>
+	<h3>고객의 말씀</h3>
 	<hr/>
 	<div id="brd_all">
-		<div id="brd_title" class="col-three-fourth">
+		<div id="brd_title" class="col-two-third">
 			제목자리~
 		</div>
-		<div id="hitNdate">조회수 99999 │ 날짜 2019.10.23</div>
+		<div id="hitNdate">작성자 홍길동동동 │ 조회수 99999 │ 날짜 2019.10.23</div>
 	<hr style="border:1px solid #eee"/>
 		<div id="brd_content">
 		내용<br/>
