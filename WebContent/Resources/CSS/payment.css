@@ -20,13 +20,16 @@
     color: #333;
 }
 
-.bag-content-title>div { padding: 7px;}
+.bag-content-title>div { 
+	text-align:center;
+	padding: 15px;
+}
 
 .currency {
     font-size: 60%;
     color: #555;
 }
-
+.trip{ padding: 0 50px; }
 .airport-name,
 .flight-date,
 .flight-time { text-align: center; }
@@ -44,9 +47,8 @@
 
 .flight-image {
     margin-top: 65px;
-    padding-left: 50px;
+    padding-left: 20px;
 }
-
 
 .bag-content>div>div {
     border-top: 1px solid #aaa;
@@ -57,6 +59,7 @@
 .detailed-price>div {
     border-bottom: 1px solid #ddd;
     padding: 7px;
+    padding-left: 15px;
     font-size: 90%;
 }
 .detailed-price>div:last-of-type { border-bottom: 0; }
@@ -143,6 +146,7 @@ div[id^="payment-method-"]>ul { margin: 60px 30px; }
 .payment-row-title { text-align: center; }
 
 .payment-row-title + div>input[type=number],
+.payment-row-title + div>input[type=password],
 .payment-row-title + div>input[type=text],
 .payment-row-title + div>select {
     border: none;

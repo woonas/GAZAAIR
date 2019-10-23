@@ -363,6 +363,9 @@ ul, li{
 	border: none !important;
 	box-shadow: none !important;
 }
+.bx-wrapper li:hover>bx-caption{
+	height:100%;
+}
 /*section info-------------------------------------------------------------------------*/
 #infoWrap{
 	width:1200px;
