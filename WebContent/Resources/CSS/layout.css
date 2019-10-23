@@ -827,7 +827,6 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 .col-two-fifth,
 .col-three-fifth,
 .col-four-fifth,
-<<<<<<< HEAD
 .col-sixth,
 .col-one-sixth,
 .col-two-sixth,
@@ -837,16 +836,6 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 .col-tenth,
 .col-eight-tenth,
 .col-nine-tenth  { float: left; }
-=======
-.col-eighth,
-.col-three-eighth,
-.col-five-eighth,
-.col-seven-eighth,
-.col-tenth,
-.col-three-tenth,
-.col-seven-tenth,
-.col-nine-tenth { float: left; }
->>>>>>> branch 'master' of https://github.com/woonas/GAZAAIR.git
 
 .col-line { width: 100% !important; }
 
@@ -864,7 +853,6 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 .col-three-fifth { width: 60% !important; }
 .col-four-fifth { width: 80% !important; }
 
-<<<<<<< HEAD
 .col-sixth	{ width: 16.6% !important; }
 .col-one-sixth	{ width: 16.7% !important; }
 .col-two-sixth	{ width: 33.4% !important; }
@@ -875,17 +863,7 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 .col-tenth { width: 10% !important; }
 .col-eight-tenth { width: 80% !important; }
 .col-nine-tenth { width: 90% !important; }
-=======
-.col-eighth { width: 12.5% !important; }
-.col-three-eighth { width: 37.5% !important; }
-.col-five-eighth { width: 62.5% !important; }
-.col-seven-eighth { width: 87.5% !important; }
->>>>>>> branch 'master' of https://github.com/woonas/GAZAAIR.git
 
-.col-tenth { width: 10% !important; }
-.col-three-tenth { width: 30% !important}
-.col-seven-tenth { width: 70% !important}
-.col-nine-tenth { width: 90% !important; }
 
 /* ----------------------------------------------- */
 /* 달력 */
