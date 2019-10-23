@@ -8,7 +8,7 @@ function selectModal() {
 	resizeModal()
 
 	document.getElementById("seatsSelect").style.display ="block";
-	document.documentElement.scrollTop =  winHeight+200+"px"
+	/*document.documentElement.scrollTop =  winHeight+200+"px"*/
 };
 
 
@@ -27,18 +27,45 @@ function seatsSelcetClose(){
 	document.getElementById("modal").style.display="none"
 	
 };
-
-function drawSeatImg() {
-	var seatList = "";
-	for(j=1; j<12; j++) {
-		seatList += "<div class='seat-row'>";
-		for(i='A'; i<='K';i++){
-			seatList += `<span><img src='../../IMG/mypage_Img/seat_default.png' id='${j}${i}' onclick=\"change("+i+")\"/></span>`;
+function drawBusinessSeatImg(){
+	var seatList="";
+	var alphabet  = ["A","B","C","D","E","F","G","H","J","K"];
+	for(j=1;j<3;j++){
+		seatList += "<div class='Busiseat-row'>"
+		for(i=0;i<alphabet.length;i++){
+			seatList += `<span><img src='../../IMG/mypage_Img/seat_default.png' id='${j}${alphabet[i]}' onclick=\"change(this.id)\"/></span>`; 
 		}
 		seatList += "</div>";
 	}
-	document.getElementById("front-seat").innerHTML = seatList;
+	document.getElementById("frontBusi-seat").innerHTML = seatList;
+			
 }
+
+function drawEconomiSeatImg() {
+	var seatList = "";
+	var alphabet = ["A","B","C","D","E","F","G","H","J","K"];
+	for(j=3; j<14; j++) {
+		seatList += "<div class='seat-row'>";console.log(1)
+		for(i=0; i<alphabet.length;i++){
+			seatList += `<span><img src='../../IMG/mypage_Img/seat_default.png' id='${j}${alphabet[i]}' onclick=\"change(this.id)\"/></span>`;
+			console.log(seatList)
+		}
+		seatList += "</div>";
+	}
+	document.getElementById("frontEco-seat").innerHTML = seatList;
+	
+}
+
+function change(targetId){
+	var imgSrc = document.getElementById(targetId).src;
+	var imgNew = "../.."+imgSrc.substring(imgSrc.indexOf("/IMG/"));
+	if (imgNew === "../../IMG/mypage_Img/seat_gray.png"){
+		document.getElementById(targetId).src = "../../IMG/mypage_Img/seat_default.png";
+	} else {
+		document.getElementById(targetId).src="../../IMG/mypage_Img/seat_gray.png";
+	}
+};
+
 
 /* A~C 3줄짜리 1 ~ 36석 */
 function seatImgAC136(){
@@ -48,7 +75,7 @@ function seatImgAC136(){
 		seatList += "<span><img src='../../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
 		
 	}
-	console.log(seatList)
+
 	document.getElementById("sl1").innerHTML = seatList;
 	
 };
@@ -60,7 +87,7 @@ function seatImgAC3769(){
 		seatList += "<span><img src='../../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
 		
 	}
-	console.log(seatList)
+	
 	document.getElementById("sl4").innerHTML = seatList;
 	
 };
@@ -72,19 +99,11 @@ function seatImgAC7093(){
 		seatList += "<span><img src='../../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
 		
 	}
-	console.log(seatList)
+
 	document.getElementById("sl5").innerHTML = seatList;
 	
 };
-function change(i){
-		var imgSrc = document.getElementById("s"+i).src;
-		var imgNew = "../.."+imgSrc.substring(imgSrc.indexOf("/IMG/"));
-		if (imgNew === "../../IMG/mypage_Img/seat_gray.png"){
-			document.getElementById("s"+i).src = "../../IMG/mypage_Img/seat_default.png";
-		} else {
-			document.getElementById("s"+i).src="../../IMG/mypage_Img/seat_gray.png";
-		}
-};
+
 
 
 /* D~G 4줄짜리  94 ~ 141석*/
@@ -127,7 +146,7 @@ function seatImgHK218253(){
 		seatList += "<span><img src='../../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
 		
 	}
-	console.log(seatList)
+
 	document.getElementById("sl8").innerHTML = seatList;
 	
 };
@@ -140,7 +159,7 @@ function seatImgHK250282(){
 		seatList += "<span><img src='../../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
 		
 	}
-	console.log(seatList)
+
 	document.getElementById("sl9").innerHTML = seatList;
 	
 };
@@ -154,7 +173,7 @@ function seatImgHK283306(){
 		seatList += "<span><img src='../../IMG/mypage_Img/seat_default.png' id='s"+i+"' onclick=\"change("+i+")\"/></span>"
 		
 	}
-	console.log(seatList)
+
 	document.getElementById("sl10").innerHTML = seatList;
 	
 };
@@ -162,7 +181,8 @@ function seatImgHK283306(){
 
 (() => {
 	if(location.pathname.indexOf('reserveStatus') !== -1){
-		drawSeatImg();
+		drawBusinessSeatImg();
+		drawEconomiSeatImg();
 	}
  })();
 		

@@ -827,6 +827,12 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 .col-two-fifth,
 .col-three-fifth,
 .col-four-fifth,
+.col-sixth,
+.col-one-sixth,
+.col-two-sixth,
+.col-three-sixth,
+.col-four-sixth,
+.col-five-sixth, 
 .col-tenth,
 .col-eight-tenth,
 .col-nine-tenth  { float: left; }
@@ -846,6 +852,13 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 .col-two-fifth { width: 40% !important; }
 .col-three-fifth { width: 60% !important; }
 .col-four-fifth { width: 80% !important; }
+
+.col-sixth	{ width: 16.6% !important; }
+.col-one-sixth	{ width: 16.7% !important; }
+.col-two-sixth	{ width: 33.4% !important; }
+.col-three-sixth { width: 49.8% !important; }
+.col-four-sixth { width: 66.4% !important; }
+.col-five-sixth { width: 83% !important; }
 
 .col-tenth { width: 10% !important; }
 .col-eight-tenth { width: 80% !important; }

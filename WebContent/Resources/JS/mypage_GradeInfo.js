@@ -8,9 +8,9 @@ function eligibilityNoneBlock(){
 				document.getElementById("check2").style.visibility= "hidden"
 				
 				document.getElementById("vipEligibility").style.backgroundColor= "white"
-				document.getElementById("vipEligibility").style.color= "#6d6e70"	
+				document.getElementById("vipEligibility").style.color= "#999"	
 					
-				document.getElementById("vipGrade").style.backgroundColor= "#6d6e70"
+				document.getElementById("vipGrade").style.backgroundColor= "#999"
 				document.getElementById("vipGrade").style.color= "white"
 					
 				
@@ -22,9 +22,9 @@ function eligibilityNoneBlock(){
 				document.getElementById("check2").style.visibility= "visible"
 					
 				document.getElementById("vipGrade").style.backgroundColor= "white"
-				document.getElementById("vipGrade").style.color= "#6d6e70"
+				document.getElementById("vipGrade").style.color= "#999"
 					
-				document.getElementById("vipEligibility").style.backgroundColor= "#6d6e70"
+				document.getElementById("vipEligibility").style.backgroundColor= "#999"
 				document.getElementById("vipEligibility").style.color= "white"
 					
 				

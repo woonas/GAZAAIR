@@ -263,7 +263,7 @@
 		cursor:pointer;
 		}
 	#seatsBackImg{
-		background:url(../IMG/mypage_Img/airplan_bg.png);
+		background:url(../IMG/mypage_Img/airplan_bg3.png);
 		position: relative;
 		height:3000px;
 		background-size: contain;
@@ -272,11 +272,27 @@
 		margin-top:150px;
 		padding-right:40px
 		}
-		
-		#font-seat {
+		#frontBusi-seat{
 			position: absolute;
-			top: 865px;
-			left: 152px;
+			top: 870px;
+			left: 143px;
+			width: 400px;
+			margin-bottom: 2px;
+			padding: 2px;
+		}
+		.Busiseat-row {
+			margin-bottom: 20px;
+			height: 35px;
+		}
+		.Busiseat-row>span>img{ width: 24px; margin-left: 10px; }
+		.Busiseat-row>span>img[id$="D"],
+		.Busiseat-row>span>img[id$="H"] { margin-left: 30px; }
+		
+		
+		#frontEco-seat {
+			position: absolute;
+			top: 975px;
+			left: 160px;
 			width: 400px;
 			height: 485px;
 			margin-bottom: 2px;
@@ -288,12 +304,12 @@
 			height: 35px;
 		}
 		.seat-row>span>img{ width: 24px; margin-right: 3px; }
-		.seat-row>img[id^="d"],
-		.seat-row>img[id^="h"] { margin-left: 20px; }
+		.seat-row>span>img[id$="D"],
+		.seat-row>span>img[id$="H"] { margin-left: 44px; }
 		
 	#first {
 		position: absolute;
-		top: 865px;
+		top: 3000px;
 		left: 152px;
 		width: 100px; 
 		height: 485px; 
@@ -323,7 +339,7 @@
 	}
 	#second {
 		position: absolute;
-		top: 865px;
+		top: 3000px;
 		left: 266px;
 		width: 150px; 
 		height: 485px; 
@@ -353,7 +369,7 @@
 	}
 	#third {
 		position: absolute;
-		top: 865px;
+		top: 3000px;
 		left: 429px;
 		width: 100px; 
 		height: 485px; 
@@ -403,7 +419,7 @@
 		}
 	#nth8 {
 		position: absolute;
-		top: 865px;
+		top: 3000px;
 		left: 429px;
 		width: 100px; 
 		height: 485px; 
