@@ -840,3 +840,22 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 /* ----------------------------------------------- */
 /* 운임확인 및 최종동의 booking4.html */
 /* ----------------------------------------------- */
+
+.flight-confirm-section-title {
+    color: #333;
+    font-size: 140%;
+    font-weight: 600;
+    margin: 50px 0 10px;
+}
+
+
+.trip-table-title {
+    background-color: #ddd;
+}
+
+.trip-table>div>div{
+    border-right: 1px solid #aaa;
+    padding: 15px;
+}
+
+.trip-table>div { border-bottom: 1px solid #aaa; }
