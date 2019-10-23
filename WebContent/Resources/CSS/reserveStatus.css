@@ -249,7 +249,6 @@
 		height:50px;
 		font-size:30px;
 		font-weight:bold;
-		padding-left: 80px;
 		text-align: center;
 		}
 	#close{
@@ -263,7 +262,7 @@
 		cursor:pointer;
 		}
 	#seatsBackImg{
-		background:url(../IMG/mypage_Img/airplan_bg3.png);
+		background:url(../IMG/mypage_Img/airplan_bg5.png);
 		position: relative;
 		height:3000px;
 		background-size: contain;
@@ -274,26 +273,24 @@
 		}
 		#frontBusi-seat{
 			position: absolute;
-			top: 870px;
-			left: 143px;
-			width: 400px;
+			top: 1025px;
+			left: 73px;
 			margin-bottom: 2px;
 			padding: 2px;
 		}
 		.Busiseat-row {
-			margin-bottom: 20px;
+			margin-bottom: 30px;
 			height: 35px;
 		}
-		.Busiseat-row>span>img{ width: 24px; margin-left: 10px; }
+		.Busiseat-row>span>img{ width: 24px; margin-left: 15px; }
 		.Busiseat-row>span>img[id$="D"],
-		.Busiseat-row>span>img[id$="H"] { margin-left: 30px; }
+		.Busiseat-row>span>img[id$="H"] { margin-left: 40px; }
 		
 		
 		#frontEco-seat {
 			position: absolute;
-			top: 975px;
-			left: 160px;
-			width: 400px;
+			top: 1150px;
+			left: 90px;
 			height: 485px;
 			margin-bottom: 2px;
 			padding: 2px;
@@ -303,150 +300,19 @@
 			margin-bottom: 3px;
 			height: 35px;
 		}
-		.seat-row>span>img{ width: 24px; margin-right: 3px; }
+		.seat-row>span>img{ width: 24px; margin-right: 10px; }
 		.seat-row>span>img[id$="D"],
 		.seat-row>span>img[id$="H"] { margin-left: 44px; }
 		
-	#first {
-		position: absolute;
-		top: 3000px;
-		left: 152px;
-		width: 100px; 
-		height: 485px; 
-		margin-bottom: 2px;
-		/* background-color: red; */
-		padding:2px
+		#back-seat{
+			position: absolute;
+			top: 1830px;
+			left: 90px;
+			height: 485px;
+			margin-bottom: 2px;
+			padding: 2px;
 		}
-	.first-a {
-		width: 100%;
-		height: 35px;
-		/* background-color:yellow; */
-		padding-left:7px
-	}
-	.first-a > span {
-		display: inline-block;
-		width: 27%;
-		height: 100%;
-		/* background-color: green; */
-		margin-right: 5px;
-	}
-	.first-a > span:last-child {
-		margin-right: 0;
-	}
-	.first-a > span > img {
-		width: 100%;
-		height: 100%;
-	}
-	#second {
-		position: absolute;
-		top: 3000px;
-		left: 266px;
-		width: 150px; 
-		height: 485px; 
-		margin-bottom: 2px;
-		/* background-color: red; */
-		padding:2px
-		}
-	.second-a {
-		width: 100%;
-		height: 35px;
-		/* background-color:yellow; */
-		padding-left:7px
-	}
-	.second-a > span {
-		display: inline-block;
-		width: 18%;
-		height: 100%;
-		/* background-color: green; */
-		margin:0 4px;
-	}
-	.second-a > span:last-child {
-		margin-right: 0;
-	}
-	.second-a > span > img {
-		width: 100%;
-		height: 100%;
-	}
-	#third {
-		position: absolute;
-		top: 3000px;
-		left: 429px;
-		width: 100px; 
-		height: 485px; 
-		margin-bottom: 2px;
-		/* background-color: red; */
-		padding:2px
-		}
-	#nth4 {
-		position: absolute;
-		top: 1565px;
-		left: 150px;
-		width: 100px; 
-		height: 485px; 
-		margin-bottom: 2px;
-		/* background-color: red; */
-		padding:2px
-		}
-	#nth5 {
-		position: absolute;
-		top: 2233px;
-		left: 150px;
-		width: 100px; 
-		height: 485px; 
-		margin-bottom: 2px;
-		/* background-color: red; */
-		padding:2px
-		}
-	#nth6 {
-		position: absolute;
-		top: 1565px;
-		left: 266px;
-		width: 150px; 
-		height: 485px; 
-		margin-bottom: 2px;
-		/* background-color: red; */
-		padding:2px
-		}
-	#nth7 {
-		position: absolute;
-		top: 2233px;
-		left: 266px;
-		width: 150px; 
-		height: 485px; 
-		margin-bottom: 2px;
-		/* background-color: red; */
-		padding:2px
-		}
-	#nth8 {
-		position: absolute;
-		top: 3000px;
-		left: 429px;
-		width: 100px; 
-		height: 485px; 
-		margin-bottom: 2px;
-		/* background-color: red; */
-		padding:2px
-		}
-	#nth9 {
-		position: absolute;
-		top: 1565px;
-		left: 429px;
-		width: 100px; 
-		height: 485px; 
-		margin-bottom: 2px;
-		/* background-color: red; */
-		padding:2px
-		}
-	#nth10 {
-		position: absolute;
-		top: 2233px;
-		left: 429px;
-		width: 100px; 
-		height: 485px; 
-		margin-bottom: 2px;
-		/* background-color: red; */
-		padding:2px
-		}
+	
 	/* 예약상세  */
 	#reserve{
 		background-color:white;
@@ -592,9 +458,83 @@
 	.list-type2{margin-top:200px}
 	
 	/* ----------------------------------------------- */
-	/* 버튼 */
+	/* 기내식 선택 */
 	/* ----------------------------------------------- */
+
+#foodSelect{
+	width:1600px;
+	background-color:#fff;
+	position:absolute;
+	z-index:5;
+	display:none;
+	padding:30px;
+}
+
+.img-wrapper{
+	text-align:center;
+	border:1px solid #ddd;
+	padding:20px;
+}
+.img-wrapper>img{
+	width:400px;
+	height:300px;
+}
+
+.food-content{
+	background-color: rgba(255, 235, 205, 0.3);
+	padding:9px;
+	margin-bottom: 10px;
+	height: 347px;
+}
+
+.food-title{
+	font-size: 200%;
+    color: #bbb;
+    margin-bottom: 20px;
+    font-weight: 100;
+}
+
+.food-word{
+	font-size: 18px;
+    margin-bottom: 10px;
+    height:90px
+}
+.food-detail{
+	margin-bottom:10px;
+	height: 115px;
+}
+
+.foodSelect{
+	marign-top:10px;
+	width:80px;
+	height:35px;
 	
+}
+.product-wrapper{
+	margin-top:30px
+}
+/* lightDeil */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
