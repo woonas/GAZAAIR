@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +8,9 @@
 <link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/layout.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/board.css" type="text/css"/>
-
 </head>
 <body>
-	<h3>공지사항</h3>
+	<h3>고객의 말씀</h3>
 	<hr/>
 	<div id="brd_all">
 		<div id="brd_title">

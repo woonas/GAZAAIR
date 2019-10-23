@@ -6,14 +6,25 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/layout.css" type="text/css"/>
-<link rel="stylesheet" href="../CSS/write.css" type="text/css"/>
+<link rel="stylesheet" href="../CSS/write.css?after" type="text/css"/>
 <script src="//cdn.ckeditor.com/4.13.0/full/ckeditor.js"></script>
 </head>
 <body>
-	<h3>공지사항</h3>
+	<h3>고객의 말씀</h3>
 	<hr/>
 	<div id="wrt_all">
 	<form id="wrt_frm" method="post" action="">
+		<div class="row clearfix">
+			<div class="col-tenth row-title">분류</div>
+			<div class="col-nine-tenth">
+				<select id="sel">
+					<option value="">-선택하세요.-</option>
+					<option value="칭찬">칭찬합니다.</option>
+					<option value="개선">개선해주세요.</option>
+					<option value="후기">이용후기</option>
+				</select>
+			</div>
+		</div>
 		<div class="row clearfix">
 			<div class="col-tenth row-title">제목</div>
 			<div class="col-nine-tenth">
