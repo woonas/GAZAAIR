@@ -1,0 +1,46 @@
+@charset "UTF-8";
+	#wrt_all{
+		margin:50px auto;
+		width:1200px;
+		margin-bottom:50px;
+	}
+	#wrt_frm li{
+		list-style-type:none;
+		font-size:20px;
+	}
+	#wrt_frm li:first-child, 
+	#wrt_frm li:nth-child(2), 
+	#wrt_frm li:nth-child(3){
+		margin-bottom:10px;
+	}
+	#wrt_subject{ height:25px; }
+	hr{
+		margin:0px auto;
+		width:1200px;
+	}
+	#list_btn{
+		margin:70px auto;
+		width:450px;
+		height:60px;
+		line-height:60px;
+		text-align:center;
+	}
+	#list_button1{
+		width:150px;
+		height:60px;
+		line-height:60px;
+		text-align:center;
+		border:1px solid #a9a9a9;
+		background-color:#fff;
+		font-size:18px;
+	}
+	#list_button2{
+		width:150px;
+		height:60px;
+		line-height:60px;
+		text-align:center;
+		border:1px solid #a9a9a9;
+		background-color:#36f;
+		font-size:18px;
+		color:#fff;
+	}

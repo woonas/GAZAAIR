@@ -68,40 +68,7 @@ $(function(){
 		}
 	});
 	
-	//select 기능구현
-	$(".selectFrm > p").click(function() {
-	    $(this).next("ul").toggle();
-	    return false;
-	});
-	 
-	$(".selectFrm > ul > li").click(function() {
-	    $(this).parent().hide().parent(".selectFrm").children("p").text($(this).text());
-	});
-	
-	//출발지, 도착지 다이얼로그 창 표시
-	$(".dialogOpen").click(function(){
-		var selected_item="";
-		var clickedBtn= $(this);
-		
-		//모달 외부 스크롤 사용 중지
-		$('html, body').css({'overflow': 'hidden'}); 
-		$('#element').on('scroll touchmove mousewheel', function(event) { 
-			event.preventDefault();
-			event.stopPropagation();
-			return false;
-		});
-		
-		//MENU 셋팅
-		$(".locMenu").menu({
-			select: function(event, ui){
-				selected_item = ui.item.text().split("(");
-				$(clickedBtn).css("font-size", "150%");
-				$(clickedBtn).text(selected_item[0]);
-				$(".startDialog").dialog("close");
-			}
-		});
-	});
-	//이벤트
+	//이벤트배너 BX슬라이더
 	$(".eventBanner").bxSlider({
 		mode : 'horizontal'//'horizontal', 'vertical', 'fade'
 		,slideWidth : 1200 //슬라이드 폭
@@ -122,6 +89,17 @@ $(function(){
 		,autoHover:true //오버되어있을때 슬라이딩이 멈춤
 	});
 	
+	$("#btn-select").click(function(){
+		if($(".tripLoc1").val()!== ""){
+			$(".tripLoc1").css("font-size", "100%");
+			$(".tripLoc1").css("background-image", "none");
+		}
+		if($(".tripLoc2").val()!== ""){
+			$(".tripLoc2").css("font-size", "100%");
+			$(".tripLoc2").css("background-image", "none");
+		}
+	});
+	
 	
 });
 
@@ -140,13 +118,13 @@ $(function(){
 	<div class="reserve_wrap">
 		<div class="reserveBox">
 			<div>
-        		<input type="text" id="airportFrom-1" name="airportFrom-1" class="open-airport-picker tripLoc" readonly placeholder="출발지">
+        		<input type="text" id="airportFrom-1" name="airportFrom-1" class="open-airport-picker tripLoc tripLoc1" readonly placeholder="출발지">
        		</div>
        		<div class="tripDate">출발일</div>
        	</div>
 		<div class="reserveBox">
 			<div>
-				<input type = "text" id="airportTo-1" name="airportTo-1" class="open-airport-picker tripLoc" readonly placeholder="도착지">
+				<input type = "text" id="airportTo-1" name="airportTo-1" class="open-airport-picker tripLoc tripLoc2" readonly placeholder="도착지">
 			</div>
 			<div class="tripDate">귀국일</div>
 		</div>
@@ -166,7 +144,7 @@ $(function(){
 				</div>
 			</div>
 			<div>
-				
+				<input type="text" id="num-of-passengers" name="num-of-passengers" readonly>
 			</div>
 		</div>
 		<div class="reserveBox">
@@ -340,13 +318,104 @@ $(function(){
 	</div>
 </section>
 </section>
+           <!--탑승객 팝업-->
+            <div class="pop-up-window-type1" id="num-of-passengers-window">
+                <div class="itinerary">
+                    <div class="row">
+                        <p class="window-title">
+                            탑승객 선택
+                            <i class="fas fa-times btn-close"></i>
+                        </p>
+                    </div>
+                    <br>
+                    <div class="row clearfix book-input-form2">
+                        <div class="col-third passenger-select number-box">
+                            <p>성인 <span>(만 13세 이상)</span></p>
+                            <button class="minus">-</button>
+
+                            <input type="number" value="1" id="numOfAdult">
+                            <button class="plus">+</button>
+                        </div>
+                        <div class="col-third passenger-select number-box">
+                            <p>소아 <span>(만 2세 ~ 13세 미만)</span></p>
+                            <button class="minus">-</button>
+                            <input type="number" value="0" id="numOfChild">
+                            <button class="plus">+</button>
+                        </div>
+                        <div class="col-third passenger-select number-box">
+                            <p>유아 <span>(만 2세 미만)</span></p>
+                            <button class="minus">-</button>
+                            <input type="number" value="0" id="numOfInfant">
+                            <button class="plus">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="row clearfix">
+                        <ul class="list-type2">
+                            <br>
+                            <li class="passengerInfo">예약인원은 성인,소아, 유아를 포함하여 총 9명까지 선택 가능합니다.</li>
+                          
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="btn-area">
+                    <button class="blueBtn" id="selectBtn">선택</button>
+                </div>
+            </div>
+
+
 <%@ include file="Resources/JSP/footer.jspf" %>
 <script src="<%=request.getContextPath() %>/Resources/JS/common.js"></script>
 <script src="<%=request.getContextPath() %>/Resources/JS/airportpicker.js"></script>
 
 <script>
 openPicker('.open-airport-picker', true);
+hintWindow('num-of-passengers', true, true, true);
 
+
+
+/* 승객수 + - 버튼 이벤트 */
+changeNumOfPassengers();
+
+/* 탑승객 팝업에서 선택 클릭시 */
+const passengerNum = document.getElementById('num-of-passengers');
+
+document.querySelector('#selectBtn').addEventListener('click', function() {
+    const adultNum = parseInt(document.getElementById('numOfAdult').value);
+    const childNum = parseInt(document.getElementById('numOfChild').value);
+    const infantNum = parseInt(document.getElementById('numOfInfant').value);
+    let totalNum = "";
+
+    if(totalPassengers()) {
+        if(adultNum > 0) totalNum += "성인 "+adultNum;
+        if(childNum > 0) totalNum += ", 소아 "+childNum;
+        if(infantNum > 0) totalNum += ", 유아 "+infantNum;
+        passengerNum.value = totalNum;
+        document.getElementById('num-of-passengers-window').style.display = 'none';
+        overlay.style.display = 'none';
+    }
+});
+
+/* 탑승객 팝업 오픈시 입력된 값 가져오기 */
+passengerNum.addEventListener('click', function() {
+    const totalNum = passengerNum.value;
+
+    let adultNum = totalNum.charAt(totalNum.indexOf('성인')+3);
+    let childNum = totalNum.charAt(totalNum.indexOf('소아')+3);
+    let infantNum = totalNum.charAt(totalNum.indexOf('유아')+3);
+    if (totalNum.indexOf('성인') === -1) adultNum = 0;
+    if (totalNum.indexOf('소아') === -1) childNum = 0;
+    if (totalNum.indexOf('유아') === -1) infantNum = 0;
+    document.getElementById('numOfAdult').value = adultNum;
+    document.getElementById('numOfChild').value = childNum;
+    document.getElementById('numOfInfant').value = infantNum;
+});
+
+/* 탑승객 팝업에서 다른 부분 클릭시 */
+	overlay.addEventListener('click', function() {
+		document.getElementById('num-of-passengers-window').style.display = 'none'
+	});
 
 </script>
 

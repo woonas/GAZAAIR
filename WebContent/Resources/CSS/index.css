@@ -60,7 +60,7 @@ ul, li{
 	background-color: rgb(255,255,255,0);
 	border: none;
 	background : url('../IMG/icon/marker_black.png') no-repeat;
-	background-size : 10%;
+	background-size : 8%;
 	background-position: 90% 50%;
 	cursor: pointer;
 }
@@ -82,7 +82,8 @@ ul, li{
 #waySelect{
 	width: 80%;
 	height: 50px !important;
-	margin: 0 auto;
+	line-height: 80px;
+	margin: 15px auto 0 auto;
 	background-color: red;
 }
 
@@ -99,6 +100,84 @@ ul, li{
 }
 .simple_reservation_submit:hover{
 	background-color: #4477ff;
+}
+
+/*탑승객선택*/
+#num-of-passengers-window {
+    max-width: 1200px;
+    width: 1200px;
+}
+
+#num-of-passengers-window>.itinerary {
+    margin-bottom: 10px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+#num-of-passengers-window>.btn-area {
+    position: relative;
+    padding-top: 10px;
+    text-align: right;
+}
+
+#selectBtn {
+    height: 46px;
+    width: 250px;
+    font-size: 100%;
+}
+
+.passenger-select { display: inline-block; }
+
+.passenger-select>p:first-of-type {
+    font-size: 130%;
+    margin-bottom: 20px;
+}
+
+.passenger-select>p:first-of-type>span {
+    font-size: 80%;
+    color: #888;
+}
+
+.passenger-select>input {
+    background-color: #eee;
+    height: 60px;
+    width: 99%;
+    border: 1px solid #eee;
+    font-size: 180%;
+    padding: 13px;
+    text-align: center;
+}
+
+.passenger-select:last-of-type>input { width: 100%; }
+.passenger-select>input:focus {
+    background-color: #fff;
+    border: 1px solid #36f;
+}
+
+.passenger-select>input:focus>label { color: white; }
+
+
+.minus,
+.plus {
+    background-color: transparent;
+    position: relative;
+    top: 52px;
+    width: 40px;
+    height: 52px;
+    border: none;
+    font-size: 200%;
+    font-weight: 200;
+    color: #aaa;
+}
+.minus { left: 1%; }
+.plus { right: -89%; top: -58px;}
+.minus,
+.plus:hover { cursor: pointer; }
+.btn-close{
+	position: absolute;
+	top: 35px;
+	right: 30px;
+	
 }
 /*배경이미지 컨트롤러*/
 .slideControler{
