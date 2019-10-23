@@ -31,15 +31,12 @@ ul, li{
 }
 .reserve_wrap>div:nth-child(1), .reserve_wrap>div:nth-child(2){
 	width:25%;
-	background-color: yellow;
 }
 .reserve_wrap>div:nth-child(3){
 	width:35%;
-	background-color: pink;
 }
 .reserve_wrap>div:nth-child(4){
 	width:15%;
-	background-color: orange;
 }
 .reserveBox{
 	height: 160px;
@@ -63,6 +60,11 @@ ul, li{
 	background-size : 8%;
 	background-position: 90% 50%;
 	cursor: pointer;
+	overflow : hidden;
+	white-space : nowrap;
+	text-overflow: ellipsis;
+	padding: 0 10px;
+	
 }
 .tripLoc::placeholder{
 	color: #555;
@@ -72,10 +74,16 @@ ul, li{
 	font-size:230%;
 	line-height: 82px;
 }
+/*출발일, 귀국일 선택--------------*/
 .tripDate{
 	height: 62px;
 	font-size:130%;
 	line-height: 62px;
+}
+.flightDate{
+	border: none;
+	text-align: center;
+	cursor: pointer;
 }
 
 /*구간 선택---------------------*/
@@ -84,7 +92,9 @@ ul, li{
 	height: 50px !important;
 	line-height: 80px;
 	margin: 15px auto 0 auto;
-	background-color: red;
+}
+.radioLabel{
+	cursor: pointer;
 }
 
 .simple_reservation_submit{
@@ -95,7 +105,7 @@ ul, li{
 	border-radius: 10px;
 	font-size: 150%;
 	color: white;
-	margin-top:20px;
+	margin-top:30px;
 	cursor: pointer;
 }
 .simple_reservation_submit:hover{
@@ -118,6 +128,24 @@ ul, li{
     position: relative;
     padding-top: 10px;
     text-align: right;
+}
+#passengerWrap{
+	width : 80%;
+	height: 80px;
+	line-height: 80px;
+	margin: 0 auto;
+}
+#num-of-passengers{
+	width: 100%;
+	height: 50px;
+	background : url('../IMG/icon/user.png') no-repeat;
+	background-size : 8%;
+	background-position: 90% 50%;
+	border-radius : 5px;
+	border : 1px solid #ddd;
+	opacity : 0.8;
+	cursor : pointer;
+	padding-left: 10px;
 }
 
 #selectBtn {
@@ -190,7 +218,7 @@ ul, li{
 	margin: 0 auto;
 	border-radius:10px;
 	padding-top:2px;
-	bottom: 20vh;
+	bottom: 5vh;
 }
 .dotsWrap{
 	height: 15px;
@@ -204,6 +232,7 @@ ul, li{
 	top:-15px;
 	margin:0 1px;
 	cursor: pointer;
+	opacity: 0.8;
 }
 .playState{
 	position:relative;
@@ -238,7 +267,7 @@ ul, li{
 #bestBannerWrap{
 	width: 1200px;
 	margin: 0 auto;
-	height:400px;
+	height: 380px;
 }
 #bestBannerWrap a{
 	color: #555;
@@ -329,6 +358,13 @@ ul, li{
 	width: 1200px;
 	margin: 0 auto;
 	height:200px;
+}
+.bx-wrapper{
+	border: none !important;
+	box-shadow: none !important;
+}
+.bx-wrapper li:hover>bx-caption{
+	height:100%;
 }
 /*section info-------------------------------------------------------------------------*/
 #infoWrap{

@@ -44,8 +44,8 @@ const windowClose = (str) => {
                    temp.style.display = 'none';
                    document.querySelector('.overlay').style.display = 'none';
                    break;
-               } else 
-                   temp = temp.parentElement;
+               } else
+            	   temp = temp.parentElement;
            }
         });
     });
