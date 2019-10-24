@@ -107,6 +107,28 @@ function foodSelcetClose(){
 	
 };
 
+
+/* 클래스 선택*/
+function selectClassModal() {
+	document.getElementById("modal").style.display="block"
+	resizeClassModal()
+
+	document.getElementById("classSelect").style.display ="block";
+	/*document.documentElement.scrollTop =  winHeight+200+"px"*/
+};
+function resizeClassModal(){
+	var winWidth = window.innerWidth/2;
+	var winHeight = window.innerHeight/2;
+	
+	document.getElementById("classSelect").style.left = winWidth-550+"px";
+	document.getElementById("classSelect").style.top = winHeight-350+"px";
+};
+function classSelcetClose(){
+	document.getElementById("classSelect").style.display = "none"
+	document.getElementById("modal").style.display="none"
+	
+};
+
 (() => {
 	if(location.pathname.indexOf('reserveStatus') !== -1){
 		drawBusinessSeatImg();

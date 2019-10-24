@@ -52,6 +52,7 @@
 		width:1200px;
 		height:400px;
 		border-top:1px solid black;
+		margin-bottom: 40px;
 		}
 	#passengerArticle{
 		width:200px;
@@ -61,20 +62,20 @@
 	.article{
 		width:200px;
 		height:100px;
-		background-color:#6d6e70;
+		background-color:#999;
 		color:white;
 		text-align:center;
-		font-size:20px;
+		font-size:16px;
 		line-height:100px;
 		border-bottom:1px solid white;		
 		}
 	#articleNo{
 		width:200px;
 		height:100px;
-		background-color:#6d6e70;
+		background-color:#999;
 		color:white;
 		text-align:center;
-		font-size:20px;
+		font-size:16px;
 		line-height:50px;
 		border-bottom:1px solid lightgray;
 		float:left
@@ -94,32 +95,36 @@
 	#genderRadio{
 		width:300px;
 		height:80px;
-		font-size:20px;
+		font-size:16px;
 		padding:20px
 		}
 	#firstName{
 		width:200px;
 		height:60px;
-		font-size:20px;
-		background-color:lightgray;
+		font-size: 100%;
+		background-color: #f3f3f3;
 		color:gray;
 		padding-left:10px;
+		border:1px solid #f3f3f3;
+		border-bottom: 1px solid #ddd;
 		
 		}
 	#lastName{
 		width:300px;
 		height:60px;
-		font-size:20px;
-		background-color:lightgray;
+		font-size: 100%;
+		background-color: #f3f3f3;
 		color:gray;
 		padding-left:10px;
+		border:1px solid #f3f3f3;
+		border-bottom: 1px solid #ddd;
 	
 		}
 	#firstNameText{
 		width:240px;
 		height:80px;
 		padding:20px;
-		float:left
+		float:left;
 		}
 	#lastNameText{
 		width:400px;
@@ -130,10 +135,13 @@
 	.list{
 		width:300px;
 		height:60px;
-		font-size:20px;
-		background-color:lightgray;
+		font-size: 100%;
+		background-color: #f3f3f3;
 		color:gray;
 		padding-left:10px;
+		border:1px solid #f3f3f3;
+		border-bottom: 1px solid #ddd;
+	
 		}
 	.listDiv{
 		width:310px;
@@ -151,13 +159,16 @@
 		width:200px;
 		height:60px;
 		font-size:20px;
-		background-color:lightgray;
+		background-color: #f3f3f3;
 		color:gray;
 		padding-left:10px;
+		border:1px solid #f3f3f3;
+		border-bottom: 1px solid #ddd;
+	
 		}
 	#detailPage{
 		width:1200px;
-		height:1200px;
+		height:1100px;
 		background-color:#1075a3;
 		padding:20px;
 	}
@@ -181,7 +192,7 @@
 	}
 	.seatInfo{
 		width:800px;
-		height:150px;
+		height:110px;
 		color:white;
 		font-size:20px;
 		word-break:break-all
@@ -251,7 +262,7 @@
 		font-weight:bold;
 		text-align: center;
 		}
-	#close{
+	.close{
 		width:50px;
 		height:50px;
 		font-size:30px;
@@ -332,7 +343,7 @@
 	#reserveContent{
 		background-color:white;
 		width:900px;
-		height:650px;
+		height:560px;
 		margin:40px auto
 		}
 	#daTitle{
@@ -513,13 +524,57 @@
 .product-wrapper{
 	margin-top:30px
 }
-/* lightDeil */
+#foodSelectTitle{
+	text-align:center;
+	font-size: 20px;
+    margin: 30px;
+}
+.foodClose{
+	width:50px;
+	height:50px;
+	font-size:30px;
+	font-weight:bold;
+	position:absolute;
+	margin-top: -50px;
+   	margin-left: 1440px;	
+	cursor:pointer;
+}
 
+.radio3 + label:before {
+    margin-top: 14px;
+    
+}
+.radio3:checked + label:after {
+   	top: 17px;
+    
+}
+#classSelect{
+	width:1200px;
+	background-color:#fff;
+	display:none;
+	z-index:5;
+	position:absolute;
+	padding:30px;
+}
 
-
-
-
-
+#classSelectTitle{
+	text-align:center;
+	font-size: 20px;
+    margin: 30px;
+}
+.classClose{
+	width:50px;
+	height:50px;
+	font-size:30px;
+	font-weight:bold;
+	position:absolute;
+	margin-top: -50px;
+   	margin-left: 1050px;	
+	cursor:pointer;
+}
+.subtitle>span {
+	margin-left:0
+}
 
 
 
