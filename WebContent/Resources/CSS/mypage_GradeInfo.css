@@ -1,0 +1,301 @@
+@charset "UTF-8";
+@import url("../CSS/layout.css") screen;
+
+#all{ 
+		max-width:1200px;
+		margin:0 auto;
+		height:2000px;
+		}
+	#nav{
+		width:100%;
+		margin:0 auto
+		}
+	#vipEligibility{
+		background-color:#999;
+		border:1px solid #999;
+		border-bottom:0;
+		width:250px;
+		height:100px;
+		float:left;
+		font-size:22px;
+		text-align:center;
+		color:white
+		}
+	#vipEligibility{padding:15px 0}
+	#vipGrade{
+		padding:30px 0;
+		border:1px solid #999;
+		border-bottom:0;
+		width:250px;
+		height:100px;
+		float:left;
+		font-size:22px;
+		text-align:center;
+		}
+	.text{
+		width:1100px;
+		height:200px;
+		overflow:hidden;
+		padding:20px
+		}
+	/* 승급기준  */
+	.h2Text{
+		width:1200px;
+		height:50px
+		}
+	#SIMDiv{
+		width:1200px;
+		height:700px
+		}
+	#separation{
+		width:350px;
+		height:850px;
+		float:left
+		}
+	.separationTitle, .inquiryConditionTitle,.maintenancePeriodTitle{
+		background-color:#999;
+		height:50px;
+		color:white;
+		text-align:center;
+		padding:10px;
+		font-size:18px
+		}
+	#inquiryCondition{
+		width:700px;
+		height:850px;
+		float:left
+		}
+	#maintenancePeriod{
+		width:150px;
+		height:850px;
+		float:left
+		}
+	#platinumImg{
+		border:1px solid gray;
+		border-right:0;
+		width:350px;
+		height:150px;
+		padding:15px 0;
+		float:left;
+		background-color:#f7f7f7;
+		}
+	#platinumImg>div{
+		float:left
+		}
+	#platinumImg>div:nth-child(2){
+		padding:45px 0;
+		padding-left:10px
+		}
+	#diamondPlusImg{
+		border:1px solid gray;
+		border-top:0;
+		border-right:0;
+		width:350px;
+		height:350px;
+		padding:15px 0;
+		float:left;
+		background-color:#f7f7f7;
+		
+		}
+	#diamondPlusImg>div:first-child{
+		float:left;
+		padding-top:80px
+		
+		}
+	#diamondPlusImg>div:nth-child(2){
+		padding:130px 0;
+		padding-left:10px;
+		float:left
+		}
+	.diamondImg{
+		border:1px solid gray;
+		border-top:0;
+		border-right:0;
+		width:350px;
+		height:150px;
+		padding:15px 0;
+		float:left;
+		background-color:#f7f7f7;
+		}
+	.diamondImg>div:first-child{
+		float:left;
+		
+		}
+	.diamondImg>div:nth-child(2){
+		padding:45px 0;
+		float:left;
+		padding-left:10px
+		}
+	.goldImg{
+		border:1px solid gray;
+		border-top:0;
+		border-right:0;
+		width:350px;
+		height:150px;
+		padding:15px 0;
+		float:left;
+		background-color:#f7f7f7;
+		}
+	.goldImg>div:first-child{
+		float:left;
+		
+		}
+	.goldImg>div:nth-child(2){
+		padding:45px 0;
+		float:left;
+		padding-left:10px
+		}
+	#plaText{
+		border:1px solid gray;
+		border-right:0;
+		width:700px;
+		height:150px;
+		padding:40px 10px;
+		
+		}
+	#diaplusText1, #diaplusText2{
+		border:1px solid gray;
+		border-top:0;
+		border-right:0;
+		width:700px;
+		height:175px;
+		padding:40px 10px;
+		}
+	.diaText{
+		border:1px solid gray;
+		border-top:0;
+		border-right:0;
+		width:700px;
+		height:150px;
+		padding:25px 10px;
+		}
+	.goldText{
+		border:1px solid gray;
+		border-top:0;
+		border-right:0;
+		width:700px;
+		height:150px;
+		padding:25px 10px;
+		}
+	#lifetime{
+		border:1px solid gray;
+		width:150px;
+		height:325px;
+		text-align: center;
+   		padding: 135px 0;
+		}
+	#year2{
+		border:1px solid gray;
+		border-top:0;
+		width:150px;
+		height:475px;
+		text-align: center;
+   		padding: 190px 0;
+		}
+	/* 자격 유지 기준 */
+	#inquiryh2Text{
+		margin-top:20px;
+		width:1200px;
+		height:50px;
+		float:left
+		}
+	#inquirySIMDiv{
+		width:1200px;
+		height:500px;
+		overflow:hidden
+		}
+	#inquiryseparation{
+		width:350px;
+		height:500px;
+		float:left
+		}
+	#iinquiryCondition{
+		width:700px;
+		height:500px;
+		float:left
+		}
+	#inquirymaintenancePeriod{
+		width:150px;
+		height:500px;
+		float:left
+		}
+	#inquirydiamondPlusImg{
+		border:1px solid gray;
+		border-top:0;
+		border-right:0;
+		width:350px;
+		height:150px;
+		padding:15px 0;
+		float:left;
+		background-color:#f7f7f7;
+		
+		}
+	#inquirydiamondPlusImg>div:first-child{
+		float:left;
+		
+		}
+	#inquirydiamondPlusImg>div:nth-child(2){
+		padding:45px 0;
+		float:left;
+		padding-left:10px
+		}
+	#inquirydiaplusText{
+		border:1px solid gray;
+		border-top:0;
+		border-right:0;
+		width:700px;
+		height:150px;
+		padding: 25px 10px;
+		}
+	#inquiryyear2{
+		border:1px solid gray;
+		border-top:0;
+		width:150px;
+		height:450px;
+		text-align: center;
+   		padding: 190px 0;
+		}
+	/* 등급안내 페이지 넌 */
+	#benefitPage{
+		display:none;
+		}
+	#check2{
+		visibility:hidden
+	}
+	
+	/*  */
+.last-note {
+   padding: 25px 40px 20px;
+   border-top: 1px solid #ddd;
+   border-bottom: 1px solid #ddd;
+   margin-left: 0;
+   margin-bottom: 15px;
+}	
+
+#bar{
+	border-bottom:1px solid gray;
+	width:700px;
+	height:100px;
+	margin-left:499px;
+	margin-bottom:25px;
+}
+#beneSeparation, #gold, #dia ,#diaplus ,#pla{
+	height:50px;
+	line-height:50px;
+	background-color:#999;
+	color:#fff;
+	text-align:center;
+	border-right:1px solid #fff;
+}
+.duration{
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	border-right:1px solid #ddd;
+}
+
+
+
+	
+
+	

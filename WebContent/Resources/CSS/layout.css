@@ -30,7 +30,7 @@ body {
 section.content {
     max-width: 1200px;
     margin: 0 auto 70px;
-}
+}	
 
 .clearfix {zoom: 1;}
 .clearfix:after {
@@ -257,6 +257,8 @@ i.fa-exclamation:hover {
     text-decoration: none;
     color: #36f;
 }
+
+
 
 /* list 3 */
 
@@ -827,14 +829,21 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 .col-two-fifth,
 .col-three-fifth,
 .col-four-fifth,
+.col-sixth,
+.col-five-sixth,
+.col-seventh,
+.col-two-seventh,
+.col-three-seventh,
+.col-four-seventh,
+.col-five-seventh,
+.col-six-seventh,
 .col-eighth,
 .col-three-eighth,
 .col-five-eighth,
-.col-seven-eighth,
 .col-tenth,
 .col-three-tenth,
 .col-seven-tenth,
-.col-nine-tenth { float: left; }
+.col-nine-tenth  { float: left; }
 
 .col-line { width: 100% !important; }
 
@@ -852,15 +861,25 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 .col-three-fifth { width: 60% !important; }
 .col-four-fifth { width: 80% !important; }
 
+.col-sixth	{ width: 16.66% !important; }
+.col-five-sixth { width: 83.33% !important; }
+
+.col-seventh { width: 14.28% !important; }
+.col-two-seventh { width: 28.56% !important; }
+.col-three-seventh { width: 42.84% !important; }
+.col-four-seventh { width: 57.12% !important; }
+.col-five-seventh { width: 71.44% !important; }
+.col-six-seventh { width: 85.72% !important; }
+
 .col-eighth { width: 12.5% !important; }
 .col-three-eighth { width: 37.5% !important; }
 .col-five-eighth { width: 62.5% !important; }
-.col-seven-eighth { width: 87.5% !important; }
 
 .col-tenth { width: 10% !important; }
-.col-three-tenth { width: 30% !important}
-.col-seven-tenth { width: 70% !important}
+.col-three-tenth { width: 30% !important; }
+.col-seven-tenth { width: 70% !important; }
 .col-nine-tenth { width: 90% !important; }
+
 
 /* ----------------------------------------------- */
 /* 달력 */

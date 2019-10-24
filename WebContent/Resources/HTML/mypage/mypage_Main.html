@@ -5,11 +5,12 @@
 <title>마이 홈</title>
 <link rel="stylesheet" href="../../CSS/main.css" type="text/css"/>
 <link rel="stylesheet" href="../../CSS/mypage.css">
+<link rel="stylesheet" href="../../CSS/circle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../JS/main.js"></script>
-<script src="../../JS/mypage.js"></script>
+<script src="../../JS/main.js"></script>
+
 </head>
-<body>
+<body id="mypage-main">
 <header id="header">
 	<nav class="nav">
 		<div class="navContainer">
@@ -94,10 +95,12 @@
 		<a href="#header"><img src="../../IMG/logo/logo_top.png"/></a>
 	</div>
 </header>
-<div id="nav"></div>
-<div id="all">
-	<div id="clouddiv"><img src="../../IMG/mypage_Img/cloud3.jpg" id="cloudimg"/>
-		<div class="content">
+
+
+
+<section class="content">
+	<div id="clouddiv" class="clearfix"><img src="../../IMG/mypage_Img/cloud3.jpg" id="cloudimg"/>
+		<div class="maintop">
 			<div id="name">
 				<div><a href="#">최민성 님</a></div>
 				<div>CHOI MIN SEONG</div>
@@ -106,9 +109,8 @@
 				<div><a href="#">실버</a></div>
 				<div><a href="#">777 888 9999</a></div>
 			</div>
-			<div id="mileage">
-				총 잔여 마일리지<br/>
-				<span>0</span>
+			<div class="third circle">
+     				<div>나의 마일리지</div>
 			</div>
 			<div id="boarding">
 				GAZA AIR 탑승 0<br/>
@@ -117,49 +119,102 @@
 		</div>
 	</div>
 	<!-- 구름 사진 아래 -->
-	<div class="content">
-		<div id="like">관심 노선</div>
-		<div id="mg">마일리지 & 등급 <br/>
-			<div>
-			<div>마일리지 <progress value="0" max="100" id="promile"></progress></div>
-			<div>등급 <progress value="0" max="100" id="prograde"></progress></div>
+	
+	<div class="row clearfix">
+		<div class="col-fifth">
+			<div class="favorite">
+				관심 노선
 			</div>
+			<img src="../../IMG/icon/favorite.png">
 		</div>
-		<div id="reserve"><div id="rt">항공권 예약 현황</div>
-			<div id="reserveContent">
-				<div id="daTitle"><h2>ICN 서울/인천 > JFK 뉴욕/존 F 케네디</h2></div>
-				<div id="days">
-					<div class="daydiv">예약한 날짜</div>
-				</div>
-				<div id="standard">(2019.09.07 20:14 한국시간 기준) 출발 다음날 / 출발 다다음날</div>
-				<div id="reserveTitle">
-					<div class="as">편명</div>
-					<div class="as">상태</div>
-					<div class="time">출발 시간</div>
-					<div class="time">도착 시간</div>
-					<div class="asReserve">oz</div>
-					<div class="asReserve">상태</div>
-					<div class="dasc">출발 스케쥴 10:20</div>
-					<div class="dasc">도착 스케쥴10:20</div>
-					<div class="daexpect">출발 예정11:35</div>
-					<div class="daexpect">도착 예정 11:35</div>
-				</div>
-				<div id="dr">
-					<div><a href="reserveStatus.html">상세 보기</a></div>
-					<div>환불</div>
-				</div>
-			<div id="info">
-				<ul class="list-type2 last-note bg-gray6">
-					<li class="list-inside-title">안내 사항</li>
-					<li>출발 완료 시각은 항공기가 비행을 위해 주기장을 출발한 시간을 의미하며, 실제 항공기 이륙시간과는 공항 상황에 따라 15~20분 가량 차이가 있습니다.</li>
-					<li>도착 완료는 항공기 착륙 후 주기장에 도착하여 하기 준비가 된 상태로 실제 활주로 착륙 후 15~20분 가량 소요됩니다.</li>
-					<li>도착이 30분 이상 지연되거나 항공편이 결항될 경우 출도착 조회를 통해 확인서를 출력하실 수 있습니다.</li>
-				</ul>
+	    <div class="col-three-fifth">
+	    	<div class="mg">
+	    		<div class="col-fifth">마일리지 & 등급</div>
+	    		<div class="col-four-fifth">
+	    			<div class="col-fourth">
+	    				<div>마일리지</div>
+	    				<div>등급</div>
+	    			</div>
+	    			<div class="col-three-fourth">
+    					<div id="milageprogress"></div>
+	    				<div id="gradeprogress"></div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+	    <div class="col-fifth">
+			<div class="mywrite">
+				내가 쓴글
 			</div>
-			</div>
+			<img src="../../IMG/icon/write.png">
+		</div>
 	</div>
+	<div id="travelAll">
+		<table>
+			<caption>예약 현황</caption>
+			<colgroup>
+				<col style="width: 100px;" />
+				<col style="width: 250px" />
+				<col style="width: 250px" />
+				<col style="width: 200px" />
+				<col style="width: 200px" />
+				<col style="width: 110px" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th>여정</th>
+					<th>일자</th>
+					<th>출발 - 도착지</th>
+					<th>출발 - 도착 시간</th>
+					<th>편명</th>
+					<th>상세 보기</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<div>01</div>
+					</td>
+					<td>
+						<div>2019/01/01 (일)</div>
+					</td>
+					<td>
+						<div>샌프란시스코 → 뉴욕</div>
+					</td>
+					<td>
+						<div>20:20 → 02:30</div>
+					</td>
+					<td>
+						<div>OZGO1234</div>
+					</td>
+					<td>
+						<div><a href="reserveStatus.html"><input type="button" class="blueBtn" value="상세보기" id="detail"></a></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div>02</div>
+					</td>
+					<td>
+						<div>2019/01/01 (일)</div>
+					</td>
+					<td>
+						<div>뉴욕 → 샌프란시스코</div>
+					</td>
+					<td>
+						<div>20:20 → 02:30</div>
+					</td>
+					<td>
+						<div>OZGO1234</div>
+					</td>
+					<td>
+						<div><a href="reserveStatus.html"><input type="button" class="blueBtn" value="상세보기" id="detail"></a></div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
-</div>
+</section>
 <footer>
 	<div id="footContainer">
 		<a href="index.html" title="홈페이지로 이동"><img src="../../IMG/logo/logo_white2.png" width="170"/></a>
@@ -197,6 +252,9 @@
 		</div>
 	</div>
 </footer>
-
+<script src="https://rawgit.com/kottenator/jquery-circle-progress/1.2.1/dist/circle-progress.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>
+  <script src="../../JS/circle.js"></script>
+  <script src="../../JS/mypage.js"></script>
 </body>
 </html>
