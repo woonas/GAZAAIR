@@ -4,354 +4,21 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../CSS/mypage_GradeInfo.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../JS/main.js"></script>
-<style>
-	#all{ 
-		max-width:1200px;
-		margin:0 auto;
-		height:2000px;
-		}
-	#nav{
-		width:100%;
-		margin:0 auto
-		}
-	#vipEligibility{
-		background-color:#6d6e70;
-		border:1px solid gray;
-		width:250px;
-		height:100px;
-		float:left;
-		font-size:22px;
-		text-align:center;
-		color:white
-		}
-	#vipEligibility{padding:15px 0}
-	#vipGrade{
-		padding:30px 0;
-		border:1px solid gray;
-		width:250px;
-		height:100px;
-		float:left;
-		font-size:22px;
-		text-align:center;
-		}
-	.text{
-		width:1100px;
-		height:200px;
-		overflow:hidden;
-		padding:20px
-		}
-	/* 승급기준  */
-	.h2Text{
-		width:1200px;
-		height:50px
-		}
-	#SIMDiv{
-		width:1200px;
-		height:700px
-		}
-	#separation{
-		width:350px;
-		height:850px;
-		float:left
-		}
-	.separationTitle, .inquiryConditionTitle,.maintenancePeriodTitle{
-		background-color:#6d6e70;
-		height:50px;
-		color:white;
-		text-align:center;
-		padding:10px;
-		font-size:18px
-		}
-	#inquiryCondition{
-		width:700px;
-		height:850px;
-		float:left
-		}
-	#maintenancePeriod{
-		width:150px;
-		height:850px;
-		float:left
-		}
-	#platinumImg{
-		border:1px solid gray;
-		width:350px;
-		height:150px;
-		padding:15px 0;
-		float:left
-		}
-	#platinumImg>div{
-		float:left
-		}
-	#platinumImg>div:nth-child(2){
-		padding:45px 0;
-		padding-left:10px
-		}
-	#diamondPlusImg{
-		border:1px solid gray;
-		width:350px;
-		height:350px;
-		padding:15px 0;
-		float:left
-		
-		}
-	#diamondPlusImg>div:first-child{
-		float:left;
-		padding-top:80px
-		
-		}
-	#diamondPlusImg>div:nth-child(2){
-		padding:130px 0;
-		padding-left:10px;
-		float:left
-		}
-	.diamondImg{
-		border:1px solid gray;
-		width:350px;
-		height:150px;
-		padding:15px 0;
-		float:left
-		}
-	.diamondImg>div:first-child{
-		float:left;
-		
-		}
-	.diamondImg>div:nth-child(2){
-		padding:45px 0;
-		float:left;
-		padding-left:10px
-		}
-	.goldImg{
-		border:1px solid gray;
-		width:350px;
-		height:150px;
-		padding:15px 0;
-		float:left
-		}
-	.goldImg>div:first-child{
-		float:left;
-		
-		}
-	.goldImg>div:nth-child(2){
-		padding:45px 0;
-		float:left;
-		padding-left:10px
-		}
-	#plaText{
-		border:1px solid gray;
-		width:700px;
-		height:150px;
-		
-		}
-	#diaplusText1, #diaplusText2{
-		border:1px solid gray;
-		width:700px;
-		height:175px;
-		}
-	.diaText{
-		border:1px solid gray;
-		width:700px;
-		height:150px;
-		}
-	.goldText{
-		border:1px solid gray;
-		width:700px;
-		height:150px;
-		}
-	#lifetime{
-		border:1px solid gray;
-		width:150px;
-		height:325px;
-		}
-	#year2{
-		border:1px solid gray;
-		width:150px;
-		height:475px;
-		}
-	/* 자격 유지 기준 */
-	#inquiryh2Text{
-		margin-top:20px;
-		width:1200px;
-		height:50px;
-		float:left
-		}
-	#inquirySIMDiv{
-		width:1200px;
-		height:500px;
-		overflow:hidden
-		}
-	#inquiryseparation{
-		border:1px solid gray;
-		width:350px;
-		height:500px;
-		float:left
-		}
-	#iinquiryCondition{
-		border:1px solid gray;
-		width:700px;
-		height:500px;
-		float:left
-		}
-	#inquirymaintenancePeriod{
-		width:150px;
-		height:500px;
-		float:left
-		}
-	#inquirydiamondPlusImg{
-		border:1px solid gray;
-		width:350px;
-		height:150px;
-		padding:15px 0;
-		float:left
-		}
-	#inquirydiamondPlusImg>div:first-child{
-		float:left;
-		
-		}
-	#inquirydiamondPlusImg>div:nth-child(2){
-		padding:45px 0;
-		float:left;
-		padding-left:10px
-		}
-	#inquirydiaplusText{
-		border:1px solid gray;
-		width:700px;
-		height:150px;
-		}
-	#inquiryyear2{
-		border:1px solid gray;
-		width:150px;
-		height:450px;
-		}
-	/* 등급안내 페이지 넌 */
-	#benefitPage{
-		display:none;
-		}
-	#check2{
-		visibility:hidden
-	}
-	
-</style>
-<script>
-	function eligibilityNoneBlock(){
-		document.getElementById("benefitPage").style.display= "none"
-		document.getElementById("gradePage").style.display= "block"
-		document.getElementById("check1").style.visibility= "visible"
-		document.getElementById("check2").style.visibility= "hidden"
-		document.getElementById("vipGrade").style.backgroundColor= "white"
-		document.getElementById("vipGrade").style.color= "#6d6e70"
-		document.getElementById("vipEligibility").style.backgroundColor= "#6d6e70"
-			document.getElementById("vipEligibility").style.color= "white"
-	};
-	function benefitNoneBlock(){
-		document.getElementById("gradePage").style.display= "none"
-		document.getElementById("benefitPage").style.display= "block"
-		document.getElementById("check1").style.visibility= "hidden"
-		document.getElementById("check2").style.visibility= "visible"
-		document.getElementById("vipGrade").style.backgroundColor= "#6d6e70"
-		document.getElementById("vipGrade").style.color= "white"
-		document.getElementById("vipEligibility").style.backgroundColor= "white"
-		document.getElementById("vipEligibility").style.color= "#6d6e70"
-	};
-	
 
-</script>
 </head>
 <body>
-<header id="header">
-	<nav class="nav">
-		<div class="navContainer">
-			<ul class="navMenu">
-				<li><a href="index.html"><img src="../IMG/logo/logo_basic.png"/></a></li>
-				<li><a href="#">항공권예매</a>
-					<div class="subMenuWarp">
-						<div class="subMenu">
-							<ul>
-								<li><a href="not_using/book.html">항공권예약</a></li>
-							</ul>
-							<ul>
-								<li><a href="#">정기 운항스케줄</a></li>
-								<li><a href="#">실시간 운항스케줄</a></li>
-								<li><a href="routeMap.html">운항노선도</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li><a href="#">마이페이지</a>
-					<div class="subMenuWarp">
-						<div class="subMenu">
-							<ul>
-								<li><a href="AccountInfo.html">회원정보</a></li>
-								<li><a href="mypage_Membergrade.html">회원등급</a></li>
-								<li><a href="reserveStatus.html">항공권 예약 현황</a></li>
-							</ul>
-							<ul>
-								<li><a href="mypage_Main.html">마이 홈</a></li>
-								<li><a href="#">마일리지</a></li>
-								<li><a href="#">관심노선</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li><a href="#">상품페이지</a>
-					<div class="subMenuWarp">
-						<div class="subMenu">
-							<ul>
-								<li><a href="prd_SpecialPrice.html">특가할인</a></li>
-								<li><a href="prd_alliance_event.html">제휴이벤트</a></li>
-							</ul>
-							<ul>
-								<li><a href="prd_BestProduct.html">베스트상품</a></li>
-								<li><a href="prd_recmdProduct.html">추천상품</a></li>
-							</ul>
-							<ul>
-								<li><a href="#">고객의말씀</a></li>
-					
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li><a href="#">서비스안내</a>
-					<div class="subMenuWarp">
-						<div class="subMenu">
-							<ul>
-								<li><a href="service_checkIn.html">체크인</a></li>
-								<li><a href="service_baggage.html">수하물 서비스</a></li>
-								<li><a href="service_pet.html">반려동물동반</a></li>
-							</ul>
-							<ul>
-								<li><a href="service_airline_food.html">기내식안내</a></li>
-								<li><a href="service_class.html">클래스안내</a></li>
-								<li><a href="service_wifi.html">유료부가서비스</a></li>
-							</ul>
-							<ul>
-								<li><a href="service_private_plane.html">전용기</a></li>
-								<li><a href="notice.html">공지사항</a></li>
-								<li><a href="service_faq.html">FAQ</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<div class="navBar"></div>
-			</ul>
-			<a href="not_using/signIn.html"><button class="translator" style="right:55px">로그인</button></a>
-			<button class="translator">EN</button>
-		</div>
-	</nav>
-	<div class="topBtn" title="맨 위로 이동">
-		<a href="#header"><img src="../IMG/logo/logo_top.png"/></a>
-	</div>
-</header>
-<div id="nav"></div>
 <div id="all">
 	<div><h3>회원 안내</h3></div>
 	<div id="vipEligibility" onclick="eligibilityNoneBlock()"><img src="../IMG/icon/check.png" id="check1"/>우수회원 승급/자격<br/>유지 기준</div>
-	<div id="vipGrade" onclick="benefitNoneBlock()"><img src="../IMG/icon/check.png" id="check2"/>우수회원 등급별 혜택</div>
+	<div id="vipGrade" onclick="benefitNoneBlock()"><img src="../IMG/icon/check.png" id="check2"/>우수회원 등급별 혜택</div><div id="bar"></div>
 	<div id="gradePage">
-		<div class="text">● GAZA<br/>
-		● 2018년
-		</div>
+		<ul class="list-type2 last-note bg-gray6">
+					<li>GAZA 클럽 우수회원이란 실버등급을 제외한 골드 이상 회원을 뜻합니다.</li>
+					<li>2018년 10월 1일부터는 ‘기준일’로부터 매 24개월간의 자격 조건 및 자격 유지 조건에 아시아나 제휴카드 이용 실적이 반영되어 우수회원 자격을 보다 쉽게 획득하실 수 있도록 하였습니다.</li>
+		</ul>
 		<div class="h2Text"><h2>승급 기준</h2></div>
 		<div id="SIMDiv">
 			<div id="separation"><div class="separationTitle">구분</div>
@@ -361,11 +28,29 @@
 				<div class="goldImg"><div><img src="../IMG/mypage_Img/gold.jpg"/></div><div>골드</div></div>			
 			</div>
 			<div id="inquiryCondition"><div class="inquiryConditionTitle">자격조건</div>
-				<div id="plaText"></div>
-				<div id="diaplusText1"></div>
-				<div id="diaplusText2"></div>
-				<div class="diaText"></div>
-				<div class="goldText"></div>
+				<div id="plaText">가입일로부터 다음의 어느 한 조건을 충족할 경우<br/>
+								1) 100만 탑승 마일 적립<br/>
+								2) 아시아나항공 1,000회 탑승
+				</div>
+				<div id="diaplusText1">가입일로부터 다음의 어느 한 조건을 충족할 경우<br/>
+								1) 50만 탑승 마일 적립<br/>
+								2) 아시아나항공 500회 탑승
+				</div>
+				<div id="diaplusText2">‘기준일*’로부터 매 24개월간 다음의 어느 한 조건을 충족할 경우<br/>
+								1) 10만 탑승 마일 적립<br/>
+								2) 아시아나항공 100회 탑승<br/>
+								3) 탑승 마일이 7만 5천 마일 이상이면서 아시아나 제휴카드 이용 실적과 합하여 10만 마일 적립
+				</div>
+				<div class="diaText">‘기준일*’로부터 매 24개월간 다음의 어느 한 조건을 충족할 경우<br/>
+								1) 4만 탑승 마일 적립<br/>
+								2) 아시아나항공 50회 탑승<br/>
+								3) 탑승 마일이 3만 마일 이상이면서 아시아나 제휴카드 이용 실적과 합하여 4만 마일 적립
+				</div>
+				<div class="goldText">‘기준일*’로부터 매 24개월간 다음의 어느 한 조건을 충족할 경우<br/>
+								1) 2만 탑승 마일 적립<br/>
+								2) 아시아나항공 30회 탑승<br/>
+								3) 탑승 마일이 1만 5천 마일 이상이면서 아시아나 제휴카드 이용 실적과 합하여 2만 마일 적립
+				</div>
 			</div>
 			<div id="maintenancePeriod"><div class="maintenancePeriodTitle">자격 유지 기간</div>
 				<div id="lifetime">평생</div>
@@ -381,9 +66,21 @@
 				<div class="goldImg"><div><img src="../IMG/mypage_Img/gold.jpg"/></div><div>골드</div></div>
 			</div>
 			<div id="iinquiryCondition"><div class="inquiryConditionTitle">자격조건</div>
-				<div id="inquirydiaplusText"></div>
-				<div class="diaText">s</div>
-				<div class="goldText">s</div>
+				<div id="inquirydiaplusText">‘기준일*’로부터 매 24개월간 다음의 어느 한 조건을 충족할 경우<br/>
+								1) 7만 5천 탑승 마일 적립<br/>
+								2) 아시아나항공편 60회 탑승<br/>
+								3) 탑승 마일이 5만 마일 이상이면서 아시아나 제휴카드 이용 실적과 합하여 7만 5천 마일 적립
+				</div>
+				<div class="diaText">‘기준일*’로부터 매 24개월간 다음의 어느 한 조건을 충족할 경우<br/>
+								1) 3만 탑승 마일 적립<br/>
+								2) 아시아나항공 30회 탑승<br/>
+								3) 탑승 마일이 2만 마일 이상이면서 아시아나 제휴카드 이용 실적과 합하여 3만 마일 적립
+				</div>
+				<div class="goldText">‘기준일*’로부터 매 24개월간 다음의 어느 한 조건을 충족할 경우<br/>
+								1) 1만 5천 탑승 마일 적립<br/>
+								2) 아시아나항공편 20회 탑승<br/>
+								3) 탑승 마일이 1만 마일 이상 이면서 아시아나 제휴카드 이용 실적과 합하여 1만 5천 마일 적립
+				</div>
 			</div>
 			<div id="inquirymaintenancePeriod"><div class="maintenancePeriodTitle">자격 유지 기간</div>
 				<div id="inquiryyear2">조기 승급 기간<br/>+ 24개월</div>
@@ -392,11 +89,27 @@
 	</div>
 	<!-- 우수회원 등급별 혜택 -->
 	<div id="benefitPage">
-		<div class="text">● 아시아나클럽 우수회원에게 제공되는 다양한 우대서비스를 확인하세요.<br/>
-		</div>
+		<ul class="list-type2 last-note bg-gray6">
+					<li>GAZA클럽 우수회원에게 제공되는 다양한 우대서비스를 확인하세요.</li>
+		</ul>
 		<div class="h2Text"><h2>우수 회원 공동 혜택</h2></div>
-	
-	
+		<div class="row clearfix">
+			<div class="col-sixth"><div id="beneSeparation">구분</div></div>
+			<div class="col-sixth"><div id="gold">골드</div></div>
+			<div class="col-sixth"><div id="dia">다이아몬드</div></div>
+			<div class="col-two-sixth"><div id="diaplus">다이아몬드 플러스</div></div>
+			<div class="col-sixth"><div id="pla">플레티늄</div></div>
+			
+			<div class="col-sixth"><div class="duration">구분</div></div>
+			<div class="col-sixth"><div class="duration">구분</div></div>
+			<div class="col-sixth"><div class="duration">구분</div></div>
+			<div class="col-one-sixth"><div class="duration">구분</div></div>
+			<div class="col-one-sixth"><div class="duration">구분</div></div>
+			<div class="col-sixth"><div class="duration">구분</div></div>
+			
+			
+		</div>
+		
 	
 	
 	
@@ -440,5 +153,6 @@
 		</div>
 	</div>
 </footer>
+<script src="../JS/mypage_GradeInfo.js"></script>
 </body>
 </html>

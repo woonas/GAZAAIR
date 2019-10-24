@@ -186,6 +186,7 @@ const eventHandler = (_window, step2) => {
 
         /* 달력 */
         cal_generator('birthdate', new Date('1950', '01' - 1), 1);
+        
         new NiceCountryInput($(".countryPicker")).init();
         const temp = document.querySelector('.warning');
         document.querySelector('.login-link').addEventListener('click', () => temp.classList.remove('hidden'));

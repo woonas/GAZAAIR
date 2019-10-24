@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../../CSS/reserveStatus.css" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../../JS/main.js"></script>
+<script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
+</head>
+<body onresize="resizeModal()"><!-- onload="" -->
+
+ <div class="overlay"></div>
+<section class="content">
+<div id="all">
+	<div><h3>예약 현황 상세 페이지</h3></div>
+	<hr/>
+	<div>운임이 정상적으로 입력되었는지 최종 확인 후, 운임 조건 및 규정을 확인하시기 바랍니다.</div>
+	<hr/>
+		<div id="reserveContent">
+				<div id="daTitle"><h2>ICN 서울/인천 > JFK 뉴욕/존 F 케네디</h2></div>
+				<div id="days">
+					<div class="daydiv">예약한 날짜</div>
+				</div>
+				<div id="standard">(2019.09.07 20:14 한국시간 기준) 출발 다음날 / 출발 다다음날</div>
+				<div id="reserveTitle">
+					<div class="as">편명</div>
+					<div class="as">상태</div>
+					<div class="time">출발 시간</div>
+					<div class="time">도착 시간</div>
+					<div class="asReserve">OZGO1234</div>
+					<div class="asReserve">상태</div>
+					<div class="dasc">출발 스케쥴 10:20</div>
+					<div class="dasc">도착 스케쥴10:20</div>
+					<div class="daexpect">출발 예정11:35</div>
+					<div class="daexpect">도착 예정 11:35</div>
+				</div>
+				<div id="dr">
+					<div><input type="button" value="환불" class="blueBtn" id="returnBtn" /></div>
+				</div>
+			
+				<ul class="list-type2 last-note bg-gray6">
+					<li class="list-inside-title">안내 사항</li>
+					<li>출발 완료 시각은 항공기가 비행을 위해 주기장을 출발한 시간을 의미하며, 실제 항공기 이륙시간과는 공항 상황에 따라 15~20분 가량 차이가 있습니다.</li>
+					<li>도착 완료는 항공기 착륙 후 주기장에 도착하여 하기 준비가 된 상태로 실제 활주로 착륙 후 15~20분 가량 소요됩니다.</li>
+					<li>도착이 30분 이상 지연되거나 항공편이 결항될 경우 출도착 조회를 통해 확인서를 출력하실 수 있습니다.</li>
+				</ul>
+		
+		</div>
+		
+		<div><h3>탑승자 정보</h3></div>
+		<div id="passengerTextAll"><div id="passengerText">성인1</div><div id="checkDiv"><input type="checkbox" name="check" value="check" id="check"/>&nbsp;&nbsp;본인은 탑승에서 제외 <span id="necessary">*는 필수항목입니다.</span></div><input type="button" name="V" value="V" id="V"/></div>
+		<div id="passengerAllDiv">
+			<div id="passengerArticle">
+				<div class="article">성별 *</div>
+				<div class="article">이름 *</div>
+				<div class="article">생년월일 *</div>
+				<div id="articleNo">회원번호<br/>(탑승객)</div>
+			</div>
+			<div id="passengerArticleContent">
+				<div class="articleContent"><div id="genderRadio"><input type="radio" name="gender" value="M"/>남자 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="W"/>여자</div></div>
+				<div class="articleContent"><div id="firstNameText"><input type="text" name="firstName" placeholder="성(신분증 언어)" id="firstName"/></div><div id="lastNameText"><input type="text" name="lastName" placeholder="이름(신분증 언어)" id="lastName"/></div></div>
+				<div class="articleContent">
+					<div class="listDiv">
+					<select name="year" class="list">
+						<option value="not">년</option>
+						<option value="nYear">1900 년</option>
+					</select>
+					</div>
+					<div class="listDiv">
+					<select name="month" class="list">
+						<option value="not">월</option>
+						<option value="nMonth">1 월</option>
+					</select>
+					</div>
+					<div class="listDiv">
+					<select name="day" class="list">
+						<option value="not">일</option>
+						<option value="nDay">1 일</option>
+					</select>
+					</div>
+				 </div>
+				<div class="articleContent">
+					<div id="memberNo"><input type="text" name="memberNo" value="" id="memberNoText"/></div>
+				</div>
+			</div>
+		</div>
+		<div id="detailPage">
+			<div><h3 style="color:white">예약 현황 상세 페이지</h3></div>
+			<div id="seatSelectAll">
+				<div class="seatSelectText">좌석 선택</div>
+				<div id="seatImgDiv"></div>
+				<div class="border-bt">
+					<div class="seatInfo">좌석 선택 하실 수 있습니다.</div>
+					<input type="button" value="Select Seats" name="SelectSeats" id="SelectSeats" class="seatsButton" onclick="selectModal()" />
+				</div>
+			</div>
+			<div id="airlineFoodAll">
+				<div class="seatSelectText">기내식 선택</div>
+				<div id="airlineFoodImgDiv"></div>
+				<div class="border-bt">
+					<div class="seatInfo">기내식 선택 하실 수 있습니다.</div>
+					<input type="button" value="Select Food" name="SelectFood" class="seatsButton" onclick="selectFoodModal()"/>
+				</div>
+			</div>
+			<div id="classAll">
+				<div class="seatSelectText">클래스 선택</div>
+				<div id="classImgDiv"></div>
+				<div class="border-bt">
+					<div class="seatInfo">클래스 변경 하실 수 있습니다.</div>
+					<input type="button" value="Select Class" name="SelectClass" class="seatsButton"/>
+				</div>
+			</div>
+		</div>
+		<div id="modal">
+	</div>
+	<!-- 좌석 팝업 -->
+	<div id="seatsSelect" >
+		<div style="overflow:hidden">
+			<div id="seatsSelectText">좌석 선택</div>
+			<div id="close" onclick="seatsSelcetClose()">X</div>
+		</div>	
+			<div id="seatsBackImg">
+				<div id="frontBusi-seat">
+					
+				</div>
+				<div id="frontEco-seat">
+					
+				</div>
+				<div id="back-seat">
+					
+				</div>
+			</div>
+	</div>	
+	<!-- 기내식 팝업 -->
+	<div id="foodSelect">
+		<h3>기내식 선택</h3>
+		<hr/>
+		 <div class="tab-menu1">
+           <ul class="clearfix">
+               <li class="col-fourth on" id='tab-1'><a href="#none">특선요리</a></li>
+               <li class="col-fourth" id='tab-2'><a href="#none">일품요리</a></li>
+               <li class="col-fourth" id='tab-3'><a href="#none">샐러드</a></li>
+               <li class="col-fourth" id='tab-4'><a href="#none">간단식</a></li>
+           </ul>
+	</div>
+	<div id="tab-1-container" class="tab-content-container">
+           <div id="tab-1-product-1" class="row product-wrapper">
+               <div class="col-half img-wrapper">
+                   <img src="../../IMG/food/BRML.png">
+               </div>
+               <div class="col-half food-content">
+              		<div class="row clearfix food-title">시그니처불고기라이스</div>
+                  	<div class="row clearfix food-word">한국을 대표하는 맛있는 불고기 요리를 따뜻한 밥과 함께 드립니다.</div>
+                   	<div class="row clearfix food-detail">
+                   		<div class="col-fourth">가격</div>
+                   		<div class="col-three-fourth">￦15,000 / ￥1,500 / ＄15 / 元90</div>
+                   		<div class="col-fourth">제공 노선</div>
+                   		<div class="col-three-fourth">인천, 김포</div>
+                   		<div class="col-fourth">주재료</div>
+                   		<div class="col-three-fourth">쌀,불고기(쇠고기),표고,피망,브로콜리2종,계란지단(계란,돼지고기,대두,밀),잣,앙금,찹쌀,땅콩,호두(약간의성분함유),대두,밀,배추,새우(젓갈)</div>
+                   	</div>
+                   <a href="#"><button class="blueBtn foodSelect">선택하기</button></a>   	
+               </div>
+           </div>
+            <div id="tab-1-product-2" class="row product-wrapper">
+               <div class="col-half img-wrapper">
+                   <img src="../../IMG/food/QMML.png">
+               </div>
+               <div class="col-half food-content">
+              		<div class="row clearfix food-title">bbq 치킨강정 (순한맛) </div>
+                  	<div class="row clearfix food-word">부드러운 살코기와 BBQ만의 특제 강정소스가 곁들여져 남녀노소 누구나 맛있게 드실 수 있습니다. *치킨무 제공</div>
+                   	<div class="row clearfix food-detail">
+                   		<div class="col-fourth">가격</div>
+                   		<div class="col-three-fourth">￦10,000 / ￥1,000 / ＄10 / 元60</div>
+                   		<div class="col-fourth">제공 노선</div>
+                   		<div class="col-three-fourth">인천, 김포 출발 국제선 (2시간 이상 비행편)</div>
+                   		<div class="col-fourth">주재료</div>
+                   		<div class="col-three-fourth">닭고기,계란,대두,밀,토마토,쇠고기,아몬드,무우</div>
+                   	</div>
+                   <a href="#"><button class="blueBtn foodSelect">선택하기</button></a>   	
+               </div>
+           </div>
+            <div id="tab-1-product-3" class="row product-wrapper">
+               <div class="col-half img-wrapper">
+                   <img src="../../IMG/food/QSML.png">
+               </div>
+               <div class="col-half food-content">
+              		<div class="row clearfix food-title">bbq 치킨강정 (매운맛) </div>
+                  	<div class="row clearfix food-word">하늘 위에서 더 맛있는, BBQ만의 매콤달콤한 특제강정소스로 버무러진 치킨강정 간편식 또는 맥주 안주로도 인기만점 입니다. *치킨무 제공</div>
+                   	<div class="row clearfix food-detail">
+                   		<div class="col-fourth">가격</div>
+                   		<div class="col-three-fourth">￦10,000 / ￥1,000 / ＄10 / 元60</div>
+                   		<div class="col-fourth">제공 노선</div>
+                   		<div class="col-three-fourth">인천, 김포 출발 국제선 (2시간 이상 비행편)</div>
+                   		<div class="col-fourth">주재료</div>
+                   		<div class="col-three-fourth">닭고기,계란,대두,밀,토마토,쇠고기,아몬드,무우</div>
+                   	</div>
+                   <a href="#"><button class="blueBtn foodSelect">선택하기</button></a>   	
+               </div>
+           </div>
+    </div>
+           <!-- lightDeil -->
+           <div id="tab-2-container" class="tab-content-container hidden">
+           		<div id="tab-2-product-1" class="row product-wrapper">
+	           		<div class="col-half img-wrapper">
+	                   <img src="../../IMG/food/FTML.png">
+	               </div>
+	               <div class="col-half food-content">
+	              		<div class="row clearfix food-title">유부초밥 & 스프링롤</div>
+	                  	<div class="row clearfix food-word">새콤달콤 유부초밥에 베트남 스타일인 스프링롤을 곁들여서 드립니다.</div>
+	                   	<div class="row clearfix food-detail">
+	                   		<div class="col-fourth">가격</div>
+	                   		<div class="col-three-fourth">￦10,000 / ￥1,000 / ＄10 / 元60</div>
+	                   		<div class="col-fourth">제공 노선</div>
+	                   		<div class="col-three-fourth">인천, 김포, 제주 출발 국제선</div>
+	                   		<div class="col-fourth">주재료</div>
+	                   		<div class="col-three-fourth">쌀,유부(대두,밀),계란,맛살,단무지,햄,로메인상추,라이스페이퍼,돼지고기,토마토,대두,밀,닭고기,쇠고기,무우,닭고기</div>
+	                  	</div>
+	                  	 <a href="#"><button class="blueBtn foodSelect">선택하기</button></a>   	
+	               </div>
+           		</div>
+           </div>
+           <!--  -->
+            <div id="tab-3-container" class="tab-content-container hidden">
+          		 <div id="tab-3-product-1" class="row product-wrapper">
+          		 </div>
+          	</div>
+          	<!--  -->
+          	<div id="tab-4-container" class="tab-content-container hidden">
+          	<div id="tab-4-product-1" class="row product-wrapper">
+          	</div>
+          	</div>
+   </div>
+ </div>
+</section>
+
+<script src="../../JS/common.js"></script>
+<script src="../../JS/reserveStatus.js"></script>
+<script>
+        tabEvent('.tab-menu1');
+</script>
+</body>
+</html>

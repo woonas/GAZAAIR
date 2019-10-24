@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>결제</title>
-    <link rel="stylesheet" href="../../CSS/payment.css">
+    <link rel="stylesheet" href="../../CSS/booking.css">
     <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
@@ -99,7 +99,7 @@
             <div class="total-price">
                 <div class="row clearfix">
                     <div class="col-fourth">
-                        주문상품금액
+                        결제상품금액
                         <span> 256,000원</span>
                     </div>
                     <div class="col-fourth">
@@ -111,28 +111,11 @@
                         <span> 0원</span>
                     </div>
                     <div class="col-fourth">
-                        총 주문금액
+                        총 결제금액
                         <span class="font-red"> 256,000원</span>
                     </div>
                 </div>
             </div>
-            
-            <!--<div class="bag-total">
-		<div class="subtotal">
-			<p class="small">Subtotal:</p>
-			<p class="small">$825.00</p>
-		</div>
-		<div class="delivery">
-			<p class="small">Delivery (Standard - 2 working days):<br>
-				<span class="change-delivery">Change delivery method</span></p>
-			<p class="small">Free</p>
-		</div>
-		<div class="total">
-			<h3>Total:</h3>
-			<h3>$825.00</h3>
-		</div>
-	</div>-->
-            
         </div>
         
         
@@ -346,7 +329,7 @@
                             <label for="agree">동의합니다</label>
                         </div>
                     </div>
-                    <input type = "button" class="blueBtn" value="결제하기" id="btn-pay">
+                    <a href = "payment-complete.html"><input type = "button" class="blueBtn" value="결제하기" id="btn-pay"></a>
                 </div>
             </div>
         </div>

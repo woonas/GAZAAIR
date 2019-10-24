@@ -7,19 +7,23 @@
 <link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/layout.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/board.css" type="text/css"/>
-<style>
-	#brd_all a{ padding-left:30px; }
-</style>
+
 </head>
 <body>
 	<h3>공지사항</h3>
 	<hr/>
 	<div id="brd_all">
-		<div id="brd_title">
+		<div id="brd_title" class="col-three-fourth">
 			제목자리~
 		</div>
+		<div id="hitNdate">조회수 99999 │ 날짜 2019.10.23</div>
 	<hr style="border:1px solid #eee"/>
 		<div id="brd_content">
+		내용<br/>
+		내용<br/>
+		내용<br/>
+		내용<br/>
+		내용<br/>
 		내용<br/>
 		내용<br/>
 		내용<br/>
@@ -36,7 +40,7 @@
 		</div>
 	<hr style="border:1px solid #eee"/>
 	<div id="list_btn">
-		<button id="list_button">목록보기</button>
+		<button class="whiteBtn">목록보기</button>
 	</div>
 	</div>
 </body>

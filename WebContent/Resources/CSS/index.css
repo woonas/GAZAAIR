@@ -44,12 +44,14 @@ ul, li{
 	float: left;
 	color: #555;
 	text-align: center;
+	position: relative;
 }
 .reserveBox>div:first-child{
 	width: 100%;
 	height: 80px;
 	line-height: 80px;
 }
+/*출발지, 도착지 선택--------------*/
 .tripLoc{
 	font-size: 200%;
 	width: 100%;
@@ -63,18 +65,31 @@ ul, li{
 	overflow : hidden;
 	white-space : nowrap;
 	text-overflow: ellipsis;
-	padding: 0 10px;
-	
+	opacity: 1;
+	position:absolute;
+	top: 0;
+	left: 0;
+}
+.tripLoc:hover::placeholder{
+	color : #36f;
 }
 .tripLoc::placeholder{
 	color: #555;
+}
+.locText>i{
+	font-size: 270%;
+	color: #36f;
+}
+.locText>div{
+	position: relative;
+	top: -50px;
+	height: 15px;
 }
 .dialogOpen{
 	height: 82px;
 	font-size:230%;
 	line-height: 82px;
 }
-/*출발일, 귀국일 선택--------------*/
 .tripDate{
 	height: 62px;
 	font-size:130%;
@@ -85,6 +100,62 @@ ul, li{
 	text-align: center;
 	cursor: pointer;
 }
+.reserveBox:last-child img{
+	position: absolute;
+	top:60px;
+	left:-415%;
+	width: 40px;
+	visibility: hidden;
+	cursor: pointer;
+}
+/*출발날짜도착날짜 달력-------------*/
+.tripDate>input{
+	border: none;
+	text-align: center;
+	cursor: pointer;
+	color: #555;
+}
+.tripDate>input:hover::placeholder{
+	color: #36f;
+}
+.lightpick { width: 58% !important; }
+.lightpick__toolbar { 
+    padding: 20px 0 0; 
+    border-bottom: 0;
+}
+.lightpick__previous-action{
+	left: 0 !important;
+}
+.lightpick__previous-action,
+.lightpick__next-action { 
+	top: 200px; 
+}
+
+.lightpick__previous-action { 
+    position: absolute; 
+    left: 25px; 
+    top: 234px
+}
+.lightpick__reset-action { top: 40px; }
+
+#cal_status {
+    color: white;
+}
+
+.lightpick__day-of-the-week {
+    font-size: 130% !important;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.lightpick__month-title-bar * {
+    margin: 10px 0 10px 10px !important;
+    font-size: 120% !important;
+}
+
+.lightpick__month-title { padding-top: 18px !important; }
+
+.lightpick__day.is-today { background-size: 15px !important; }
 
 /*구간 선택---------------------*/
 #waySelect{
@@ -243,7 +314,7 @@ ul, li{
 }
 /*section best-------------------------------------------------------------------------*/
 #best>div{
-	margin: 100px 0;
+	margin-top: 60px;
 }
 #best>div>div:first-child{
 	width:1200px;
@@ -333,15 +404,18 @@ ul, li{
 }
 /*section event-------------------------------------------------------------------------*/
 #event>div{
-	margin: 100px 0;
+	margin-top: 60px;
+	height: 400px;
+	background-color: #eee;
 }
 #event>div>div:first-child{
 	width:1200px;
-	height:50px;
-	margin: 20px auto;
-	
+	height:70px;
+	line-height: 70px;
+	margin: 0 auto;
+	padding-top: 20px;
 }
-#event p{
+#event>div>div>p{
 	font-size:200%;
 	float:left;
 	margin-right:20px;
@@ -357,26 +431,69 @@ ul, li{
 .eventBannerWrap{
 	width: 1200px;
 	margin: 0 auto;
-	height:200px;
 }
 .bx-wrapper{
 	border: none !important;
 	box-shadow: none !important;
+	background-color: rgba(0,0,0,0) !important;
 }
-.bx-wrapper li:hover>bx-caption{
+.bx-wrapper li{
+	cursor: pointer;
+}
+.bx-wrapper li:hover>.bx-caption{
+	top: 0;
+}
+.bx-wrapper li:hover .eventDetail{
+	top: 0;
+}
+.bx-wrapper li:hover span{
+	opacity:0;
+}
+.bx-caption{
 	height:100%;
+	top: 200px;
+	-webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    text-align: center;
+    background-color: rgba(0,0,0,0.65) !important;
+}
+.eventDetail{
+	position: absolute;
+	height: 100%;
+	font-size: 80%;
+	color: #fff;
+	z-index: 9999;
+	top: 220px;
+	-webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+.eventDetail>p{
+	margin: 0;
+	text-align: center !important;
+	font-size: 170% !important;
+	padding: 15px 50px;
+}
+.eventDetail>p:first-child{
+	margin-top: 25px;
+}
+.eventDetail>div{
+	border: 1px solid #fff;
+	text-align:center;
+	font-size: 120%;
+	width: 80px;
+	height: 30px;
+	margin: 0 auto;
+	line-height: 30px;
 }
 /*section info-------------------------------------------------------------------------*/
 #infoWrap{
 	width:1200px;
 	height: 500px;
-	margin:100px auto;
+	margin: 60px auto;
 }
 #infoWrap table{
-	background-color: #eee;
 }
 #infoWrap tr:nth-of-type(2n){
-	background-color: #ddd;
 }
 #infoWrap thead{
 	color: white;
@@ -397,8 +514,12 @@ ul, li{
 	width:550px;
 	margin-right:100px;
 	float:left;
+	padding: 15px;
+	border: 1px solid #ddd;
 }
 #review{
 	width:550px;
 	float:left;
+	padding: 15px;
+	border: 1px solid #ddd;
 }
