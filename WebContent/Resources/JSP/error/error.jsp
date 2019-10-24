@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,44 +15,75 @@
 	#content{
 		max-width : 1200px;
 		margin: 0 auto;
+		padding: 100px 0 150px;
 	}
-	#content>div:first-child{
-		width: 100%;
-		margin-top: 50px;
-		text-align: center;
-	}
-	#content>div:first-child img{
+	#content>div{
+		width: 1000px;
 		margin: 0 auto;
-		width: 500px;
+	}
+	.col-two-fifth{
+		height: 330px;
+		text-align: center;
+		float: left;
+	}
+	.col-three-fifth{
+		height: 330px;
+		line-height: 40px;
+		padding-left: 60px;
+	}
+	.col-three-fifth>b:first-child{
+		font-size: 200%;
+	}
+	.col-two-fifth img{
+		margin: 0 auto;
+		width: 400px;
 	}
 	h3{
 		margin: 10px 0;
 		width: 150px;
-		background-color: #36f;
+		height: 40px;
+		line-height: 40px;
+		font-size: 180%;
+		background-color: #ceeaef;
 		color: #fff;
 		margin: 0 auto;
 		border-radius: 10px;
 	}
+	button{
+		width: 120px;
+		height: 30px;
+	}
 </style>
+<script>
+	$(function(){
+		$("button").click(function(){
+			location.href = "<%=request.getContextPath() %>/";
+		});
+	});
+</script>
 </head>
 <body>
 <%@ include file="/Resources/JSP/nav.jspf" %>
 <section>
 	<div id="content">
-		<div>
-			<img src="<%=request.getContextPath() %>/Resources/IMG/etc/error.png"/>		
-		</div>
-		<div>
-			<h3>404</h3>
-			<b>죄송합니다.</b>
-			<b>요청하신 페이지를 찾을 수 없습니다.</b>
-			<p>
-				방문하시려는 페이지의 주소가 잘못 입력되었거나,<br/>
-				페이지의 주소가 변경 혹은 삭제되어 요청하신 페이지를 찾을 수 없습니다.<br/>
-				입력하신 주소가 정확한지 다시 한번 확인해 주시기 바랍니다.<br/>
-				관련 문의사항은 가자에어 고객센터에 알려주시면 친절하게 안내해 드리겠습니다.<br/>
-				감사합니다.
-			</p>
+		<div class="row clearfix">
+			<div class="col-two-fifth">
+				<img src="<%=request.getContextPath() %>/Resources/IMG/etc/error.png"/>
+				<h3><%= exception.getClass().getName() %> 에러</h3>		
+			</div>
+			<div class="col-three-fifth" >
+			
+				<b>죄송합니다.</b><br/><br/>
+				<b>요청하신 페이지를 찾을 수 없습니다.</b>
+				<p>
+					방문하시려는 페이지의 주소가 잘못 입력되었거나,<br/>
+					페이지의 주소가 변경 혹은 삭제되어 요청하신 페이지를 찾을 수 없습니다.<br/>
+					입력하신 주소가 정확한지 다시 한번 확인해 주시기 바랍니다.<br/>
+					관련 문의사항은 가자에어 고객센터에 알려주시면 친절하게 안내해 드리겠습니다.<br/>
+					감사합니다.
+				</p>
+				<button class="blueBtn">홈으로 이동</button>
+			</div>
 		</div>
 	</div>
 </section>
