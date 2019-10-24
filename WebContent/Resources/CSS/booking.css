@@ -849,7 +849,8 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 }
 
 .trip-table-title {
-    background-color: #ddd;
+    color: #fff;
+    background-color: #999;
     border-top: 1px solid #aaa;
 }
 .trip-table { text-align: center; }
@@ -869,13 +870,12 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 .trip-detail>div>div:first-of-type {
     margin-top: 30px;
     font-size: 110%;
-    font-weight: 600;
 }
 
 .O {
     content: '';
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     border: 4px solid #36f;
     margin: 17px auto;
@@ -884,10 +884,13 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 .X:before {
     content: '\D7';
     position: relative;
-    font-size: 68px;
+    font-size: 48px;
     color: #ff4500;
 }
-.X { margin-top: -26px; }
+.X {
+    margin-top: -7px;
+    margin-bottom: 2px;
+}
 
 
 /*  가격 표(결제 bag부분 가져다씀) */
@@ -946,8 +949,8 @@ input[type="checkbox"].checkbox1 + label:before { margin-right: 30px; }
 }
 
 .bag-content-title {
-    background-color: #ccc;
-    color: #333;
+    background-color: #999;
+    color: #fff;
 }
 
 .bag-content-title>div {
@@ -955,10 +958,8 @@ input[type="checkbox"].checkbox1 + label:before { margin-right: 30px; }
     padding: 15px;
 }
 
-.currency {
-    font-size: 60%;
-    color: #555;
-}
+.currency { font-size: 60%; }
+
 .trip{ padding: 0 50px; }
 .airport-name,
 .flight-date,
