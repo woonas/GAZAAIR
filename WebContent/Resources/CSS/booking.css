@@ -9,10 +9,10 @@
 
 
 /* ----------------------------------------------- */
-/* 여정 선택 booking1.html */
+/* �뿬�젙 �꽑�깮 booking1.html */
 /* ----------------------------------------------- */
 
-/* 공통 사용 Tags */
+/* 怨듯넻 �궗�슜 Tags */
 
 .itinerary { margin: 20px 0 60px; }
 
@@ -21,7 +21,7 @@
 
 input[type="radio"]:hover + label { cursor: pointer; }
 
-/* 여행 / 날짜 선택 */
+/* �뿬�뻾 / �궇吏� �꽑�깮 */
 
 .itinerary-select { display: inline-block; }
 .itinerary-select>input {
@@ -90,7 +90,7 @@ input[type="radio"]:hover + label { cursor: pointer; }
     color:#fff;
 }
 
-/* 다구간 팝업 */
+/* �떎援ш컙 �뙘�뾽 */
 
 #multi-way-hint-window {
     top: 70px;
@@ -148,7 +148,7 @@ input[type="radio"]:hover + label { cursor: pointer; }
     margin: 0 -10px;
 }
 
-/* 다구간 입력칸 추가 삭제 */
+/* �떎援ш컙 �엯�젰移� 異붽� �궘�젣 */
 #multi-way-btn-box { float: right; }
 
 .add,
@@ -196,12 +196,12 @@ input[type="radio"]:hover + label { cursor: pointer; }
 
 #note>p { text-align: center; }
 
-/* 공항선택 */
+/* 怨듯빆�꽑�깮 */
 
 .airport-picker .scrollable { border: 0; }
 
 
-/* 캘린더 */
+/* 罹섎┛�뜑 */
 
 .lightpick {
     width: 100% !important;
@@ -340,7 +340,7 @@ input[type="radio"]:hover + label { cursor: pointer; }
     background-size: 85% !important;
 }
 
-/* 탑승 인원 선택 */
+/* �깙�듅 �씤�썝 �꽑�깮 */
 
 .passenger-select { display: inline-block; }
 
@@ -455,11 +455,11 @@ input[type="radio"]:hover + label { cursor: pointer; }
 
 #ageCalc-result { margin-top: -10px; }
 
-/* 좌석 등급 선택 */
+/* 醫뚯꽍 �벑湲� �꽑�깮 */
 
 input[name="class-type"].radio2:checked + label { background-position: 35% 5px; }
 
-/* 조회 버튼 */
+/* 議고쉶 踰꾪듉 */
 
 .nextBtn {
     margin: -20px 0 30px;
@@ -468,11 +468,11 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 
 
 /* ----------------------------------------------- */
-/* 항공편 선택 booking2.html */
+/* �빆怨듯렪 �꽑�깮 booking2.html */
 /* ----------------------------------------------- */
 
 
-/* 상단바 */
+/* �긽�떒諛� */
 .cur-route {
     margin: 0;
     background-color: #ddd;
@@ -533,7 +533,7 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 .cur-route.sticky .col-fourth:last-of-type:after { content: "\f007"; }
 
 
-/* 여정 */
+/* �뿬�젙 */
 
 .journey-wrapper { margin-bottom: 70px; }
 
@@ -603,7 +603,7 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
     color: #888;
 }
 
-/* 비행기 티켓 표 */
+/* 鍮꾪뻾湲� �떚耳� �몴 */
 
 .ticket-table-wrapper { max-height: 612px; }
 
@@ -783,7 +783,7 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 }
 
 /* ----------------------------------------------- */
-/* 탑승자/예약자 정보입력 booking3.html */
+/* �깙�듅�옄/�삁�빟�옄 �젙蹂댁엯�젰 booking3.html */
 /* ----------------------------------------------- */
 
 .pregnant-hint {
@@ -819,7 +819,7 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 .receive-type-wrapper>label:first-of-type { margin-right: 30px; }
 
 
-/* 국제번호선택 */
+/* 援��젣踰덊샇�꽑�깮 */
 #phone {
     height: 46px;
     width: 297px;
@@ -838,24 +838,400 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 
 
 /* ----------------------------------------------- */
-/* 운임확인 및 최종동의 booking4.html */
+/* �슫�엫�솗�씤 諛� 理쒖쥌�룞�쓽 booking4.html */
 /* ----------------------------------------------- */
 
 .flight-confirm-section-title {
     color: #333;
     font-size: 140%;
     font-weight: 600;
-    margin: 50px 0 10px;
+    margin: 100px 5px 20px;
 }
-
 
 .trip-table-title {
-    background-color: #ddd;
+    color: #fff;
+    background-color: #999;
+    border-top: 1px solid #aaa;
+}
+.trip-table { text-align: center; }
+.trip-table>div>div{ border-right: 1px solid #aaa; }
+.trip-table>div>div:last-of-type{ border-right: 0; }
+.trip-table>div:not(.trip-table-title)>div{ padding: 25px 15px; min-height: 155px; }
+.trip-table>div.trip-table-title>div{ padding: 15px; }
+
+.trip-table>div { border-bottom: 1px solid #aaa; }
+.trip-num>div:first-of-type {
+    font-size: 120%;
+    margin-top: 25px;
+}
+.trip-airline>div,
+.trip-type>div { margin-top: 35px; }
+.trip-detail { padding: 25px 50px !important; }
+.trip-detail>div>div:first-of-type {
+    margin-top: 30px;
+    font-size: 110%;
 }
 
-.trip-table>div>div{
-    border-right: 1px solid #aaa;
+.O {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 4px solid #36f;
+    margin: 17px auto 18px;
+}
+
+.X:before {
+    content: '\D7';
+    position: relative;
+    font-size: 60px;
+    color: #ff4500;
+    font-weight: 400;
+}
+.X { margin-top: -23px; }
+
+
+/*  媛�寃� �몴(寃곗젣 bag遺�遺� 媛��졇�떎��) */
+.flight-confirm-section .total-price>div>div:last-of-type { float: right; }
+.flight-confirm-section .total-price>div>div:before { display: none; }
+.flight-confirm-section ul>li>a { color: #8b4513; }
+
+/* 洹쒖젙 */
+.regulation {
+    background-color: #f3f3f3;
+    padding: 50px;
+}
+.regulation>p {
+    font-size: 150%;
+    margin-bottom: 20px;
+}
+.regulation>p>span { font-size: 90%; margin-right: 10px; }
+.regulation>div>h4 {
+    font-size: 120%;
+    margin: 15px 0;
+}
+.regulation>div>h4:before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    border: 1px solid #555;
+    background-color: #555;
+    margin-left: -10px;
+    margin-top: 0.75em;
+}
+
+.regulation>div { margin-left: 10px; }
+
+.list-type4 { margin-top: 0; }
+input[type="checkbox"].checkbox1 + label:before { margin-right: 30px; }
+
+/* ----------------------------------------------- */
+/* 寃곗젣 payment.html */
+/* ----------------------------------------------- */
+
+/* ticket, price  info */
+
+.bag,
+.payment-section {
+    border-top: 3px solid #777;
+    padding: 50px 0 40px;
+    margin-top: 30px;
+}
+
+.bag-head {
+    color: #333;
+    font-size: 110%;
+    margin-bottom: 20px;
+}
+
+.bag-content-title {
+    background-color: #999;
+    color: #fff;
+}
+
+.bag-content-title>div {
+    text-align:center;
     padding: 15px;
 }
 
-.trip-table>div { border-bottom: 1px solid #aaa; }
+.currency { font-size: 60%; }
+
+.trip{ padding: 0 50px; }
+.airport-name,
+.flight-date,
+.flight-time { text-align: center; }
+
+.airport-name {
+    font-size: 150%;
+    margin-top: 65px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.flight-date {
+    font-size: 90%;
+    margin-top: 10px;
+}
+
+.flight-image {
+    margin-top: 65px;
+    text-align: center;
+}
+
+.bag-content>div>div {
+    border-top: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+}
+.bag-content>div>div:first-of-type { border-left: 0; }
+.bag-content>div.row:last-of-type { border-bottom: 1px solid #aaa; }
+.detailed-price>div {
+    border-bottom: 1px solid #ddd;
+    padding: 7px;
+    padding-left: 15px;
+    font-size: 90%;
+}
+.detailed-price:not(:last-of-type) { background-color: #f3f3f3; }
+
+.total-price {
+    height: 100px;
+    line-height: 100px;
+    padding: 0 50px;
+    margin: 30px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    background-color: #f7f7f7;
+}
+.total-price span { margin-left: 10px;}
+.total-price>div>div:not(:last-of-type):before {
+    position: relative;
+    left: -60px;
+    font-family: FontAwesome;
+}
+.total-price>div>div:last-of-type:before {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 4px;
+    border-top: 3px solid #555;
+    border-bottom: 3px solid #555;
+    margin-left: -70px;
+    margin-top: 45px;
+}
+
+.total-price>div>div:nth-of-type(2):before,
+.total-price>div>div:nth-of-type(3):before { content: '\f068'; }
+
+
+/* 寃곗젣 */
+
+.section-title {
+    font-size: 140%;
+    margin-bottom: 40px;
+    padding-left: 8%;
+}
+
+.payment-section:first-of-type>p { text-align: center; }
+
+.payment-method {
+    padding-top: 30px;
+    margin-top: 50px;
+}
+
+.payment-method-title {
+    text-align: center;
+    line-height: 100px;
+}
+
+.payment-type>div {
+    padding: 0 30px;
+    text-align: center;
+}
+
+.payment-type label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    padding: 15px 0 5px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.payment-type label:hover { background-color: #f3f3f3; }
+.payment-type input[name=payment-method]:checked + label { border-color: #36f; }
+.payment-type input[name=payment-method] + label>img:last-of-type { display: none; }
+.payment-type input[name=payment-method]:checked + label>img:last-of-type { display: inline-block; }
+.payment-type input[name=payment-method]:checked + label>img:first-of-type { display: none; }
+
+
+
+/* 寃곗젣�젙蹂댁엯�젰 */
+
+div[id^="payment-method-"]>.row { margin-bottom: 20px; }
+div[id^="payment-method-"]>ul { margin: 60px 30px; }
+
+.payment-row-title { text-align: center; }
+
+.payment-row-title + div>input[type=number],
+.payment-row-title + div>input[type=password],
+.payment-row-title + div>input[type=text],
+.payment-row-title + div>select {
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid #aaa;
+    border-radius: 0;
+    padding: 5px;
+    min-width: 200px;
+}
+.payment-row-title + div>select {
+    font-size: 90%;
+    padding: 10px;
+}
+
+/* 留덉씪由ъ� */
+
+.payment-row-title + div>input + span {
+    margin-left: 10px;
+    font-size: 70%;
+    color: #888;
+}
+
+#coupon {
+    border-radius: 0;
+    width: 80px;
+    height: 25px;
+    margin-left: 10px;
+}
+
+/* �궗�씠�뱶 諛� */
+
+.payment-sidebar {
+    margin-top: 30px;
+    position: sticky;
+    top: 100px;
+}
+
+.payment-sidebar>div {
+    margin-left: 20px;
+    padding: 30px 10px 10px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+}
+
+.payment-sidebar>div>p:first-of-type {
+    font-size: 120%;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.payment-sidebar>div p + div>div:last-of-type { text-align: right; }
+
+.payment-sidebar>div>div {
+    color: #888;
+    font-size: 90%;
+    padding-bottom: 20px;
+}
+
+.payment-sidebar>div>div:first-of-type { border-bottom: 1px solid #ddd; }
+
+.total {
+    text-align: right;
+    padding: 20px 0;
+}
+.total>div:first-of-type { font-size: 80%; }
+.total #total-pay { font-size: 150%; }
+
+.payment-sidebar>div>div:last-of-type {
+    background-color: #f3f3f3;
+    padding: 15px;
+    font-size: 85%;
+}
+
+.payment-sidebar>div>div:last-of-type>div:first-of-type {
+    font-size: 130%;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.agree-wrapper {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#btn-pay {
+    width: 100%;
+    height: 50px;
+    border-radius: 0;
+    margin: 20px 0 10px;
+    font-size: 130%;
+}
+
+/* 寃곗젣�셿猷뚯갹 */
+
+.payment-complete-section {
+    margin: 70px auto 40px;
+    width: 800px;
+}
+
+.price-table>div {
+    border: 1px solid #ddd;
+    border-top: 0;
+}
+.price-table>div:first-of-type {
+    background-color: #f3f3f3;
+    border-top: 1px solid #ddd;
+    color: #333;
+    font-size: 115%;
+}
+
+.price-table>div>div {
+    padding: 25px;
+    border-left: 1px solid #ddd;
+    text-align: center;
+}
+.price-table>div>div:first-of-type { border-left: 0; }
+
+.price-table>div:not(:first-of-type)>div:not(:first-of-type):before {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #ddd;
+    border: 1px solid #ddd;
+    color: #fff;
+    margin-left: -103px;
+    line-height: 28px;
+    font-size: 140%;
+    content: "�뀫";
+}
+.price-table>div:not(:first-of-type)>div:last-of-type:before {
+    content: "=";
+    margin-left: -79px;
+    font-size: 170%;
+}
+
+.payment-complete-section>p {
+    margin-bottom: 15px;
+    font-size: 130%;
+    color: #333;
+}
+
+.payment-complete-table>div>div {
+    padding: 15px;
+}
+.payment-complete-table>div>div:first-of-type {
+    background-color: #f3f3f3;
+    border: 1px solid #f3f3f3;
+    font-size: 110%;
+}
+.payment-complete-table>div { border-top: 1px solid #ddd; }
+.payment-complete-table>div:last-of-type { border-bottom: 1px solid #ddd; }
+
+.button-wrapper { text-align: center; }
+.button-wrapper>a>input[type=button] {
+    width: 100px;
+    height: 40px;
+    border-radius: 0;
+    font-size: 90%;
+    margin-right: 20px;
+}
+
+.button-wrapper>a>input[type=button]:last-of-type { margin-right: 0; }

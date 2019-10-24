@@ -20,6 +20,8 @@
 <script src="<%=request.getContextPath() %>/Vendor/bxSlider/jquery.bxslider.min.js"></script>
 <link href="<%=request.getContextPath() %>/Vendor/bxSlider/jquery.bxslider.css" rel="stylesheet" />
 <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
+ <!-- Moment Js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 <!-- Lightpick JS -->
 <script src="<%=request.getContextPath() %>/Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
 <script>
@@ -76,7 +78,7 @@ $(function(){
 	$(".eventBanner").bxSlider({
 		mode : 'horizontal'//'horizontal', 'vertical', 'fade'
 		,slideWidth : 1200 //슬라이드 폭
-		,slideHeight : 370 //슬라이드 높이
+		,slideHeight : 238
 		,speed: 1000 //전환속도
 		,auto : true //자동시작(true, false)
 		,captions : true //title 속성에 있는 문자열을 설명으로 표시하기
@@ -93,18 +95,61 @@ $(function(){
 		,autoHover:true //오버되어있을때 슬라이딩이 멈춤
 	});
 	
+	//출발지, 도착지 글자 디자인 변경
+	function IATA(fromTo){
+		var txt = "";
+		if(fromTo =="from"){
+			txt = $("#airportFrom-1").val();
+			var code = txt.substring(txt.indexOf('(')+1, txt.indexOf(')'));
+			var name = txt.substring(0, txt.indexOf("   ("));
+			$("#fromText>i").text(code);
+			$("#fromText>div").text(name);
+		}else if(fromTo =="to"){
+			txt = $("#airportTo-1").val();
+			var code = txt.substring(txt.indexOf('(')+1, txt.indexOf(')'));
+			var name = txt.substring(0, txt.indexOf("   ("));
+			$("#toText>i").text(code);
+			$("#toText>div").text(name);
+		}else if(fromTo =="both"){
+			txt1 = $("#airportFrom-1").val();
+			var code1 = txt1.substring(txt1.indexOf('(')+1, txt1.indexOf(')'));
+			var name1 = txt1.substring(0, txt1.indexOf("   ("));
+			txt2 = $("#airportTo-1").val();
+			var code2 = txt2.substring(txt2.indexOf('(')+1, txt2.indexOf(')'));
+			var name2 = txt2.substring(0, txt2.indexOf("   ("));
+			$("#fromText>i").text(code1);
+			$("#fromText>div").text(name1);
+			$("#toText>i").text(code2);
+			$("#toText>div").text(name2);
+		}
+	}
+	
+	//출발지, 도착지에 값이 들어오면 글자크기 변경, 이미지 삭제.
 	$("#btn-select").click(function(){
-		if($(".tripLoc1").val()!== ""){
-			$(".tripLoc1").css("font-size", "140%");
-			$(".tripLoc1").css("background-image", "none");
+		if($("#airportFrom-1").val()!== ""){
+			$("#airportFrom-1").css("font-size", "140%");
+			$("#airportFrom-1").css("background-image", "none");
+			$("#airportFrom-1").css("opacity", "0");
+			IATA("from");
 		}
-		if($(".tripLoc2").val()!== ""){
-			$(".tripLoc2").css("font-size", "140%");
-			$(".tripLoc2").css("background-image", "none");
+		if($("#airportTo-1").val()!== ""){
+			$("#airportTo-1").css("font-size", "140%");
+			$("#airportTo-1").css("background-image", "none");
+			$("#airportTo-1").css("opacity", "0");
+			IATA("to");
 		}
+		if($("#airportFrom-1").val()!=="" && $("#airportTo-1").val()!==""){
+			$(".reserveBox:last-child img").css("visibility", "visible");
+			$(".reserveBox:last-child img").click(function(){
+				var temp = $("#airportFrom-1").val();
+				$("#airportFrom-1").val($("#airportTo-1").val());
+				$("#airportTo-1").val(temp);
+				
+				IATA("both");
+			});
+		}
+		
 	});
-	
-	
 });
 
 </script>
@@ -122,18 +167,26 @@ $(function(){
 	<div class="reserve_wrap">
 		<div class="reserveBox">
 			<div>
-        		<input type="text" id="airportFrom-1" name="airportFrom-1" class="open-airport-picker tripLoc tripLoc1" readonly placeholder="출발지">
+				<div id="fromText" class="locText">
+					<i></i>
+					<div></div>
+				</div>
+        		<input type="text" id="airportFrom-1" name="airportFrom-1" class="open-airport-picker tripLoc" readonly placeholder="출발지">
        		</div>
        		<div class="tripDate">
-       			<input type="text" id="flightDate-1" name="flightDate-1" class="flightDate" placeholder="출발일" readonly>
+       			<input type="text" id="fromDate" name="fromDate" placeholder="출발일" readonly>
        		</div>
        	</div>
 		<div class="reserveBox">
 			<div>
-				<input type = "text" id="airportTo-1" name="airportTo-1" class="open-airport-picker tripLoc tripLoc2" readonly placeholder="도착지">
+				<div id="toText" class="locText">
+					<i></i>
+					<div></div>
+				</div>
+				<input type = "text" id="airportTo-1" name="airportTo-1" class="open-airport-picker tripLoc" readonly placeholder="도착지">
 			</div>
 			<div class="tripDate">
-				<input type="text" id="flightDate-1" name="flightDate-1" class="flightDate" placeholder="귀국일" readonly>
+				<input type="text" id="toDate" name="toDate" placeholder="도착일" readonly>
 			</div>
 		</div>
 		<div class="reserveBox">
@@ -156,6 +209,7 @@ $(function(){
 			</div>
 		</div>
 		<div class="reserveBox">
+			<img src="<%=path %>/Resources/IMG/icon/both_arrow2.png" title="출발지, 도착지 반대로 변경.">
 			<input type="submit" class="simple_reservation_submit" value="조회"/>
 		</div>
 	</div>
@@ -229,25 +283,56 @@ $(function(){
 </section>
 <section id="event">
 	<div>
-		<div><p>이벤트</p><a href="<%=path %>/Resources/HTML/prd_alliance_event.html">&nbsp;진행중인 이벤트 전체보기 +&nbsp;</a></div>
+		<div><p>이벤트</p><a href="<%=path %>/Resources/HTML/prd_alliance_event.html">&nbsp;전체보기 +&nbsp;</a></div>
 		<div class="eventBannerWrap">
 			<ul class="eventBanner">
 				<li><a href="prd_alliance_event.html">
-					<img src='<%=path %>/Resources/IMG/event/event1.jpeg' title="가자에어 X 스무디킹 할인 제휴 기념 이벤트"/></a>
+					<div class="eventDetail">
+						<p>가자에어 X 스무디킹 할인 제휴 기념 이벤트</p>
+						<div>더 보기</div>
+						<p>2019.10.24~2019.11.24</p>
+					</div>
+					<img src='<%=path %>/Resources/IMG/event/event1.jpeg' title="가자에어 X 스무디킹 할인 제휴 기념 이벤트"/>
+					</a>
 				</li>
 				<li><a href="prd_alliance_event.html">
+					<div class="eventDetail">
+						<p>KB국민카드 결제 금액의 5%, 돌려드리는 Special</p>
+						<div>더 보기</div>
+						<p>2019.10.24~2019.11.24</p>
+					</div>
 					<img src='<%=path %>/Resources/IMG/event/event2.jpeg' title="KB국민카드 결제 금액의 5%, 돌려드리는 Special"/></a>
 				</li>
 				<li><a href="prd_alliance_event.html">
+					<div class="eventDetail">
+						<p>나의 해외여행 동반자 My Trip 카드 이벤트</p>
+						<div>더 보기</div>
+						<p>2019.10.24~2019.11.24</p>
+					</div>
 					<img src='<%=path %>/Resources/IMG/event/event3.jpeg' title="나의 해외여행 동반자 My Trip 카드 이벤트"/></a>
 				</li>
 				<li><a href="prd_alliance_event.html">
+					<div class="eventDetail">
+						<p>뉴욕의 낮과 밤을 가자에어와 함께</p>
+						<div>더 보기</div>
+						<p>2019.10.24~2019.11.24</p>
+					</div>
 					<img src='<%=path %>/Resources/IMG/event/event4.jpeg' title="뉴욕의 낮과 밤을 가자에어와 함께"/></a>
 				</li>
 				<li><a href="prd_alliance_event.html">
+					<div class="eventDetail">
+						<p>AJ렌터카 마일리지 더블적립 이벤트</p>
+						<div>더 보기</div>
+						<p>2019.10.24~2019.11.24</p>
+					</div>
 					<img src='<%=path %>/Resources/IMG/event/event5.jpeg' title="AJ렌터카 마일리지 더블적립 이벤트"/></a>
 				</li>
 				<li><a href="prd_alliance_event.html">
+					<div class="eventDetail">
+						<p>안녕, 몽골!, 반가워, 골드! 우수회원 체험 이벤트</p>
+						<div>더 보기</div>
+						<p>2019.10.24~2019.11.24</p>
+					</div>
 					<img src='<%=path %>/Resources/IMG/event/event6.jpeg' title="안녕, 몽골!, 반가워, 골드! 우수회원 체험 이벤트"/></a>
 				</li>
 			</ul>
@@ -387,6 +472,45 @@ changeNumOfPassengers();
 
 /* 탑승객 팝업에서 선택 클릭시 */
 const passengerNum = document.getElementById('num-of-passengers');
+
+/* 출발도착일 지정 달력 */
+var picker = new Lightpick({
+	    field: document.getElementById('fromDate'),
+	    secondField: document.getElementById('toDate'),
+	    numberOfMonths: 2,
+	    minDate: new Date(),
+	    format: 'YYYY-MM-DD',
+	    singleDate: false,
+	    hideOnBodyClick: false,
+	    locale: {
+	        buttons: {
+	            prev: '〈',
+	            next: '〉',
+	            close: '✕',
+	            reset: '⟳'
+	        },
+	        tooltip: {
+	            day: '일'
+	        },
+	        pluralize: function(i, locale) {
+	            if ('day' in locale) return locale.day;
+	            return '';
+	        }
+	    },
+	    onSelect: function(start, end){
+	        var str = '';
+	        str += start ? start.format('YYYY-MM-DD') + ' to ' : '';
+	        str += end ? end.format('YYYY-MM-DD') : '...';
+	        document.getElementById('fromDate').innerHTML = str;
+	    },
+	    onOpen: function(){
+	    	document.querySelector(".lightpick").classList.add('centeredXY');
+	        overlay.style.display = 'block';
+        },
+        onClose: function() {
+            overlay.style.display = 'none';
+        }
+	})
 
 document.querySelector('#selectBtn').addEventListener('click', function() {
     const adultNum = parseInt(document.getElementById('numOfAdult').value);
