@@ -10,7 +10,7 @@
 }
 
 #mypage-main section.content { 
-	background-color: #ddd;
+	background-color: #eee;
 	padding-bottom:10px;
 	margin-bottom:20px;
 }
@@ -33,7 +33,7 @@
 #name>div>a {
 	text-decoration:none;
 	color:#fff;
-	cusor:pointer;
+	cursor:pointer;
 }
 
 #name {
@@ -148,7 +148,11 @@
 /* ----------------------------------------------- */
 /* 예약 현황 */
 /* ----------------------------------------------- */
-caption{margin:20px 0; font-height:bold; font-size:40px}
+caption{
+    margin:20px 0;
+    font-weight:bold;
+    font-size:40px
+}
 #travelAll{
 	
 		margin:20px;
@@ -166,12 +170,13 @@ caption{margin:20px 0; font-height:bold; font-size:40px}
 	table{border-collapse:collapse}
 	table div{text-align:center}
 	th{
-		background-color:#6d6e70;
+		background-color:#999;
 		color:white;
 		padding:5px
 		}
 	th,  td{border-right:1px solid lightgray}
 	td{border-bottom:1px solid lightgray}
+    th { padding: 10px; }
 	th:last-child,td:last-child  {
 		border-right: none;
 	}
