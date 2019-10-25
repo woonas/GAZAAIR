@@ -1,7 +1,7 @@
 @charset "UTF-8";
 #main{
-	height:100vh;
-	width:100%;
+	height: calc(100vh - 70px);
+	width:100%; 
 }
 #best{
 	width:100%;
@@ -63,12 +63,9 @@ ul, li{
 	background-size : 8%;
 	background-position: 90% 50%;
 	cursor: pointer;
-	overflow : hidden;
-	white-space : nowrap;
-	text-overflow: ellipsis;
 	opacity: 1;
 	position:absolute;
-	top: 0;
+	top: 10px;
 	left: 0;
 }
 .tripLoc:hover::placeholder{

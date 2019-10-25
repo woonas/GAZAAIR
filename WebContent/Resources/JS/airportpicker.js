@@ -1317,18 +1317,22 @@ document.querySelector('.recent-srch-box').addEventListener('click', e => {
     }
 });
 
+// 출발지, 도착지 같은 공항이 선택 됐을 때
+let selectedAirport;
+let pairInput;
+
 // 선택 클릭시 이벤트
 document.getElementById('btn-select').addEventListener('click', () => {
+	const index = openedBy.id.charAt(openedBy.id.length-1);
     if(document.querySelector('.selected')) {
         openedBy.value = `${document.querySelector('.selected>.cname').innerText}   (${document.querySelector('.selected>.abbr').innerText})` 
+        if(openedBy.value === selectedAirport )  pairInput.value="";
     } else if(document.querySelector('.recent-srch-selected')) {
-        const index = openedBy.id.charAt(openedBy.id.length-1);
-        
         airportFrom = `${airportFrom.substring(0, airportFrom.length-3)}   (${airportFrom.substring(airportFrom.length-3)})`;
         airportTo = `${airportTo.substring(0, airportTo.length-3)}   (${airportTo.substring(airportTo.length-3)})`;
+    	document.getElementById('airportFrom-' + index).value = airportFrom;
+    	document.getElementById('airportTo-' + index).value = airportTo;
         
-        document.getElementById('airportFrom-' + index).value = airportFrom;
-        document.getElementById('airportTo-' + index).value = airportTo;
     }
     pickerWindow.style.display = 'none';
     overlay.style.display = 'none';
@@ -1371,10 +1375,18 @@ const openEvent = () => {
 const openPicker = (targetClassName, centeredY) => {
     
     const targets = document.querySelectorAll(targetClassName);
-
+    
     targets.forEach(elem => {
         elem.addEventListener('click', e => {
             openedBy = elem;
+            elem.id.indexOf(elem.id.length-1);
+            if(elem.id.indexOf('From') !== -1){
+            	pairInput = document.getElementById(elem.id.replace('From', 'To'));
+            	selectedAirport = pairInput.value;
+            }else{
+            	pairInput = document.getElementById(elem.id.replace('To', 'From'));
+            	selectedAirport = pairInput.value;
+            }
             openEvent();
             pickerWindow.style.display = 'block';
             if(centeredY) { 

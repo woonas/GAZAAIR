@@ -279,9 +279,10 @@ nav ul, nav li{
 	width: 100px;
 	height: 5px;
 	background-color: #36f;
-	position: absolute;
-	left: -10%;
-	top: 65px;
+	position: relative;
+	opacity:0;
+	left: 0;
+	top: -4px;
 	z-index: 10002;
 	-webkit-transition: all 500ms ease;
     transition: all 500ms ease;
@@ -289,19 +290,24 @@ nav ul, nav li{
 }
 /*메뉴 마우스 오버 시 식별 바 이동*/
 #mainMenu>ul>li>div:nth-child(2):hover ~ #navBar {
-    left: 29.8%;
+    left: 24.5%;
+    opacity:1;
 }
 #mainMenu>ul>li>div:nth-child(3):hover ~ #navBar {
-    left: 41.8%;
+    left: 39.5%;
+    opacity:1;
 }
 #mainMenu>ul>li>div:nth-child(4):hover ~ #navBar {
-    left: 53.6%;
+    left: 54.5%;
+    opacity:1;
 }
 #mainMenu>ul>li>div:nth-child(5):hover ~ #navBar {
-    left: 65.4%;
+    left: 69.5%;
+    opacity:1;
 }
 #mainMenu>ul>li>div:nth-child(6):hover ~ #navBar {
-    left: 76.2%;
+    left: 83%;
+    opacity:1;
 }
 /*탑버튼*/
 .topBtn{
