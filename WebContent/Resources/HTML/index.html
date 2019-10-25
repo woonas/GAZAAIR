@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>가자에어 메인</title>
-<link rel="stylesheet" href="../../Resources/CSS/main.css" type="text/css"/>
-<link rel="stylesheet" href="../../Resources/CSS/index.css" type="text/css"/>
+<link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../CSS/index.css" type="text/css"/>
 <link rel="stylesheet" href="../../Vendor/jqueryUI/jquery-ui.min.css" type="text/css"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="../../Resources/JS/main.js"></script>
+<script src="../JS/main.js"></script>
 <script src="../../Vendor/backstretch/jquery.backstretch.min.js"></script>
 <script src="../../Vendor/jqueryUI/jquery-ui.min.js"></script>
 <script src="../../Vendor/bxSlider/jquery.bxslider.min.js"></script>
@@ -33,7 +33,7 @@ $(function(){
       
 	//배경이미지슬라이더 컨트롤러
 	for(i=1; i<=8; i++){
-		$('.dotsWrap').append("<img src='../../Resources/IMG/icon/control_dots.png'/>");
+		$('.dotsWrap').append("<img src='../IMG/icon/control_dots.png'/>");
 	};
 	$(window).on("backstretch.after", function (e, instance, index) {
 		for(i=1; i<=8; i++){
@@ -41,8 +41,8 @@ $(function(){
 		}
 		$('.dotsWrap>img').eq(index).css("top", "0");
 	});
-	$('.playState').append("<img src='../../Resources/IMG/icon/pause_blue.png' title='일시정지'/>");
-	$('.playState').append("<img src='../../Resources/IMG/icon/play_blue.png' title='재생' style='display:none'/>");
+	$('.playState').append("<img src='../IMG/icon/pause_blue.png' title='일시정지'/>");
+	$('.playState').append("<img src='../IMG/icon/play_blue.png' title='재생' style='display:none'/>");
 	$('.dotsWrap>img').on("click", function(){
 		var idx = $(this).index();
 		$("#main").backstretch("show", idx-1);
@@ -167,17 +167,17 @@ $(function(){
 	<nav class="nav">
 		<div class="navContainer">
 			<ul class="navMenu">
-				<li><a href="index.html"><img src="../../Resources/IMG/logo/logo_basic.png"/></a></li>
+				<li><a href="index.html"><img src="../IMG/logo/logo_basic.png"/></a></li>
 				<li><a href="#">항공권예매</a>
 					<div class="subMenuWarp">
 						<div class="subMenu">
 							<ul>
-								<li><a href="../../Resources/HTML/booking/booking1.html">항공권예약</a></li>
+								<li><a href="booking/booking1.html">항공권예약</a></li>
 							</ul>
 							<ul>
 								<li><a href="#">정기 운항스케줄</a></li>
 								<li><a href="#">실시간 운항스케줄</a></li>
-								<li><a href="../../Resources/HTML/routeMap.html">운항노선도</a></li>
+								<li><a href="routeMap.html">운항노선도</a></li>
 							</ul>
 						</div>
 					</div>
@@ -186,8 +186,8 @@ $(function(){
 					<div class="subMenuWarp">
 						<div class="subMenu">
 							<ul>
-								<li><a href="../../Resources/HTML/AccountInfo.html">회원정보</a></li>
-								<li><a href="../../Resources/HTML/mypage_Membergrade.html">회원등급</a></li>
+								<li><a href="AccountInfo.html">회원정보</a></li>
+								<li><a href="mypage_Membergrade.html">회원등급</a></li>
 								<li><a href="#">항공권 예약 현황</a></li>
 							</ul>
 							<ul>
@@ -220,31 +220,31 @@ $(function(){
 					<div class="subMenuWarp">
 						<div class="subMenu">
 							<ul>
-								<li><a href="../../Resources/HTML/serviceinfo/service_checkIn.html">체크인</a></li>
-								<li><a href="../../Resources/HTML/serviceinfo/service_baggage.html">수하물 서비스</a></li>
-								<li><a href="../../Resources/HTML/serviceinfo/service_pet.html">반려동물동반</a></li>
+								<li><a href="serviceinfo/service_checkIn.html">체크인</a></li>
+								<li><a href="serviceinfo/service_baggage.html">수하물 서비스</a></li>
+								<li><a href="serviceinfo/service_pet.html">반려동물동반</a></li>
 							</ul>
 							<ul>
-								<li><a href="../../Resources/HTML/serviceinfo/service_airline_food.html">기내식안내</a></li>
-								<li><a href="../../Resources/HTML/serviceinfo/service_class.html">클래스안내</a></li>
-								<li><a href="../../Resources/HTML/serviceinfo/service_wifi.html">유료부가서비스</a></li>
+								<li><a href="serviceinfo/service_airline_food.html">기내식안내</a></li>
+								<li><a href="serviceinfo/service_class.html">클래스안내</a></li>
+								<li><a href="serviceinfo/service_wifi.html">유료부가서비스</a></li>
 							</ul>
 							<ul>
-								<li><a href="../../Resources/HTML/serviceinfo/service_private_plane.html">전용기</a></li>
-								<li><a href="../../Resources/HTML/board/notice.html">공지사항</a></li>
-								<li><a href="../../Resources/HTML/serviceinfo/service_faq.html">FAQ</a></li>
+								<li><a href="serviceinfo/service_private_plane.html">전용기</a></li>
+								<li><a href="board/notice.html">공지사항</a></li>
+								<li><a href="serviceinfo/service_faq.html">FAQ</a></li>
 							</ul>
 						</div>
 					</div>
 				</li>
 				<div class="navBar"></div>
 			</ul>
-			<a href="../../Resources/HTML/loginNaccountSearch/login.html"><button class="translator" style="right:55px">로그인</button></a>
+			<a href="loginNaccountSearch/login.html"><button class="translator" style="right:55px">로그인</button></a>
 			<button class="translator">EN</button>
 		</div>
 	</nav>
 	<div class="topBtn" title="맨 위로 이동">
-		<a href="#header"><img src="../../Resources/IMG/logo/logo_top.png"/></a>
+		<a href="#header"><img src="../IMG/logo/logo_top.png"/></a>
 	</div>
 </header>
 <section id="main">
@@ -255,11 +255,11 @@ $(function(){
 	<!-- 심플예약폼 -->
 	<div class="simple_reservation_wrap">
 		<div class="reservation_contents">
-			<div class="departure dialogOpen" title="출발지를 선택하세요">출발지<img src="../../Resources/IMG/icon/marker_black.png"/></div>
+			<div class="departure dialogOpen" title="출발지를 선택하세요">출발지<img src="../IMG/icon/marker_black.png"/></div>
 			<div class="tripDate">출발일</div>
 		</div>
 		<div class="reservation_contents">
-			<div class="arrival dialogOpen" title="도착지를 선택하세요.">도착지<img src="../../Resources/IMG/icon/marker_black.png"/></div>
+			<div class="arrival dialogOpen" title="도착지를 선택하세요.">도착지<img src="../IMG/icon/marker_black.png"/></div>
 			<div class="tripDate">귀국일</div>
 		</div>
 		<div class="reservation_contents">
@@ -857,22 +857,22 @@ $(function(){
 		<div class="eventBannerWrap">
 			<ul class="eventBanner">
 				<li><a href="prd_alliance_event.html">
-					<img src='../../Resources/IMG/event/event1.jpeg' title="가자에어 X 스무디킹 할인 제휴 기념 이벤트"/></a>
+					<img src='../IMG/event/event1.jpeg' title="가자에어 X 스무디킹 할인 제휴 기념 이벤트"/></a>
 				</li>
 				<li><a href="prd_alliance_event.html">
-					<img src='../../Resources/IMG/event/event2.jpeg' title="KB국민카드 결제 금액의 5%, 돌려드리는 Special"/></a>
+					<img src='../IMG/event/event2.jpeg' title="KB국민카드 결제 금액의 5%, 돌려드리는 Special"/></a>
 				</li>
 				<li><a href="prd_alliance_event.html">
-					<img src='../../Resources/IMG/event/event3.jpeg' title="나의 해외여행 동반자 My Trip 카드 이벤트"/></a>
+					<img src='../IMG/event/event3.jpeg' title="나의 해외여행 동반자 My Trip 카드 이벤트"/></a>
 				</li>
 				<li><a href="prd_alliance_event.html">
-					<img src='../../Resources/IMG/event/event4.jpeg' title="뉴욕의 낮과 밤을 가자에어와 함께"/></a>
+					<img src='../IMG/event/event4.jpeg' title="뉴욕의 낮과 밤을 가자에어와 함께"/></a>
 				</li>
 				<li><a href="prd_alliance_event.html">
-					<img src='../../Resources/IMG/event/event5.jpeg' title="AJ렌터카 마일리지 더블적립 이벤트"/></a>
+					<img src='../IMG/event/event5.jpeg' title="AJ렌터카 마일리지 더블적립 이벤트"/></a>
 				</li>
 				<li><a href="prd_alliance_event.html">
-					<img src='../../Resources/IMG/event/event6.jpeg' title="안녕, 몽골!, 반가워, 골드! 우수회원 체험 이벤트"/></a>
+					<img src='../IMG/event/event6.jpeg' title="안녕, 몽골!, 반가워, 골드! 우수회원 체험 이벤트"/></a>
 				</li>
 			</ul>
 		</div>
@@ -885,7 +885,7 @@ $(function(){
 			<table class="table">
 				<thead>
 					<tr>
-						<td><a href="../../Resources/HTML/board/notice.html">더 보기</a></td>
+						<td><a href="board/notice.html">더 보기</a></td>
 					</tr>
 				</thead>
 				<tbody>
@@ -918,7 +918,7 @@ $(function(){
 			<table class="table">
 				<thead>
 					<tr>
-						<td><a href="../../Resources/HTML/board/review.html">더 보기</a></td>
+						<td><a href="board/review.html">더 보기</a></td>
 					</tr>
 				</thead>
 				<tbody>
@@ -950,23 +950,23 @@ $(function(){
 </section>
 <footer>
 	<div id="footContainer">
-		<a href="index.html" title="홈페이지로 이동"><img src="../../Resources/IMG/logo/logo_white2.png" width="170"/></a>
+		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
 		<div class="snsPane">
 			<div class="snsBtn">
-				<img src="../../Resources/IMG/icon/facebook_white.png"/>
-				<img src="../../Resources/IMG/icon/facebook.png"/>
+				<img src="../IMG/icon/facebook_white.png"/>
+				<img src="../IMG/icon/facebook.png"/>
 			</div>
 			<div class="snsBtn">
-				<img src="../../Resources/IMG/icon/instagram_white.png"/>
-				<img src="../../Resources/IMG/icon/instagram.png"/>
+				<img src="../IMG/icon/instagram_white.png"/>
+				<img src="../IMG/icon/instagram.png"/>
 			</div>
 			<div class="snsBtn">
-				<img src="../../Resources/IMG/icon/twitter_white.png"/>
-				<img src="../../Resources/IMG/icon/twitter.png"/>
+				<img src="../IMG/icon/twitter_white.png"/>
+				<img src="../IMG/icon/twitter.png"/>
 			</div>
 			<div class="snsBtn">
-				<img src="../../Resources/IMG/icon/youtube_white.png"/>
-				<img src="../../Resources/IMG/icon/youtube.png"/>
+				<img src="../IMG/icon/youtube_white.png"/>
+				<img src="../IMG/icon/youtube.png"/>
 			</div>
 		</div>
 		<hr class="footHr"/>
