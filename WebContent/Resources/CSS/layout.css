@@ -1039,8 +1039,6 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 #slider li {
     height: 600px;
     position: absolute;
-    top: -325px;
-    left: -230px;
     list-style: none;
 }
 
@@ -1058,7 +1056,7 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
     height: 60px;
     position: relative;
     bottom: 100px;
-    right: 100px;
+    left: -310px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -1074,7 +1072,7 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 #slider li#second:hover .tooltip,
 #slider li#third:hover .tooltip,
 #slider li#fourth:hover .tooltip,
-#slider li#fifth:hover .tooltip { right: -230px; }
+#slider li#fifth:hover .tooltip { left: -1px; }
 
 #slider:hover li,
 #slider:hover .progress-bar { animation-play-state: paused; }
