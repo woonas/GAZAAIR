@@ -1,8 +1,5 @@
 @charset "UTF-8";
 
-#warp{
-	width: 100%;
-}
 #contents{
 	max-width: 1200px;
 	margin: 0px auto;
@@ -10,9 +7,6 @@
 #title{
 	height: 200px;
 	text-align:center;
-}
-#title h3{
-	margin: 55px 0;
 }
 .search{
 	width:640px;

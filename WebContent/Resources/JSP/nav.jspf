@@ -3,12 +3,32 @@
 <%
 	String path = request.getContextPath();
 %>
+<script>
+$(function(){
+	//메뉴 호버시 패널생성/ 없애기
+	$("#mainMenu>ul>li").hover(function(){
+		$("#subMenu").css("height", "220px");
+		$("#menuBg").css("height", "220px");
+	}, function(){
+		$("#subMenu").css("height", "0");
+		$("#menuBg").css("height", "0");
+	});
+	
+	//탑버튼 누르면 부드럽게 스크롤하기
+	$('.topBtn>a').click(function () {
+	    $('html, body').animate({
+	      scrollTop: $($.attr(this, 'href')).offset().top
+	    }, 500);
+	    return false;
+	  });
+});
+</script>
 <header id="header">
 	<nav>
 		<div id="mainMenu">
 			<ul>
 				<li>
-					<div><a href="<%=path %>/">
+					<div><a href="<%=path %>/index.do">
 						<img src="<%=path %>/Resources/IMG/logo/logo_basic.png"/>
 					</a>
 					</div>
@@ -43,7 +63,7 @@
 							<ul>
 								<li><a href="<%=path %>/Resources/HTML/notice.html">공지사항</a></li>
 								<li><a href="<%=path %>/Resources/HTML/service_faq.html">FAQ</a></li>
-								<li><a href="<%=path %>/Resources/HTML/review.jsp">고객의말씀</a></li>
+								<li><a href="<%=path %>/Resources/JSP/review.jsp">고객의말씀</a></li>
 							</ul>
 							<ul>
 								<li><a href="<%=path %>/Resources/HTML/AccountInfo.html">회원정보</a></li>

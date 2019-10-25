@@ -55,6 +55,7 @@ ul, li{
 .tripLoc{
 	font-size: 200%;
 	width: 100%;
+	height: 80px;
 	text-align:center;
 	background-color: rgb(255,255,255,0);
 	border: none;
@@ -110,10 +111,17 @@ ul, li{
 }
 /*출발날짜도착날짜 달력-------------*/
 .tripDate>input{
+	width: 100%;
+	height: 60px;
 	border: none;
 	text-align: center;
 	cursor: pointer;
 	color: #555;
+	font-size: 110%;
+}
+.tripDate>input::placeholder{
+	font-size: 80%;
+	text-align: center;
 }
 .tripDate>input:hover::placeholder{
 	color: #36f;
@@ -136,7 +144,7 @@ ul, li{
     left: 25px; 
     top: 234px
 }
-.lightpick__reset-action { top: 40px; }
+.lightpick__reset-action { top: 35px; }
 
 #cal_status {
     color: white;
@@ -488,18 +496,24 @@ ul, li{
 /*section info-------------------------------------------------------------------------*/
 #infoWrap{
 	width:1200px;
-	height: 500px;
+	height: 380px;
 	margin: 60px auto;
 }
 #infoWrap table{
-}
-#infoWrap tr:nth-of-type(2n){
+	width: 100%;
 }
 #infoWrap thead{
-	color: white;
-	text-align:right;
-	background-color: #36f;
-	font-size: 110%;
+	color: #555;
+	font-size: 200%;
+}
+#infoWrap thead td{
+	height: 60px;
+}
+#infoWrap thead td:nth-child(2){
+	text-align: center;
+}
+#infoWrap tbody>tr>td:nth-child(2){
+	text-align: center;
 }
 #infoWrap thead a{
 	color: white;
@@ -507,19 +521,41 @@ ul, li{
 #infoWrap tbody a{
 	color: #555;
 }
-#infoWrap p{
-	font-size:200%;
+#infoWrap tr{
+	height: 40px;
+}
+#infoWrap td{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 #notice{
 	width:550px;
 	margin-right:100px;
 	float:left;
-	padding: 15px;
+	padding: 20px;
 	border: 1px solid #ddd;
 }
 #review{
 	width:550px;
 	float:left;
-	padding: 15px;
+	padding: 20px;
 	border: 1px solid #ddd;
+}
+.boardTag{
+	width: 40px;
+	height: 25px;
+	font-size: 90%;
+	color: #fff;
+	border-radius: 5px;
+	text-align: center;
+	float:left;
+	line-height: 25px;
+	margin-right: 10px;
+}
+.bt_best{
+	background-color: #36f;
+}
+.bt_new{
+	background-color: #3c6;
 }

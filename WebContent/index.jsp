@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page errorPage="/Resources/JSP/error/error.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,12 +11,10 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/layout.css" type="text/css"/>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/index.css" type="text/css"/>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <!-- Lightpick CSS -->
 <link rel="stylesheet" href="<%=request.getContextPath() %>/Vendor/javascript-datepicker-lightpick/css/lightpick.css">
 <!-- js -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="<%=request.getContextPath() %>/Resources/JS/main.js"></script>
 <script src="<%=request.getContextPath() %>/Vendor/backstretch/jquery.backstretch.min.js"></script>
 <script src="<%=request.getContextPath() %>/Vendor/bxSlider/jquery.bxslider.min.js"></script>
@@ -104,12 +104,18 @@ $(function(){
 			var name = txt.substring(0, txt.indexOf("   ("));
 			$("#fromText>i").text(code);
 			$("#fromText>div").text(name);
+			$("#airportFrom-1").css("font-size", "140%");
+			$("#airportFrom-1").css("background-image", "none");
+			$("#airportFrom-1").css("opacity", "0");
 		}else if(fromTo =="to"){
 			txt = $("#airportTo-1").val();
 			var code = txt.substring(txt.indexOf('(')+1, txt.indexOf(')'));
 			var name = txt.substring(0, txt.indexOf("   ("));
 			$("#toText>i").text(code);
 			$("#toText>div").text(name);
+			$("#airportTo-1").css("font-size", "140%");
+			$("#airportTo-1").css("background-image", "none");
+			$("#airportTo-1").css("opacity", "0");
 		}else if(fromTo =="both"){
 			txt1 = $("#airportFrom-1").val();
 			var code1 = txt1.substring(txt1.indexOf('(')+1, txt1.indexOf(')'));
@@ -127,29 +133,34 @@ $(function(){
 	//출발지, 도착지에 값이 들어오면 글자크기 변경, 이미지 삭제.
 	$("#btn-select").click(function(){
 		if($("#airportFrom-1").val()!== ""){
-			$("#airportFrom-1").css("font-size", "140%");
-			$("#airportFrom-1").css("background-image", "none");
-			$("#airportFrom-1").css("opacity", "0");
 			IATA("from");
 		}
 		if($("#airportTo-1").val()!== ""){
-			$("#airportTo-1").css("font-size", "140%");
-			$("#airportTo-1").css("background-image", "none");
-			$("#airportTo-1").css("opacity", "0");
 			IATA("to");
 		}
 		if($("#airportFrom-1").val()!=="" && $("#airportTo-1").val()!==""){
 			$(".reserveBox:last-child img").css("visibility", "visible");
-			$(".reserveBox:last-child img").click(function(){
-				var temp = $("#airportFrom-1").val();
-				$("#airportFrom-1").val($("#airportTo-1").val());
-				$("#airportTo-1").val(temp);
-				
-				IATA("both");
-			});
 		}
-		
 	});
+	//로드 됐을 때 출발지, 도착지에 값이 있으면 글자 디자인 변경.
+	if($("#airportFrom-1").val()!== ""){
+		IATA("from");
+	}
+	if($("#airportTo-1").val()!== ""){
+		IATA("to");
+	}
+	if($("#airportFrom-1").val()!=="" && $("#airportTo-1").val()!==""){
+		$(".reserveBox:last-child img").css("visibility", "visible");
+	}
+	//출도착 스왑 버튼 이벤트
+	$(".reserveBox:last-child img").click(function(){
+		var temp = $("#airportFrom-1").val();
+		$("#airportFrom-1").val($("#airportTo-1").val());
+		$("#airportTo-1").val(temp);
+		
+		IATA("both");
+	});
+	
 });
 
 </script>
@@ -342,67 +353,81 @@ $(function(){
 <section id="info">
 	<div id="infoWrap">
 		<div id="notice">
-			<p>공지사항</p>
-			<table class="table">
+			<table>
 				<thead>
 					<tr>
-						<td><a href="<%=path %>/Resources/HTML/notice.html">더 보기</a></td>
+						<td>공지사항</td>
+						<td><a href="<%=path %>/Resources/HTML/notice.html"><img title="더 보기" src="<%=path %>/Resources/IMG/icon/plus_box_ccc.png"/></a></td>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td><a href="#">[공지] 제 13호 태풍 '링링'으로 인한 국제선 결항 안내</a></td>
+						<td>10.24</td>
 					</tr>
 					<tr>
 						<td><a href="#">[공지] 제 13호 태풍 '링링'으로 인한 국내선 결항 안내</a></td>
+						<td>10.24</td>
 					</tr>
 					<tr>
 						<td><a href="#">[공지] KB국민카드 서비스 일시중단 안내</a></td>
+						<td>10.24</td>
 					</tr>
 					<tr>
 						<td><a href="#">[국내선] 추석연휴 기간 김포-부산(GMP-PUS) 노 ...</a></td>
+						<td>10.24</td>
 					</tr>
 					<tr>
 						<td><a href="#">[국제선] 청주-타이베이(CJJ-TPE) 운항시간 변경 ...</a></td>
+						<td>10.24</td>
 					</tr>
 					<tr>
 						<td><a href="#">2019년 9월 신용카드 할부 서비스 안내</a></td>
+						<td>10.24</td>
 					</tr>
 					<tr>
 						<td><a href="#">[공지] 말레이시아 출국세 부과 안내 (2019.09.01~)</a></td>
+						<td>10.24</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		<div id="review">
-			<p>고객의말씀</p>
-			<table class="table">
+			<table>
 				<thead>
 					<tr>
-						<td><a href="<%=path %>/Resources/HTML/review.html">더 보기</a></td>
+						<td>고객의말씀</td>
+						<td><a href="<%=path %>/Resources/HTML/notice.html"><img title="더 보기" src="<%=path %>/Resources/IMG/icon/plus_box_ccc.png"/></a></td>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td><a href="#">9월 날씨, 인천-다낭 가자에어 탑승 후기, 포켓 와이파이</a></td>
+						<td><div class="boardTag bt_best">best</div><a href="#">9월 날씨, 인천-다낭 가자에어 탑승 후기, 포켓 와이파이 챙겨서 출발</a></td>
+						<td>10.24</td>
 					</tr>
 					<tr>
-						<td><a href="#">[모스크바/러시아] 항공리뷰 : 가자에어(GAZA Air)...</a></td>
+						<td><div class="boardTag bt_new">new</div><a href="#">[모스크바/러시아] 항공리뷰 : 가자에어(GAZA Air)...</a></td>
+						<td>10.24</td>
 					</tr>
 					<tr>
 						<td><a href="#">동유럽 여행 :) 가자에어 KE0935, KE0938</a></td>
+						<td>10.24</td>
 					</tr>
 					<tr>
 						<td><a href="#">방콕 항공권, 가자에어 KE657 후기! 태국 수완나폼 고고</a></td>
+						<td>10.24</td>
 					</tr>
 					<tr>
 						<td><a href="#">라운지, 가자에어 기내식 과일식 (feat. 공항철도는 어디에서..</a></td>
+						<td>10.24</td>
 					</tr>
 					<tr>
 						<td><a href="#">괌여행 - 가자에어 프레스티지석 / 웨스틴호텔</a></td>
+						<td>10.24</td>
 					</tr>
 					<tr>
 						<td><a href="#">유럽 비행기표예약 & 인천-비엔나 대한항공 KE937 탑승과 근황</a></td>
+						<td>10.24</td>
 					</tr>
 				</tbody>
 			</table>

@@ -228,6 +228,7 @@ nav ul, nav li{
 #menuBg{
 	width: 100%;
 	border-top: 1px solid gray;
+	border-bottom: 1px solid #ccc;
 	height: 0;
 	background-color: #fff;
 	position: absolute;
@@ -288,19 +289,19 @@ nav ul, nav li{
 }
 /*메뉴 마우스 오버 시 식별 바 이동*/
 #mainMenu>ul>li>div:nth-child(2):hover ~ #navBar {
-    left: 30.2%;
+    left: 29.8%;
 }
 #mainMenu>ul>li>div:nth-child(3):hover ~ #navBar {
-    left: 42%;
+    left: 41.8%;
 }
 #mainMenu>ul>li>div:nth-child(4):hover ~ #navBar {
-    left: 54%;
+    left: 53.6%;
 }
 #mainMenu>ul>li>div:nth-child(5):hover ~ #navBar {
-    left: 65.7%;
+    left: 65.4%;
 }
 #mainMenu>ul>li>div:nth-child(6):hover ~ #navBar {
-    left: 76.5%;
+    left: 76.2%;
 }
 /*탑버튼*/
 .topBtn{
