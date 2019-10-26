@@ -88,6 +88,8 @@ const inputTypeCheck = () => {
 };
 
 /* 달력 */
+let calendar_openedBy;
+
 let cal_generator = (strId, startDate, numOfMonths) => {
     return new Lightpick({
         field: document.getElementById(strId),
@@ -133,11 +135,10 @@ let cal_generator = (strId, startDate, numOfMonths) => {
             else if(str_status.textContent === '오는 날')
                 str_status.textContent = '가는 날';
         }, onOpen: function() {
+            calendar_openedBy = strId.charAt(strId.length-1);
             const str_status = document.getElementById('cal_status');
-            if(numOfMonths)
-                str_status.textContent = '생년월일';
-            else
-                str_status.textContent = '가는 날';
+            if(numOfMonths) str_status.textContent = '생년월일';
+            else str_status.textContent = '가는 날';
             
             document.querySelector('section.lightpick').classList.add('centeredX');
             document.querySelector('section.lightpick').style.top = parseInt(document.querySelector('section.lightpick').style.top) + 15 + 'px';
@@ -148,7 +149,6 @@ let cal_generator = (strId, startDate, numOfMonths) => {
         }
     });
 };
-
 
 /* loader */
 let loader_generator = () => {
@@ -178,7 +178,6 @@ let loader_generator = () => {
 };
 
 
-
 /* 탑승객 수 +, - 버튼 */
 const changeNumOfPassengers = () => {
     let btns_minus = document.querySelectorAll('.minus');
@@ -190,7 +189,8 @@ const changeNumOfPassengers = () => {
 
 const minus = () => {
     let num = event.target.parentNode.getElementsByTagName('input')[0];
-    if (num.value <= 0) num.value = '0';
+    if (num.id === 'numOfAdult' && num.value <=1) num.value = '1';
+    else if (num.value <= 0) num.value = '0';
     else num.value--;
     document.querySelector('.passengerInfo').classList.remove('font-red');
 };
@@ -222,8 +222,22 @@ const totalPassengers = () => {
     return true;
 };
 
+/* 각 input 필드에 있는 탑승객 수를 하나의 문자열로 변경 */
 
+const strPassengers_generator = () => {
+    const adultNum = parseInt(document.getElementById('numOfAdult').value);
+    const childNum = parseInt(document.getElementById('numOfChild').value);
+    const infantNum = parseInt(document.getElementById('numOfInfant').value);
+    let totalNum = "";
 
+    if(totalPassengers()) {
+        if(adultNum > 0) totalNum += `성인 ${adultNum}`;
+        if(childNum > 0) totalNum += `, 소아 ${childNum}`;
+        if(infantNum > 0) totalNum += `, 유아 ${infantNum}`;
+    }
+
+    return totalNum;
+};
 
 (() => {
     windowClose();

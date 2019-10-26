@@ -157,14 +157,11 @@ const eventHandler = (_window, step2) => {
         const check_all = document.getElementById('agree_all');
 
         //체크박스 전체선택
-        check_all.addEventListener('click', () => {
-            if(check_all.checked) {
-                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-                
-                checkboxes.forEach(box => {
-                    box.checked = 'checked'; 
-                });
-            }
+        check_all.addEventListener('change', () => {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]:not(.agree_all');
+            checkboxes.forEach(box => {
+                box.checked = check_all.checked;
+            });
         });
         
         //필수 체크 항목이 체크되었는지 확인
@@ -241,8 +238,9 @@ const eventHandler = (_window, step2) => {
     else if(location.pathname.indexOf('login') !== -1) {
         //달력
         cal_generator('boardingdate', new Date());
+        document.querySelector(".lightpick").classList.add('centeredXY');
         //공항선택
-        openPicker('.open-airport-picker');
+        openPicker('.open-airport-picker', true);
         //탭메뉴
         tabEvent('.tab-menu1');
     }

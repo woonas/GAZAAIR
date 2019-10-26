@@ -58,14 +58,13 @@ const spotChange = () => {
     });
 };
 
-
 /* 캘린더 */
-let calendar;
-const cal_init = () => {
-    if(calendar) calendar.destroy();
-    calendar = cal_generator('flightDate-1');
+let calendar = [];
+const cal_init = (index) => {
+    if (!index) index = 1;
+    if(calendar[index-1]) calendar[index-1].destroy();
+    calendar[index-1] = cal_generator('flightDate-' + index);
 };
-
 
 /* insertAfter */
 const insertAfter = (referenceNode, newNode) => {
@@ -73,8 +72,41 @@ const insertAfter = (referenceNode, newNode) => {
     else referenceNode.parentNode.appendChild(newNode);
 };
 
-(() => {
+/* 조회버튼 클릭시 */
 
+const input_check = () => {
+    // session에 여정 정보 저장 + 모든 칸에 값이 들어갔는지 유효성 검사
+    const airportFroms = Array.prototype.slice.call(document.querySelectorAll('input[id^=airportFrom]'));
+    const airportTos = Array.prototype.slice.call(document.querySelectorAll('input[id^=airportTo]'));
+    const flightDates = Array.prototype.slice.call(document.querySelectorAll('input[id^=flightDate]'));
+    let isValid = false;
+    for (let i = 0, index = 1; i<airportFroms.length; i++) {
+        if (airportFroms[i].value !== "" && airportTos[i].value !== "" && flightDates[i].value !== "") {
+            sessionStorage.setItem(`airportFrom-${index}`, airportFroms[i].value);
+            sessionStorage.setItem(`airportTo-${index}`, airportTos[i].value);
+            sessionStorage.setItem(`flightDate-${index}`, flightDates[i].value);
+            index++;
+            isValid = true;
+        }
+    }
+
+    // session에 여정의 타입 저장 (왕복, 편도, 다구간)
+    const tripType = document.querySelector('input[type="radio"][name="trip-type"]:checked').value;
+    sessionStorage.setItem('trip-type', tripType);
+
+    // session에 승객수 저장
+    const strPassengers = strPassengers_generator();
+    sessionStorage.setItem('passengers', strPassengers);
+
+    // session에 좌석타입 저장 (이코노미, 비즈니스, 퍼스트)
+    const seatType = document.querySelector('input[type="radio"][name="class-type"]:checked + label').innerText;
+    sessionStorage.setItem('seat-type', seatType);
+
+    return isValid;
+};
+
+
+(() => {
     if(location.pathname.indexOf('booking1') !== -1) {
         /* 각종 안내 버튼 이벤트 */
         hintWindow('passenger-hint');
@@ -88,12 +120,14 @@ const insertAfter = (referenceNode, newNode) => {
         /* 캘린더 */
         cal_init();
 
+        // overlay 클릭시 달력도 종료되도록
+        overlay.addEventListener('click', () => cal_init(calendar_openedBy) );
 
         /* 여정/날짜 선택 */
 
         /* 체크박스 이벤트 */
         let checkboxElems = document.querySelectorAll('input[name="trip-type"]');
-        checkboxElems.forEach(elem => elem.addEventListener('change', cal_init));
+        checkboxElems.forEach(elem => elem.addEventListener('change', () => cal_init()));
 
         /* 컴포넌트 display 이벤트 */
         // 아니 왜 change 이벤트리스너 작동을 안하냐
@@ -101,21 +135,19 @@ const insertAfter = (referenceNode, newNode) => {
         document.querySelector('.type-radio-box').addEventListener('mouseup', e => {
             let temp = e.target.previousElementSibling;
 
-            if (temp.id === "round-way") {
+            if (temp.id === "round-way")
                 document.getElementById('note').classList.add('hidden');
-            } else {
+            else
                 document.getElementById('note').classList.remove('hidden');
-            }
 
-            if (temp.id === "multi-way") {
+            if (temp.id === "multi-way")
                 document.getElementById('multi-way-btn-box').classList.remove('hidden');
-            } else {
+            else {
                 document.getElementById('multi-way-btn-box').classList.add('hidden');
                 let btns = document.getElementById('multi-way-btn-box');
                 let input_forms = document.querySelectorAll('.book-input-form');
-                for(let i = 1; i<input_forms.length; i++) {
-                    btns.parentElement.removeChild( btns.previousElementSibling);
-                }
+                for(let i = 1; i<input_forms.length; i++)
+                    btns.parentElement.removeChild( btns.previousElementSibling );
             }
         });
 
@@ -155,7 +187,7 @@ const insertAfter = (referenceNode, newNode) => {
                 }
 
                 if (str.indexOf('flightDate') !== -1)
-                    cal_generator(str, document.getElementById('flightDate-'+num_of_forms).value);
+                    calendar[num_of_forms] = cal_generator(str, document.getElementById('flightDate-'+num_of_forms).value);
             }
             openPicker('.open-airport-picker');
             spotChange();
@@ -176,7 +208,6 @@ const insertAfter = (referenceNode, newNode) => {
 
         spotChange();
 
-
         /* 탑승인원 선택 */
         /* 나이 계산기 이벤트 */
         calculateAgeInit();
@@ -184,13 +215,28 @@ const insertAfter = (referenceNode, newNode) => {
         /* 승객수 + - 버튼 이벤트 */
         changeNumOfPassengers();
 
-        /* 조회버튼 이벤트 추가 */
-        document.querySelector('.nextBtn').addEventListener('click', () => {
-            sessionStorage.setItem('date', document.getElementById('flightDate-1').value);
-        })
     }
 
     else if (location.pathname.indexOf('booking2') !== -1) {
+
+        /* 세션에 저장된 값들 가져오기 */
+        const tripType = document.getElementById('trip-type');
+        const airportFrom = document.getElementById('airportFrom-1');
+        const airportTo = document.getElementById('airportTo-1');
+        const flightDate = document.getElementById('flightDate-1');
+        const passengers = document.getElementById('num-of-passengers');
+        if (sessionStorage.getItem('airportFrom-2'))
+            airportFrom.value = airportTo.value = flightDate.value = '다구간';
+        else {
+            airportFrom.value = sessionStorage.getItem('airportFrom-1');
+            airportTo.value = sessionStorage.getItem('airportTo-1');
+            flightDate.value = sessionStorage.getItem('flightDate-1');
+        }
+        tripType.value = sessionStorage.getItem('trip-type');
+        if (tripType.value === 'round-way') {
+            flightDate.style.fontSize = '130%';
+        }
+        passengers.value = sessionStorage.getItem('passengers');
 
         /* 팝업창 */
         hintWindow('num-of-passengers', true, true);
@@ -203,7 +249,7 @@ const insertAfter = (referenceNode, newNode) => {
 
         //캘린더
         cal_init();
-
+        overlay.addEventListener('click', () => cal_init() );
         //공항picker
         openPicker('.open-airport-picker');
 
@@ -214,16 +260,8 @@ const insertAfter = (referenceNode, newNode) => {
         const passengerNum = document.getElementById('num-of-passengers');
 
         document.querySelector('#selectBtn').addEventListener('click', () => {
-            const adultNum = parseInt(document.getElementById('numOfAdult').value);
-            const childNum = parseInt(document.getElementById('numOfChild').value);
-            const infantNum = parseInt(document.getElementById('numOfInfant').value);
-            let totalNum = "";
-
-            if(totalPassengers()) {
-                if(adultNum > 0) totalNum += `성인 ${adultNum}`;
-                if(childNum > 0) totalNum += `, 소아 ${childNum}`;
-                if(infantNum > 0) totalNum += `, 유아 ${infantNum}`;
-                passengerNum.value = totalNum;
+            if(strPassengers_generator()) {
+                passengerNum.value = strPassengers_generator();
                 document.getElementById('num-of-passengers-window').style.display = 'none';
                 overlay.style.display = 'none';
             }
@@ -286,11 +324,7 @@ const insertAfter = (referenceNode, newNode) => {
                     insertAfter(parent.parentElement, div);
                     parent.style.backgroundColor = "#36f"
                 }
-
-
                 e.target.parentElement.classList.add('selected-ticket');
-
-
             });
         });
 
@@ -320,6 +354,13 @@ const insertAfter = (referenceNode, newNode) => {
             else $('.journey-name-sticky').addClass('hidden');
         }, {
             offset: '-1px;'
+        });
+
+        $('#journey-2').waypoint(direction => {
+            if (direction === "up") $('#journey-1 .journey-name-sticky').removeClass('hidden');
+            else $('.journey-name-sticky').addClass('hidden');
+        }, {
+            offset: '100px;'
         });
     }
 

@@ -10,10 +10,10 @@
 
 
 /* ----------------------------------------------- */
-/* �뿬�젙 �꽑�깮 booking1.html */
+/* 여정 선택 booking1.html */
 /* ----------------------------------------------- */
 
-/* 怨듯넻 �궗�슜 Tags */
+/* 공통 사용 Tags */
 
 .itinerary { margin: 20px 0 60px; }
 
@@ -22,7 +22,7 @@
 
 input[type="radio"]:hover + label { cursor: pointer; }
 
-/* �뿬�뻾 / �궇吏� �꽑�깮 */
+/* 여행 / 날짜 선택 */
 
 .itinerary-select { display: inline-block; }
 .itinerary-select>input {
@@ -30,8 +30,8 @@ input[type="radio"]:hover + label { cursor: pointer; }
     border: 1px solid #eee;
     width: 99%;
     height: 98px;
-    font-size: 180%;
-    padding: 40px 22px 20px;
+    font-size: 155%;
+    padding: 40px 22px 10px;
 }
 
 .itinerary-select:last-of-type>input { width: 100%; }
@@ -91,7 +91,7 @@ input[type="radio"]:hover + label { cursor: pointer; }
     color:#fff;
 }
 
-/* �떎援ш컙 �뙘�뾽 */
+/* 다구간 팝업 */
 
 #multi-way-hint-window {
     top: 70px;
@@ -149,7 +149,7 @@ input[type="radio"]:hover + label { cursor: pointer; }
     margin: 0 -10px;
 }
 
-/* �떎援ш컙 �엯�젰移� 異붽� �궘�젣 */
+/* 다구간 입력칸 추가 삭제 */
 #multi-way-btn-box { float: right; }
 
 .add,
@@ -197,12 +197,12 @@ input[type="radio"]:hover + label { cursor: pointer; }
 
 #note>p { text-align: center; }
 
-/* 怨듯빆�꽑�깮 */
+/* 공항선택 */
 
 .airport-picker .scrollable { border: 0; }
 
 
-/* 罹섎┛�뜑 */
+/* 캘린더 */
 
 .lightpick {
     width: 100% !important;
@@ -341,7 +341,7 @@ input[type="radio"]:hover + label { cursor: pointer; }
     background-size: 85% !important;
 }
 
-/* �깙�듅 �씤�썝 �꽑�깮 */
+/* 탑승 인원 선택 */
 
 .passenger-select { display: inline-block; }
 
@@ -456,11 +456,11 @@ input[type="radio"]:hover + label { cursor: pointer; }
 
 #ageCalc-result { margin-top: -10px; }
 
-/* 醫뚯꽍 �벑湲� �꽑�깮 */
+/* 좌석 등급 선택 */
 
 input[name="class-type"].radio2:checked + label { background-position: 35% 5px; }
 
-/* 議고쉶 踰꾪듉 */
+/* 조회 버튼 */
 
 .nextBtn {
     margin: -20px 0 30px;
@@ -469,11 +469,11 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 
 
 /* ----------------------------------------------- */
-/* �빆怨듯렪 �꽑�깮 booking2.html */
+/* 항공편 선택 booking2.html */
 /* ----------------------------------------------- */
 
 
-/* �긽�떒諛� */
+/* 상단바 */
 .cur-route {
     margin: 0;
     background-color: #ddd;
@@ -533,8 +533,9 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 .cur-route.sticky .col-fourth:nth-of-type(3):after { content: "\f073"; }
 .cur-route.sticky .col-fourth:last-of-type:after { content: "\f007"; }
 
+.sticky>.book-input-form>.itinerary-select>input { padding-left: 10px; }
 
-/* �뿬�젙 */
+/* 여정 */
 
 .journey-wrapper { margin-bottom: 70px; }
 
@@ -582,6 +583,10 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
     z-index: 90;
 }
 
+@media screen and (max-width: 1200px) {
+    .journey-name-sticky { padding: 8px 15px; }
+}
+
 .journey-name-sticky>span:first-of-type { margin-right: 20px;}
 .journey-name-sticky>span:nth-of-type(2) { margin-right: 25px; }
 .journey-name-sticky>span:last-of-type { margin-left: 20px;}
@@ -604,7 +609,7 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
     color: #888;
 }
 
-/* 鍮꾪뻾湲� �떚耳� �몴 */
+/* 비행기 티켓 표 */
 
 .ticket-table-wrapper { max-height: 612px; }
 
@@ -784,7 +789,7 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 }
 
 /* ----------------------------------------------- */
-/* �깙�듅�옄/�삁�빟�옄 �젙蹂댁엯�젰 booking3.html */
+/* 탑승자/예약자 정보입력 booking3.html */
 /* ----------------------------------------------- */
 
 .pregnant-hint {
@@ -820,7 +825,7 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 .receive-type-wrapper>label:first-of-type { margin-right: 30px; }
 
 
-/* 援��젣踰덊샇�꽑�깮 */
+/* 국제번호선택 */
 #phone {
     height: 46px;
     width: 297px;
@@ -839,7 +844,7 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 
 
 /* ----------------------------------------------- */
-/* �슫�엫�솗�씤 諛� 理쒖쥌�룞�쓽 booking4.html */
+/* 운임확인 및 최종동의 booking4.html */
 /* ----------------------------------------------- */
 
 .flight-confirm-section-title {
@@ -892,12 +897,12 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 .X { margin-top: -23px; }
 
 
-/*  媛�寃� �몴(寃곗젣 bag遺�遺� 媛��졇�떎��) */
+/*  가격 표(결제 bag부분 가져다씀) */
 .flight-confirm-section .total-price>div>div:last-of-type { float: right; }
 .flight-confirm-section .total-price>div>div:before { display: none; }
 .flight-confirm-section ul>li>a { color: #8b4513; }
 
-/* 洹쒖젙 */
+/* 규정 */
 .regulation {
     background-color: #f3f3f3;
     padding: 50px;
@@ -929,7 +934,7 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 input[type="checkbox"].checkbox1 + label:before { margin-right: 30px; }
 
 /* ----------------------------------------------- */
-/* 寃곗젣 payment.html */
+/* 결제 payment.html */
 /* ----------------------------------------------- */
 
 /* ticket, price  info */
@@ -1024,7 +1029,7 @@ input[type="checkbox"].checkbox1 + label:before { margin-right: 30px; }
 .total-price>div>div:nth-of-type(3):before { content: '\f068'; }
 
 
-/* 寃곗젣 */
+/* 결제 */
 
 .section-title {
     font-size: 140%;
@@ -1066,7 +1071,7 @@ input[type="checkbox"].checkbox1 + label:before { margin-right: 30px; }
 
 
 
-/* 寃곗젣�젙蹂댁엯�젰 */
+/* 결제정보입력 */
 
 div[id^="payment-method-"]>.row { margin-bottom: 20px; }
 div[id^="payment-method-"]>ul { margin: 60px 30px; }
@@ -1089,7 +1094,7 @@ div[id^="payment-method-"]>ul { margin: 60px 30px; }
     padding: 10px;
 }
 
-/* 留덉씪由ъ� */
+/* 마일리지 */
 
 .payment-row-title + div>input + span {
     margin-left: 10px;
@@ -1104,7 +1109,7 @@ div[id^="payment-method-"]>ul { margin: 60px 30px; }
     margin-left: 10px;
 }
 
-/* �궗�씠�뱶 諛� */
+/* 사이드 바 */
 
 .payment-sidebar {
     margin-top: 30px;
@@ -1165,7 +1170,7 @@ div[id^="payment-method-"]>ul { margin: 60px 30px; }
     font-size: 130%;
 }
 
-/* 寃곗젣�셿猷뚯갹 */
+/* 결제완료창 */
 
 .payment-complete-section {
     margin: 70px auto 40px;

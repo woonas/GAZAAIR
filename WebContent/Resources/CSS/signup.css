@@ -723,7 +723,7 @@ hr { margin-top: 40px; }
 #personalInfo #cal_status {
     font-size: 150% !important;
     width: 200px !important;
-    margin-right: 225px !important;
+    margin-right: 430px !important;
 }
 
 #personalInfo .lightpick__day-of-the-week {
@@ -826,7 +826,7 @@ hr { margin-top: 40px; }
 .welcome-box input[type=button] {
     margin-top: 20px;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 0;
     font-size: 100%;
 }
 

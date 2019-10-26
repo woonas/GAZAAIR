@@ -1,0 +1,87 @@
+
+_javascript:S2259í"BTypeError can be thrown as "time" might be null or undefined here.(°»Š“
+ƒjavascript:S4165¹&"aReview this useless assignment: "sum" already holds the assigned value along all execution paths.(Î½‘ûÿÿÿÿ
+ƒjavascript:S4165Æ&"aReview this useless assignment: "sum" already holds the assigned value along all execution paths.(Î½‘ûÿÿÿÿ
+javascript:S4165Ø1"_Review this useless assignment: "i" already holds the assigned value along all execution paths.(ò¦ÙÌùÿÿÿÿ
+ƒjavascript:S4165Ï3"aReview this useless assignment: "sum" already holds the assigned value along all execution paths.(Î½‘ûÿÿÿÿ
+|javascript:S4165Â3"_Review this useless assignment: "i" already holds the assigned value along all execution paths.(îĞ’œ
+|javascript:S4165Ñ3"_Review this useless assignment: "i" already holds the assigned value along all execution paths.(îĞ’œ
+ƒjavascript:S4165Á3"aReview this useless assignment: "sum" already holds the assigned value along all execution paths.(Î½‘ûÿÿÿÿ
+ƒjavascript:S4165Š8"aReview this useless assignment: "sum" already holds the assigned value along all execution paths.(Î½‘ûÿÿÿÿ
+ƒjavascript:S41658"aReview this useless assignment: "sum" already holds the assigned value along all execution paths.(Î½‘ûÿÿÿÿ
+javascript:S4165ã9"_Review this useless assignment: "i" already holds the assigned value along all execution paths.(Ì¶ÔÓùÿÿÿÿ
+javascript:S4165ò9"_Review this useless assignment: "i" already holds the assigned value along all execution paths.(±¶•ƒÿÿÿÿÿ
+`'javascript:FunctionDefinitionInsideLoopô"'Define this function outside of a loop.(Ş¤Ëüÿÿÿÿ
+`'javascript:FunctionDefinitionInsideLoop‚"'Define this function outside of a loop.(Õßäëüÿÿÿÿ
+`'javascript:FunctionDefinitionInsideLoopô"'Define this function outside of a loop.(ßÕŸùÿÿÿÿ
+tjavascript:S1117‘
+"R"f" hides or potentially hides a variable declared in an outer scope at line 1278.(Ï¨ì§øÿÿÿÿ
+qjavascript:S1117ù1"T"sum" hides or potentially hides a variable declared in an outer scope at line 6356.(·²—È
+vjavascript:S1117o"U"field" hides or potentially hides a variable declared in an outer scope at line 146.(Ã¹üÿÿÿÿ
+xjavascript:S1117ê4"V"first" hides or potentially hides a variable declared in an outer scope at line 6789.(ûˆòùÿÿÿÿ
+xjavascript:S1117Ş4"V"value" hides or potentially hides a variable declared in an outer scope at line 6742.(ô§ûÿÿÿÿ
+xjavascript:S1117é4"V"value" hides or potentially hides a variable declared in an outer scope at line 6742.(—Îì¢şÿÿÿÿ
+qjavascript:S11172"T"sum" hides or potentially hides a variable declared in an outer scope at line 6356.(·²—È
+tjavascript:S1117û1"R"i" hides or potentially hides a variable declared in an outer scope at line 6356.(¹íÈÍøÿÿÿÿ
+tjavascript:S1117…2"R"i" hides or potentially hides a variable declared in an outer scope at line 6356.(¹íÈÍøÿÿÿÿ
+xjavascript:S1117®	"V"field" hides or potentially hides a variable declared in an outer scope at line 1204.(¬¸¶èüÿÿÿÿ
+sjavascript:S1117è1"V"value" hides or potentially hides a variable declared in an outer scope at line 6348.(²ÜíÔ
+sjavascript:S1117‚2"V"value" hides or potentially hides a variable declared in an outer scope at line 6348.(ıÖüì
+sjavascript:S1117ã4"V"value" hides or potentially hides a variable declared in an outer scope at line 6742.(¾ñ½ü
+qjavascript:S1117ƒ2"T"sum" hides or potentially hides a variable declared in an outer scope at line 6356.(·²—È
+sjavascript:S1117Ô!"V"value" hides or potentially hides a variable declared in an outer scope at line 4303.(¬„÷Ò
+sjavascript:S1117Œ2"V"value" hides or potentially hides a variable declared in an outer scope at line 6348.(İùëã
+sjavascript:S1117î6"V"value" hides or potentially hides a variable declared in an outer scope at line 7014.(¬„÷Ò
+tjavascript:S11172"R"i" hides or potentially hides a variable declared in an outer scope at line 6356.(¹íÈÍøÿÿÿÿ
+>javascript:S1116¡"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116º"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116ş"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116›"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116Ä"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116ˆ"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116ï"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116¦"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116š"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116Î"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116æ"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116å"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116±"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116ñ"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116–"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116¯"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116Ë"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116Á"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116¡$"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116É$"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116õ$"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116Â%"Remove this empty statement.(ºÓß½øÿÿÿÿ
+9javascript:S1116€&"Remove this empty statement.(”°†Æ
+>javascript:S1116Ö&"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116‘'"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116Ì'"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116ú'"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116º("Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116Ó("Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116¦)"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116Ê)"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116õ)"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116£+"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116Í+"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116³,"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116Ù,"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116-"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116-"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116Ã-"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116ƒ."Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116§."Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116û."Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116è/"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116–0"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116Ÿ;"Remove this empty statement.(ºÓß½øÿÿÿÿ
+>javascript:S1116Ğ;"Remove this empty statement.(ºÓß½øÿÿÿÿ
+=javascript:S878$""Remove use of this comma operator.(ÈÍóû
+Jjavascript:EmptyBlock$")Either remove or fill this block of code.(ÈÍóû
+[javascript:UnusedVariable®"5Remove the declaration of the unused 'year' variable.(§ŠÆ€
+Tjavascript:S1854®"7Remove this useless assignment to local variable "year"(§ŠÆ€

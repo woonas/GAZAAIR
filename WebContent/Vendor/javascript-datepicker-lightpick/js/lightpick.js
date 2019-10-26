@@ -1296,7 +1296,6 @@
         {
             this._opts = Object.assign({}, this._opts, options);
         }
-
     };
 
     return Lightpick;
