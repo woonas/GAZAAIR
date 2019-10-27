@@ -111,7 +111,7 @@ const verification = () => {
 
 //국가선택
 function onChangeCallback(ctr){
-    document.getElementById('country').value = ctr;
+    document.getElementById('country').value = document.querySelector('.niceCountryInputMenuDefaultText span').innerText;
 }
 
 //signup3에서 필요정보가 모두 입력되었는지 확인
@@ -142,7 +142,7 @@ const eventHandler = (_window, step2) => {
         _window.removeClass(step2)
     },2500);
     setTimeout(function(){
-        location.href= '/projectGAZA/Resources/JSP/signup/signup4.do';
+        location.href= 'signup4.html';
     }, 4500);
 };
 
@@ -157,20 +157,17 @@ const eventHandler = (_window, step2) => {
         const check_all = document.getElementById('agree_all');
 
         //체크박스 전체선택
-        check_all.addEventListener('click', () => {
-            if(check_all.checked) {
-                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-                
-                checkboxes.forEach(box => {
-                    box.checked = 'checked'; 
-                });
-            }
+        check_all.addEventListener('change', () => {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]:not(.agree_all');
+            checkboxes.forEach(box => {
+                box.checked = check_all.checked;
+            });
         });
         
         //필수 체크 항목이 체크되었는지 확인
         const nextBtn = document.querySelector('.right');
         nextBtn.addEventListener('click', () => {
-            if (agree_personalTransferToAbroad.checked && agree_personalCollection.checked && agree_hompageUse.checked) location.replace('signup3.do');
+            if (agree_personalTransferToAbroad.checked && agree_personalCollection.checked && agree_hompageUse.checked) location.replace('signup3.html');
             else
                 alert("필수 입력 항목에 대하여 모두 동의해주시기 바랍니다.")
         });
@@ -240,9 +237,80 @@ const eventHandler = (_window, step2) => {
     /* login */ 
     else if(location.pathname.indexOf('login') !== -1) {
         //달력
-        cal_generator('boardingdate', new Date());
+        let calendar_boardingdate = cal_generator('boardingdate', new Date());
+        document.querySelector(".lightpick").classList.add('centeredXY');
+        overlay.addEventListener('click', () => {
+            if(calendar_boardingdate) calendar_boardingdate.destroy();
+            calendar_boardingdate = cal_generator('boardingdate', new Date());
+            document.querySelector(".lightpick").classList.add('centeredXY');
+        });
         //공항선택
-        openPicker('.open-airport-picker');
+        openPicker('.open-airport-picker', true);
         //탭메뉴
         tabEvent('.tab-menu1');
     }
+
+    else if(location.pathname.indexOf('account_info') !== -1) {
+        const isEditing = document.getElementById('edit');
+
+        /*우편번호 검사*/
+        document.getElementById('btn-postalSearch').addEventListener('click', addrSearch);
+        /*국가 선택필드*/
+        new NiceCountryInput($(".countryPicker")).init();
+        const temp = document.querySelector('.warning');
+        document.querySelector('.login-link').addEventListener('click', () => {
+            if (isEditing.checked)  temp.classList.remove('hidden')
+        });
+
+        /* 페이지 로딩시 필요한 input disabled 넣기*/
+        const addrBtn = document.getElementById('btn-postalSearch');
+        const countrySelctor = document.querySelector('.countryPicker');
+        const countryInput = document.getElementById('country');
+        const phoneInput = document.getElementById('phone2');
+        const numberInput = document.getElementById('number2');
+        const event_ul = document.querySelector('.event-label + div>div:last-of-type');
+        const inputs = document.querySelectorAll('.form-group div[class^=col]>input:not(#edit)');
+        inputs.forEach(input => input.disabled = 'true' );
+        addrBtn.disabled = 'true';
+        countrySelctor.style.display = 'none';
+        event_ul.style.display = 'none';
+        if (!phoneInput.value) {
+            phoneInput.parentElement.nextElementSibling.style.color = '#fff';
+            phoneInput.parentElement.previousElementSibling.style.color = '#fff';
+        }
+        if (!numberInput.value) {
+            numberInput.parentElement.nextElementSibling.style.color = '#fff';
+            numberInput.parentElement.previousElementSibling.style.color = '#fff';
+        }
+
+        /* 정보변경 클릭시 */
+        isEditing.addEventListener('change', () => {
+            inputs.forEach(input => input.disabled = !isEditing.checked );
+            addrBtn.disabled = !isEditing.checked;
+            document.querySelectorAll('.not-required + div>input:not([type=radio])').forEach(input => input.disabled = 'true' );
+            countryInput.classList.add('invisible');
+            countrySelctor.style.display = 'none';
+            event_ul.style.display = 'none';
+
+            if (!phoneInput.value) {
+                phoneInput.parentElement.nextElementSibling.style.color = '#fff';
+                phoneInput.parentElement.previousElementSibling.style.color = '#fff';
+            }
+            if (!numberInput.value) {
+                numberInput.parentElement.nextElementSibling.style.color = '#fff';
+                numberInput.parentElement.previousElementSibling.style.color = '#fff';
+            }
+
+            if (isEditing.checked) {
+                countryInput.classList.remove('invisible');
+                countrySelctor.style.display = 'block';
+                event_ul.style.display = 'block';
+                phoneInput.parentElement.nextElementSibling.style.color = '#555';
+                phoneInput.parentElement.previousElementSibling.style.color = '#555';
+                numberInput.parentElement.nextElementSibling.style.color = '#555';
+                numberInput.parentElement.previousElementSibling.style.color = '#555';
+            }
+        })
+    }
+    
+})();

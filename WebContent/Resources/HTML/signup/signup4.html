@@ -91,8 +91,8 @@
                                 data-i18nnofilter="No selection"
                                 data-onchangecallback="onChangeCallback">
                             </div>
-                            <div class="col-xs-1 country-mark">
-                                <input type="text" class="form-control" id="country" name="country"  value="KR" readonly required>
+                            <div class="col-xs-4 country-mark">
+                                <input type="text" class="form-control invisible" id="country" name="country"  value="KR" readonly required>
                             </div>
                         </div>
                         
@@ -187,15 +187,14 @@
                            </label>
                             <div class="col-xs-7">
                                 <div class="clearfix">
-                                    <div class="checkbox col-xs-3">
-                                        <label>
-                                            <input type="checkbox" name="receiveEmail" value="receiveEmail"> 이메일
-                                        </label>
+                                    <div class="col-xs-3 checkbox">
+                                        <input type="checkbox" class="checkbox3" name="receiveEmail"
+                                               id="receiveEmail" checked>
+                                        <label for="receiveEmail" class="checkbox3"> 이메일</label>
                                     </div>
-                                    <div class="checkbox col-xs-3">
-                                        <label>
-                                            <input type="checkbox" name="receiveSMS" value="receiveSMS"> SMS
-                                        </label>
+                                    <div class="col-xs-3 checkbox">
+                                        <input type="checkbox" class="checkbox3" name="receiveSMS" id="receiveSMS">
+                                        <label for="receiveSMS" class="checkbox3"> SMS</label>
                                     </div>
                                 </div>
                                 <div>
