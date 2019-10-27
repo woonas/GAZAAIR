@@ -142,7 +142,7 @@ const eventHandler = (_window, step2) => {
         _window.removeClass(step2)
     },2500);
     setTimeout(function(){
-        location.href= 'signup4.html';
+        location.href= '/projectGAZA/Resources/JSP/signup/signup4.do';
     }, 4500);
 };
 
@@ -170,7 +170,7 @@ const eventHandler = (_window, step2) => {
         //필수 체크 항목이 체크되었는지 확인
         const nextBtn = document.querySelector('.right');
         nextBtn.addEventListener('click', () => {
-            if (agree_personalTransferToAbroad.checked && agree_personalCollection.checked && agree_hompageUse.checked) location.replace('signup3.html');
+            if (agree_personalTransferToAbroad.checked && agree_personalCollection.checked && agree_hompageUse.checked) location.replace('signup3.do');
             else
                 alert("필수 입력 항목에 대하여 모두 동의해주시기 바랍니다.")
         });

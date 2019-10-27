@@ -10,14 +10,17 @@
     <head>
         <meta charset="UTF-8">
         <title>로그인</title>
-        <link rel="stylesheet" href="../../CSS/signup.css">
+        <link rel="stylesheet" href="<%=path %>/Resources/CSS/signup.css">
         <!-- Font Awesome CDN -->
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <style>
+        	.tab-menu1 li.on>a{
+        		padding-left: 10px;
+        	}
+        </style>
     </head>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
     <body>
        <div class="overlay"></div>
        <section class="content">
@@ -29,7 +32,7 @@
                                <ul>
                                    <li id="first" class="firstanimation">
                                        <a href="#">
-                                           <img src="<%=path %>/Resources/IMG/login/newyork.jpg" alt="Cougar"/>
+                                           <img src="<%=path %>/Resources/IMG/login/newyork.jpg"/>
                                        </a>
                                        <div class="tooltip">
                                            <h1>뉴욕, 미국</h1>
@@ -38,7 +41,7 @@
 
                                    <li id="second" class="secondanimation">
                                        <a href="#">
-                                           <img src="../../IMG/main/mainBg6.jpg" alt="Lions"/>
+                                           <img src="<%=path %>/Resources/IMG/login/seaofstar.jpg"/>
                                        </a>
                                        <div class="tooltip">
                                            <h1>태즈매니아, 호주</h1>
@@ -47,7 +50,7 @@
 
                                    <li id="third" class="thirdanimation">
                                        <a href="#">
-                                           <img src="../../IMG/main/mainBg3.jpg" alt="Snowalker"/>
+                                           <img src="<%=path %>/Resources/IMG/login/paris.jpg"/>
                                        </a>
                                        <div class="tooltip">
                                            <h1>파리, 프랑스</h1>
@@ -56,7 +59,7 @@
 
                                    <li id="fourth" class="fourthanimation">
                                        <a href="#">
-                                           <img src="../../IMG/main/mainBg8.jpg" alt="Howling"/>
+                                           <img src="<%=path %>/Resources/IMG/login/new-zealand-south-island.jpg"/>
                                        </a>
                                        <div class="tooltip">
                                            <h1>남섬, 뉴질랜드</h1>
@@ -65,7 +68,7 @@
 
                                    <li id="fifth" class="fifthanimation">
                                        <a href="#">
-                                           <img src="../../IMG/main/mainBg5.jpg" alt="Sunbathing"/>
+                                           <img src="<%=path %>/Resources/IMG/login/goldenTemple.jpg"/>
                                        </a>
                                        <div class="tooltip">
                                            <h1>황금사원, 인디아</h1>
@@ -80,7 +83,9 @@
                <div class="login-form">
 
                    <div class="row logo">
-                       <img src = "../../IMG/logo/logo_basic.png" alt = "">
+                       <a href="<%=path %>/">
+                       		<img src = "<%=path %>/Resources/IMG/logo/logo_basic.png" alt = "">
+                       </a>
                    </div>
 
                    <div class="tab-menu1">
@@ -116,7 +121,7 @@
                                            <a href="pwsearch.html"><span class="col_black">비밀번호 찾기</span></a> 
                                        </li>
                                        <li>
-                                           <a href="../signup/signup1.html"><span class="col_black">회원가입</span></a> 
+                                           <a href="<%=path %>/Resources/JSP/signup/signup1.do"><span class="col_black">회원가입</span></a> 
                                        </li>
                                    </ul>
                                </div>
@@ -153,12 +158,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 
         <!-- Lightpick CSS -->
-        <link rel="stylesheet" href="../../../Vendor/javascript-datepicker-lightpick/css/lightpick.css">
+        <link rel="stylesheet" href="<%=path %>/Vendor/javascript-datepicker-lightpick/css/lightpick.css">
         <!-- Lightpick JS -->
-        <script src="../../../Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
-        <script src="../../JS/common.js"></script>
-        <script src="../../JS/airportpicker.js"></script>
-        <script src="../../JS/signup.js"></script>
+        <script src="<%=path %>/Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
+        <script src="<%=path %>/Resources/JS/common.js"></script>
+        <script src="<%=path %>/Resources/JS/airportpicker.js"></script>
+        <script src="<%=path %>/Resources/JS/signup.js"></script>
     </body>
 </html>
-    
