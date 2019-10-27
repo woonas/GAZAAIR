@@ -266,8 +266,9 @@ const eventHandler = (_window, step2) => {
         const addrBtn = document.getElementById('btn-postalSearch');
         const countrySelctor = document.querySelector('.countryPicker');
         const countryInput = document.getElementById('country');
-        const phoneInput = document.getElementById('phone2');
-        const numberInput = document.getElementById('number2');
+        const phone_all = document.getElementById('phone-all');
+        const number_all = document.getElementById('number-all');
+        const addr_all = document.getElementById('addr-all');
         const event_ul = document.querySelector('.event-label + div>div:last-of-type');
         const inputs = document.querySelectorAll('.form-group div[class^=col]>input:not(#edit)');
         inputs.forEach(input => input.disabled = 'true' );
@@ -275,14 +276,6 @@ const eventHandler = (_window, step2) => {
         countryInput.classList.remove('invisible');
         countrySelctor.style.display = 'none';
         event_ul.style.display = 'none';
-        if (!phoneInput.value) {
-            phoneInput.parentElement.nextElementSibling.style.color = '#fff';
-            phoneInput.parentElement.previousElementSibling.style.color = '#fff';
-        }
-        if (!numberInput.value) {
-            numberInput.parentElement.nextElementSibling.style.color = '#fff';
-            numberInput.parentElement.previousElementSibling.style.color = '#fff';
-        }
 
         /* 정보변경 클릭시 */
         isEditing.addEventListener('change', () => {
@@ -292,24 +285,23 @@ const eventHandler = (_window, step2) => {
             countryInput.classList.remove('invisible');
             countrySelctor.style.display = 'none';
             event_ul.style.display = 'none';
-
-            if (!phoneInput.value) {
-                phoneInput.parentElement.nextElementSibling.style.color = '#fff';
-                phoneInput.parentElement.previousElementSibling.style.color = '#fff';
-            }
-            if (!numberInput.value) {
-                numberInput.parentElement.nextElementSibling.style.color = '#fff';
-                numberInput.parentElement.previousElementSibling.style.color = '#fff';
-            }
+            phone_all.classList.remove('hidden');
+            number_all.classList.remove('hidden');
+            addr_all.classList.remove('hidden');
+            phone_all.previousElementSibling.classList.add('hidden');
+            number_all.previousElementSibling.classList.add('hidden');
+            addr_all.nextElementSibling.classList.add('hidden');
 
             if (isEditing.checked) {
                 countryInput.classList.add('invisible');
                 countrySelctor.style.display = 'block';
                 event_ul.style.display = 'block';
-                phoneInput.parentElement.nextElementSibling.style.color = '#555';
-                phoneInput.parentElement.previousElementSibling.style.color = '#555';
-                numberInput.parentElement.nextElementSibling.style.color = '#555';
-                numberInput.parentElement.previousElementSibling.style.color = '#555';
+                phone_all.classList.add('hidden');
+                number_all.classList.add('hidden');
+                addr_all.classList.add('hidden');
+                phone_all.previousElementSibling.classList.remove('hidden');
+                number_all.previousElementSibling.classList.remove('hidden');
+                addr_all.nextElementSibling.classList.remove('hidden');
             }
         })
     }

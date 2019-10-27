@@ -513,13 +513,13 @@ input.one-digit-box {
     font-weight: 600;
 }
 
-
 fieldset>.form-group {
     height: 60px;
     border-bottom: 1px solid #eee;
 }
-
 fieldset>.form-group:last-of-type { border-bottom: 1px solid #aaa; }
+
+fieldset input[name=gender] { display: block; }
 
 .form-group>.col-xs-12 { text-align: center; }
 .form-group>label:first-of-type { padding-top: 10px; }
@@ -591,7 +591,6 @@ input[name=birthdate] {
     padding-left: 40px;
 }
 
-
 fieldset>.form-group:last-of-type,
 .addr-wrapper { height: 110px !important; }
 .addr-wrapper>label:first-of-type { padding-top: 35px; }
@@ -611,6 +610,7 @@ input[name^=receive] + label:after {
     height: 0.45em;
 }
 input[name=receiveEmail] { padding-left: 10px; }
+input[name=receiveSMS] + label { margin-left: 10px; }
 
 .form-group .list-type2>li:first-of-type { margin-top:10px; }
 .form-group .list-type2>li { 
