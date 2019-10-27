@@ -1,14 +1,6 @@
 @charset "UTF-8";
 @import url("../CSS/layout.css") screen;
 
-.last-note {
-    padding: 25px 40px 20px;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    margin-left: 0;
-}
-
-
 /* ----------------------------------------------- */
 /* 여정 선택 booking1.html */
 /* ----------------------------------------------- */
@@ -583,8 +575,8 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
     z-index: 90;
 }
 
-@media screen and (max-width: 1200px) {
-    .journey-name-sticky { padding: 8px 15px; }
+@media screen and (max-width: 1240px) {
+    .journey-name-sticky { padding: 8px 25px; }
 }
 
 .journey-name-sticky>span:first-of-type { margin-right: 20px;}
@@ -808,7 +800,7 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 
 #membership-hint>i {
     color: #fff;
-    background: #999;
+    background-color: #67a;
     border-color: #fff;
     width: 17px;
     height: 17px;
@@ -854,18 +846,11 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
     margin: 100px 5px 20px;
 }
 
-.trip-table-title {
-    color: #fff;
-    background-color: #999;
-    border-top: 1px solid #aaa;
-}
 .trip-table { text-align: center; }
-.trip-table>div>div{ border-right: 1px solid #aaa; }
-.trip-table>div>div:last-of-type{ border-right: 0; }
-.trip-table>div:not(.trip-table-title)>div{ padding: 25px 15px; min-height: 155px; }
-.trip-table>div.trip-table-title>div{ padding: 15px; }
+.trip-table>div:first-of-type>div { min-height: 0; }
+.trip-table>div:not(.table-row-title)>div{ padding: 25px 15px; min-height: 155px; }
+.trip-table>div.table-row-title>div{ padding: 15px; }
 
-.trip-table>div { border-bottom: 1px solid #aaa; }
 .trip-num>div:first-of-type {
     font-size: 120%;
     margin-top: 25px;
@@ -903,35 +888,49 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 .flight-confirm-section ul>li>a { color: #8b4513; }
 
 /* 규정 */
-.regulation {
+div[id^=regulation] {
     background-color: #f3f3f3;
-    padding: 50px;
+    padding: 50px 50px 50px 34px;
+    margin-top: 20px;
 }
-.regulation>p {
+div[id^=regulation]>p {
     font-size: 150%;
     margin-bottom: 20px;
 }
-.regulation>p>span { font-size: 90%; margin-right: 10px; }
-.regulation>div>h4 {
+div[id^=regulation]>p>span {
+    font-size: 90%;
+    margin-right: 10px;
+}
+div[id^=regulation]>p>span:last-of-type { margin-left: 10px; }
+
+div[id^=regulation]>div>h4 {
     font-size: 120%;
     margin: 15px 0;
 }
-.regulation>div>h4:before {
-    content: '';
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    border-radius: 50%;
-    border: 1px solid #555;
-    background-color: #555;
-    margin-left: -10px;
-    margin-top: 0.75em;
-}
-
-.regulation>div { margin-left: 10px; }
+div[id^=regulation]>div>div { margin-left: 16px; }
+div[id^=regulation]>div { margin-left: 10px; }
 
 .list-type4 { margin-top: 0; }
 input[type="checkbox"].checkbox1 + label:before { margin-right: 30px; }
+
+div[id^=regulation]>input[type=checkbox]:checked ~ div {
+    max-height: 140px;
+    overflow-y: scroll;
+}
+div[id^=regulation]>input[type=checkbox] + label {
+    float: right;
+    margin-top: -45px;
+    cursor: pointer;
+    position: sticky;
+    top: 300px;
+    transform: rotate(180deg);
+    transition: transform 0.2s;
+}
+div[id^=regulation]>input[type=checkbox]:checked + label {
+    transform: none;
+    position: static;
+}
+
 
 /* ----------------------------------------------- */
 /* 결제 payment.html */
@@ -950,16 +949,6 @@ input[type="checkbox"].checkbox1 + label:before { margin-right: 30px; }
     color: #333;
     font-size: 110%;
     margin-bottom: 20px;
-}
-
-.bag-content-title {
-    background-color: #999;
-    color: #fff;
-}
-
-.bag-content-title>div {
-    text-align:center;
-    padding: 15px;
 }
 
 .currency { font-size: 60%; }
@@ -985,18 +974,13 @@ input[type="checkbox"].checkbox1 + label:before { margin-right: 30px; }
     text-align: center;
 }
 
-.bag-content>div>div {
-    border-top: 1px solid #aaa;
-    border-left: 1px solid #aaa;
-}
-.bag-content>div>div:first-of-type { border-left: 0; }
-.bag-content>div.row:last-of-type { border-bottom: 1px solid #aaa; }
+
 .detailed-price>div {
     border-bottom: 1px solid #ddd;
-    padding: 7px;
-    padding-left: 15px;
+    padding: 7px 7px 7px 15px;
     font-size: 90%;
 }
+.detailed-price>div:last-of-type { border-bottom-color: transparent; }
 .detailed-price:not(:last-of-type) { background-color: #f3f3f3; }
 
 .total-price {
@@ -1008,7 +992,11 @@ input[type="checkbox"].checkbox1 + label:before { margin-right: 30px; }
     border-top: 1px solid #ddd;
     background-color: #f7f7f7;
 }
-.total-price span { margin-left: 10px;}
+.total-price.bigger-text { font-size: 150%; }
+.total-price span {
+    margin-left: 10px;
+    font-size: 150%;
+}
 .total-price>div>div:not(:last-of-type):before {
     position: relative;
     left: -60px;
@@ -1021,8 +1009,8 @@ input[type="checkbox"].checkbox1 + label:before { margin-right: 30px; }
     height: 4px;
     border-top: 3px solid #555;
     border-bottom: 3px solid #555;
-    margin-left: -70px;
-    margin-top: 45px;
+    margin-left: -59px;
+    margin-top: 49px;
 }
 
 .total-price>div>div:nth-of-type(2):before,

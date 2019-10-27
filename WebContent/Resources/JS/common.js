@@ -89,6 +89,12 @@ const inputTypeCheck = () => {
 
 /* 달력 */
 let calendar_openedBy;
+let calendar = [];
+const cal_init = (index) => {
+    if (!index) index = 1;
+    if(calendar[index-1]) calendar[index-1].destroy();
+    calendar[index-1] = cal_generator('flightDate-' + index);
+};
 
 let cal_generator = (strId, startDate, numOfMonths) => {
     return new Lightpick({

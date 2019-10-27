@@ -15,7 +15,7 @@
         <script src="../../../Vendor/Filterable-Country-Picker-niceCountryInput/niceCountryInput.js"></script>
 <!-- Font Awesome CDN -->
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../../CSS/signup.css">
+        <link rel="stylesheet" href="../../CSS/account.css">
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 <!-- 다음/카카오 주소검색 -->         
         <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -102,7 +102,7 @@
                                 <input type="text" class="form-control" name="username" id="username" required placeholder="영문+숫자 6~15자리" onkeypress="inputTypeCheck()">
                             </div>
                             <div>
-                                <input type="button" value="중복체크" class="grayBtn" id="btn-dupCheck">
+                                <input type="button" value="중복체크" class="blueBtn" id="btn-dupCheck">
                             </div>
                         </div>
                         
@@ -168,7 +168,7 @@
                                 <input type="numer" class="form-control" name="postalCode" id="postalCode" placeholder="우편번호"  readonly>
                             </div>
                             <div>
-                                <input type="button" value="우편번호 검색" id="btn-postalSearch" class="grayBtn">
+                                <input type="button" value="우편번호 검색" id="btn-postalSearch" class="blueBtn">
                             </div>  
                             <div>
                                <div class="col-xs-5">
@@ -238,7 +238,7 @@
                     <hr>
                     
                     <div class="form-group">
-                        <div class="col-xs-offset-5 col-xs-3">
+                        <div class="col-xs-12">
                             <a href="signup5.html"><button type="submit" class="btn blueBtn">회원가입</button></a>
                         </div>
                     </div>
@@ -247,7 +247,7 @@
         </section>
 
        
-        <div class="pop-up-window-type1" id="btn-dupCheck-window">
+        <div class="pop-up-window-type1" id="btn-dupCheck-window" style="position: fixed !important;">
             <div>
                 <p class="window-title">
                     아이디 중복체크
@@ -281,6 +281,6 @@
 
         <script src="../../JS/validator.js"></script>
         <script src="../../JS/common.js"></script>
-        <script src="../../JS/signup.js"></script>
+        <script src="../../JS/account.js"></script>
     </body>
 </html>

@@ -137,7 +137,14 @@ $(document).ready(function() {
                         message: "주소는 필수 항목입니다."
                     }
                 }
-            }
+            },
+            oldPassword: {
+                validators: {
+                    notEmpty: {
+                        message: '비밀번호를 입력하세요.'
+                    }
+                }
+            },
         }
     }).on('status.field.bv', function(e, data) {
         // Remove the required icon when the field updates its status

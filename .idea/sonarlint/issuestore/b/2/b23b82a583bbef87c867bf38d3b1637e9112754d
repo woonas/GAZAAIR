@@ -1,9 +1,9 @@
 
-MWeb:BoldAndItalicTagsCheckñ"!Replace this <b> tag by <strong>.(İŸÑ’ùÿÿÿÿ
-DWeb:BoldAndItalicTagsCheck÷"Replace this <i> tag by <em>.(§ÀŸ
-CWeb:BoldAndItalicTagsCheck*"Replace this <i> tag by <em>.(ËÕµ½
-IWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(Ó¸•‰úÿÿÿÿ
 a	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ8ÌÇ èß-
 DWeb:BoldAndItalicTagsCheck¯"Replace this <i> tag by <em>.(óÃÌ¥
-HWeb:ImgWithoutAltCheck‡"%Add an "alt" attribute to this image.(“¼ôÊ
+DWeb:BoldAndItalicTagsCheck÷"Replace this <i> tag by <em>.(§ÀŸ
 ‹	Web:S5148*"oAdd rel="noopener noreferrer" to this link to prevent the original page from being modified by the opened link.(ËÕµ½8ÌÇ èß-
+MWeb:BoldAndItalicTagsCheckñ"!Replace this <b> tag by <strong>.(İŸÑ’ùÿÿÿÿ
+HWeb:ImgWithoutAltCheck‡"%Add an "alt" attribute to this image.(“¼ôÊ
+CWeb:BoldAndItalicTagsCheck*"Replace this <i> tag by <em>.(ËÕµ½
+IWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(Ó¸•‰úÿÿÿÿ

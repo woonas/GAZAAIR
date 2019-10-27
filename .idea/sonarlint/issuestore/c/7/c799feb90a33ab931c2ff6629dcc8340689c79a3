@@ -1,22 +1,9 @@
 
-l Web:TableHeaderHasIdOrScopeCheckR";Add either an 'id' or a 'scope' attribute to this <th> tag.(‰À§ûÿÿÿÿ
-l Web:TableHeaderHasIdOrScopeCheckQ";Add either an 'id' or a 'scope' attribute to this <th> tag.(ÁŸÈ¹şÿÿÿÿ
-HWeb:ImgWithoutAltCheck˜"%Add an "alt" attribute to this image.(®ÑŞ÷
-HWeb:BoldAndItalicTagsCheckŸ"!Replace this <b> tag by <strong>.(ºŞÿÉ
-GWeb:ImgWithoutAltCheck?"%Add an "alt" attribute to this image.(äè§¡
-MWeb:ImgWithoutAltCheckŒ"%Add an "alt" attribute to this image.(ºªêéıÿÿÿÿ
-l Web:TableHeaderHasIdOrScopeCheckS";Add either an 'id' or a 'scope' attribute to this <th> tag.(àÅºóşÿÿÿÿ
-HWeb:ImgWithoutAltCheck"%Add an "alt" attribute to this image.(èó±—
-HWeb:ImgWithoutAltCheck”"%Add an "alt" attribute to this image.(‡Öáü
-HWeb:ImgWithoutAltCheck—"%Add an "alt" attribute to this image.(—¦ÀŞ
-MWeb:ImgWithoutAltCheckˆ"%Add an "alt" attribute to this image.(ôØ×Ãûÿÿÿÿ
-g Web:TableHeaderHasIdOrScopeCheckT";Add either an 'id' or a 'scope' attribute to this <th> tag.(ÎÚÄ½
-MWeb:ImgWithoutAltCheck“"%Add an "alt" attribute to this image.(¢ñÏüÿÿÿÿ
-MWeb:BoldAndItalicTagsCheck£"!Replace this <b> tag by <strong>.(¢Ÿåúÿÿÿÿ
-l Web:TableHeaderHasIdOrScopeCheckP";Add either an 'id' or a 'scope' attribute to this <th> tag.(¾°¾¥ıÿÿÿÿ
-HWeb:ImgWithoutAltCheck‹"%Add an "alt" attribute to this image.(ª©‰Ó
-l Web:TableHeaderHasIdOrScopeCheckO";Add either an 'id' or a 'scope' attribute to this <th> tag.(¶ÊˆÚüÿÿÿÿ
-LWeb:ImgWithoutAltCheck"%Add an "alt" attribute to this image.(Æµ±§ûÿÿÿÿ
-Z	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ
-GWeb:ImgWithoutAltCheck*"%Add an "alt" attribute to this image.(²Ğìó
-HWeb:ImgWithoutAltCheck"%Add an "alt" attribute to this image.(ÿò›÷
+s Web:TableHeaderHasIdOrScopeChecks";Add either an 'id' or a 'scope' attribute to this <th> tag.(‰À§ûÿÿÿÿ8¾ŞºÆà-
+TWeb:TableWithoutCaptionChecke" Add a description to this table.(¿‰˜ÿÿÿÿÿ8¾ŞºÆà-
+s Web:TableHeaderHasIdOrScopeCheckr";Add either an 'id' or a 'scope' attribute to this <th> tag.(ÁŸÈ¹şÿÿÿÿ8¾ŞºÆà-
+a	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ8¾ŞºÆà-
+n Web:TableHeaderHasIdOrScopeChecku";Add either an 'id' or a 'scope' attribute to this <th> tag.(ÎÚÄ½8¾ŞºÆà-
+s Web:TableHeaderHasIdOrScopeCheckt";Add either an 'id' or a 'scope' attribute to this <th> tag.(àÅºóşÿÿÿÿ8¾ŞºÆà-
+s Web:TableHeaderHasIdOrScopeCheckp";Add either an 'id' or a 'scope' attribute to this <th> tag.(¶ÊˆÚüÿÿÿÿ8¾ŞºÆà-
+s Web:TableHeaderHasIdOrScopeCheckq";Add either an 'id' or a 'scope' attribute to this <th> tag.(¾°¾¥ıÿÿÿÿ8¾ŞºÆà-

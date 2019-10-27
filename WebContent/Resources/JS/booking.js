@@ -58,14 +58,6 @@ const spotChange = () => {
     });
 };
 
-/* 캘린더 */
-let calendar = [];
-const cal_init = (index) => {
-    if (!index) index = 1;
-    if(calendar[index-1]) calendar[index-1].destroy();
-    calendar[index-1] = cal_generator('flightDate-' + index);
-};
-
 /* insertAfter */
 const insertAfter = (referenceNode, newNode) => {
     if (!!referenceNode.nextSibling) referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -101,7 +93,7 @@ const input_check = () => {
     // session에 좌석타입 저장 (이코노미, 비즈니스, 퍼스트)
     const seatType = document.querySelector('input[type="radio"][name="class-type"]:checked + label').innerText;
     sessionStorage.setItem('seat-type', seatType);
-
+    if (!isValid) alert("출,도착 공항 및 탑승일을 선택하여 주십시오.\n- 다구간에서는 최소한 하나이상의 여정을 완성하여야 합니다.");
     return isValid;
 };
 
@@ -309,20 +301,14 @@ const input_check = () => {
                 var div = document.createElement("DIV");
                 div.style.height = "80px";
                 if(parent.parentElement.children[1] === parent) {
-                    parent.style.backgroundColor = "#9bf";
-                    parent.style.borderBottomColor = "#9bf";
-                    div.style.background = "#9bf";
+                    div.style.backgroundColor = parent.style.backgroundColor = parent.style.borderBottomColor = "#9bf";
                     insertAfter(parent.parentElement, div);
                 } else if(parent.parentElement.children[2] === parent) {
-                    div.style.background = "#69f";
-                    parent.style.borderBottomColor = "#69f";
+                    div.style.backgroundColor = parent.style.backgroundColor = parent.style.borderBottomColor = "#69f";
                     insertAfter(parent.parentElement, div);
-                    parent.style.backgroundColor = "#69f"
                 } else if(parent.parentElement.children[3] === parent) {
-                    div.style.background = "#36f";
-                    parent.style.borderBottomColor = "#36f";
+                    div.style.backgroundColor = parent.style.backgroundColor = parent.style.borderBottomColor = "#36f";
                     insertAfter(parent.parentElement, div);
-                    parent.style.backgroundColor = "#36f"
                 }
                 e.target.parentElement.classList.add('selected-ticket');
             });

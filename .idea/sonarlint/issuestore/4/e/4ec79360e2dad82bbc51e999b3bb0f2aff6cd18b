@@ -1,7 +1,19 @@
 
-JWeb:ImgWithoutAltCheck"%Add an "alt" attribute to this image.(óãé¾øÿÿÿÿ
-JWeb:ImgWithoutAltCheck"%Add an "alt" attribute to this image.(¹úêĞıÿÿÿÿ
+HWeb:ImgWithoutAltCheck"%Add an "alt" attribute to this image.(½£¸’
+HWeb:ImgWithoutAltCheckÔ"%Add an "alt" attribute to this image.(Âö¤
 Z	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ
-EWeb:ImgWithoutAltCheck"%Add an "alt" attribute to this image.(Âö¤
-FWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(ªŸ„W
-EWeb:ImgWithoutAltCheck"%Add an "alt" attribute to this image.(½£¸’
+MWeb:ImgWithoutAltCheckú"%Add an "alt" attribute to this image.(óãé¾øÿÿÿÿ
+MWeb:ImgWithoutAltCheckç"%Add an "alt" attribute to this image.(¹úêĞıÿÿÿÿ
+PWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(Äš8†®Äà-
+TWeb:ImgWithoutAltCheck£"%Add an "alt" attribute to this image.(ÇÄ½±ûÿÿÿÿ8†®Äà-
+TWeb:ImgWithoutAltCheck·"%Add an "alt" attribute to this image.(»Ş„£şÿÿÿÿ8†®Äà-
+TWeb:ImgWithoutAltCheckÎ"%Add an "alt" attribute to this image.(¼•„ıÿÿÿÿ8†®Äà-
+OWeb:ImgWithoutAltChecká"%Add an "alt" attribute to this image.(›¥¯8†®Äà-
+TWeb:ImgWithoutAltCheckô"%Add an "alt" attribute to this image.(À¦£µıÿÿÿÿ8†®Äà-
+TWeb:ImgWithoutAltCheckŠ"%Add an "alt" attribute to this image.(ŒÙı—øÿÿÿÿ8†®Äà-
+TWeb:ImgWithoutAltCheck"%Add an "alt" attribute to this image.(“«¿Ÿøÿÿÿÿ8†®Äà-
+TWeb:ImgWithoutAltCheck°"%Add an "alt" attribute to this image.(İó•şÿÿÿÿ8†®Äà-
+OWeb:ImgWithoutAltCheckÃ"%Add an "alt" attribute to this image.(Ó‹êù8†®Äà-
+u%Web:ItemTagNotWithinContainerTagCheckÜ"<Surround this <li> item tag by a <ul> or <ol> container one.(íÒ—8†®Äà-
+PWeb:BoldAndItalicTagsCheckŞ"Replace this <i> tag by <em>.(€øûùúÿÿÿÿ8†®Äà-
+PWeb:BoldAndItalicTagsCheckä"Replace this <i> tag by <em>.(ØÊÌîùÿÿÿÿ8†®Äà-
