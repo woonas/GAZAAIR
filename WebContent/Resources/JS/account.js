@@ -272,6 +272,7 @@ const eventHandler = (_window, step2) => {
         const inputs = document.querySelectorAll('.form-group div[class^=col]>input:not(#edit)');
         inputs.forEach(input => input.disabled = 'true' );
         addrBtn.disabled = 'true';
+        countryInput.classList.remove('invisible');
         countrySelctor.style.display = 'none';
         event_ul.style.display = 'none';
         if (!phoneInput.value) {
@@ -288,7 +289,7 @@ const eventHandler = (_window, step2) => {
             inputs.forEach(input => input.disabled = !isEditing.checked );
             addrBtn.disabled = !isEditing.checked;
             document.querySelectorAll('.not-required + div>input:not([type=radio])').forEach(input => input.disabled = 'true' );
-            countryInput.classList.add('invisible');
+            countryInput.classList.remove('invisible');
             countrySelctor.style.display = 'none';
             event_ul.style.display = 'none';
 
@@ -302,7 +303,7 @@ const eventHandler = (_window, step2) => {
             }
 
             if (isEditing.checked) {
-                countryInput.classList.remove('invisible');
+                countryInput.classList.add('invisible');
                 countrySelctor.style.display = 'block';
                 event_ul.style.display = 'block';
                 phoneInput.parentElement.nextElementSibling.style.color = '#555';
