@@ -29,6 +29,8 @@ body {
 
 section.content {
     max-width: 1200px;
+    min-width: 1200px;
+    width: 1200px;
     margin: 0 auto 70px;
 }	
 
@@ -64,7 +66,7 @@ section.content {
 }
 
 .centeredY {
-    position: fixed !important;
+    position: absolute !important;
     top: 50% !important;
     transform: translateY(-50%);
 }
@@ -294,28 +296,34 @@ i.fa-exclamation:hover {
     list-style: none;
 }
 
+.last-note {
+    padding: 25px 40px 20px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-left: 0;
+}
+
+
 /* ----------------------------------------------- */
 /* 테이블 */
 /* ----------------------------------------------- */
 
-.table-form {
-    border-top: 1px solid #999;
-    margin: 10px 0;
-}
-
+.table-form { margin: 10px 0; }
 .table-form>.row { border-bottom: 1px solid #ddd; }
 
 .table-form .table-row-title {
     padding: 25px 25px;
-    border: 2px solid #999;
-    background-color: #999;
+    border: 2px solid #67a;
+    background-color: #67a;
     color: #fff;
     text-align: center;
     width: 15%;
 }
 
-.table-form>.row>div {float:left;}
+.table-form>.row>div { float:left; min-height: 78px; }
 .table-form>.row>div:not(.table-row-title) { padding: 15px 25px; }
+.table-form>.row:first-of-type>div:not(.table-row-title) { border-top: 1px solid #888; }
+.table-form>.row:first-of-type>div.table-row-title { border-top: 1px solid #67a; }
 
 .table-form>.row>div:not(.table-row-title).two-in-row { width: 35%; }
 .table-form>.row>div:not(.table-row-title).two-in-row>input { width: 296px; }
@@ -373,6 +381,27 @@ i.fa-exclamation:hover {
 .table-form2>.row { border-bottom: 1px solid #ddd; }
 .table-form2 div { padding: 7px 0 7px 30px; }
 .table-form2>.row>div:not(.table-row-title) { font-size: 90%; }
+
+
+.table-form3>.table-row-title {
+    background-color: #67a;
+    color: #fff;
+}
+
+.table-form3>.table-row-title>div {
+    text-align:center;
+    padding: 15px;
+}
+
+.table-form3>div>div {
+    border-top: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+}
+.table-form3>div>div:first-of-type { border-left: 0; }
+.table-form3>div:first-of-type>div,
+.table-form3>div:nth-of-type(2)>div { border-top: 0; }
+.table-form3>div.row:last-of-type { border-bottom: 1px solid #aaa; }
+
 
 /* ----------------------------------------------- */
 /* 탭메뉴 */
@@ -886,8 +915,10 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 /* ----------------------------------------------- */
 
 .lightpick {
-    width: 100% !important;
     max-width: 1200px;
+    min-width: 1200px;
+    width: 1200px;
+    border-radius: 0 !important;
 }
 
 .lightpick__toolbar {
@@ -1411,7 +1442,8 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 
 .airport-picker-window {
     max-width: 1200px;
-    width: 100%;
+    min-width: 1200px;
+    width: 1200px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
     margin: 0 auto;
 }
@@ -1421,4 +1453,27 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 @keyframes moveRight {
     from { transform: translateX(0); }
     to { transform: translateX(270px); }
+}
+
+
+
+
+/*******/
+@media screen and (max-width: 1240px) {
+    .centeredX {
+        left: 20px !important;
+        transform: none !important;
+    }
+
+    .centeredXY {
+        position: absolute !important;
+        left: 20px !important;
+        transform: translate(0, -50%) !important;
+    }
+
+    body {
+        max-width: 1240px;
+        min-width: 1240px;
+        width: 1240px;
+    }
 }

@@ -1,0 +1,16 @@
+
+\javascript:UnusedVariableö"6Remove the declaration of the unused 'today' variable.(îû¾â
+ajavascript:S2814o"FRename "date" as this name is already used in declaration at line 107.(·¾Ñ3
+vjavascript:S1117"U"moment" hides or potentially hides a variable declared in an outer scope at line 16.(ï’àÇúÿÿÿÿ
+Pjavascript:EmptyBlockØ")Either remove or fill this block of code.(´Èì’ùÿÿÿÿ
+cjavascript:S2814Ä"FRename "date" as this name is already used in declaration at line 962.(ıÀ
+[javascript:S1854ö"9Remove this useless assignment to local variable "target"(Ê·ïşÿÿÿÿ
+\javascript:S1854Ì":Remove this useless assignment to local variable "tooltip"(Ë—ëİúÿÿÿÿ
+qjavascript:S1117ş"T"opts" hides or potentially hides a variable declared in an outer scope at line 449.(—¾ÇÒ
+qjavascript:S1117Š"T"opts" hides or potentially hides a variable declared in an outer scope at line 449.(—¾ÇÒ
+cjavascript:UnusedVariableÌ"8Remove the declaration of the unused 'tooltip' variable.(Ë—ëİúÿÿÿÿ
+ojavascript:S2814õ"MRename "daysInMonth" as this name is already used in declaration at line 364.(Öáşöûÿÿÿÿ
+`javascript:S2814ø"CRename "d" as this name is already used in declaration at line 366.(šÛÇ
+bjavascript:UnusedVariableö"7Remove the declaration of the unused 'target' variable.(Ê·ïşÿÿÿÿ
+Ujavascript:S1854ö"8Remove this useless assignment to local variable "today"(îû¾â
+_javascript:S2814‚"CRename "d" as this name is already used in declaration at line 366.(Š¯ë[
