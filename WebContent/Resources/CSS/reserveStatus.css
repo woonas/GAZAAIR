@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("../CSS/layout.css") screen;
-
+@import url("../CSS/booking.css") screen;
 
 .last-note {
     padding: 25px 40px 20px;
@@ -589,7 +589,6 @@
 
 .oz{height:200px;background-color:blue}
 
-.row{max-width:1000px;margin:0}
 
 
 
