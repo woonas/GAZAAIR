@@ -795,7 +795,7 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 .radio3:not(:disabled) + label:hover:before { border: 1px solid #36f; }
 
 .radio3:checked + label:before {
-    border: 1px solid #36f;
+    border: 1px solid #555;
     cursor: pointer;
 }
 

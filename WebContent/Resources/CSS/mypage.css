@@ -1,207 +1,197 @@
 @charset "UTF-8";
 @import url("../CSS/layout.css") screen;
 
-/* 마이페이지 메인 mypage_Main.html */
 
-#mypage-main {
-    background: #eee url("../IMG/mypage_Img/sub_myasiana_main.png") -330px 70px  no-repeat;
-    background-size: 147% 500px;
-    padding-top: 70px; /* 네비용 */
+.last-note {
+    padding: 25px 40px 20px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-left: 0;
 }
 
-/* 메인 상단부 */
-
-.maintop {
-    height: 500px;
-    color: #fff;
-    margin-bottom: 30px;
-}
-.maintop a { text-decoration: none; }
-.maintop>.row>div { padding: 100px 100px 0; }
-.maintop>.row>div>div { min-width: 125px; }
-.maintop>.row>div>div:first-of-type { font-size: 180% }
-.maintop>.row>div:first-of-type { float: left; }
-.maintop>.row>div:last-of-type { float: right; text-align: right; }
-
-#tripNo, #mileage { font-size: 150%; }
-#boarding { margin-top: 40px; }
-#boarding>div {
-    width: 300px;
-    margin: 0 auto;
-    font-size: 90%;
-}
-#boarding>div>span { float: right; }
-#boarding>div:before {
-    content: '';
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    margin-left: -18px;
-    margin-top: 8px;
-    background-color: #81a1ff;
-}
-#boarding>div:first-of-type:before { background-color: orangered; }
-#boarding>div:last-of-type:before { background-color: #f5e79e; }
-
-.circle {
-    width: 300px;
-    position: relative;
-    top: -400px;
-    left: 450px
+#mypage-main section.content {
+	background-color: #eee;
+	padding-bottom:10px;
+	margin-bottom:20px;
 }
 
-.circle strong,
-.circle div {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    font-size: 180%;
-}
-.circle div {
-    top: 80px;
-    font-size: 180%;
-}
-.circle strong {
-    top: 130px;
-    font-size: 350%;
+/*   */
+.maintop { color:#fff; }
+
+#cloudimg {
+	width:100%;
+	height:450px;
 }
 
-/* 섹션 디자인 */
+#clouddiv {
+	position:relative;
+	height:450px;
+}
+#clouddiv + div { margin-top:10px; }
 
-.section {
-    min-height: 200px;
-    background: #fff no-repeat 96% 88%;
-    padding: 25px 20px;
+#grade>div>a,
+#name>div>a {
+	text-decoration:none;
+	color:#fff;
+	cursor:pointer;
 }
 
-section.content>.row>div>.section {
-    margin-top: 20px;
-    margin-bottom: 20px;
+#name {
+	width:200px;
+	position:absolute;
+	left:70px;
+	top:60px;
+ }
+
+
+	#name>div:nth-child(1){ font-size:22px }
+	#name>div:nth-child(2){
+		font-size:12px;
+		opacity:0.5
+		}
+
+	#grade{
+		width:200px;
+		position:absolute;
+		left:70px;
+		top:110px;
+		font-size:18px
+		}
+
+
+	#boarding{
+		width:1200px;
+		text-align:center;
+		position:absolute;
+		bottom: 50px;
+		color:#3864ea
+		}
+
+
+
+
+
+	/* 구름 사진 아래 스타일 */
+
+	.favorite,
+	.mywrite,
+	.mg
+	 {
+		margin: 20px;
+		padding: 10px;
+		background-color: #fff;
+		height: 150px;
+		font-size: 110%;
+		font-weight: 600;
+		cursor: pointer;
+	 }
+		.mywrite + img,
+		.favorite + img {
+			width: 40px;
+		    position: absolute;
+		    margin-top: -70px;
+		    margin-left: 170px;
+		}
+
+
+		.mg>div:last-of-type { padding-top: 25px; }
+		.mg>div:last-of-type>div>* { margin-top: 20px; }
+		#gradeprogress{margin-top:35px}
+
+
+		.reserve {
+			margin: 0 20px 20px;
+			padding: 30px;
+			background-color: #fff;
+
+		}
+
+		#rt{
+			font-size:40px;
+			font-weight:bold;
+			text-align:center
+		}
+
+		#favorite,
+		#mg {
+		background-color: #fff;
+		padding:10px;
+		position:relative;
+		}
+	#favorite{
+		width:200px;
+		height:150px;
+		top:20px;
+		left:20px;
+
+		}
+	#mg{
+		width:940px;
+		height:150px;
+		left:240px;
+		top:-130px;
+		}
+	#mg>div{width:400px;height:50px;margin-left:200px}
+
+
+/* ----------------------------------------------- */
+/* 마일리지 & 등급 progress */
+/* ----------------------------------------------- */
+
+#milageprogress,#gradeprogress {
+  width: 300px;
+  height: 13px;
+  position: relative;
 }
 
-.row>div:not(.col-line)>.section {
-    margin-right: 15px;
-    margin-left: 15px;
-}
-.row>div:not(.col-line):first-of-type>.section { margin-left: 0; }
-.row>div:not(.col-line):last-of-type>.section { margin-right: 0; }
 
-.section-title {
-    padding-bottom: 5px;
-    font-size: 160%;
-    font-weight: 600;
-}
-.section-title.bottom-border { border-bottom: 2px solid #999; }
-
-.section-title>a { float: right; }
-.section-title>a>input[type=button] {
-    border-radius: 0;
-    padding: 5px 24px 5px 10px;
-}
-.section-title>a:after {
-    content: '';
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    margin-top: 19px;
-    margin-left: -19px;
-    transform: rotate(45deg);
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-}
-
-.section-title + div { margin-top: 15px; }
-
-/* 섹션별로 배경넣기 */
-.my-write { background-image: url("../IMG/icon/write.png"); }
-.interest-list { background-image: url("../IMG/icon/favorite.png"); }
-.my-mileage { background-image: url("../IMG/icon/mileage.png"); }
-.my-grade { background-image: url("../IMG/icon/grade.png"); }
-.my-question {
-    background-image: url("../IMG/icon/question.png");
-    background-size: 52px;
-}
-
-.my-mileage,
-.interest-list { cursor: pointer; }
-
-/* 등급섹션 */
-
-#username { font-size: 120%; }
-#grade-benefit {
-    padding: 5px 10px;
-    border-radius: 0;
-    margin-top: 10px;
-}
-
-/* 마일리지섹션 */
-
-#mileagebar { width: 350px; }
-#mileagebar>div {
-    height: 12px;
-    /*border: 5px solid #fff;*/
-    border-radius: 10px;
-    border: 1px solid #fff;
-    background-color: #eee;
-    clear: both;
-}
-#mileagebar>div>div:first-of-type {
-    /*margin-left: -4px;*/
-    /*margin-top: -4px;*/
-    height: 10px;
-    width: 20%;
-    border: transparent 1px solid;
-    border-radius: 10px;
-    background-color: #36f;
-    clear: both;
-}
-#mileagebar>div>div:last-of-type {
-    margin-top: 13px;
-    margin-left: calc(20% - 3%);
-    height: 10px;
-    width: 10px;
-    background-color: #fff;
-    border-top: 1px solid #aaa;
-    border-left: 1px solid #aaa;
-    transform: rotate(45deg);
-}
-
-#mileagebar + div {
-    margin-top: 17px;
-    width: 350px;
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #aaa;
-}
-
-/* 관심 노선 */
-
-.interest-list>div:last-of-type {
-    font-size: 300%;
-    margin-top: 25px;
-    padding-left: 20px;
-}
-
+/* ----------------------------------------------- */
 /* 예약 현황 */
-
-.reserve-table input[type="button"][id^="detail"] {
-    padding: 5px 15px;
-    border-radius: 0;
+/* ----------------------------------------------- */
+caption{
+    margin:20px 0;
+    font-weight:bold;
+    font-size:40px
 }
+#travelAll{
 
-table { border-collapse: collapse; }
-table div { text-align: center; }
+		margin:20px;
+		width:1160px;
+		background-color:#fff;
+		padding:20px;
+		padding-top:1px;
+		}
+	#travelText{
+		width:1200px;
+		height:50px;
+		font-size:30px;
+		font-weight:bold
+		}
+	table{border-collapse:collapse}
+	table div{text-align:center}
+	th{
+		background-color:#999;
+		color:white;
+		padding:5px
+		}
+	th,  td{border-right:1px solid lightgray}
+	td{border-bottom:1px solid lightgray}
+    th { padding: 10px; }
+	th:last-child,td:last-child  {
+		border-right: none;
+	}
+	td{height:70px}
 
-th {
-    background-color: #999;
-    color: #fff;
-    padding: 10px;
-}
-td { height: 70px; }
+	#detail{padding:10px 15px;}
 
-:not(thead)>tr { border-bottom: 1px solid lightgrey; }
-th:not(:last-child),
-td:not(:last-child) { border-right: 1px solid lightgray; }
+/* ----------------------------------------------- */
+/* �뿬�젙 �꽑�깮 booking1.html */
+/* ----------------------------------------------- */
 
-#detail { padding: 10px 15px; }
+/* ----------------------------------------------- */
+/* �뿬�젙 �꽑�깮 booking1.html */
+/* ----------------------------------------------- */
+
+/* ----------------------------------------------- */
+/* �뿬�젙 �꽑�깮 booking1.html */
+/* ----------------------------------------------- */
