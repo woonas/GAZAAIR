@@ -513,13 +513,13 @@ input.one-digit-box {
     font-weight: 600;
 }
 
-
 fieldset>.form-group {
     height: 60px;
     border-bottom: 1px solid #eee;
 }
-
 fieldset>.form-group:last-of-type { border-bottom: 1px solid #aaa; }
+
+fieldset input[name=gender] { display: block; }
 
 .form-group>.col-xs-12 { text-align: center; }
 .form-group>label:first-of-type { padding-top: 10px; }
@@ -548,11 +548,6 @@ fieldset>.form-group:last-of-type { border-bottom: 1px solid #aaa; }
     position: relative !important;
     left: 41px;
     margin-top: -26px;
-}
-
-.form-group input[type=checkbox] {
-    display: block;
-    margin-right: 10px;
 }
 
 .form-control {
@@ -596,7 +591,6 @@ input[name=birthdate] {
     padding-left: 40px;
 }
 
-
 fieldset>.form-group:last-of-type,
 .addr-wrapper { height: 110px !important; }
 .addr-wrapper>label:first-of-type { padding-top: 35px; }
@@ -609,8 +603,14 @@ fieldset>.form-group:last-of-type>label:first-of-type:after {
 }
 fieldset>.form-group:last-of-type>label:first-of-type { padding-top: 25px; }
 
+input[name^=receive] { transform: scale(1.5); }
 
+input[name^=receive] + label:after {
+    width: 0.75em;
+    height: 0.45em;
+}
 input[name=receiveEmail] { padding-left: 10px; }
+input[name=receiveSMS] + label { margin-left: 10px; }
 
 .form-group .list-type2>li:first-of-type { margin-top:10px; }
 .form-group .list-type2>li { 
@@ -666,7 +666,7 @@ hr { margin-top: 40px; }
 
 .login-link>div>span { font-size: 80% }
 
-.country-mark>input {
+.country-mark>input.invisible {
     width: 0; 
     padding:0 !important; 
     border:0; 
@@ -675,7 +675,7 @@ hr { margin-top: 40px; }
 
 
 .country-mark>i {
-    right: 128px !important;
+    right: 410px !important;
     z-index: 100;
 }
 #gender>i {

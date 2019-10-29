@@ -395,7 +395,6 @@ input[type="radio"]:hover + label { cursor: pointer; }
 #ageCalc-btn-box { float: right; }
 
 #btn-ageCalc {
-    float: right;
     position: relative;
     height: 34px;
     padding: 7px 15px;
@@ -406,6 +405,7 @@ input[type="radio"]:hover + label { cursor: pointer; }
     background-color: #fff;
     color: #555;
     z-index: 100;
+    cursor: pointer;
 }
 
 #btn-ageCalc:hover { border: 1px solid #000; }
@@ -652,9 +652,7 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
     vertical-align: bottom;
     transition-duration: 0.3s;
 }
-.price-compare>.price-of-day:first-child {
-    margin-left: 0;
-}
+.price-compare>.price-of-day:first-child { margin-left: 0; }
 
 .price-of-day>label { cursor: pointer; margin-top: 21px; width: 100%}
 .price-of-day div { background-color: #eee; }
@@ -698,7 +696,6 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
     border-right: 1px solid #555;
 }
 .price-of-day>input[type=radio]:checked + label>div:first-of-type { border-top: 1px solid #555; }
-
 
 .sort-div { height: 50px; }
 
@@ -755,7 +752,7 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
     margin-top: 22px;
     margin-bottom: 32px;
 }
-
+.flight-table-schedule input[type=radio].radio3:checked + label:before { border-color: transparent; }
 .flight-table-schedule>.col-two-fifth>.col-two-fifth>div {
     line-height: 50px;
     font-size: 90%;

@@ -264,5 +264,4 @@ const eventHandler = (_window, step2) => {
 
         /* 정보변경 클릭시 */
     }
-
 })();

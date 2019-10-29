@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("../CSS/layout.css") screen;
-
+@import url("../CSS/booking.css") screen;
 
 .last-note {
     padding: 25px 40px 20px;
@@ -62,7 +62,7 @@
 	.article{
 		width:200px;
 		height:100px;
-		background-color:#999;
+		background-color:#67a;
 		color:white;
 		text-align:center;
 		font-size:16px;
@@ -72,7 +72,7 @@
 	#articleNo{
 		width:200px;
 		height:100px;
-		background-color:#999;
+		background-color:#67a;
 		color:white;
 		text-align:center;
 		font-size:16px;
@@ -169,7 +169,7 @@
 	#detailPage{
 		width:1200px;
 		height:1100px;
-		background-color:#1075a3;
+		background-color:#67a;
 		padding:20px;
 	}
 	.seatSelectText{
@@ -589,7 +589,6 @@
 
 .oz{height:200px;background-color:blue}
 
-.row{max-width:1000px;margin:0}
 
 
 
