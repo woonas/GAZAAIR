@@ -30,5 +30,4 @@
             calendar[i-1] = cal_generator('flightDate-' + i);
          document.querySelectorAll(".lightpick").forEach(lightpick => lightpick.classList.add('centeredXY') );
      }
->>>>>>> aa242d3b41836629f80970d2ca543d1cb7663d57
  })();
