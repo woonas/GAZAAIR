@@ -38,7 +38,7 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 			cnt = pstmt.executeUpdate();
 			
 		}catch(Exception e) {
-			System.out.println("íšŒì›ê°€ì… insertRecord ì—ëŸ¬...");
+			System.out.println("È¸¿ø°¡ÀÔ insertRecord ¿¡·¯...");
 			e.printStackTrace();
 		}finally {
 			dbClose();
