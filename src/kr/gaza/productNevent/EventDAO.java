@@ -2,18 +2,17 @@ package kr.gaza.productNevent;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import kr.gaza.home.DBConn;
 
 public class EventDAO extends DBConn implements EventInterface {
 
 	@Override
 	public List<EventVO> getAllRecord() {
-		List<EventVO> lst = new ArrayList<>();
+		List<EventVO> lst = new ArrayList<EventVO>();
 		try {
 			dbConn();
 			
-			String sql = "select * from event order by eventnum desc";
+			String sql = "select * from event order by eventNum desc";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
@@ -29,7 +28,6 @@ public class EventDAO extends DBConn implements EventInterface {
 				lst.add(vo);
 			}
 		}catch(Exception e) {
-			System.out.println("���ڵ� ��ü ����");
 			e.printStackTrace();
 		}finally {
 			dbClose();

@@ -4,7 +4,7 @@
 <%@ page errorPage="/Resources/JSP/error/error.jsp"%>
 <c:if test="${cnt>0 }">
 	<script>
-		location.href= "/projectGAZA/WebContent/Resources/JSP/signup/signup5.do";
+		location.href= "/projectGAZA/Resources/JSP/signup/signup5.do";
 	</script>
 </c:if>
 <c:if test="${cnt<=0 }">

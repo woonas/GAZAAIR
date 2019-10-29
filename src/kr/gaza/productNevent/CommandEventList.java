@@ -17,10 +17,8 @@ public class CommandEventList implements CommandService {
 		
 		EventDAO dao = new EventDAO();
 		
-		//�ش� ������ ���ڵ� ����
 		List<EventVO> lst = dao.getAllRecord();
 		
-		//���������� ������ �����
 		request.setAttribute("lst", lst);
 		return "alliance_Event.jsp";
 	}

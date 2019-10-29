@@ -22,7 +22,6 @@
         .col-half div:first-of-type { 
         	width: 240px;
         	height: 200px;
-        	background-image: url("../../IMG/event/eve8_.jpg");
         	background-size: cover;
         	background-position: center;
         	overflow:hidden;
@@ -69,16 +68,14 @@
     <section class="content">
     <h3>제휴이벤트</h3>
 	<c:set var="i" value="${1}"/>
-	${fn:length(lst)} 
 	<c:forEach var="vo" items="${lst }">
    		<c:if test="${i%2 == 1 }">	
 			<div class="row clearfix product-row">
 		</c:if>
-        <div class="row clearfix product-row">
         	<input type="hidden" value="${vo.eventNum }">
             <div class="col-half">
                 <a href="">
-                	<div class="col-two-fifth" style="background-image: url('<%=request.getContextPath()%>${vo.eventThumnail}')"></div>
+                	<div class="col-two-fifth" style="background-image: url('<%=request.getContextPath()%>${vo.eventThumbnail}')"></div>
                 </a>
                 <div class="col-three-fifth product-detail">
                     <a href=""><p>${vo.eventName }</p></a>
@@ -90,13 +87,10 @@
                     </ul>
                 </div>
             </div>
-        <c:if test="${i%2 == 1}">	
-			<c:set var="i" value="${i+1}"/>
-		</c:if>
 		<c:if test="${i%2 == 0}">	
-			<c:set var="i" value="${i+1}"/>
 			</div>
 		</c:if>
+		<c:set var="i" value="${i+1}"/>
        </c:forEach>
     </section>
      <script src="<%=request.getContextPath()%>/Resources/JS/common.js"></script>

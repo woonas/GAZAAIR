@@ -9,7 +9,6 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
 	@Override
 	public int insertRecord(RegisterVO vo) {
 		int cnt=0;
@@ -17,7 +16,7 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 			dbConn();
 			String sql = "insert into member(memberNum, memberId, memberPwd, memberNameKor, memberNameEng, nation, gender, "
 					+ " tel, altTel, zipcode, addr, detailaddr, email, birthday, agree, directronic, regdate) "
-					+ " values(boardsq.nextVal, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, sysdate)";
+					+ " values(member_sq.nextVal, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, sysdate)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getMemberId());
 			pstmt.setString(2, vo.getMemberPwd());

@@ -69,11 +69,11 @@
                             <label class="col-fifth control-label">성별</label>
                             <div class="col-xs-3" id="gender">
                                 <div class="radio col-xs-5">
-                                    <input type="radio" name="gender" class="radio3" id="male" value="male" checked>
+                                    <input type="radio" name="gender" class="radio3" id="male" value="M" checked>
                                 	<label for="male">남성</label>
                                 </div>
                                 <div class="radio col-xs-5">
-                                    <input type="radio" name="gender" class="radio3" id="female" value="female">
+                                    <input type="radio" name="gender" class="radio3" id="female" value="F">
                                 	<label for="female">여성</label>
                                 </div>
                             </div>
