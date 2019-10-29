@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kr.gaza.home.DBConn;
-import kr.goott.board.BoardVO;
 
 public class EventDAO extends DBConn implements EventInterface {
 
@@ -14,9 +13,8 @@ public class EventDAO extends DBConn implements EventInterface {
 		try {
 			dbConn();
 			
-			String sql = "select * from event order by desc";
+			String sql = "select * from event order by eventnum desc";
 			pstmt = conn.prepareStatement(sql);
-			
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				EventVO vo = new EventVO();
@@ -31,7 +29,7 @@ public class EventDAO extends DBConn implements EventInterface {
 				lst.add(vo);
 			}
 		}catch(Exception e) {
-			System.out.println("·¹ÄÚµå ÀüÃ¼ ¼±ÅÃ");
+			System.out.println("ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½");
 			e.printStackTrace();
 		}finally {
 			dbClose();
@@ -55,24 +53,6 @@ public class EventDAO extends DBConn implements EventInterface {
 	public int eventDelete(int num) {
 		// TODO Auto-generated method stub
 		return 0;
-	}
-
-	@Override
-	public int eventTotalRecord() {
-		int cnt=0;
-		try {
-			dbConn();
-			String sql = "select count(eventnum) from event";
-			pstmt = conn.prepareStatement(sql);
-			
-			rs = pstmt.executeQuery();
-			if(rs.next()) {
-				cnt = rs.getInt(1);
-			}
-		}catch(Exception e) {
-			
-		}finally {dbClose();}
-		return cnt;
 	}
 
 	@Override

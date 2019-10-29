@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.gaza.controller.CommandService;
-import kr.goott.board.BoardDAO;
-import kr.goott.board.BoardVO;
 
 public class CommandEventList implements CommandService {
 
@@ -17,17 +15,13 @@ public class CommandEventList implements CommandService {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		EventVO vo = new EventVO();
 		EventDAO dao = new EventDAO();
-		//ÃÑ ·¹ÄÚµå ¼ö
-		vo.setTotalRecord(dao.eventTotalRecord());
-
-		//ÇØ´ç ÆäÀÌÁö ·¹ÄÚµå ¼±ÅÃ
+		
+		//ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½
 		List<EventVO> lst = dao.getAllRecord();
 		
-		//ºäÆäÀÌÁö·Î °¡Á®°¥ µ¥ÀÌÅÍ
-		request.setAttribute("vo", vo);
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 		request.setAttribute("lst", lst);
-		return "event_List.jsp";
+		return "alliance_Event.jsp";
 	}
 }

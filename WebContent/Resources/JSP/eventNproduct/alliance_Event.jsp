@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +10,6 @@
     <link rel = "stylesheet" href = "<%=request.getContextPath()%>/Resources/CSS/layout.css">
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
     <style>
-
         .product-row { margin: 20px auto; }
         .product-row>div { 
         	width: calc(50% - 5px) !important;
@@ -69,6 +69,7 @@
     <section class="content">
     <h3>제휴이벤트</h3>
 	<c:set var="i" value="${1}"/>
+	${fn:length(lst)} 
 	<c:forEach var="vo" items="${lst }">
    		<c:if test="${i%2 == 1 }">	
 			<div class="row clearfix product-row">

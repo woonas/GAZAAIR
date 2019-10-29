@@ -3,16 +3,14 @@ package kr.gaza.productNevent;
 import java.util.List;
 
 public interface EventInterface {
-	//¸ñ·Ï						
+	//ï¿½ï¿½ï¿½						
 	public List<EventVO> getAllRecord();
-	//±Û¾²±â
+	//ï¿½Û¾ï¿½ï¿½ï¿½
 	public int eventInsert(EventVO vo);
-	//¼öÁ¤
+	//ï¿½ï¿½ï¿½ï¿½
 	public int eventUpdate(EventVO vo);
-	//»èÁ¦
+	//ï¿½ï¿½ï¿½ï¿½
 	public int eventDelete(int num);
-	//ÃÑ·¹ÄÚµå¼ö
-	public int eventTotalRecord();
-	//·¹ÄÚµå ¼±ÅÃ
+	//ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½
 	public void eventSelect(EventVO vo);
 }
