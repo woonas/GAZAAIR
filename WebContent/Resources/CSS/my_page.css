@@ -304,7 +304,10 @@ input[type=text][id^=period-] {
     box-shadow: none;
 }
 
-input[type=text][id^=period-] {}
-
-
+input[type=text][id^=period-] {
+    width: 210px;
+    height: 40px;
+    background: #fff url(../IMG/icon/calendar.jpg) no-repeat 175px 7px;
+    background-size: 20px 20px;
+}
 input[type=text][id^=period-to] { margin-left: 10px; }

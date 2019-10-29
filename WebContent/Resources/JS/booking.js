@@ -65,7 +65,6 @@ const insertAfter = (referenceNode, newNode) => {
 };
 
 /* 조회버튼 클릭시 */
-
 const input_check = () => {
     // session에 여정 정보 저장 + 모든 칸에 값이 들어갔는지 유효성 검사
     const airportFroms = Array.prototype.slice.call(document.querySelectorAll('input[id^=airportFrom]'));

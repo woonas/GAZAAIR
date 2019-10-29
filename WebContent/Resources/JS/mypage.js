@@ -86,6 +86,8 @@
      else if(location.pathname.indexOf('mileage') !== -1) {
          hintWindow('mileage-expiration', true, true, true);
          tabEvent('.tab-menu1');
+         for (let i = 1; i<=6; i++)
+            calendar[i] = cal_generator(str, document.getElementById('flightDate-'+i).value);
      }
  })();
 
