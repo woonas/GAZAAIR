@@ -82,5 +82,10 @@
              });
          }, 1000)
      }
+
+     else if(location.pathname.indexOf('mileage') !== -1) {
+         hintWindow('mileage-expiration', true, true, true);
+         tabEvent('.tab-menu1');
+     }
  })();
 

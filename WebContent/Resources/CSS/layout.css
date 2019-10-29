@@ -108,6 +108,9 @@ h3 + p {
     line-height: 30px;
 }
 
+.text-align-end { text-align: end; }
+.text-align-center { text-align: center; }
+
 /* 각 페이지안의 서브 타이틀 */
 .subtitle>span {
     margin-left: -10px;
