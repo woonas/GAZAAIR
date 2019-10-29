@@ -16,7 +16,7 @@
         .product-row>div:hover>div:first-of-type { opacity: 0.8; }
         .product-row>div:first-of-type { margin-right: 5px; }
         .product-row>div:nth-of-type(2) { margin-left: 5px; }
-        .col-half div:first-of-type { 
+        .col-half a>div:first-of-type {
         	width: 240px;
         	height: 200px;
         	background-image: url("../../IMG/event/eve8_.jpg");
@@ -24,15 +24,18 @@
         	background-position: center;
         	overflow:hidden;
         }
-        
         .seperatorLogo {
             width: 80%;
             margin: 5px auto 10px;
             border: 1px solid #aaa;
             border-top: 0;
         }
-        .product-detail { background-color: rgba(250,250,250,0.9); }
-        .product-detail>p {
+        .product-detail {
+            background-color: rgba(250,250,250,0.9);
+            height: 200px;
+        }
+        .product-detail>a { text-decoration: none; }
+        .product-detail>a>p {
             margin-top: 25px;
             margin-left: 10%;
             font-size: 150%;
@@ -40,7 +43,6 @@
         }
         
         .product-row>div>div:nth-of-type(2) {
-            /*background-color: yellow;*/
             width: 55%;
             height: 200px;
         }
@@ -64,10 +66,10 @@
     <h3>제휴이벤트</h3>
         <div class="row clearfix product-row">
             <div class="col-half">
-                <div class="col-two-fifth">
-                </div>
+                <a href=""><div class="col-two-fifth">
+                </div></a>
                 <div class="col-three-fifth product-detail">
-                    <p>푸꾸옥으로 떠나요!</p>
+                    <a href=""><p>푸꾸옥으로 떠나요!</p></a>
                     <hr class="seperatorLogo">
                     <ul class="list-type1">
                         <li>'풍요로운 땅' 푸꾸옥으로</li>
