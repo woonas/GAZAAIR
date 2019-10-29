@@ -106,12 +106,12 @@ const verification = () => {
                 $(ipin_window + ' .success').fadeIn();
             },3100);
         }
-    });
+    });  
 };
 
 //국가선택
 function onChangeCallback(ctr){
-    document.getElementById('country').value = ctr;
+    document.getElementById('country').value = document.querySelector('.niceCountryInputMenuDefaultText span').innerText;
 }
 
 //signup3에서 필요정보가 모두 입력되었는지 확인
@@ -131,7 +131,7 @@ const eventHandler = (_window, step2) => {
     _window.addClass('step1');
     setTimeout(function(){
         _window.addClass(step2)
-    },300);  //
+    },300);  // 
     setTimeout(function(){
         authent.show().animate({right:-320},{easing : 'easeOutQuint' ,duration: 600, queue: false });
         authent.animate({opacity: 1},{duration: 200, queue: false }).addClass('visible');
@@ -142,7 +142,7 @@ const eventHandler = (_window, step2) => {
         _window.removeClass(step2)
     },2500);
     setTimeout(function(){
-        //location.href= '/projectGAZA/Resources/JSP/signup/signup4.do';
+        location.href= 'signup4.html';
     }, 4500);
 };
 
@@ -151,7 +151,7 @@ const eventHandler = (_window, step2) => {
     /* signup1 */
     if(location.pathname.indexOf('signup1') !== -1)
         hintWindow('underage-hint', true, true, true); //팝업창 이벤트
-
+    
     /* signup2 */
     else if(location.pathname.indexOf('signup2') !== -1) {
         const check_all = document.getElementById('agree_all');
@@ -163,7 +163,7 @@ const eventHandler = (_window, step2) => {
                 box.checked = check_all.checked;
             });
         });
-
+        
         //필수 체크 항목이 체크되었는지 확인
         const nextBtn = document.querySelector('.right');
         nextBtn.addEventListener('click', () => {
@@ -172,22 +172,22 @@ const eventHandler = (_window, step2) => {
                 alert("필수 입력 항목에 대하여 모두 동의해주시기 바랍니다.")
         });
     }
-
+    
     /* signup3 */
-    else if(location.pathname.indexOf('signup3') !== -1)
-        verification();
-
+    else if(location.pathname.indexOf('signup3') !== -1) 
+        verification(); 
+    
     /* signup4 */
     else if(location.pathname.indexOf('signup4') !== -1) {
         hintWindow('btn-dupCheck', true, true, true); //팝업창 이벤트
 
         /* 달력 */
         cal_generator('birthdate', new Date('1950', '01' - 1), 1);
-
+        
         new NiceCountryInput($(".countryPicker")).init();
         const temp = document.querySelector('.warning');
         document.querySelector('.login-link').addEventListener('click', () => temp.classList.remove('hidden'));
-
+        
         /*아이디 중복체크*/
         const id = document.getElementById('username');
         const insideId = document.getElementById('txtID');
@@ -196,7 +196,7 @@ const eventHandler = (_window, step2) => {
             document.querySelector('.result-wrapper').classList.add('hidden');
             insideId.value = id.value;
         });
-
+        
         document.getElementById('btn-dupCheck2').addEventListener('click', () => {
             if (insideId.value.length !== 0) {
                 result = '사용할 수 있습니다.'; // 나중에 DB작업하고 결과값에 따라 사용가능불가능 바꾸기
@@ -207,8 +207,8 @@ const eventHandler = (_window, step2) => {
                 alert('아이디를 입력해주십시오.');
             }
         });
-
-        document.getElementById('btn-use').addEventListener('click', () => {
+        
+        document.getElementById('btn-use').addEventListener('click', () => { 
             if(result.length ===0) alert('중복검사를 해주십시오.');
             else if(result === "사용할 수 있습니다.") {
                 id.value = insideId.value;
@@ -217,24 +217,24 @@ const eventHandler = (_window, step2) => {
                 result = '';
             }
         });
-
+        
         /*우편번호 검사*/
         document.getElementById('btn-postalSearch').addEventListener('click', addrSearch);
     }
-
+    
     /* idsearch */
     else if(location.pathname.indexOf('idsearch') !== -1) {
         verification();
         tabEvent('.tab-menu1');
     }
-
+    
     /* pwsearch */
     else if(location.pathname.indexOf('pwsearch') !== -1) {
         verification();
         tabEvent('.tab-menu1');
     }
-
-    /* login */
+    
+    /* login */ 
     else if(location.pathname.indexOf('login') !== -1) {
         //달력
         let calendar_boardingdate = cal_generator('boardingdate', new Date());
@@ -262,6 +262,45 @@ const eventHandler = (_window, step2) => {
             if (isEditing.checked)  temp.classList.remove('hidden')
         });
 
+        /* 페이지 로딩시 필요한 input disabled 넣기*/
+        const addrBtn = document.getElementById('btn-postalSearch');
+        const countrySelctor = document.querySelector('.countryPicker');
+        const countryInput = document.getElementById('country');
+        const phone_all = document.getElementById('phone-all');
+        const number_all = document.getElementById('number-all');
+        const addr_all = document.getElementById('addr-all');
+        const event_ul = document.querySelector('.event-label + div>div:last-of-type');
+        const inputs = document.querySelectorAll('.form-group div[class^=col]>input:not(#edit)');
+        inputs.forEach(input => input.disabled = 'true' );
+        addrBtn.disabled = 'true';
+        countryInput.classList.remove('invisible');
+        countrySelctor.style.display = 'none';
+        event_ul.style.display = 'none';
+
         /* 정보변경 클릭시 */
+        isEditing.addEventListener('change', () => {
+            inputs.forEach(input => input.disabled = !isEditing.checked );
+            addrBtn.disabled = !isEditing.checked;
+            document.querySelectorAll('.not-required + div>input:not([type=radio])').forEach(input => input.disabled = 'true' );
+            countryInput.classList.remove('invisible');
+            countrySelctor.style.display = 'none';
+            event_ul.style.display = 'none';
+            phone_all.classList.remove('hidden');
+            number_all.classList.remove('hidden');
+            addr_all.classList.remove('hidden');
+            phone_all.previousElementSibling.classList.add('hidden');
+            number_all.previousElementSibling.classList.add('hidden');
+
+            if (isEditing.checked) {
+                countryInput.classList.add('invisible');
+                countrySelctor.style.display = 'block';
+                event_ul.style.display = 'block';
+                phone_all.classList.add('hidden');
+                number_all.classList.add('hidden');
+                phone_all.previousElementSibling.classList.remove('hidden');
+                number_all.previousElementSibling.classList.remove('hidden');
+            }
+        })
     }
+    
 })();

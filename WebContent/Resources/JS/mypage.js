@@ -87,6 +87,7 @@
          hintWindow('mileage-expiration', true, true, true);
          tabEvent('.tab-menu1');
          for (let i = 1; i<=6; i++)
-            calendar[i] = cal_generator(str, document.getElementById('flightDate-'+i).value);
+            calendar[i-1] = cal_generator('flightDate-' + i);
+         document.querySelectorAll(".lightpick").forEach(lightpick => lightpick.classList.add('centeredXY') );
      }
  })();

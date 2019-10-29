@@ -298,16 +298,18 @@ input[type=button][id^=btn-search] {
     float: right;
 }
 
-input[type=text][id^=period-] {
+input[type=text][id^=flightDate-] {
     margin-right: 10px;
     padding: 7px;
     box-shadow: none;
 }
 
-input[type=text][id^=period-] {
+input[type=text][id^=flightDate-] {
     width: 210px;
     height: 40px;
     background: #fff url(../IMG/icon/calendar.jpg) no-repeat 175px 7px;
     background-size: 20px 20px;
 }
-input[type=text][id^=period-to] { margin-left: 10px; }
+input[type=text][id^=flightDate-2],
+input[type=text][id^=flightDate-4],
+input[type=text][id^=flightDate-6] { margin-left: 10px; }
