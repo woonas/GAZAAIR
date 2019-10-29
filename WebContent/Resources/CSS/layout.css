@@ -69,7 +69,6 @@ section.content {
     position: absolute !important;
     top: 50% !important;
     transform: translateY(-50%);
-}
 
 .centeredXY {
     position: fixed !important;
