@@ -678,8 +678,8 @@ hr { margin-top: 40px; }
     z-index: 100;
 }
 #gender>i {
-    right: 85px !important;
-    top: 3px !important;
+    right: 50px !important;
+    top: 2px !important;
 }
 
 /* country picker */

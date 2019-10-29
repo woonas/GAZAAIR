@@ -20,8 +20,6 @@ public class RegisterVO {
 	private String addr;
 	private String detailAddr;
 	private String email;
-	private String emailId;
-	private String emailDomain;
 	private String birthDay;
 	private String agree;
 	private String directronic;
@@ -151,7 +149,7 @@ public class RegisterVO {
 	public String getBirthDay() {
 		return birthDay;
 	}
-	public void setBirthday(String birthDay) {
+	public void setBirthDay(String birthDay) {
 		this.birthDay = birthDay;
 	}
 	public String getAgree() {
