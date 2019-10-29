@@ -10,7 +10,7 @@
     <head>
         <meta charset="UTF-8">
         <title>로그인</title>
-        <link rel="stylesheet" href="<%=path %>/Resources/CSS/signup.css">
+        <link rel="stylesheet" href="<%=path %>/Resources/CSS/account.css">
         <!-- Font Awesome CDN -->
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
@@ -163,6 +163,6 @@
         <script src="<%=path %>/Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
         <script src="<%=path %>/Resources/JS/common.js"></script>
         <script src="<%=path %>/Resources/JS/airportpicker.js"></script>
-        <script src="<%=path %>/Resources/JS/signup.js"></script>
+        <script src="<%=path %>/Resources/JS/account.js"></script>
     </body>
 </html>

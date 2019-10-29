@@ -10,7 +10,7 @@
     <head>
         <meta charset="UTF-8">
         <title>회원가입 - 본인인증</title>
-        <link rel="stylesheet" href="<%=path %>/Resources/CSS/signup.css">
+        <link rel="stylesheet" href="<%=path %>/Resources/CSS/account.css">
         <!-- Font Awesome CDN -->
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
@@ -173,7 +173,15 @@
                             <div>유효시간 &nbsp;&nbsp;<span class="font-red" id="timer">6 : 00</span></div>
                         </div>
                     </div>
-                    <input type="submit" class="blueBtn full-line" value="확인">    
+                    <form method="get" action="<%=path %>/Resources/JSP/signup/signup4.do">
+	                    <input type="hidden" name="agree_all" value="${agree_all }"/>
+	                    <input type="hidden" name="agree_homepageUse" value="${agree_homepageUse }"/>
+	                    <input type="hidden" name="agree_personalCollection" value="${agree_personalCollection }"/>
+	                    <input type="hidden" name="agree_personalTransferToAbroad" value="${agree_personalTransferToAbroad }"/>
+	                    <input type="hidden" name="agree_personalCollectionOption" value="${agree_personalCollectionOption }"/>
+	                    <input type="hidden" name="agree_personalProvide" value="${agree_personalProvide }"/>
+	                    <input type="submit" class="blueBtn full-line" value="확인">
+                    </form>    
                 </div>
 
 
@@ -217,6 +225,6 @@
 
 
         <script src="<%=path %>/Resources/JS/common.js"></script>
-        <script src="<%=path %>/Resources/JS/signup.js"></script>
+        <script src="<%=path %>/Resources/JS/account.js"></script>
     </body>
 </html>

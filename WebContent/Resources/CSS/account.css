@@ -15,7 +15,7 @@
 
 .step li { 
     flex: 1; 
-    position: relative;
+    position: relative; 
     padding: 22px 0; 
     font-size: 80%;
     text-align: center; 
@@ -116,8 +116,9 @@
 }
 
 #underage-hint i {
-    font-size: 75%;
-    padding-top: 3px;
+    font-size: 89%;
+    padding-top: 2px;
+    vertical-align: 0;
 }
 
 /* ----------------------------------------------- */
@@ -520,8 +521,10 @@ fieldset>.form-group {
 
 fieldset>.form-group:last-of-type { border-bottom: 1px solid #aaa; }
 
+.form-group>.col-xs-12 { text-align: center; }
 .form-group>label:first-of-type { padding-top: 10px; }
-.form-group>label:first-of-type:after {  
+.form-group>label:first-of-type:after,
+.form-group>label.not-required + div:before {
     display: inline-block;
     content: '';
     width: 1px;
@@ -531,19 +534,23 @@ fieldset>.form-group:last-of-type { border-bottom: 1px solid #aaa; }
     position: absolute;    
 }
 
-.form-group>label:first-of-type:not(.event-label):after {  
+.form-group>label:first-of-type:not(.event-label):after {
     top: -15px;
     left: 200px;
 }
 
+.form-group>label.not-required:after { display: none; }
+.form-group>label.not-required + div:before {
+    margin-top: -15px;
+    margin-left: -41px;
+}
 .event-label:after {
     position: relative !important;
     left: 41px;
     margin-top: -26px;
 }
 
-.form-group input[type=checkbox], 
-.form-group input[type=radio] { 
+.form-group input[type=checkbox] {
     display: block;
     margin-right: 10px;
 }
@@ -567,15 +574,15 @@ fieldset>.form-group:last-of-type { border-bottom: 1px solid #aaa; }
 
 .help-block { position: absolute; }
 
-.form-group .grayBtn,
+.form-group .whiteBtn,
 .form-group .blueBtn {
     padding: 6px 20px;
     border-radius: 0;
 }
+.form-group .blueBtn:not(.btn) { font-size: 90%; }
 
-.form-group .grayBtn { font-size: 90%; }
-
-.form-group .blueBtn {
+.form-group .btn.blueBtn,
+.form-group .btn.whiteBtn {
     margin-top: 40px;
     width: 160px;
     height: 60px;
@@ -666,8 +673,15 @@ hr { margin-top: 40px; }
     position: absolute;
 }
 
-.country-mark>i { margin-right: 50px; }
-#gender>i { margin-right: 60px; }
+
+.country-mark>i {
+    right: 128px !important;
+    z-index: 100;
+}
+#gender>i {
+    right: 85px !important;
+    top: 3px !important;
+}
 
 /* country picker */
 .niceCountryInputMenuDropdownContent,
@@ -688,7 +702,7 @@ hr { margin-top: 40px; }
 .countryPicker { z-index:  100; }
 .niceCountryInputMenu {
     display: block;
-    width: 340px;
+    width: 346px;
     height: 34px;
     padding: 6px 12px;
     font-size: 14px;
@@ -700,7 +714,13 @@ hr { margin-top: 40px; }
     position: absolute;
 }
 
-.niceCountryInputMenuDropdown { line-height: 17px; }
+.niceCountryInputMenuDropdown {
+    line-height: 17px;
+    right: -8px;
+    color: #575757;
+    font-size: 70%;
+}
+.niceCountryInputMenuDropdown>span { font-size: 150% !important; }
 
 /* 달력 */
 
@@ -723,7 +743,7 @@ hr { margin-top: 40px; }
 #personalInfo #cal_status {
     font-size: 150% !important;
     width: 200px !important;
-    margin-right: 225px !important;
+    margin-right: 430px !important;
 }
 
 #personalInfo .lightpick__day-of-the-week {
@@ -826,11 +846,11 @@ hr { margin-top: 40px; }
 .welcome-box input[type=button] {
     margin-top: 20px;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 0;
     font-size: 100%;
 }
 
-
+.warning { margin-top: 10px; }
 
 /* ----------------------------------------------- */
 /* 아이디찾기 idsearch + 비번찾기 pwsearch */
@@ -948,7 +968,7 @@ hr { margin-top: 40px; }
 
 
 .logo { text-align: center; }
-.logo img {
+.logo>img {
     width: 90%;
     height: auto;
 }
@@ -1064,14 +1084,6 @@ hr { margin-top: 40px; }
 #airportTo-1 {
     background: url(../IMG/icon/marker_black.png) no-repeat 285px 10px;
     background-size: 14px 20px;
-}
-
-
-input[name=birthdate]:read-only { background-color: #fff; }
-input[name=birthdate] {
-    background: url(../IMG/icon/calendar.jpg) no-repeat 10px 5px;
-    background-size: 20px 20px;
-    padding-left: 40px;
 }
 
 @keyframes slideIn {

@@ -30,7 +30,6 @@
 <body>
 <%@ include file="Resources/JSP/nav.jspf" %>
 <div class="overlay"></div>
-<section class="content">
 <section id="main">
 	<!-- 슬라이더 컨트롤러 -->
 	<div class="slideControler">
@@ -59,7 +58,7 @@
 				<input type = "text" id="airportTo-1" name="airportTo-1" class="open-airport-picker tripLoc" readonly placeholder="도착지">
 			</div>
 			<div class="tripDate">
-				<input type="text" id="toDate" name="toDate" placeholder="도착일" readonly>
+				<input type="text" id="toDate" name="toDate" placeholder="귀국일" readonly>
 			</div>
 		</div>
 		<div class="reserveBox">
@@ -73,8 +72,8 @@
 					<label for="single-way" class="radioLabel">편도</label>
 				</div>
 				<div class="col-third">
-					<input type="radio" class="radio1 lastRadio" name="trip-type" value="multi-way" id="multi-way">
-					<label for="multi-way"  class="radioLabel">다구간</label>
+					<input type="radio" class="radio1" name="trip-type" value="multi-way" id="multi-way">
+					<label for="multi-way"  class="radioLabel lastRadio">다구간</label>
 				</div>
 			</div>
 			<div id="passengerWrap">
@@ -296,6 +295,7 @@
 		</div>
 	</div>
 </section>
+<section class="content">
 </section>
            <!--탑승객 팝업-->
             <div class="pop-up-window-type1" id="num-of-passengers-window">

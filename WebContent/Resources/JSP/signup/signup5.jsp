@@ -10,7 +10,7 @@
     <head>
         <meta charset="UTF-8">
         <title>회원가입 - 회원가입완료</title>
-        <link rel="stylesheet" href="../../CSS/signup.css">
+        <link rel="stylesheet" href="<%=path %>/Resources/CSS/account.css">
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
     </head>
     <body>
@@ -28,11 +28,11 @@
             <div class="welcome-box">
                 <p>회원가입 완료</p>
                 <p>정상적으로 회원가입을 마쳤습니다.<br><span>앞으로 다양한 혜택을 누리실 수 있도록 노력하겠습니다.<br>감사합니다.</span></p>
-                <a href="../index.html"><input type="button" class="blueBtn" value="홈으로 이동"></a>
+                <a href="<%=path %>/"><input type="button" class="blueBtn" value="홈으로 이동"></a>
             </div>
             
         </section>
 
-        <script src="../../JS/common.js"></script>
+        <script src="<%=path %>/Resources/JS/account.js"></script>
     </body>
 </html>

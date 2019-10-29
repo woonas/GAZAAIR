@@ -22,7 +22,7 @@
         <script src="<%=path %>/Vendor/Filterable-Country-Picker-niceCountryInput/niceCountryInput.js"></script>
 <!-- Font Awesome CDN -->
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="<%=path %>/Resources/CSS/signup.css">
+        <link rel="stylesheet" href="<%=path %>/Resources/CSS/account.css">
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 <!-- 다음/카카오 주소검색 -->         
         <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -288,6 +288,6 @@
 
         <script src="<%=path %>/Resources/JS/validator.js"></script>
         <script src="<%=path %>/Resources/JS/common.js"></script>
-        <script src="<%=path %>/Resources/JS/signup.js"></script>
+        <script src="<%=path %>/Resources/JS/account.js"></script>
     </body>
 </html>
