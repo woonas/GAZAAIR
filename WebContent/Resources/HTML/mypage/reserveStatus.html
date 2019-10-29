@@ -19,39 +19,46 @@
 			<div>
 				<h3>예약 현황 상세 페이지</h3>
 			</div>
-			<hr />
-			<div id="reserveContent">
-				<div id="daTitle">
-					<h2>ICN 서울/인천 > JFK 뉴욕/존 F 케네디</h2>
-				</div>
-				<div id="standard">(2019.09.07 20:14 한국시간 기준) 출발 다음날 / 출발 다다음날</div>
-				<div id="reserveTitle">
-					<div class="as">편명</div>
-					<div class="as">상태</div>
-					<div class="time">출발 시간</div>
-					<div class="time">도착 시간</div>
-					<div class="asReserve">OZGO1234</div>
-					<div class="asReserve">상태</div>
-					<div class="dasc">출발 스케쥴 10:20</div>
-					<div class="dasc">도착 스케쥴10:20</div>
-					<div class="daexpect">출발 예정11:35</div>
-					<div class="daexpect">도착 예정 11:35</div>
-				</div>
-				<div id="dr">
-					<div>
-						<input type="button" value="환불" class="blueBtn" id="returnBtn" />
-					</div>
-				</div>
-				<ul class="list-type2 last-note bg-gray6">
-					<li class="list-inside-title">안내 사항</li>
-					<li>출발 완료 시각은 항공기가 비행을 위해 주기장을 출발한 시간을 의미하며, 실제 항공기 이륙시간과는 공항
-						상황에 따라 15~20분 가량 차이가 있습니다.</li>
-					<li>도착 완료는 항공기 착륙 후 주기장에 도착하여 하기 준비가 된 상태로 실제 활주로 착륙 후 15~20분
-						가량 소요됩니다.</li>
-					<li>도착이 30분 이상 지연되거나 항공편이 결항될 경우 출도착 조회를 통해 확인서를 출력하실 수 있습니다.</li>
-				</ul>
-
-			</div>
+			
+					<p class="flight-confirm-section-title">여정</p>
+        <div class="trip-table table-form3">
+            <div class="row clearfix table-row-title">
+                <div class="col-eighth">여정</div>
+                <div class="col-three-eighth">출도착시간</div>
+                <div class="col-eighth">편명/기종</div>
+                <div class="col-eighth">운임할인</div>
+                <div class="col-eighth">상태</div>
+                <div class="col-eighth">환불</div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-eighth trip-num">
+                    <div class="font-brown">01</div>
+                    <div>2019.09.14(토)</div>
+                </div>
+                <div class="col-three-eighth trip-detail">
+                    <div class="col-fourth">
+                        <div>서울 / 김포</div>
+                        <div>06:05</div>
+                    </div>
+                    <div class="col-two-fourth">
+                        <img src = "../../IMG/icon/flight-table2.png" alt = "">
+                    </div>
+                    <div class="col-fourth">
+                        <div>제주</div>
+                        <div>07:15</div>
+                    </div>
+                </div>
+                <div class="col-eighth trip-airline"><div>OZ8901</div></div>
+                <div class="col-eighth trip-type"><div>정상운임</div></div>
+                <div class="col-eighth trip-refund">
+                    <div class="O"></div>
+                    수수료없음
+                </div>
+                <div class="col-eighth">
+                    <div><input type="button" value="환불" class="blueBtn" id="returnBtn" /></div>
+                  </div>
+            </div>
+        </div>
 			<div>
 				<h3>탑승자 정보</h3>
 			</div>
@@ -158,121 +165,13 @@
 				</div>
 			</div>
 <!--  --> <!--  -->		<!--  -->
-			<p class="flight-confirm-section-title">여정</p>
-        <div class="trip-table table-form3">
-            <div class="row clearfix table-row-title">
-                <div class="col-eighth">여정</div>
-                <div class="col-three-eighth">출도착시간</div>
-                <div class="col-eighth">편명/기종</div>
-                <div class="col-eighth">운임할인</div>
-                <div class="col-eighth">예약변경</div>
-                <div class="col-eighth">환불</div>
-            </div>
-            <div class="row clearfix">
-                <div class="col-eighth trip-num">
-                    <div class="font-brown">01</div>
-                    <div>2019.09.14(토)</div>
-                </div>
-                <div class="col-three-eighth trip-detail">
-                    <div class="col-fourth">
-                        <div>서울 / 김포</div>
-                        <div>06:05</div>
-                    </div>
-                    <div class="col-two-fourth">
-                        <img src = "../../IMG/icon/flight-table2.png" alt = "">
-                    </div>
-                    <div class="col-fourth">
-                        <div>제주</div>
-                        <div>07:15</div>
-                    </div>
-                </div>
-                <div class="col-eighth trip-airline"><div>OZ8901</div></div>
-                <div class="col-eighth trip-type"><div>정상운임</div></div>
-                <div class="col-eighth trip-refund">
-                    <div class="O"></div>
-                    수수료없음
-                </div>
-                <div class="col-eighth">
-                    <div class="X"></div>
-                    위약금있음
-                </div>
-            </div>
-            <div class="row clearfix">
-                <div class="col-eighth trip-num">
-                    <div class="font-brown">02</div>
-                    <div>2019.09.14(토)</div>
-                </div>
-                <div class="col-three-eighth trip-detail">
-                    <div class="col-fourth">
-                        <div>서울 / 김포</div>
-                        <div>06:05</div>
-                    </div>
-                    <div class="col-two-fourth">
-                        <img src = "../../IMG/icon/flight-table2.png" alt = "">
-                    </div>
-                    <div class="col-fourth">
-                        <div>제주</div>
-                        <div>07:15</div>
-                    </div>
-                </div>
-                <div class="col-eighth trip-airline"><div>OZ8901</div></div>
-                <div class="col-eighth trip-type"><div>정상운임</div></div>
-                <div class="col-eighth trip-refund">
-                    <div class="O"></div>
-                    수수료없음
-                </div>
-                <div class="col-eighth">
-                    <div class="X"></div>
-                    위약금있음
-                </div>
-            </div>
-        </div>
-        
-        <p class="flight-confirm-section-title">가격</p>
+		<p class="flight-confirm-section-title">가격</p>
         <div class="flight-confirm-section">
             <div class="bag-content table-form3">
                 <div class="row clearfix table-row-title">
                     <div class="col-two-fourth">여정</div>
                     <div class="col-fourth">구분</div>
                     <div class="col-fourth">금액 <span class="currency">(KRW)</span></div>
-                </div>
-                <div class="row clearfix">
-                    <div class="col-two-fourth trip">
-                        <div class="col-tenth" style="text-align: left; margin-left: -20px; line-height: 222px">
-                            <i class="fas fa-plane-departure"></i>
-                        </div>
-                        <div class="col-fourth">
-                            <div class="airport-name">서울/김포</div>
-                            <div class="flight-date">2019.09.14(토)</div>
-                            <div class="flight-time">06:05</div>
-                        </div>
-                        <div class="col-two-fifth">
-                            <div class="flight-image">
-                                <img src = "../../IMG/icon/flight-table2.png" alt = "">
-                            </div>
-                        </div>
-                        <div class="col-fourth">
-                            <div class="airport-name">제주</div>
-                            <div class="flight-date">2019.09.14(토)</div>
-                            <div class="flight-time">07:15</div>
-                        </div>
-                    </div>
-                    <div class="col-fourth detailed-price">
-                        <div>항공권 운임</div>
-                        <div>세금 및 제반요금</div>
-                        <div>유류할증료</div>
-                        <div>구간별 개인할인</div>
-                        <div>승객</div>
-                        <div>합계</div>
-                    </div>
-                    <div class="col-fourth detailed-price">
-                        <div>120,000</div>
-                        <div>4,000</div>
-                        <div>5,500</div>
-                        <div>-</div>
-                        <div>성인 1</div>
-                        <div>129,500</div>
-                    </div>
                 </div>
                 <div class="row clearfix">
                     <div class="col-two-fourth trip">
@@ -319,7 +218,7 @@
                         총 결제금액
                     </div>
                      <div class="col-fourth font-blue4">
-                         256,000 원
+                         129,500 원
                      </div>
                 </div>
             </div>
@@ -384,68 +283,8 @@
                 (홈페이지에서 환불 시 환불 수수료/예약부도위약금 부과,예약센터나 지점,공항 카운터에서 환불 시 환불 수수료/예약부도위약금 면제) </div>
             </div>
         </div>
-        <div id="regulation-2">
-            <p><span class="font-blue4">02</span> 서울/김포 <span>→</span> 제주</p>
-            <input type="checkbox" class="hidden" id="fold-2" checked>
-            <label for="fold-2"><img src = "../../IMG/icon/underArrow.png" alt = ""></label>
-            <div>
-                <h4>· 운임종류</h4>
-                <div>정상운임 (Y)</div>
-                
-                <h4>· 개인할인</h4>
-                <div>가능</div>
-                
-                <h4>· 소아할인</h4>
-                <div>가능</div>
-                
-                <h4>· 마일리지 적립</h4>
-                <div>적립가능(단,장애인소아 등 50%이상 개인할인적용 시 적립 불가)</div>
-                
-                <h4>· 구매 조건</h4>
-                <div>가자에항공 홈페이지(모바일)에서 구매 가능 (예약센터,지점,공항 카운터 불가) <br>
-                왕복여정의 경우 최초 발권 시의 여정 순서대로 사용 원칙 <br>
-                ※ 첫번째 여정 미사용시 두번째 여정 사용불가</div>
-                
-                <h4>· 항공권 유효기간</h4>
-                <div>발행일로 부터 1년 </div>
-                
-                <h4>· 여정 변경</h4>
-                <div>가능왕복여정 중 사용후 남은 여정 변경 불가 </div>
-                
-                <h4>· 탑승 후 남은 여정 환불</h4>
-                <div>왕복 여정 중 사용하고 남은 여정 환불 가능 </div>
-                
-                <h4>· 부분 변경</h4>
-                <div>홈페이지/모바일에서 2명 이상 동일한 예약 번호로 구매하신 경우 일부 <br>
-                 인원만 변경 및 환불 불가(일부 인원 예약 변경 및 환불 원할 경우 예약센터 1588-8000번문의)</div>
-                
-                <h4>· 부분 환불</h4>
-                <div>특가운임이 포함된 왕복 항공권 부분 환불 불가 <br>
-                특가운임 포함안된 미사용 항공권 왕복여정의 부분환불 수수료 미징수 (단, 부분환불 후 추가 환불시 미징수 된 환불수수료 소급적용)</div>
-                
-                <h4>· 환불 수수료</h4>
-                <div>편도당 2,000원<br>
-                유효기간 만료일 이내 환불가능 <br>
-                최초 발행된 항공권 및 각 재발행된 항공권 중 하위클래스 기준의 환불수수료 징수 (계좌이체 결제시 환불 수수료 부과)</div>
-                
-                <h4>· 예약부도위약금</h4>
-                <div>편도당 8,000원</div>
-                
-                <h4 class="rules_content">· 기타</h4>
-                <div>기상이나 항공사 사정으로 결항 시 미 탑승 항공권 자동 환불 불가 <br>
-                (홈페이지에서 환불 시 환불 수수료/예약부도위약금 부과,예약센터나 지점,공항 카운터에서 환불 시 환불 수수료/예약부도위약금 면제) </div>
-            </div>
-        </div>
         
-			
-			
-			
-			
-			
-			
-			
-			
-			<div id="modal"></div>
+        <div id="modal"></div>
 			<!-- 좌석 팝업 -->
 			<div id="seatsSelect">
 				<div style="overflow: hidden">
@@ -774,6 +613,11 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<input type="hidden" value="Y">
+		<div class="button-wrapper">
+			<input type="button" value="결제하기" class="blueBtn reservePayment">
+			<input type="button" value="취소" class="whiteBtn reserveCancle">
 		</div>
 	</section>
 
