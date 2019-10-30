@@ -247,10 +247,6 @@
                             <a href="signup5.html"><button type="submit" class="btn blueBtn">회원가입</button></a>
                         </div>
                     </div>
-                    <input type="hidden" name="agree_all" value="${agree_all }"/>
-                    <input type="hidden" name="agree_homepageUse" value="${agree_homepageUse }"/>
-                    <input type="hidden" name="agree_personalCollection" value="${agree_personalCollection }"/>
-                    <input type="hidden" name="agree_personalTransferToAbroad" value="${agree_personalTransferToAbroad }"/>
                     <input type="hidden" name="agree_personalCollectionOption" value="${agree_personalCollectionOption }"/>
                     <input type="hidden" name="agree_personalProvide" value="${agree_personalProvide }"/>
                 </form>

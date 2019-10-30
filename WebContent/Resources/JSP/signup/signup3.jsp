@@ -205,10 +205,6 @@
                     <p>회원가입을 계속 진행해주세요.</p>
                 </div>
             </div>
-           		<input type="hidden" id="agree_all" name="agree_all" value="${agree_all }"/>
-                <input type="hidden" id="agree_homepageUse" name="agree_homepageUse" value="${agree_homepageUse }"/>
-                <input type="hidden" id="agree_personalCollection" name="agree_personalCollection" value="${agree_personalCollection }"/>
-                <input type="hidden" id="agree_personalTransferToAbroad" name="agree_personalTransferToAbroad" value="${agree_personalTransferToAbroad }"/>
                 <input type="hidden" id="agree_personalCollectionOption" name="agree_personalCollectionOption" value="${agree_personalCollectionOption }"/>
                 <input type="hidden" id="agree_personalProvide" name="agree_personalProvide" value="${agree_personalProvide }"/>
 			

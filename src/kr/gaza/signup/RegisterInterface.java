@@ -1,15 +1,15 @@
 package kr.gaza.signup;
 
 public interface RegisterInterface {
-	//ì•„ì´ë”” ì¡°íšŒ
+	//¾ÆÀÌµğ Áßº¹Ã¼Å©
 	public boolean idCheck(String userId);
-	//íšŒì›ë“±ë¡
+	//È¸¿ø°¡ÀÔ
 	public int insertRecord(RegisterVO vo);
-	//ë¡œê·¸ì¸
+	//·Î±×ÀÎ
 	public void login(RegisterVO vo);
-	//íšŒì›ì •ë³´ ê°€ì ¸ì˜¤ê¸°
+	//È¸¿øÁ¤º¸°¡Á®¿À±â
 	public void getRegister(RegisterVO vo);
-	//íšŒì›ì •ë³´ ìˆ˜ì •
+	//È¸¿øÁ¤º¸¼öÁ¤
 	public int updateRecord(RegisterVO vo);
 	
 }

@@ -127,12 +127,8 @@ const input_check = (name) => {
 //signup3에서 인증성공 이펙트
 const eventHandler = (_window, step2) => {
     const authent = $('.authent');
-    var agree1 = $("#agree_all").val();
-    var agree2 = $("#agree_homepageUse").val();
-    var agree3 = $("#agree_personalCollection").val();
-    var agree4 = $("#agree_personalTransferToAbroad").val();
-    var agree5 = $("#agree_personalCollectionOption").val();
-    var agree6 = $("#agree_personalProvide").val();
+    var agree1 = $("#agree_personalCollectionOption").val();
+    var agree2 = $("#agree_personalProvide").val();
     
     _window.addClass('step1');
     setTimeout(function(){
@@ -148,9 +144,7 @@ const eventHandler = (_window, step2) => {
         _window.removeClass(step2)
     },2500);
     setTimeout(function(){
-        location.href= '/projectGAZA/Resources/JSP/signup/signup4.do?agree_all='+agree1+'&agree_homepageUse='+agree2+
-        				'&agree_personalCollection='+agree3+'&agree_personalTransferToabroad='+agree4+'&agree_personalCollectionOption='+agree5+
-        				'&agree_personalProvide='+agree6;
+        location.href= '/projectGAZA/Resources/JSP/signup/signup4.do?agree_personalCollectionOption='+agree1+'&agree_personalProvide='+agree2;
     }, 4500);
 };
 
