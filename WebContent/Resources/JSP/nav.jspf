@@ -5,14 +5,6 @@
 %>
 <script>
 $(function(){
-	//메뉴 호버시 패널생성/ 없애기
-	$("#mainMenu>ul>li").hover(function(){
-		$("#subMenu").css("height", "220px");
-		$("#menuBg").css("height", "220px");
-	}, function(){
-		$("#subMenu").css("height", "0");
-		$("#menuBg").css("height", "0");
-	});
 	
 	//탑버튼 누르면 부드럽게 스크롤하기
 	$('.topBtn>a').click(function () {
@@ -69,6 +61,7 @@ $(function(){
 								<li><a href="<%=path %>/Resources/HTML/AccountInfo.html">회원정보</a></li>
 								<li><a href="<%=path %>/Resources/HTML/reserveStatus.html">예약 현황</a></li>
 								<li><a href="<%=path %>/Resources/HTML/mypage_Main.html">마이 홈</a></li>
+								<li><a href="<%=path %>/Resources/JSP/signup/signup1.do">회원가입</a></li>
 							</ul>
 						</li>
 					</ul>

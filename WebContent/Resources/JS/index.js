@@ -221,7 +221,48 @@ $(function(){
 			document.getElementById('num-of-passengers-window').style.display = 'none'
 		});
 
-	
+		overlay.addEventListener('click', () => {
+            if(picker) picker.destroy();
+            picker = new Lightpick({
+    		    field: document.getElementById('fromDate'),
+    		    secondField: document.getElementById('toDate'),
+    		    numberOfMonths: 2,
+    		    minDate: new Date(),
+    		    format: 'YYYY-MM-DD',
+    		    singleDate: false,
+    		    hideOnBodyClick: false,
+    		    locale: {
+    		        buttons: {
+    		            prev: '〈',
+    		            next: '〉',
+    		            close: '✕',
+    		            reset: '⟳'
+    		        },
+    		        tooltip: {
+    		            day: '일'
+    		        },
+    		        pluralize: function(i, locale) {
+    		            if ('day' in locale) return locale.day;
+    		            return '';
+    		        }
+    		    },
+    		    onSelect: function(start, end){
+    		        var str = '';
+    		        str += start ? start.format('YYYY-MM-DD') + ' to ' : '';
+    		        str += end ? end.format('YYYY-MM-DD') : '...';
+    		        document.getElementById('fromDate').innerHTML = str;
+    		    },
+    		    onOpen: function(){
+    		    	document.querySelector(".lightpick").classList.add('centeredXY');
+    		        overlay.style.display = 'block';
+    	        },
+    	        onClose: function() {
+    	            overlay.style.display = 'none';
+    	        }
+    		})
+            document.querySelector(".lightpick").classList.add('centeredXY');
+        });
+
 });
 
 

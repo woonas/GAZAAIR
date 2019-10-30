@@ -2,16 +2,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>예약 상세 페이지</title>
+<title>Insert title here</title>
 <link rel="stylesheet" href="../../CSS/main.css" type="text/css" />
-<link rel="stylesheet" href="../../CSS/reserveStatus.css"type="text/css" />
+<link rel="stylesheet" href="../../CSS/reserveStatus.css" type="text/css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../../JS/main.js"></script>
 <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
 <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
 <body onresize="resizeModal()">
-<!-- Todo 기내식,좌석,클래스 -->
+	<!-- onload="" -->
+
 	<div class="overlay"></div>
 	<section class="content">
 		<div id="all">
@@ -19,7 +20,7 @@
 				<h3>예약 현황 상세 페이지</h3>
 			</div>
 			
-            <p class="flight-confirm-section-title">여정</p>
+					<p class="flight-confirm-section-title">여정</p>
         <div class="trip-table table-form3">
             <div class="row clearfix table-row-title">
                 <div class="col-eighth">여정</div>
@@ -58,7 +59,113 @@
                   </div>
             </div>
         </div>
-            <p class="flight-confirm-section-title">가격</p>
+			<div>
+				<h3>탑승자 정보</h3>
+			</div>
+			<div id="passengerTextAll">
+				<div id="passengerText">성인1</div>
+				<div id="checkDiv">
+					<input type="checkbox" name="check" value="check" id="check" />&nbsp;&nbsp;본인은
+					탑승에서 제외 <span id="necessary">*는 필수항목입니다.</span>
+				</div>
+			</div>
+			<div id="passengerAllDiv">
+				<div id="passengerArticle">
+					<div class="article">성별 *</div>
+					<div class="article">이름 *</div>
+					<div class="article">생년월일 *</div>
+					<div id="articleNo">
+						회원번호<br />(탑승객)
+					</div>
+				</div>
+				<div id="passengerArticleContent">
+					<div class="articleContent">
+						<div id="genderRadio">
+							<input type="radio" class="radio3" name="gender" value="M"
+								id="male" checked /><label for="male">남자</label>
+							&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="radio3"
+								name="gender" value="W" id="female" /><label for="female">여자</label>
+						</div>
+					</div>
+					<div class="articleContent">
+						<div id="firstNameText">
+							<input type="text" name="firstName" placeholder="성(신분증 언어)"
+								id="firstName" />
+						</div>
+						<div id="lastNameText">
+							<input type="text" name="lastName" placeholder="이름(신분증 언어)"
+								id="lastName" />
+						</div>
+					</div>
+					<div class="articleContent">
+						<div class="listDiv">
+							<select name="year" class="list">
+								<option value="not">년</option>
+								<option value="nYear">1900 년</option>
+							</select>
+						</div>
+						<div class="listDiv">
+							<select name="month" class="list">
+								<option value="not">월</option>
+								<option value="nMonth">1 월</option>
+							</select>
+						</div>
+						<div class="listDiv">
+							<select name="day" class="list">
+								<option value="not">일</option>
+								<option value="nDay">1 일</option>
+							</select>
+						</div>
+					</div>
+					<div class="articleContent">
+						<div id="memberNo">
+							<input type="text" name="memberNo" value="" id="memberNoText" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="detailPage">
+				<div>
+					<h3 style="color: white">예약 현황 상세 페이지</h3>
+				</div>
+				<div id="seatSelectAll">
+					<div class="seatSelectText">좌석 선택</div>
+					<div id="seatImgDiv"></div>
+					<div class="border-bt">
+						<div class="seatInfo">클릭하시면 좌석 선택 하실 수 있습니다.<br/>
+											회색으로 표시된 자석은 이미 예약된 자석이며 클릭하여 나오는 빨간색 좌석이<br/>
+											좌석으로 선택 됩니다.
+						</div>
+						<input type="button" value="Select Seats" name="SelectSeats"
+							id="SelectSeats" class="seatsButton" onclick="selectModal()" />
+					</div>
+				</div>
+				<div id="airlineFoodAll">
+					<div class="seatSelectText">기내식 선택</div>
+					<div id="airlineFoodImgDiv"></div>
+					<div class="border-bt">
+						<div class="seatInfo">클릭 하시면 기내식 선택 하실 수 있습니다.<br/>
+											기내식은 특선 요리, 일품 요리, 샐러드, 간단식으로 구성되어있습니다.<br/>
+											음식 하나만 선택 가능합니다.										 
+						</div>
+						<input type="button" value="Select Food" name="SelectFood"
+							class="seatsButton" onclick="selectFoodModal()" />
+					</div>
+				</div>
+				<div id="classAll">
+					<div class="seatSelectText">클래스 선택</div>
+					<div id="classImgDiv"></div>
+					<div class="border-bt">
+						<div class="seatInfo">클래스 변경 하실 수 있습니다.<br/>
+											클래스 변경은 퍼스트, 비즈니스, 이코노미 중 선택 하실 수 있습니다. 
+						</div>
+						<input type="button" value="Select Class" name="SelectClass"
+							class="seatsButton" onclick="selectClassModal()" />
+					</div>
+				</div>
+			</div>
+<!--  --> <!--  -->		<!--  -->
+		<p class="flight-confirm-section-title">가격</p>
         <div class="flight-confirm-section">
             <div class="bag-content table-form3">
                 <div class="row clearfix table-row-title">
@@ -105,111 +212,23 @@
                     </div>
                 </div>
             </div>
+            <div class="total-price bigger-text">
+                <div class="row clearfix">
+                    <div class="col-fourth">
+                        총 결제금액
+                    </div>
+                     <div class="col-fourth font-blue4">
+                         129,500 원
+                     </div>
+                </div>
+            </div>
             <ul class="list-type2">
+                <li>2019-09-20 (KST)기준 운임이며, 나중에 구매하시는 경우 선택하신 운임이 적용되지 않을 수 있습니다.</li>
+                <li>유류할증료와 세금/제반요금은 구매일/환율에 따라 변동될 수있습니다.</li>
                 <li>무료 수하물 허용량을 초과하는 경우 추가 수하물 요금이 부과될 수 있습니다.<a href="service_baggage.html" class="font-brown"> 수하물 안내</a></li>
                 <li class="font-brown">타항공사 연결 시나 공동운항의 경우 운항항공사 자체 수하물 규정이 적용 될 수 있으므로 사전에 확인하여 주시기 바랍니다.</li>
             </ul>
         </div>
-        
-        
-			
-			<p class="flight-confirm-section-title">탑승자 정보</p>
-			<div id="passengerAllDiv">
-				<div id="passengerArticle">
-					<div class="article">성별 *</div>
-					<div class="article">이름 *</div>
-					<div class="article">생년월일 *</div>
-					<div id="articleNo">
-						회원번호<br />(탑승객)
-					</div>
-				</div>
-				<div id="passengerArticleContent">
-					<div class="articleContent">
-						<div id="genderRadio">
-							<input type="radio" class="radio3" name="gender" value="M"
-                                   id="male" checked /><label for="male">남자</label>
-							&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="radio3"
-                                                            name="gender" value="W" id="female" /><label for="female">여자</label>
-						</div>
-					</div>
-					<div class="articleContent">
-						<div id="firstNameText">
-							<input type="text" name="firstName" placeholder="성(신분증 언어)"
-                                   id="firstName" />
-						</div>
-						<div id="lastNameText">
-							<input type="text" name="lastName" placeholder="이름(신분증 언어)"
-                                   id="lastName" />
-						</div>
-					</div>
-					<div class="articleContent">
-						<div class="listDiv">
-							<select name="year" class="list">
-								<option value="not">년</option>
-								<option value="nYear">1900 년</option>
-							</select>
-						</div>
-						<div class="listDiv">
-							<select name="month" class="list">
-								<option value="not">월</option>
-								<option value="nMonth">1 월</option>
-							</select>
-						</div>
-						<div class="listDiv">
-							<select name="day" class="list">
-								<option value="not">일</option>
-								<option value="nDay">1 일</option>
-							</select>
-						</div>
-					</div>
-					<div class="articleContent">
-						<div id="memberNo">
-							<input type="text" name="memberNo" value="" id="memberNoText" />
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="detailPage">
-				<div>
-					<h3 style="color: white">예약 현황 상세 페이지</h3>
-				</div>
-				<div id="seatSelectAll">
-					<div class="seatSelectText">좌석 선택</div>
-					<div id="seatImgDiv"></div>
-					<div class="border-bt">
-						<div class="seatInfo">클릭하시면 좌석 선택 하실 수 있습니다.<br/>
-											회색으로 표시된 자석은 이미 예약된 자석이며 클릭하여 나오는 빨간색 좌석이<br/>
-											좌석으로 선택 됩니다.
-						</div>
-						<input type="button" value="Select Seats" name="SelectSeats"
-                               id="SelectSeats" class="seatsButton" onclick="selectModal()" />
-					</div>
-				</div>
-				<div id="airlineFoodAll">
-					<div class="seatSelectText">기내식 선택</div>
-					<div id="airlineFoodImgDiv"></div>
-					<div class="border-bt">
-						<div class="seatInfo">클릭 하시면 기내식 선택 하실 수 있습니다.<br/>
-											기내식은 특선 요리, 일품 요리, 샐러드, 간단식으로 구성되어있습니다.<br/>
-											음식 하나만 선택 가능합니다.
-						</div>
-						<input type="button" value="Select Food" name="SelectFood"
-                               class="seatsButton" onclick="selectFoodModal()" />
-					</div>
-				</div>
-				<div id="classAll">
-					<div class="seatSelectText">클래스 선택</div>
-					<div id="classImgDiv"></div>
-					<div class="border-bt">
-						<div class="seatInfo">클래스 변경 하실 수 있습니다.<br/>
-											클래스 변경은 퍼스트, 비즈니스, 이코노미 중 선택 하실 수 있습니다.
-						</div>
-						<input type="button" value="Select Class" name="SelectClass"
-                               class="seatsButton" onclick="selectClassModal()" />
-					</div>
-				</div>
-			</div>
-            <!--  --> <!--  -->		<!--  -->
         
         <p class="flight-confirm-section-title">운임 조건 및 규정</p>
         <div id="regulation-1">
@@ -266,7 +285,7 @@
         </div>
         
         <div id="modal"></div>
-            <!-- 좌석 팝업 -->
+			<!-- 좌석 팝업 -->
 			<div id="seatsSelect">
 				<div style="overflow: hidden">
 					<div id="seatsSelectText">좌석 선택</div>
@@ -278,7 +297,7 @@
 					<div id="back-seat"></div>
 				</div>
 			</div>
-            <!-- 기내식 팝업 -->
+			<!-- 기내식 팝업 -->
 			<div id="foodSelect">
 				<div id="foodSelectTitle">
 					<h2>기내식 선택</h2>
@@ -352,7 +371,7 @@
 						</div>
 					</div>
 				</div>
-                <!-- lightDeil -->
+				<!-- lightDeil -->
 				<div id="tab-2-container" class="tab-content-container hidden">
 					<div id="tab-2-product-1" class="row product-wrapper">
 						<div class="col-half img-wrapper">
@@ -414,7 +433,7 @@
 						</div>
 					</div>
 				</div>
-                <!-- salad -->
+				<!-- salad -->
 				<div id="tab-3-container" class="tab-content-container hidden">
 					<div id="tab-3-product-1" class="row product-wrapper">
 						<div class="col-half img-wrapper">
@@ -474,7 +493,7 @@
 						</div>
 					</div>
 				</div>
-                <!-- refreshment -->
+				<!-- refreshment -->
 				<div id="tab-4-container" class="tab-content-container hidden">
 					<div id="tab-4-product-1" class="row product-wrapper">
 						<div class="col-half img-wrapper">
@@ -559,12 +578,12 @@
 					<h2>클래스 선택</h2>
 					<div class="classClose" onclick="classSelcetClose()">X</div>
 				</div>
-                <!--섹션3-->
+				<!--섹션3-->
 				<li class="subtitle">
-					<span>좌석 등급 선택</span>
+					<span>좌석 등급 선택</span> 
 					<span id="class-hint"><i class="fas fa-exclamation"></i></span>
 				</li>
-                <!-- 팝업창 안뜸 --><!--설명팝업창-->
+<!-- 팝업창 안뜸 --><!--설명팝업창-->
 				<div class='pop-up-window-type1 border' id='class-hint-window'>
 					<ul class="list-type2">
 						<p>
@@ -575,22 +594,22 @@
 						<li>좌석등급은 항공편 기종별 좌석배치가 다릅니다.<a href="#" target="_blank">좌석배치도
 								보기</a></li>
 						<li>마일리지 적립은 구입하신 항공권상의 예약클래스 기준으로 적립됩니다.<a href="#"
-                                                                    target="_blank">적립 기준표 보기</a></li>
+							target="_blank">적립 기준표 보기</a></li>
 					</ul>
 				</div>
 				<div class="row itinerary clearfix">
 					<div class="col-third class-select">
 						<input type="radio" class="radio2" name="class-type"
-                               value="economy" id="economy" checked="checked"> <label
-                            for="economy" class="firstRadio">이코노미</label>
+							value="economy" id="economy" checked="checked"> <label
+							for="economy" class="firstRadio">이코노미</label>
 					</div>
 					<div class="col-third class-select">
 						<input type="radio" class="radio2" name="class-type"
-                               value="business" id="business"> <label for="business">비즈니스</label>
+							value="business" id="business"> <label for="business">비즈니스</label>
 					</div>
 					<div class="col-third class-select">
 						<input type="radio" class="radio2" name="class-type" value="first"
-                               id="first"> <label for="first" class="lastRadio">퍼스트</label>
+							id="first"> <label for="first" class="lastRadio">퍼스트</label>
 					</div>
 				</div>
 			</div>
@@ -603,7 +622,7 @@
 	</section>
 
 	<script src="../../JS/common.js"></script>
-	<script src="../../JS/mypage.js"></script>
+	<script src="../../JS/reserveStatus.js"></script>
 	<script src="../../JS/booking.js"></script>
 	<script>
 		tabEvent('.tab-menu1');
