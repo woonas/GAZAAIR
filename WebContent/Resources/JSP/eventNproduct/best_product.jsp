@@ -8,9 +8,11 @@
     <title>Document</title>
  
     <link rel="stylesheet" href="../../CSS/eventNproduct.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
 	<script>window.onbeforeunload=() => window.scrollTo(0, 0)</script>
 </head>
 <body>
+<%@ include file="../nav.jspf" %>
    <section class="content best-product">
    <h3>베스트상품</h3>
        <div class="tab-menu1">
@@ -278,5 +280,6 @@
     <script>
         tabEvent('.tab-menu1');
     </script>
+    <%@ include file="../footer.jspf" %>
 </body>
 </html>

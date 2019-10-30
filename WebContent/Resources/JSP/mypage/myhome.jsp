@@ -7,10 +7,12 @@
         <meta charset="UTF-8">
         <title>마이 홈</title>
         <link rel="stylesheet" href="../../CSS/my_page.css">
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
     </head>
     <body id="mypage-main">
+    <%@ include file="../nav.jspf" %>
         <section class="content">
             <div class="maintop">
                 <div class="row clearfix">
@@ -231,5 +233,6 @@
         <script src="https://rawgit.com/kottenator/jquery-circle-progress/1.2.1/dist/circle-progress.js"></script>
         <script src="../../JS/common.js"></script>
         <script src="../../JS/mypage.js"></script>
+        <%@ include file="../footer.jspf" %>
     </body>
 </html>

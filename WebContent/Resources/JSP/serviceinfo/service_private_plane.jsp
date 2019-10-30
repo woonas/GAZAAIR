@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>전용기</title>
-<link rel="stylesheet" href="../../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../../JS/main.js"></script>
 <style>
@@ -63,91 +63,7 @@ nav {
 </script>
 </head>
 <body>
-	<div id="warp">
-		<header id="header">
-	<nav class="nav">
-		<div class="navContainer">
-			<ul class="navMenu">
-				<li><a href="../index.html"><img src="../../IMG/logo/logo_basic.png"/></a></li>
-				<li><a href="#">항공권예매</a>
-					<div class="subMenuWarp">
-						<div class="subMenu">
-							<ul>
-								<li><a href="../not_using/book.html">항공권예약</a></li>
-							</ul>
-							<ul>
-								<li><a href="#">정기 운항스케줄</a></li>
-								<li><a href="#">실시간 운항스케줄</a></li>
-								<li><a href="../routeMap.html">운항노선도</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li><a href="#">마이페이지</a>
-					<div class="subMenuWarp">
-						<div class="subMenu">
-							<ul>
-								<li><a href="../not_using/AccountInfo.html">회원정보</a></li>
-								<li><a href="../not_using/mypage_Membergrade.html">회원등급</a></li>
-								<li><a href="#">항공권 예약 현황</a></li>
-							</ul>
-							<ul>
-								<li><a href="mypage_Main.html">마이 홈</a></li>
-								<li><a href="#">마일리지</a></li>
-								<li><a href="#">관심노선</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li><a href="#">상품페이지</a>
-					<div class="subMenuWarp">
-						<div class="subMenu">
-							<ul>
-								<li><a href="prd_SpecialPrice.html">특가할인</a></li>
-								<li><a href="prd_alliance_event.html">제휴이벤트</a></li>
-							</ul>
-							<ul>
-								<li><a href="prd_BestProduct.html">베스트상품</a></li>
-								<li><a href="prd_recmdProduct.html">추천상품</a></li>
-							</ul>
-							<ul>
-								<li><a href="#">고객의말씀</a></li>
-					
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li><a href="#">서비스안내</a>
-					<div class="subMenuWarp">
-						<div class="subMenu">
-							<ul>
-								<li><a href="service_checkIn.html">체크인</a></li>
-								<li><a href="service_baggage.html">수하물 서비스</a></li>
-								<li><a href="service_pet.html">반려동물동반</a></li>
-							</ul>
-							<ul>
-								<li><a href="service_airline_food.html">기내식안내</a></li>
-								<li><a href="service_class.html">클래스안내</a></li>
-								<li><a href="service_wifi.html">유료부가서비스</a></li>
-							</ul>
-							<ul>
-								<li><a href="service_private_plane.html">전용기</a></li>
-								<li><a href="../board/notice.html">공지사항</a></li>
-								<li><a href="service_faq.html">FAQ</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<div class="navBar"></div>
-			</ul>
-			<a href="../not_using/signIn.html"><button class="translator" style="right:55px">로그인</button></a>
-			<button class="translator">EN</button>
-		</div>
-	</nav>
-	<div class="topBtn" title="맨 위로 이동">
-		<a href="#header"><img src="../../IMG/logo/logo_top.png"/></a>
-	</div>
-</header>
+	<%@ include file="../nav.jspf" %>
 		<div id="contents">
 			<section id="title">
 				<h3>전용기 서비스</h3>
@@ -185,43 +101,8 @@ nav {
 			</div>
 			</section>
 		</div>
- 		 <footer>
-	<div id="footContainer">
-		<a href="../index.html" title="홈페이지로 이동"><img src="../../IMG/logo/logo_white2.png" width="170"/></a>
-		<div class="snsPane">
-			<div class="snsBtn">
-				<img src="../../IMG/icon/facebook_white.png"/>
-				<img src="../../IMG/icon/facebook.png"/>
-			</div>
-			<div class="snsBtn">
-				<img src="../../IMG/icon/instagram_white.png"/>
-				<img src="../../IMG/icon/instagram.png"/>
-			</div>
-			<div class="snsBtn">
-				<img src="../../IMG/icon/twitter_white.png"/>
-				<img src="../../IMG/icon/twitter.png"/>
-			</div>
-			<div class="snsBtn">
-				<img src="../../IMG/icon/youtube_white.png"/>
-				<img src="../../IMG/icon/youtube.png"/>
-			</div>
-		</div>
-		<hr/>
-		<div class="footContent">
-			<div class="footCall">
-				
-				<b>고객센터</b><br/>080-0000-0000<br/>운영시간 | 오전 9시~오후 6시<br/>점심시간 | 오후 12시~오후 1시
-			</div>
-			
-			<div class="footInfo">
-				<b>가자에어</b> | 사업자번호 : 203-87-00612<br/>통신판매업신고번호 : 제 2012-서울구로-1560호<br/>
-				서울시 구로구 시흥대로 163길 33 주호타워 2층 가자항공(구로동 1129-1)<br/>
-				대표전화 : 02-837-9922<br/>
-				Copyright&copy; 주식회사가자에어. ALL RIGHTS RESERVED | 개인정보책임자 : 정운하
-			</div>
-		</div>
+ 
 	</div>
-</footer> 
-	</div>
+	<%@ include file="../footer.jspf" %>
 </body>
 </html>

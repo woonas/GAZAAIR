@@ -9,6 +9,7 @@
         <!--        bootstrap validator-->
         <link rel="stylesheet" href="../../../Vendor/bootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" href="../../../Vendor/bootstrapValidator/bootstrapValidator.css"/>
+		<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -18,6 +19,7 @@
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
     </head>
     <body>
+    <%@ include file="../nav.jspf" %>
         <section class="content">
             <h3>비밀번호 확인</h3>
             <ul class="list-type2 list-border">
@@ -67,5 +69,6 @@
         </section>
         <script src="../../JS/validator.js"></script>
         <script src="../../JS/common.js"></script>
+        <%@ include file="../footer.jspf" %>
     </body>
 </html>

@@ -7,11 +7,13 @@
         <meta charset="UTF-8">
         <title>항공권 예약 - 항공편 선택</title>
         <link rel="stylesheet" href="../../CSS/booking.css">
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
         <!-- Font Awesome CDN -->
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
         <script>window.onbeforeunload=() => window.scrollTo(0, 0)</script>
     </head>
     <body>
+    <%@ include file="../nav.jspf" %>
         <div class="overlay"></div>
         
         <nav style="height: 80px; background:cornflowerblue;"></nav>
@@ -1195,5 +1197,6 @@
         <script src="../../JS/common.js"></script>
         <script src="../../JS/airportpicker.js"></script>
         <script src="../../JS/booking.js"></script>
+        <%@ include file="../footer.jspf" %>
     </body>
 </html>

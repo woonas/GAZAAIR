@@ -7,10 +7,12 @@
     <meta charset="UTF-8">
     <title>항공권 예약 - 운임확인 및 최종동의</title>
     <link rel="stylesheet" href="../../CSS/booking.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
     <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
 <body>
+<%@ include file="../nav.jspf" %>
     <section class="content">
         <h3>운임확인</h3>
         <ul class="list-type2 last-note">
@@ -318,5 +320,6 @@
     
     <script src="../../JS/common.js"></script>
     <script src="../../JS/booking.js"></script>
+    <%@ include file="../footer.jspf" %>
 </body>
 </html>

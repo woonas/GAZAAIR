@@ -7,10 +7,12 @@
     <meta charset="UTF-8">
     <title>결제</title>
     <link rel="stylesheet" href="../../CSS/booking.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
     <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
 <body>
+<%@ include file="../nav.jspf" %>
     <section class="content">
         <h3>결제</h3>
         <div class="bag">
@@ -339,5 +341,6 @@
     </section>
     <script src="../../JS/common.js"></script>
     <script src="../../JS/payment.js"></script>
+    <%@ include file="../footer.jspf" %>
 </body>
 </html>

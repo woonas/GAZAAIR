@@ -10,12 +10,14 @@
 <head>
     <meta charset="UTF-8">
     <title>회원가입 - 회원 유형 선택</title>
-    <link rel="stylesheet" href="<%=path %>/Resources/CSS/account.css">
+    <link rel="stylesheet" href="<%=path %>/Resources/CSS/account.css">    
+	
     <!-- Font Awesome CDN -->
     <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
 <body>
+
     <div class="overlay"></div>
     <section class="content">
         <h3>회원가입</h3>
@@ -106,5 +108,6 @@
     
     <script src="<%=path %>/Resources/JS/common.js"></script>
     <script src="<%=path %>/Resources/JS/account.js"></script>
+    
 </body>
 </html>

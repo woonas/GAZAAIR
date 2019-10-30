@@ -8,6 +8,7 @@
         <title>비밀번호 찾기</title>
         <link rel="stylesheet" href="../../../Vendor/bootstrap/css/bootstrap.min.css" type="text/css"> 
         <link rel="stylesheet" href="../../CSS/account.css">
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
         <!-- Font Awesome CDN -->
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
@@ -15,6 +16,7 @@
         <script src="../../../Vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     </head>
     <body>
+    <%@ include file="../nav.jspf" %>
         <div class="overlay"></div>
         <section class="content">
             <h3>비밀번호 찾기</h3>
@@ -552,5 +554,6 @@
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="../../JS/common.js"></script>
         <script src="../../JS/account.js"></script>
+        <%@ include file="../footer.jspf" %>
     </body>
 </html>

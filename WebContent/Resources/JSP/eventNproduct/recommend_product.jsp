@@ -8,6 +8,7 @@
     <title>Document</title>
  
     <link rel="stylesheet" href="../../CSS/layout.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
    <script>window.onbeforeunload=() => window.scrollTo(0, 0)</script>
     <style>
         .best-product .tab-menu1 li.on:before {
@@ -66,7 +67,7 @@
     </style>
 </head>
 <body>
-
+<%@ include file="../nav.jspf" %>
    <section class="content best-product">
    <h3>추천상품</h3>
        <div class="tab-menu1">
@@ -336,5 +337,6 @@
     <script>
         tabEvent('.tab-menu1');
     </script>
+    <%@ include file="../footer.jspf" %>
 </body>
 </html>

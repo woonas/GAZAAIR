@@ -7,6 +7,7 @@
         <meta charset="UTF-8">
         <title>회원탈퇴</title>
         <link rel="stylesheet" href="../../CSS/my_page.css">
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
         <style>
             .btn-wrapper>input[type=button] {
@@ -21,6 +22,7 @@
         </style>
     </head>
     <body>
+    <%@ include file="../nav.jspf" %>
         <section class="content">
             <h3>회원탈퇴</h3>
             <br>
@@ -62,5 +64,6 @@
             </div>
         </section>
         <script src="../../JS/common.js"></script>
+        <%@ include file="../footer.jspf" %>
     </body>
 </html>

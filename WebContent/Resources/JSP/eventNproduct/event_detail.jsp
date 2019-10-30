@@ -7,9 +7,11 @@
     <meta charset="UTF-8">
     <title>이벤트상세페이지</title> <!--페이지바꿀때 페이지 타이틀도 이벤트이름으로 변경-->
     <link rel="stylesheet" href="../../CSS/eventNproduct.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
     <script>window.onbeforeunload=() => window.scrollTo(0, 0)</script>
 </head>
 <body>
+<%@ include file="../nav.jspf" %>
     <section class="content">
         <h3>이벤트</h3>
         <select name="" id="event-select" onchange="if (this.value) location.href=this.value">
@@ -33,5 +35,6 @@
     </section>
     
     <script src="../../JS/common.js"></script>
+    <%@ include file="../footer.jspf" %>
 </body>
 </html>

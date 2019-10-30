@@ -7,9 +7,11 @@
         <meta charset="UTF-8">
         <title>예약내역</title>
         <link rel="stylesheet" href="../../CSS/my_page.css">
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
     </head>
     <body>
+    <%@ include file="../nav.jspf" %>
         <div class="overlay"></div>
         <section class="content">
             <h3>예약 내역</h3>
@@ -185,5 +187,6 @@
         
         <script src="../../JS/common.js"></script>
         <script src="../../JS/mypage.js"></script>
+        <%@ include file="../footer.jspf" %>
     </body>
 </html>

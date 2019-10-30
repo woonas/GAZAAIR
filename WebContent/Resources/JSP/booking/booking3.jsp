@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <title>항공권 예약 - 탑승자/예약자 정보입력</title>
     <link rel="stylesheet" href="../../CSS/booking.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
     <!-- 국제 전화번호-->
     <link rel="stylesheet" href="../../../Vendor/intl-tel-input-16.0.0/build/css/intlTelInput.css">
     <script src="../../../Vendor/intl-tel-input-16.0.0/build/js/intlTelInput.js"></script>
@@ -15,6 +16,7 @@
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
 <body>
+<%@ include file="../nav.jspf" %>
     <div class="overlay"></div>
     <section class="content">
     
@@ -346,5 +348,6 @@
     
     <script src="../../JS/common.js"></script>
     <script src="../../JS/booking.js"></script>
+    <%@ include file="../footer.jspf" %>
 </body>
 </html>

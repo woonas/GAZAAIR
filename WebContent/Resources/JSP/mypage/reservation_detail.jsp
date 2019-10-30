@@ -8,12 +8,14 @@
 <title>예약 상세 페이지</title>
 <link rel="stylesheet" href="../../CSS/main.css" type="text/css" />
 <link rel="stylesheet" href="../../CSS/reserveStatus.css"type="text/css" />
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../../JS/main.js"></script>
 <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
 <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
 <body onresize="resizeModal()">
+<%@ include file="../nav.jspf" %>
 <!-- Todo 기내식,좌석,클래스 -->
 	<div class="overlay"></div>
 	<section class="content">
@@ -611,5 +613,6 @@
 	<script>
 		tabEvent('.tab-menu1');
 	</script>
+	<%@ include file="../footer.jspf" %>
 </body>
 </html>

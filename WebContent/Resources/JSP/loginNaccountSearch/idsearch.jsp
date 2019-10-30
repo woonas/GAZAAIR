@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <title>아이디 찾기</title>
-        
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
         <link rel="stylesheet" href="../../../Vendor/bootstrap/css/bootstrap.min.css" type="text/css"> 
         <link rel="stylesheet" href="../../CSS/account.css">
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
@@ -16,6 +16,7 @@
         <script src="../../../Vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     </head>
     <body>
+    <%@ include file="../nav.jspf" %>
         <div class="overlay"></div>
         <section class="content">
             <h3>아이디 찾기</h3>
@@ -569,5 +570,6 @@
             drift.load('w27c27educhn');
         </script>
         <!-- End of Async Drift Code -->
+        <%@ include file="../footer.jspf" %>
     </body>
 </html>
