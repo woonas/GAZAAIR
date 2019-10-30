@@ -215,7 +215,6 @@ const plus = () => {
 };
 
 /* 총 탑승객 수 */
-
 const totalPassengers = () => {
     const adultNum = parseInt(document.getElementById('numOfAdult').value);
     const childNum = parseInt(document.getElementById('numOfChild').value);
@@ -228,7 +227,6 @@ const totalPassengers = () => {
 };
 
 /* 각 input 필드에 있는 탑승객 수를 하나의 문자열로 변경 */
-
 const strPassengers_generator = () => {
     const adultNum = parseInt(document.getElementById('numOfAdult').value);
     const childNum = parseInt(document.getElementById('numOfChild').value);
@@ -244,7 +242,41 @@ const strPassengers_generator = () => {
     return totalNum;
 };
 const overlay = document.querySelector('.overlay');
+
+
+//뒤로가기 기능
+const goBack = () => window.history.back();
+
+//네비게이션
+const navi = () => {
+    const menus = document.querySelectorAll('#mainMenu>ul>li');
+    const submenu = document.getElementById('subMenu');
+    const menubg = document.getElementById('menubg');
+    menus.forEach(menu => {
+       menu.addEventListener('mouseenter', () => {
+           submenu.style.height = '220px';
+           menubg.style.height = '220px';
+       });
+       menu.addEventListener('mouseleave', () => {
+            submenu.style.height = '0';
+            menubg.style.height = '0';
+       });
+    });
+};
+
+//상단으로 이동
+const topBtn = () => {
+    document.querySelector('.topBtn>a').addEventListener('click', () => {
+        document.documentElement.style.scrollBehavior = 'smooth';
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        document.documentElement.style.scrollBehavior = 'auto';
+    });
+};
+
 (() => {
+    navi();
+    // topBtn();
     windowClose();
     loader_generator();
     document.body.classList.add('noscroll');

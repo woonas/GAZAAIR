@@ -412,6 +412,7 @@
 		width:70px;
 		height:50px;
 		font-size:20px;
+        border-radius: 5px;
 	}	
 	/* #dr div{
 		background-color:#3864ea;
@@ -517,7 +518,7 @@
 }
 
 .foodSelect{
-	marign-top:10px;
+	margin-top:10px;
 	width:80px;
 	height:35px;
 	
@@ -580,7 +581,7 @@
 
 /* 예약상태 테이블 */
 .reserveStatusTable>div{
-	background-colo:#999;
+	background-color:#999;
 	border-right:1px solid gray
 	
 }
@@ -606,9 +607,10 @@ input[type=hidden][value=N] + div.button-wrapper {
 .button-wrapper{ margin-top:20px; }
 
 .reservePayment, .reserveCancle{ 
-	width:200px;
+	width:180px;
 	height:50px;
 	font-size: 20px;
+    border-radius: 0;
 }
 .trip-airline>div:first-child{ margin-top:35px; }
 .trip-type>div:first-child{ margin-top:35px; }
