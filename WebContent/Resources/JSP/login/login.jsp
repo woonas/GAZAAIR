@@ -11,6 +11,7 @@
         <meta charset="UTF-8">
         <title>로그인</title>
         <link rel="stylesheet" href="<%=path %>/Resources/CSS/account.css">
+
         <!-- Font Awesome CDN -->
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
@@ -22,6 +23,7 @@
         </style>
     </head>
     <body>
+    
        <div class="overlay"></div>
        <section class="content">
            <div class="login-wrapper">
@@ -97,7 +99,7 @@
 
                    <div class="form-box">
                        <div id="tab-1-container">
-                           <form action="#" method="post">
+                           <form action="<%=path %>/Resources/JSP/login/loginOk.do" method="post">
                                <div>
                                    <input type="text" name="userid" id="userid" required placeholder="아이디">
                                </div>
@@ -164,5 +166,6 @@
         <script src="<%=path %>/Resources/JS/common.js"></script>
         <script src="<%=path %>/Resources/JS/airportpicker.js"></script>
         <script src="<%=path %>/Resources/JS/account.js"></script>
+       
     </body>
 </html>

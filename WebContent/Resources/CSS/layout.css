@@ -5,8 +5,8 @@
 /* ----------------------------------------------- */
 
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
-@import url("color.css") screen;
-@import url("loader.css") screen;
+@import url("color.css");
+@import url("loader.css");
 
 
 * {
@@ -637,6 +637,9 @@ input[type="checkbox"].checkbox2 + label:before {
     width: 16px;
     height: 16px;
     vertical-align: -3px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
 }
 
 input[type="checkbox"].checkbox2:checked + label:before {

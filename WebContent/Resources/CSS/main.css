@@ -3,120 +3,13 @@
 /* color #36f */
 
 /* ----------------------------------------------- */
-/* 기본 세팅 */
-/* ----------------------------------------------- */
-
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-*:focus { outline: none; }
-
-html,
-body {
-    background-color: #fff;
-    color: #555;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    overflow-x: hidden;
-}
-
-.clearfix {zoom: 1;}
-.clearfix:after {
-    content: '.';
-    clear: both;
-    display: block;
-    height: 0;
-    visibility: hidden;
-}
-
-/* ----------------------------------------------- */
-/* 자주 사용하는 Tags */
-/* ----------------------------------------------- */
-
-h3 {
-    text-align: center;
-    font-weight: normal;
-    font-size: 250%;
-    line-height: 1;
-    margin: 55px 0;
-}
-
-
-a,
-a:hover {
-    text-decoration: none;
-}
-
-.hidden { display: none; }
-
-.row {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.line_row {
-    position: relative;
-    width: 100%;
-    padding: 30px 0;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: flex-start;
-    border-bottom: 1px solid #ddd;
-}
-
-.line_row .title { font-size: 120% !important; }
-
-/* bottom buttons  */
-
-.flex {
-    display: flex;
-    justify-content: space-between;
-}
-
-.left { background-color: #fff; }
-.left:focus { outline-color: #36f; }
-
-.right { background-color: #36f; }
-
-.left,
-.right {
-    width: 80px;
-    height: 40px;
-}
-
-.list-type1 {
-    padding: 25px 0;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    list-style-position: inside;
-    list-style-type: circle;
-}
-
-.list-type1>li {
-    margin-bottom: 10px;
-    padding-left: 13px;
-    text-indent: 10px;
-    line-height: 1.5;
-}
-
-.list-type1>li:last-child { margin-bottom: 0; }
-
-
-
-/* ----------------------------------------------- */
 /* footer */
 /* ----------------------------------------------- */
 footer{
 	background-color: #d3d4d6;
 	width:100%;
 }
+
 #footContainer{
 	padding: 30px 0;
 	width: 1200px;

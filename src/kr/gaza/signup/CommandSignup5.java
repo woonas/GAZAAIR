@@ -13,6 +13,7 @@ public class CommandSignup5 implements CommandService {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		return "signup5.jsp";
 	}
 
