@@ -112,12 +112,16 @@
                                 <input type="text" class="form-control" name="userNameEn" disabled value="${vo.memberNameEng }">
                             </div>
                         </div>
-                        
+                        <c:if test="${vo.gender=='M' }">
+                        		<c:set var="gen" value="남성"></c:set>
+                        </c:if>
+                        <c:if test="${vo.gender=='F' }">
+                        		<c:set var="gen" value="여성"></c:set>
+                        </c:if>
                         <div class="form-group">
                             <label class="col-fifth control-label not-required">성별</label>
                             <div class="col-xs-4">
-                                <input type="text" class="form-control" name="userGender" disabled
-                                       value="${vo.gender }">
+                                <input type="text" class="form-control" name="userGender" disabled value="${gen }">
                             </div>
                         </div>
                        
@@ -230,24 +234,36 @@
                         <div class="form-group">
                             <label class="col-fifth control-label not-required">개인정보 제공</label>
                             <div class="col-xs-8">
-                                <input type="radio" name="info-provide" class="radio3"
-                                       id="info-provide-agree">
-                                <label for="info-provide-agree"> 동의</label>
-                                <input type="radio" name="info-provide" class="radio3"
-                                       id="info-provide-disagree" checked>
-                                <label for="info-provide-disagree"> 동의 안 함</label>
+                            	<c:if test="${vo.ag1=='on' }">
+                            		<input type="radio" name="info-provide" class="radio3" id="info-provide-agree" checked>
+                                    <label for="info-provide-agree"> 동의</label>
+                                    <input type="radio" name="info-provide" class="radio3" id="info-provide-disagree">
+	                                <label for="info-provide-disagree"> 동의 안 함</label>
+                            	</c:if>
+                                <c:if test="${vo.ag1=='off' }">
+                                	<input type="radio" name="info-provide" class="radio3" id="info-provide-agree">
+                                    <label for="info-provide-agree"> 동의</label>
+                                	<input type="radio" name="info-provide" class="radio3" id="info-provide-disagree" checked>
+	                                <label for="info-provide-disagree"> 동의 안 함</label>
+                                </c:if>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label class="col-fifth control-label not-required">통합 로그인</label>
                             <div class="col-xs-8">
-                                <input type="radio" name="integrated-login" class="radio3"
-                                       id="integrated-login-agree" checked>
-                                <label for="integrated-login-agree"> 동의</label>
-                                <input type="radio" name="integrated-login" class="radio3"
-                                       id="integrated-login-disagree">
-                                <label for="integrated-login-disagree"> 동의 안 함</label>
+                           		<c:if test="${vo.ag2=='on' }">
+                            		<input type="radio" name="integrated-login" class="radio3" id="integrated-login-agree" checked>
+	                                <label for="integrated-login-agree"> 동의</label>
+	                                <input type="radio" name="integrated-login" class="radio3" id="integrated-login-disagree">
+	                                <label for="integrated-login-disagree"> 동의 안 함</label>
+                            	</c:if>
+                                <c:if test="${vo.ag2=='off' }">
+                                	<input type="radio" name="integrated-login" class="radio3" id="integrated-login-agree">
+	                                <label for="integrated-login-agree"> 동의</label>
+	                                <input type="radio" name="integrated-login" class="radio3" id="integrated-login-disagree" checked>
+	                                <label for="integrated-login-disagree"> 동의 안 함</label>
+                                </c:if>
                             </div>
                         </div>
                         

@@ -19,7 +19,6 @@
 		</c:if>
         	<input type="hidden" value="${vo.eventNum }">
             <div class="col-half">
-                " kb u uvbyb  ,./bg =[k ?.,mbvcJKL;'}
                 <a href="">
                 	<div class="col-two-fifth" style="background-image: url('<%=request.getContextPath()%>${vo.eventThumbnail}')"></div>
                 </a>

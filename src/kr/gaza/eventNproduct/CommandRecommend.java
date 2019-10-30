@@ -20,7 +20,6 @@ public class CommandRecommend implements CommandService {
 		List<RecommendVO> lst = dao.getAllRecord();
 		
 		request.setAttribute("lst", lst);
-		
 		return "recommend_product.jsp";
 	}
 

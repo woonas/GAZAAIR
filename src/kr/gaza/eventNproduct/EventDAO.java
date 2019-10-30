@@ -62,7 +62,7 @@ public class EventDAO extends DBConn implements EventInterface {
 	public void eventSelect(EventVO vo) {
 		try {
 			dbConn();
-			String sql = "select eventnum,eventname,startdate,enddate from event where eventNum=?";
+			String sql = "select eventnum,eventname,startdate,enddate,eventImg from event where eventNum=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, vo.getEventNum());
 			
@@ -72,6 +72,7 @@ public class EventDAO extends DBConn implements EventInterface {
 				vo.setEventName(rs.getString(2));
 				vo.setStartDate(rs.getString(3));
 				vo.setEndDate(rs.getString(4));
+				vo.setEventImg(rs.getString(5));
 			}
 			
 		}catch(Exception e) {
