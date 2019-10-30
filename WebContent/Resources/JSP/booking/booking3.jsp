@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -284,7 +287,7 @@
                 </div>
                 <div>
                     <input type="text" id="emailAddress" nname="emailAddress" placeholder="이메일 입력" title="이메일 아이디 입력" style="width:200px;"> @ &nbsp;
-                    <select id="emailDomain" name="emailDomain" title="이메일 도메인 선택" style="width:180px;">
+                    <select id="emailDomain" name="emailDomain" title="이메일 도메인 선택" style="width:180px; margin-top: -3px;">
                         <option value="" selected>직접입력</option>
                         <option value="korea.com">korea.com</option>
                         <option value="dreamwiz.com">dreamwiz.com</option>

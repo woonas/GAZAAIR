@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,15 +24,7 @@ h4 {
 	color: black;
 	margin: 5px 0 30px;
 }
-<<<<<<< HEAD
 
-=======
-nav {
-	width: 100%;
-	height: 70px;
-	background-color: gray;
-}
->>>>>>> branch 'master' of https://github.com/woonas/GAZAAIR.git
 #warp {
 	width: 100%;
 }
@@ -198,8 +193,8 @@ table td {
 					<div class="subMenuWarp">
 						<div class="subMenu">
 							<ul>
-								<li><a href="../AccountInfo.html">회원정보</a></li>
-								<li><a href="../mypage_Membergrade.html">회원등급</a></li>
+								<li><a href="../not_using/AccountInfo.html">회원정보</a></li>
+								<li><a href="../not_using/mypage_Membergrade.html">회원등급</a></li>
 								<li><a href="reserveStatus.html">항공권 예약 현황</a></li>
 							</ul>
 							<ul>
