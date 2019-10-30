@@ -99,7 +99,7 @@
 
                    <div class="form-box">
                        <div id="tab-1-container">
-                           <form action="#" method="post">
+                           <form action="<%=path %>/Resources/JSP/login/loginOk.do" method="post">
                                <div>
                                    <input type="text" name="userid" id="userid" required placeholder="아이디">
                                </div>
