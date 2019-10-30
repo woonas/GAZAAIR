@@ -8,7 +8,8 @@
 <title>반려동물 동반</title>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>s"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../../JS/main.js"></script>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/layout.css" type="text/css"/>
+  <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 <style>
 hr{
 	margin:15px 0 15px 0;
@@ -23,9 +24,7 @@ h4 {
 	font-size:25px;
 }
 nav {
-	width: 100%;
-	height: 70px;
-	background-color: gray;
+	border-bottom: none;
 }
 
 #warp {
@@ -139,6 +138,8 @@ nav {
 		</div>
 		
 		</div>
-		<%@ include file="../footer.jspf" %>
+		<section class="content" ></section>	
+	<%@ include file="../footer.jspf" %>
+	<script src="../../JS/common.js"></script>
 </body>
 </html>

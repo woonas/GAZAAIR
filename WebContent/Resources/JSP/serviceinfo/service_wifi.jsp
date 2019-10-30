@@ -8,7 +8,8 @@
 <title>유료 부가서비스</title>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../../JS/main.js"></script>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/layout.css" type="text/css"/>
+  <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 <style>
 h4 {
 	float: left;
@@ -30,6 +31,7 @@ nav {
 #contents {
 	max-width: 1200px;
 	margin: 0px auto;
+	height:2000px;
 }
 
 #title {
@@ -81,8 +83,10 @@ li{
 					<li style="float:left; margin-bottom:10px;">4.이제 음성 통화와 문자 메시지 이용이 가능합니다. 기내 로밍 요금은 휴대전화 통신사에서 부과합니다.</li>	
 				</ol>
 			</section>
-		</div>	
+		</div>
 	</div>
+	<section class="content" ></section>	
 	<%@ include file="../footer.jspf" %>
+	<script src="../../JS/common.js"></script>
 </body>
 </html>
