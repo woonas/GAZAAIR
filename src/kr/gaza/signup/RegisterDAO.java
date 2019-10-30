@@ -19,7 +19,6 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 					result = true;
 				}
 			}
-			System.out.println("DAO의 결과 = "+result);
 		}catch(Exception e) {
 			System.out.println("idCheck 에러...");
 			e.printStackTrace();

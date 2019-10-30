@@ -12,8 +12,7 @@
 
 </head>
 <body>
-<%@ include file="nav.jspf" %>
-
+<%@ include file="/Resources/JSP/nav.jspf" %>
 	<h3>공지사항</h3>
 	<hr/>
 	<div id="brd_all">
@@ -47,6 +46,6 @@
 		<button class="whiteBtn">목록보기</button>
 	</div>
 	</div>
-	<%@ include file="footer.jspf" %>
+	<%@ include file="/Resources/JSP/footer.jspf" %>
 </body>
 </html>
