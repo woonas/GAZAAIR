@@ -267,12 +267,14 @@
             </div>
             <p>다른 아이디를 사용하시려면 입력 후 중복확인을 클릭해주시기 바랍니다.</p>
             <div class="form-area1 form-group clearfix">
-               <div class="col-two-third">
-                    <input type="text" class="form-control" id="txtID" placeholder="아이디" >
-                </div>
-                <div class='col-third'>
-                    <button class="blueBtn" id="btn-dupCheck2">중복확인</button>
-                </div>
+            	<form method="post" id="idChkFrm" onsubmit="return false">
+	                <div class="col-two-third">
+	                    <input type="text" class="form-control" id="txtID" name="txtID" placeholder="아이디" >
+	                </div>
+	                <div class='col-third'>
+	                    <button class="blueBtn" id="btn-dupCheck2">중복확인</button>
+	                </div>
+                </form>
             </div>
             
             <div class="result-wrapper font-brown"></div>
