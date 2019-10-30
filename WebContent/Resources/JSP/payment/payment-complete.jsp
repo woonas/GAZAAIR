@@ -1,13 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>결제완료</title>
     <link rel="stylesheet" href="../../CSS/booking.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
     <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
 <body>
+<%@ include file="../nav.jspf" %>
     <section class="content">
         <h3>결제가 완료되었습니다.</h3>
         
@@ -20,10 +25,10 @@
                     <div class="col-fourth font-blue4">최종 결제금액</div>
                 </div>
                 <div class="row clearfix">
-                    <div class="col-fourth">130,000원</div>
-                    <div class="col-fourth">0원</div>
-                    <div class="col-fourth">0원</div>
-                    <div class="col-fourth font-blue4">130,000원</div>
+                    <div class="col-fourth">130,000 원</div>
+                    <div class="col-fourth">0 원</div>
+                    <div class="col-fourth">0 원</div>
+                    <div class="col-fourth font-blue4">130,000 원</div>
                 </div>
             </div>
         </div>
@@ -52,7 +57,7 @@
                 <div class="row clearfix">
                     <div class="col-fifth">결제금액</div>
                     <div class="col-four-fifth font-blue4">
-                        130,000원
+                        130,000 원
                     </div>
                 </div>
             </div>
@@ -77,5 +82,6 @@
     </section>
     <script src="../../JS/common.js"></script>
     <script src="../../JS/payment.js"></script>
+    <%@ include file="../footer.jspf" %>
 </body>
 </html>

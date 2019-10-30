@@ -1,21 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>항공권 예약 - 운임확인 및 최종동의</title>
     <link rel="stylesheet" href="../../CSS/booking.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
     <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
 <body>
+<%@ include file="../nav.jspf" %>
     <section class="content">
         <h3>운임확인</h3>
         <ul class="list-type2 last-note">
             <li>운임이 정상적으로 입력되었는지 최종확인 후, 운임 조건 및 규정을 확인하시기 바랍니다.</li>
         </ul>
         <p class="flight-confirm-section-title">여정</p>
-        <div class="trip-table">
-            <div class="row clearfix trip-table-title">
+        <div class="trip-table table-form3">
+            <div class="row clearfix table-row-title">
                 <div class="col-eighth">여정</div>
                 <div class="col-three-eighth">출도착시간</div>
                 <div class="col-eighth">편명/기종</div>
@@ -85,8 +90,8 @@
         
         <p class="flight-confirm-section-title">가격</p>
         <div class="flight-confirm-section">
-            <div class="bag-content">
-                <div class="row clearfix bag-content-title">
+            <div class="bag-content table-form3">
+                <div class="row clearfix table-row-title">
                     <div class="col-two-fourth">여정</div>
                     <div class="col-fourth">구분</div>
                     <div class="col-fourth">금액 <span class="currency">(KRW)</span></div>
@@ -168,13 +173,13 @@
                     </div>
                 </div>
             </div>
-            <div class="total-price">
+            <div class="total-price bigger-text">
                 <div class="row clearfix">
                     <div class="col-fourth">
                         총 결제금액
                     </div>
-                     <div class="col-fourth font-red">
-                         256,000원
+                     <div class="col-fourth font-blue4">
+                         256,000 원
                      </div>
                 </div>
             </div>
@@ -187,52 +192,106 @@
         </div>
         
         <p class="flight-confirm-section-title">운임 조건 및 규정</p>
-        <div class="regulation">
-            <p><span class="font-blue4">01</span> 서울/김포 <span>-></span> 제주</p>
+        <div id="regulation-1">
+            <p><span class="font-blue4">01</span>서울/김포<span>→</span>제주</p>
+            <input type="checkbox" class="hidden" id="fold-1" checked>
+            <label for="fold-1"><img src = "../../IMG/icon/underArrow.png" alt = ""></label>
             <div>
-                <h4>운임종류</h4>
+                <h4>· 운임종류</h4>
                 <div>정상운임 (Y)</div>
                 
-                <h4>개인할인</h4>
+                <h4>· 개인할인</h4>
                 <div>가능</div>
                 
-                <h4>소아할인</h4>
+                <h4>· 소아할인</h4>
                 <div>가능</div>
                 
-                <h4>마일리지 적립</h4>
+                <h4>· 마일리지 적립</h4>
                 <div>적립가능(단,장애인소아 등 50%이상 개인할인적용 시 적립 불가)</div>
                 
-                <h4>구매 조건</h4>
+                <h4>· 구매 조건</h4>
                 <div>가자에항공 홈페이지(모바일)에서 구매 가능 (예약센터,지점,공항 카운터 불가) <br>
                 왕복여정의 경우 최초 발권 시의 여정 순서대로 사용 원칙 <br>
                 ※ 첫번째 여정 미사용시 두번째 여정 사용불가</div>
                 
-                <h4>항공권 유효기간</h4>
+                <h4>· 항공권 유효기간</h4>
                 <div>발행일로 부터 1년 </div>
                 
-                <h4>여정 변경</h4>
+                <h4>· 여정 변경</h4>
                 <div>가능왕복여정 중 사용후 남은 여정 변경 불가 </div>
                 
-                <h4>탑승 후 남은 여정 환불</h4>
+                <h4>· 탑승 후 남은 여정 환불</h4>
                 <div>왕복 여정 중 사용하고 남은 여정 환불 가능 </div>
                 
-                <h4>부분 변경</h4>
+                <h4>· 부분 변경</h4>
                 <div>홈페이지/모바일에서 2명 이상 동일한 예약 번호로 구매하신 경우 일부 <br>
                  인원만 변경 및 환불 불가(일부 인원 예약 변경 및 환불 원할 경우 예약센터 1588-8000번문의)</div>
                 
-                <h4>부분 환불</h4>
+                <h4>· 부분 환불</h4>
                 <div>특가운임이 포함된 왕복 항공권 부분 환불 불가 <br>
                 특가운임 포함안된 미사용 항공권 왕복여정의 부분환불 수수료 미징수 (단, 부분환불 후 추가 환불시 미징수 된 환불수수료 소급적용)</div>
                 
-                <h4>환불 수수료</h4>
+                <h4>· 환불 수수료</h4>
                 <div>편도당 2,000원<br>
                 유효기간 만료일 이내 환불가능 <br>
                 최초 발행된 항공권 및 각 재발행된 항공권 중 하위클래스 기준의 환불수수료 징수 (계좌이체 결제시 환불 수수료 부과)</div>
                 
-                <h4>예약부도위약금</h4>
+                <h4>· 예약부도위약금</h4>
                 <div>편도당 8,000원</div>
                 
-                <h4 class="rules_content">기타</h4>
+                <h4 class="rules_content">· 기타</h4>
+                <div>기상이나 항공사 사정으로 결항 시 미 탑승 항공권 자동 환불 불가 <br>
+                (홈페이지에서 환불 시 환불 수수료/예약부도위약금 부과,예약센터나 지점,공항 카운터에서 환불 시 환불 수수료/예약부도위약금 면제) </div>
+            </div>
+        </div>
+        <div id="regulation-2">
+            <p><span class="font-blue4">02</span> 서울/김포 <span>→</span> 제주</p>
+            <input type="checkbox" class="hidden" id="fold-2" checked>
+            <label for="fold-2"><img src = "../../IMG/icon/underArrow.png" alt = ""></label>
+            <div>
+                <h4>· 운임종류</h4>
+                <div>정상운임 (Y)</div>
+                
+                <h4>· 개인할인</h4>
+                <div>가능</div>
+                
+                <h4>· 소아할인</h4>
+                <div>가능</div>
+                
+                <h4>· 마일리지 적립</h4>
+                <div>적립가능(단,장애인소아 등 50%이상 개인할인적용 시 적립 불가)</div>
+                
+                <h4>· 구매 조건</h4>
+                <div>가자에항공 홈페이지(모바일)에서 구매 가능 (예약센터,지점,공항 카운터 불가) <br>
+                왕복여정의 경우 최초 발권 시의 여정 순서대로 사용 원칙 <br>
+                ※ 첫번째 여정 미사용시 두번째 여정 사용불가</div>
+                
+                <h4>· 항공권 유효기간</h4>
+                <div>발행일로 부터 1년 </div>
+                
+                <h4>· 여정 변경</h4>
+                <div>가능왕복여정 중 사용후 남은 여정 변경 불가 </div>
+                
+                <h4>· 탑승 후 남은 여정 환불</h4>
+                <div>왕복 여정 중 사용하고 남은 여정 환불 가능 </div>
+                
+                <h4>· 부분 변경</h4>
+                <div>홈페이지/모바일에서 2명 이상 동일한 예약 번호로 구매하신 경우 일부 <br>
+                 인원만 변경 및 환불 불가(일부 인원 예약 변경 및 환불 원할 경우 예약센터 1588-8000번문의)</div>
+                
+                <h4>· 부분 환불</h4>
+                <div>특가운임이 포함된 왕복 항공권 부분 환불 불가 <br>
+                특가운임 포함안된 미사용 항공권 왕복여정의 부분환불 수수료 미징수 (단, 부분환불 후 추가 환불시 미징수 된 환불수수료 소급적용)</div>
+                
+                <h4>· 환불 수수료</h4>
+                <div>편도당 2,000원<br>
+                유효기간 만료일 이내 환불가능 <br>
+                최초 발행된 항공권 및 각 재발행된 항공권 중 하위클래스 기준의 환불수수료 징수 (계좌이체 결제시 환불 수수료 부과)</div>
+                
+                <h4>· 예약부도위약금</h4>
+                <div>편도당 8,000원</div>
+                
+                <h4 class="rules_content">· 기타</h4>
                 <div>기상이나 항공사 사정으로 결항 시 미 탑승 항공권 자동 환불 불가 <br>
                 (홈페이지에서 환불 시 환불 수수료/예약부도위약금 부과,예약센터나 지점,공항 카운터에서 환불 시 환불 수수료/예약부도위약금 면제) </div>
             </div>
@@ -261,5 +320,6 @@
     
     <script src="../../JS/common.js"></script>
     <script src="../../JS/booking.js"></script>
+    <%@ include file="../footer.jspf" %>
 </body>
 </html>

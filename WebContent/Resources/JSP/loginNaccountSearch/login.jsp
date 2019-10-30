@@ -1,9 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>로그인</title>
-        <link rel="stylesheet" href="../../CSS/account.css">
+        <link rel="stylesheet" href="../../CSS/account.css">        
+		<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
+        
+        
         <!-- Font Awesome CDN -->
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
@@ -12,6 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     
     <body>
+    <%@ include file="../nav.jspf" %>
        <div class="overlay"></div>
        <section class="content">
            <div class="login-wrapper">
@@ -152,5 +159,6 @@
         <script src="../../JS/common.js"></script>
         <script src="../../JS/airportpicker.js"></script>
         <script src="../../JS/account.js"></script>
+        <%@ include file="../footer.jspf" %>
     </body>
 </html>

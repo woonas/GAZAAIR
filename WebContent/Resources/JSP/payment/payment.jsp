@@ -1,19 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>결제</title>
     <link rel="stylesheet" href="../../CSS/booking.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
     <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
 <body>
+<%@ include file="../nav.jspf" %>
     <section class="content">
         <h3>결제</h3>
         <div class="bag">
             <p class="bag-head">결제 대기중인 상품(1)</p>
-            <div class="bag-content">
-                <div class="row clearfix bag-content-title">
+            <div class="bag-content table-form3">
+                <div class="row clearfix table-row-title">
                     <div class="col-two-fourth">여정</div>
                     <div class="col-fourth">구분</div>
                     <div class="col-fourth">금액 <span class="currency">(KRW)</span></div>
@@ -100,19 +105,19 @@
                 <div class="row clearfix">
                     <div class="col-fourth">
                         결제상품금액
-                        <span> 256,000원</span>
+                        <span>256,000 원</span>
                     </div>
                     <div class="col-fourth">
                         총 할인금액
-                        <span> 0원</span>
+                        <span>0 원</span>
                     </div>
                     <div class="col-fourth">
                         사용마일리지
-                        <span> 0원</span>
+                        <span>0 원</span>
                     </div>
                     <div class="col-fourth">
                         총 결제금액
-                        <span class="font-red"> 256,000원</span>
+                        <span class="font-blue4">256,000 원</span>
                     </div>
                 </div>
             </div>
@@ -276,7 +281,7 @@
                         </div>
                         <div class="col-three-fourth">
                             <input type = "number" placeholder="000">
-                            <span>(마일리지 : 20,300원)</span>
+                            <span>(마일리지 : 20,30 원)</span>
                         </div>
                      </div>
                      <div class="row clearfix">
@@ -317,7 +322,7 @@
                     </div>
                     <div class="row total">
                         <div>총 결제예정금액</div>
-                        <div><span class="font-red" id="total-pay">354,487</span> 원</div>
+                        <div><span class="font-blue4" id="total-pay">354,487</span> 원</div>
                     </div>
                     <div class="row">
                         <div>결제동의</div>
@@ -336,5 +341,6 @@
     </section>
     <script src="../../JS/common.js"></script>
     <script src="../../JS/payment.js"></script>
+    <%@ include file="../footer.jspf" %>
 </body>
 </html>

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +8,12 @@
 <link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/layout.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/board.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
 
 </head>
 <body>
+<%@ include file="nav.jspf" %>
+
 	<h3>공지사항</h3>
 	<hr/>
 	<div id="brd_all">
@@ -43,5 +47,6 @@
 		<button class="whiteBtn">목록보기</button>
 	</div>
 	</div>
+	<%@ include file="footer.jspf" %>
 </body>
 </html>

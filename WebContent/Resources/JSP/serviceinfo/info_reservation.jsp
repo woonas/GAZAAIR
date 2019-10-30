@@ -1,13 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>예약안내</title>
     <link rel="stylesheet" href="../../CSS/information.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
 <body>
-    <section class="content info-reservation">
+<%@ include file="../nav.jspf" %>
+    <section class="content info-reservation"> 
         <h3>예약안내</h3>
         
         <div class="tab-menu1">
@@ -17,7 +22,7 @@
                 <li class="col-fourth" id='tab-3'><a href="#none">전화 예약</a></li>
                 <li class="col-fourth" id='tab-4'><a href="#none">Rail&amp;Fly 서비스</a></li>
             </ul>
-        </div>  
+        </div>   
         
         <div id="tab-1-container" class="hidden">
             <div class="info-banner"> 
@@ -156,5 +161,6 @@
     
     <script src="../../JS/common.js"></script>
     <script src="../../JS/information.js"></script>
+    <%@ include file="../footer.jspf" %>
 </body>
 </html>

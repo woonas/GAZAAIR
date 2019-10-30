@@ -1,9 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>운임안내</title>
-<link rel="stylesheet" href="../../CSS/main.css" type="text/css" />
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <style>
 .caution{
@@ -135,10 +138,7 @@ nav {
 </script>
 </head>
 <body onload="start()">
-	<div id="warp">
-		<header>
-			<nav>네비게이션 넣을 곳 ㅁㄴㅇㅁㄴㅇㅁㅇㅁ</nav>
-		</header>
+	<%@ include file="../nav.jspf" %>
 		<div id="contents">
 			<section id="title">
 				<h3>운임 안내</h3>
@@ -361,44 +361,6 @@ nav {
 						
 			
 		</div>
-		
-		<!-- <footer>
-	<div id="footContainer">
-		<a href="index.html" title="홈페이지로 이동"><img src="../IMG/logo/logo_white2.png" width="170"/></a>
-		<div class="snsPane">
-			<div class="snsBtn">
-				<img src="../IMG/icon/facebook_white.png"/>
-				<img src="../IMG/icon/facebook.png"/>
-			</div>
-			<div class="snsBtn">
-				<img src="../IMG/icon/instagram_white.png"/>
-				<img src="../IMG/icon/instagram.png"/>
-			</div>
-			<div class="snsBtn">
-				<img src="../IMG/icon/twitter_white.png"/>
-				<img src="../IMG/icon/twitter.png"/>
-			</div>
-			<div class="snsBtn">
-				<img src="../IMG/icon/youtube_white.png"/>
-				<img src="../IMG/icon/youtube.png"/>
-			</div>
-		</div>
-		<hr/>
-		<div class="footContent">
-			<div class="footCall">
-				
-				<b>고객센터</b><br/>080-0000-0000<br/>운영시간 | 오전 9시~오후 6시<br/>점심시간 | 오후 12시~오후 1시
-			</div>
-			
-			<div class="footInfo">
-				<b>가자에어</b> | 사업자번호 : 203-87-00612<br/>통신판매업신고번호 : 제 2012-서울구로-1560호<br/>
-				서울시 구로구 시흥대로 163길 33 주호타워 2층 가자항공(구로동 1129-1)<br/>
-				대표전화 : 02-837-9922<br/>
-				Copyright&copy; 주식회사가자에어. ALL RIGHTS RESERVED | 개인정보책임자 : 정운하
-			</div>
-		</div>
-	</div>
-</footer> -->
-	</div>
+	<%@ include file="../footer.jspf" %>
 </body>
 </html>

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page errorPage="/Resources/JSP/error/error.jsp"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,7 +9,8 @@
         <!--        bootstrap validator-->
         <link rel="stylesheet" href="../../../Vendor/bootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" href="../../../Vendor/bootstrapValidator/bootstrapValidator.css"/>
-
+		<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
+		
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../../../Vendor/bootstrapValidator/bootstrapValidator.js"></script>
@@ -60,6 +60,7 @@
         </style>
     </head>
     <body id="personalInfo">
+    <%@ include file="../nav.jspf" %>
         <div class="overlay"></div>
         <section class="content">
             <h3>회원정보</h3>
@@ -342,5 +343,6 @@
         <script src="../../JS/validator.js"></script>
         <script src="../../JS/common.js"></script>
         <script src="../../JS/account.js"></script>
+        <%@ include file="../footer.jspf" %>
     </body>
 </html>

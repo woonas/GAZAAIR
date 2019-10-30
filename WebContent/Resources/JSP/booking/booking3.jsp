@@ -1,9 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>항공권 예약 - 탑승자/예약자 정보입력</title>
     <link rel="stylesheet" href="../../CSS/booking.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
     <!-- 국제 전화번호-->
     <link rel="stylesheet" href="../../../Vendor/intl-tel-input-16.0.0/build/css/intlTelInput.css">
     <script src="../../../Vendor/intl-tel-input-16.0.0/build/js/intlTelInput.js"></script>
@@ -12,6 +16,7 @@
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
 <body>
+<%@ include file="../nav.jspf" %>
     <div class="overlay"></div>
     <section class="content">
     
@@ -284,7 +289,7 @@
                 </div>
                 <div>
                     <input type="text" id="emailAddress" nname="emailAddress" placeholder="이메일 입력" title="이메일 아이디 입력" style="width:200px;"> @ &nbsp;
-                    <select id="emailDomain" name="emailDomain" title="이메일 도메인 선택" style="width:180px;">
+                    <select id="emailDomain" name="emailDomain" title="이메일 도메인 선택" style="width:180px; margin-top: -3px;">
                         <option value="" selected>직접입력</option>
                         <option value="korea.com">korea.com</option>
                         <option value="dreamwiz.com">dreamwiz.com</option>
@@ -343,5 +348,6 @@
     
     <script src="../../JS/common.js"></script>
     <script src="../../JS/booking.js"></script>
+    <%@ include file="../footer.jspf" %>
 </body>
 </html>
