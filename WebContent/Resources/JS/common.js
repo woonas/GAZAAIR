@@ -3,7 +3,6 @@ const hintWindow = (targetElement, overlayed, centeredX, centeredY) => {
     // 팝업창과 마우스사이의 거리
     let xOffset = 40;
     let yOffset = 40;
-    let overlay = document.querySelector('.overlay');
 
     document.getElementById(targetElement).addEventListener('click', e => {
         const tempElement = document.getElementById(`${targetElement}-window`);
@@ -244,7 +243,7 @@ const strPassengers_generator = () => {
 
     return totalNum;
 };
-
+const overlay = document.querySelector('.overlay');
 (() => {
     windowClose();
     loader_generator();

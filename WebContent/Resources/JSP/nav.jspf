@@ -69,6 +69,7 @@ $(function(){
 								<li><a href="<%=path %>/Resources/HTML/AccountInfo.html">회원정보</a></li>
 								<li><a href="<%=path %>/Resources/HTML/reserveStatus.html">예약 현황</a></li>
 								<li><a href="<%=path %>/Resources/HTML/mypage_Main.html">마이 홈</a></li>
+								<li><a href="<%=path %>/Resources/JSP/signup/signup1.do">회원가입</a></li>
 							</ul>
 						</li>
 					</ul>

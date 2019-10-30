@@ -1262,7 +1262,6 @@ document.querySelector('section.content').insertAdjacentHTML('afterend',
 
 windowClose();
 
-const overlay = document.querySelector('.overlay');
 const pickerWindow = document.getElementById('airport-picker-window');
 let openedBy; // picker를 open한 객체를 저장
 let airportFrom, airportTo; // 최신검사 선택시 데이터 저장
