@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -8,11 +7,9 @@
   <meta charset = "UTF-8">
   <title>Title</title>
     <link rel = "stylesheet" href = "<%=request.getContextPath()%>/Resources/CSS/eventNproduct.css">
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
 <body>
-<%@ include file="../nav.jspf" %>
     <section class="content">
     <h3>제휴이벤트</h3>
 	<c:set var="i" value="${1}"/>
@@ -36,13 +33,12 @@
                     </ul>
                 </div>
             </div>
-		<c:if test="${i%2 == 0}">
-			</div>
-		</c:if>
-		<c:set var="i" value="${i+1}"/>
+			<c:if test="${i%2 == 0}">
+				</div>
+			</c:if>
+			<c:set var="i" value="${i+1}"/>
        </c:forEach>
     </section>
      <script src="<%=request.getContextPath()%>/Resources/JS/common.js"></script>
-     <%@ include file="../footer.jspf" %>
 </body>
 </html>
