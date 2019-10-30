@@ -127,7 +127,9 @@ const input_check = (name) => {
 //signup3에서 인증성공 이펙트
 const eventHandler = (_window, step2) => {
     const authent = $('.authent');
-
+    var agree1 = $("#agree_personalCollectionOption").val();
+    var agree2 = $("#agree_personalProvide").val();
+    
     _window.addClass('step1');
     setTimeout(function(){
         _window.addClass(step2)
@@ -142,7 +144,7 @@ const eventHandler = (_window, step2) => {
         _window.removeClass(step2)
     },2500);
     setTimeout(function(){
-        location.href= 'signup4.html';
+        location.href= '/projectGAZA/Resources/JSP/signup/signup4.do?agree_personalCollectionOption='+agree1+'&agree_personalProvide='+agree2;
     }, 4500);
 };
 
@@ -191,7 +193,8 @@ const eventHandler = (_window, step2) => {
         /*아이디 중복체크*/
         const id = document.getElementById('username');
         const insideId = document.getElementById('txtID');
-        let result = '';
+        let isOk = '';
+        const btnUse = document.getElementById("btn-use");
         document.getElementById('btn-dupCheck').addEventListener('click', () => {
             document.querySelector('.result-wrapper').classList.add('hidden');
             insideId.value = id.value;
@@ -199,18 +202,41 @@ const eventHandler = (_window, step2) => {
         
         document.getElementById('btn-dupCheck2').addEventListener('click', () => {
             if (insideId.value.length !== 0) {
-                result = '사용할 수 있습니다.'; // 나중에 DB작업하고 결과값에 따라 사용가능불가능 바꾸기
-                const target = document.querySelector('.result-wrapper');
-                target.classList.remove('hidden');
-                target.textContent = `'${insideId.value}' 는 ${result}`;
+            		var params = $("#idChkFrm").serialize();
+            		/* Todo */
+            		$.ajax({
+            			url : "/projectGAZA/Resources/JSP/signup/idChk.do",
+            			data : params,
+            			success : function(result){
+            				if(eval(result)){
+            					isOk = '사용할 수 없습니다.';
+            					target.innerHTML = `'${insideId.value}' <span class='font-gray1'>는 </span><span class='font-red'>${isOk}</span>`;
+            					btnUse.setAttribute("disabled","disabled");
+            					btnUse.style.opacity = 0.5;
+            					
+            				}else{
+            					isOk = '사용할 수 있습니다.';
+            					target.innerHTML = `'${insideId.value}' <span class='font-gray1'>는 </span><span class='font-blue4'>${isOk}</span>`;
+            					btnUse.removeAttribute("disabled");
+            					btnUse.style.opacity = 1;
+            				}
+            			},
+            			error : function(){
+            				alert("아이디 중복체크 에러...")
+            			}
+            		});
+            		const target = document.querySelector('.result-wrapper');
+		            target.classList.remove('hidden');
+		            
+		            
             } else {
                 alert('아이디를 입력해주십시오.');
             }
         });
         
         document.getElementById('btn-use').addEventListener('click', () => { 
-            if(result.length ===0) alert('중복검사를 해주십시오.');
-            else if(result === "사용할 수 있습니다.") {
+            if(isOk.length ===0) alert('중복검사를 해주십시오.');
+            else if(isOk === "사용할 수 있습니다.") {
                 id.value = insideId.value;
                 document.getElementById('btn-dupCheck-window').style.display = 'none';
                 document.querySelector('.overlay').style.display = 'none';

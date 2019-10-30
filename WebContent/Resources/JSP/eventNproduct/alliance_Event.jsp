@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -34,10 +33,10 @@
                     </ul>
                 </div>
             </div>
-		<c:if test="${i%2 == 0}">
-			</div>
-		</c:if>
-		<c:set var="i" value="${i+1}"/>
+			<c:if test="${i%2 == 0}">
+				</div>
+			</c:if>
+			<c:set var="i" value="${i+1}"/>
        </c:forEach>
     </section>
      <script src="<%=request.getContextPath()%>/Resources/JS/common.js"></script>

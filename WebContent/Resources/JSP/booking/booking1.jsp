@@ -1,23 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>항공권 예약 - 여정선택</title>
         <link rel="stylesheet" href="../../CSS/booking.css">
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
         <!-- Font Awesome CDN -->
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
     </head>
     <body>
+   <%@ include file="../nav.jspf" %>
         <div class="overlay"></div>
         <section class="content">
             <h3>항공권 예약</h3>
-            <!--섹션1-->
+<!--섹션1-->
             <li class="subtitle">
                 <span>여정 / 날짜 선택</span>
             </li>
-
-            <!--컨텐츠-->
+            
+<!--컨텐츠-->
             <div class="row clearfix">
                 <div class="col-two-fifth type-radio-box">
                     <div class="col-third">
@@ -36,8 +41,8 @@
                 <div class="txt-hint">
                     <span id="multi-way-hint">다구간이란? &nbsp;<i class="fas fa-exclamation"></i></span>
                 </div>
-
-                <!--설명팝업창-->
+                
+<!--설명팝업창-->
                 <div class='pop-up-window-type1 centeredX' id='multi-way-hint-window'>
                     <div class="row">
                         <p class="window-title">
@@ -172,17 +177,17 @@
                     <ul class="list-type2">
                        <br>
                         <li>편도 및 이원구간 여정의 경우 국적에 따라 경유지 및 목적지 비자를 소지하지 않으면 해당 국가로 출국이 거절될 수 있습니다.</li>
-                        <li>무비자 입국이 가능한 나라일지라도 편도 입국은 불가하오니 반드시 해당 대사관을 통하여 확인하시기 바랍니다.</li>
+                        <li>무비자 입국이 가능한 나라일지라도 편도 입국은 불가하오니 반드시 해당 대사관을 통하여 확인하시기 바랍니다.</li>	
                     </ul>
                 </div>
             </div>
 
-            <!--섹션2-->
+<!--섹션2-->
             <li class="subtitle">
                 <span>탑승 인원 선택</span>
                 <span id="passenger-hint"><i class="fas fa-exclamation"></i></span>
             </li>
-            <!--설명팝업창-->
+<!--설명팝업창-->
             <div class='pop-up-window-type1 border' id='passenger-hint-window'>
                 <ul class="list-type2">
                     <p>
@@ -201,14 +206,14 @@
                     <li>전 구간에 소아와 함께 여행하는 동반 성인이 있을 경우, 소아 단독 항공권 구매가 가능합니다.</li>
                     <li>보호자 없이 혼자 여행하는 소아 예약 및 추가 문의 예약센터 1588-8000</li>
                 </ul>
-            </div>
-            <!--컨텐츠-->
+            </div>	
+<!--컨텐츠-->
             <div class="itinerary">
                 <div class="row clearfix book-input-form2">
                     <div class="col-third passenger-select number-box">
                         <p>성인 <span>(만 13세 이상)</span></p>
                         <button class = "minus">-</button>
-
+                        
                         <input type = "number" value = "1" id = "numOfAdult">
                         <button class = "plus">+</button>
                     </div>
@@ -240,7 +245,7 @@
                     </ul>
                 </div>
             </div>
-            <!--나이계산기 팝업-->
+<!--나이계산기 팝업-->
             <div class="pop-up-window-type1 centeredX" id="btn-ageCalc-window">
                 <div>
                 <p class="window-title">
@@ -256,13 +261,13 @@
                 </div>
                 <div id="ageCalc-result" class="font-red"></div>
             </div>
-
-            <!--섹션3-->
+            
+<!--섹션3-->
             <li class="subtitle">
                 <span>좌석 등급 선택</span>
                 <span id="class-hint"><i class="fas fa-exclamation"></i></span>
             </li>
-            <!--설명팝업창-->
+<!--설명팝업창-->
             <div class='pop-up-window-type1 border' id='class-hint-window'>
                 <ul class="list-type2">
                     <p>
@@ -274,8 +279,8 @@
                     <li>좌석등급은 항공편 기종별 좌석배치가 다릅니다.<a href="#" target="_blank">좌석배치도 보기</a></li>
                     <li>마일리지 적립은 구입하신 항공권상의 예약클래스 기준으로 적립됩니다.<a href="#" target="_blank">적립 기준표 보기</a></li>
                 </ul>
-            </div>
-            <!--컨텐츠-->
+            </div>	
+<!--컨텐츠-->
             <div class="row itinerary clearfix">
                 <div class="col-third class-select">
                     <input type="radio" class="radio2" name="class-type" value="economy" id="economy" checked="checked">
@@ -290,7 +295,7 @@
                     <label for="first" class="lastRadio">퍼스트</label>
                 </div>
             </div>
-            <!--다음버튼-->
+<!--다음버튼-->
             <div class="row clearfix">
                 <a href="booking2.html" class="nextBtn" onclick="return input_check()">
                     <span>조회</span>
@@ -305,7 +310,7 @@
                     </span>
                 </a>
             </div>
-            <!--유의사항-->
+<!--유의사항-->
             <ul class="list-type2 last-note bg-gray6">
                 <li class="list-inside-title">유의사항</li>
                 <li>국내선 항공권 구매 및 예약 변경은 해당 항공편 출발 30분전까지 가능합니다.</li>
@@ -314,22 +319,23 @@
                 <li>편도로 각각 구매하시거나, 전체 환불 후 재 구매하여 주시기 바랍니다.</li>
             </ul>
         </section>
-
-        <!--datepicker용-->
+            
+<!--datepicker용-->
         <!-- Bootstrap JS -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
         <!-- Moment Js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-
+        
         <!-- Lightpick CSS -->
         <link rel="stylesheet" href="../../../Vendor/javascript-datepicker-lightpick/css/lightpick.css">
 
         <!-- Lightpick JS -->
         <script src="../../../Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
-
+        
         <script src="../../JS/common.js"></script>
         <script src="../../JS/airportpicker.js"></script>
         <script src="../../JS/booking.js"></script>
+        <%@ include file="../footer.jspf" %>
     </body>
 </html>

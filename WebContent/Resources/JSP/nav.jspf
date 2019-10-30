@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 	String path = request.getContextPath();
 %>
@@ -28,7 +29,14 @@ $(function(){
 					<div><a href="#">상품페이지</a></div>
 					<div><a href="#">서비스안내</a></div>
 					<div><a href="#">고객서비스</a></div>
-					<div><a href="<%=path %>/Resources/JSP/login/login.do">로그인</a></div>
+					<div>
+					<c:if test="${memberName==null }">
+					<a href="<%=path %>/Resources/JSP/login/login.do">로그인</a>
+					</c:if>
+					<c:if test="${memberName!=null }">
+					<a href="<%=path %>/Resources/JSP/mypage/mypage_Main.do">마이홈</a>
+					</c:if>
+					</div>
 					<div id="navBar"></div>
 					<ul id="subMenuWrap">
 						<li id="subMenu">
@@ -53,15 +61,19 @@ $(function(){
 								<li><a href="#">항공기안내</a></li>
 							</ul>
 							<ul>
-								<li><a href="<%=path %>/Resources/HTML/notice.html">공지사항</a></li>
+								<li><a href="<%=path %>/Resources/JSP/board/notice.do">공지사항</a></li>
 								<li><a href="<%=path %>/Resources/HTML/service_faq.html">FAQ</a></li>
 								<li><a href="<%=path %>/Resources/JSP/review.jsp">고객의말씀</a></li>
 							</ul>
 							<ul>
-								<li><a href="<%=path %>/Resources/HTML/AccountInfo.html">회원정보</a></li>
-								<li><a href="<%=path %>/Resources/HTML/reserveStatus.html">예약 현황</a></li>
-								<li><a href="<%=path %>/Resources/HTML/mypage_Main.html">마이 홈</a></li>
+								<c:if test="${memberName==null }">
 								<li><a href="<%=path %>/Resources/JSP/signup/signup1.do">회원가입</a></li>
+								</c:if>
+								<c:if test="${memberName!=null }">
+								<li><a href="<%=path %>/Resources/JSP/mypage/account_info.do">회원정보</a></li>
+								<li><a href="<%=path %>/Resources/HTML/reserveStatus.html">예약 현황</a></li>
+								<li><a href="<%=path %>/Resources/JSP/login/logout.do">로그아웃</a></li>
+								</c:if>
 							</ul>
 						</li>
 					</ul>

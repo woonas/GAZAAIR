@@ -6,8 +6,26 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 
 	@Override
 	public boolean idCheck(String userId) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean result = false;
+		try {
+			dbConn();
+			String sql = "select count(memberId) from member where memberId=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userId);
+			
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				if(rs.getInt(1)!=0) {
+					result = true;
+				}
+			}
+		}catch(Exception e) {
+			System.out.println("idCheck 에러...");
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
+		return result;
 	}
 	@Override
 	public int insertRecord(RegisterVO vo) {
@@ -47,14 +65,61 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 
 	@Override
 	public void login(RegisterVO vo) {
-		// TODO Auto-generated method stub
-
+		try {
+			dbConn();
+			String sql = "select memberNum, memberNameKor, memberId from member where memberid=? and memberpwd=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getMemberId());
+			pstmt.setString(2, vo.getMemberPwd());
+			
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				vo.setMemberNum(rs.getInt(1));
+				vo.setMemberNameKor(rs.getString(2));
+				vo.setMemberId(rs.getString(3));
+			}
+		}catch(Exception e) {
+			System.out.println("로그인 에러...");
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
 	}
 
 	@Override
 	public void getRegister(RegisterVO vo) {
-		// TODO Auto-generated method stub
-
+		try {
+			dbConn();
+			String sql = "select * from member where memberId=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getMemberId());
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				vo.setMemberNum(rs.getInt(1));
+				vo.setMemberId(rs.getString(2));
+				vo.setMemberPwd(rs.getString(3));
+				vo.setMemberNameKor(rs.getString(4));
+				vo.setMemberNameEng(rs.getString(5));
+				vo.setNation(rs.getString(6));
+				vo.setGender(rs.getString(7));
+				vo.setTel(rs.getString(8));
+				vo.setAltTel(rs.getString(9));
+				vo.setZipcode(rs.getString(10));
+				vo.setAddr(rs.getString(11));
+				vo.setDetailAddr(rs.getString(12));
+				vo.setEmail(rs.getString(13));
+				vo.setBirthDay(rs.getString(14));
+				vo.setAgree(rs.getString(15));
+				vo.setDirectronic(rs.getString(16));
+			}
+		}catch(Exception e) {
+			System.out.println("회원정보 가져오기 에러...");
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
 	}
 
 	@Override

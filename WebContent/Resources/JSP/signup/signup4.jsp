@@ -247,10 +247,6 @@
                             <a href="signup5.html"><button type="submit" class="btn blueBtn">회원가입</button></a>
                         </div>
                     </div>
-                    <input type="hidden" name="agree_all" value="${agree_all }"/>
-                    <input type="hidden" name="agree_homepageUse" value="${agree_homepageUse }"/>
-                    <input type="hidden" name="agree_personalCollection" value="${agree_personalCollection }"/>
-                    <input type="hidden" name="agree_personalTransferToAbroad" value="${agree_personalTransferToAbroad }"/>
                     <input type="hidden" name="agree_personalCollectionOption" value="${agree_personalCollectionOption }"/>
                     <input type="hidden" name="agree_personalProvide" value="${agree_personalProvide }"/>
                 </form>
@@ -267,12 +263,14 @@
             </div>
             <p>다른 아이디를 사용하시려면 입력 후 중복확인을 클릭해주시기 바랍니다.</p>
             <div class="form-area1 form-group clearfix">
-               <div class="col-two-third">
-                    <input type="text" class="form-control" id="txtID" placeholder="아이디" >
-                </div>
-                <div class='col-third'>
-                    <button class="blueBtn" id="btn-dupCheck2">중복확인</button>
-                </div>
+            	<form method="post" id="idChkFrm" onsubmit="return false">
+	                <div class="col-two-third">
+	                    <input type="text" class="form-control" id="txtID" name="txtID" placeholder="아이디" >
+	                </div>
+	                <div class='col-third'>
+	                    <button class="blueBtn" id="btn-dupCheck2">중복확인</button>
+	                </div>
+                </form>
             </div>
             
             <div class="result-wrapper font-brown"></div>

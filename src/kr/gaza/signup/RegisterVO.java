@@ -22,7 +22,11 @@ public class RegisterVO {
 	private String email;
 	private String birthDay;
 	private String agree;
+	private String ag1;
+	private String ag2;
 	private String directronic;
+	private String dr1;
+	private String dr2;
 	private String regdate;
 	public int getMemberNum() {
 		return memberNum;
@@ -95,14 +99,14 @@ public class RegisterVO {
 		this.t3 = t3;
 	}
 	public String getAltTel() {
-		return a1+"-"+a2+"-"+a3;
+		String alt = "¾øÀ½";
+		if(getA1()!=null) {
+			alt = a1+"-"+a2+"-"+a3;
+		}
+		return alt;
 	}
 	public void setAltTel(String altTel) {
 		this.altTel = altTel;
-		String[] splitAltTel = altTel.split("-");
-		setT1(splitAltTel[0]);
-		setT2(splitAltTel[1]);
-		setT3(splitAltTel[2]);
 	}
 	public String getA1() {
 		return a1;
@@ -157,18 +161,47 @@ public class RegisterVO {
 	}
 	public void setAgree(String agree) {
 		this.agree = agree;
+		 
+		setAg1(agree.split("/")[0]);
+		setAg2(agree.split("/")[1]);
 	}
 	public String getDirectronic() {
 		return directronic;
 	}
 	public void setDirectronic(String directronic) {
 		this.directronic = directronic;
+		setDr1(directronic.split("/")[0]);
+		setDr2(directronic.split("/")[1]);
 	}
 	public String getRegdate() {
 		return regdate;
 	}
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
+	}
+	public String getAg1() {
+		return ag1;
+	}
+	public void setAg1(String ag1) {
+		this.ag1 = ag1;
+	}
+	public String getAg2() {
+		return ag2;
+	}
+	public void setAg2(String ag2) {
+		this.ag2 = ag2;
+	}
+	public String getDr1() {
+		return dr1;
+	}
+	public void setDr1(String dr1) {
+		this.dr1 = dr1;
+	}
+	public String getDr2() {
+		return dr2;
+	}
+	public void setDr2(String dr2) {
+		this.dr2 = dr2;
 	}
 	
 	
