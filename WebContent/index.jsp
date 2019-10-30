@@ -343,7 +343,6 @@
                 </div>
             </div>
 
-
 <%@ include file="Resources/JSP/footer.jspf" %>
 <script src="<%=request.getContextPath() %>/Resources/JS/common.js"></script>
 <script src="<%=request.getContextPath() %>/Resources/JS/airportpicker.js"></script>

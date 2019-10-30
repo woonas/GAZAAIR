@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +20,7 @@
 		</c:if>
         	<input type="hidden" value="${vo.eventNum }">
             <div class="col-half">
+                " kb u uvbyb  ,./bg =[k ?.,mbvcJKL;'}
                 <a href="">
                 	<div class="col-two-fifth" style="background-image: url('<%=request.getContextPath()%>${vo.eventThumbnail}')"></div>
                 </a>
@@ -33,7 +34,7 @@
                     </ul>
                 </div>
             </div>
-		<c:if test="${i%2 == 0}">	
+		<c:if test="${i%2 == 0}">
 			</div>
 		</c:if>
 		<c:set var="i" value="${i+1}"/>
