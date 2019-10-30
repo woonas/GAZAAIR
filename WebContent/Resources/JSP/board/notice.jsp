@@ -17,10 +17,10 @@
 			<section id="title">
 				<h3>공지사항</h3>
 				<div class="search">
-					<select name="searchOption" id="searchOption" class="searchOption" title="검색 분류 선택" value="0">
-					<option value="0">제목 + 내용</option>
-					<option value="1">제목</option>
-					<option value="2">내용</option>
+					<select name="searchOption" id="searchOption" class="searchOption" title="검색 분류 선택">
+						<option value="0">제목 + 내용</option>
+						<option value="1">제목</option>
+						<option value="2">내용</option>
 					</select>
 					<input type="text" class="textField" placeholder="검색어를 입력하세요." title="검색 내용 작성"/>
 					<button class="searchBtn">검색</button>
@@ -51,7 +51,7 @@
 												</span>${v.subject }</a>
 												<br>
 											</h4>
-											ddd ${v.content }
+											${v.content }
 										</td>
 										<td>조회수 ${v.hit}</td>
 										<td>${v.regdate}</td>

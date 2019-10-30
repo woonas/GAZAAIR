@@ -61,7 +61,7 @@ $(function(){
 								<li><a href="#">항공기안내</a></li>
 							</ul>
 							<ul>
-								<li><a href="<%=path %>/Resources/HTML/notice.html">공지사항</a></li>
+								<li><a href="<%=path %>/Resources/JSP/board/notice.do">공지사항</a></li>
 								<li><a href="<%=path %>/Resources/HTML/service_faq.html">FAQ</a></li>
 								<li><a href="<%=path %>/Resources/JSP/review.jsp">고객의말씀</a></li>
 							</ul>
