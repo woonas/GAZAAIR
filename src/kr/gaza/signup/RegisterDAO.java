@@ -124,8 +124,52 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 
 	@Override
 	public int updateRecord(RegisterVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		int cnt = 0;
+		try {
+			dbConn();
+			String sql = "update member set nation=?, tel=?, altTel=?, zipcode=?, addr=?, detailAddr=?, email=?, agree=?, directronic=?  where memberid=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getNation());
+			pstmt.setString(2, vo.getTel());
+			pstmt.setString(3, vo.getAltTel());
+			pstmt.setString(4, vo.getZipcode());
+			pstmt.setString(5, vo.getAddr());
+			pstmt.setString(6, vo.getDetailAddr());
+			pstmt.setString(7, vo.getEmail());
+			pstmt.setString(8, vo.getAgree());
+			pstmt.setString(9, vo.getDirectronic());
+			pstmt.setString(10, vo.getMemberId());
+			
+			cnt = pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			System.out.println("회원정보 수정 에러...");
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
+		return cnt;
+	}
+	@Override
+	public int updatePassword(String memberId, String oldPwd, String newPwd) {
+		int cnt = 0;
+		try {
+			dbConn();
+			String sql = "update member set memberpwd=? where memberid=? and memberpwd=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, newPwd);
+			pstmt.setString(2, memberId);
+			pstmt.setString(3, oldPwd);
+			
+			cnt = pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			System.out.println("비밀번호 변경 에러...");
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
+		return cnt;
 	}
 
 }

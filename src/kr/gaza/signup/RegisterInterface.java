@@ -11,5 +11,6 @@ public interface RegisterInterface {
 	public void getRegister(RegisterVO vo);
 	//회원정보수정
 	public int updateRecord(RegisterVO vo);
-	
+	//비밀번호변경
+	public int updatePassword(String memberId, String oldPwd, String newPwd);
 }

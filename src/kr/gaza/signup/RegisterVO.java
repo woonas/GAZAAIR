@@ -5,7 +5,11 @@ public class RegisterVO {
 	private String memberId;
 	private String memberPwd;
 	private String memberNameKor;
+	private String firstNameKor;
+	private String lastNameKor;
 	private String memberNameEng;
+	private String firstNameEng;
+	private String lastNameEng;
 	private String nation;
 	private String gender;
 	private String tel;
@@ -47,16 +51,44 @@ public class RegisterVO {
 		this.memberPwd = memberPwd;
 	}
 	public String getMemberNameKor() {
-		return memberNameKor;
+		return firstNameKor+" "+lastNameKor;
 	}
 	public void setMemberNameKor(String memberNameKor) {
 		this.memberNameKor = memberNameKor;
+		setFirstNameKor(memberNameKor.split(" ")[0]);
+		setLastNameKor(memberNameKor.split(" ")[1]);
+	}
+	public String getFirstNameKor() {
+		return firstNameKor;
+	}
+	public void setFirstNameKor(String firstNameKor) {
+		this.firstNameKor = firstNameKor;
+	}
+	public String getLastNameKor() {
+		return lastNameKor;
+	}
+	public void setLastNameKor(String lastNameKor) {
+		this.lastNameKor = lastNameKor;
 	}
 	public String getMemberNameEng() {
-		return memberNameEng;
+		return lastNameEng+" "+firstNameEng;
 	}
 	public void setMemberNameEng(String memberNameEng) {
 		this.memberNameEng = memberNameEng;
+		setLastNameEng(memberNameEng.split(" ")[0]);
+		setFirstNameEng(memberNameEng.split(" ")[1]);
+	}
+	public String getFirstNameEng() {
+		return firstNameEng;
+	}
+	public void setFirstNameEng(String firstNameEng) {
+		this.firstNameEng = firstNameEng;
+	}
+	public String getLastNameEng() {
+		return lastNameEng;
+	}
+	public void setLastNameEng(String lastNameEng) {
+		this.lastNameEng = lastNameEng;
 	}
 	public String getNation() {
 		return nation;

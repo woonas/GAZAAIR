@@ -1,25 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="p" value="<%=request.getContextPath()%>"/>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>회원정보</title>
         <!--        bootstrap validator-->
-        <link rel="stylesheet" href="../../../Vendor/bootstrap/css/bootstrap.css"/>
-        <link rel="stylesheet" href="../../../Vendor/bootstrapValidator/bootstrapValidator.css"/>
-		<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
+        <link rel="stylesheet" href="${p }/Vendor/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" href="${p }/Vendor/bootstrapValidator/bootstrapValidator.css"/>
+		<link rel="stylesheet" href="${p }/Resources/CSS/main.css" type="text/css"/>
 		
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="../../../Vendor/bootstrapValidator/bootstrapValidator.js"></script>
+        <script type="text/javascript" src="${p }/Vendor/bootstrapValidator/bootstrapValidator.js"></script>
         <!--        countrypicker-->
-        <link rel="stylesheet" href="../../../Vendor/Filterable-Country-Picker-niceCountryInput/niceCountryInput.css">
-        <script src="../../../Vendor/Filterable-Country-Picker-niceCountryInput/niceCountryInput.js"></script>
+        <link rel="stylesheet" href="${p }/Vendor/Filterable-Country-Picker-niceCountryInput/niceCountryInput.css">
+        <script src="${p }/Vendor/Filterable-Country-Picker-niceCountryInput/niceCountryInput.js"></script>
         <!-- Font Awesome CDN -->
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../../CSS/account.css">
+        <link rel="stylesheet" href="${p }/Resources/CSS/account.css">
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
         <!-- 다음/카카오 주소검색 -->
         <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -66,7 +66,7 @@
             <h3>회원정보</h3>
             
             <div class="form-wrapper">
-                <form id="defaultForm" method="post" action="" class="form-horizontal">
+                <form id="defaultForm" method="post" action="<%=path %>/Resources/JSP/mypage/account_info_edit.do" class="form-horizontal">
                     <fieldset>
                         <legend>기본 정보</legend>
 
@@ -93,7 +93,7 @@
                                        value="${vo.memberPwd }">
                             </div>
                             <div>
-                                <a href="password_change.html">
+                                <a href="<%=path %>/Resources/JSP/mypage/password_change.do">
                                     <input type="button" class="blueBtn" id="btn-pwChange" value="비밀번호변경">
                                 </a>
                             </div>
@@ -274,15 +274,30 @@
                            </label>
                             <div class="col-xs-7">
                                 <div class="clearfix">
-                                    <div class="col-xs-3 checkbox">
-                                        <input type="checkbox" class="checkbox3" name="receiveEmail"
-                                               id="receiveEmail" checked>
-                                        <label for="receiveEmail" class="checkbox3"> 이메일</label>
-                                    </div>
-                                    <div class="col-xs-3 checkbox">
-                                        <input type="checkbox" class="checkbox3" name="receiveSMS" id="receiveSMS">
-                                        <label for="receiveSMS" class="checkbox3"> SMS</label>
-                                    </div>
+                                	<c:if test="${vo.dr1=='on' }">
+	                                    <div class="col-xs-3 checkbox">
+	                                        <input type="checkbox" class="checkbox3" name="receiveEmail" id="receiveEmail" checked>
+	                                        <label for="receiveEmail" class="checkbox3"> 이메일</label>
+	                                    </div>
+                                    </c:if>
+                                    <c:if test="${vo.dr1=='off' }">
+                                    	<div class="col-xs-3 checkbox">
+	                                        <input type="checkbox" class="checkbox3" name="receiveEmail" id="receiveEmail">
+	                                        <label for="receiveEmail" class="checkbox3"> 이메일</label>
+	                                    </div>
+                                    </c:if>
+                                    <c:if test="${vo.dr2=='on' }">
+	                                    <div class="col-xs-3 checkbox">
+	                                        <input type="checkbox" class="checkbox3" name="receiveSMS" id="receiveSMS" checked>
+	                                        <label for="receiveSMS" class="checkbox3"> SMS</label>
+	                                    </div>
+                                    </c:if>
+                                    <c:if test="${vo.dr2=='off' }">
+                                   	 <div class="col-xs-3 checkbox">
+	                                        <input type="checkbox" class="checkbox3" name="receiveSMS" id="receiveSMS">
+	                                        <label for="receiveSMS" class="checkbox3"> SMS</label>
+	                                    </div>
+                                    </c:if>
                                 </div>
                                 <div>
                                     <ul class="list-type2">
@@ -297,14 +312,14 @@
                     <h4>간편로그인 연결</h4>
                     <div class="row flex clearfix login-link">
                         <div>
-                            <img src="../../IMG/logo/kakao.png" alt="">
+                            <img src="<%=path %>/Resources/IMG/logo/kakao.png" alt="">
                             카카오톡 <span>간편로그인</span></div>
                         <div id="facebook-logo">
-                            <img src="../../IMG/logo/pngkey.com-facebook-logo-png-5311.png" alt="">
+                            <img src="<%=path %>/Resources/IMG/logo/pngkey.com-facebook-logo-png-5311.png" alt="">
                             페이스북 <span>간편로그인</span>
                         </div>
                         <div>
-                            <img src="../../IMG/logo/naver-png-no-comments-200.png" alt="">
+                            <img src="<%=path %>/Resources/IMG/logo/naver-png-no-comments-200.png" alt="">
                             네이버 <span>간편로그인</span>
                         </div>
                     </div>
@@ -352,13 +367,13 @@
         <!-- Moment Js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
         <!-- Lightpick CSS -->
-        <link rel="stylesheet" href="../../../Vendor/javascript-datepicker-lightpick/css/lightpick.css">
+        <link rel="stylesheet" href="<%=path %>/Vendor/javascript-datepicker-lightpick/css/lightpick.css">
         <!-- Lightpick JS -->
-        <script src="../../../Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
+        <script src="<%=path %>/Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
 
-        <script src="../../JS/validator.js"></script>
-        <script src="../../JS/common.js"></script>
-        <script src="../../JS/account.js"></script>
+        <script src="<%=path %>/Resources/JS/validator.js"></script>
+        <script src="<%=path %>/Resources/JS/common.js"></script>
+        <script src="<%=path %>/Resources/JS/account.js"></script>
         <%@ include file="../footer.jspf" %>
     </body>
 </html>

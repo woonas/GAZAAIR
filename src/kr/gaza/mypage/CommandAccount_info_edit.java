@@ -1,29 +1,27 @@
-package kr.gaza.signup;
+package kr.gaza.mypage;
 
 import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.gaza.controller.CommandService;
+import kr.gaza.signup.RegisterDAO;
+import kr.gaza.signup.RegisterVO;
 
-public class CommandSignupOk implements CommandService {
+public class CommandAccount_info_edit implements CommandService {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
+		HttpSession ses = request.getSession();
 		RegisterVO vo = new RegisterVO();
-		vo.setMemberId(request.getParameter("username"));
-		vo.setMemberPwd(request.getParameter("password"));
-		vo.setFirstNameKor(request.getParameter("firstNameKo"));
-		vo.setLastNameKor(request.getParameter("lastNameKo"));
-		vo.setFirstNameEng(request.getParameter("firstNameEn"));
-		vo.setLastNameEng(request.getParameter("lastNameEn"));
+		vo.setMemberId((String)ses.getAttribute("memberId"));
 		vo.setNation(request.getParameter("country"));
-		vo.setGender(request.getParameter("gender"));
+		vo.setEmail(request.getParameter("email"));
 		vo.setT1(request.getParameter("phone1"));
 		vo.setT2(request.getParameter("phone2"));
 		vo.setT3(request.getParameter("phone3"));
@@ -33,10 +31,9 @@ public class CommandSignupOk implements CommandService {
 		vo.setZipcode(request.getParameter("postalCode"));
 		vo.setAddr(request.getParameter("addr1"));
 		vo.setDetailAddr(request.getParameter("addr2"));
-		vo.setEmail(request.getParameter("email"));
-		vo.setBirthDay(request.getParameter("birthdate"));
-		String agree1 = request.getParameter("agree_personalCollectionOption");
-		String agree2 = request.getParameter("agree_personalProvide");
+		
+		String agree1 = request.getParameter("info-provide");
+		String agree2 = request.getParameter("integrated-login");
 		String direct1 = request.getParameter("receiveEmail");
 		String direct2 = request.getParameter("receiveSMS");
 		if(agree1 == null) {
@@ -51,14 +48,14 @@ public class CommandSignupOk implements CommandService {
 		if(direct2 == null) {
 			direct2 = "off";
 		}
+		vo.setAgree(agree1+"/"+agree2);
 		vo.setDirectronic(direct1+"/"+direct2);
 		
 		RegisterDAO dao = new RegisterDAO();
-		int cnt = dao.insertRecord(vo);
+		int cnt = dao.updateRecord(vo);
 		
 		request.setAttribute("cnt", cnt);
-		
-		return "signupOk.jsp";
+		return "account_info_edit.jsp";
 	}
 
 }
