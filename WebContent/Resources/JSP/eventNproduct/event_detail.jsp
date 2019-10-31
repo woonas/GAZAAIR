@@ -26,7 +26,7 @@
             </p>
         </div>
         <br>
-        <img src="<%=request.getContextPath()%>${vo.eventImg }" alt="">
+        <img src="<%=request.getContextPath()%>${vo.eventImg }" alt="" style="width:100%">
     </section>
     
     <script src="../../JS/common.js"></script>
