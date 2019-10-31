@@ -1,5 +1,7 @@
 package kr.gaza.home;
 
+import java.io.IOException;
+import java.io.Reader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,7 +15,7 @@ public class DBConn {
 	public PreparedStatement pstmt = null;
 	public ResultSet rs = null;
 	
-	//DBÏó∞Í≤∞
+	//DBø¨∞·
 	public void dbConn() {
 		try {
 			Context ctx = new InitialContext();
@@ -21,19 +23,31 @@ public class DBConn {
 			DataSource ds = (DataSource)ctxEnv.lookup("jdbc/myoracle");
 			conn = ds.getConnection();
 		}catch(Exception e) {
-			System.out.println("DBÏó∞Í≤∞ÏóêÎü¨...");
+			System.out.println("DBø¨∞· ø°∑Ø...");
 			e.printStackTrace();
 		}
 	}
-	//DBÎã´Í∏∞
+	//DB¡æ∑·
 	public void dbClose() {
 		try {
 			if(rs!=null) rs.close();
 			if(pstmt!=null) pstmt.close();
 			if(conn!=null) conn.close();
 		}catch(Exception e) {
-			System.out.println("DBÎã´Í∏∞ÏóêÎü¨...");
+			System.out.println("DB¡æ∑· ø°∑Ø...");
 			e.printStackTrace();
 		}
 	}
+	// DAOø°º≠ ªÁøÎøπ¡¶ vo.setContent(readClobData(rs.getCharacterStream(4))); 
+	public static String readClobData(Reader reader) throws IOException {
+        StringBuffer data = new StringBuffer();
+        char[] buf = new char[1024];
+        int cnt = 0;
+        if (null != reader) {
+            while ( (cnt = reader.read(buf)) != -1) {
+                data.append(buf, 0, cnt);
+            }
+        }
+        return data.toString();
+    }
 }
