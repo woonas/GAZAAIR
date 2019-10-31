@@ -50,9 +50,9 @@ $(function(){
 								<li><a href="<%=path %>/Resources/JSP/etc/routeMap.do">운항노선도</a></li>
 							</ul>
 							<ul>
-								<li><a href="<%=path %>/Resources/HTML/prd_BestProduct.html">베스트상품</a></li>
-								<li><a href="<%=path %>/Resources/HTML/prd_alliance_event.html">제휴이벤트</a></li>							
-								<li><a href="<%=path %>/Resources/HTML/prd_recmdProduct.html">추천상품</a></li>
+								<li><a href="<%=path %>/Resources/JSP/eventNproduct/best_product.do">베스트상품</a></li>
+								<li><a href="<%=path %>/Resources/JSP/eventNproduct/recommend_product.do">추천상품</a></li>
+								<li><a href="<%=path %>/Resources/JSP/eventNproduct/event_List.do">제휴이벤트</a></li>
 							</ul>
 							<ul>
 								<li><a href="#">공항서비스</a></li>
