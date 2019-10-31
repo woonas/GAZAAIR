@@ -6,8 +6,32 @@ public class RecommendVO {
 	private String regdate;
 	private String city;
 	private String cityImg;
+	//베스트 상품에 필요한 변수
+	private int productCnt; 
+	private int onePageRecord=5;
+	//세일 상품에 필요한 변수
+	private int sale;
 	
 	
+	
+	public int getSale() {
+		return sale;
+	}
+	public void setSale(int sale) {
+		this.sale = sale;
+	}
+	public int getOnePageRecord() {
+		return onePageRecord;
+	}
+	public void setOnePageRecord(int onePageRecord) {
+		this.onePageRecord = onePageRecord;
+	}
+	public int getProductCnt() {
+		return productCnt;
+	}
+	public void setProductCnt(int productCnt) {
+		this.productCnt = productCnt;
+	}
 	public String getCity() {
 		return city;
 	}
