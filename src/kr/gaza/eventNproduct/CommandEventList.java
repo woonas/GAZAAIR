@@ -20,6 +20,6 @@ public class CommandEventList implements CommandService {
 		List<EventVO> lst = dao.getAllRecord();
 		
 		request.setAttribute("lst", lst);
-		return "alliance_Event.jsp";
+		return "event_List.jsp";
 	}
 }

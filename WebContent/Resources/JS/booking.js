@@ -298,15 +298,42 @@ const input_check = () => {
                 const parent = e.target.parentElement;
                 //
                 var div = document.createElement("DIV");
-                div.style.height = "80px";
+                div.style.height = "50px";
+                div.classList.add('row');
+                div.classList.add('clearfix');
+                div.className = "row clearfix price-div";
                 if(parent.parentElement.children[1] === parent) {
-                    div.style.backgroundColor = parent.style.backgroundColor = parent.style.borderBottomColor = "#9bf";
+                    div.style.backgroundColor = parent.style.backgroundColor = parent.style.borderBottomColor = "#8af";
+                    div.innerHTML = `<div class="col-two-fifth"><div class="col-two-fifth">선택된 항공편 운임</div><div class="col-three-fifth">60% 할인</div></div>
+                        <div class="col-three-fifth">
+                        <span class="people-type">(성인 1)</span><span>53,400</span>
+                        <span>+</span>
+                        <span class="people-type">(소아 1)</span><span>26,700</span>
+                        <span>+</span>
+                        <span class="people-type">(유아 1)</span><span>0</span>
+                        <span>=</span> KRW 80,100</div>`;
                     insertAfter(parent.parentElement, div);
                 } else if(parent.parentElement.children[2] === parent) {
                     div.style.backgroundColor = parent.style.backgroundColor = parent.style.borderBottomColor = "#69f";
+                    div.innerHTML = `<div class="col-two-fifth"><div class="col-two-fifth">선택된 항공편 운임</div><div class="col-three-fifth">50% 할인</div></div>
+                        <div class="col-three-fifth">
+                        <span class="people-type">(성인 1)</span><span>53,400</span>
+                        <span>+</span>
+                        <span class="people-type">(소아 1)</span><span>26,700</span>
+                        <span>+</span>
+                        <span class="people-type">(유아 1)</span><span>0</span>
+                        <span>=</span> KRW 80,100</div>`;
                     insertAfter(parent.parentElement, div);
                 } else if(parent.parentElement.children[3] === parent) {
                     div.style.backgroundColor = parent.style.backgroundColor = parent.style.borderBottomColor = "#36f";
+                    div.innerHTML = `<div class="col-two-fifth"><div class="col-two-fifth">선택된 항공편 운임</div><div class="col-three-fifth">정상 가격</div></div>
+                        <div class="col-three-fifth">
+                        <span class="people-type">(성인 1)</span><span>53,400</span>
+                        <span>+</span>
+                        <span class="people-type">(소아 1)</span><span>26,700</span>
+                        <span>+</span>
+                        <span class="people-type">(유아 1)</span><span>0</span>
+                        <span>=</span> KRW 80,100</div>`;
                     insertAfter(parent.parentElement, div);
                 }
                 e.target.parentElement.classList.add('selected-ticket');
@@ -328,22 +355,22 @@ const input_check = () => {
 
         // 섹션별 여정 설명바
         $('#journey-1').waypoint(direction => {
-            if (direction === "down") $('#journey-1 .journey-name-sticky').removeClass('hidden');
-            else $('.journey-name-sticky').addClass('hidden');
+            if (direction === "down") $('#journey-1 .journey-name-fixed').removeClass('hidden');
+            else $('.journey-name-fixed').addClass('hidden');
         }, {
             offset: '-1px;'
         });
 
         $('#journey-2').waypoint(direction => {
-            if (direction === "down") $('#journey-2 .journey-name-sticky').removeClass('hidden');
-            else $('.journey-name-sticky').addClass('hidden');
+            if (direction === "down") $('#journey-2 .journey-name-fixed').removeClass('hidden');
+            else $('.journey-name-fixed').addClass('hidden');
         }, {
             offset: '-1px;'
         });
 
         $('#journey-2').waypoint(direction => {
-            if (direction === "up") $('#journey-1 .journey-name-sticky').removeClass('hidden');
-            else $('.journey-name-sticky').addClass('hidden');
+            if (direction === "up") $('#journey-1 .journey-name-fixed').removeClass('hidden');
+            else $('.journey-name-fixed').addClass('hidden');
         }, {
             offset: '100px;'
         });

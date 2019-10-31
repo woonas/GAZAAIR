@@ -127,7 +127,9 @@ const input_check = (name) => {
 //signup3에서 인증성공 이펙트
 const eventHandler = (_window, step2) => {
     const authent = $('.authent');
-
+    var agree1 = $("#agree_personalCollectionOption").val();
+    var agree2 = $("#agree_personalProvide").val();
+    
     _window.addClass('step1');
     setTimeout(function(){
         _window.addClass(step2)
@@ -142,7 +144,7 @@ const eventHandler = (_window, step2) => {
         _window.removeClass(step2)
     },2500);
     setTimeout(function(){
-        location.href= 'signup4.html';
+        location.href= '/projectGAZA/Resources/JSP/signup/signup4.do?agree_personalCollectionOption='+agree1+'&agree_personalProvide='+agree2;
     }, 4500);
 };
 
@@ -293,6 +295,7 @@ const eventHandler = (_window, step2) => {
         const phone_all = document.getElementById('phone-all');
         const number_all = document.getElementById('number-all');
         const addr_all = document.getElementById('addr-all');
+        const addr_separate = document.getElementById('addr-all').nextElementSibling;
         const event_ul = document.querySelector('.event-label + div>div:last-of-type');
         const inputs = document.querySelectorAll('.form-group div[class^=col]>input:not(#edit)');
         inputs.forEach(input => input.disabled = 'true' );
@@ -312,6 +315,7 @@ const eventHandler = (_window, step2) => {
             phone_all.classList.remove('hidden');
             number_all.classList.remove('hidden');
             addr_all.classList.remove('hidden');
+            addr_separate.classList.add('hidden');
             phone_all.previousElementSibling.classList.add('hidden');
             number_all.previousElementSibling.classList.add('hidden');
 
@@ -321,6 +325,8 @@ const eventHandler = (_window, step2) => {
                 event_ul.style.display = 'block';
                 phone_all.classList.add('hidden');
                 number_all.classList.add('hidden');
+                addr_all.classList.add('hidden');
+                addr_separate.classList.remove('hidden');
                 phone_all.previousElementSibling.classList.remove('hidden');
                 number_all.previousElementSibling.classList.remove('hidden');
             }

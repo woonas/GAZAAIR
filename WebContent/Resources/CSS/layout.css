@@ -34,6 +34,9 @@ section.content {
     margin: 0 auto 70px;
 }	
 
+a { text-decoration: none; }
+
+
 .clearfix {zoom: 1;}
 .clearfix:after {
     content: '.';
@@ -46,10 +49,9 @@ section.content {
 .hidden { display: none !important; }
 
 .scrollable {
-    height: auto;
+    /*height: auto;*/
     /*    max-height: px; 설정*/
-    overflow: hidden;
-    overflow-y: auto;
+    overflow-y: overlay;
 }
 
 .noscroll {
@@ -87,6 +89,34 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0;
 }
+
+/* 문법오류보여지는줄 색상 */
+::grammar-error { color: transparent; }
+
+/* ----------------------------------------------- */
+/* 스크롤바 */
+/* ----------------------------------------------- */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+}
+
+section.content::-webkit-scrollbar {
+    width: 5px !important;
+}
+
+::-webkit-scrollbar-track-piece:start,
+::-webkit-scrollbar-track-piece:end { background: transparent url('../IMG/icon/icon.png') repeat-y 600px 600px  !important; }
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    width: 0;
+    height: 0;
+}
+
+::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); }
+:hover::-webkit-scrollbar-thumb { background-color: rgba(30, 60, 255, 0.8); }
 
 /* ----------------------------------------------- */
 /* 텍스트 */
@@ -605,30 +635,23 @@ input[type="checkbox"]:disabled + label { cursor: not-allowed; }
 
 input[type="checkbox"] { display: none; }
 
+
 input[type="checkbox"].checkbox1 + label:before,
 input[type="checkbox"].checkbox2 + label:before {
     content: "";
     display: inline-block;
-    margin: 0 8px 0 0;
-    width: 26px;
-    height: 26px;
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
     background: url(../IMG/icon/check_rect_white.png) no-repeat center;
-    background-size: 26px 26px;
+    background-size: 25px 25px;
+    border: 1px solid #ccc;
     vertical-align: -5px;
 }
 
 input[type="checkbox"].checkbox1:checked + label:before {
     background: url(../IMG/icon/check_rect_blue.png) no-repeat center;
     background-size: 24px 24px;
-    height: 24px;
-    width: 24px;
-    border: 1px solid #aaa;
-}
-
-input[type="checkbox"].checkbox1:checked + label.size-fixed:before,
-input[type="checkbox"].checkbox2:checked + label.size-fixed:before {
-    height: 26px;
-    width: 26px;
 }
 
 input[type="checkbox"].checkbox2 + label:before {
@@ -649,9 +672,7 @@ input[type="checkbox"].checkbox2:checked + label:before {
     height: 16px;
 }
 
-
 /* 체크박스3 */
-
 input[type=checkbox].checkbox3 { display: none; }
 
 label.checkbox3 {

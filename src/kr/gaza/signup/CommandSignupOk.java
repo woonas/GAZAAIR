@@ -15,13 +15,13 @@ public class CommandSignupOk implements CommandService {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		String nameKo = request.getParameter("firstNameKo")+"/"+request.getParameter("lastNameKo");
-		String nameEn = request.getParameter("lastNameEn")+"/"+request.getParameter("firstNameEn");
 		RegisterVO vo = new RegisterVO();
 		vo.setMemberId(request.getParameter("username"));
 		vo.setMemberPwd(request.getParameter("password"));
-		vo.setMemberNameKor(nameKo);
-		vo.setMemberNameEng(nameEn);
+		vo.setFirstNameKor(request.getParameter("firstNameKo"));
+		vo.setLastNameKor(request.getParameter("lastNameKo"));
+		vo.setFirstNameEng(request.getParameter("firstNameEn"));
+		vo.setLastNameEng(request.getParameter("lastNameEn"));
 		vo.setNation(request.getParameter("country"));
 		vo.setGender(request.getParameter("gender"));
 		vo.setT1(request.getParameter("phone1"));
@@ -35,9 +35,16 @@ public class CommandSignupOk implements CommandService {
 		vo.setDetailAddr(request.getParameter("addr2"));
 		vo.setEmail(request.getParameter("email"));
 		vo.setBirthDay(request.getParameter("birthdate"));
-		vo.setAgree(request.getParameter("agree_all")+"/"+request.getParameter("agree_homepageUse")+"/"+request.getParameter("agree_personalCollection")+"/"+request.getParameter("agree_personalTransferToAbroad"));
-		String direct1 = request.getParameter("agree_personalCollectionOption");
-		String direct2 = request.getParameter("agree_personalProvide");
+		String agree1 = request.getParameter("agree_personalCollectionOption");
+		String agree2 = request.getParameter("agree_personalProvide");
+		String direct1 = request.getParameter("receiveEmail");
+		String direct2 = request.getParameter("receiveSMS");
+		if(agree1 == null) {
+			agree1 = "off";
+		}
+		if(agree2 == null) {
+			agree2 = "off";
+		}
 		if(direct1 == null) {
 			direct1 = "off";
 		}

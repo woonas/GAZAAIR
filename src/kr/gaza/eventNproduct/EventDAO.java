@@ -1,20 +1,23 @@
 package kr.gaza.eventNproduct;
 
+import kr.gaza.home.DBConn;
+
 import java.util.ArrayList;
 import java.util.List;
-import kr.gaza.home.DBConn;
 
 public class EventDAO extends DBConn implements EventInterface {
 
 	@Override
 	public List<EventVO> getAllRecord() {
-		List<EventVO> lst = new ArrayList<EventVO>();
+		List<EventVO> lst = new ArrayList<>();
 		try {
 			dbConn();
 			
-			String sql = "select * from event order by eventNum desc";
+			String sql = "select * from event order by eventnum desc";
 			pstmt = conn.prepareStatement(sql);
+			
 			rs = pstmt.executeQuery();
+			System.out.println(rs);
 			while(rs.next()) {
 				EventVO vo = new EventVO();
 				vo.setEventNum(rs.getInt(1));
@@ -28,6 +31,7 @@ public class EventDAO extends DBConn implements EventInterface {
 				lst.add(vo);
 			}
 		}catch(Exception e) {
+			System.out.println("���ڵ� ��ü ����");
 			e.printStackTrace();
 		}finally {
 			dbClose();
@@ -53,9 +57,30 @@ public class EventDAO extends DBConn implements EventInterface {
 		return 0;
 	}
 
+
 	@Override
 	public void eventSelect(EventVO vo) {
-		// TODO Auto-generated method stub
+		try {
+			dbConn();
+			String sql = "select eventnum,eventname,startdate,enddate,eventImg from event where eventNum=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, vo.getEventNum());
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				vo.setEventNum(rs.getInt(1));
+				vo.setEventName(rs.getString(2));
+				vo.setStartDate(rs.getString(3));
+				vo.setEndDate(rs.getString(4));
+				vo.setEventImg(rs.getString(5));
+			}
+			
+		}catch(Exception e) {
+			System.out.println("���ڵ� ���� ����");
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
 		
 	}
 	
