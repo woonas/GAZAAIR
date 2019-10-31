@@ -39,7 +39,7 @@
                         <div>06:05</div>
                     </div>
                     <div class="col-two-fourth">
-                        <img src = "../../IMG/icon/flight-table2.png" alt = "">
+                        <img src = "../../IMG/icon/flight-table.svg" alt = "">
                     </div>
                     <div class="col-fourth">
                         <div>제주</div>
@@ -68,7 +68,7 @@
                         <div>06:05</div>
                     </div>
                     <div class="col-two-fourth">
-                        <img src = "../../IMG/icon/flight-table2.png" alt = "">
+                        <img src = "../../IMG/icon/flight-table.svg" alt = "">
                     </div>
                     <div class="col-fourth">
                         <div>제주</div>
@@ -108,7 +108,7 @@
                         </div>
                         <div class="col-two-fifth">
                             <div class="flight-image">
-                                <img src = "../../IMG/icon/flight-table2.png" alt = "">
+                                <img src = "../../IMG/icon/flight-table.svg" alt = "">
                             </div>
                         </div>
                         <div class="col-fourth">
@@ -146,7 +146,7 @@
                         </div>
                         <div class="col-two-fifth">
                             <div class="flight-image">
-                                <img src = "../../IMG/icon/flight-table2.png" alt = "">
+                                <img src = "../../IMG/icon/flight-table.svg" alt = "">
                             </div>
                         </div>
                         <div class="col-fourth">

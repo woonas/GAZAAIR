@@ -371,6 +371,145 @@ div[class$=-table-detail]>div:not(.table-row-title)>div {
 /* ----------------------------------------------- */
 
 
+#interest-route-add-btn + label {
+    border-radius: 0;
+    padding: 8px 24px 8px 10px;
+    font-size: 70%;
+    float: right;
+}
+
+#interest-route-add-btn + label:after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    margin-top: 3px;
+    margin-left: 5px;
+    transform: rotate(45deg);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transition: all 0.5s;
+}
+
+#interest-route-add-btn:checked + label:after {
+    transform: rotate(585deg);
+    margin-top: 6px;
+}
+
+#delete-selected-btn {
+    padding: 8px 15px;
+    border-radius: 0;
+    margin-left: 30px;
+    font-size: 70%;
+}
+
+.interest-route-btn-wrapper { padding-left: 10px; }
+.interest-route-btn-wrapper>label:before,
+.interest-route-title>input[type=checkbox] + label:before { transform: scale(1.3); }
+
+.interest-route-add-section {
+    margin-top: 30px;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.interest-route-add-section input[type=button] {
+    float: right;
+    border-radius: 3px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 90%;
+}
+
+.interest-route-add-section input[type=text] { background-color: #fff; }
+
+.interest-route-add-section input[type=radio] + label {
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.interest-route-add-section>.table-form>.row { border-bottom: 1px solid #ccc; }
+
+.interest-route-section { margin: 30px 0; }
+.interest-route-title {
+    padding: 20px;
+    font-size: 140%;
+    font-weight: 600;
+    background-color: #f3f3f3;
+    margin-bottom: 20px;
+}
+
+.interest-route-title>span {
+    vertical-align: middle;
+    margin-right: 60px;
+}
+.interest-route-title>span:first-of-type:after {
+    content: '';
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 17px;
+    background: url("../IMG/icon/ico_arrow_gray.png") no-repeat;
+}
+
+.interest-route-title>a { float: right; }
+.interest-route-title>a>span {
+    color: #555;
+    margin-right: 15px;
+    font-size: 80%;
+    font-weight: 300;
+}
+input[type=checkbox][id^=fold-btn-]:checked + label { transform: rotate(180deg); }
+input[type=checkbox][id^=fold-btn-] + label>img { vertical-align: bottom; }
+
+
+.interest-route>div { height: 400px; }
+
+.interest-route-detail {
+    border-radius: 0 3px 3px 0;
+    border: 1px solid #eee;
+    padding: 20px;
+}
+.interest-route-detail>img {
+    transform: rotate(90deg);
+    position: absolute;
+    margin-top: 110px;
+    margin-left: -80px;
+}
+
+.interest-route-detail>img + span { float: right; }
+.interest-route-detail>span>a>button {
+    border-radius: 0;
+    margin-right: 5px;
+    margin-top: -50px;
+    padding: 7px 20px;
+}
+
+.interest-route-detail>.trip-type {
+    font-size: 130%;
+    margin: 3px 0 15px 3px;
+}
+.interest-route-detail>.trip-type>i { margin-right: 5px; }
+
+
+.interest-route-detail>.airport1,
+.interest-route-detail>.airport2 {
+    font-size: 150%;
+    font-weight: 600;
+    margin-left: 45px;
+}
+.interest-route-detail>.airport1 { margin-bottom: 140px; }
+.interest-route-detail>.airport2 { margin-bottom: 35px; }
+
+#reserve-btn {
+    border-radius: 0;
+    font-size: 85%;
+    margin: 0 6px;
+    padding: 12px 46px 12px 46px;
+}
+
 
 /* ----------------------------------------------- */
 /* 주문목록  purchase_list.html*/

@@ -46,28 +46,21 @@
             </div>
             <input type="radio" name="trip-type" id="trip-type" class="hidden" checked>
         </div>
-        <div class="journey-name-sticky-1 hidden" name="journey-1">
-            <i class="fas fa-plane-departure font-blue4"></i>
-            <span class="font-blue4">가는 여정</span>
-            <span id="airportFrom-name-sticky-1">
-                GMP <span>서울 / 김포</span>
-            </span>
-            <span id="airportTo-name-sticky-1">
-                CJU <span>제주</span>
-            </span>
-        </div>
+       
         
         <section class="content">
-            <div id="journey-1" class="journey-wrapper">
-                <div class="journey-name-sticky hidden" name="journey-1">
-                    <i class="fas fa-plane-departure font-blue4"></i>
-                    <span class="font-blue4">가는 여정</span>
-                    <span id="airportFrom-name-sticky-mini-1">
-                        GMP <span>서울 / 김포</span>
-                    </span>
-                    <span id="airportTo-name-sticky-mini-1">
-                        CJU <span>제주</span>
-                    </span>
+            <div id="journey-1" class="journey-wrapper clearfix">
+                <div class="journey-name-fixed hidden" name="journey-1">
+                    <div class="row">
+                        <i class="fas fa-plane-departure font-blue4"></i>
+                        <span class="font-blue4">가는 여정</span>
+                        <span id="airportFrom-name-sticky-mini-1">
+                            GMP <span>서울 / 김포</span>
+                        </span>
+                        <span id="airportTo-name-sticky-mini-1">
+                            CJU <span>제주</span>
+                        </span>
+                    </div>
                 </div>
                    
                 <div class="journey-name">
@@ -89,49 +82,49 @@
                         <input type="radio" name="price-of-day-1" id="journey-1-price-1">
                         <label for="journey-1-price-1">
                             <div class="date">09.20 (금)</div>
-                            <div class="price">KRW105,500</div>
+                            <div class="price"><span>KRW</span> 105,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-1" id="journey-1-price-2">
                         <label for="journey-1-price-2">
                             <div class="date">09.21 (토)</div>
-                            <div class="price">KRW65,500</div>
+                            <div class="price"><span>KRW</span> 65,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-1" id="journey-1-price-3">
                         <label for="journey-1-price-3">
                             <div class="date">09.22 (일)</div>
-                            <div class="price">KRW65,000</div>
+                            <div class="price"><span>KRW</span> 65,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
-                        <input type="radio" name="price-of-day-1" id="journey-1-price-4">
+                        <input type="radio" name="price-of-day-1" id="journey-1-price-4" checked>
                         <label for="journey-1-price-4">
                             <div class="date">09.23 (월)</div>
-                            <div class="price">KRW45,500</div>
+                            <div class="price"><span>KRW</span> 45,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-1" id="journey-1-price-5">
                         <label for="journey-1-price-5">
                             <div class="date">09.24 (화)</div>
-                            <div class="price">KRW65,500</div>
+                            <div class="price"><span>KRW</span> 65,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-1" id="journey-1-price-6">
                         <label for="journey-1-price-6">
                             <div class="date">09.25 (수)</div>
-                            <div class="price">KRW45,500</div>
+                            <div class="price"><span>KRW</span> 45,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-1" id="journey-1-price-7">
                         <label for="journey-1-price-7">
                             <div class="date">09.26 (목)</div>
-                            <div class="price">KRW105,500</div>
+                            <div class="price"><span>KRW</span> 105,500</div>
                         </label>
                     </div>
                     <div class="buttons btn-price-next-week"></div>
@@ -179,12 +172,12 @@
                         <div class="col-fifth">할인운임</div>
                         <div class="col-fifth">정상운임</div>
                     </div>
-
+                    
                     <div class="row flight-table-schedule clearfix">
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -223,7 +216,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -262,7 +255,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -301,7 +294,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -340,7 +333,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -379,7 +372,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -418,7 +411,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -457,7 +450,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -496,7 +489,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -535,7 +528,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -573,7 +566,7 @@
             </div>
             
             <div id="journey-2" class="journey-wrapper">
-                <div class="journey-name-sticky hidden" name="journey-2">
+                <div class="journey-name-fixed hidden" name="journey-2">
                     <i class="fas fa-plane-departure font-blue4"></i>
                     <span class="font-blue4">오는 여정</span>
                     <span id="airportFrom-name-sticky-2">
@@ -603,49 +596,49 @@
                         <input type="radio" name="price-of-day-2" id="journey-2-price-1">
                         <label for="journey-2-price-1">
                             <div class="date">09.20 (금)</div>
-                            <div class="price">KRW105,500</div>
+                            <div class="price"><span>KRW</span> 105,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-2" id="journey-2-price-2">
                         <label for="journey-2-price-2">
                             <div class="date">09.21 (토)</div>
-                            <div class="price">KRW65,500</div>
+                            <div class="price"><span>KRW</span> 65,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-2" id="journey-2-price-3">
                         <label for="journey-2-price-3">
                             <div class="date">09.22 (일)</div>
-                            <div class="price">KRW65,000</div>
+                            <div class="price"><span>KRW</span> 65,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-2" id="journey-2-price-4">
                         <label for="journey-2-price-4">
                             <div class="date">09.23 (월)</div>
-                            <div class="price">KRW45,500</div>
+                            <div class="price"><span>KRW</span> 45,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-2" id="journey-2-price-5">
                         <label for="journey-2-price-5">
                             <div class="date">09.24 (화)</div>
-                            <div class="price">KRW65,500</div>
+                            <div class="price"><span>KRW</span> 65,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-2" id="journey-2-price-6">
                         <label for="journey-2-price-6">
                             <div class="date">09.25 (수)</div>
-                            <div class="price">KRW45,500</div>
+                            <div class="price"><span>KRW</span> 45,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-2" id="journey-2-price-7">
                         <label for="journey-2-price-7">
                             <div class="date">09.26 (목)</div>
-                            <div class="price">KRW105,500</div>
+                            <div class="price"><span>KRW</span> 105,500</div>
                         </label>
                     </div>
                     <div class="buttons btn-price-next-week"></div>
@@ -698,7 +691,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -737,7 +730,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -776,7 +769,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -815,7 +808,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -854,7 +847,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -893,7 +886,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -932,7 +925,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -971,7 +964,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -1010,7 +1003,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -1049,7 +1042,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail">1시간 10분</div>
+                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>

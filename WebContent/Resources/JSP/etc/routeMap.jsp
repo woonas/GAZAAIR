@@ -1,47 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>운항노선도</title>
 
-<link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
-<link rel="stylesheet" href="../CSS/index.css" type="text/css"/>
-<link rel="stylesheet" href="../CSS/layout.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/index.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/layout.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../JS/main.js"></script>
-<script async defer src="http://maps.googleapis.com/maps/api/js?sensor=false&region=KR&key=AIzaSyD-r87drTCRcQGSXESQUSisAXRA4cTmIbk&callback=initMap"></script>
+<script src="<%=request.getContextPath() %>/Resources/JS/main.js"></script>
+<script async defer src="http://maps.googleapis.com/maps/api/js?region=KR&key=AIzaSyD-r87drTCRcQGSXESQUSisAXRA4cTmIbk&callback=initMap"></script>
 <style>
-    #main{
-        max-width:1200px;
-        margin:0px auto;
-    }
-    #map{
-        width: 1000px;
-        height: 600px;
-        float: left;
-    }
-    #localWrap{
-        width: 200px;
-        float: left;
-    }
-    .localList>div{
-        width: 150px;
-        height: 50px;
-        font-size: 110%;
-        line-height: 50px;
-        text-align: center;
-        margin: 10px auto;
-        background-color: #fff;
-        border-radius : 10px;
-        border: 1px solid #ccc;
-    }
-    .localList>div:hover{
-        background-color: #ccc !important;
-    }
-    .localList>div:first-child{
-        background-color: #36f;
-        color: #fff;
-    }
+#main{
+	max-width:1200px;
+	margin:0px auto;
+	height: 730px;
+}
+#map{
+	width: 1000px;
+	height: 600px;
+	float: left;
+}
+#localWrap{
+	width: 200px;
+	float: left;
+}
+.localList>div{
+	width: 150px;
+	height: 50px;
+	font-size: 110%;
+	line-height: 50px;
+	text-align: center;
+	margin: 10px auto;
+	background-color: #fff;
+	border-radius : 10px;
+	border: 1px solid #ccc;
+}
+.localList>div:hover{
+	background-color: #ccc !important;
+}
+.localList>div:first-child{
+	background-color: #36f;
+	color: #fff;
+}
+footer{
+	margin-top: 50px;
+}
+
 </style>
 <script>
 	var latitude = 37.448546;//위도
@@ -50,10 +58,10 @@
 		//LatLog : 지도의 중심위치
 		var myCenter = new google.maps.LatLng(latitude, logitude);//인천공항
 		var mapProperty = {
-							//변수  : 상수
-							center : myCenter,
-							zoom : 4, //0~21사이의 값을 사용. 값이 클수록 확대.
-							mapTypeId : google.maps.MapTypeId.ROADMAP //ROADMAP, HYBRID, STELLITE, TERRAIN				
+			//변수  : 상수
+			center : myCenter,
+			zoom : 4, //0~21사이의 값을 사용. 값이 클수록 확대.
+			mapTypeId : google.maps.MapTypeId.ROADMAP //ROADMAP, HYBRID, STELLITE, TERRAIN				
 		}
 		//맵 객체 생성
 		//							  						지도표시할 div, 옵션
@@ -61,10 +69,10 @@
 		
 		//마커 표시하기
 		var markerProperty = {
-								position : myCenter,
-								map : map,
-								icon : "../IMG/icon/marker_blue2.png", //마커로 표시할 이미지.
-								title : "인천(ICN)"
+				position : myCenter,
+				map : map,
+				icon : "../../IMG/icon/marker_blue2.png", //마커로 표시할 이미지.
+				title : "인천(ICN)"
 		};
 		var marker = new google.maps.Marker(markerProperty);
 		marker.setMap(map);
@@ -146,7 +154,7 @@
 				marker2 = new google.maps.Marker({
 					position:new google.maps.LatLng(la[i], lo[i]),
 					title : titleList[i],
-					icon : "../IMG/icon/marker_blue2.png"
+					icon : "../../IMG/icon/marker_blue2.png"
 				
 			});
 			marker2.setMap(map);	
@@ -182,10 +190,7 @@
 </script>
 </head>
 <body>
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/woonas/GAZAAIR.git
+<%@ include file="../nav.jspf" %>
 <div id="main">
 	<h3>운항노선도</h3>
 	<div id="contents">
@@ -196,5 +201,6 @@
 		</div>
 	</div>
 </div>
+<%@ include file="../footer.jspf" %>
 </body>
 </html>

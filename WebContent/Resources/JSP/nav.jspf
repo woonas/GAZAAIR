@@ -47,7 +47,7 @@ $(function(){
 								<li><a href="<%=path %>/Resources/HTML/not_using/book.html">항공권예약</a></li>
 								<li><a href="#">정기 운항스케줄</a></li>
 								<li><a href="#">실시간 운항스케줄</a></li>
-								<li><a href="<%=path %>/Resources/HTML/routeMap.html">운항노선도</a></li>
+								<li><a href="<%=path %>/Resources/JSP/etc/routeMap.do">운항노선도</a></li>
 							</ul>
 							<ul>
 								<li><a href="<%=path %>/Resources/HTML/prd_BestProduct.html">베스트상품</a></li>
