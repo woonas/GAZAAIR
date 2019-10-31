@@ -907,9 +907,17 @@ hr { margin-top: 40px; }
     border-radius: 3px;
 }
 
-.heading {
-    margin-top: 80px;
+.heading { margin-top: 80px; }
+
+.result {
+    margin-top: 50px;
+    font-size: 140%;
+    margin-left: 20px;
 }
+
+.result>span { font-size: 150%; }
+
+
 
 /* ----------------------------------------------- */
 /* 비번찾기 pwsearch */
