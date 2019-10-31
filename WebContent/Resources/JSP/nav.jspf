@@ -73,6 +73,7 @@ $(function(){
 								<li><a href="<%=path %>/Resources/JSP/mypage/account_info.do">회원정보</a></li>
 								<li><a href="<%=path %>/Resources/HTML/reserveStatus.html">예약 현황</a></li>
 								<li><a href="<%=path %>/Resources/JSP/login/logout.do">로그아웃</a></li>
+								<li><a href="<%=path %>/Resources/JSP/mypage/account_delete.do">회원탈퇴</a></li>
 								</c:if>
 							</ul>
 						</li>

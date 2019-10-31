@@ -13,4 +13,6 @@ public interface RegisterInterface {
 	public int updateRecord(RegisterVO vo);
 	//비밀번호변경
 	public int updatePassword(String memberId, String oldPwd, String newPwd);
+	//회원탈퇴
+	public int delAccount(String id, String pwd);
 }
