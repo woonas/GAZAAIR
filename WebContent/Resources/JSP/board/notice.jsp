@@ -13,6 +13,7 @@
 </head>
 <body onload="start()">
 	<%@ include file="../nav.jspf" %>
+	<section class="content">
 	<div id="warp">
 		<div id="contents">
 			<section id="title">
@@ -103,6 +104,7 @@
 			</section>
 		</div>
 	</div>
+	</section>
 	<script>
 	
 		function start(){
