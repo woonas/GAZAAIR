@@ -48,6 +48,6 @@
 		</div>
 	</section>
 	<%@ include file="../footer.jspf" %>
-	<script src="../JS/common.js"></script>
+	<script src="../../JS/common.js"></script>
 </body>
 </html>
