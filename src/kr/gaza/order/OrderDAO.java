@@ -20,13 +20,13 @@ public class OrderDAO extends DBConn implements OrderInterface {
                 vo.setSeatReserveNum(rs.getInt(5));
                 int i = 6;
                 while (i < 12) {
-                    if (i==1) break;
+                    if (rs.getInt(i) == 0 ) break;
                     vo.setFlightNum(rs.getInt(i));
                 }
+                vo.setRegDate(rs.getString(12));
             }
-
         }catch(Exception e) {
-            System.out.println("���ڵ� ���� ����");
+            System.out.println("orderSelect Error");
             e.printStackTrace();
         }finally {
             dbClose();
