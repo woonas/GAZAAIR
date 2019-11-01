@@ -9,8 +9,10 @@
 <link rel="stylesheet" href="../CSS/layout.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/notice.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 </head>
 <body onload="start()">
+	<%@ include file="../nav.jspf" %>
 	<div id="warp">
 		<div id="contents">
 			<section id="title">
@@ -156,5 +158,6 @@
 			elmnt.style.color = "#555"; 
 		}
 	</script>
+	<%@ include file="../footer.jspf" %>
 </body>
 </html>
