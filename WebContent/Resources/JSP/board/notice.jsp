@@ -5,12 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항</title>
-<link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
-<link rel="stylesheet" href="../CSS/layout.css" type="text/css"/>
-<link rel="stylesheet" href="../CSS/notice.css" type="text/css"/>
+<link rel="stylesheet" href="../../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../../CSS/layout.css" type="text/css"/>
+<link rel="stylesheet" href="../../CSS/notice.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 </head>
 <body onload="start()">
+	<%@ include file="../nav.jspf" %>
+	<section class="content">
 	<div id="warp">
 		<div id="contents">
 			<section id="title">
@@ -48,7 +51,7 @@
 													NEW
 												</c:if>
 												</span>
-												<a href="<%= request.getContextPath()%>/board/view.do?num=${v.num}&pageNum=${vo.pageNum}">${v.subject }</a>
+												<a href="<%= request.getContextPath()%>/Resources/JSP/board/board_view.do?num=${v.num}&pageNum=${vo.pageNum}">${v.subject }</a>
 												<br>
 											</h4>
 											${v.content }
@@ -68,7 +71,7 @@
 							<a href="#" onclick="return false;" class="pageNum" >prev</a>
 						</c:if>
 						<c:if test="${vo.pageNum>1}">
-							<a href="<%=request.getContextPath() %>/board/list.do?pageNum=${vo.pageNum-1}">prev</a>
+							<a href="<%=request.getContextPath() %>/Resources/JSP/board/notice.do?pageNum=${vo.pageNum-1}">prev</a>
 						</c:if>
 						
 						<c:if test="${vo.totalPage >= vo.startPage+vo.onePageMax-1 }">
@@ -82,10 +85,10 @@
 						<c:forEach var="i" begin="${vo.startPage}" end="${printPage }">
 							<c:if test="${i<=vo.totalPage}">
 								<c:if test="${i == vo.pageNum }">
-									<a href="<%=request.getContextPath() %>/board/list.do?pageNum=${i}" class="pageNum active">${i}</a>
+									<a href="<%=request.getContextPath() %>/Resources/JSP/board/notice.do?pageNum=${i}" class="pageNum active">${i}</a>
 								</c:if>
 								<c:if test="${i != vo.pageNum }">
-									<a href="<%=request.getContextPath() %>/board/list.do?pageNum=${i}" class="pageNum">${i}</a>
+									<a href="<%=request.getContextPath() %>/Resources/JSP/board/notice.do?pageNum=${i}" class="pageNum">${i}</a>
 								</c:if>
 							</c:if>
 						</c:forEach>
@@ -94,13 +97,14 @@
 							<a href="#" onclick="return false;" class="pageNum">next</a><br/>
 						</c:if>
 						<c:if test="${vo.pageNum<vo.totalPage}">
-							<a href="<%=request.getContextPath() %>/board/list.do?pageNum=${vo.pageNum+1}">next</a><br/>
+							<a href="<%=request.getContextPath() %>/Resources/JSP/board/notice.do?pageNum=${vo.pageNum+1}">next</a><br/>
 						</c:if>
 					</div>
 				</div>
 			</section>
 		</div>
 	</div>
+	</section>
 	<script>
 	
 		function start(){
@@ -156,5 +160,6 @@
 			elmnt.style.color = "#555"; 
 		}
 	</script>
+	<%@ include file="../footer.jspf" %>
 </body>
 </html>

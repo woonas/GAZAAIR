@@ -33,6 +33,7 @@ public class CommandNoticeView implements CommandService {
 		
 		if(num == vo.getTotalRecord()) request.setAttribute("next", "다음글이 없습니다.");
 		else request.setAttribute("next", lst.get(i));
-		return "view.jsp";
+		
+		return "board_view.jsp";
 	}
 }

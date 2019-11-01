@@ -92,8 +92,8 @@
 
                    <div class="tab-menu1">
                        <ul class="clearfix">
-                           <li class="col-half on" id='tab-1'><a href="#none">로그인</a></li>
-                           <li class="col-half" id='tab-2'><a href="#none">예약조회</a></li>
+                           <li class="col-half on" id='tab-1'><a href="#none" onclick="return false">로그인</a></li>
+                           <li class="col-half" id='tab-2'><a href="#none" onclick="return false">예약조회</a></li>
                        </ul>
                    </div>
 
@@ -117,10 +117,10 @@
                                <div class="login-info-wrap">
                                    <ul class="login-link">
                                        <li>
-                                           <a href="idsearch.html"><span class="col_black">아이디 찾기</span></a> 
+                                           <a href="<%=path %>/Resources/JSP/login/idsearch.do"><span class="col_black">아이디 찾기</span></a> 
                                        </li>
                                        <li>
-                                           <a href="pwsearch.html"><span class="col_black">비밀번호 찾기</span></a> 
+                                           <a href="<%=path %>/Resources/JSP/login/pwsearch.do"><span class="col_black">비밀번호 찾기</span></a> 
                                        </li>
                                        <li>
                                            <a href="<%=path %>/Resources/JSP/signup/signup1.do"><span class="col_black">회원가입</span></a> 
