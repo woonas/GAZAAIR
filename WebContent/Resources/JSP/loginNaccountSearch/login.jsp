@@ -110,7 +110,7 @@
                                <div class="login-info-wrap">
                                    <ul class="login-link">
                                        <li>
-                                           <a href="idsearch.html"><span class="col_black">아이디 찾기</span></a> 
+                                           <a href="<%=path %>/Resources/JSP/login/idsearch.do"><span class="col_black">아이디 찾기</span></a> 
                                        </li>
                                        <li>
                                            <a href="pwsearch.html"><span class="col_black">비밀번호 찾기</span></a> 
