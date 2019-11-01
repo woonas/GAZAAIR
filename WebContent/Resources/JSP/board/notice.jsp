@@ -161,5 +161,6 @@
 		}
 	</script>
 	<%@ include file="../footer.jspf" %>
+	<script src="../../JS/common.js"></script>
 </body>
 </html>
