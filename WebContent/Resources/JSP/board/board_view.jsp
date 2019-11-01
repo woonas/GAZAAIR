@@ -5,11 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
-<link rel="stylesheet" href="../CSS/board.css" type="text/css"/>
+<link rel="stylesheet" href="../../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../../CSS/board.css" type="text/css"/>
 
 </head>
 <body>
+	<%@ include file="../nav.jspf" %>
 	<section class="content">
 		<h3>공지사항</h3>
 		<hr/>
@@ -28,14 +29,14 @@
 				<a href="#none" onclick="return false;">${next}</a>
 			</c:if>
 			<c:if test="${vo.num != vo.totalRecord}">
-				<a href="<%=request.getContextPath()%>/board/view.do?num=${vo.num+1}&pageNum=${vo.pageNum}">${next}</a>
+				<a href="<%=request.getContextPath()%>/Resources/JSP/board/board_view.do?num=${vo.num+1}&pageNum=${vo.pageNum}">${next}</a>
 			</c:if>
 			</div>
 		<hr style="border:1px solid #eee"/>
 			<div class="brd_bottom">
 			∨ 이전글
 			<c:if test="${vo.num != 1}">
-				<a href="<%=request.getContextPath() %>/board/view.do?num=${vo.num-1}&pageNum=${vo.pageNum}">${prev}</a>
+				<a href="<%=request.getContextPath() %>/Resources/JSP/board/board_view.do?num=${vo.num-1}&pageNum=${vo.pageNum}">${prev}</a>
 			</c:if>
 			<c:if test="${vo.num == 1}">
 				<a href="#none" onclick="return false;">${prev}</a>
@@ -43,9 +44,10 @@
 			</div>
 		<hr style="border:1px solid #eee"/>
 		<div id="list_btn">
-			<button class="whiteBtn"><a href="<%=request.getContextPath()%>/board/list.do?pageNum=${vo.pageNum}">목록보기</a></button>
+			<button class="whiteBtn"><a href="<%=request.getContextPath()%>/Resources/JSP/board/notice.do?pageNum=${vo.pageNum}">목록보기</a></button>
 		</div>
 	</section>
+	<%@ include file="../footer.jspf" %>
 	<script src="../JS/common.js"></script>
 </body>
 </html>

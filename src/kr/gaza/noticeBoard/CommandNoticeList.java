@@ -41,6 +41,6 @@ public class CommandNoticeList implements CommandService {
 		request.setAttribute("vo", vo);
 		request.setAttribute("lst", lst);
 
-		return "list.jsp";
+		return "notice.jsp";
 	}
 }
