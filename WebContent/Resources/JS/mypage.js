@@ -192,9 +192,7 @@ function classSelcetClose(){
          calendarEvent();
      }
 
-     else if(location.pathname.indexOf('interested_route') !== -1) {
-         openPicker('.open-airport-picker', true);
-     }
+
 
 
      //Todo 나중에 함수하고 다시 체크

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.gaza.controller.CommandService;
 
-public class CommandList implements CommandService {
+public class CommandNoticeList implements CommandService {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
@@ -41,6 +41,6 @@ public class CommandList implements CommandService {
 		request.setAttribute("vo", vo);
 		request.setAttribute("lst", lst);
 
-		return "list.jsp";
+		return "notice.jsp";
 	}
 }

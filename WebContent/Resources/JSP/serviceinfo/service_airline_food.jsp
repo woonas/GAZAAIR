@@ -7,8 +7,10 @@
 <meta charset="UTF-8">
 <title>기내식</title>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/layout.css" type="text/css"/>
+  <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../../JS/main.js"></script>
+
 <style>
 .line{
 	border:1px solid black;
@@ -460,13 +462,13 @@ li{
 							</div>
 							</div>
 						</div>
-							
-							
 			</div>
 			</section>	
 		</div>
-		
+
 	</div>
+	<section class="content" ></section>	
 	<%@ include file="../footer.jspf" %>
+	<script src="../../JS/common.js"></script>
 </body>
 </html>

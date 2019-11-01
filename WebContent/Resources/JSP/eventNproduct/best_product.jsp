@@ -14,8 +14,8 @@
    <h3>베스트상품</h3>
        <div class="tab-menu1">
            <ul class="clearfix">
-               <li class="col-half on" id='tab-1'><a href="#none" onclick="return false;">예매율 TOP5</a></li>
-               <li class="col-half" id='tab-2'><a href="#none" onclick="return false;">할인율 TOP5</a></li>
+               <li class="col-half on" id='tab-1'><a href="#none">예매율 TOP5</a></li>
+               <li class="col-half" id='tab-2'><a href="#none">할인율 TOP5</a></li>
            </ul>
        </div>
       <c:forEach var="j" begin="${1}" end="${2}" step="${1}"> 

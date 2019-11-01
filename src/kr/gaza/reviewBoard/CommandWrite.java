@@ -1,4 +1,4 @@
-package kr.gaza.etc;
+package kr.gaza.reviewBoard;
 
 import java.io.IOException;
 
@@ -8,12 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.gaza.controller.CommandService;
 
-public class CommandRouteMap implements CommandService {
+public class CommandWrite implements CommandService {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		return "routeMap.jsp";
+		
+		return "write.jsp";
 	}
-
 }

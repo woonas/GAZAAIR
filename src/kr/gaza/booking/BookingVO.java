@@ -5,5 +5,5 @@ import java.util.List;
 
 public class BookingVO {
     private List<JourneyVO> journeyList = new ArrayList<>();
-    private String ddsfsfsdf;
+    private int flightNum;
 }

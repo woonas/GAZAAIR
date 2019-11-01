@@ -90,6 +90,9 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
+/* 문법오류보여지는줄 색상 */
+::grammar-error { color: transparent; }
+
 /* ----------------------------------------------- */
 /* 스크롤바 */
 /* ----------------------------------------------- */
@@ -99,9 +102,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: 10px;
 }
 
-section.content::-webkit-scrollbar,
-body::-webkit-scrollbar,
-html::-webkit-scrollbar {
+section.content::-webkit-scrollbar {
     width: 5px !important;
 }
 
@@ -1487,10 +1488,7 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
     to { transform: translateX(270px); }
 }
 
-#drift-widget{
-	margin-bottom: 45px;
-	right: 8px !important;
-}
+
 
 
 /*********/
@@ -1510,10 +1508,5 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
         max-width: 1240px;
         min-width: 1240px;
         width: 1240px;
-    }
-    
-    #drift-widget,
-    .topBtn{
-    	opacity: 0.7 !important;
     }
 }

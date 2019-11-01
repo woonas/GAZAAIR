@@ -64,7 +64,7 @@
         
         <section class="content">
             <div id="journey-1" class="journey-wrapper">
-                <div class="journey-name-fixed hidden" name="journey-1">
+                <div class="journey-name-sticky hidden" name="journey-1">
                     <i class="fas fa-plane-departure font-blue4"></i>
                     <span class="font-blue4">가는 여정</span>
                     <span id="airportFrom-name-sticky-mini-1">
@@ -578,7 +578,7 @@
             </div>
             
             <div id="journey-2" class="journey-wrapper">
-                <div class="journey-name-fixed hidden" name="journey-2">
+                <div class="journey-name-sticky hidden" name="journey-2">
                     <i class="fas fa-plane-departure font-blue4"></i>
                     <span class="font-blue4">오는 여정</span>
                     <span id="airportFrom-name-sticky-2">
