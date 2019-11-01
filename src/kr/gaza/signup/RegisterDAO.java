@@ -171,5 +171,48 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 		}
 		return cnt;
 	}
+	@Override
+	public int delAccount(String id, String pwd) {
+		int cnt = 0;
+		try {
+			dbConn();
+			String sql = "delete from member where memberId=? and memberPwd=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pwd);
+			
+			cnt = pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			System.out.println("회원탈퇴 에러...");
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
+		return cnt;
+	}
+	@Override
+	public String findId(RegisterVO vo) {
+		String id = "";
+		try {
+			dbConn();
+			String sql="select memberid from member where memberNameKor=? and birthday=? and email=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getMemberNameKor());
+			pstmt.setString(2, vo.getBirthDay());
+			pstmt.setString(3, vo.getEmail());
+			
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				id = rs.getString(1);
+			}
+		}catch(Exception e) {
+			System.out.println("아이디 찾기 에러...");
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
+		return id;
+	}
 
 }

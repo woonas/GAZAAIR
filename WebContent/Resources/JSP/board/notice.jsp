@@ -5,13 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항</title>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/Resources/CSS/main.css" type="text/css"/>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/Resources/CSS/layout.css" type="text/css"/>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/Resources/CSS/notice.css" type="text/css"/>
+<link rel="stylesheet" href="../../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../../CSS/layout.css" type="text/css"/>
+<link rel="stylesheet" href="../../CSS/notice.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </head>
 <body onload="start()">
+	<%@ include file="../nav.jspf" %>
+	<section class="content">
 	<div id="warp">
 		<div id="contents">
 			<section id="title">
@@ -41,14 +43,15 @@
 								<c:forEach var="v" items="${lst}">
 									<tr>
 										<td>
-											<h4><a href="#"><span class="noticeTag">
+											<h4><span class="noticeTag">
 												<c:if test="${v.type == 0}">
 													공지
 												</c:if>
 												<c:if test="${v.type == 1}">
 													NEW
 												</c:if>
-												</span>${v.subject }</a>
+												</span>
+												<a href="<%= request.getContextPath()%>/Resources/JSP/board/board_view.do?num=${v.num}&pageNum=${vo.pageNum}">${v.subject }</a>
 												<br>
 											</h4>
 											${v.content }
@@ -63,12 +66,47 @@
 					</div>
 				</div>
 				<div class="pagingDiv">
-					<div id="pagination"></div>
+					<div id="pagination">
+						<c:if test="${vo.pageNum<=1}">
+							<a href="#" onclick="return false;" class="pageNum" >prev</a>
+						</c:if>
+						<c:if test="${vo.pageNum>1}">
+							<a href="<%=request.getContextPath() %>/Resources/JSP/board/notice.do?pageNum=${vo.pageNum-1}">prev</a>
+						</c:if>
+						
+						<c:if test="${vo.totalPage >= vo.startPage+vo.onePageMax-1 }">
+							<c:set var="printPage" value="${vo.startPage+vo.onePageMax-1 }" />
+						</c:if>
+						
+						<c:if test="${vo.totalPage < vo.startPage+vo.onePageMax-1 }">
+							<c:set var="printPage" value="${vo.totalPage }" />
+						</c:if>
+						
+						<c:forEach var="i" begin="${vo.startPage}" end="${printPage }">
+							<c:if test="${i<=vo.totalPage}">
+								<c:if test="${i == vo.pageNum }">
+									<a href="<%=request.getContextPath() %>/Resources/JSP/board/notice.do?pageNum=${i}" class="pageNum active">${i}</a>
+								</c:if>
+								<c:if test="${i != vo.pageNum }">
+									<a href="<%=request.getContextPath() %>/Resources/JSP/board/notice.do?pageNum=${i}" class="pageNum">${i}</a>
+								</c:if>
+							</c:if>
+						</c:forEach>
+						
+						<c:if test="${vo.pageNum==vo.totalPage}">
+							<a href="#" onclick="return false;" class="pageNum">next</a><br/>
+						</c:if>
+						<c:if test="${vo.pageNum<vo.totalPage}">
+							<a href="<%=request.getContextPath() %>/Resources/JSP/board/notice.do?pageNum=${vo.pageNum+1}">next</a><br/>
+						</c:if>
+					</div>
 				</div>
 			</section>
 		</div>
 	</div>
+	</section>
 	<script>
+	
 		function start(){
 			//탭메뉴
 			 var btnIdList = ['btnAll', 'btnGAZA', 'btnPartner', 'btnOthers'];
@@ -85,17 +123,6 @@
 			
 			//로드 시 열리는 페이지 선택
 			document.getElementById("btnAll").click();
-			
-			//pagination 생성
-			var pageCnt = 5;
-			var pageBtnHTML = "<a href='#'>&laquo;</a>";
-			for(i=1; i<=pageCnt; i++){
-				pageBtnHTML += "<a href='#' class='pageNum' onclick='clicked(this)'>"+i+"</a>";
-			}
-			pageBtnHTML += "<a href='#'>&raquo;</a>";
-			document.getElementById("pagination").innerHTML = pageBtnHTML;
-			document.getElementById("pagination").childNodes[1].classList.add('active');
-			
 		}
 		function clicked(elmnt){//클릭된 페이지버튼에 클래스 추가
 			var allPageNum = document.getElementsByClassName("pageNum");
@@ -133,5 +160,6 @@
 			elmnt.style.color = "#555"; 
 		}
 	</script>
+	<%@ include file="../footer.jspf" %>
 </body>
 </html>

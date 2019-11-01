@@ -295,6 +295,7 @@ const eventHandler = (_window, step2) => {
         const phone_all = document.getElementById('phone-all');
         const number_all = document.getElementById('number-all');
         const addr_all = document.getElementById('addr-all');
+        const addr_separate = document.getElementById('addr-all').nextElementSibling;
         const event_ul = document.querySelector('.event-label + div>div:last-of-type');
         const inputs = document.querySelectorAll('.form-group div[class^=col]>input:not(#edit)');
         inputs.forEach(input => input.disabled = 'true' );
@@ -314,6 +315,7 @@ const eventHandler = (_window, step2) => {
             phone_all.classList.remove('hidden');
             number_all.classList.remove('hidden');
             addr_all.classList.remove('hidden');
+            addr_separate.classList.add('hidden');
             phone_all.previousElementSibling.classList.add('hidden');
             number_all.previousElementSibling.classList.add('hidden');
 
@@ -323,6 +325,8 @@ const eventHandler = (_window, step2) => {
                 event_ul.style.display = 'block';
                 phone_all.classList.add('hidden');
                 number_all.classList.add('hidden');
+                addr_all.classList.add('hidden');
+                addr_separate.classList.remove('hidden');
                 phone_all.previousElementSibling.classList.remove('hidden');
                 number_all.previousElementSibling.classList.remove('hidden');
             }

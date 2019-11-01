@@ -5,93 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Document</title>
-
-<link rel="stylesheet" href="../../CSS/layout.css">
+<title>제휴이벤트</title>
+<link rel="stylesheet" href="../../CSS/eventNproduct.css">
 <script>window.onbeforeunload=() => window.scrollTo(0, 0)</script>
-<style>
-.best-product .tab-menu1 li.on:before {
-	width: 1em;
-	height: 0.5em;
-	margin-left: -30px;
-	margin-top: 20px;
-}
-
-.best-product .tab-menu1 li {
-	background-color: #fff;
-}
-
-.tab-content-container {
-	margin-top: 70px;
-}
-
-.product-wrapper {
-	height: 400px;
-	overflow: hidden;
-	margin-bottom: 50px;
-	display: flex;
-}
-
-.product-wrapper>div {
-	height: 100%;
-}
-
-.change-order>.product-info-wrapper {
-	order: -1;
-}
-
-.img-wrapper>img {
-	width: 100%;
-}
-
-.product-info-wrapper {
-	background-color: rgba(255, 235, 205, 0.3);
-	padding: 60px 30px 20px;
-}
-
-.product-info-wrapper>p:first-of-type {
-	font-size: 300%;
-	color: #bbb;
-	margin-bottom: 20px;
-	font-weight: 100;
-}
-
-.product-info-wrapper>p:nth-of-type(2) {
-	font-size: 170%;
-	margin-bottom: 20px;
-}
-
-.product-info-wrapper>p:nth-of-type(3) {
-	line-height: 24px;
-	margin-bottom: 30px;
-}
-
-.btn-booking {
-	border-radius: 0px;
-	font-size: 85%;
-	margin: 0 6px;
-	padding: 12px 46px 12px 46px;
-}
-
-.tab-menu1 {
-	z-index: 200;
-}
-
-.tab-content-container {
-	animation: fadeInDown 1.5s;
-}
-
-@
-keyframes fadeInDown {from { opacity:0.2;
-	transform: translatey(-30px);
-}
-
-to {
-	opacity: 1;
-	transform: translatey(0);
-}
-}
-</style>
 </head>
 <body>
 

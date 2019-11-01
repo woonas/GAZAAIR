@@ -1,9 +1,9 @@
 package kr.gaza.eventNproduct;
 
+import kr.gaza.home.DBConn;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import kr.gaza.home.DBConn;
 
 public class EventDAO extends DBConn implements EventInterface {
 
@@ -31,7 +31,7 @@ public class EventDAO extends DBConn implements EventInterface {
 				lst.add(vo);
 			}
 		}catch(Exception e) {
-			System.out.println("·¹ÄÚµå ÀüÃ¼ ¼±ÅÃ");
+			System.out.println("ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½");
 			e.printStackTrace();
 		}finally {
 			dbClose();
@@ -76,7 +76,7 @@ public class EventDAO extends DBConn implements EventInterface {
 			}
 			
 		}catch(Exception e) {
-			System.out.println("·¹ÄÚµå ¼±ÅÃ ¿¡·¯");
+			System.out.println("ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			e.printStackTrace();
 		}finally {
 			dbClose();

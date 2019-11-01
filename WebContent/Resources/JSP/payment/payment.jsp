@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-two-fifth">
                             <div class="flight-image">
-                                <img src = "../../IMG/icon/flight-table.svg" alt = "">
+                                <img src = "../../IMG/icon/flight-table2.png" alt = "">
                             </div>
                         </div>
                         <div class="col-fourth">
@@ -73,7 +73,7 @@
                         </div>
                         <div class="col-two-fifth">
                             <div class="flight-image">
-                                <img src = "../../IMG/icon/flight-table.svg" alt = "">
+                                <img src = "../../IMG/icon/flight-table2.png" alt = "">
                             </div>
                         </div>
                         <div class="col-fourth">

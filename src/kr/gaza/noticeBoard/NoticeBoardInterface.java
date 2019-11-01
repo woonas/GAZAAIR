@@ -15,7 +15,9 @@ public interface NoticeBoardInterface {
 	public void noticeBoardHit(int num);
 	// 총레코드수
 	public int noticeBoardTotalRecord();
-	// 레코드 선택
+	// 글내용 보기
 	public void noticeBoardSelect(NoticeBoardVO vo);
+	// 글내용 보기에서 다음글, 이전글 제목가져오기
+	public List<String> noticeBoardGetTitles(int noticeBoardNum);
 
 }
