@@ -6,9 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
-<link rel="stylesheet" href="../CSS/layout.css" type="text/css"/>
-<link rel="stylesheet" href="../CSS/board.css" type="text/css"/>
+<link rel="stylesheet" href="../../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../../CSS/layout.css" type="text/css"/>
+<link rel="stylesheet" href="../../CSS/board.css" type="text/css"/>
+
 </head>
 <body>
 	<section class="content">
@@ -33,7 +34,14 @@
 			내용<br/>
 			</div>
 		<hr style="border:1px solid #eee"/>
-		댓글자리 쌉고수
+		<div id="commentt">
+			<div class="col-nine-tenth" id="userid">아이디</div><a href="#"> 수정</a> | <a href="#">삭제</a><br/>
+			<div id="reply">
+			댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리
+			댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리
+			댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리댓글자리
+			</div>
+		</div>
 		<hr/>
 			<div class="brd_bottom">
 			∧ 이전글 <a href="#">이전글내용이전글내용이전글내용이전글내용이전글내용</a>
@@ -45,7 +53,7 @@
 		<hr style="border:1px solid #eee"/>
 		<div id="list_btn">
 			<button class="whiteBtn">목록보기</button>
-		</div>
+		</div>-
 		</div>
 	</section>
 </body>

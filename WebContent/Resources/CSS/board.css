@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("../CSS/layout.css") screen;
 
-/* 공지 글내용 board/view.jsp */
+/* 공지 글내용 board/board_view.jsp */
 
 #brd_title{
 	padding-left: 50px;
@@ -44,5 +44,20 @@ button>a {
 	text-decoration: none; 
 }
 
+/* 리뷰 댓글 */
 
-/* 공지 글목록 board/list.jsp */
+#commentt{ padding: 30px 30px 30px 50px; }
+
+#commentt a{ 
+	text-decoration: none;
+	color: #555; 
+}
+
+#commentt a:hover{ color: #c8c8c8; }
+
+#userid{ margin-bottom: 10px; }
+
+#reply{
+	font-size:13px;
+	clear:left;
+}
