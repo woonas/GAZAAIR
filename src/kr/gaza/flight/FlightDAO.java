@@ -19,7 +19,7 @@ public class FlightDAO extends DBConn implements FlightInterface {
                 vo.setProductNum(rs.getInt(3));
                 vo.setDepartTime(rs.getString(4));
                 vo.setArriveTime(rs.getString(5));
-                vo.setSale(rs.getInt(6));
+                vo.setFlightSale(rs.getInt(6));
             }
         }catch(Exception e) {
             System.out.println("flightSelect Error");

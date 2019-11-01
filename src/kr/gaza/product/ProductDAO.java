@@ -30,4 +30,22 @@ public class ProductDAO extends DBConn implements ProductInterface {
 
         return vo;
     }
+
+    @Override
+    public void productCntIncrease(int productNum) {
+        try {
+            dbConn();
+            String sql = "update product set productcnt = productcnt +1 where productcnt=?";
+
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, productNum);
+            pstmt.executeUpdate();
+        }catch(Exception e) {
+            System.out.println("productCntIncrease Error");
+            e.printStackTrace();
+        }finally {
+            dbClose();
+        }
+    }
+
 }
