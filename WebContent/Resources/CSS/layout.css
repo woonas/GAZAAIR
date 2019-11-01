@@ -90,8 +90,9 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-/* 문법오류보여지는줄 색상 */
-::grammar-error { color: transparent; }
+/* 문법오류, 스펠링오류 보여지는줄 색상 */
+::grammar-error,
+::spelling-error { color: transparent; }
 
 /* ----------------------------------------------- */
 /* 스크롤바 */
