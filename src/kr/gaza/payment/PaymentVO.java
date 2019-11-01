@@ -8,7 +8,6 @@ public class PaymentVO {
     private int totalPrice;
     private String payDate;
 
-
     private int paymentType;
     private AccountVO accountVO;
     private CreditVO creditVO;
