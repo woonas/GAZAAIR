@@ -4,9 +4,9 @@ public class FlightVO {
     private int flightNum;
     private int airplaneNum;
     private int productNum;
-    private int departTime;
-    private int arriveTime;
-    private int sale;
+    private String departTime;
+    private String arriveTime;
+    private float flightSale;
 
     public int getFlightNum() {
         return flightNum;
@@ -32,27 +32,27 @@ public class FlightVO {
         this.productNum = productNum;
     }
 
-    public int getDepartTime() {
+    public String getDepartTime() {
         return departTime;
     }
 
-    public void setDepartTime(int departTime) {
+    public void setDepartTime(String departTime) {
         this.departTime = departTime;
     }
 
-    public int getArriveTime() {
+    public String getArriveTime() {
         return arriveTime;
     }
 
-    public void setArriveTime(int arriveTime) {
+    public void setArriveTime(String arriveTime) {
         this.arriveTime = arriveTime;
     }
 
-    public int getSale() {
-        return sale;
+    public float getFlightSale() {
+        return flightSale;
     }
 
-    public void setSale(int sale) {
-        this.sale = sale;
+    public void setFlightSale(float flightSale) {
+        this.flightSale = flightSale;
     }
 }

@@ -17,8 +17,7 @@ public class CommandOrder implements CommandService {
 	
 		OrderDAO dao = new OrderDAO();
 		OrderVO vo = dao.orderSelect(3841);
-		
-		//뷰페이지로 가져갈 데이터
+
 		request.setAttribute("vo", vo);
 		return "event_List.jsp";
 	}

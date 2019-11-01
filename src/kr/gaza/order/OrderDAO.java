@@ -22,6 +22,7 @@ public class OrderDAO extends DBConn implements OrderInterface {
                 while (i < 12) {
                     if (rs.getInt(i) == 0 ) break;
                     vo.setFlightNum(rs.getInt(i));
+                    i++;
                 }
                 vo.setRegDate(rs.getString(12));
             }

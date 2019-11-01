@@ -1,12 +1,12 @@
 package kr.gaza.product;
 
-public class productVO {
+public class ProductVO {
     private int productNum;
     private String depart;
     private String arrive;
     private int price;
     private int productCnt;
-    private int productSale;
+    private float productSale;
     private String regDate;
 
     public int getProductNum() {
@@ -49,8 +49,12 @@ public class productVO {
         this.productCnt = productCnt;
     }
 
-    public int getProductSale() {
+    public float getProductSale() {
         return productSale;
+    }
+
+    public void setProductSale(float productSale) {
+        this.productSale = productSale;
     }
 
     public void setProductSale(int productSale) {
