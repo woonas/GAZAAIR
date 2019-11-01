@@ -17,6 +17,7 @@ public class EventDAO extends DBConn implements EventInterface {
 			pstmt = conn.prepareStatement(sql);
 			
 			rs = pstmt.executeQuery();
+			System.out.println(rs);
 			while(rs.next()) {
 				EventVO vo = new EventVO();
 				vo.setEventNum(rs.getInt(1));
