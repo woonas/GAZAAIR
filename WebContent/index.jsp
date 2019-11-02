@@ -36,6 +36,7 @@
 		<div class="dotsWrap"><div class="playState"></div></div>
 	</div>
 	<!-- 심플예약폼 -->
+	<form method="post" action="<%=path%>/Resources/JSP/booking/booking1.do">
 	<div class="reserve_wrap">
 		<div class="reserveBox">
 			<div>
@@ -85,11 +86,12 @@
 			<input type="submit" class="simple_reservation_submit" value="조회"/>
 		</div>
 	</div>
+	</form>
 </section>
 
 <section id="best">
 	<div>
-		<div><p>베스트 상품</p><a href="<%=path %>/Resources/HTML/prd_BestProduct.html">&nbsp;전체보기 +&nbsp;</a></div>
+		<div><p>베스트 상품</p><a href="<%=path %>/Resources/JSP/eventNproduct/best_product.do">&nbsp;전체보기 +&nbsp;</a></div>
 		<div id="bestBannerWrap">
 			<ul id="bestBanner">
 				<li>
@@ -155,7 +157,7 @@
 </section>
 <section id="event">
 	<div>
-		<div><p>이벤트</p><a href="<%=path %>/Resources/HTML/prd_alliance_event.html">&nbsp;전체보기 +&nbsp;</a></div>
+		<div><p>이벤트</p><a href="<%=path %>/Resources/JSP/eventNproduct/event_List.do">&nbsp;전체보기 +&nbsp;</a></div>
 		<div class="eventBannerWrap">
 			<ul class="eventBanner">
 				<li><a href="prd_alliance_event.html">
@@ -346,10 +348,5 @@
 <%@ include file="Resources/JSP/footer.jspf" %>
 <script src="<%=request.getContextPath() %>/Resources/JS/common.js"></script>
 <script src="<%=request.getContextPath() %>/Resources/JS/airportpicker.js"></script>
-
-<script>
-
-</script>
-
 </body>
 </html>

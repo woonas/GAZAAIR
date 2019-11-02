@@ -12,7 +12,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../../JS/main.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script type="text/javascript" src="../../../Vendor/RichText/jquery.richtext.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/Vendor/RichText/jquery.richtext.min.js"></script>
 <link rel="stylesheet" href="../../../Vendor/RichText/richtext.min.css">
 
 <script>
@@ -229,6 +229,5 @@ $(function(){
 			
 		</div>
 		<%@ include file="../footer.jspf" %>
-</div>
 </body>
 </html>

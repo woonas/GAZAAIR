@@ -51,6 +51,7 @@ public class CommandSignupOk implements CommandService {
 		if(direct2 == null) {
 			direct2 = "off";
 		}
+		vo.setAgree(agree1+"/"+agree2);
 		vo.setDirectronic(direct1+"/"+direct2);
 		
 		RegisterDAO dao = new RegisterDAO();

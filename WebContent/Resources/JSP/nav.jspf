@@ -34,7 +34,7 @@ $(function(){
 					<a href="<%=path %>/Resources/JSP/login/login.do">로그인</a>
 					</c:if>
 					<c:if test="${memberName!=null }">
-					<a href="<%=path %>/Resources/JSP/mypage/mypage_Main.do">마이홈</a>
+					<a href="<%=path %>/Resources/JSP/mypage/myhome.do">마이홈</a>
 					</c:if>
 					</div>
 					<div id="navBar"></div>

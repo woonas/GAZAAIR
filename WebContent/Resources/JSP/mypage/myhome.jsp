@@ -13,16 +13,16 @@
     </head>
     <body id="mypage-main">
     <%@ include file="../nav.jspf" %>
-        <section class="content">
+       <section class="content">
             <div class="maintop">
                 <div class="row clearfix">
                     <div>
-                        <div id="name-ko"><a href="#" class="font-white">최민성 님</a></div>
-                        <div id="name-eng" class="font-gray3">CHOI MIN SEONG</div>
+                        <div id="name-ko"><a href="#" class="font-white">홍길동 님</a></div>
+                        <div id="name-eng" class="font-gray3">HONG GIL DONG</div>
                     </div>
                     <div>
                         <div><a href = "" class="font-gray3">총 탑승횟수</a></div>
-                        <div id="tripNo">0</div>
+                        <div id="tripNo">3</div>
                     </div>
                 </div>
 
@@ -33,12 +33,12 @@
                     </div>
                     <div>
                         <div><a href = "" class="font-gray3">소멸 예정 마일리지</a></div>
-                        <div id="mileage">0</div>
+                        <div id="mileage">473830</div>
                     </div>
                 </div>
                 <div id="boarding">
-                    <div>가자에어 탑승 <span>0</span></div>
-                    <div>가자에어외 탑승 <span>0</span></div>
+                    <div>가자에어 탑승 <span>1</span></div>
+                    <div>가자에어외 탑승 <span>2</span></div>
                     <div>일반 제휴 및 기타 <span>0</span></div>
                 </div>
                 <div class="circle">
@@ -90,7 +90,7 @@
                             관심노선
                         </div>
                         <div class="font-blue4">
-                            0
+                            3
                         </div>
                     </div>
                 </div>
@@ -140,7 +140,7 @@
                                             <div>OZGO1234</div>
                                         </td>
                                         <td>
-                                            <div><a href="reservation_detail.html"><input type="button" class="blueBtn" value="상세보기"
+                                            <div><a href="reserveStatus.html"><input type="button" class="blueBtn" value="상세보기"
                                                                                      id="detail1"></a></div>
                                         </td>
                                     </tr>
@@ -161,7 +161,7 @@
                                             <div>OZGO1234</div>
                                         </td>
                                         <td>
-                                            <div><a href="reservation_detail.html"><input type="button" class="blueBtn" value="상세보기"
+                                            <div><a href="reserveStatus.html"><input type="button" class="blueBtn" value="상세보기"
                                                                                      id="detail2"></a></div>
                                         </td>
                                     </tr>
@@ -182,7 +182,7 @@
                                             <div>OZGO1234</div>
                                         </td>
                                         <td>
-                                            <div><a href="reservation_detail.html"><input type="button" class="blueBtn" value="상세보기"
+                                            <div><a href="reserveStatus.html"><input type="button" class="blueBtn" value="상세보기"
                                                                                      id="detail3"></a></div>
                                         </td>
                                     </tr>
@@ -201,11 +201,11 @@
                         </div>
                         <div>
                             <ul class="list-type2">
-                                <li><a href = "">ddd</a></li>
-                                <li><a href = "">ddd</a></li>
-                                <li><a href = "">ddd</a></li>
-                                <li><a href = "">ddd</a></li>
-                                <li><a href = "">ddd</a></li>
+                                <li><a href = "">9월 날씨, 인천-다낭 가자에어 탑승 후기</a></li>
+                                <li><a href = "">동유럽 여행 :) 가자에어 KE0935, KE0938</a></li>
+                                <li><a href = "">방콕 항공권, 가자에어 KE657 후기! 태국 수완나폼 고고</a></li>
+                                <li><a href = "">유럽 비행기표예약 & 인천-비엔나 대한항공 KE937 탑승과 근황</a></li>
+                                <li><a href = "">라운지, 가자에어 기내식 과일식</a></li>
                             </ul>
                         </div>
                     </div>
@@ -218,11 +218,11 @@
                         </div>
                         <div>
                             <ul class="list-type2">
-                                <li><a href = "">ddd</a></li>
-                                <li><a href = "">ddd</a></li>
-                                <li><a href = "">ddd</a></li>
-                                <li><a href = "">ddd</a></li>
-                                <li><a href = "">ddd</a></li>
+                                <li><a href = "">[국내선] 추석연휴 기간 김포-부산(GMP-PUS) 노 ...</a></li>
+                                <li><a href = "">제 13호 태풍 '링링'으로 인한 국내선 결항 안내</a></li>
+                                <li><a href = "">KB국민카드 서비스 일시중단 안내</a></li>
+                                <li><a href = "">2019년 9월 신용카드 할부 서비스 안내</a></li>
+                                <li><a href = "">말레이시아 출국세 부과 안내 (2019.09.01~)</a></li>
                             </ul>
                         </div>
                     </div>
@@ -232,6 +232,9 @@
         <div style="height: 150px; background-color: #fff; clear:both;"></div>
         <script src="https://rawgit.com/kottenator/jquery-circle-progress/1.2.1/dist/circle-progress.js"></script>
         <script src="../../JS/common.js"></script>
+        <script type="text/javascript">
+        	const my_mileage = ${myMiles};
+        </script>
         <script src="../../JS/mypage.js"></script>
         <%@ include file="../footer.jspf" %>
     </body>

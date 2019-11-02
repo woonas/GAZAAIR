@@ -191,5 +191,55 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 		}
 		return cnt;
 	}
+	@Override
+	public String findId(RegisterVO vo) {
+		String id = "";
+		try {
+			dbConn();
+			String sql = "select memberId from member where memberNameKor=? and birthday=? and email=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getMemberNameKor());
+			pstmt.setString(2, vo.getBirthDay());
+			pstmt.setString(3, vo.getEmail());
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				id = rs.getString(1);
+			}
+			
+		}catch(Exception e) {
+			System.out.println("아이디찾기 에러...");
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
+		return id;
+	}
+	@Override
+	public String findPw(RegisterVO vo) {
+		String pw = "";
+		try {
+			dbConn();
+			String sql = "select memberPwd from member where memberNameKor=? and memberId=? and birthday=? and email=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getMemberNameKor());
+			pstmt.setString(2, vo.getMemberId());
+			pstmt.setString(3, vo.getBirthDay());
+			pstmt.setString(4, vo.getEmail());
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				pw = rs.getString(1);
+			}
+			
+		}catch(Exception e) {
+			System.out.println("비밀번호찾기 에러...");
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
+		return pw;
+	}
 
 }

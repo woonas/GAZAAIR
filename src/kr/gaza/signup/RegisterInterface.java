@@ -15,4 +15,8 @@ public interface RegisterInterface {
 	public int updatePassword(String memberId, String oldPwd, String newPwd);
 	//회원탈퇴
 	public int delAccount(String id, String pwd);
+	//아이디찾기
+	public String findId(RegisterVO vo);
+	//비밀번호찾기
+	public String findPw(RegisterVO vo);
 }

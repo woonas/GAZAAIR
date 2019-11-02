@@ -1,46 +1,63 @@
 @charset "UTF-8";
+@import url("../CSS/layout.css") screen;
 
-	#brd_all{
-		margin:0px auto;
-		width:1200px;
-	}
-	
-	hr{
-		margin:0px auto;
-		width:1200px;
-	}
-	
-	#brd_title{
-		padding-left:50px;
-		height:100px;
-		line-height:100px;
-		font-size:30px;
-	}
-	
-	#hitNdate{ line-height:100px; }
-	
-	#brd_content{ padding:70px; }
-	
-	.brd_bottom{
-		padding-left:50px;
-		height:70px;
-		line-height:70px;
-	}
-	
-	#list_btn{
-		margin:70px auto;
-		width:150px;
-	}
-	
-	#list_btn>button{
-		width:150px;
-		height:60px;
-		font-size:18px;
-		border-radius:0px;
-	}
+/* 공지 글내용 board/board_view.jsp */
 
-	.brd_bottom a{ padding-left:50px; }
+#brd_title{
+	padding-left: 50px;
+	height: 100px;
+	line-height: 100px;
+	font-size: 30px;
+}
 
+#hitNdate{ line-height: 100px; }
 
-    /* 무슨파일이다 이런페이지다*/
+#brd_content{ padding: 70px; }
 
+.brd_bottom{
+	padding-left:50px;
+	height:70px;
+	line-height:70px;
+}
+
+#list_btn{
+	margin:70px auto;
+	width:150px;
+}
+
+#list_btn>button{
+	width:150px;
+	height:60px;
+	font-size:18px;
+	border-radius:0px;
+}
+
+.brd_bottom a{ 
+	padding-left:50px; 
+	text-decoration:none;
+	color:#555;
+}
+.brd_bottom a:hover{ font-weight:bold; }
+
+button>a { 
+	color:#555;
+	text-decoration: none; 
+}
+
+/* 리뷰 댓글 */
+
+#commentt{ padding: 30px 30px 30px 50px; }
+
+#commentt a{ 
+	text-decoration: none;
+	color: #555; 
+}
+
+#commentt a:hover{ color: #c8c8c8; }
+
+#userid{ margin-bottom: 10px; }
+
+#reply{
+	font-size:13px;
+	clear:left;
+}
