@@ -220,7 +220,7 @@
 				<thead>
 					<tr>
 						<td>공지사항</td>
-						<td><a href="<%=path %>/Resources/JSP/board/notice.do"><img title="더 보기" src="<%=path %>/Resources/IMG/icon/plus_box_ccc.png"/></a></td>
+						<td><a href="<%=path %>/Resources/HTML/notice.html"><img title="더 보기" src="<%=path %>/Resources/IMG/icon/plus_box_ccc.png"/></a></td>
 					</tr>
 				</thead>
 				<tbody>

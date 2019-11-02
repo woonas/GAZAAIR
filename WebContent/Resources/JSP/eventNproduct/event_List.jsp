@@ -6,9 +6,9 @@
 <html>
 <head>
   <meta charset = "UTF-8">
-  <title>추천상품</title>
-    <link rel="stylesheet" href="../..//CSS/eventNproduct.css">
-    <link rel="stylesheet" href="../../CSS/main.css" type="text/css"/>
+  <title>Title</title>
+    <link rel = "stylesheet" href = "<%=request.getContextPath()%>/Resources/CSS/eventNproduct.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
 <body>
@@ -42,6 +42,6 @@
        </c:forEach>
     </section>
 <%@ include file="../footer.jspf" %>
-     <script src="../../JS/common.js"></script>
+     <script src="<%=request.getContextPath()%>/Resources/JS/common.js"></script>
 </body>
 </html>

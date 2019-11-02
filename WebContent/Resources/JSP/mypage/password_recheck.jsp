@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <title>비밀번호 재확인</title>
-        <link rel="stylesheet" href="../../CSS/my_page.css">
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/my_page.css">
         <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
     </head>

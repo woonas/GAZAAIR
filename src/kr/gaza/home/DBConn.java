@@ -23,22 +23,22 @@ public class DBConn {
 			DataSource ds = (DataSource)ctxEnv.lookup("jdbc/myoracle");
 			conn = ds.getConnection();
 		}catch(Exception e) {
-			System.out.println("DB연결 에러...");
+			System.out.println("DB연결에러...");
 			e.printStackTrace();
 		}
 	}
-	//DB종료
+	//DB닫기
 	public void dbClose() {
 		try {
 			if(rs!=null) rs.close();
 			if(pstmt!=null) pstmt.close();
 			if(conn!=null) conn.close();
 		}catch(Exception e) {
-			System.out.println("DB종료 에러...");
+			System.out.println("DB종료에러...");
 			e.printStackTrace();
 		}
 	}
-	// DAO에서 사용예제 vo.setContent(readClobData(rs.getCharacterStream(4))); 
+	// DAO에서 사용예제 - vo.setContent(readClobData(rs.getCharacterStream(4))); 
 	public static String readClobData(Reader reader) throws IOException {
         StringBuffer data = new StringBuffer();
         char[] buf = new char[1024];

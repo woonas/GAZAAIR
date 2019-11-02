@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../../CSS/main.css" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../../JS/main.js"></script>
+<style>
+	#all{ 
+		max-width:1200px;
+		margin:0 auto;
+		height:1700px
+		}
+	#nav{
+		width:100%;
+		margin:0 auto
+		}
+	#gradeimg{
+		width:1200px;
+		height:243px;
+		
+		}
+	#gimg{width:100%}
+	
+	#gmall{
+		width:300px;
+		height:80px;
+		position:relative;
+		left:40px;
+		top:-180px
+		}
+	#grmem{
+		padding:10px 0;
+		}
+	#grno{
+		
+		font-size:30px;
+		font-weight:bold
+		}
+	#vipstandardtext{
+		width:800px;
+		height:70px;
+		margin-top:10px;
+		float:left
+		}
+	#vipGradeTotalDiv{
+		width:1200px;
+		height:70px;
+		margin:10px
+		}
+	#vipstandard,#gradeBenfit{
+		border:1px solid gray;
+		width:190px;
+		height:70px;
+		margin:0 5px;
+		float:left;
+		text-align:center;
+		line-height:70px
+		}
+	#totalResult{
+		background-color:#6d6e70;
+		width:1200px;
+		height:70px;
+		text-align:center;
+		float:left;
+		margin:10px 0;
+		padding:10px;
+		color:white;
+		font-size:20px;
+		position:relative;
+		left:-10px;
+		line-height:40px
+		
+		}
+	#resultText{
+		font-size:35px;
+		font-weight:bold;
+		width:1200px;
+		heigth:30px;
+		float:left
+		
+		}
+	#joinMileCountImg{
+		background-color:white;
+		width:1200px;
+		height:210px;
+		float:left
+		}
+	#joinMileCountImg>div{
+		float:left;
+		margin-left:180px
+		}
+	#joinDiv,#mileDiv, #boardingcountDiv{
+		width:150px;
+		height:210px;
+		text-align:center
+		}
+	#conditionText{
+		font-size:35px;
+		font-weight:bold;
+		width:1200px;
+		heigth:30px;
+		}
+	#mileProgress,#countProgress{
+		background-color:#f7f7f7;
+		width:1200px;
+		height:250px;
+		padding:70px
+		
+		}
+	#mileProgressRadius,#countProgressRadius{
+		background-color:#ebebeb;
+		width:800px;
+		height:100px;
+		margin:0 160px;
+		padding:35px;
+		border-radius:50px
+		}
+	#proMile,#proCount{width:700px}
+	#inquiryText{
+		background-color:#f7f7f7;
+		width:1200px;
+		height:100px;
+		font-size:25px;
+		font-weight:bold;
+		padding:15px 10px;
+	
+	}
+	#inquiryText>div:first-child{
+		width:500px;
+		height:50px;
+		float:left;
+		padding:12px
+		}
+	#inquiryText>div:nth-child(2){
+		width:200px;
+		height:50px;
+		float:right
+		
+		}
+	#inquiryButton{
+		background:white;
+		width:190px;
+		height:70px;
+		float:right
+	}
+	#vipstandard>a:link{text-decoration:none;color:black}
+	#vipstandard>a:visited{text-decoration:none;color:black}
+	#vipstandard>a:hover{color:black}
+	
+	#gradeBenfit>a:link{text-decoration:none;color:black}
+	#gradeBenfit>a:visited{text-decoration:none;color:black}
+	#gradeBenfit>a:hover{color:black}
+	
+	
+</style>
+<script>
+	$(function(){
+		$("#proMile").delay(500);
+			for(var i=0;i<70;i++){
+				$("#proMile").animate({"value":70});
+			}
+		$("#proCount").delay(500);
+		for(var i=0;i<70;i++){
+			$("#proCount").animate({"value":30});
+		}
+		
+	});
+
+</script>
+</head>
+<body>
+<div id="nav"></div>
+<div id="all">
+	<div><h3>회원 등급</h3></div>
+	<div id="gradeimg"><img src="../../IMG/mypage_Img/membergrade.jpg" id="gimg"/>
+	<div id="gmall">
+		<div id="grmem">최민성 회원님의 등급 및 회원 번호</div>
+		<div id="grno">실버 777 888 9999</div>
+	</div>
+	</div>
+	
+	<div id="vipstandardtext">우수회원 승급 기준 안내 (승급 기준 중 한가지 조건만 충족하셔도 상위 등급으로 승급이 됩니다.)<br/>
+		1) 기준일로부터 매 24개월간의 등급산정 마일리지 적립 실적<br/>
+		2) 가입일로부터의 총 탑승 실적
+	</div>
+	<div id="vipGradeTotalDiv">
+		<div id="vipstandard"><a href="mypage_GradeInfo.html">우수회원 승급 기준 보기</a></div>
+		<div id="gradeBenfit"><a href="mypage_GradeInfo.html">회원 등급별 혜택 보기</a></div>
+		<div id="totalResult">가입일로 부터 총 실적</div>
+	</div>
+	<div id="resultText">회원님의 가입일로부터 총 실적</div>
+	<div id="joinMileCountImg">
+		<div id="joinDiv">
+		<div><img src="../../IMG/mypage_Img/joinday.jpg"/></div>
+<!-- 가입일 데이터 들어가야함 -->
+		<div>가입일</div>
+		<div>2019.09.06</div>
+		</div>
+		<div id="mileDiv">
+		<div><img src="../../IMG/mypage_Img/mile.jpg"/></div>
+		<div>GAZA AIR 탑승 마일</div>
+		<div>0</div>
+		</div>
+		<div id="boardingcountDiv">
+		<div><img src="../../IMG/mypage_Img/boardingcount.jpg"/></div>
+		<div>GAZA AIR 탑승 횟수</div>
+		<div>0</div>
+		</div>
+	</div>
+	<div id="conditionText">회원 등급별 평생회원 승급 조건</div>
+	<div>
+	<div><h2>마일기준</h2></div>
+	<div id="mileProgress"><div id="mileProgressRadius"><progress value="0" max="100" id="proMile"></progress></div></div>
+	</div>
+	<div>
+	<div><h2>탑승횟수 기준</h2></div>
+	<div id="countProgress"><div id="countProgressRadius"><progress value="0" max="100" id="proCount"></progress></div></div>
+	</div>
+	<div style="margin:10px">● 총 실적 기준<br/>
+	● GAZA 항공 <br/>
+	- 회원님의 <br/>
+	- 부정확한 <br/>
+	- 공동운항편은 <br/>
+	</div>
+	<div id="inquiryText"><div>회원등급 승급 관련 마일리지 실적 조회</div><div><input type="button" value="등급 산정 마일리지 조회"id="inquiryButton"></div></div>
+	
+</div>
+<!--                  -->
+<footer>
+	<div id="footContainer">
+		<a href="index.html" title="홈페이지로 이동"><img src="../../IMG/logo/logo_white2.png" width="170"/></a>
+		<div class="snsPane">
+			<div class="snsBtn">
+				<img src="../../IMG/icon/facebook_white.png"/>
+				<img src="../../IMG/icon/facebook.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../../IMG/icon/instagram_white.png"/>
+				<img src="../../IMG/icon/instagram.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../../IMG/icon/twitter_white.png"/>
+				<img src="../../IMG/icon/twitter.png"/>
+			</div>
+			<div class="snsBtn">
+				<img src="../../IMG/icon/youtube_white.png"/>
+				<img src="../../IMG/icon/youtube.png"/>
+			</div>
+		</div>
+		<hr/>
+		<div class="footContent">
+			<div class="footCall">
+				
+				<b>고객센터</b><br/>080-0000-0000<br/>운영시간 | 오전 9시~오후 6시<br/>점심시간 | 오후 12시~오후 1시
+			</div>
+			
+			<div class="footInfo">
+				<b>가자에어</b> | 사업자번호 : 203-87-00612<br/>통신판매업신고번호 : 제 2012-서울구로-1560호<br/>
+				서울시 구로구 시흥대로 163길 33 주호타워 2층 가자항공(구로동 1129-1)<br/>
+				대표전화 : 02-837-9922<br/>
+				Copyright&copy; 주식회사가자에어. ALL RIGHTS RESERVED | 개인정보책임자 : 정운하
+			</div>
+		</div>
+	</div>
+</footer>
+</body>
+</html>

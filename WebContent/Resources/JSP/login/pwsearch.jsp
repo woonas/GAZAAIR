@@ -125,7 +125,7 @@
                         <div>
                             <select id="year" name="year" title="생년월일&nbsp;연도" style="width: 200px">
                                 <option value="">년</option>
-                            </select>
+                                </select>
 
                             <select id="month" name="month" title="생년월일월" style="width: 200px">
                                 <option value="">월</option>
@@ -176,8 +176,6 @@
                     </div>
                 </div>
                 </form>
-                    <input type="button" class="blueBtn confirm" value="확인">
-                </div>
             </div>
 
             <div id="tab-2-container" class="hidden">

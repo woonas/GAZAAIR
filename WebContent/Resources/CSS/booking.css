@@ -723,12 +723,9 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
     z-index: 80;
 }
 .flight-table-title>div:first-child { background-color: #999;}
-.flight-table-title>div:not(:first-child) {
-    border-left: 1px solid #ddd;
-    border-bottom: 1px solid #eee;
-}
+.flight-table-title>div:not(:first-child) { border-left: 1px solid #ddd; }
 
-.flight-table-title>div:nth-child(2) { background-color: #8af; }
+.flight-table-title>div:nth-child(2) { background-color: #9bf; }
 .flight-table-title>div:nth-child(3) { background-color: #69f; }
 .flight-table-title>div:last-child { background-color: #36f; }
 

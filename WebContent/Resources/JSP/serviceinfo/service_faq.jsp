@@ -8,8 +8,7 @@
 <title>FAQ</title>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>s"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/layout.css" type="text/css"/>
-  <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
+<script src="../../JS/main.js"></script>
 <style>
 .faqName{
 	border:1px solid gray;
@@ -56,7 +55,9 @@ h4 {
 	
 }
 nav {
-	border-bottom: none;
+	width: 100%;
+	height: 70px;
+	background-color: gray;
 }
 
 #warp {
@@ -166,8 +167,6 @@ nav {
 			</section>
 		</div>
 	</div>
-	<section class="content" ></section>	
 	<%@ include file="../footer.jspf" %>
-	<script src="../../JS/common.js"></script>
 </body>
 			

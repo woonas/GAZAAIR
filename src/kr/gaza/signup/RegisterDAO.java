@@ -241,4 +241,5 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 		}
 		return pw;
 	}
+
 }

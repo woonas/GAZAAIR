@@ -6,17 +6,46 @@
     <head>
         <meta charset="UTF-8">
         <title>아이디 찾기</title>
+        
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Vendor/bootstrap/css/bootstrap.min.css" type="text/css"> 
         <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
-        <link rel="stylesheet" href="../../../Vendor/bootstrap/css/bootstrap.min.css" type="text/css"> 
-        <link rel="stylesheet" href="../../CSS/account.css">
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/account.css">
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
         <!-- Font Awesome CDN -->
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="../../../Vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="<%=request.getContextPath() %>/Vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script>
+        	$(function(){
+        		$("#idFind").click(function(){
+        			var params = $("#idFindFrm").serialize();
+            		$.ajax({
+            			url : "/projectGAZA/Resources/JSP/signup/idChk.do",
+            			data : params,
+            			success : function(result){
+            				if(eval(result)){
+            					isOk = '사용할 수 없습니다.';
+            					target.innerHTML = `'${insideId.value}' <span class='font-gray1'>는 </span><span class='font-red'>${isOk}</span>`;
+            					btnUse.setAttribute("disabled","disabled");
+            					btnUse.style.opacity = 0.5;
+            					
+            				}else{
+            					isOk = '사용할 수 있습니다.';
+            					target.innerHTML = `'${insideId.value}' <span class='font-gray1'>는 </span><span class='font-blue4'>${isOk}</span>`;
+            					btnUse.removeAttribute("disabled");
+            					btnUse.style.opacity = 1;
+            				}
+            			},
+            			error : function(){
+            				alert("아이디 중복체크 에러...")
+            			}
+            		});	
+            	});
+        	});
+        </script>
     </head>
     <body>
-    <%@ include file="../nav.jspf" %>
+        <%@ include file="../nav.jspf" %>
         <div class="overlay"></div>
         <section class="content">
             <h3>아이디 찾기</h3>
@@ -26,33 +55,14 @@
             
             <div class="tab-menu1">
                 <ul class="clearfix">
-                    <li class="col-half on" id='tab-1'><a href="#none">본인 인증</a></li>
-                    <li class="col-half" id='tab-2'><a href="#none">이메일 인증</a></li>
+                    <li class="col-half on" id='tab-1'><a href="#none">이메일 인증</a></li>
+                    <li class="col-half" id='tab-2'><a href="#none">본인 인증</a></li>
                 </ul>
             </div>
             
             <div id="tab-1-container">
-                <div class="row two-boxes">
-                    <ul class="clearfix">
-                        <li class="li-phone">
-                            <div>
-                                <div class="tab-title">휴대전화 인증</div> 
-                                <div class="tab-txt">본인 명의의 휴대전화를 통한 인증</div> 
-                                <button type="button" class="blueBtn" title="새 창 열림" id="phone-verification">인증하기</button> 
-                            </div>
-                        </li>
-                        <li class="li-ipin">
-                            <div>
-                                <div class="tab-title">아이핀 인증 <a href="http://www.vno.co.kr/ipin3/personal/personal01.asp" target="_blank"><i class="fas fa-exclamation"></i></a></div> 
-                                <div class="tab-txt">본인 인증기관을 통한 아이핀 인증</div> 
-                                <button type="button" class="blueBtn" title="새 창 열림" id="ipin-verification">인증하기</button>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div id="tab-2-container" class="hidden">
+           		<form method="post" id="idFindFrm">
+                <br><br>
                 <p>* 회원가입 시 등록한 이메일 주소를 입력해주시기 바랍니다. 등록된 회원정보와 입력된 내용이 일치할 경우, 등록된 이메일 주소로 아이디 안내 메일을 발송해 드립니다.</p>
                 <div class="table-form">
                     <div class="row clearfix">
@@ -206,7 +216,7 @@
                             이메일
                         </div>
                         <div>
-                            <input type="text" id="emailAddress" nname="emailAddress" placeholder="이메일 입력" title="이메일 아이디 입력" style="width:200px;"> @ &nbsp;
+                            <input type="text" id="emailAddress" name="emailAddress" placeholder="이메일 입력" title="이메일 아이디 입력" style="width:200px;"> @ &nbsp;
                             <select id="emailDomain" class="selectNtext" name="emailDomain" title="이메일 도메인 선택" style="width:180px;">
                                 <option value="" selected>직접입력</option>
                                 <option value="korea.com">korea.com</option>
@@ -235,9 +245,33 @@
                 </div>
                 
                 <div class="row clearfix">
-                    <input type="button" class="blueBtn confirm" value="확인">
+                    <input type="button" id="idFind" class="blueBtn confirm" value="확인">
+                    <div class="result">
+                        검색하신 아이디는 '<span class="font-blue4">rkskekfk1234</span>'입니다.
+                    </div>
                 </div>
-                
+                </form>
+            </div>
+            
+            <div id="tab-2-container" class="hidden">
+                <div class="row two-boxes">
+                    <ul class="clearfix">
+                        <li class="li-phone">
+                            <div>
+                                <div class="tab-title">휴대전화 인증</div> 
+                                <div class="tab-txt">본인 명의의 휴대전화를 통한 인증</div> 
+                                <button type="button" class="blueBtn" title="새 창 열림" id="phone-verification">인증하기</button> 
+                            </div>
+                        </li>
+                        <li class="li-ipin">
+                            <div>
+                                <div class="tab-title">아이핀 인증 <a href="http://www.vno.co.kr/ipin3/personal/personal01.asp" target="_blank"><i class="fas fa-exclamation"></i></a></div> 
+                                <div class="tab-txt">본인 인증기관을 통한 아이핀 인증</div> 
+                                <button type="button" class="blueBtn" title="새 창 열림" id="ipin-verification">인증하기</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
             
             <div class="row">
@@ -539,8 +573,8 @@
 
         <!-- Recaptcha -->
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        <script src="../../JS/common.js"></script>
-        <script src="../../JS/account.js"></script>
+        <script src="<%=path %>/Resources/JS/common.js"></script>
+        <script src="<%=path %>/Resources/JS/account.js"></script>
         
         <!-- Start of Async Drift Code -->
         <script>

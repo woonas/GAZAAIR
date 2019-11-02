@@ -16,4 +16,5 @@ public class CommandWrite implements CommandService {
 		
 		return "write.jsp";
 	}
+
 }

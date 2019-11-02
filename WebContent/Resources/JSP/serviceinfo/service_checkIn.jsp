@@ -8,8 +8,7 @@
 <title>체크인</title>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/layout.css" type="text/css"/>
-  <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
+<script src="../../JS/main.js"></script>
 <style>
 hr {
 	margin-bottom: 20px;
@@ -104,9 +103,9 @@ table td {
  //이미지 추가
 	$(function(){
 		for(i=1;i<=4;i++){
-			$("#setImg").append("<img src='../../IMG/service/c"+i+".png'/>");
+			$("#setImg").append("<img src='../IMG/service/c"+i+".png'/>");
 
-			$("#acSetImg").append("<img src='../../IMG/service/ac"+i+".png'/>");
+			$("#acSetImg").append("<img src='../IMG/service/ac"+i+".png'/>");
 		}
 		
 /* 			$('#n1').show(); //페이지를 로드할 때 표시할 요소
@@ -251,8 +250,6 @@ table td {
 		</div>
 
 	</div>
-	<section class="content" ></section>	
 	<%@ include file="../footer.jspf" %>
-	<script src="../../JS/common.js"></script>
 </body>
 </html>

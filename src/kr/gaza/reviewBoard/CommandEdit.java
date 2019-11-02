@@ -23,6 +23,7 @@ public class CommandEdit implements CommandService {
 		dao.boardSelect(vo);
 		
 		request.setAttribute("vo", vo);
+
 		return "edit.jsp";
 	}
 

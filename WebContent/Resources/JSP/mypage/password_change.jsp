@@ -7,15 +7,15 @@
         <meta charset="UTF-8">
         <title>비밀번호 재확인</title>
         <!--        bootstrap validator-->
-        <link rel="stylesheet" href="../../../Vendor/bootstrap/css/bootstrap.css"/>
-        <link rel="stylesheet" href="../../../Vendor/bootstrapValidator/bootstrapValidator.css"/>
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Vendor/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Vendor/bootstrapValidator/bootstrapValidator.css"/>
 		<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="../../../Vendor/bootstrapValidator/bootstrapValidator.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/Vendor/bootstrapValidator/bootstrapValidator.js"></script>
         
-        <link rel="stylesheet" href="../../CSS/my_page.css">
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/my_page.css">
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
     </head>
     <body>
@@ -25,7 +25,7 @@
             <ul class="list-type2 list-border">
                 <li>회원님의 개인 정보를 안전하게 보호하기 위해 아시아나항공은 비밀번호를 암호화하여 저장, 관리하고 있습니다.</li>
             </ul>
-            <form id="defaultForm" method="post" action="" class="form-horizontal">
+            <form id="defaultForm" method="post" action="<%=path %>/Resources/JSP/mypage/password_changeOk.do" class="form-horizontal">
                 <fieldset>
                     <div class="table-form pw-change-table">
                         <div class="form-group row clearfix">
@@ -67,8 +67,8 @@
                 <li>비밀번호 변경은 3개월 이내에 주기적으로 변경하시기를 권해 드립니다.</li>
             </ul>
         </section>
-        <script src="../../JS/validator.js"></script>
-        <script src="../../JS/common.js"></script>
+        <script src="<%=path %>/Resources/JS/validator.js"></script>
+        <script src="<%=path %>/Resources/JS/common.js"></script>
         <%@ include file="../footer.jspf" %>
     </body>
 </html>
