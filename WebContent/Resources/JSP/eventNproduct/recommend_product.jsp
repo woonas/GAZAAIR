@@ -5,11 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Document</title>
-
+<title>제휴이벤트</title>
 <link rel="stylesheet" href="../../CSS/eventNproduct.css">
 <script>window.onbeforeunload=() => window.scrollTo(0, 0)</script>
-
 </head>
 <body>
 
@@ -17,10 +15,10 @@
 		<h3>추천상품</h3>
 		<div class="tab-menu1">
 			<ul class="clearfix">
-				<li class="col-fourth on" id='tab-1'><a href="#none" onclick="return false;">한국</a></li>
-				<li class="col-fourth" id='tab-2'><a href="#none" onclick="return false;">아시아</a></li>
-				<li class="col-fourth" id='tab-3'><a href="#none" onclick="return false;">유럽</a></li>
-				<li class="col-fourth" id='tab-4'><a href="#none" onclick="return false;">미주</a></li>
+				<li class="col-fourth on" id='tab-1'><a href="#none">한국</a></li>
+				<li class="col-fourth" id='tab-2'><a href="#none">아시아</a></li>
+				<li class="col-fourth" id='tab-3'><a href="#none">유럽</a></li>
+				<li class="col-fourth" id='tab-4'><a href="#none">미주</a></li>
 			</ul>
 		</div>
 

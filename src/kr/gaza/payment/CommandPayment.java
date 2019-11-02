@@ -4,10 +4,14 @@ import kr.gaza.controller.CommandService;
 
 import java.io.IOException;
 
-public class CommandPayment implements CommandService {
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-    @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        return "payment.jsp";
-    }
+public class CommandPayment implements CommandService {
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		return "payment.jsp";
+	}
 }

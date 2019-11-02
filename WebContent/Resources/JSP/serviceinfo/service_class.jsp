@@ -8,7 +8,8 @@
 <title>클래스 안내</title>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../../JS/main.js"></script>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/layout.css" type="text/css"/>
+  <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 <style>
 h4 {
 	float: left;
@@ -16,12 +17,10 @@ h4 {
 	color: black;
 	font-size:25px;  
 }
-nav {
-	width: 100%; 
-	height: 70px;
-	background-color: gray;
-}
 
+nav{
+	border-bottom: none;
+}
 #warp {
 	width: 100%;
 }
@@ -319,6 +318,8 @@ h5{
 		</div>
  		
 	</div>
+	<section class="content" ></section>	
 	<%@ include file="../footer.jspf" %>
+	<script src="../../JS/common.js"></script>
 </body>
 </html>

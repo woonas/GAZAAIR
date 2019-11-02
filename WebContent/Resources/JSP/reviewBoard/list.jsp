@@ -65,7 +65,6 @@
 
 </body>
 </html> --%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -82,7 +81,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="<%=request.getContextPath() %>/Vendor/RichText/jquery.richtext.min.js"></script>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/Vendor/RichText/richtext.min.css">
-
 
 </head>
 <body onload="start()">
@@ -203,5 +201,53 @@ $(function(){
 	});
 });
 </script>
+</head>
+<body onload="start()">
+<%@ include file="../nav.jspf" %>
+		<div id="contents">
+			<section id="title">
+				<h3>고객의 말씀</h3>
+				<div class="search">
+					<select name="searchOption" id="searchOption" class="searchOption" title="검색 분류 선택" value="0">
+						<option value="0">제목 + 내용</option>
+						<option value="1">제목</option>
+						<option value="2">내용</option>
+					</select>
+					<input type="text" class="textField" placeholder="검색어를 입력하세요." title="검색 내용 작성"/>
+					<button class="searchBtn">검색</button>
+				</div>
+			</section>
+			<section id="board">
+				<div id="tabBtn"></div>
+				<div id="tabPanel">
+					<div id="paneReview" class='tabcontent'>
+						<div class='boardList'>
+							<table class="boardTbl">
+								<colgroup>
+									<col width="60%">
+									<col width="15%">
+									<col width="15%">
+									<col width="10%">
+								</colgroup>
+								<tbody>
+									<c:forEach var="v" items="${lst}">
+										<tr>
+											<td>
+												<h4><a href="#">${v.subject }</a></h4>
+												${v.content }
+											</td>
+											<td>아이디: ${v.writer }</td>
+											<td>조회수 ${v.hit }</td>
+											<td>${v.regDate }</td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+<%@ include file="../footer.jspf" %>
 </body>
 </html>

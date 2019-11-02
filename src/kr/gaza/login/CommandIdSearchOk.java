@@ -27,6 +27,7 @@ public class CommandIdSearchOk implements CommandService {
 		vo.setBirthDay(year+"/"+month+"/"+day);
 		
 		if(emailDomain.equals("")) {
+			
 			vo.setEmail(emailId+"@"+emailDomainText);
 		}else {
 			vo.setEmail(emailId+"@"+emailDomain);
@@ -36,5 +37,5 @@ public class CommandIdSearchOk implements CommandService {
 		
 		request.setAttribute("findId", result);
 		return "idsearchOk2.jsp";
-	}
 }
+
