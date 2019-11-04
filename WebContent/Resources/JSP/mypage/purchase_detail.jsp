@@ -8,11 +8,11 @@
         <title>구매 내역</title>
         <link rel="stylesheet" href="../../CSS/my_page.css">
         <link rel="stylesheet" href="../../CSS/payment.css">
-        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
     </head>
     <body>
-    <%@ include file="../nav.jspf" %>
+    <%@ include file="../common/nav.jspf" %>
         <section class="content">
             <h3>주문 상세 정보</h3>
 <!-- Todo  좌석, 기내식, 클래스 변경시  그것 + 합계로 테이블 변경    -->
@@ -172,6 +172,6 @@
         </section>
         <script src="../../JS/common.js"></script>
         <script src="../../JS/mypage.js"></script>
-        <%@ include file="../footer.jspf" %>
+        <%@ include file="../common/footer.jspf" %>
     </body>
 </html>

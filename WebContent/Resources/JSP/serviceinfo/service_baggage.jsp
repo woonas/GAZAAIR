@@ -6,9 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>수하물</title>
-<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../../JS/main.js"></script>
+<script src="../../HTML/not_using/main.js"></script>
 <style>
 .img{
 	width:100%;
@@ -137,7 +137,7 @@ nav {
 </script>
 </head>
 <body onload="start()">
-	<%@ include file="../nav.jspf" %>
+	<%@ include file="../common/nav.jspf" %>
 		<div id="contents">
 			<section id="title">
 				<h3>수하물</h3>
@@ -238,6 +238,6 @@ nav {
 		</div>
 
 	</div>
-	<%@ include file="../footer.jspf" %>
+	<%@ include file="../common/footer.jspf" %>
 </body>
 </html>

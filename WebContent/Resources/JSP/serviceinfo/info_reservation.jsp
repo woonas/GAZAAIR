@@ -7,11 +7,11 @@
     <meta charset="UTF-8">
     <title>예약안내</title>
     <link rel="stylesheet" href="../../CSS/information.css">
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
 <body>
-<%@ include file="../nav.jspf" %>
+<%@ include file="../common/nav.jspf" %>
     <section class="content info-reservation"> 
         <h3>예약안내</h3>
         
@@ -161,6 +161,6 @@
     
     <script src="../../JS/common.js"></script>
     <script src="../../JS/information.js"></script>
-    <%@ include file="../footer.jspf" %>
+    <%@ include file="../common/footer.jspf" %>
 </body>
 </html>

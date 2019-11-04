@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../CSS/navNfooter.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/layout.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/write.css?after" type="text/css"/>
 <script src="//cdn.ckeditor.com/4.13.0/full/ckeditor.js"></script>

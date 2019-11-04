@@ -6,15 +6,19 @@ const verification = () => {
 
     const content1 = document.getElementById('phone-verification-content1');
     const content2 = document.getElementById('phone-verification-content2');
-
+    const nextBtn = document.getElementById('window-next');
     //폰인증 팝업창 실행시 폰인증1번화면으로 보이기
     document.getElementById('phone-verification').addEventListener('click', () => {
         content1.classList.remove('hidden');
         content2.classList.add('hidden');
+        document.querySelector('.active').classList.remove('active');
+        document.querySelector('input[name="veri-type"]:checked').removeAttribute('checked');
+        document.getElementById('simple').setAttribute('checked', 'checked');
+        document.getElementById('simple-tab').classList.add('active');
+        nextBtn.value = "다음";
     });
 
     //폰인증 팝업창에서 다음버튼 이벤트
-    const nextBtn = document.getElementById('window-next');
     nextBtn.addEventListener('click', () => {
         if (nextBtn.value === "다음") {
             if (document.querySelectorAll('input[type="radio"]:checked').length > 0) {
@@ -24,12 +28,10 @@ const verification = () => {
                     nextBtn.value = "확인";
                 } else
                     alert("필수 입력 항목에 대하여 모두 동의해주시기 바랍니다.");
-            } else {
+            } else
                 alert("통신사를 선택하여주십시오.");
-            }
-        } else {
+        } else
             nextBtn.value = "다음";
-        }
     });
 
     //탭메뉴 이벤트
@@ -71,7 +73,7 @@ const verification = () => {
 
     // 팝업창 필요항목 입력되었는지 확인 + 인증완료 이벤트처리
     const phone_window = '#phone-verification-window';
-    $(phone_window + ' input[type="submit"]').click(function(){
+    $('#authorizeBtn').click(function(){
         if(grecaptcha && grecaptcha.getResponse().length === 0 && input_check(phone_window + ' div.active input')) {
             alert('모든 항목을 완료해주세요.')
         } else {
@@ -88,9 +90,11 @@ const verification = () => {
     });
 
     const ipin_window = '#ipin-verification-window';
-    $(ipin_window +' input[type="submit"]').click(function(){
-        if(input_check(ipin_window + ' input[type="text"]')){
+    $('#authorizeBtn2').click(function(){
+        if(input_check(ipin_window + ' input[type="text"]')) {
             alert('모든 항목을 완료해주세요.');
+        } else if(document.getElementById('ipin-test').value !== '6369') {
+            alert('잘못된 번호입니다.');
         } else {
             const _window = $(ipin_window);
             eventHandler(_window, 'step2-2');
@@ -106,7 +110,7 @@ const verification = () => {
                 $(ipin_window + ' .success').fadeIn();
             },3100);
         }
-    });  
+    });
 };
 
 //국가선택
@@ -129,11 +133,11 @@ const eventHandler = (_window, step2) => {
     const authent = $('.authent');
     var agree1 = $("#agree_personalCollectionOption").val();
     var agree2 = $("#agree_personalProvide").val();
-    
+
     _window.addClass('step1');
     setTimeout(function(){
         _window.addClass(step2)
-    },300);  // 
+    },300);  //
     setTimeout(function(){
         authent.show().animate({right:-320},{easing : 'easeOutQuint' ,duration: 600, queue: false });
         authent.animate({opacity: 1},{duration: 200, queue: false }).addClass('visible');
@@ -144,16 +148,82 @@ const eventHandler = (_window, step2) => {
         _window.removeClass(step2)
     },2500);
     setTimeout(function(){
-        location.href= '/projectGAZA/Resources/JSP/signup/signup4.do?agree_personalCollectionOption='+agree1+'&agree_personalProvide='+agree2;
+        if (document.getElementById('authorize'))
+            document.getElementById('authorize').submit();
+        else {
+            document.getElementById('phone-verification-window').style.display = 'none';
+            overlay.style.display = 'none';
+            const divs = document.querySelectorAll('.pop-up-window-type1>div');
+            divs.forEach(div => div.style.display = 'block');
+            document.querySelector('.success').style.display = 'none';
+            document.getElementById('window-next').value = '다음';
+        }
     }, 4500);
 };
 
+const agreement_check = () => {
+    if (agree_personalTransferToAbroad.checked && agree_personalCollection.checked && agree_hompageUse.checked)
+        return true;
+    else {
+        alert("필수 입력 항목에 대하여 모두 동의해주시기 바랍니다.");
+        return false;
+    }
+};
+
+// 아이디 비밀번호찾기 생년월일 선택 select option
+
+const setDateOption = () => {
+    const year = document.getElementById('year');
+    const month = document.getElementById('month');
+
+    const selectedYear = year.options[year.selectedIndex].value;
+    const selectedMonth = month.options[month.selectedIndex].value;
+
+    const lastDate = new Date(selectedYear, selectedMonth, 0).getDate();
+    let dayOptions = "<option value=\"\">일</option>";
+    for (let i = 1; i <= lastDate; i++) {
+        if(i <= 9) dayOptions += `<option value=0${i}>0${i}</option>`;
+        else dayOptions += `<option value=${i}>${i}</option>`;
+    }
+    return dayOptions;
+};
+
+const birth_option_generator = () => {
+    const year = document.getElementById('year'),
+         month = document.getElementById('month'),
+           day = document.getElementById('day');
+    let yearOptions = "<option value=''>년</option>",
+        monthOptions = "<option value=''>월</option>",
+        dayOptions = "<option value=''>일</option>";
+
+    const thisYear = new Date().getFullYear();
+    for (let i = thisYear-100; i <= thisYear; i++)
+        yearOptions += `<option value=${i}>${i}</option>`;
+    year.innerHTML = yearOptions;
+    for (let i = 1; i <= 12; i++) {
+        if(i <= 9) monthOptions += `<option value=0${i}>0${i}</option>`;
+        else monthOptions += `<option value=${i}>${i}</option>`;
+    }
+    month.innerHTML = monthOptions;
+    for (let i = 1; i <= 31; i++) {
+        if(i <= 9) dayOptions += `<option value=0${i}>0${i}</option>`;
+        else dayOptions += `<option value=${i}>${i}</option>`;
+    }
+    day.innerHTML = dayOptions;
+
+    year.addEventListener('change', () => {
+        day.innerHTML = setDateOption()
+    });
+    month.addEventListener('change', () => {
+        day.innerHTML = setDateOption()
+    });
+};
 
 (() => {
     /* signup1 */
     if(location.pathname.indexOf('signup1') !== -1)
         hintWindow('underage-hint', true, true, true); //팝업창 이벤트
-    
+
     /* signup2 */
     else if(location.pathname.indexOf('signup2') !== -1) {
         const check_all = document.getElementById('agree_all');
@@ -165,76 +235,65 @@ const eventHandler = (_window, step2) => {
                 box.checked = check_all.checked;
             });
         });
-        
-        //필수 체크 항목이 체크되었는지 확인
-        const nextBtn = document.querySelector('.right');
-        nextBtn.addEventListener('click', () => {
-            if (agree_personalTransferToAbroad.checked && agree_personalCollection.checked && agree_hompageUse.checked) location.replace('signup3.html');
-            else
-                alert("필수 입력 항목에 대하여 모두 동의해주시기 바랍니다.")
-        });
     }
-    
+
     /* signup3 */
-    else if(location.pathname.indexOf('signup3') !== -1) 
-        verification(); 
-    
+    else if(location.pathname.indexOf('signup3') !== -1)
+        verification();
+
     /* signup4 */
     else if(location.pathname.indexOf('signup4') !== -1) {
         hintWindow('btn-dupCheck', true, true, true); //팝업창 이벤트
 
         /* 달력 */
         cal_generator('birthdate', new Date('1950', '01' - 1), 1);
-        
+
         new NiceCountryInput($(".countryPicker")).init();
         const temp = document.querySelector('.warning');
         document.querySelector('.login-link').addEventListener('click', () => temp.classList.remove('hidden'));
-        
+
         /*아이디 중복체크*/
         const id = document.getElementById('username');
         const insideId = document.getElementById('txtID');
-        let isOk = '';
         const btnUse = document.getElementById("btn-use");
         document.getElementById('btn-dupCheck').addEventListener('click', () => {
             document.querySelector('.result-wrapper').classList.add('hidden');
             insideId.value = id.value;
         });
-        
+
         document.getElementById('btn-dupCheck2').addEventListener('click', () => {
             if (insideId.value.length !== 0) {
             		var params = $("#idChkFrm").serialize();
             		/* Todo */
             		$.ajax({
-            			url : "/projectGAZA/Resources/JSP/signup/idChk.do",
+            			url : "/projectGAZA/Resources/JSP/account/signup/idChk.do",
             			data : params,
             			success : function(result){
             				if(eval(result)){
-            					isOk = '사용할 수 없습니다.';
-            					target.innerHTML = `'${insideId.value}' <span class='font-gray1'>는 </span><span class='font-red'>${isOk}</span>`;
+            					target.innerHTML = `'${insideId.value}' <span class='font-gray1'>는 </span><span class='font-red'>사용할 수 없습니다.</span>`;
             					btnUse.setAttribute("disabled","disabled");
             					btnUse.style.opacity = 0.5;
-            					
+
             				}else{
-            					isOk = '사용할 수 있습니다.';
-            					target.innerHTML = `'${insideId.value}' <span class='font-gray1'>는 </span><span class='font-blue4'>${isOk}</span>`;
+            					target.innerHTML = `'${insideId.value}' <span class='font-gray1'>는 </span><span class='font-blue4'>사용할 수 있습니다.</span>`;
             					btnUse.removeAttribute("disabled");
             					btnUse.style.opacity = 1;
             				}
             			},
             			error : function(){
-            				alert("아이디 중복체크 에러...")
+                            target.innerHTML = `'${insideId.value}' <span class='font-gray1'>는 </span><span class='font-red'>잘못된 아이디입니다.</span>`;
+                            btnUse.setAttribute("disabled","disabled");
+                            btnUse.style.opacity = 0.5;
             			}
             		});
             		const target = document.querySelector('.result-wrapper');
 		            target.classList.remove('hidden');
-		            
-		            
             } else {
                 alert('아이디를 입력해주십시오.');
             }
         });
-        
-        document.getElementById('btn-use').addEventListener('click', () => { 
+
+        document.getElementById('btn-use').addEventListener('click', () => {
             if(isOk.length ===0) alert('중복검사를 해주십시오.');
             else if(isOk === "사용할 수 있습니다.") {
                 id.value = insideId.value;
@@ -243,24 +302,41 @@ const eventHandler = (_window, step2) => {
                 result = '';
             }
         });
-        
+
         /*우편번호 검사*/
         document.getElementById('btn-postalSearch').addEventListener('click', addrSearch);
     }
-    
+
     /* idsearch */
-    else if(location.pathname.indexOf('idsearch') !== -1) {
-        verification();
-        tabEvent('.tab-menu1');
-    }
-    
     /* pwsearch */
-    else if(location.pathname.indexOf('pwsearch') !== -1) {
+    else if(location.pathname.indexOf('search') !== -1) {
         verification();
         tabEvent('.tab-menu1');
+        birth_option_generator();
+
+        /* 아디, 비번 검색*/
+        function search() {
+            var params = $("#idFindFrm").serialize();
+            $.ajax({
+                url : "<%=request.getContextPath() %>/Resources/JSP/account/search/searchOk.do",
+                data : params,
+                success : function(result){
+                    if(result)
+                        $("#result").html("고객님의 아이디는 <span class='font-blue4'>"+result+"</span>입니다.");
+                    else
+                        $("#result").text("검색된 아이디가 없습니다. 입력하신 정보를 다시 확인해주세요.");
+                },
+                error : function(){
+                    alert("계정 찾기에 실패했습니다.");
+                }
+            });
+        }
+        document.getElementById('search').addEventListener('click', search);
+        document.getElementById('authorizeBtn').addEventListener('click', () => { setTimeout(search, 4500) });
+        document.getElementById('authorizeBtn2').addEventListener('click', () => { setTimeout(search, 4500) });
     }
-    
-    /* login */ 
+
+    /* login */
     else if(location.pathname.indexOf('login') !== -1) {
         //달력
         let calendar_boardingdate = cal_generator('boardingdate', new Date());
@@ -332,5 +408,4 @@ const eventHandler = (_window, step2) => {
             }
         })
     }
-    
 })();

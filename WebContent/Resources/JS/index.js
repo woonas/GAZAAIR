@@ -1,4 +1,35 @@
 $(function(){
+
+    //네비 하단 줄 없애기 (메인화면에서만 없애기)
+    $("#mainMenu>ul>li").hover(function(){
+    	$("#menuBg").css("border-top-color", "#777");
+    }, function(){
+        $("#menuBg").css("border-top-color", "transparent");
+    });
+
+    //예약폼 활성화 비활성화 이벤트
+    $(".reserve_wrap").click(function () {
+        $(".reserve_wrap").css('opacity', '1');
+        $(".reserve_wrap").css('bottom', '25vh');
+    });
+
+    $("body").click(function (e) {
+        $(".reserve_wrap").css('opacity', '0.7');
+        $(".reserve_wrap").css('bottom', '12vh');
+
+        var target = $(e.target);
+        do {
+            if (target.hasClass('reserve_wrap') === true || target.hasClass('overlay') === true || target.hasClass('centeredXY') ) {
+                $(".reserve_wrap").css('opacity', '1');
+                $(".reserve_wrap").css('bottom', '25vh');
+                break;
+            }
+            if (target.prop('tagName') === 'BODY') break;
+            target = target.parent();
+        } while(true);
+
+    });
+
 	//배경이미지 슬라이더
      $("#main").backstretch([
         "Resources/IMG/main/mainBg1.jpg",
@@ -211,6 +242,7 @@ $(function(){
 	    if (totalNum.indexOf('성인') === -1) adultNum = 0;
 	    if (totalNum.indexOf('소아') === -1) childNum = 0;
 	    if (totalNum.indexOf('유아') === -1) infantNum = 0;
+        if (totalNum === "") adultNum = 1;
 	    document.getElementById('numOfAdult').value = adultNum;
 	    document.getElementById('numOfChild').value = childNum;
 	    document.getElementById('numOfInfant').value = infantNum;

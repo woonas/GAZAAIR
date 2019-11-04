@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page errorPage="/Resources/JSP/error/error.jsp"%>
+<%@ page errorPage="/Resources/JSP/common/error.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>고객의 말씀</title>
-<link rel="stylesheet" href="../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../CSS/navNfooter.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/layout.css" type="text/css"/>
 <link rel="stylesheet" href="../CSS/review.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -85,7 +85,7 @@ $(function(){
 </script>
 </head>
 <body onload="start()">
-<%@ include file="nav.jspf" %>
+<%@ include file="common/nav.jspf" %>
 	<div id="contents">
 		<section id="title">
 			<h3>고객의 말씀</h3>
@@ -226,6 +226,6 @@ $(function(){
 				</div>
 		</section>
 	</div>
-<%@ include file="footer.jspf" %>
+<%@ include file="common/footer.jspf" %>
 </body>
 </html>

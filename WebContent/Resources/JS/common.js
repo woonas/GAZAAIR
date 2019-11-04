@@ -246,7 +246,7 @@ const overlay = document.querySelector('.overlay');
 //네비게이션
 const navi = () => {
     const menus = document.querySelectorAll('#mainMenu>ul>li');
-    const submenu = document.getElementById('subMenu');
+    const submenu = document.getElementById('subMenuWrap');
     const menubg = document.getElementById('menuBg');
     menus.forEach(menu => {
        menu.addEventListener('mouseenter', () => {
@@ -260,8 +260,22 @@ const navi = () => {
     });
 };
 
+//상단부분으로 이동 버튼
+
+const moveScroll = () => {
+    window.scrollY = window.scrollY - 60 > 0? window.scrollY - 60 : 0;
+    document.documentElement.scrollTop = document.documentElement.scrollTop - 60 > 0? document.documentElement.scrollTop - 60 : 0;
+    if (window.scrollY != 0 || document.documentElement.scrollTop != 0)
+        setTimeout(moveScroll, 15);
+};
+
+const moveToTop = () => {
+    document.querySelector('.topBtn').addEventListener('click', () => setTimeout(moveScroll,15));
+};
+
 (() => {
     navi();
+    moveToTop();
     windowClose();
     loader_generator();
     document.body.classList.add('noscroll');

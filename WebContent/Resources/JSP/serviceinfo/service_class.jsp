@@ -6,9 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>클래스 안내</title>
-<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>/>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../../JS/main.js"></script>
+<script src="../../HTML/not_using/main.js"></script>
 <style>
 h4 {
 	float: left;
@@ -156,7 +156,7 @@ h5{
 </script>
 </head>
 <body onload="start()">
-<%@ include file="../nav.jspf" %>
+<%@ include file="../common/nav.jspf" %>
 		<div id="contents">
 			<section id="title">
 				<h3>클래스별 안내</h3>
@@ -319,6 +319,6 @@ h5{
 		</div>
  		
 	</div>
-	<%@ include file="../footer.jspf" %>
+	<%@ include file="../common/footer.jspf" %>
 </body>
 </html>

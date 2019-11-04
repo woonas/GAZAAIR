@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("../CSS/layout.css") screen;
 
-/* 공지 글내용 board/board_view.jsp */
+/* 공지 글내용 board/noticeBoard_view.jsp */
 
 #brd_title{
 	padding-left: 50px;

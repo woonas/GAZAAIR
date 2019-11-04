@@ -6,9 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>유료 부가서비스</title>
-<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../../JS/main.js"></script>
+<script src="../../HTML/not_using/main.js"></script>
 <style>
 h4 {
 	float: left;
@@ -53,7 +53,7 @@ li{
 </script>
 </head>
 <body>
-<%@ include file="../nav.jspf" %>
+<%@ include file="../common/nav.jspf" %>
 		<div id="contents">
 			<section id="title">
 				<h3>기내 WI-FI</h3>
@@ -83,6 +83,6 @@ li{
 			</section>
 		</div>	
 	</div>
-	<%@ include file="../footer.jspf" %>
+	<%@ include file="../common/footer.jspf" %>
 </body>
 </html>

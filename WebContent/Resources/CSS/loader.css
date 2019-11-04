@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: center;
     transition: opacity 500ms linear;
-    z-index: 1000;
+    z-index: 20000;
 }
 
 .loaderWrapper.fade { opacity: 0.2; }

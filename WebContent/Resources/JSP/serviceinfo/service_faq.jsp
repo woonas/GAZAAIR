@@ -6,9 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>FAQ</title>
-<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>s"/>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>s"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../../JS/main.js"></script>
+<script src="../../HTML/not_using/main.js"></script>
 <style>
 .faqName{
 	border:1px solid gray;
@@ -124,7 +124,7 @@ nav {
 </script>
 </head>
 <body>
-<%@ include file="../nav.jspf" %>
+<%@ include file="../common/nav.jspf" %>
 	
 		<div id="contents">
 			<section id="title">
@@ -167,6 +167,6 @@ nav {
 			</section>
 		</div>
 	</div>
-	<%@ include file="../footer.jspf" %>
+	<%@ include file="../common/footer.jspf" %>
 </body>
 			

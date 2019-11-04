@@ -1,4 +1,8 @@
 @charset "UTF-8";
+@import "layout.css";
+
+#menuBg { border-top-color: transparent; }
+
 #main{
 	height: calc(100vh - 70px);
 	width:100%; 
@@ -27,8 +31,16 @@ ul, li{
 	position:absolute;
 	left: 50%;
 	transform:translateX(-50%);
-	bottom: 25vh;
+	bottom: 12vh;
+    opacity: 0.7;
+    transition: all 0.5s;
 }
+
+input:checked + label>.reserve_wrap {
+    opacity: 1;
+    bottom: 25vh;
+}
+
 .reserve_wrap>div:nth-child(1), .reserve_wrap>div:nth-child(2){
 	width:25%;
 }
@@ -217,14 +229,14 @@ ul, li{
 #num-of-passengers{
 	width: 100%;
 	height: 50px;
-	background : url('../IMG/icon/user.png') no-repeat;
+	background : url('../IMG/icon/user.png') no-repeat 90% 50%;
 	background-size : 8%;
-	background-position: 90% 50%;
 	border-radius : 5px;
 	border : 1px solid #ddd;
 	opacity : 0.8;
 	cursor : pointer;
 	padding-left: 10px;
+    font-size: 110%;
 }
 
 #selectBtn {
@@ -267,8 +279,8 @@ ul, li{
 .minus,
 .plus {
     background-color: transparent;
-    position: relative;
-    top: 52px;
+    position: absolute;
+    margin-top: 1px;
     width: 40px;
     height: 52px;
     border: none;
@@ -276,15 +288,18 @@ ul, li{
     font-weight: 200;
     color: #aaa;
 }
-.minus { left: 1%; }
-.plus { right: -89%; top: -58px;}
+
+.minus { margin-left: 3px }
+
+.plus { margin-left: -39px; }
+
 .minus,
 .plus:hover { cursor: pointer; }
+
 .btn-close{
 	position: absolute;
 	top: 35px;
 	right: 30px;
-	
 }
 /*배경이미지 컨트롤러*/
 .slideControler{
@@ -298,6 +313,7 @@ ul, li{
 	border-radius:10px;
 	padding-top:2px;
 	bottom: 5vh;
+    opacity: 0.8;
 }
 .dotsWrap{
 	height: 15px;
@@ -339,6 +355,7 @@ ul, li{
 	line-height:4;
 	background-color: #35f;
 	color:#fff;
+    padding-bottom: 1px;
 }
 #best>div>div>a:hover{
 	text-decoration: underLine;
@@ -427,6 +444,7 @@ ul, li{
 	font-size:200%;
 	float:left;
 	margin-right:20px;
+    padding-bottom: 1px;
 }
 #event>div>div>a{
 	line-height:4;
@@ -511,6 +529,7 @@ ul, li{
 }
 #infoWrap thead td:nth-child(2){
 	text-align: center;
+    padding-left: 10px;
 }
 #infoWrap tbody>tr>td:nth-child(2){
 	text-align: center;

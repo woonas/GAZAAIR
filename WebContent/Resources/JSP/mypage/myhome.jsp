@@ -7,12 +7,12 @@
         <meta charset="UTF-8">
         <title>마이 홈</title>
         <link rel="stylesheet" href="../../CSS/my_page.css">
-        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
     </head>
     <body id="mypage-main">
-    <%@ include file="../nav.jspf" %>
+    <%@ include file="../common/nav.jspf" %>
        <section class="content">
             <div class="maintop">
                 <div class="row clearfix">
@@ -236,6 +236,6 @@
         	const my_mileage = ${myMiles};
         </script>
         <script src="../../JS/mypage.js"></script>
-        <%@ include file="../footer.jspf" %>
+        <%@ include file="../common/footer.jspf" %>
     </body>
 </html>

@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>마일리지 내역</title>
-<link rel="stylesheet" href="../../CSS/main.css" type="text/css"/>
+<link rel="stylesheet" href="../../CSS/navNfooter.css" type="text/css"/>
 <link rel="stylesheet" href="../../CSS/layout.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <style>
@@ -143,7 +143,7 @@
 %>
 </head>
 <body>
-<%@ include file="../../JSP/nav.jspf" %>
+<%@ include file="../../JSP/common/nav.jspf" %>
 	<div id="contents">
 		<h3>적립/사용 내역</h3>
 		<div id="usable_miles">
@@ -241,6 +241,6 @@
 			</div>
 		</div>
 	</div>
-<%@ include file="../../JSP/footer.jspf" %>
+<%@ include file="../../JSP/common/footer.jspf" %>
 </body>
 </html>

@@ -7,11 +7,11 @@
         <meta charset="UTF-8">
         <title>관심노선</title>
         <link rel="stylesheet" href="../not_using/mypage.css">
-        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/main.css" type="text/css"/>
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
     </head>
     <body>
-    <%@ include file="../nav.jspf" %>
+    <%@ include file="../common/nav.jspf" %>
         <section class="content">
             <h3>관심노선</h3>
             <div class="clearfix">
@@ -25,6 +25,6 @@
         </section>
         <script src="../../JS/common.js"></script>
         <script src="../../JS/mypage.js"></script>
-        <%@ include file="../footer.jspf" %>
+        <%@ include file="../common/footer.jspf" %>
     </body>
 </html>
