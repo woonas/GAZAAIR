@@ -109,7 +109,7 @@
 	
 		function start(){
 			//탭메뉴
-			 var btnIdList = ['btnAll', 'btnGAZA', 'btnPartner', 'btnOthers'];
+            var btnIdList = ['btnAll', 'btnGAZA', 'btnPartner', 'btnOthers'];
 			var paneIdList = ['noticeAll','noticeGAZA','noticePartner','noticeOthers'];
 			var btnList = ['전체','가자항공소식','제휴사소식','기타'];
 			var tabBtnHTML = "";

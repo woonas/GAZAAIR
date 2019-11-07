@@ -19,12 +19,12 @@
 					<div><a href="#">서비스안내</a></div>
 					<div><a href="#">고객서비스</a></div>
 					<div>
-					<c:if test="${memberName==null }">
-					<a href="<%=path %>/Resources/JSP/account/login/login.do">로그인</a>
-					</c:if>
-					<c:if test="${memberName!=null }">
-					<a href="<%=path %>/Resources/JSP/mypage/myhome.do">마이홈</a>
-					</c:if>
+                        <c:if test="${memberName==null }">
+                            <a href="<%=path %>/Resources/JSP/account/login/login.do">로그인</a>
+                        </c:if>
+                        <c:if test="${memberName!=null }">
+                            <a href="<%=path %>/Resources/JSP/mypage/myhome.do">마이홈</a>
+                        </c:if>
 					</div>
 					<div id="navBar"></div>
 					<ul id="subMenuWrap">
@@ -39,8 +39,8 @@
 								<li><a href="<%=path %>/Resources/JSP/etc/routeMap.do">운항노선도</a></li>
 							</ul>
 							<ul>
-								<li><a href="<%=path %>/Resources/JSP/eventNproduct/best_product.do">베스트상품</a></li>
-								<li><a href="<%=path %>/Resources/JSP/eventNproduct/recommend_product.do">추천상품</a></li>
+								<li><a href="<%=path %>/Resources/JSP/eventNproduct/best_package.do">베스트상품</a></li>
+								<li><a href="<%=path %>/Resources/JSP/eventNproduct/recommend_package.do">추천상품</a></li>
 								<li><a href="<%=path %>/Resources/JSP/eventNproduct/event_list.do">제휴이벤트</a></li>
 							</ul>
 							<ul>
@@ -56,13 +56,13 @@
 							</ul>
 							<ul>
 								<c:if test="${memberName==null }">
-								<li><a href="<%=path %>/Resources/JSP/account/signup/signup1.do">회원가입</a></li>
+								    <li><a href="<%=path %>/Resources/JSP/account/signup/signup1.do">회원가입</a></li>
 								</c:if>
 								<c:if test="${memberName!=null }">
-								<li><a href="<%=path %>/Resources/JSP/mypage/account_info.do">회원정보</a></li>
-								<li><a href="<%=path %>/Resources/HTML/reserveStatus.html">예약 현황</a></li>
-								<li><a href="<%=path %>/Resources/JSP/account/login/logout.do">로그아웃</a></li>
-								<li><a href="<%=path %>/Resources/JSP/mypage/account_delete.do">회원탈퇴</a></li>
+                                    <li><a href="<%=path %>/Resources/JSP/mypage/account_info.do">회원정보</a></li>
+                                    <li><a href="<%=path %>/Resources/HTML/reserveStatus.html">예약 현황</a></li>
+                                    <li><a href="<%=path %>/Resources/JSP/account/login/logout.do">로그아웃</a></li>
+                                    <li><a href="<%=path %>/Resources/JSP/mypage/account_delete.do">회원탈퇴</a></li>
 								</c:if>
 							</ul>
 						</li>

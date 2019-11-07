@@ -483,6 +483,35 @@ input:checked + label>.reserve_wrap {
     text-align: center;
     background-color: rgba(0,0,0,0.65) !important;
 }
+
+.bx-prev,
+.bx-next {
+    background-color: rgba(0,0,0,0.65) !important;
+    border-radius: 50%;
+    background-image: none !important;
+}
+
+.bx-prev:after,
+.bx-next:after {
+    position: absolute;
+    content: "";
+    height: 9px;
+    width: 9px;
+    top: 10px;
+    color: #fff;
+    transform: rotate(45deg);
+}
+.bx-prev:after {
+    left: 12px;
+    border-left: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+}
+.bx-next:after {
+    left: 7px;
+    border-right: 4px solid #fff;
+    border-top: 4px solid #fff;
+}
+
 .eventDetail{
 	position: absolute;
 	height: 100%;

@@ -6,11 +6,132 @@
 /* 공통부분 */
 /* ----------------------------------------------- */
 
-.bread_crumbs {
+/* 상단 서브메뉴 */
 
+.bread_crumbs {
+    position: absolute;
+    height: 45px;
+    width: 100vw;
+    left: 0;
+    background-color: #aaa;
+}
+
+.bread_crumbs>div {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.bread_crumbs>div>.menu-item {
+    flex: 2;
+    line-height: 43px;
+    height: 45px;
+    padding: 0 20px;
+    position: relative;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #aaa;
+    z-index: 5;
+}
+
+.bread_crumbs>div>.menu-item:first-of-type {
+    flex: 1;
+    text-align: center;
+}
+.bread_crumbs>div>.menu-item:nth-of-type(4),
+.bread_crumbs>div>.menu-item:last-of-type { flex: 4; }
+
+.bread_crumbs>div>.menu-item:not(:last-of-type):hover {
+    background-color: #fff;
+    border: 1px solid #36f;
+}
+
+.bread_crumbs>div>.menu-item:not(:first-of-type):not(:last-of-type):after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    top: 10px;
+    right: 15px;
+    transform: rotate(45deg);
+    transition: all 0.3s;
+}
+.bread_crumbs>div>.menu-item:hover:not(:first-of-type):after {
+    transform: rotate(-135deg);
+    border-color: #555;
+    top: 18px;
+}
+.bread_crumbs>div>.menu-item:hover + div { border-left-color: #aaa; }
+
+.bread_crumbs>div>.menu-item>a {
+    overflow: hidden;
+    display: block;
+    color: #fff;
+}
+
+.sub-menu {
+    position: absolute;
+    width: calc(100% + 2px);
+    margin-top: 1px;
+    top: 100%;
+    left: -1px;
+    display: none;
+    border: 1px solid #aaa;
+    border-top: 0;
+    background-color: #fff;
+}
+
+.sub-menu>.menu-item {
+    border: 1px solid transparent;
+    padding: 0 20px;
+    opacity: 0;
+    transform-origin: bottom;
+    animation: enter 1.2s ease forwards;
+    animation-duration: 0.5s;
+}
+
+.menu-item:hover>a { color: #555 !important; }
+.menu-item:hover>.sub-menu { display: block; }
+.sub-menu>.menu-item:hover { background-color: #eee; }
+
+.sub-menu>.menu-item:nth-child(1) {
+    animation-duration: 0.2s;
+    animation-delay: 0s;
+}
+.sub-menu>.menu-item:nth-child(2) {
+    animation-duration: 0.3s;
+    animation-delay: 0.1s;
+}
+.sub-menu>.menu-item:nth-child(4) {
+    animation-duration: 0.4s;
+    animation-delay: 0.2s;
+}
+.sub-menu>.menu-item:nth-child(5) { animation-delay: 0.3s; }
+.sub-menu>.menu-item:nth-child(6) { animation-delay: 0.4s; }
+.sub-menu>.menu-item:nth-child(7) { animation-delay: 0.5s; }
+.sub-menu>.menu-item:nth-child(8) { animation-delay: 0.6s; }
+.sub-menu>.menu-item:nth-child(9) { animation-delay: 0.7s; }
+.sub-menu>.menu-item:nth-child(10) { animation-delay: 0.8s; }
+.sub-menu>.menu-item:nth-child(11) { animation-delay: 0.9s; }
+.sub-menu>.menu-item:nth-child(12) { animation-delay: 1.0s; }
+.sub-menu>.menu-item:nth-child(13) { animation-delay: 1.1s; }
+.sub-menu>.menu-item:nth-child(14) { animation-delay: 1.2s; }
+
+@keyframes enter {
+    from {
+        opacity: 0;
+        transform: scaleY(0.98) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 
+
+/* */
 
 .info-reservation .tab-menu1 li.on:before {
     width: 1em;
@@ -54,8 +175,17 @@
     border-radius: 3px;
 }
 
+.table-form2 .table-row-title button {
+    margin-top: 15px;
+    font-size: 55%;
+    min-height: 30px;
+    padding: 10px 15px;
+    border-radius: 3px;
+}
+
+.table-form2 button:hover,
 .info-banner>div:first-of-type button:hover {
-    background-color: #fff;
+    background-color: #fff !important;
     border-color: #555;
 }
 
@@ -64,6 +194,15 @@
     font-size: 180%;
     font-weight: 700;
 }
+
+.section-title {
+    font-size: 170%;
+    font-weight: 600;
+    margin: 40px 0 15px;
+}
+.section-title + div,
+.section-title + p { margin-bottom: 10px; }
+.section-title + p { font-size: 130%; }
 
 .table-tab { height: 30px; }
 .table-tab li {
@@ -99,6 +238,7 @@
 }
 .table-form2 .list-type2>li.bigger-text:before, 
 .table-form2 .list-type2>li.notice-text:before { width: 0; }
+.table-form2 .list-type2>li.margin-left12 { margin-left: 12px; }
 
 .table-form span.bold { font-weight: bold; }
 
@@ -108,15 +248,57 @@
     margin-top: 60px;
 }
 
+
+/* 테이블 */
+.table-form2 .table-list { margin-left: 26px; }
+.table-list {position:relative;width:100%; border-collapse: collapse; margin-bottom: 10px; }
+.table-list.tbl_fixed {table-layout: fixed;}
+.table-list thead tr th {padding:10px 0;border-left:1px solid #ddd;border-top:1px solid #999ba1;color:#555;font-size:15px;font-weight:normal;background:#6d6e70; color:#fff;}
+.table-list thead tr:first-child th:first-child {border-left:none;}
+.table-list thead tr + tr th {border-top:1px solid #ddd;}
+.table-list tbody tr td,
+.table-list tbody tr th {position:relative;padding:15px 20px;border-left:1px solid #ddd;border-bottom:1px solid #ddd;color:#000;font-size:16px;font-weight:normal;text-align:center;}
+.table-list tbody tr td.via_type,
+.table-list tbody tr th.via_type {border-bottom-style:dashed;}
+.table-list thead tr td.bor_left,
+.table-list thead tr th.bor_left,
+.table-list tbody tr td.bor_left,
+.table-list tbody tr th.bor_left {border-left: 1px solid #ddd !important}
+.table-list tbody tr td:first-child,
+.table-list tbody tr th:first-child {border-left:none;}
+.table-list tbody tr th.bg_gray,
+.table-list tbody tr td.bg_gray {background: #f7f7f7}
+.table-list tbody tr th.pad_0 {padding:0 !important;}
+.table-list tfoot tr td,
+.table-list tfoot tr th{padding:20px 20px;background:#f0f0f0; border-bottom:1px solid #ddd; border-left:1px solid #ddd;line-height:1;}
+.table-list tfoot tr th:first-child{border-left:none;}
+.table-list tfoot.sum tr td{text-align:right; font-weight:bold; color:#d60815;font-size:18px; }
+.table-list tfoot.sum tr th{font-size:20px;font-weight:normal;text-align:left;}
+.table-list tbody tr th.bg-blue5,
+.table-list tbody tr.bg-blue5 th { border-top: 0; color: #fff; }
+.table-list tbody tr:not(.bg-blue5):not(.bg-gray5) td:not(.bg-blue5):not(.bg-gray5) { text-align: left; }
+
 /* ----------------------------------------------- */
 /* 예약 안내 info_reservation.html */
 /* ----------------------------------------------- */
 
+.banner-reservation-1 { background-image: url(../IMG/information/bg_visual_eticket.png); background-position-y: 0 !important; }
 .banner-reservation-2 { background-image: url(../IMG/information/bg_visual_revInfo01.png); }
+.banner-reservation-3 { background-image: url(../IMG/information/bg_visual_revInfo03.png); }
+.banner-reservation-4 { background-image: url(../IMG/information/bg_visual_revInfo04.png); }
 
+
+/* ----------------------------------------------- */
+/* 운임 안내 info_fare.html */
+/* ----------------------------------------------- */
+
+.banner-fare-1 { background-image: url(../IMG/information/bg_visual_fareinfo01.png); }
+.banner-fare-2 { background-image: url(../IMG/information/bg_visual_fareinfo02.png); }
 
 
 /* ----------------------------------------------- */
 /* 기내식 안내 info_food.html */
 /* ----------------------------------------------- */
+
+
 

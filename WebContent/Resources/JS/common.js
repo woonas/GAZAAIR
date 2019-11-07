@@ -246,18 +246,35 @@ const overlay = document.querySelector('.overlay');
 //네비게이션
 const navi = () => {
     const menus = document.querySelectorAll('#mainMenu>ul>li');
-    const submenu = document.getElementById('subMenuWrap');
+    const subMenuWrap = document.getElementById('subMenuWrap');
+    const submenus = subMenuWrap.children[0].children;
     const menubg = document.getElementById('menuBg');
+    const navBar = document.getElementById('navBar');
+
     menus.forEach(menu => {
        menu.addEventListener('mouseenter', () => {
-           submenu.style.height = '220px';
+           subMenuWrap.style.height = '220px';
            menubg.style.height = '220px';
        });
        menu.addEventListener('mouseleave', () => {
-            submenu.style.height = '0';
+            subMenuWrap.style.height = '0';
             menubg.style.height = '0';
        });
     });
+
+    for (let i = 1; i < submenus.length; i++) {
+        const left = 9.5 + i * 15;
+        submenus[i].addEventListener('mouseenter', () => {
+            navBar.style.left = left + '%';
+            navBar.style.opacity = '1';
+            if (left > 80) navBar.style.width = '70px';
+        });
+        submenus[i].addEventListener('mouseleave', () => {
+            navBar.style.left = '0%';
+            navBar.style.opacity = '0';
+            navBar.style.width = '105px';
+        });
+    }
 };
 
 //상단부분으로 이동 버튼
@@ -279,6 +296,7 @@ const moveToTop = () => {
     windowClose();
     loader_generator();
     document.body.classList.add('noscroll');
+
     /* Loader */
     window.addEventListener('load', () => {
         const loader = document.querySelector('.loaderWrapper');

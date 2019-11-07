@@ -2,25 +2,26 @@
 
 
 /* font color */
-.font-blue4 { color:#36f; }
-.font-blue3 { color:#81a1ff; }
+.font-blue4 { color:#36f !important; }
+.font-blue3 { color:#81a1ff !important; }
 
-.font-gray0 { color: #333; }
-.font-gray1 { color: #555; }
-.font-gray2 { color: #737373; }
-.font-gray3 { color: #ccc; }
-.font-gray4 { color: #ddd; }
-.font-gray5 { color: #eee; }
-.font-gray6 { color: rgb(250,250,250); }
+.font-gray0 { color: #333 !important; }
+.font-gray1 { color: #555 !important; }
+.font-gray2 { color: #737373 !important; }
+.font-gray3 { color: #ccc !important; }
+.font-gray4 { color: #ddd !important; }
+.font-gray5 { color: #eee !important; }
+.font-gray6 { color: rgb(250,250,250) !important; }
 
-.font-red { color: #ff4500; }
-.font-brown { color: #8b4513; }
-.font-white { color: #fff; }
+.font-red { color: #ff4500 !important; }
+.font-brown { color: #8b4513 !important; }
+.font-white { color: #fff !important; }
 /* background */
-.bg-blue4 { background-color:#36f; }
-.bg-blue3 { background-color:#81a1ff; }
+.bg-blue4 { background-color: #36f !important; }
+.bg-blue3 { background-color: #81a1ff !important; }
+.bg-blue5 { background-color: #67a !important; }
 
-.bg-gray3 { background-color: #ccc; }
-.bg-gray4 { background-color: #ddd; }
-.bg-gray5 { background-color: #eee; }
-.bg-gray6 { background-color: rgb(250,250,250); }
+.bg-gray3 { background-color: #ccc !important; }
+.bg-gray4 { background-color: #ddd !important; }
+.bg-gray5 { background-color: #eee !important; }
+.bg-gray6 { background-color: rgb(250,250,250) !important; }

@@ -13,10 +13,11 @@ const tabletabEvent = (type) => {
 (() => {
     if(location.pathname.indexOf('reservation') !== -1) {
         tabEvent('.tab-menu1');
-        tabletabEvent('#table-tab-1')
+        tabletabEvent('#table-tab-1');
+        tabletabEvent('#table-tab-2');
     }
 
-   else if (location.pathname.indexOf('food') !== -1) {
-
+   else if (location.pathname.indexOf('fare') !== -1) {
+        tabEvent('.tab-menu1');
     }
 })();

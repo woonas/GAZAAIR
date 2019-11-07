@@ -121,6 +121,7 @@ nav ul, nav li{
 }
 #menuBg{
 	width: 100%;
+    min-width: 1240px;
 	border-top: 1px solid #777;
 	height: 0;
 	background-color: #fff;
@@ -169,7 +170,7 @@ nav ul, nav li{
 	font-weight: 600;
 }
 #navBar{
-	width: 100px;
+	width: 105px;
 	height: 5px;
 	background-color: #36f;
 	position: relative;
@@ -182,26 +183,17 @@ nav ul, nav li{
     pointer-events: none !important;/*마우스이벤트 영향 안받게*/
 }
 /*메뉴 마우스 오버 시 식별 바 이동*/
-#mainMenu>ul>li>div:nth-child(2):hover ~ #navBar {
-    left: 24.5%;
-    opacity:1;
-}
-#mainMenu>ul>li>div:nth-child(3):hover ~ #navBar {
-    left: 39.5%;
-    opacity:1;
-}
-#mainMenu>ul>li>div:nth-child(4):hover ~ #navBar {
-    left: 54.5%;
-    opacity:1;
-}
-#mainMenu>ul>li>div:nth-child(5):hover ~ #navBar {
-    left: 69.5%;
-    opacity:1;
-}
-#mainMenu>ul>li>div:nth-child(6):hover ~ #navBar {
-    left: 83%;
-    opacity:1;
-}
+#mainMenu>ul>li>div:nth-child(2):hover ~ #navBar,
+#mainMenu>ul>li>div:nth-child(3):hover ~ #navBar,
+#mainMenu>ul>li>div:nth-child(4):hover ~ #navBar,
+#mainMenu>ul>li>div:nth-child(5):hover ~ #navBar,
+#mainMenu>ul>li>div:nth-child(6):hover ~ #navBar { opacity: 1 !important; }
+
+#mainMenu>ul>li>div:nth-child(2):hover ~ #navBar { left: 24.5% !important; }
+#mainMenu>ul>li>div:nth-child(3):hover ~ #navBar { left: 39.5% !important; }
+#mainMenu>ul>li>div:nth-child(4):hover ~ #navBar { left: 54.5% !important; }
+#mainMenu>ul>li>div:nth-child(5):hover ~ #navBar { left: 69.5% !important; }
+#mainMenu>ul>li>div:nth-child(6):hover ~ #navBar { left: 84.5% !important; width: 70px !important; }
 
 /*탑버튼*/
 .topBtn{
