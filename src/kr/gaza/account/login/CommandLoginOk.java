@@ -11,26 +11,26 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class CommandLoginOk implements CommandService {
-	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		MemberVO vo = new MemberVO();
-		vo.setMemberId(request.getParameter("userid"));
-		vo.setMemberPwd(request.getParameter("password"));
-		
-		MemberDAO dao = new MemberDAO();
-		dao.login(vo);
-		boolean status = false;
-		if(vo.getMemberNameKor()==null || vo.getMemberNameKor().equals("")){
-			
-		}else {
-			status = true;
-			HttpSession ses = request.getSession();
-			ses.setAttribute("memberNum", vo.getMemberNum());
-			ses.setAttribute("memberId", vo.getMemberId());
-			ses.setAttribute("memberName", vo.getMemberNameKor());
-		}
-		request.setAttribute("status", status);
-		return "loginOk.jsp";
-	}
+    @Override
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        MemberVO vo = new MemberVO();
+        vo.setMemberId(request.getParameter("userid"));
+        vo.setMemberPwd(request.getParameter("password"));
+
+        MemberDAO dao = new MemberDAO();
+        dao.login(vo);
+        boolean status = false;
+        if (vo.getMemberNameKor() == null || vo.getMemberNameKor().equals("")) {
+
+        } else {
+            status = true;
+            HttpSession ses = request.getSession();
+            ses.setAttribute("memberNum", vo.getMemberNum());
+            ses.setAttribute("memberId", vo.getMemberId());
+            ses.setAttribute("memberName", vo.getMemberNameKor());
+        }
+        request.setAttribute("status", status);
+        return "loginOk.jsp";
+    }
 }
