@@ -29,14 +29,14 @@
 				<a href="#none" onclick="return false;">${next}</a>
 			</c:if>
 			<c:if test="${vo.num != vo.totalRecord}">
-				<a href="<%=request.getContextPath()%>/Resources/JSP/board/board_view.do?num=${vo.num+1}&pageNum=${vo.pageNum}">${next}</a>
+				<a href="<%=request.getContextPath()%>/Resources/JSP/board/noticeBoard/noticeBoard_view.do?num=${vo.num+1}&pageNum=${vo.pageNum}">${next}</a>
 			</c:if>
 			</div>
 		<hr style="border:1px solid #eee"/>
 			<div class="brd_bottom">
 			∨ 이전글
 			<c:if test="${vo.num != 1}">
-				<a href="<%=request.getContextPath() %>/Resources/JSP/board/board_view.do?num=${vo.num-1}&pageNum=${vo.pageNum}">${prev}</a>
+				<a href="<%=request.getContextPath() %>/Resources/JSP/board/noticeBoard/noticeBoard_view.do?num=${vo.num-1}&pageNum=${vo.pageNum}">${prev}</a>
 			</c:if>
 			<c:if test="${vo.num == 1}">
 				<a href="#none" onclick="return false;">${prev}</a>
@@ -44,7 +44,7 @@
 			</div>
 		<hr style="border:1px solid #eee"/>
 		<div id="list_btn">
-			<button class="whiteBtn"><a href="<%=request.getContextPath()%>/Resources/JSP/board/notice.do?pageNum=${vo.pageNum}">목록보기</a></button>
+			<button class="whiteBtn"><a href="<%=request.getContextPath()%>/Resources/JSP/board/noticeBoard/noticeBoard_list.do?pageNum=${vo.pageNum}">목록보기</a></button>
 		</div>
 	</section>
 	<%@ include file="../../common/footer.jspf" %>

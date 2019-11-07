@@ -14,7 +14,6 @@
 <body onload="start()">
 	<%@ include file="../../common/nav.jspf" %>
 	<section class="content">
-	<div id="warp">
 		<div id="contents">
 			<section id="title">
 				<h3>공지사항</h3>
@@ -51,7 +50,7 @@
 													NEW
 												</c:if>
 												</span>
-												<a href="<%=request.getContextPath()%>/Resources/JSP/board/board_view.do?num=${v.num}&pageNum=${vo.pageNum}">${v.subject }</a>
+												<a href="<%=request.getContextPath()%>/Resources/JSP/board/noticeBoard/noticeBoard_view.do?num=${v.num}&pageNum=${vo.pageNum}">${v.subject }</a>
 												<br>
 											</h4>
 											${v.content }
@@ -71,7 +70,7 @@
 							<a href="#" onclick="return false;" class="pageNum" >prev</a>
 						</c:if>
 						<c:if test="${vo.pageNum>1}">
-							<a href="<%=request.getContextPath() %>/Resources/JSP/board/notice.do?pageNum=${vo.pageNum-1}">prev</a>
+							<a href="<%=request.getContextPath() %>/Resources/JSP/board/noticeBoard/noticeBoard_list.do?pageNum=${vo.pageNum-1}">prev</a>
 						</c:if>
 						
 						<c:if test="${vo.totalPage >= vo.startPage+vo.onePageMax-1 }">
@@ -85,10 +84,10 @@
 						<c:forEach var="i" begin="${vo.startPage}" end="${printPage }">
 							<c:if test="${i<=vo.totalPage}">
 								<c:if test="${i == vo.pageNum }">
-									<a href="<%=request.getContextPath() %>/Resources/JSP/board/notice.do?pageNum=${i}" class="pageNum active">${i}</a>
+									<a href="<%=request.getContextPath() %>/Resources/JSP/board/noticeBoard/noticeBoard_list.do?pageNum=${i}" class="pageNum active">${i}</a>
 								</c:if>
 								<c:if test="${i != vo.pageNum }">
-									<a href="<%=request.getContextPath() %>/Resources/JSP/board/notice.do?pageNum=${i}" class="pageNum">${i}</a>
+									<a href="<%=request.getContextPath() %>/Resources/JSP/board/noticeBoard/noticeBoard_list.do?pageNum=${i}" class="pageNum">${i}</a>
 								</c:if>
 							</c:if>
 						</c:forEach>
@@ -97,19 +96,18 @@
 							<a href="#" onclick="return false;" class="pageNum">next</a><br/>
 						</c:if>
 						<c:if test="${vo.pageNum<vo.totalPage}">
-							<a href="<%=request.getContextPath() %>/Resources/JSP/board/notice.do?pageNum=${vo.pageNum+1}">next</a><br/>
+							<a href="<%=request.getContextPath() %>/Resources/JSP/board/noticeBoard/noticeBoard_list.do?pageNum=${vo.pageNum+1}">next</a><br/>
 						</c:if>
 					</div>
 				</div>
 			</section>
 		</div>
-	</div>
 	</section>
 	<script>
 	
 		function start(){
 			//탭메뉴
-            var btnIdList = ['btnAll', 'btnGAZA', 'btnPartner', 'btnOthers'];
+			 var btnIdList = ['btnAll', 'btnGAZA', 'btnPartner', 'btnOthers'];
 			var paneIdList = ['noticeAll','noticeGAZA','noticePartner','noticeOthers'];
 			var btnList = ['전체','가자항공소식','제휴사소식','기타'];
 			var tabBtnHTML = "";
