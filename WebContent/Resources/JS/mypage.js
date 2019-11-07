@@ -32,15 +32,16 @@ function selectModal() {
     resizeModal();
 
     document.getElementById("seatsSelect").style.display ="block";
-    /*document.documentElement.scrollTop =  winHeight+200+"px"*/
+    
 }
 
 function resizeModal(){
     var winWidth = window.innerWidth/2;
     var winHeight = window.innerHeight/2;
-
+    
     document.getElementById("seatsSelect").style.left = winWidth-500+"px";
-    document.getElementById("seatsSelect").style.top = winHeight-550+"px";
+    document.getElementById("seatsSelect").style.top = winHeight-100+"px";
+    document.documentElement.scrollTop =  winHeight+200+"px"
 }
 
 function seatsSelcetClose(){
@@ -105,11 +106,12 @@ function change(targetId){
 
 /* 기내식 선택*/
 function selectFoodModal() {
+	
     document.getElementById("modal").style.display="block";
     resizeFoodModal();
 
     document.getElementById("foodSelect").style.display ="block";
-    /*document.documentElement.scrollTop =  winHeight+200+"px"*/
+    
 }
 
 function resizeFoodModal(){
@@ -118,6 +120,7 @@ function resizeFoodModal(){
 
     document.getElementById("foodSelect").style.left = winWidth-800+"px";
     document.getElementById("foodSelect").style.top = winHeight-350+"px";
+    document.documentElement.scrollTop =  winHeight+200+"px";
 }
 
 function foodSelcetClose(){
@@ -132,7 +135,7 @@ function selectClassModal() {
     resizeClassModal();
 
     document.getElementById("classSelect").style.display ="block";
-    /*document.documentElement.scrollTop =  winHeight+200+"px"*/
+    document.documentElement.scrollTop =  winHeight+200+"px"
 }
 
 function resizeClassModal(){
@@ -141,6 +144,7 @@ function resizeClassModal(){
 
     document.getElementById("classSelect").style.left = winWidth-550+"px";
     document.getElementById("classSelect").style.top = winHeight-350+"px";
+    document.documentElement.scrollTop =  winHeight+200+"px"
 }
 function classSelcetClose(){
     document.getElementById("classSelect").style.display = "none";
