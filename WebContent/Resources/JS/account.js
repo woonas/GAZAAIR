@@ -316,7 +316,7 @@ const birth_option_generator = () => {
 
         /* 아디, 비번 검색*/
         function search() {
-            var params = $("#idFindFrm").serialize();
+            var params = $("#searchForm").serialize();
             $.ajax({
                 url : "<%=request.getContextPath() %>/Resources/JSP/account/search/searchOk.do",
                 data : params,
@@ -332,7 +332,38 @@ const birth_option_generator = () => {
             });
         }
         document.getElementById('search').addEventListener('click', search);
-        document.getElementById('authorizeBtn').addEventListener('click', () => { setTimeout(search, 4500) });
+
+        function verification(targetForm) {
+            var params = $(targetForm).serialize();
+            $.ajax({
+                url : "<%=request.getContextPath() %>/Resources/JSP/account/search/verificationOk.do",
+                data : params,
+                success : function(result){
+                    if(result)
+                        $("#result").html("고객님의 아이디는 <span class='font-blue4'>"+result+"</span>입니다.");
+                    else
+                        $("#result").text("검색된 아이디가 없습니다. 입력하신 정보를 다시 확인해주세요.");
+                },
+                error : function(){
+                    alert("계정 찾기에 실패했습니다.");
+                }
+            });
+        }
+
+
+        document.getElementById('authorizeBtn').addEventListener('click', () => {
+            const type = document.querySelector('input[name="veri-type"]:checked');
+            const name = document.getElementById('username');
+            const phone = document.getElementById('userphone');
+            name.value = document.getElementById(type.id + '-name').value;
+            phone.value = document.getElementById(type.id + '-phone').value;
+
+
+
+            setTimeout(() => {
+                verification('#verificationForm');
+            }, 4500);
+        });
         document.getElementById('authorizeBtn2').addEventListener('click', () => { setTimeout(search, 4500) });
     }
 

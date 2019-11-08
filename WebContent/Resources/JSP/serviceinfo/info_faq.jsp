@@ -8,107 +8,6 @@
         <link rel="stylesheet" href="../../CSS/information.css">
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
-        <style>
-            .info-list { margin-right: 50px; }
-            
-            .faq-title {
-                font-size: 150%;
-                font-weight: 600;
-                margin-bottom: 30px;
-            }
-            
-            .info-section { margin-bottom: 30px; }
-            
-            .info-section>div:first-child {
-                padding: 10px;
-                border-radius: 5px 5px 0 0;
-                font-size: 120%;
-                color: #fff;
-            }
-            .info-section>div:last-child {
-                padding: 30px;
-                border: 1px solid #67a;
-            }
-            
-            .info-section>div:last-child>ul>li {
-                float: left;
-                margin: 10px 20px;
-                list-style-type: none;
-            }
-            .info-section>div:last-child>ul>li:after {
-                content: "";
-                position: absolute;
-                width: 1px;
-                height: 18px;
-                background-color: #ddd;
-                margin-left: 17px;
-                margin-top: 4px;
-            }
-            .no-compartment:after,
-            .info-section>div:last-child>ul>li:last-child:after { background-color: #fff !important; }
-
-            .info-section>div:last-child>ul>li>a { color: #555; }
-            .info-section>div:last-child>ul>li>a:hover { font-weight: 700; text-decoration: underline; }
-
-            .accordion {
-                border-top: 6px solid #67a;
-                line-height: 1.6;
-            }
-
-            .accordion-item { border-bottom: 1px solid #67a; }
-            
-            .accordion-title {
-                padding: 15px 15px 15px 40px;
-                display: block;
-                position: relative;
-            }
-            .is-expanded .accordion-title { font-weight: 700; }
-            
-            .accordion-title:before {
-                font-family: FontAwesome;
-                content: "\f055";
-                font-size: 100%;
-                position: absolute;
-                left: 15px;
-                top: 16px;
-                color: #67a;
-                transition: all 1s;
-            }
-            .is-expanded .accordion-title:before { content: "\f056"; }
-            
-            .accordion-title:hover,
-            .accordion-title:focus {
-                cursor: pointer;
-                outline: none;
-                font-weight: 700;
-            }
-            
-            .accordion-content-inner {
-                padding: 0 40px 10px 40px;
-                font-size: 90%;
-            }
-            
-            .accordion-content {
-                height: 0;
-                overflow: hidden;
-            }
-            .is-expanded .accordion-content { height: fit-content; }
-            
-            .customer-center {
-                margin-top: 40px;
-                height: 200px;
-                padding: 30px;
-                border: 1px solid #67a;
-                background: url(../../IMG/icon/ico_customer_main02.png) no-repeat right 22px bottom 25px;
-            }
-            .customer-center>p { font-size: 150%; }
-            .customer-center>input[type=button] {
-                padding: 10px 20px;
-                border-radius: 3px;
-                margin-top: 15px;
-                border-color: #67a !important;
-            }
-        </style>
     </head>
     <body>
         <%@ include file="../common/nav.jspf" %>
@@ -378,18 +277,6 @@
             </div>
         </section>
         <%@ include file="../common/footer.jspf" %>
-        <script>
-            const questions = document.querySelectorAll('.accordion-title');
-            questions.forEach(question => {
-               question.addEventListener('click', () =>{
-                   const expanded = document.querySelector('.is-expanded');
-                   if(question.parentElement.classList.contains('is-expanded')) question.parentElement.classList.remove('is-expanded');
-                   else {
-                       if(expanded) expanded.classList.remove('is-expanded');
-                       question.parentElement.classList.add('is-expanded');
-                   }
-               });
-            });
-        </script>
+        <script src="../../JS/information.js"></script>
     </body>
 </html>

@@ -7,7 +7,6 @@
     <meta charset="UTF-8">
     <title>항공권 예약 - 운임확인 및 최종동의</title>
     <link rel="stylesheet" href="../../../CSS/booking.css">
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>
     <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
@@ -313,13 +312,11 @@
         </ul>
         
         <div class="flex">
-            <a href="booking3.html"><button class="whiteBtn left">&lt; 이전</button></a>
-            <a href="../payment/payment.html"><button class="right blueBtn">결제 &gt;</button></a>
+            <a href="#" onclick="history.back()"><button class="whiteBtn left">&lt; 이전</button></a>
+            <a href="<%=path %>/Resources/JSP/flight/payment/payment.jsp"><button class="right blueBtn">결제 &gt;</button></a>
         </div>
     </section>
-    
-    <script src="../../../JS/common.js"></script>
-    <script src="../../../JS/booking.js"></script>
     <%@ include file="../../common/footer.jspf" %>
+    <script src="../../../JS/booking.js"></script>
 </body>
 </html>

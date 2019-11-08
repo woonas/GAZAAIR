@@ -37,4 +37,4 @@
 		</div>
 	</div>
 </footer>
-<script src="<%=request.getContextPath() %>/Resources/JS/common.js"></script>
+<script src="<%=path %>/Resources/JS/common.js"></script>

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -32,7 +31,7 @@
             </div>
             
             <div id="tab-1-container">
-           		<form method="post" id="idFindFrm">
+           		<form method="post" id="searchForm">
                     <br><br>
                     <p>* 회원가입 시 등록한 이메일 주소를 입력해주시기 바랍니다. 등록된 회원정보와 입력된 내용이 일치할 경우, 등록된 이메일 주소로 아이디 안내 메일을 발송해 드립니다.</p>
                     <div class="table-form">
@@ -327,19 +326,19 @@
                             <div class="row clearfix">
                                 <div class="col-fourth">이름</div>
                                 <div class="col-three-fourth">
-                                    <input type="text" placeholder="이름">
+                                    <input type="text" placeholder="이름" id="simple-name">
                                 </div>
                             </div>
                             <div class="row clearfix">
                                 <div class="col-fourth">휴대폰번호</div>
                                 <div class="col-three-fourth">
-                                    <input type="number" placeholder="-없이 숫자만 입력">
+                                    <input type="number" placeholder="-없이 숫자만 입력" id="simple-phone">
                                 </div>
                             </div>
                         </div>
 
                         <div class="captcha-wrapper">
-                            <form action="?" method="POST">
+                            <form action="?" method="POST" id="verificationForm">
                                 <div class="g-recaptcha-outer">
                                     <div class="g-recaptcha-inner">
                                         <div class="g-recaptcha" data-sitekey="6LeLNbsUAAAAAKvfjYVljYr4beUBNr5UUFhBzGUY"></div>
@@ -354,7 +353,7 @@
                             <div class="row clearfix">
                                 <div class="col-fourth">이름</div>
                                 <div class="col-three-fourth">
-                                    <input type="text" placeholder="이름">
+                                    <input type="text" placeholder="이름" id="sms-name">
                                 </div>
                             </div>
                             <div class="row clearfix">
@@ -366,7 +365,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-fourth">휴대폰번호</div>
-                                <div class="col-three-fourth"><input type="number" placeholder="-없이 숫자만 입력"></div>
+                                <div class="col-three-fourth"><input type="number" placeholder="-없이 숫자만 입력" id="sms-phone"></div>
                             </div>
                         </div>
 
@@ -394,8 +393,14 @@
                             </div>
                             <div>유효시간 &nbsp;&nbsp;<span class="font-red" id="timer">6 : 00</span></div>
                         </div>
+                        <input type="hidden" id="qr-name" value="김구용">
+                        <input type="hidden" id="qr-phone" value="010-1111-1111">
                     </div>
                     <input type="button" class="blueBtn full-line" value="확인" id="authorizeBtn">
+                    <form action="" method="post">
+                        <input type="hidden" id="username" value="">
+                        <input type="hidden" id="userphone" value="">
+                    </form>
                 </div>
                 
                 <div class="success">
@@ -421,40 +426,10 @@
                 </div>
             </div>
         </section>
-
-        <!-- Recaptcha -->
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        <script src="<%=path %>/Resources/JS/common.js"></script>
-        <script src="<%=path %>/Resources/JS/account.js"></script>
-        
-        <!-- Start of Async Drift Code -->
-        <script>
-            "use strict";
-
-            !function() {
-                var t = window.driftt = window.drift = window.driftt || [];
-                if (!t.init) {
-                    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
-                    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
-                        t.factory = function(e) {
-                        return function() {
-                            var n = Array.prototype.slice.call(arguments);
-                            return n.unshift(e), t.push(n), t;
-                        };
-                    }, t.methods.forEach(function(e) {
-                        t[e] = t.factory(e);
-                    }), t.load = function(t) {
-                        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
-                        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
-                        var i = document.getElementsByTagName("script")[0];
-                        i.parentNode.insertBefore(o, i);
-                    };
-                }
-            }();
-            drift.SNIPPET_VERSION = '0.3.1';
-            drift.load('w27c27educhn');
-        </script>
         <!-- End of Async Drift Code -->
         <%@ include file="../../common/footer.jspf" %>
+        <!-- Recaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src="<%=path %>/Resources/JS/account.js"></script>
     </body>
 </html>

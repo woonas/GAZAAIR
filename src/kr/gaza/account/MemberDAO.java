@@ -247,28 +247,25 @@ public class MemberDAO extends DBConn implements MemberInterface {
 	}
 
     @Override
-    public String isExisting(boolean lookingForId, String name, String phone) {
-        String result = "";
+    public void verification(MemberVO vo) {
         try {
             dbConn();
-            String sql;
-            if (lookingForId) sql = "select memberId from member where membername=? memberphone=?";
-            else sql = "select memberPw from member where membername=? memberphone=?";
+            String sql = "select memberid, memberpwd from member where membernamekor=? and membertel=?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, name);
-            pstmt.setString(2, phone);
+            pstmt.setString(1, vo.getMemberNameKor());
+            pstmt.setString(2, vo.getTel());
 
             rs = pstmt.executeQuery();
-            if(rs.next())
-                result = rs.getString(1);
+            if(rs.next()) {
+                vo.setMemberId(rs.getString(1));
+                vo.setMemberPwd(rs.getString(2));
+            }
         }catch(Exception e) {
             System.out.println("폰인증 체크 오류...");
             e.printStackTrace();
         }finally {
             dbClose();
         }
-
-	    return result;
     }
 
     @Override

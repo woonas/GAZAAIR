@@ -1,13 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>항공권 예약 - 여정선택</title>
-        <link rel="stylesheet" href="../../CSS/booking.css">
-        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>
+        <link rel="stylesheet" href="../../../CSS/booking.css">
         <!-- Font Awesome CDN -->
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
@@ -297,7 +295,7 @@
             </div>
 <!--다음버튼-->
             <div class="row clearfix">
-                <a href="booking2.html" class="nextBtn" onclick="return input_check()">
+                <a href="<%=path %>/Resources/JSP/flight/booking/booking2.do" class="nextBtn" onclick="return input_check()">
                     <span>조회</span>
                     <span>
                         <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -319,8 +317,8 @@
                 <li>편도로 각각 구매하시거나, 전체 환불 후 재 구매하여 주시기 바랍니다.</li>
             </ul>
         </section>
-            
-<!--datepicker용-->
+        <%@ include file="../../common/footer.jspf" %>
+        <!--datepicker용-->
         <!-- Bootstrap JS -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
@@ -333,9 +331,7 @@
         <!-- Lightpick JS -->
         <script src="../../../Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
         
-        <script src="../../JS/common.js"></script>
         <script src="../../JS/airportpicker.js"></script>
         <script src="../../JS/booking.js"></script>
-        <%@ include file="../../common/footer.jspf" %>
     </body>
 </html>

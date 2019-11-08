@@ -1,8 +1,6 @@
 @charset "UTF-8";
 @import "layout.css";
 
-#menuBg { border-top-color: transparent; }
-
 section {
 	width:100%;
 	padding: 30px 0;

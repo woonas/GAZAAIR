@@ -290,6 +290,18 @@ const moveToTop = () => {
     document.querySelector('.topBtn').addEventListener('click', () => setTimeout(moveScroll,15));
 };
 
+
+//메인네비 하단줄 제거
+const menuBorderRemover = () => {
+    const submenus = document.querySelectorAll('#mainMenu>ul>li');
+    const menuBg = document.getElementById('menuBg');
+    menuBg.style.borderTopColor = 'transparent';
+    submenus.forEach(submenu => {
+        submenu.addEventListener('mouseenter', () => menuBg.style.borderTopColor = '#777');
+        submenu.addEventListener('mouseleave', () => menuBg.style.borderTopColor = 'transparent');
+    });
+};
+
 (() => {
     navi();
     moveToTop();

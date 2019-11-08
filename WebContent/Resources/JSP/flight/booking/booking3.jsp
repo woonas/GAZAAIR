@@ -6,8 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>항공권 예약 - 탑승자/예약자 정보입력</title>
-    <link rel="stylesheet" href="../../CSS/booking.css">
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>
+    <link rel="stylesheet" href="../../../CSS/booking.css">
     <!-- 국제 전화번호-->
     <link rel="stylesheet" href="../../../Vendor/intl-tel-input-16.0.0/build/css/intlTelInput.css">
     <script src="../../../Vendor/intl-tel-input-16.0.0/build/js/intlTelInput.js"></script>
@@ -334,8 +333,8 @@
         </div>
        
         <div class="flex">
-            <a href="booking2.html"><button class="whiteBtn left">&lt; 이전</button></a>
-            <a href="booking4.html"><button class="right blueBtn">다음 &gt;</button></a>
+            <a href="#" onclick="history.back()"><button class="whiteBtn left">&lt; 이전</button></a>
+            <a href="<%=path %>/Resources/JSP/flight/booking/booking4.jsp"><button class="right blueBtn">다음 &gt;</button></a>
         </div>
 
         <ul class="list-type2 bg-gray6 last-note">
@@ -345,9 +344,7 @@
             <li>실제 운항항공사가 스타얼라이언스 및 마일리지 제휴항공사가 아닌 공동운항편은 아시아나클럽 계정으로 사후 적립만 가능합니다.<br>현재 시스템 문제로, 숫자와 영문을 조합한 이메일 주소만 사용 가능합니다.</li>
         </ul>
     </section>
-    
-    <script src="../../JS/common.js"></script>
-    <script src="../../JS/booking.js"></script>
     <%@ include file="../../common/footer.jspf" %>
+    <script src="../../JS/booking.js"></script>
 </body>
 </html>

@@ -6,8 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <title>항공권 예약 - 항공편 선택</title>
-        <link rel="stylesheet" href="../../CSS/booking.css">
-        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>
+        <link rel="stylesheet" href="../../../CSS/booking.css">
         <!-- Font Awesome CDN -->
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
         <script>window.onbeforeunload=() => window.scrollTo(0, 0)</script>
@@ -15,8 +14,6 @@
     <body>
     <%@ include file="../../common/nav.jspf" %>
         <div class="overlay"></div>
-        
-        <nav style="height: 80px; background:cornflowerblue;"></nav>
         
         <div class="cur-route itinerary">
             <div class="row clearfix book-input-form">
@@ -51,28 +48,20 @@
             </div>
             <input type="radio" name="trip-type" id="trip-type" class="hidden" checked>
         </div>
-        <div class="journey-name-sticky-1 hidden" name="journey-1">
-            <i class="fas fa-plane-departure font-blue4"></i>
-            <span class="font-blue4">가는 여정</span>
-            <span id="airportFrom-name-sticky-1">
-                GMP <span>서울 / 김포</span>
-            </span>
-            <span id="airportTo-name-sticky-1">
-                CJU <span>제주</span>
-            </span>
-        </div>
         
         <section class="content">
-            <div id="journey-1" class="journey-wrapper">
+            <div id="journey-1" class="journey-wrapper clearfix">
                 <div class="journey-name-fixed hidden" name="journey-1">
-                    <i class="fas fa-plane-departure font-blue4"></i>
-                    <span class="font-blue4">가는 여정</span>
-                    <span id="airportFrom-name-sticky-mini-1">
-                        GMP <span>서울 / 김포</span>
-                    </span>
-                    <span id="airportTo-name-sticky-mini-1">
-                        CJU <span>제주</span>
-                    </span>
+                    <div class="row">
+                        <i class="fas fa-plane-departure font-blue4"></i>
+                        <span class="font-blue4">가는 여정</span>
+                        <span id="airportFrom-name-sticky-mini-1">
+                            GMP <span>서울 / 김포</span>
+                        </span>
+                        <span id="airportTo-name-sticky-mini-1">
+                            CJU <span>제주</span>
+                        </span>
+                    </div>
                 </div>
                    
                 <div class="journey-name">
@@ -1092,8 +1081,8 @@
             </div>
 
             <div class="flex">
-                <a href="booking1.html"><button class="whiteBtn left">&lt; 이전</button></a>
-                <a href="booking3.html"><button class="right blueBtn">다음 &gt;</button></a>
+                <a href="#" onclick="history.back()"><button class="whiteBtn left">&lt; 이전</button></a>
+                <a href="<%=path %>/Resources/JSP/flight/booking/booking3.jsp"><button class="right blueBtn">다음 &gt;</button></a>
             </div>
             
             <ul class="list-type2 bg-gray6 last-note">
@@ -1177,8 +1166,7 @@
                 <div id="ageCalc-result" class="font-red"></div>
             </div>
         </section>
-        
-<!--datepicker용-->
+        <!--datepicker용-->
         <!-- Bootstrap JS -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -1187,16 +1175,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 
         <!-- Lightpick CSS -->
-        <link rel="stylesheet" href="../../../Vendor/javascript-datepicker-lightpick/css/lightpick.css">
+        <link rel="stylesheet" href="../../../../Vendor/javascript-datepicker-lightpick/css/lightpick.css">
 
         <!-- Lightpick JS -->
-        <script src="../../../Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
-        
-        <script src="../../../Vendor/waypoints/jquery.waypoints.min.js"></script>
-        
-        <script src="../../JS/common.js"></script>
-        <script src="../../JS/airportpicker.js"></script>
-        <script src="../../JS/booking.js"></script>
+        <script src="../../../../Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
+        <script src="../../../../Vendor/waypoints/jquery.waypoints.min.js"></script>
         <%@ include file="../../common/footer.jspf" %>
+        <script src="../../../JS/airportpicker.js"></script>
+        <script src="../../../JS/booking.js"></script>
     </body>
 </html>

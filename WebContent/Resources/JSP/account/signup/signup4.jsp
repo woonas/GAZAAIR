@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -22,6 +21,13 @@
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 <!-- 다음/카카오 주소검색 -->         
         <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+<!-- Moment Js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<!-- Lightpick CSS -->
+        <link rel="stylesheet" href="../../../../Vendor/javascript-datepicker-lightpick/css/lightpick.css">
+<!-- Lightpick JS -->
+        <script src="../../../../Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
     </head>
      <body id="personalInfo">
         <div class="overlay"></div>
@@ -277,14 +283,8 @@
             </div>
         </div>
          <%@ include file="../../common/footer.jspf" %>
-         <!-- Moment Js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-        <!-- Lightpick CSS -->
-        <link rel="stylesheet" href="<%=path %>/Vendor/javascript-datepicker-lightpick/css/lightpick.css">
-        <!-- Lightpick JS -->
-        <script src="<%=path %>/Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
+        
         <script src="<%=path %>/Resources/JS/validator.js"></script>
-        <script src="<%=path %>/Resources/JS/common.js"></script>
         <script src="<%=path %>/Resources/JS/account.js"></script>
     </body>
 </html>

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -102,7 +101,6 @@
         </div>
     </section>
     <%@ include file="../../common/footer.jspf" %>
-    <script src="<%=path %>/Resources/JS/common.js"></script>
     <script src="<%=path %>/Resources/JS/account.js"></script>
 </body>
 </html>

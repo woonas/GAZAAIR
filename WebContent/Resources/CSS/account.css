@@ -474,9 +474,9 @@ input.one-digit-box {
 .success { display: none; }
 .success>h2 { font-size: 200%; }
 
-.step2-2 { left: 250px !important; }
+.step2-2 { left: 25vw !important; }
 
-.step2 { left: 130px !important; }
+.step2 { left: 12vw !important; }
 
 .step1 {
     margin-top: -350px;

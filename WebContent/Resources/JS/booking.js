@@ -210,6 +210,9 @@ const input_check = () => {
 
     else if (location.pathname.indexOf('booking2') !== -1) {
 
+        // 메뉴 하단 선 제거
+        menuBorderRemover();
+
         /* 세션에 저장된 값들 가져오기 */
         const tripType = document.getElementById('trip-type');
         const airportFrom = document.getElementById('airportFrom-1');
@@ -340,7 +343,6 @@ const input_check = () => {
             });
         });
 
-
         /* waypoint */
         // 상단바 변경
         $('.cur-route').waypoint(function(direction) {
@@ -372,7 +374,7 @@ const input_check = () => {
             if (direction === "up") $('#journey-1 .journey-name-fixed').removeClass('hidden');
             else $('.journey-name-fixed').addClass('hidden');
         }, {
-            offset: '100px;'
+            offset: '200px;'
         });
     }
 

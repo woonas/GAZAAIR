@@ -1,11 +1,7 @@
 $(function(){
 
     //네비 하단 줄 없애기 (메인화면에서만 없애기)
-    $("#mainMenu>ul>li").hover(function(){
-    	$("#menuBg").css("border-top-color", "#777");
-    }, function(){
-        $("#menuBg").css("border-top-color", "transparent");
-    });
+    menuBorderRemover();
 
     //예약폼 활성화 비활성화 이벤트
     $("body").click(function (e) {
