@@ -50,9 +50,9 @@
 								<li><a href="#">항공기안내</a></li>
 							</ul>
 							<ul>
-								<li><a href="<%=path %>/Resources/JSP/board/noticeBoard/notice.do">공지사항</a></li>
-								<li><a href="<%=path %>/Resources/JSP/serviceinfo/info_faq.do">FAQ</a></li>
-								<li><a href="<%=path %>/Resources/JSP/board/reviewBoard/review.jsp">이용후기</a></li>
+								<li><a href="<%=path %>/Resources/JSP/board/noticeBoard/noticeBoard_list.do">공지사항</a></li>
+								<li><a href="<%=path %>/Resources/HTML/service_faq.html">FAQ</a></li>
+								<li><a href="<%=path %>/Resources/JSP/board/reviewBoard/reviewBoard_list.do">이용후기</a></li>
 							</ul>
 							<ul>
 								<c:if test="${memberName==null }">
