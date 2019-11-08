@@ -6,12 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>운항노선도</title>
-
-<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>
-<link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/index.css" type="text/css"/>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/layout.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="<%=request.getContextPath() %>/Resources/HTML/not_using/main.js"></script>
 <script async defer src="http://maps.googleapis.com/maps/api/js?region=KR&key=AIzaSyD-r87drTCRcQGSXESQUSisAXRA4cTmIbk&callback=initMap"></script>
 <style>
 #main{
@@ -71,7 +67,7 @@ footer{
 		var markerProperty = {
 				position : myCenter,
 				map : map,
-				icon : "../../IMG/icon/marker_blue2.png", //마커로 표시할 이미지.
+				icon : "../../../IMG/icon/marker_blue2.png", //마커로 표시할 이미지.
 				title : "인천(ICN)"
 		};
 		var marker = new google.maps.Marker(markerProperty);
@@ -154,7 +150,7 @@ footer{
 				marker2 = new google.maps.Marker({
 					position:new google.maps.LatLng(la[i], lo[i]),
 					title : titleList[i],
-					icon : "../../IMG/icon/marker_blue2.png"
+					icon : "../../../IMG/icon/marker_blue2.png"
 				
 			});
 			marker2.setMap(map);	
@@ -202,5 +198,6 @@ footer{
 	</div>
 </div>
 <%@ include file="../../common/footer.jspf" %>
+
 </body>
 </html>

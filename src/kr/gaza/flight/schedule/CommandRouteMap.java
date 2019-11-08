@@ -1,4 +1,4 @@
-package kr.gaza.etc;
+package kr.gaza.flight.schedule;
 
 import java.io.IOException;
 

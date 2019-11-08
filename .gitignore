@@ -1,3 +1,6 @@
 /build/
+.settings/
+.project
+.classpath
 WebContent/WEB-INF/web.xml
-WebContent/WEB-INF/web.xml
+WebContent/WEB-INF/properties/urlMapping.properties
