@@ -6,14 +6,17 @@
 /* 공통부분 */
 /* ----------------------------------------------- */
 
+#menuBg { border-top-color: transparent; }
+
 /* 상단 서브메뉴 */
 
 .bread_crumbs {
     position: absolute;
     height: 45px;
-    width: 100vw;
+    width: 100%;
     left: 0;
     background-color: #aaa;
+    margin-top: 5px;
 }
 
 .bread_crumbs>div {
@@ -90,7 +93,11 @@
     animation: enter 1.2s ease forwards;
     animation-duration: 0.5s;
 }
-
+.sub-menu>.menu-item>a {
+    display: block;
+    width: 100%;
+    color: #555;
+}
 .menu-item:hover>a { color: #555 !important; }
 .menu-item:hover>.sub-menu { display: block; }
 .sub-menu>.menu-item:hover { background-color: #eee; }

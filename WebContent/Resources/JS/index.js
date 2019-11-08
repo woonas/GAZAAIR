@@ -8,26 +8,19 @@ $(function(){
     });
 
     //예약폼 활성화 비활성화 이벤트
-    $(".reserve_wrap").click(function () {
-        $(".reserve_wrap").css('opacity', '1');
-        $(".reserve_wrap").css('bottom', '25vh');
-    });
-
     $("body").click(function (e) {
-        $(".reserve_wrap").css('opacity', '0.7');
-        $(".reserve_wrap").css('bottom', '12vh');
-
         var target = $(e.target);
         do {
             if (target.hasClass('reserve_wrap') === true || target.hasClass('overlay') === true || target.hasClass('centeredXY') ) {
-                $(".reserve_wrap").css('opacity', '1');
-                $(".reserve_wrap").css('bottom', '25vh');
+                $(".reserve_wrap").addClass('active');
                 break;
             }
-            if (target.prop('tagName') === 'BODY') break;
+            if (target.prop('tagName') === 'BODY') {
+                $(".reserve_wrap").removeClass('active');
+                break;
+            }
             target = target.parent();
         } while(true);
-
     });
 
 	//배경이미지 슬라이더
@@ -178,43 +171,53 @@ $(function(){
 	const passengerNum = document.getElementById('num-of-passengers');
 
 	/* 출발도착일 지정 달력 */
-	var picker = new Lightpick({
-		    field: document.getElementById('fromDate'),
-		    secondField: document.getElementById('toDate'),
-		    numberOfMonths: 2,
-		    minDate: new Date(),
-		    format: 'YYYY-MM-DD',
-		    singleDate: false,
-		    hideOnBodyClick: false,
-		    locale: {
-		        buttons: {
-		            prev: '〈',
-		            next: '〉',
-		            close: '✕',
-		            reset: '⟳'
-		        },
-		        tooltip: {
-		            day: '일'
-		        },
-		        pluralize: function(i, locale) {
-		            if ('day' in locale) return locale.day;
-		            return '';
-		        }
-		    },
-		    onSelect: function(start, end){
-		        var str = '';
-		        str += start ? start.format('YYYY-MM-DD') + ' to ' : '';
-		        str += end ? end.format('YYYY-MM-DD') : '...';
-		        document.getElementById('fromDate').innerHTML = str;
-		    },
-		    onOpen: function(){
-		    	document.querySelector(".lightpick").classList.add('centeredXY');
-		        overlay.style.display = 'block';
-	        },
-	        onClose: function() {
-	            overlay.style.display = 'none';
-	        }
-		})
+    var picker_generator = function() {
+        return new Lightpick({
+            field: document.getElementById('fromDate'),
+            secondField: document.getElementById('toDate'),
+            numberOfMonths: 2,
+            minDate: new Date(),
+            format: 'YYYY-MM-DD',
+            singleDate: false,
+            hideOnBodyClick: false,
+            locale: {
+                buttons: {
+                    prev: '〈',
+                    next: '〉',
+                    close: '✕',
+                    reset: '⟳'
+                },
+                tooltip: {
+                    day: '일'
+                },
+                pluralize: function(i, locale) {
+                    if ('day' in locale) return locale.day;
+                    return '';
+                }
+            },
+            onSelect: function(start, end){
+                var str = '';
+                str += start ? start.format('YYYY-MM-DD') + ' to ' : '';
+                str += end ? end.format('YYYY-MM-DD') : '...';
+                document.getElementById('fromDate').innerHTML = str;
+                document.querySelector('.reserve_wrap').classList.add('active');
+            },
+            onOpen: function(){
+                document.querySelector(".lightpick").classList.add('centeredXY');
+                overlay.style.display = 'block';
+                setTimeout(function () {
+                    document.querySelector('.reserve_wrap').classList.add('active');
+                }, 20);
+            },
+            onClose: function() {
+                overlay.style.display = 'none';
+                setTimeout(function () {
+                    document.querySelector('.reserve_wrap').classList.add('active');
+                }, 20);
+            }
+        });
+    };
+	var picker = picker_generator();
 
 	document.querySelector('#selectBtn').addEventListener('click', function() {
 	    const adultNum = parseInt(document.getElementById('numOfAdult').value);
@@ -249,52 +252,15 @@ $(function(){
 	});
 
 	/* 탑승객 팝업에서 다른 부분 클릭시 */
-		overlay.addEventListener('click', function() {
-			document.getElementById('num-of-passengers-window').style.display = 'none'
-		});
+    overlay.addEventListener('click', function() {
+        document.getElementById('num-of-passengers-window').style.display = 'none'
+    });
 
-		overlay.addEventListener('click', () => {
-            if(picker) picker.destroy();
-            picker = new Lightpick({
-    		    field: document.getElementById('fromDate'),
-    		    secondField: document.getElementById('toDate'),
-    		    numberOfMonths: 2,
-    		    minDate: new Date(),
-    		    format: 'YYYY-MM-DD',
-    		    singleDate: false,
-    		    hideOnBodyClick: false,
-    		    locale: {
-    		        buttons: {
-    		            prev: '〈',
-    		            next: '〉',
-    		            close: '✕',
-    		            reset: '⟳'
-    		        },
-    		        tooltip: {
-    		            day: '일'
-    		        },
-    		        pluralize: function(i, locale) {
-    		            if ('day' in locale) return locale.day;
-    		            return '';
-    		        }
-    		    },
-    		    onSelect: function(start, end){
-    		        var str = '';
-    		        str += start ? start.format('YYYY-MM-DD') + ' to ' : '';
-    		        str += end ? end.format('YYYY-MM-DD') : '...';
-    		        document.getElementById('fromDate').innerHTML = str;
-    		    },
-    		    onOpen: function(){
-    		    	document.querySelector(".lightpick").classList.add('centeredXY');
-    		        overlay.style.display = 'block';
-    	        },
-    	        onClose: function() {
-    	            overlay.style.display = 'none';
-    	        }
-    		})
-            document.querySelector(".lightpick").classList.add('centeredXY');
-        });
-
+    overlay.addEventListener('click', () => {
+        if(picker) picker.destroy();
+        picker = picker_generator();
+        document.querySelector(".lightpick").classList.add('centeredXY');
+    });
 });
 
 
