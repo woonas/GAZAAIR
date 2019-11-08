@@ -1,6 +1,7 @@
 package kr.gaza.board.reviewBoard;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import kr.gaza.controller.CommandService;
 
 
-public class CommandView implements CommandService {
+public class CommandReviewView implements CommandService {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -23,13 +24,14 @@ public class CommandView implements CommandService {
 		  BoardDAO dao = new BoardDAO(); 
 		  dao.boardSelect(vo);
 		  vo.setTotalRecord(dao.boardTotalRecord());
-		  dao.boardSelect(vo);
+
 		  request.setAttribute("vo", vo);
-		  //request.setAttribute("vo", vo);
 		 
+		  List<ReviewBoardReplyVO> replyList = dao.replySelect(vo.getNum());
+		  request.setAttribute("list", replyList);
 		
 		
-		return "view.jsp";
+		return "reviewBoard_view.jsp";
 	}
 
 }

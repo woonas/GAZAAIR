@@ -1,16 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../CSS/navNfooter.css" type="text/css"/>
-<link rel="stylesheet" href="../CSS/layout.css" type="text/css"/>
-<link rel="stylesheet" href="../CSS/board.css" type="text/css"/>
+<link rel="stylesheet" href="../../../CSS/board.css" type="text/css"/>
 </head>
 <body>
+	<%@ include file="../../common/nav.jspf" %>
 	<section class="content">
 		<h3>고객의 말씀</h3>
 		<hr/>
@@ -33,7 +31,16 @@
 			내용<br/>
 			</div>
 		<hr style="border:1px solid #eee"/>
-		댓글자리 쌉고수
+		<div id="commentt">
+		<c:forEach var="rv" items="${list}">
+			<div class="row clearfix">
+				<div class="col-nine-tenth" id="userid">${rv.memberId}</div><a href="#"> 수정</a> | <a href="#">삭제</a><br/>
+			</div>
+			<div id="reply">
+			${rv.commentt}
+			</div>
+		</c:forEach>
+		</div>
 		<hr/>
 			<div class="brd_bottom">
 			∧ 이전글 <a href="#">이전글내용이전글내용이전글내용이전글내용이전글내용</a>
@@ -48,5 +55,7 @@
 		</div>
 		</div>
 	</section>
+	<%@ include file="../../common/footer.jspf" %>
+	<script src="../../../JS/common.js"></script>
 </body>
 </html>

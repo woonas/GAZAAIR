@@ -85,7 +85,6 @@ $(function(){
 </script>
 </head>
 <body onload="start()">
-<%@ include file="common/nav.jspf" %>
 	<div id="contents">
 		<section id="title">
 			<h3>고객의 말씀</h3>
@@ -226,6 +225,5 @@ $(function(){
 				</div>
 		</section>
 	</div>
-<%@ include file="common/footer.jspf" %>
 </body>
 </html>

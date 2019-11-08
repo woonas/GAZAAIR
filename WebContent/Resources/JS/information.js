@@ -11,6 +11,13 @@ const tabletabEvent = (type) => {
 
 
 (() => {
+    const submenus = document.querySelectorAll('#mainMenu>ul>li');
+    const menuBg = document.getElementById('menuBg');
+    submenus.forEach(submenu => {
+        submenu.addEventListener('mouseenter',() => menuBg.style.borderTopColor = '#777');
+        submenu.addEventListener('mouseleave',() => menuBg.style.borderTopColor = 'transparent');
+    });
+
     if(location.pathname.indexOf('reservation') !== -1) {
         tabEvent('.tab-menu1');
         tabletabEvent('#table-tab-1');
