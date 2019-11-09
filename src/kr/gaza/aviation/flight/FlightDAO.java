@@ -15,7 +15,7 @@ public class FlightDAO extends DBConn implements FlightInterface {
             rs = pstmt.executeQuery();
 
             while(rs.next()) {
-                vo.setAirplaneNum(rs.getInt(2));
+                vo.setAirplaneName(rs.getString(2));
                 vo.setProductNum(rs.getInt(3));
                 vo.setDepartTime(rs.getString(4));
                 vo.setArriveTime(rs.getString(5));

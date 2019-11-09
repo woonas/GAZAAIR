@@ -74,7 +74,7 @@ input[type="radio"]:hover + label { cursor: pointer; }
     padding-top: 3px;
     padding-left: 6px;
     text-align: center;
-    font-size: 80%;
+    font-size: 88%;
 }
 
 #multi-way-hint:hover i {
@@ -386,7 +386,8 @@ input[type="radio"]:hover + label { cursor: pointer; }
 .passenger-select:last-of-type>.plus { right: 1%; }
 
 .subtitle i {
-    font-size: 60%;
+    font-size: 62%;
+    padding-top: 3px;
 }
 
 .subtitle>span:last-of-type { margin-left: 5px; }
@@ -875,6 +876,29 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
     font-size: 110%;
 }
 
+.flight-detail {
+    position: relative;
+}
+.flight-detail>span:first-of-type {
+    position: absolute;
+    top: 23px;
+    left: 85px;
+    font-size: 80%;
+    color: #888;
+}
+.flight-detail>span:last-of-type {
+    position: absolute;
+    bottom: 19px;
+    left: 80px;
+    font-size: 80%;
+    color: #888;
+}
+
+.flight-detail>img {
+    margin: 10px 0 0 15px;
+    width: 160px;
+}
+
 .O {
     content: '';
     width: 30px;
@@ -966,6 +990,12 @@ div[id^=regulation]>input[type=checkbox]:checked + label {
 .currency { font-size: 60%; }
 
 .trip{ padding: 0 50px; }
+.trip>div:first-of-type {
+    text-align: left;
+    margin-left: -20px;
+    line-height: 222px;
+}
+
 .airport-name,
 .flight-date,
 .flight-time { text-align: center; }
@@ -986,14 +1016,13 @@ div[id^=regulation]>input[type=checkbox]:checked + label {
     text-align: center;
 }
 
-
 .detailed-price>div {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid rgba(230, 230, 230, 0.7);
     padding: 7px 7px 7px 15px;
     font-size: 90%;
 }
 .detailed-price>div:last-of-type { border-bottom-color: transparent; }
-.detailed-price:not(:last-of-type) { background-color: #f3f3f3; }
+.detailed-price:not(:last-of-type) { background-color: #f7f7f7; }
 
 .total-price {
     height: 100px;

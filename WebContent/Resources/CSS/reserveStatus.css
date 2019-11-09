@@ -178,7 +178,6 @@
 		color:white;
 		font-size:25px;
 		padding:20px 0;
-		
 	}
 	
 	#seatImgDiv{
@@ -274,7 +273,7 @@
 		cursor:pointer;
 		}
 	#seatsBackImg{
-		background:url(../IMG/mypage_Img/airplan_bg5.png);
+		background:url(../IMG/mypage_Img/airplan_bg.png);
 		position: relative;
 		height:3000px;
 		background-size: contain;
@@ -475,7 +474,7 @@
 	/* ----------------------------------------------- */
 
 #foodSelect{
-	width:1600px;
+	width:1200px;
 	background-color:#fff;
 	position:absolute;
 	z-index:5;

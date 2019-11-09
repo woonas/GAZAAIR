@@ -548,3 +548,383 @@ input[type=checkbox][id^=fold-btn-] + label>img { vertical-align: bottom; }
 /* ----------------------------------------------- */
 /* 예약 상세내역  reservation_detail.html*/
 /* ----------------------------------------------- */
+
+/* 여정 테이블 */
+.reservation-section-title {
+    color: #333;
+    font-size: 140%;
+    font-weight: 600;
+    margin: 100px 5px 20px;
+}
+
+.trip-table { text-align: center; }
+.trip-table>div:first-of-type>div { min-height: 0; }
+.trip-table>div:not(.table-row-title)>div{ padding: 25px 15px; min-height: 155px; }
+.trip-table>div.table-row-title>div{ padding: 15px; }
+
+.trip-num>div:first-of-type {
+    font-size: 120%;
+    margin-top: 25px;
+}
+.trip-airline>div,
+.trip-type>div { margin-top: 35px; }
+.trip-detail { padding: 25px 50px !important; }
+.trip-detail>div>div:first-of-type {
+    margin-top: 30px;
+    font-size: 110%;
+}
+
+.flight-detail {
+    position: relative;
+}
+.flight-detail>span:first-of-type {
+    position: absolute;
+    top: 23px;
+    left: 56px;
+    font-size: 80%;
+    color: #888;
+}
+.flight-detail>span:last-of-type {
+    position: absolute;
+    bottom: 19px;
+    left: 80px;
+    font-size: 80%;
+    color: #888;
+}
+
+.flight-detail>img {
+    margin: 10px 0 0 15px;
+    width: 160px;
+}
+
+#refundBtn {
+    width: 105px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 3px;
+    margin-top: 30px;
+}
+
+/* 가격 테이블 */
+
+.currency { font-size: 60%; }
+
+.trip{ padding: 0 50px; }
+
+.trip>div:first-of-type {
+    text-align: left;
+    margin-left: -20px;
+    line-height: 222px;
+}
+
+.airport-name,
+.flight-date,
+.flight-time { text-align: center; }
+
+.airport-name {
+    font-size: 150%;
+    margin-top: 65px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.flight-date {
+    font-size: 90%;
+    margin-top: 10px;
+}
+
+.flight-image {
+    margin-top: 65px;
+    text-align: center;
+}
+
+.detailed-price>div {
+    border-bottom: 1px solid rgba(230, 230, 230, 0.7);
+    padding: 7px 7px 7px 15px;
+    font-size: 90%;
+}
+.detailed-price>div:last-of-type { border-bottom-color: transparent; }
+.detailed-price:not(:last-of-type) { background-color: #f7f7f7; }
+
+/* 탑승자정보 테이블 */
+
+#membership-hint>i {
+    color: #fff;
+    background-color: #67a;
+    border-color: #fff;
+    width: 17px;
+    height: 17px;
+    margin-left: 0;
+    padding: 2px 5px;
+}
+
+.gender-wrapper>label:first-of-type { margin: 0 30px; }
+
+.edit-form-wrapper>form>div:first-of-type {
+    position: absolute;
+    margin: 3px 0 0 150px;
+}
+
+.edit-form-wrapper label.blueBtn,
+.edit-form-wrapper label.whiteBtn {
+    border-radius: 0;
+    padding: 5px 10px;
+    font-size: 70%;
+}
+.edit-form-wrapper button.blueBtn {
+    border-radius: 0;
+    padding: 7px 12px;
+    font-size: 70%;
+}
+.edit-form-wrapper #edit:checked + label { display: none; }
+.edit-form-wrapper #edit ~ a>label { display: none; color: #555; }
+.edit-form-wrapper #edit:checked ~ a>label { display: inline-block; }
+.edit-form-wrapper #edit ~ a>button[type=submit] { display: none; }
+.edit-form-wrapper #edit:checked ~ a>button[type=submit] { display: inline-block; }
+
+.edit-form-wrapper input[disabled]::placeholder,
+.edit-form-wrapper input[disabled] + i { color: transparent; }
+
+.edit-form-wrapper .radio3 + label:before {
+    margin-top: 3px;
+    margin-left: -36px;
+}
+.edit-form-wrapper .radio3 + label:after { left: -27px !important; }
+.edit-form-wrapper .radio3:checked + label:after {
+    left: -34px !important;
+    width: 18px;
+    height: 18px;
+}
+.edit-form-wrapper .radio3 + label { margin: 9px 90px 9px 44px; }
+.edit-form-wrapper .radio3:disabled:not(:checked) + label { display: none; }
+.edit-form-wrapper .checkbox3:disabled + label { margin-top: 30px; }
+.edit-form-wrapper .checkbox { padding-left: 8px; }
+.edit-form-wrapper label { font-weight: 300;}
+
+.edit-form-wrapper #btn-pwChange {
+    width: 130px;
+    margin: 6px 0 2px;
+}
+.edit-form-wrapper #addr-all { margin-top: 8px; }
+
+
+/* 규정 */
+div[id^=regulation] {
+    background-color: #f3f3f3;
+    padding: 50px 50px 50px 34px;
+    margin-top: 20px;
+}
+div[id^=regulation]>p {
+    font-size: 150%;
+    margin-bottom: 20px;
+}
+div[id^=regulation]>p>span {
+    font-size: 90%;
+    margin-right: 10px;
+}
+div[id^=regulation]>p>span:last-of-type { margin-left: 10px; }
+
+div[id^=regulation]>div>h4 {
+    font-size: 120%;
+    margin: 15px 0;
+}
+div[id^=regulation]>div>div { margin-left: 16px; }
+div[id^=regulation]>div { margin-left: 10px; }
+
+.list-type4 { margin-top: 0; }
+input[type="checkbox"].checkbox1 + label:before { margin-right: 30px; }
+
+div[id^=regulation]>input[type=checkbox]:checked ~ div {
+    max-height: 140px;
+    overflow-y: scroll;
+}
+div[id^=regulation]>input[type=checkbox] + label {
+    float: right;
+    margin-top: -45px;
+    cursor: pointer;
+    position: sticky;
+    top: 300px;
+    transform: rotate(180deg);
+    transition: transform 0.2s;
+}
+div[id^=regulation]>input[type=checkbox]:checked + label {
+    transform: none;
+    position: static;
+}
+
+
+/* 기타 예약 정보  */
+#reservation-etc {
+    background-color: #67a;
+    padding: 50px 20px;
+}
+
+.etc-section { margin-bottom: 20px; }
+
+.etc-section-title {
+    color: #fff;
+    font-size: 25px;
+    padding: 20px 0 20px 100px;
+}
+
+.imgDiv {
+    width: 300px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    float: left;
+}
+
+#seatImg { background-image: url(../IMG/mypage_Img/seats.png); }
+#foodImg { background-image: url(../IMG/mypage_Img/food.png); }
+#classImg { background-image:url(../IMG/mypage_Img/class.png); }
+
+.etc-section-info {
+    width: 800px;
+    height: 110px;
+    color: #fff;
+    font-size: 20px;
+    word-break: break-all;
+}
+
+.etc-section-button {
+    width: 250px;
+    height: 60px;
+    background-color: #fff;
+    color: #67a;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 3px;
+    margin-top: 15px;
+    border: 1px solid #67a;
+    cursor: pointer;
+}
+
+.etc-section-button:hover {
+    border: 1px solid #555;
+    background-color: #eee;
+}
+
+
+.border-bt {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 20px;
+    float: left;
+    margin-left: 10px;
+}
+
+
+/* 좌석 선택 창 */
+#selectSeat-window {
+    max-width: 1200px;
+    width: 1200px;
+}
+
+#selectSeat-window .scrollable { height: 600px; }
+
+#seatsBackImg {
+    background:url(../IMG/mypage_Img/airplane.png) no-repeat center;
+    position: relative;
+    height: 3000px;
+    background-size: contain;
+}
+
+.seatDiv {
+    position: absolute;
+    margin-bottom: 2px;
+    padding: 2px;
+    left: 312px;
+}
+
+#frontBusi-seat{ top: 1180px; }
+#frontEco-seat { top: 1320px; }
+#back-seat{ top: 2150px; }
+
+
+.seatDiv span>img{ width: 26px; margin-left: 15px; }
+.seatDiv span>img[id$="D"],
+.seatDiv span>img[id$="H"] { margin-left: 60px; }
+
+.busiseat-row {
+    margin-bottom: 30px;
+    height: 35px;
+}
+
+.seat-row {
+    margin-bottom: 8px;
+    height: 35px;
+}
+
+
+
+
+
+
+
+/* 기내식 선택 창*/
+
+#selectFood-window {
+    max-width: 1200px;
+    width: 1200px;
+}
+
+#selectFood-window .scrollable { height: 500px; }
+
+#selectFood-window .tab-menu1 li.on:before {
+    margin-left: -29px;
+    margin-top: 19px;
+}
+.tab-content-container { margin-top: 50px; }
+
+.food-wrapper {
+    height: 347px;
+    overflow: hidden;
+    margin-bottom: 50px;
+    display: flex;
+}
+
+.img-wrapper {
+    text-align: center;
+    border: 1px solid rgba(255, 235, 205, 0.3);;
+    padding: 20px;
+}
+
+.img-wrapper>img {
+    width: 400px;
+    height: 300px;
+}
+
+.food-content {
+    background-color: rgba(255, 235, 205, 0.3);
+    padding:20px;
+    margin-bottom: 10px;
+    height: 347px;
+    position: relative;
+}
+
+.food-title {
+    font-size: 200%;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.food-word {
+    font-size: 18px;
+    margin-bottom: 10px;
+    height: 80px
+}
+
+.food-detail {
+    margin-bottom: 10px;
+    height: 115px;
+}
+
+.foodSelect {
+    position: absolute;
+    top: 30px;
+    margin-left: 10px;
+    height: 30px;
+    width: 80px;
+    border-radius: 0;
+    font-size: 45%;
+}

@@ -66,35 +66,43 @@ const insertAfter = (referenceNode, newNode) => {
 
 /* 조회버튼 클릭시 */
 const input_check = () => {
-    // session에 여정 정보 저장 + 모든 칸에 값이 들어갔는지 유효성 검사
+    // 유효성검사
+    let isValid = false;
+    // 여정의 타입 저장 (왕복, 편도, 다구간)
+    document.querySelector('input[name="flight-type"]').value = document.querySelector('input[type="radio"][name="trip-type"]:checked').value;
+    // 출도착 공항 및 비행날짜 저장
     const airportFroms = Array.prototype.slice.call(document.querySelectorAll('input[id^=airportFrom]'));
     const airportTos = Array.prototype.slice.call(document.querySelectorAll('input[id^=airportTo]'));
     const flightDates = Array.prototype.slice.call(document.querySelectorAll('input[id^=flightDate]'));
-    let isValid = false;
-    for (let i = 0, index = 1; i<airportFroms.length; i++) {
+    const airportFromInput = document.querySelector('input[name="airportFrom"]');
+    const airportToInput = document.querySelector('input[name="airportTo"]');
+    const flightDateInput = document.querySelector('input[name="flightDate"]');
+    for (let i = 0; i<airportFroms.length; i++) {
         if (airportFroms[i].value !== "" && airportTos[i].value !== "" && flightDates[i].value !== "") {
-            sessionStorage.setItem(`airportFrom-${index}`, airportFroms[i].value);
-            sessionStorage.setItem(`airportTo-${index}`, airportTos[i].value);
-            sessionStorage.setItem(`flightDate-${index}`, flightDates[i].value);
-            index++;
             isValid = true;
+            if (airportFromInput.value) {
+                airportFromInput.value += "&" + airportFroms[i].value;
+                airportToInput.value += "&" + airportTos[i].value;
+                flightDateInput.value += "&" + flightDates[i].value;
+            } else {
+                airportFromInput.value += airportFroms[i].value;
+                airportToInput.value += airportTos[i].value;
+                flightDateInput.value += flightDates[i].value;
+            }
         }
     }
-
-    // session에 여정의 타입 저장 (왕복, 편도, 다구간)
-    const tripType = document.querySelector('input[type="radio"][name="trip-type"]:checked').value;
-    sessionStorage.setItem('trip-type', tripType);
-
-    // session에 승객수 저장
-    const strPassengers = strPassengers_generator();
-    sessionStorage.setItem('passengers', strPassengers);
-
+    // 승객수 저장
+    document.querySelector('input[name="numOfPassengers"]').value = strPassengers_generator();
     // session에 좌석타입 저장 (이코노미, 비즈니스, 퍼스트)
-    const seatType = document.querySelector('input[type="radio"][name="class-type"]:checked + label').innerText;
-    sessionStorage.setItem('seat-type', seatType);
+    document.querySelector('input[name="seat-type"]').value = document.querySelector('input[name="class-type"]:checked + label').innerText;
+
+
     if (!isValid) alert("출,도착 공항 및 탑승일을 선택하여 주십시오.\n- 다구간에서는 최소한 하나이상의 여정을 완성하여야 합니다.");
+    else document.getElementById('nextEventFrm').submit();
+
     return isValid;
 };
+
 
 
 (() => {
@@ -212,25 +220,6 @@ const input_check = () => {
 
         // 메뉴 하단 선 제거
         menuBorderRemover();
-
-        /* 세션에 저장된 값들 가져오기 */
-        const tripType = document.getElementById('trip-type');
-        const airportFrom = document.getElementById('airportFrom-1');
-        const airportTo = document.getElementById('airportTo-1');
-        const flightDate = document.getElementById('flightDate-1');
-        const passengers = document.getElementById('num-of-passengers');
-        if (sessionStorage.getItem('airportFrom-2'))
-            airportFrom.value = airportTo.value = flightDate.value = '다구간';
-        else {
-            airportFrom.value = sessionStorage.getItem('airportFrom-1');
-            airportTo.value = sessionStorage.getItem('airportTo-1');
-            flightDate.value = sessionStorage.getItem('flightDate-1');
-        }
-        tripType.value = sessionStorage.getItem('trip-type');
-        if (tripType.value === 'round-way') {
-            flightDate.style.fontSize = '130%';
-        }
-        passengers.value = sessionStorage.getItem('passengers');
 
         /* 팝업창 */
         hintWindow('num-of-passengers', true, true);
@@ -380,7 +369,7 @@ const input_check = () => {
 
     else if (location.pathname.indexOf('booking3') !== -1) {
         hintWindow('membership-hint');
-
+        birth_option_generator();
 
         const input = document.getElementById("phone");
         window.intlTelInput(input, {

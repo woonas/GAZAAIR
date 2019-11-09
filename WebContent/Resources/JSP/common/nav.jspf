@@ -33,7 +33,7 @@
 								<li><img src="<%=path %>/Resources/IMG/main/nav_flight.jpg"/></li>
 							</ul>
 							<ul>
-								<li><a href="<%=path %>/Resources/JSP/flight/booking/booking1.jsp">항공권예약</a></li>
+								<li><a href="<%=path %>/Resources/JSP/flight/booking/booking1.do">항공권예약</a></li>
 								<li><a href="#">정기 운항스케줄</a></li>
 								<li><a href="#">실시간 운항스케줄</a></li>
 								<li><a href="<%=path %>/Resources/JSP/flight/schedule/routeMap.do">운항노선도</a></li>

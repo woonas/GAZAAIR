@@ -24,7 +24,7 @@
                 <div class="col-three-eighth">출도착시간</div>
                 <div class="col-eighth">편명/기종</div>
                 <div class="col-eighth">운임할인</div>
-                <div class="col-eighth">예약변경</div>
+                <div class="col-eighth">상태</div>
                 <div class="col-eighth">환불</div>
             </div>
             <div class="row clearfix">
@@ -37,8 +37,10 @@
                         <div>서울 / 김포</div>
                         <div>06:05</div>
                     </div>
-                    <div class="col-two-fourth">
+                    <div class="col-two-fourth flight-detail">
+                        <span><i class="far fa-clock"></i> 1시간 10분</span>
                         <img src = "../../../IMG/icon/flight-table.svg" alt = "">
+                        <span>직항</span>
                     </div>
                     <div class="col-fourth">
                         <div>제주</div>

@@ -302,6 +302,52 @@ const menuBorderRemover = () => {
     });
 };
 
+
+// select option 생성
+const setDateOption = () => {
+    const year = document.getElementById('year');
+    const month = document.getElementById('month');
+
+    const selectedYear = year.options[year.selectedIndex].value;
+    const selectedMonth = month.options[month.selectedIndex].value;
+
+    const lastDate = new Date(selectedYear, selectedMonth, 0).getDate();
+    let dayOptions = "<option value=\"\">일</option>";
+    for (let i = 1; i <= lastDate; i++) {
+        if(i <= 9) dayOptions += `<option value=0${i}>0${i}</option>`;
+        else dayOptions += `<option value=${i}>${i}</option>`;
+    }
+    return dayOptions;
+};
+
+const birth_option_generator = () => {
+    const year = document.getElementById('year'),
+        month = document.getElementById('month'),
+        day = document.getElementById('day');
+    let yearOptions = "<option value=''>년</option>",
+        monthOptions = "<option value=''>월</option>",
+        dayOptions = "<option value=''>일</option>";
+
+    const thisYear = new Date().getFullYear();
+    for (let i = thisYear-100; i <= thisYear; i++)
+        yearOptions += `<option value=${i}>${i}</option>`;
+    year.innerHTML = yearOptions;
+    for (let i = 1; i <= 12; i++) {
+        if(i <= 9) monthOptions += `<option value=0${i}>0${i}</option>`;
+        else monthOptions += `<option value=${i}>${i}</option>`;
+    }
+    month.innerHTML = monthOptions;
+    for (let i = 1; i <= 31; i++) {
+        if(i <= 9) dayOptions += `<option value=0${i}>0${i}</option>`;
+        else dayOptions += `<option value=${i}>${i}</option>`;
+    }
+    day.innerHTML = dayOptions;
+
+    year.addEventListener('change', () => day.innerHTML = setDateOption());
+    month.addEventListener('change', () => day.innerHTML = setDateOption());
+};
+
+
 (() => {
     navi();
     moveToTop();

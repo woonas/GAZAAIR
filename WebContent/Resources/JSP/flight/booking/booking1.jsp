@@ -5,9 +5,22 @@
     <head>
         <meta charset="UTF-8">
         <title>항공권 예약 - 여정선택</title>
-        <link rel="stylesheet" href="../../../CSS/booking.css">
         <!-- Font Awesome CDN -->
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
+        <!--datepicker용-->
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <!-- Moment Js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+        <!-- Lightpick CSS -->
+        <link rel="stylesheet" href="../../../../Vendor/javascript-datepicker-lightpick/css/lightpick.css">
+
+        <!-- Lightpick JS -->
+        <script src="../../../../Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
+        
+        <link rel="stylesheet" href="../../../CSS/booking.css">
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
     </head>
     <body>
@@ -295,7 +308,7 @@
             </div>
 <!--다음버튼-->
             <div class="row clearfix">
-                <a href="<%=path %>/Resources/JSP/flight/booking/booking2.do" class="nextBtn" onclick="return input_check()">
+                <a href="#" class="nextBtn" onclick="return input_check()">
                     <span>조회</span>
                     <span>
                         <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -307,6 +320,15 @@
                         </svg>
                     </span>
                 </a>
+                
+                <form action="<%=path%>/Resources/JSP/flight/booking/booking2.do" method="post" id="nextEventFrm">
+                    <input type="hidden" name="flight-type">
+                    <input type="hidden" name="airportFrom">
+                    <input type="hidden" name="airportTo">
+                    <input type="hidden" name="flightDate">
+                    <input type="hidden" name="numOfPassengers">
+                    <input type="hidden" name="seat-type">
+                </form>
             </div>
 <!--유의사항-->
             <ul class="list-type2 last-note bg-gray6">
@@ -317,21 +339,15 @@
                 <li>편도로 각각 구매하시거나, 전체 환불 후 재 구매하여 주시기 바랍니다.</li>
             </ul>
         </section>
+        <script>
+            let departFrom = <%=request.getParameter("airportFrom")%>;
+            let arriveTo = <%=request.getParameter("airportTo")%>;
+            
+            if (departFrom) document.getElementById('airportFrom-1').value = departFrom;
+            if (arriveTo) document.getElementById('airportTo-1').value = arriveTo;
+        </script>
         <%@ include file="../../common/footer.jspf" %>
-        <!--datepicker용-->
-        <!-- Bootstrap JS -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-        <!-- Moment Js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-        
-        <!-- Lightpick CSS -->
-        <link rel="stylesheet" href="../../../Vendor/javascript-datepicker-lightpick/css/lightpick.css">
-
-        <!-- Lightpick JS -->
-        <script src="../../../Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
-        
-        <script src="../../JS/airportpicker.js"></script>
-        <script src="../../JS/booking.js"></script>
+        <script src="../../../JS/airportpicker.js"></script>
+        <script src="../../../JS/booking.js"></script>
     </body>
 </html>

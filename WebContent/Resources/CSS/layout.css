@@ -399,7 +399,6 @@ i.fa-exclamation:hover {
     border: 1px solid #36f;
 }
 
-
 .table-form2 {
     border-top: 1px solid #555;
     margin: 10px 0;
@@ -420,13 +419,13 @@ i.fa-exclamation:hover {
 }
 
 .table-form3>div>div {
-    border-top: 1px solid #aaa;
-    border-left: 1px solid #aaa;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
 }
 .table-form3>div>div:first-of-type { border-left: 0; }
 .table-form3>div:first-of-type>div,
 .table-form3>div:nth-of-type(2)>div { border-top: 0; }
-.table-form3>div.row:last-of-type { border-bottom: 1px solid #aaa; }
+.table-form3>div.row:last-of-type { border-bottom: 1px solid #ccc; }
 
 
 /* ----------------------------------------------- */

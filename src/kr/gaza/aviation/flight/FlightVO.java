@@ -2,7 +2,7 @@ package kr.gaza.aviation.flight;
 
 public class FlightVO {
     private int flightNum;
-    private int airplaneNum;
+    private String airplaneName;
     private int productNum;
     private String departTime;
     private String arriveTime;
@@ -16,12 +16,12 @@ public class FlightVO {
         this.flightNum = flightNum;
     }
 
-    public int getAirplaneNum() {
-        return airplaneNum;
+    public String getAirplaneName() {
+        return airplaneName;
     }
 
-    public void setAirplaneNum(int airplaneNum) {
-        this.airplaneNum = airplaneNum;
+    public void setAirplaneName(String airplaneName) {
+        this.airplaneName = airplaneName;
     }
 
     public int getProductNum() {

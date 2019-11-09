@@ -1,4 +1,4 @@
-package kr.gaza.booking.order;
+package kr.gaza.flight.booking.order;
 
 public class OrderVO {
     private int orderNum;
