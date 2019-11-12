@@ -125,6 +125,7 @@ nav {
 </head>
 <body>
 <%@ include file="../common/nav.jspf" %>
+	
 		<div id="contents">
 			<section id="title">
 				<h3>FAQ</h3>

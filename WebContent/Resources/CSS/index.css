@@ -32,13 +32,8 @@ ul, li{
 	left: 50%;
 	transform:translateX(-50%);
 	bottom: 12vh;
-    opacity: 0.8;
+    opacity: 0.7;
     transition: all 0.5s;
-}
-
-.reserve_wrap.active {
-    opacity: 1;
-    bottom: 25vh;
 }
 
 input:checked + label>.reserve_wrap {
@@ -147,8 +142,6 @@ input:checked + label>.reserve_wrap {
 .lightpick__toolbar { 
     padding: 20px 0 0; 
     border-bottom: 0;
-    position: absolute;
-    width: 100%;
 }
 .lightpick__previous-action{
 	left: 0 !important;
@@ -163,7 +156,7 @@ input:checked + label>.reserve_wrap {
     left: 25px; 
     top: 234px
 }
-/*.lightpick__reset-action { top: 35px; }*/
+.lightpick__reset-action { top: 35px; }
 
 #cal_status {
     color: white;

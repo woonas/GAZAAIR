@@ -77,12 +77,5 @@ button>a {
 
 #reply{
 	font-size:13px;
-	padding: 0 30px 20px 10px;
-    border-bottom: 1px solid gray;
-    margin-bottom: 20px;
-}
-#reply:last-child{ 
-	border-bottom: 0; 
-	margin-bottom: 0;
-	padding-bottom: 5px; 
+	clear:left;
 }
