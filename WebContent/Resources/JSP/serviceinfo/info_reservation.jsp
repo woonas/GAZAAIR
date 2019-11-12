@@ -7,11 +7,11 @@
     <meta charset="UTF-8">
     <title>예약안내</title>
     <link rel="stylesheet" href="../../CSS/information.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
 <body>
 <%@ include file="../common/nav.jspf" %>
-<%@ include file="info_nav.jspf" %>
     <section class="content info-reservation"> 
         <h3>예약안내</h3>
         
@@ -196,17 +196,17 @@
                                     </tr>
                                     <tr>
                                         <td class="bg-gray5">한국지역에서 징수 시</td>
-                                        <td class="bg-gray5">해외 지역에서 징수 시</td>
+                                        <td class="bg-gray5">기타 해외 지역에서 징수 시</td>
                                         <td class="bg-gray5">한국지역에서 징수 시</td>
                                     </tr>
                                     <tr>
-                                        <th class="bg-blue5">19년 2월 28일 이전 발권 </th>
+                                        <th class="bg-blue5">2019년 2월 28일 이전 발권 </th>
                                         <td>KRW 100,000</td>
                                         <td>USD 100.00</td>
                                         <td rowspan="2">KRW 8,000 (편도 금액)</td>
                                     </tr>
                                     <tr>
-                                        <th class="bg-blue5">19년 3월 01일 이후 발권</th>
+                                        <th class="bg-blue5">2019년 3월 01일 이후 발권</th>
                                         <td>KRW 120,000</td>
                                         <td>USD 120.00</td>
                                     </tr>

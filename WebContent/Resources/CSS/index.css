@@ -1,15 +1,20 @@
 @charset "UTF-8";
 @import "layout.css";
 
-section {
-	width:100%;
-	padding: 30px 0;
-}
+#menuBg { border-top-color: transparent; }
+
 #main{
 	height: calc(100vh - 70px);
+	width:100%; 
 }
-#event{
-	background-color: #eee;
+#best{
+	width:100%;
+	background-color: #fff;
+}
+#info{
+	width:100%;
+	background-color: #fff;
+	
 }
 ul, li{
 	list-style-type:none;
@@ -17,26 +22,6 @@ ul, li{
 .contents {
 	width: 100%;
 }
-.sectionTitle{
-	width:1200px;
-	height:50px;
-	margin: 20px auto;
-}
-.sectionTitle p{
-	font-size:200%;
-	float:left;
-	margin-right:20px;
-}
-.sectionTitle>a{
-	line-height:4;
-	background-color: #35f;
-	color:#fff;
-    padding-bottom: 1px;
-}
-.sectionTitle a:hover{
-	text-decoration: underLine;
-}
-
 /*section main---------------------------------------------------------*/
 .reserve_wrap{
 	width: 1000px;
@@ -47,13 +32,8 @@ ul, li{
 	left: 50%;
 	transform:translateX(-50%);
 	bottom: 12vh;
-    opacity: 0.8;
+    opacity: 0.7;
     transition: all 0.5s;
-}
-
-.reserve_wrap.active {
-    opacity: 1;
-    bottom: 25vh;
 }
 
 input:checked + label>.reserve_wrap {
@@ -100,8 +80,8 @@ input:checked + label>.reserve_wrap {
 	top: 10px;
 	left: 0;
 }
-.reserveBox input:hover::placeholder{
-	color: #36f;
+.tripLoc:hover::placeholder{
+	color : #36f;
 }
 .tripLoc::placeholder{
 	color: #555;
@@ -155,12 +135,13 @@ input:checked + label>.reserve_wrap {
 	font-size: 80%;
 	text-align: center;
 }
+.tripDate>input:hover::placeholder{
+	color: #36f;
+}
 .lightpick { width: 58% !important; }
 .lightpick__toolbar { 
     padding: 20px 0 0; 
     border-bottom: 0;
-    position: absolute;
-    width: 100%;
 }
 .lightpick__previous-action{
 	left: 0 !important;
@@ -175,7 +156,7 @@ input:checked + label>.reserve_wrap {
     left: 25px; 
     top: 234px
 }
-/*.lightpick__reset-action { top: 35px; }*/
+.lightpick__reset-action { top: 35px; }
 
 #cal_status {
     color: white;
@@ -206,6 +187,7 @@ input:checked + label>.reserve_wrap {
 .radioLabel{
 	cursor: pointer;
 }
+
 .simple_reservation_submit{
 	width:100px;
 	height:100px;
@@ -325,6 +307,7 @@ input:checked + label>.reserve_wrap {
 	left: 50%;
 	transform:translateX(-50%);
 	height: 19px;
+	width:200px;
 	background-color: rgba(255,255,255,.7);
 	margin: 0 auto;
 	border-radius:10px;
@@ -354,14 +337,33 @@ input:checked + label>.reserve_wrap {
 	left:-10px;
 }
 /*section best-------------------------------------------------------------------------*/
-#bestBanner{
-	display: flex;
-	justify-content: space-between;
+#best>div{
+	margin-top: 60px;
+}
+#best>div>div:first-child{
+	width:1200px;
+	height:50px;
+	margin: 20px auto;
+	
+}
+#best p{
+	font-size:200%;
+	float:left;
+	margin-right:20px;
+}
+#best>div>div>a{
+	line-height:4;
+	background-color: #35f;
+	color:#fff;
+    padding-bottom: 1px;
+}
+#best>div>div>a:hover{
+	text-decoration: underLine;
 }
 #bestBannerWrap{
 	width: 1200px;
-	height: 370px;
 	margin: 0 auto;
+	height: 380px;
 }
 #bestBannerWrap a{
 	color: #555;
@@ -384,6 +386,8 @@ input:checked + label>.reserve_wrap {
 }
 #bestBannerWrap li{
 	float: left;
+	width: 25%;
+	margin-top: -50px;
 }
 .imgTag{
 	width: 50px;
@@ -393,7 +397,7 @@ input:checked + label>.reserve_wrap {
 	color: #fff;
 	text-align: center;
 	line-height: 50px;
-	top: -25px;
+	top: 195px;
 	left: 15px;
 	font-size: 90%;
 	z-index: 500;
@@ -424,6 +428,32 @@ input:checked + label>.reserve_wrap {
 	text-align: right;
 }
 /*section event-------------------------------------------------------------------------*/
+#event>div{
+	margin-top: 60px;
+	height: 400px;
+	background-color: #eee;
+}
+#event>div>div:first-child{
+	width:1200px;
+	height:70px;
+	line-height: 70px;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+#event>div>div>p{
+	font-size:200%;
+	float:left;
+	margin-right:20px;
+    padding-bottom: 1px;
+}
+#event>div>div>a{
+	line-height:4;
+	background-color: #35f;
+	color:#fff;
+}
+#event>div>div>a:hover{
+	text-decoration: underLine;
+}
 .eventBannerWrap{
 	width: 1200px;
 	margin: 0 auto;
@@ -453,6 +483,7 @@ input:checked + label>.reserve_wrap {
     text-align: center;
     background-color: rgba(0,0,0,0.65) !important;
 }
+
 .bx-prev,
 .bx-next {
     background-color: rgba(0,0,0,0.65) !important;
@@ -480,6 +511,7 @@ input:checked + label>.reserve_wrap {
     border-right: 4px solid #fff;
     border-top: 4px solid #fff;
 }
+
 .eventDetail{
 	position: absolute;
 	height: 100%;
@@ -511,9 +543,8 @@ input:checked + label>.reserve_wrap {
 /*section info-------------------------------------------------------------------------*/
 #infoWrap{
 	width:1200px;
-	height: 320px;
-	margin: 0 auto;
-	padding-top: 60px;
+	height: 380px;
+	margin: 60px auto;
 }
 #infoWrap table{
 	width: 100%;

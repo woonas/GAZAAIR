@@ -9,6 +9,7 @@
         <!--        bootstrap validator-->
         <link rel="stylesheet" href="${p }/Vendor/bootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" href="${p }/Vendor/bootstrapValidator/bootstrapValidator.css"/>
+		<link rel="stylesheet" href="${p }/Resources/CSS/navNfooter.css" type="text/css"/>
 		
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -23,7 +24,39 @@
         <!-- 다음/카카오 주소검색 -->
         <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
         <style>
-        
+            label.blueBtn,
+            label.whiteBtn { line-height: 47px; }
+            #edit:checked + label { display: none; }
+            #edit ~ a>label { display: none; color: #555; }
+            #edit:checked ~ a>label { display: inline-block; }
+            #edit ~ a>button[type=submit] { display: none; }
+            #edit:checked ~ a>button[type=submit] { display: inline-block; }
+            input[disabled] {
+                background-color: #fff !important;
+                border: 0;
+                font-size: 130%;
+                margin-top: 4px;
+            }
+            input[disabled]::placeholder,
+            input[disabled] + i { color: transparent; }
+
+            .radio3 + label:before {
+                margin-top: 3px;
+                margin-left: -36px;
+            }
+            .radio3 + label:after { left: -34px !important; }
+            .radio3 + label { margin: 9px 90px 9px 44px; }
+            .radio3:disabled:not(:checked) + label { display: none; }
+            .checkbox3:disabled + label { margin-top: 30px; }
+            .checkbox { padding-left: 8px; }
+            label { font-weight: 300;}
+
+            #btn-pwChange {
+                width: 130px;
+                margin: 6px 0 2px;
+            }
+            a { text-decoration: none; }
+            #addr-all { margin-top: 8px; }
         </style>
     </head>
     <body id="personalInfo">
@@ -32,7 +65,7 @@
         <section class="content">
             <h3>회원정보</h3>
             
-            <div class="form-wrapper edit-form-wrapper">
+            <div class="form-wrapper">
                 <form id="defaultForm" method="post" action="<%=path %>/Resources/JSP/mypage/account_info_edit.do" class="form-horizontal">
                     <fieldset>
                         <legend>기본 정보</legend>
@@ -80,10 +113,10 @@
                             </div>
                         </div>
                         <c:if test="${vo.gender=='M' }">
-                        		<c:set var="gen" value="남성"/>
+                        		<c:set var="gen" value="남성"></c:set>
                         </c:if>
                         <c:if test="${vo.gender=='F' }">
-                        		<c:set var="gen" value="여성"/>
+                        		<c:set var="gen" value="여성"></c:set>
                         </c:if>
                         <div class="form-group">
                             <label class="col-fifth control-label not-required">성별</label>
@@ -201,28 +234,36 @@
                         <div class="form-group">
                             <label class="col-fifth control-label not-required">개인정보 제공</label>
                             <div class="col-xs-8">
-                                <input type="radio" name="info-provide" class="radio3" id="info-provide-agree" checked>
-                                <label for="info-provide-agree"> 동의</label>
-                                <input type="radio" name="info-provide" class="radio3" id="info-provide-disagree"
-                                <c:if test="${vo.ag1 =='off' }">
-                                	checked
+                            	<c:if test="${vo.ag1=='on' }">
+                            		<input type="radio" name="info-provide" class="radio3" id="info-provide-agree" checked>
+                                    <label for="info-provide-agree"> 동의</label>
+                                    <input type="radio" name="info-provide" class="radio3" id="info-provide-disagree">
+	                                <label for="info-provide-disagree"> 동의 안 함</label>
+                            	</c:if>
+                                <c:if test="${vo.ag1=='off' }">
+                                	<input type="radio" name="info-provide" class="radio3" id="info-provide-agree">
+                                    <label for="info-provide-agree"> 동의</label>
+                                	<input type="radio" name="info-provide" class="radio3" id="info-provide-disagree" checked>
+	                                <label for="info-provide-disagree"> 동의 안 함</label>
                                 </c:if>
-                                >
-                                <label for="info-provide-disagree"> 동의 안 함</label>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label class="col-fifth control-label not-required">통합 로그인</label>
                             <div class="col-xs-8">
-                                <input type="radio" name="integrated-login" class="radio3" id="integrated-login-agree" checked>
-                                <label for="integrated-login-agree"> 동의</label>
-                                <input type="radio" name="integrated-login" class="radio3" id="integrated-login-disagree"
-                                <c:if test="${vo.ag2 =='off' }">
-                                	checked
+                           		<c:if test="${vo.ag2=='on' }">
+                            		<input type="radio" name="integrated-login" class="radio3" id="integrated-login-agree" checked>
+	                                <label for="integrated-login-agree"> 동의</label>
+	                                <input type="radio" name="integrated-login" class="radio3" id="integrated-login-disagree">
+	                                <label for="integrated-login-disagree"> 동의 안 함</label>
+                            	</c:if>
+                                <c:if test="${vo.ag2=='off' }">
+                                	<input type="radio" name="integrated-login" class="radio3" id="integrated-login-agree">
+	                                <label for="integrated-login-agree"> 동의</label>
+	                                <input type="radio" name="integrated-login" class="radio3" id="integrated-login-disagree" checked>
+	                                <label for="integrated-login-disagree"> 동의 안 함</label>
                                 </c:if>
-                                >
-                                <label for="integrated-login-disagree"> 동의 안 함</label>
                             </div>
                         </div>
                         
@@ -233,22 +274,30 @@
                            </label>
                             <div class="col-xs-7">
                                 <div class="clearfix">
-                                    <div class="col-xs-3 checkbox">
-	                                        <input type="checkbox" class="checkbox3" name="receiveEmail" id="receiveEmail"
                                 	<c:if test="${vo.dr1=='on' }">
-	                                     checked
+	                                    <div class="col-xs-3 checkbox">
+	                                        <input type="checkbox" class="checkbox3" name="receiveEmail" id="receiveEmail" checked>
+	                                        <label for="receiveEmail" class="checkbox3"> 이메일</label>
+	                                    </div>
                                     </c:if>
-                                        >
-                                        <label for="receiveEmail" class="checkbox3"> 이메일</label>
-                                    </div>
-                                    <div class="col-xs-3 checkbox">
-	                                        <input type="checkbox" class="checkbox3" name="receiveSMS" id="receiveSMS"
+                                    <c:if test="${vo.dr1=='off' }">
+                                    	<div class="col-xs-3 checkbox">
+	                                        <input type="checkbox" class="checkbox3" name="receiveEmail" id="receiveEmail">
+	                                        <label for="receiveEmail" class="checkbox3"> 이메일</label>
+	                                    </div>
+                                    </c:if>
                                     <c:if test="${vo.dr2=='on' }">
-	                                    checked
+	                                    <div class="col-xs-3 checkbox">
+	                                        <input type="checkbox" class="checkbox3" name="receiveSMS" id="receiveSMS" checked>
+	                                        <label for="receiveSMS" class="checkbox3"> SMS</label>
+	                                    </div>
                                     </c:if>
-                                        >
-                                        <label for="receiveSMS" class="checkbox3"> SMS</label>
-                                    </div>
+                                    <c:if test="${vo.dr2=='off' }">
+                                   	 <div class="col-xs-3 checkbox">
+	                                        <input type="checkbox" class="checkbox3" name="receiveSMS" id="receiveSMS">
+	                                        <label for="receiveSMS" class="checkbox3"> SMS</label>
+	                                    </div>
+                                    </c:if>
                                 </div>
                                 <div>
                                     <ul class="list-type2">
@@ -314,15 +363,17 @@
                 <button class="blueBtn" id="btn-use">사용하기</button>
             </div>
         </div>
-        <%@ include file="../../common/footer.jspf" %>
-        
+    
         <!-- Moment Js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
         <!-- Lightpick CSS -->
         <link rel="stylesheet" href="<%=path %>/Vendor/javascript-datepicker-lightpick/css/lightpick.css">
         <!-- Lightpick JS -->
         <script src="<%=path %>/Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
+
         <script src="<%=path %>/Resources/JS/validator.js"></script>
+        <script src="<%=path %>/Resources/JS/common.js"></script>
         <script src="<%=path %>/Resources/JS/account.js"></script>
+        <%@ include file="../../common/footer.jspf" %>
     </body>
 </html>

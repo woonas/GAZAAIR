@@ -119,8 +119,6 @@ nav ul, nav li{
 	-webkit-transition: all 500ms ease;
     transition: all 500ms ease;
 }
-#mainMenu:hover #subMenuWrap { height: 220px; }
-
 #menuBg{
 	width: 100%;
     min-width: 1240px;
@@ -133,11 +131,6 @@ nav ul, nav li{
 	-webkit-transition: all 500ms ease;
     transition: all 500ms ease;
 }
-#mainMenu:hover + #menuBg {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-    height: 220px;
-}
-
 #subMenu{
 	width: 1200px;
 	height: 220px;
@@ -149,7 +142,6 @@ nav ul, nav li{
 	-webkit-transition: all 500ms ease;
     transition: all 500ms ease;
 }
-
 #subMenu img{
 	width: 250px;
 }

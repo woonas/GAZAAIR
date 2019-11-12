@@ -474,9 +474,9 @@ input.one-digit-box {
 .success { display: none; }
 .success>h2 { font-size: 200%; }
 
-.step2-2 { left: 25vw !important; }
+.step2-2 { left: 250px !important; }
 
-.step2 { left: 12vw !important; }
+.step2 { left: 130px !important; }
 
 .step1 {
     margin-top: -350px;
@@ -1104,41 +1104,3 @@ hr { margin-top: 40px; }
     0% { margin-left: 207px; opacity: 0;}
     100% { margin-left: 0; opacity: 1;}
 }
-
-/* ----------------------------------------------- */
-/* 회원정보변경 account_info.html */
-/* ----------------------------------------------- */
-
-
-.edit-form-wrapper label.blueBtn,
-.edit-form-wrapper label.whiteBtn { line-height: 47px; }
-.edit-form-wrapper #edit:checked + label { display: none; }
-.edit-form-wrapper #edit ~ a>label { display: none; color: #555; }
-.edit-form-wrapper #edit:checked ~ a>label { display: inline-block; }
-.edit-form-wrapper #edit ~ a>button[type=submit] { display: none; }
-.edit-form-wrapper #edit:checked ~ a>button[type=submit] { display: inline-block; }
-.edit-form-wrapper input[disabled] {
-    background-color: #fff !important;
-    border: 0;
-    font-size: 130%;
-    margin-top: 4px;
-}
-.edit-form-wrapper input[disabled]::placeholder,
-.edit-form-wrapper input[disabled] + i { color: transparent; }
-
-.edit-form-wrapper .radio3 + label:before {
-    margin-top: 3px;
-    margin-left: -36px;
-}
-.edit-form-wrapper .radio3 + label:after { left: -34px !important; }
-.edit-form-wrapper .radio3 + label { margin: 9px 90px 9px 44px; }
-.edit-form-wrapper .radio3:disabled:not(:checked) + label { display: none; }
-.edit-form-wrapper .checkbox3:disabled + label { margin-top: 30px; }
-.edit-form-wrapper .checkbox { padding-left: 8px; }
-.edit-form-wrapper label { font-weight: 300;}
-
-.edit-form-wrapper #btn-pwChange {
-    width: 130px;
-    margin: 6px 0 2px;
-}
-.edit-form-wrapper #addr-all { margin-top: 8px; }

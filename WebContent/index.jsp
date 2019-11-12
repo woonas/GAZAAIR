@@ -27,7 +27,7 @@
     <body>
         <div class="overlay"></div>
         <%@ include file="Resources/JSP/common/nav.jspf" %>
-        <section id="main" style="width: 100%; min-width:1240px; overflow: hidden">
+        <section id="main">
             <!-- 슬라이더 컨트롤러 -->
             <div class="slideControler">
                 <div class="dotsWrap"><div class="playState"></div></div>
@@ -88,11 +88,12 @@
 
         <section id="best">
             <div>
-                <div class="sectionTitle"><p>베스트 상품</p><a href="<%=path %>/Resources/JSP/eventNproduct/best_product.do">&nbsp;전체보기 +&nbsp;</a></div>
+                <div><p>베스트 상품</p><a href="<%=path %>/Resources/JSP/eventNproduct/best_product.do">&nbsp;전체보기 +&nbsp;</a></div>
                 <div id="bestBannerWrap">
                     <ul id="bestBanner">
                         <li>
                             <a href="<%=path %>/Resources/HTML/prd_BestProduct.html">
+                                <div class="imgTag">미주</div>
                                 <div class="imgFrame">
                                     <img src='<%=path %>/Resources/IMG/main/newyork.jpg'/>
                                 </div>
@@ -103,52 +104,48 @@
                                         <h6>더 보기<img src="<%=path %>/Resources/IMG/icon/ico_arrow_gray.png"/></h6>
                                     </div>
                                 </div>
-                                <div class="imgTag">미주</div>
                             </a>
                         </li>
-                        <li>
-                        	<a href="<%=path %>/Resources/HTML/prd_BestProduct.html">
-	                            <div class="imgFrame">
-	                                <img src='<%=path %>/Resources/IMG/main/bangkok.jpg' title="서울/인천 ＜＝＞ 홍콩 KRW 205,000 ~"/>
-	                            </div>
-	                            <div class="textBox">
-	                                <div>
-	                                    <h5>FUN한 동남아 여행</h5>
-	                                    <div>뻔한 여행 말고 FUN한 동남아 여행, A380타고 동남아 가자!</div>
-	                                    <h6>더 보기<img src="<%=path %>/Resources/IMG/icon/ico_arrow_gray.png"/></h6>
-	                                </div>
-	                            </div>
-	                            <div class="imgTag">동남아</div>
+                        <li><a href="<%=path %>/Resources/HTML/prd_BestProduct.html">
+                            <div class="imgTag">동남아</div>
+                            <div class="imgFrame">
+                                <img src='<%=path %>/Resources/IMG/main/bangkok.jpg' title="서울/인천 ＜＝＞ 홍콩 KRW 205,000 ~"/>
+                            </div>
+                            <div class="textBox">
+                                <div>
+                                    <h5>FUN한 동남아 여행</h5>
+                                    <div>뻔한 여행 말고 FUN한 동남아 여행, A380타고 동남아 가자!</div>
+                                    <h6>더 보기<img src="<%=path %>/Resources/IMG/icon/ico_arrow_gray.png"/></h6>
+                                </div>
+                            </div>
                             </a>
                         </li>
-                        <li>
-	                        <a href="<%=path %>/Resources/HTML/prd_BestProduct.html">
-	                            <div class="imgFrame">
-	                                <img src='<%=path %>/Resources/IMG/main/paris.jpg' title="서울/김포 ＝＞ 제주 KRW 19,500 ~"/>
-	                            </div>
-	                            <div class="textBox">
-	                                <div>
-	                                    <h5>감성충만 파리 여행</h5>
-	                                    <div>예술가들의 발자취를 따라 걸으며 파리갬성 가득한 인생샷 찍으러!</div>
-	                                    <h6>더 보기<img src="<%=path %>/Resources/IMG/icon/ico_arrow_gray.png"/></h6>
-	                                </div>
-	                            </div>
-	                            <div class="imgTag">유럽</div>
+                        <li><a href="<%=path %>/Resources/HTML/prd_BestProduct.html">
+                            <div class="imgTag">유럽</div>
+                            <div class="imgFrame">
+                                <img src='<%=path %>/Resources/IMG/main/paris.jpg' title="서울/김포 ＝＞ 제주 KRW 19,500 ~"/>
+                            </div>
+                            <div class="textBox">
+                                <div>
+                                    <h5>감성충만 파리 여행</h5>
+                                    <div>예술가들의 발자취를 따라 걸으며 파리갬성 가득한 인생샷 찍으러!</div>
+                                    <h6>더 보기<img src="<%=path %>/Resources/IMG/icon/ico_arrow_gray.png"/></h6>
+                                </div>
+                            </div>
                             </a>
                         </li>
-                        <li>
-	                        <a href="<%=path %>/Resources/HTML/prd_BestProduct.html">
-	                            <div class="imgFrame">
-	                                <img src='<%=path %>/Resources/IMG/main/jeju.jpg' title="서울/인천 ＜＝＞ 팔라우 KRW 756,000 ~"/>
-	                            </div>
-	                            <div class="textBox">
-	                                <div>
-	                                    <h5>나만 간직하고 싶은 제주</h5>
-	                                    <div>나 홀로 떠나는 제주여행, 어디를 가도 시원하고 높은 하늘과 선선한 바람을 느끼자</div>
-	                                    <h6>더 보기<img src="<%=path %>/Resources/IMG/icon/ico_arrow_gray.png"/></h6>
-	                                </div>
-	                            </div>
-	                            <div class="imgTag">국내</div>
+                        <li><a href="<%=path %>/Resources/HTML/prd_BestProduct.html">
+                            <div class="imgTag">국내</div>
+                            <div class="imgFrame">
+                                <img src='<%=path %>/Resources/IMG/main/jeju.jpg' title="서울/인천 ＜＝＞ 팔라우 KRW 756,000 ~"/>
+                            </div>
+                            <div class="textBox">
+                                <div>
+                                    <h5>나만 간직하고 싶은 제주</h5>
+                                    <div>나 홀로 떠나는 제주여행, 어디를 가도 시원하고 높은 하늘과 선선한 바람을 느끼자</div>
+                                    <h6>더 보기<img src="<%=path %>/Resources/IMG/icon/ico_arrow_gray.png"/></h6>
+                                </div>
+                            </div>
                             </a>
                         </li>
                     </ul>
@@ -157,7 +154,7 @@
         </section>
         <section id="event">
             <div>
-                <div class="sectionTitle"><p>이벤트</p><a href="<%=path %>/Resources/JSP/eventNproduct/event_List.do">&nbsp;전체보기 +&nbsp;</a></div>
+                <div><p>이벤트</p><a href="<%=path %>/Resources/JSP/eventNproduct/event_List.do">&nbsp;전체보기 +&nbsp;</a></div>
                 <div class="eventBannerWrap">
                     <ul class="eventBanner">
                         <li><a href="prd_alliance_event.html">
@@ -345,6 +342,7 @@
         </div>
 
         <%@ include file="Resources/JSP/common/footer.jspf" %>
+        <script src="<%=request.getContextPath() %>/Resources/JS/common.js"></script>
         <script src="<%=request.getContextPath() %>/Resources/JS/airportpicker.js"></script>
     </body>
 </html>
