@@ -13,12 +13,10 @@ public class CommandBooking1 implements CommandService {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        String airportFrom = request.getParameter("airportFrom");
-        String airportTo = request.getParameter("airportTo");
-
-        if (airportFrom != null)  request.setAttribute("airportFrom", airportFrom);
-        if (airportTo != null)  request.setAttribute("airportTo", airportTo);
+        String city = request.getParameter("city");
+        String iata = request.getParameter("iata");
+        if (city != null) request.setAttribute("city", city);
+        if (iata != null) request.setAttribute("iata", iata);
         return "booking1.jsp";
 	}
-
 }

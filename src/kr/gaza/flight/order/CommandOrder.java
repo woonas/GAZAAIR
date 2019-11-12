@@ -1,4 +1,4 @@
-package kr.gaza.flight.booking.order;
+package kr.gaza.flight.order;
 
 import java.io.IOException;
 

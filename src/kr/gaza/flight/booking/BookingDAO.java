@@ -2,7 +2,11 @@ package kr.gaza.flight.booking;
 
 import kr.gaza.aviation.flight.FlightVO;
 import kr.gaza.aviation.product.ProductVO;
+import kr.gaza.aviation.seatreserve.SeatReserveVO;
 import kr.gaza.home.DBConn;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BookingDAO extends DBConn implements BookingInterface{
     @Override
@@ -29,7 +33,7 @@ public class BookingDAO extends DBConn implements BookingInterface{
                 }
             }
             for (int i = 0; i < vo.getProductList().size(); i++) {
-                sql = "select flightNum, airplaneName, departTime, arriveTime, sale from flight where productnum=? and departTime like ?%";
+                sql = "select flightNum, airplaneName, departTime, arriveTime, sale from flight where productnum=? and departTime like '?%'";
                 pstmt = conn.prepareStatement(sql);
                 pstmt.setInt(1, vo.getProductList().get(i).getProductNum());
                 pstmt.setString(2, vo.getJourneyList().get(i).getFlightDate());
@@ -48,7 +52,23 @@ public class BookingDAO extends DBConn implements BookingInterface{
             }
 
             // 뱅기이름으로 총좌석수 - 예약된 좌석 cnt해서 갯수
+            for (int i = 0; i < vo.getFlightList().size(); i++) {
+                sql = "select SEATRESERVENUM, SEATTYPE, SEATNO, RESERVED from SEATRESERVE where FLIGHTNUM = ?";
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setInt(1, vo.getFlightList().get(i).getFlightNum());
 
+                rs = pstmt.executeQuery();
+                List<SeatReserveVO> list = new ArrayList<>();
+                while (rs.next()) {
+                    SeatReserveVO seatReserveVO = new SeatReserveVO();
+                    seatReserveVO.setSeatReserveNum(rs.getInt(1));
+                    seatReserveVO.setSeatType(rs.getInt(2));
+                    seatReserveVO.setSeatNo(rs.getInt(3));
+                    seatReserveVO.setReserved(rs.getInt(4));
+                    list.add(seatReserveVO);
+                }
+                vo.getSeatReserveList().add(list);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

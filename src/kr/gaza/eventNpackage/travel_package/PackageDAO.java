@@ -12,20 +12,17 @@ public class PackageDAO extends DBConn implements PackageInterface {
 		List<PackageVO> lst = new ArrayList<>();
 		try {
 			dbConn();
-			String sql = "select c.city, c.cityimg from product a join recommandProduct b on a.productnum = b.productnum join airport c on a.arrive = c.iata";
+			String sql = "select c.city, c.IATA, c.cityimg from product a join recommandProduct b on a.productnum = b.productnum join airport c on a.arrive = c.iata";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
 				PackageVO vo = new PackageVO();
 				vo.setCity(rs.getString(1));
-				vo.setCityImg(rs.getString(2));
+				vo.setIata(rs.getString(2));
+				vo.setCityImg(rs.getString(3));
 				lst.add(vo);
-			
-			
 			}
-			
-			
 		}catch(Exception e){
 			e.printStackTrace();
 			System.out.println("���ڵ� ������� ����");
@@ -42,7 +39,7 @@ public class PackageDAO extends DBConn implements PackageInterface {
 		List<PackageVO> lst = new ArrayList<>();
 		try {
 			dbConn();
-			String sql = "select * from (select a.productCnt,b.city,b.cityimg from product a join airport b on a.arrive = b.iata order by a.productcnt desc) where rownum<=?";
+			String sql = "select * from (select a.productCnt, b.city, b.IATA, b.cityimg from product a join airport b on a.arrive = b.iata order by a.productcnt desc) where rownum<=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1,  onePageRecord);
 			
@@ -51,10 +48,10 @@ public class PackageDAO extends DBConn implements PackageInterface {
 				PackageVO vo = new PackageVO();
 				vo.setProductCnt(rs.getInt(1));
 				vo.setCity(rs.getString(2));
-				vo.setCityImg(rs.getString(3));
+				vo.setIata(rs.getString(3));
+				vo.setCityImg(rs.getString(4));
 				lst.add(vo);
 			}
-			
 		}catch(Exception e) {
 			
 		}finally {
@@ -69,7 +66,7 @@ public class PackageDAO extends DBConn implements PackageInterface {
 		List<PackageVO> lst = new ArrayList<>();
 		try {
 			dbConn();
-			String sql = "select * from (select a.sale,b.city,b.cityimg from product a join airport b on a.arrive = b.iata order by a.sale desc) where rownum<=?";
+			String sql = "select * from (select a.sale, b.city, b.IATA, b.cityimg from product a join airport b on a.arrive = b.iata order by a.sale desc) where rownum<=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1,  onePageRecord);
 			
@@ -78,10 +75,10 @@ public class PackageDAO extends DBConn implements PackageInterface {
 				PackageVO vo = new PackageVO();
 				vo.setSale(rs.getInt(1));
 				vo.setCity(rs.getString(2));
-				vo.setCityImg(rs.getString(3));
+				vo.setIata(rs.getString(3));
+				vo.setCityImg(rs.getString(4));
 				lst.add(vo);
 			}
-			
 		}catch(Exception e) {
 			
 		}finally {

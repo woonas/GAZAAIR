@@ -340,11 +340,9 @@
             </ul>
         </section>
         <script>
-            let departFrom = <%=request.getParameter("airportFrom")%>;
-            let arriveTo = <%=request.getParameter("airportTo")%>;
-            
-            if (departFrom) document.getElementById('airportFrom-1').value = departFrom;
-            if (arriveTo) document.getElementById('airportTo-1').value = arriveTo;
+            let city = '<%=request.getParameter("city")%>';
+            let iata = '<%=request.getParameter("iata")%>';
+            if (city !== 'null' && iata !== 'null' ) document.getElementById('airportTo-1').value = `${city}   (${iata})`;
         </script>
         <%@ include file="../../common/footer.jspf" %>
         <script src="../../../JS/airportpicker.js"></script>

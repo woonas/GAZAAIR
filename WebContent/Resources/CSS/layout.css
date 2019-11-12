@@ -100,7 +100,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: 10px;
 }
 ::-webkit-scrollbar-track-piece:start,
-::-webkit-scrollbar-track-piece:end { background: transparent url('../IMG/etc/transparent.png') !important; }
+::-webkit-scrollbar-track-piece:end { background: transparent url('../IMG/etc/transparent.png') !important;}
 
 ::-webkit-scrollbar-button:start:decrement,
 ::-webkit-scrollbar-button:end:increment {
@@ -1312,7 +1312,7 @@ input[type="radio"].radio2:not(:checked) + label:hover { border: 1px solid black
 .flight-list li.selected:hover { border-color: #36f; }
 
 .list-nation li.active {
-    border: #36f solid 2px;
+    border: #36f solid 1px;
     color: #fff;
     background-color: #36f;
 }

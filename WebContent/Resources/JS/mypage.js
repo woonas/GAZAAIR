@@ -126,8 +126,16 @@ function change(targetId){
      else if(location.pathname.indexOf('reservation_detail') !== -1){
          drawSeatImg();
          hintWindow('membership-hint');
+
          hintWindow('selectFood', true, true, true);
          hintWindow('selectSeat', true, true, true);
+         hintWindow('selectClass', true, true, true);
+         overlay.addEventListener('click', () => {
+             const popups = document.querySelectorAll('.pop-up-window-type1');
+             popups.forEach(popup => popup.style.display = 'none');
+             overlay.style.display = 'none';
+         });
+
          birth_option_generator();
      }
 })();

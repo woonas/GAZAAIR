@@ -577,19 +577,18 @@ input[type=checkbox][id^=fold-btn-] + label>img { vertical-align: bottom; }
 .flight-detail {
     position: relative;
 }
-.flight-detail>span:first-of-type {
+.flight-detail>span {
     position: absolute;
+    font-size: 80%;
+    opacity: 0.7;
+}
+.flight-detail>span:first-of-type {
     top: 23px;
     left: 56px;
-    font-size: 80%;
-    color: #888;
 }
 .flight-detail>span:last-of-type {
-    position: absolute;
     bottom: 19px;
     left: 80px;
-    font-size: 80%;
-    color: #888;
 }
 
 .flight-detail>img {
@@ -694,7 +693,7 @@ input[type=checkbox][id^=fold-btn-] + label>img { vertical-align: bottom; }
     width: 18px;
     height: 18px;
 }
-.edit-form-wrapper .radio3 + label { margin: 9px 90px 9px 44px; }
+.edit-form-wrapper .radio3 + label { margin: 9px 45px 9px 44px; }
 .edit-form-wrapper .radio3:disabled:not(:checked) + label { display: none; }
 .edit-form-wrapper .checkbox3:disabled + label { margin-top: 30px; }
 .edit-form-wrapper .checkbox { padding-left: 8px; }
@@ -812,14 +811,14 @@ div[id^=regulation]>input[type=checkbox]:checked + label {
     float: left;
     margin-left: 10px;
 }
-
-
-/* 좌석 선택 창 */
-#selectSeat-window {
+#selectSeat-window,
+#selectFood-window,
+#selectClass-window {
     max-width: 1200px;
     width: 1200px;
 }
 
+/* 좌석 선택 창 */
 #selectSeat-window .scrollable { height: 600px; }
 
 #seatsBackImg {
@@ -855,18 +854,17 @@ div[id^=regulation]>input[type=checkbox]:checked + label {
     height: 35px;
 }
 
-
-
-
-
-
+#changeSeat {
+    border-radius: 0;
+    padding: 10px 20px;
+    font-size: 80%;
+    margin-top: 17px;
+    position: absolute;
+    right: 80px;
+    bottom: 35px;
+}
 
 /* 기내식 선택 창*/
-
-#selectFood-window {
-    max-width: 1200px;
-    width: 1200px;
-}
 
 #selectFood-window .scrollable { height: 500px; }
 
@@ -928,3 +926,15 @@ div[id^=regulation]>input[type=checkbox]:checked + label {
     border-radius: 0;
     font-size: 45%;
 }
+
+
+/* 좌석등급 선택창  */
+#changeClass {
+    border-radius: 0;
+    padding: 10px 20px;
+    font-size: 80%;
+    margin-top: 17px;
+    float: right;
+}
+
+#selectClass-window .last-note { margin-bottom: 0 !important; }

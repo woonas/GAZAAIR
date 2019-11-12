@@ -11,6 +11,7 @@ document.querySelector('section.content').insertAdjacentHTML('afterend',
 <div class="flight-list clearfix">
 <div class="list-nation" name="list-nation">
 <ul>
+
 <li class="active" id="nation-1">한국</li>
 <li id="nation-2">동북아시아</li>
 <li id="nation-3">동남아시아</li>
@@ -1226,7 +1227,7 @@ document.querySelector('section.content').insertAdjacentHTML('afterend',
 </div>
 </div>
 <div class="recent-search-wrap">
-<h4>최근 검색</h4>
+<h4>관심노선 및 최근 검색</h4>
 <div class="recent-srch-box" name="recent-srch-box">
 <ul>
 <li>
@@ -1269,9 +1270,11 @@ let airportFrom, airportTo; // 최신검사 선택시 데이터 저장
 //지역 선택시 이벤트
 document.querySelector('.list-nation').addEventListener('click', () => {
     if(event.target.tagName === "LI") {
-        document.querySelector('li.active').classList.remove('active');
+        const activeLI = document.querySelector('#airport-picker-window li.active');
+        const activeDIV = document.querySelector('#airport-picker-window div.active');
+        if (activeLI) activeLI.classList.remove('active');
         event.target.classList.add('active');
-        document.querySelector('div.active').classList.remove('active');
+        if (activeDIV) activeDIV.classList.remove('active');
         document.getElementById(event.target.id + "-list").classList.add('active');
     }
 });

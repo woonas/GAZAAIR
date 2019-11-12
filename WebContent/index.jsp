@@ -27,7 +27,7 @@
     <body>
         <div class="overlay"></div>
         <%@ include file="Resources/JSP/common/nav.jspf" %>
-        <section id="main">
+        <section id="main" style="width: 100%; min-width:1240px; overflow: hidden">
             <!-- 슬라이더 컨트롤러 -->
             <div class="slideControler">
                 <div class="dotsWrap"><div class="playState"></div></div>

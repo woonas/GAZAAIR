@@ -1,4 +1,4 @@
-package kr.gaza.flight.booking.payment;
+package kr.gaza.flight.payment;
 
 import kr.gaza.eventNpackage.alliance_event.EventVO;
 

@@ -23,15 +23,14 @@ public class CommandNoticeView implements CommandService {
 		vo.setTotalRecord(dao.noticeBoardTotalRecord());
 		dao.noticeBoardSelect(vo);
 		request.setAttribute("vo", vo);
-		
-		// ������ ������ ������ ��������
+
 		List<String> lst = dao.noticeBoardGetTitles(num);
 		
 		int i = 0;
-		if(num == 1) request.setAttribute("prev", "�������� �����ϴ�.");
+		if(num == 1) request.setAttribute("prev", "");
 		else request.setAttribute("prev", lst.get(i++));
 		
-		if(num == vo.getTotalRecord()) request.setAttribute("next", "�������� �����ϴ�.");
+		if(num == vo.getTotalRecord()) request.setAttribute("next", "");
 		else request.setAttribute("next", lst.get(i));
 		return "noticeBoard_view.jsp";
 	}

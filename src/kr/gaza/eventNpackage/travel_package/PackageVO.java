@@ -5,16 +5,21 @@ public class PackageVO {
 	private int productNum;
 	private String regdate;
 	private String city;
+	private String iata;
 	private String cityImg;
-	//����Ʈ ��ǰ�� �ʿ��� ����
 	private int productCnt; 
 	private int onePageRecord=5;
-	//���� ��ǰ�� �ʿ��� ����
 	private int sale;
-	
-	
-	
-	public int getSale() {
+
+
+    public String getIata() {
+        return iata;
+    }
+
+    public void setIata(String iata) {
+        this.iata = iata;
+    }
+    public int getSale() {
 		return sale;
 	}
 	public void setSale(int sale) {

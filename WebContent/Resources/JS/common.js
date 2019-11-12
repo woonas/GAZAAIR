@@ -155,34 +155,6 @@ let cal_generator = (strId, startDate, numOfMonths) => {
     });
 };
 
-/* loader */
-let loader_generator = () => {
-    document.querySelector('section.content').insertAdjacentHTML('afterend', 
-       `<div class="loaderWrapper">
-        <div class='body'>
-        <span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        </span>
-        <div class='base'>
-        <span></span>
-        <div class='face'></div>
-        </div>
-        </div>
-        <div class='longfazers'>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        </div>
-        <p>로딩중...</p>
-        </div>
-       `);
-};
-
-
 /* 탑승객 수 +, - 버튼 */
 const changeNumOfPassengers = () => {
     let btns_minus = document.querySelectorAll('.minus');
@@ -245,22 +217,8 @@ const overlay = document.querySelector('.overlay');
 
 //네비게이션
 const navi = () => {
-    const menus = document.querySelectorAll('#mainMenu>ul>li');
-    const subMenuWrap = document.getElementById('subMenuWrap');
-    const submenus = subMenuWrap.children[0].children;
-    const menubg = document.getElementById('menuBg');
+    const submenus = document.querySelectorAll('#subMenu>ul');
     const navBar = document.getElementById('navBar');
-
-    menus.forEach(menu => {
-       menu.addEventListener('mouseenter', () => {
-           subMenuWrap.style.height = '220px';
-           menubg.style.height = '220px';
-       });
-       menu.addEventListener('mouseleave', () => {
-            subMenuWrap.style.height = '0';
-            menubg.style.height = '0';
-       });
-    });
 
     for (let i = 1; i < submenus.length; i++) {
         const left = 9.5 + i * 15;
@@ -278,7 +236,6 @@ const navi = () => {
 };
 
 //상단부분으로 이동 버튼
-
 const moveScroll = () => {
     window.scrollY = window.scrollY - 60 > 0? window.scrollY - 60 : 0;
     document.documentElement.scrollTop = document.documentElement.scrollTop - 60 > 0? document.documentElement.scrollTop - 60 : 0;
@@ -290,7 +247,6 @@ const moveToTop = () => {
     document.querySelector('.topBtn').addEventListener('click', () => setTimeout(moveScroll,15));
 };
 
-
 //메인네비 하단줄 제거
 const menuBorderRemover = () => {
     const submenus = document.querySelectorAll('#mainMenu>ul>li');
@@ -301,7 +257,6 @@ const menuBorderRemover = () => {
         submenu.addEventListener('mouseleave', () => menuBg.style.borderTopColor = 'transparent');
     });
 };
-
 
 // select option 생성
 const setDateOption = () => {
@@ -352,7 +307,6 @@ const birth_option_generator = () => {
     navi();
     moveToTop();
     windowClose();
-    loader_generator();
     document.body.classList.add('noscroll');
 
     /* Loader */

@@ -37,4 +37,27 @@
 		</div>
 	</div>
 </footer>
+
+<div class="loaderWrapper">
+    <div class='body'>
+        <span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <div class='base'>
+            <span></span>
+            <div class='face'></div>
+        </div>
+    </div>
+    <div class='longfazers'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <p>로딩중...</p>
+</div>
+
 <script src="<%=path %>/Resources/JS/common.js"></script>

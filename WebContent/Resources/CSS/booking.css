@@ -465,7 +465,6 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 /* 항공편 선택 booking2.html */
 /* ----------------------------------------------- */
 
-
 /* 상단바 */
 .cur-route {
     margin: 0;
@@ -479,8 +478,14 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 .cur-route input {
     background-color: #fff;
     border: none;
+    width: calc(100% - 2px);
 }
-.cur-route>.book-input-form { margin-bottom: 0; }
+
+.cur-route>.book-input-form {
+    display: flex;
+    margin-bottom: 0;
+
+}
 #num-of-passengers-window {
     max-width: 1200px;
     width: 1200px;
@@ -502,6 +507,17 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
     height: 46px;
     width: 250px;
     font-size: 100%;
+}
+.cur-route .fa-redo-alt {
+    font-size: 170%;
+    line-height: 98px;
+    background-color: #36f;
+    margin-left: 3px;
+    padding: 0 10px;
+    color: #fff;
+    border-radius: 3px;
+    opacity: 0.9;
+    cursor: pointer;
 }
 
 .cur-route.sticky {
@@ -525,7 +541,7 @@ input[name="class-type"].radio2:checked + label { background-position: 35% 5px; 
 .cur-route.sticky .col-fourth:nth-of-type(2):after { content: "\f3c5"; }
 .cur-route.sticky .col-fourth:nth-of-type(3):after { content: "\f073"; }
 .cur-route.sticky .col-fourth:last-of-type:after { content: "\f007"; }
-
+.cur-route.sticky .fa-redo-alt { line-height: 50px; }
 .sticky>.book-input-form>.itinerary-select>input { padding-left: 10px; }
 
 /* 여정 */

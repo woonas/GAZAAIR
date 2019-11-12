@@ -30,8 +30,8 @@ public class CommandBooking2 implements CommandService {
         }
 
         BookingDAO bookingDAO = new BookingDAO();
-
         bookingDAO.getFlightInformation(bookingVO);
+        request.setAttribute("bookingVO", bookingVO);
 
         return "booking2.jsp";
     }

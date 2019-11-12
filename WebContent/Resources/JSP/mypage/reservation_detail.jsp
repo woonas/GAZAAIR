@@ -202,7 +202,7 @@
                             1번째 여정 할인
                         </div>
                         <div>
-                            <select id="selPTCCode_Dep_1" name="selPTCCode_Dep" title="신분할인 선택" style="width: 632px;">
+                            <select id="selPTCCode_Dep_1" name="selPTCCode_Dep" title="신분할인 선택" style="width: 632px;" disabled>
                                 <option value="CB" ptccode="CB" ptcrate="0">개인할인 선택 안함</option>
                                 <option value="PR" ptccode="PR" ptcrate="30">장애인 4~6급(30%)</option>
                                 <option value="PR" ptccode="PR" ptcrate="50">장애인 1~3급(50%)</option>
@@ -333,6 +333,7 @@
 					<div id="frontEco-seat" class="seatDiv"></div>
 					<div id="back-seat" class="seatDiv"></div>
 				</div>
+                <input type="button" class="blueBtn" value="선택하기" id="changeSeat">
             </div>
         </div>
         
@@ -420,6 +421,39 @@
                 <div id="tab-4-container" class="tab-content-container"></div>
             </div>
         </div>
+        
+        <div class='pop-up-window-type1 centeredX' id='selectClass-window'>
+            <div class="row">
+                <p class="window-title">
+                    좌석등급 변경
+                    <i class="fas fa-times btn-close"></i>
+                </p>
+            </div>
+            
+            <div class="row itinerary clearfix">
+                <div class="col-third class-select">
+                    <input type="radio" class="radio2" name="class-type" value="economy" id="economy" checked="checked">
+                    <label for="economy" class="firstRadio">이코노미</label>
+                </div>
+                <div class="col-third class-select">
+                    <input type="radio" class="radio2" name="class-type" value="business" id="business">
+                    <label for="business">비즈니스</label>
+                </div>
+                <div class="col-third class-select">
+                    <input type="radio" class="radio2" name="class-type" value="first" id="first">
+                    <label for="first" class="lastRadio">퍼스트</label>
+                </div>
+            </div>
+            <input type="button" value="변경하기" class="blueBtn" id="changeClass">
+            <ul class="list-type2 last-note">
+                <li class="list-inside-title">좌석등급 변경 시 유의사항</li>
+                <li>탑승 항공편에 따라 좌석 타입 및 편의 시설, 이용 가능한 서비스에 차이가 있을 수 있습니다.</li>
+                <li>국내선의 경우 별도 좌석등급 선택을 하지 않습니다.</li>
+                <li>좌석등급은 항공편 기종별 좌석배치가 다릅니다.<a href="#" target="_blank">좌석배치도보기</a></li>
+                <li>마일리지 적립은 구입하신 항공권상의 예약클래스 기준으로 적립됩니다.<a href="#" target="_blank">적립 기준표 보기</a></li>
+            </ul>
+        </div>
+        
         
 		<input type="hidden" value="Y">
 		<div class="button-wrapper">
