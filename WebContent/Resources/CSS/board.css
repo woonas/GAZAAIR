@@ -7,7 +7,7 @@
 	padding-left: 50px;
 	height: 100px;
 	line-height: 100px;
-	font-size: 27px;
+	font-size: 30px;
 }
 
 #hitNdate{ line-height: 100px; }
@@ -45,24 +45,6 @@ button>a {
 }
 
 /* 리뷰 댓글 */
-#replywrite{ 
-	margin: 10px 0px 10px 60px;
-	resize:none; 
-	width:1000px; 
-	height:70px;}
-#rplbox{
-	width:1000px;
-	height:70px;
-}
-	
-#bt{
-	width:65px;
-	height:70px;
-	line-height:70px;
-	text-align:center;
-	display:inline;
-	border:1px solid gray;
-}
 
 #commentt{ padding: 20px 30px 20px 50px; }
 
