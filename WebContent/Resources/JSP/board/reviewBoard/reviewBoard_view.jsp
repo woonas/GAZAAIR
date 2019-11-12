@@ -6,6 +6,30 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../../CSS/board.css" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		$("#replyFrm").submit(function(){
+			if(${memberId==null || memberId==""}){
+				alert("로그인 후 이용 가능합니다.");
+				$("#replywrite").val("");
+				return false;
+			}
+			var params = $("#replyFrm").serialize();
+			$.ajax({
+				url: "/projectGAZA/Resources/JSP/board/reviewBoard/reviewBoard_ReplyOk.do",
+				data: params,
+				success: function(result){
+					$("#commentt").html(result);
+					$("#replywrite").val("");
+				},
+				error:function(){
+					alert("댓글쓰기 에러발생");
+				}
+			});
+		});
+	});
+</script>
 </head>
 <body>
 	<%@ include file="../../common/nav.jspf" %>
@@ -30,6 +54,13 @@
 			내용<br/>
 			내용<br/>
 			</div>
+		<hr style="border:1px solid #eee"/>
+		<form method="post" id="replyFrm" onsubmit="return false">
+			<div id="rplbox"><textarea class="row clearfix" id="replywrite" name="replywrite"></textarea></div>
+			<input type="submit" value="등록하기"/>
+			<input type="hidden" name="rpNum" value="${vo.num}"/>
+			<input type="hidden" name="rpId" value="${vo.writer }"/>
+		</form>
 		<hr style="border:1px solid #eee"/>
 		<div id="commentt">
 		<c:forEach var="rv" items="${list}">
