@@ -26,7 +26,7 @@
 			<div class="brd_bottom">
 			∧ 다음글
 			<c:if test="${vo.num == vo.totalRecord}" >
-				<a href="#none" onclick="return false;">다음 글이 없습니다.</a>
+				<a href="#none" onclick="return false;">${next}</a>
 			</c:if>
 			<c:if test="${vo.num != vo.totalRecord}">
 				<a href="<%=request.getContextPath()%>/Resources/JSP/board/noticeBoard/noticeBoard_view.do?num=${vo.num+1}&pageNum=${vo.pageNum}">${next}</a>
@@ -39,7 +39,7 @@
 				<a href="<%=request.getContextPath() %>/Resources/JSP/board/noticeBoard/noticeBoard_view.do?num=${vo.num-1}&pageNum=${vo.pageNum}">${prev}</a>
 			</c:if>
 			<c:if test="${vo.num == 1}">
-				<a href="#none" onclick="return false;">이전 글이 없습니다.</a>
+				<a href="#none" onclick="return false;">${prev}</a>
 			</c:if>
 			</div>
 		<hr style="border:1px solid #eee"/>

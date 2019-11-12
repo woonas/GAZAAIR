@@ -20,7 +20,7 @@ public interface MemberInterface {
 
     String findPw(MemberVO vo);
 
-    void verification(MemberVO vo);
+    String isExisting(boolean lookingForId, String name, String phone);
 
     String ipinCheck(boolean lookingForId, String id, String pw);
 }

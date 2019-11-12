@@ -25,7 +25,7 @@
                 </div>
                 <div class="row clearfix">
                     <div class="col-two-fourth trip">
-                        <div class="col-tenth">
+                        <div class="col-tenth" style="text-align: left; margin-left: -20px; line-height: 222px">
                             <i class="fas fa-plane-departure"></i>
                         </div>
                         <div class="col-fourth">

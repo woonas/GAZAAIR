@@ -1,11 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
     <head>
     <meta charset="UTF-8">
     <title>추천상품</title>
-    <link rel="stylesheet" href="../../CSS/eventNpackage.css">
+    
+    <link rel="stylesheet" href="../../CSS/eventNproduct.css">
     <script>window.onbeforeunload=() => window.scrollTo(0, 0)</script>
 </head>
 
@@ -47,7 +49,7 @@
 						<p>
 							GAZA AIR만의<br />특별한 혜택!<br />지금바로 만나보세요
 						</p>
-						<a href="<%=request.getContextPath()%>/Resources/JSP/flight/booking/booking1.do?city=${v.city}&iata=${v.IATA}"><button class="btn-booking blueBtn">예약하기</button></a>
+						<a href="#"><button class="btn-booking blueBtn">예약하기</button></a>
 					</div>
 				</div>
 			<c:set var="i" value="${i+1}" />
@@ -56,7 +58,8 @@
 	</c:forEach>
 	</section>
     <%@ include file="../common/footer.jspf" %>
-    
+	<script src="../../JS/common.js"></script>
+
 	<script>
         tabEvent('.tab-menu1');
     </script>

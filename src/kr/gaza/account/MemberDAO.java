@@ -19,7 +19,7 @@ public class MemberDAO extends DBConn implements MemberInterface {
 				}
 			}
 		}catch(Exception e) {
-			System.out.println("Member IdCheck Error...");
+			System.out.println("idCheck ����...");
 			e.printStackTrace();
 		}finally {
 			dbClose();
@@ -55,7 +55,7 @@ public class MemberDAO extends DBConn implements MemberInterface {
 			cnt = pstmt.executeUpdate();
 			
 		}catch(Exception e) {
-			System.out.println("Member Insert Error...");
+			System.out.println("ȸ������ insertRecord ����...");
 			e.printStackTrace();
 		}finally {
 			dbClose();
@@ -79,7 +79,7 @@ public class MemberDAO extends DBConn implements MemberInterface {
 				vo.setMemberId(rs.getString(3));
 			}
 		}catch(Exception e) {
-			System.out.println("Member Login Error...");
+			System.out.println("�α��� ����...");
 			e.printStackTrace();
 		}finally {
 			dbClose();
@@ -115,7 +115,7 @@ public class MemberDAO extends DBConn implements MemberInterface {
 				vo.setDirectronic(rs.getString(16));
 			}
 		}catch(Exception e) {
-			System.out.println("Member GetMember Error...");
+			System.out.println("ȸ������ �������� ����...");
 			e.printStackTrace();
 		}finally {
 			dbClose();
@@ -143,7 +143,7 @@ public class MemberDAO extends DBConn implements MemberInterface {
 			cnt = pstmt.executeUpdate();
 			
 		}catch(Exception e) {
-			System.out.println("Member Update Error...");
+			System.out.println("ȸ������ ���� ����...");
 			e.printStackTrace();
 		}finally {
 			dbClose();
@@ -165,7 +165,7 @@ public class MemberDAO extends DBConn implements MemberInterface {
 			cnt = pstmt.executeUpdate();
 			
 		}catch(Exception e) {
-			System.out.println("Member Update Password Error...");
+			System.out.println("��й�ȣ ���� ����...");
 			e.printStackTrace();
 		}finally {
 			dbClose();
@@ -186,7 +186,7 @@ public class MemberDAO extends DBConn implements MemberInterface {
 			cnt = pstmt.executeUpdate();
 			
 		}catch(Exception e) {
-			System.out.println("Member Delete Error...");
+			System.out.println("ȸ��Ż�� ����...");
 			e.printStackTrace();
 		}finally {
 			dbClose();
@@ -212,7 +212,7 @@ public class MemberDAO extends DBConn implements MemberInterface {
 			}
 			
 		}catch(Exception e) {
-			System.out.println("Member FindID Error...");
+			System.out.println("���̵�ã�� ����...");
 			e.printStackTrace();
 		}finally {
 			dbClose();
@@ -247,25 +247,28 @@ public class MemberDAO extends DBConn implements MemberInterface {
 	}
 
     @Override
-    public void verification(MemberVO vo) {
+    public String isExisting(boolean lookingForId, String name, String phone) {
+        String result = "";
         try {
             dbConn();
-            String sql = "select memberid, memberpwd from member where membernamekor=? and membertel=?";
+            String sql;
+            if (lookingForId) sql = "select memberId from member where membername=? memberphone=?";
+            else sql = "select memberPw from member where membername=? memberphone=?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, vo.getMemberNameKor());
-            pstmt.setString(2, vo.getTel());
+            pstmt.setString(1, name);
+            pstmt.setString(2, phone);
 
             rs = pstmt.executeQuery();
-            if(rs.next()) {
-                vo.setMemberId(rs.getString(1));
-                vo.setMemberPwd(rs.getString(2));
-            }
+            if(rs.next())
+                result = rs.getString(1);
         }catch(Exception e) {
             System.out.println("폰인증 체크 오류...");
             e.printStackTrace();
         }finally {
             dbClose();
         }
+
+	    return result;
     }
 
     @Override

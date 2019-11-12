@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 	String path = request.getContextPath();
@@ -32,15 +33,15 @@
 								<li><img src="<%=path %>/Resources/IMG/main/nav_flight.jpg"/></li>
 							</ul>
 							<ul>
-								<li><a href="<%=path %>/Resources/JSP/flight/booking/booking1.do">항공권예약</a></li>
+								<li><a href="<%=path %>/Resources/HTML/not_using/book.html">항공권예약</a></li>
 								<li><a href="#">정기 운항스케줄</a></li>
 								<li><a href="#">실시간 운항스케줄</a></li>
-								<li><a href="<%=path %>/Resources/JSP/flight/schedule/routeMap.do">운항노선도</a></li>
+								<li><a href="<%=path %>/Resources/JSP/etc/routeMap.do">운항노선도</a></li>
 							</ul>
 							<ul>
-								<li><a href="<%=path %>/Resources/JSP/eventNpackage/best_package.do">베스트상품</a></li>
-								<li><a href="<%=path %>/Resources/JSP/eventNpackage/recommend_package.do">추천상품</a></li>
-								<li><a href="<%=path %>/Resources/JSP/eventNpackage/event_list.do">제휴이벤트</a></li>
+								<li><a href="<%=path %>/Resources/JSP/eventNproduct/best_package.do">베스트상품</a></li>
+								<li><a href="<%=path %>/Resources/JSP/eventNproduct/recommend_package.do">추천상품</a></li>
+								<li><a href="<%=path %>/Resources/JSP/eventNproduct/event_list.do">제휴이벤트</a></li>
 							</ul>
 							<ul>
 								<li><a href="#">공항서비스</a></li>
@@ -49,9 +50,9 @@
 								<li><a href="#">항공기안내</a></li>
 							</ul>
 							<ul>
-								<li><a href="<%=path %>/Resources/JSP/board/noticeBoard/noticeBoard_list.do">공지사항</a></li>
+								<li><a href="<%=path %>/Resources/JSP/board/noticeBoard/notice.do">공지사항</a></li>
 								<li><a href="<%=path %>/Resources/HTML/service_faq.html">FAQ</a></li>
-								<li><a href="<%=path %>/Resources/JSP/board/reviewBoard/reviewBoard_list.do">이용후기</a></li>
+								<li><a href="<%=path %>/Resources/JSP/board/reviewBoard/review.jsp">이용후기</a></li>
 							</ul>
 							<ul>
 								<c:if test="${memberName==null }">

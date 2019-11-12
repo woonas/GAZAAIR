@@ -155,6 +155,34 @@ let cal_generator = (strId, startDate, numOfMonths) => {
     });
 };
 
+/* loader */
+let loader_generator = () => {
+    document.querySelector('section.content').insertAdjacentHTML('afterend', 
+       `<div class="loaderWrapper">
+        <div class='body'>
+        <span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        </span>
+        <div class='base'>
+        <span></span>
+        <div class='face'></div>
+        </div>
+        </div>
+        <div class='longfazers'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        </div>
+        <p>로딩중...</p>
+        </div>
+       `);
+};
+
+
 /* 탑승객 수 +, - 버튼 */
 const changeNumOfPassengers = () => {
     let btns_minus = document.querySelectorAll('.minus');
@@ -217,8 +245,22 @@ const overlay = document.querySelector('.overlay');
 
 //네비게이션
 const navi = () => {
-    const submenus = document.querySelectorAll('#subMenu>ul');
+    const menus = document.querySelectorAll('#mainMenu>ul>li');
+    const subMenuWrap = document.getElementById('subMenuWrap');
+    const submenus = subMenuWrap.children[0].children;
+    const menubg = document.getElementById('menuBg');
     const navBar = document.getElementById('navBar');
+
+    menus.forEach(menu => {
+       menu.addEventListener('mouseenter', () => {
+           subMenuWrap.style.height = '220px';
+           menubg.style.height = '220px';
+       });
+       menu.addEventListener('mouseleave', () => {
+            subMenuWrap.style.height = '0';
+            menubg.style.height = '0';
+       });
+    });
 
     for (let i = 1; i < submenus.length; i++) {
         const left = 9.5 + i * 15;
@@ -236,6 +278,7 @@ const navi = () => {
 };
 
 //상단부분으로 이동 버튼
+
 const moveScroll = () => {
     window.scrollY = window.scrollY - 60 > 0? window.scrollY - 60 : 0;
     document.documentElement.scrollTop = document.documentElement.scrollTop - 60 > 0? document.documentElement.scrollTop - 60 : 0;
@@ -247,66 +290,11 @@ const moveToTop = () => {
     document.querySelector('.topBtn').addEventListener('click', () => setTimeout(moveScroll,15));
 };
 
-//메인네비 하단줄 제거
-const menuBorderRemover = () => {
-    const submenus = document.querySelectorAll('#mainMenu>ul>li');
-    const menuBg = document.getElementById('menuBg');
-    menuBg.style.borderTopColor = 'transparent';
-    submenus.forEach(submenu => {
-        submenu.addEventListener('mouseenter', () => menuBg.style.borderTopColor = '#777');
-        submenu.addEventListener('mouseleave', () => menuBg.style.borderTopColor = 'transparent');
-    });
-};
-
-// select option 생성
-const setDateOption = () => {
-    const year = document.getElementById('year');
-    const month = document.getElementById('month');
-
-    const selectedYear = year.options[year.selectedIndex].value;
-    const selectedMonth = month.options[month.selectedIndex].value;
-
-    const lastDate = new Date(selectedYear, selectedMonth, 0).getDate();
-    let dayOptions = "<option value=\"\">일</option>";
-    for (let i = 1; i <= lastDate; i++) {
-        if(i <= 9) dayOptions += `<option value=0${i}>0${i}</option>`;
-        else dayOptions += `<option value=${i}>${i}</option>`;
-    }
-    return dayOptions;
-};
-
-const birth_option_generator = () => {
-    const year = document.getElementById('year'),
-        month = document.getElementById('month'),
-        day = document.getElementById('day');
-    let yearOptions = "<option value=''>년</option>",
-        monthOptions = "<option value=''>월</option>",
-        dayOptions = "<option value=''>일</option>";
-
-    const thisYear = new Date().getFullYear();
-    for (let i = thisYear-100; i <= thisYear; i++)
-        yearOptions += `<option value=${i}>${i}</option>`;
-    year.innerHTML = yearOptions;
-    for (let i = 1; i <= 12; i++) {
-        if(i <= 9) monthOptions += `<option value=0${i}>0${i}</option>`;
-        else monthOptions += `<option value=${i}>${i}</option>`;
-    }
-    month.innerHTML = monthOptions;
-    for (let i = 1; i <= 31; i++) {
-        if(i <= 9) dayOptions += `<option value=0${i}>0${i}</option>`;
-        else dayOptions += `<option value=${i}>${i}</option>`;
-    }
-    day.innerHTML = dayOptions;
-
-    year.addEventListener('change', () => day.innerHTML = setDateOption());
-    month.addEventListener('change', () => day.innerHTML = setDateOption());
-};
-
-
 (() => {
     navi();
     moveToTop();
     windowClose();
+    loader_generator();
     document.body.classList.add('noscroll');
 
     /* Loader */

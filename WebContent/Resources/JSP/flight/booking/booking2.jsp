@@ -1,11 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>항공권 예약 - 항공편 선택</title>
-        <link rel="stylesheet" href="../../../CSS/booking.css">
+        <link rel="stylesheet" href="../../CSS/booking.css">
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>
         <!-- Font Awesome CDN -->
         <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
         <script>window.onbeforeunload=() => window.scrollTo(0, 0)</script>
@@ -13,6 +15,8 @@
     <body>
     <%@ include file="../../common/nav.jspf" %>
         <div class="overlay"></div>
+        
+        <nav style="height: 80px; background:cornflowerblue;"></nav>
         
         <div class="cur-route itinerary">
             <div class="row clearfix book-input-form">
@@ -44,26 +48,33 @@
                     </label>
                     <input type="text" id="num-of-passengers" name="num-of-passengers" readonly>
                 </div>
-                <i class="fas fa-redo-alt"></i>
             </div>
             <input type="radio" name="trip-type" id="trip-type" class="hidden" checked>
         </div>
+        <div class="journey-name-sticky-1 hidden" name="journey-1">
+            <i class="fas fa-plane-departure font-blue4"></i>
+            <span class="font-blue4">가는 여정</span>
+            <span id="airportFrom-name-sticky-1">
+                GMP <span>서울 / 김포</span>
+            </span>
+            <span id="airportTo-name-sticky-1">
+                CJU <span>제주</span>
+            </span>
+        </div>
         
         <section class="content">
-            <div id="journey-1" class="journey-wrapper clearfix">
+            <div id="journey-1" class="journey-wrapper">
                 <div class="journey-name-fixed hidden" name="journey-1">
-                    <div class="row">
-                        <i class="fas fa-plane-departure font-blue4"></i>
-                        <span class="font-blue4">가는 여정</span>
-                        <span id="airportFrom-name-sticky-mini-1">
-                            GMP <span>서울 / 김포</span>
-                        </span>
-                        <span id="airportTo-name-sticky-mini-1">
-                            CJU <span>제주</span>
-                        </span>
-                    </div>
+                    <i class="fas fa-plane-departure font-blue4"></i>
+                    <span class="font-blue4">가는 여정</span>
+                    <span id="airportFrom-name-sticky-mini-1">
+                        GMP <span>서울 / 김포</span>
+                    </span>
+                    <span id="airportTo-name-sticky-mini-1">
+                        CJU <span>제주</span>
+                    </span>
                 </div>
-                
+                   
                 <div class="journey-name">
                     <i class="fas fa-plane-departure font-blue4"></i>
                     <span class="font-blue4">가는 여정</span>
@@ -83,49 +94,49 @@
                         <input type="radio" name="price-of-day-1" id="journey-1-price-1">
                         <label for="journey-1-price-1">
                             <div class="date">09.20 (금)</div>
-                            <div class="price"><span>KRW</span> 105,500</div>
+                            <div class="price">KRW105,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-1" id="journey-1-price-2">
                         <label for="journey-1-price-2">
                             <div class="date">09.21 (토)</div>
-                            <div class="price"><span>KRW</span> 65,500</div>
+                            <div class="price">KRW65,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-1" id="journey-1-price-3">
                         <label for="journey-1-price-3">
                             <div class="date">09.22 (일)</div>
-                            <div class="price"><span>KRW</span> 65,500</div>
+                            <div class="price">KRW65,000</div>
                         </label>
                     </div>
                     <div class="price-of-day">
-                        <input type="radio" name="price-of-day-1" id="journey-1-price-4" checked>
+                        <input type="radio" name="price-of-day-1" id="journey-1-price-4">
                         <label for="journey-1-price-4">
                             <div class="date">09.23 (월)</div>
-                            <div class="price"><span>KRW</span> 45,500</div>
+                            <div class="price">KRW45,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-1" id="journey-1-price-5">
                         <label for="journey-1-price-5">
                             <div class="date">09.24 (화)</div>
-                            <div class="price"><span>KRW</span> 65,500</div>
+                            <div class="price">KRW65,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-1" id="journey-1-price-6">
                         <label for="journey-1-price-6">
                             <div class="date">09.25 (수)</div>
-                            <div class="price"><span>KRW</span> 45,500</div>
+                            <div class="price">KRW45,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-1" id="journey-1-price-7">
                         <label for="journey-1-price-7">
                             <div class="date">09.26 (목)</div>
-                            <div class="price"><span>KRW</span> 105,500</div>
+                            <div class="price">KRW105,500</div>
                         </label>
                     </div>
                     <div class="buttons btn-price-next-week"></div>
@@ -173,12 +184,12 @@
                         <div class="col-fifth">할인운임</div>
                         <div class="col-fifth">정상운임</div>
                     </div>
-                    
+
                     <div class="row flight-table-schedule clearfix">
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -194,7 +205,7 @@
                             <div class="empty-seats">9석</div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-1-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-1-2"> 
                             <label for="journey-1-ticket-row-1-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -217,7 +228,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -233,7 +244,7 @@
                             <div class="empty-seats">9석</div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-2-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-2-2"> 
                             <label for="journey-1-ticket-row-2-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -256,7 +267,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -272,7 +283,7 @@
                             <div class="empty-seats">9석</div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-3-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-3-2"> 
                             <label for="journey-1-ticket-row-3-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -295,7 +306,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -311,7 +322,7 @@
                             <div class="empty-seats">9석</div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-4-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-4-2"> 
                             <label for="journey-1-ticket-row-4-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -334,7 +345,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -350,7 +361,7 @@
                             <div class="empty-seats">9석</div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-5-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-5-2"> 
                             <label for="journey-1-ticket-row-5-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -373,7 +384,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -389,7 +400,7 @@
                             <div class="empty-seats">9석</div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-6-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-6-2"> 
                             <label for="journey-1-ticket-row-6-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -406,13 +417,13 @@
                             </div>
                             <div class="empty-seats">9석</div>
                         </div>
-                    </div>
+                    </div>   
                     
                     <div class="row flight-table-schedule clearfix">
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -428,7 +439,7 @@
                             </div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-7-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-7-2"> 
                             <label for="journey-1-ticket-row-7-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -445,13 +456,13 @@
                             </div>
                             <div class="empty-seats">9석</div>
                         </div>
-                    </div>
+                    </div>   
                     
                     <div class="row flight-table-schedule clearfix">
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -467,7 +478,7 @@
                             </div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-8-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-8-2"> 
                             <label for="journey-1-ticket-row-8-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -484,13 +495,13 @@
                             </div>
                             <div class="empty-seats">9석</div>
                         </div>
-                    </div>
+                    </div>   
                     
                     <div class="row flight-table-schedule clearfix">
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -506,7 +517,7 @@
                             <div class="empty-seats">9석</div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-9-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-9-2"> 
                             <label for="journey-1-ticket-row-9-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -523,13 +534,13 @@
                             </div>
                             <div class="empty-seats">9석</div>
                         </div>
-                    </div>
+                    </div>   
                     
                     <div class="row flight-table-schedule clearfix">
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -545,7 +556,7 @@
                             <div class="empty-seats">9석</div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-10-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-1-ticket-row-10-2"> 
                             <label for="journey-1-ticket-row-10-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -562,7 +573,7 @@
                             </div>
                             <div class="empty-seats">9석</div>
                         </div>
-                    </div>
+                    </div>    
                 </div>
             </div>
             
@@ -597,49 +608,49 @@
                         <input type="radio" name="price-of-day-2" id="journey-2-price-1">
                         <label for="journey-2-price-1">
                             <div class="date">09.20 (금)</div>
-                            <div class="price"><span>KRW</span> 105,500</div>
+                            <div class="price">KRW105,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-2" id="journey-2-price-2">
                         <label for="journey-2-price-2">
                             <div class="date">09.21 (토)</div>
-                            <div class="price"><span>KRW</span> 65,500</div>
+                            <div class="price">KRW65,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-2" id="journey-2-price-3">
                         <label for="journey-2-price-3">
                             <div class="date">09.22 (일)</div>
-                            <div class="price"><span>KRW</span> 65,500</div>
+                            <div class="price">KRW65,000</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-2" id="journey-2-price-4">
                         <label for="journey-2-price-4">
                             <div class="date">09.23 (월)</div>
-                            <div class="price"><span>KRW</span> 45,500</div>
+                            <div class="price">KRW45,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-2" id="journey-2-price-5">
                         <label for="journey-2-price-5">
                             <div class="date">09.24 (화)</div>
-                            <div class="price"><span>KRW</span> 65,500</div>
+                            <div class="price">KRW65,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-2" id="journey-2-price-6">
                         <label for="journey-2-price-6">
                             <div class="date">09.25 (수)</div>
-                            <div class="price"><span>KRW</span> 45,500</div>
+                            <div class="price">KRW45,500</div>
                         </label>
                     </div>
                     <div class="price-of-day">
                         <input type="radio" name="price-of-day-2" id="journey-2-price-7">
                         <label for="journey-2-price-7">
                             <div class="date">09.26 (목)</div>
-                            <div class="price"><span>KRW</span> 105,500</div>
+                            <div class="price">KRW105,500</div>
                         </label>
                     </div>
                     <div class="buttons btn-price-next-week"></div>
@@ -692,7 +703,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -708,7 +719,7 @@
                             <div class="empty-seats">9석</div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-1-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-1-2"> 
                             <label for="journey-2-ticket-row-1-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -731,7 +742,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -747,7 +758,7 @@
                             <div class="empty-seats">9석</div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-2-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-2-2"> 
                             <label for="journey-2-ticket-row-2-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -770,7 +781,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -786,7 +797,7 @@
                             <div class="empty-seats">9석</div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-3-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-3-2"> 
                             <label for="journey-2-ticket-row-3-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -809,7 +820,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -825,7 +836,7 @@
                             <div class="empty-seats">9석</div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-4-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-4-2"> 
                             <label for="journey-2-ticket-row-4-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -848,7 +859,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -864,7 +875,7 @@
                             <div class="empty-seats">9석</div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-5-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-5-2"> 
                             <label for="journey-2-ticket-row-5-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -887,7 +898,7 @@
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -903,7 +914,7 @@
                             <div class="empty-seats">9석</div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-6-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-6-2"> 
                             <label for="journey-2-ticket-row-6-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -920,13 +931,13 @@
                             </div>
                             <div class="empty-seats">9석</div>
                         </div>
-                    </div>
+                    </div>   
 
                     <div class="row flight-table-schedule clearfix">
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -942,7 +953,7 @@
                             </div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-7-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-7-2"> 
                             <label for="journey-2-ticket-row-7-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -959,13 +970,13 @@
                             </div>
                             <div class="empty-seats">9석</div>
                         </div>
-                    </div>
+                    </div>   
 
                     <div class="row flight-table-schedule clearfix">
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -981,7 +992,7 @@
                             </div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-8-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-8-2"> 
                             <label for="journey-2-ticket-row-8-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -998,13 +1009,13 @@
                             </div>
                             <div class="empty-seats">9석</div>
                         </div>
-                    </div>
+                    </div>   
 
                     <div class="row flight-table-schedule clearfix">
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -1020,7 +1031,7 @@
                             <div class="empty-seats">9석</div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-9-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-9-2"> 
                             <label for="journey-2-ticket-row-9-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -1037,13 +1048,13 @@
                             </div>
                             <div class="empty-seats">9석</div>
                         </div>
-                    </div>
+                    </div>   
 
                     <div class="row flight-table-schedule clearfix">
                         <div class="col-two-fifth">
                             <div class="col-fifth">06:05</div>
                             <div class="col-two-fifth">
-                                <div class="flight-detail"><i class="far fa-clock"></i>1시간 10분</div>
+                                <div class="flight-detail">1시간 10분</div>
                                 <div class="flight-detail">직항</div>
                             </div>
                             <div class="col-fifth">07:15</div>
@@ -1059,7 +1070,7 @@
                             <div class="empty-seats">9석</div>
                         </div>
                         <div class="col-fifth">
-                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-10-2">
+                            <input type="radio" name="flight-ticket" class="radio3 special-price-ticket" id="journey-2-ticket-row-10-2"> 
                             <label for="journey-2-ticket-row-10-2"></label>
                             <div>
                                 <span class="currency">KRW</span>
@@ -1076,7 +1087,7 @@
                             </div>
                             <div class="empty-seats">9석</div>
                         </div>
-                    </div>
+                    </div>    
                 </div>
             </div>
 
@@ -1094,8 +1105,8 @@
                 <li>항공권 운임에 따라 운임 규정이 상이하므로 반드시 운임 규정을 확인하시고 구매하시기 바랍니다.</li>
                 <li>각 운임의 표기된 할인율은 고시 편의상 소수점 이하 반올림한 값임을 알려드립니다.</li>
             </ul>
-    
-    
+            
+            
     
             <!--탑승객 팝업-->
             <div class="pop-up-window-type1" id="num-of-passengers-window">
@@ -1148,7 +1159,7 @@
                     <button class="blueBtn" id="selectBtn">선택</button>
                 </div>
             </div>
-    
+
             <!--나이계산기 팝업-->
             <div class="pop-up-window-type1 centeredX" id="btn-ageCalc-window">
                 <div>
@@ -1167,7 +1178,7 @@
             </div>
         </section>
         
-        <!--datepicker용-->
+<!--datepicker용-->
         <!-- Bootstrap JS -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -1176,13 +1187,16 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 
         <!-- Lightpick CSS -->
-        <link rel="stylesheet" href="../../../../Vendor/javascript-datepicker-lightpick/css/lightpick.css">
+        <link rel="stylesheet" href="../../../Vendor/javascript-datepicker-lightpick/css/lightpick.css">
 
         <!-- Lightpick JS -->
-        <script src="../../../../Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
-        <script src="../../../../Vendor/waypoints/jquery.waypoints.min.js"></script>
+        <script src="../../../Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
+        
+        <script src="../../../Vendor/waypoints/jquery.waypoints.min.js"></script>
+        
+        <script src="../../JS/common.js"></script>
+        <script src="../../JS/airportpicker.js"></script>
+        <script src="../../JS/booking.js"></script>
         <%@ include file="../../common/footer.jspf" %>
-        <script src="../../../JS/airportpicker.js"></script>
-        <script src="../../../JS/booking.js"></script>
     </body>
 </html>

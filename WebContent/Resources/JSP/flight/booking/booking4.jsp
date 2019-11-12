@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <title>항공권 예약 - 운임확인 및 최종동의</title>
     <link rel="stylesheet" href="../../../CSS/booking.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>
     <script src="https://kit.fontawesome.com/9c923ac74a.js" crossorigin="anonymous"></script>
     <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
 </head>
@@ -24,7 +25,7 @@
                 <div class="col-three-eighth">출도착시간</div>
                 <div class="col-eighth">편명/기종</div>
                 <div class="col-eighth">운임할인</div>
-                <div class="col-eighth">상태</div>
+                <div class="col-eighth">예약변경</div>
                 <div class="col-eighth">환불</div>
             </div>
             <div class="row clearfix">
@@ -37,10 +38,8 @@
                         <div>서울 / 김포</div>
                         <div>06:05</div>
                     </div>
-                    <div class="col-two-fourth flight-detail">
-                        <span><i class="far fa-clock"></i> 1시간 10분</span>
+                    <div class="col-two-fourth">
                         <img src = "../../../IMG/icon/flight-table.svg" alt = "">
-                        <span>직항</span>
                     </div>
                     <div class="col-fourth">
                         <div>제주</div>
@@ -314,11 +313,13 @@
         </ul>
         
         <div class="flex">
-            <a href="#" onclick="history.back()"><button class="whiteBtn left">&lt; 이전</button></a>
-            <a href="<%=path %>/Resources/JSP/flight/payment/payment.jsp"><button class="right blueBtn">결제 &gt;</button></a>
+            <a href="booking3.html"><button class="whiteBtn left">&lt; 이전</button></a>
+            <a href="../payment/payment.html"><button class="right blueBtn">결제 &gt;</button></a>
         </div>
     </section>
-    <%@ include file="../../common/footer.jspf" %>
+    
+    <script src="../../../JS/common.js"></script>
     <script src="../../../JS/booking.js"></script>
+    <%@ include file="../../common/footer.jspf" %>
 </body>
 </html>

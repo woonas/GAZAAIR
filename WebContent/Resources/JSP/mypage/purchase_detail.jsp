@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
         <title>구매 내역</title>
         <link rel="stylesheet" href="../../CSS/my_page.css">
-        <link rel="stylesheet" href="../../HTML/not_using/payment.css">
+        <link rel="stylesheet" href="../../CSS/payment.css">
         <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
     </head>

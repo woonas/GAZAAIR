@@ -170,6 +170,54 @@ const agreement_check = () => {
     }
 };
 
+// 아이디 비밀번호찾기 생년월일 선택 select option
+
+const setDateOption = () => {
+    const year = document.getElementById('year');
+    const month = document.getElementById('month');
+
+    const selectedYear = year.options[year.selectedIndex].value;
+    const selectedMonth = month.options[month.selectedIndex].value;
+
+    const lastDate = new Date(selectedYear, selectedMonth, 0).getDate();
+    let dayOptions = "<option value=\"\">일</option>";
+    for (let i = 1; i <= lastDate; i++) {
+        if(i <= 9) dayOptions += `<option value=0${i}>0${i}</option>`;
+        else dayOptions += `<option value=${i}>${i}</option>`;
+    }
+    return dayOptions;
+};
+
+const birth_option_generator = () => {
+    const year = document.getElementById('year'),
+         month = document.getElementById('month'),
+           day = document.getElementById('day');
+    let yearOptions = "<option value=''>년</option>",
+        monthOptions = "<option value=''>월</option>",
+        dayOptions = "<option value=''>일</option>";
+
+    const thisYear = new Date().getFullYear();
+    for (let i = thisYear-100; i <= thisYear; i++)
+        yearOptions += `<option value=${i}>${i}</option>`;
+    year.innerHTML = yearOptions;
+    for (let i = 1; i <= 12; i++) {
+        if(i <= 9) monthOptions += `<option value=0${i}>0${i}</option>`;
+        else monthOptions += `<option value=${i}>${i}</option>`;
+    }
+    month.innerHTML = monthOptions;
+    for (let i = 1; i <= 31; i++) {
+        if(i <= 9) dayOptions += `<option value=0${i}>0${i}</option>`;
+        else dayOptions += `<option value=${i}>${i}</option>`;
+    }
+    day.innerHTML = dayOptions;
+
+    year.addEventListener('change', () => {
+        day.innerHTML = setDateOption()
+    });
+    month.addEventListener('change', () => {
+        day.innerHTML = setDateOption()
+    });
+};
 
 (() => {
     /* signup1 */
@@ -268,7 +316,7 @@ const agreement_check = () => {
 
         /* 아디, 비번 검색*/
         function search() {
-            var params = $("#searchForm").serialize();
+            var params = $("#idFindFrm").serialize();
             $.ajax({
                 url : "<%=request.getContextPath() %>/Resources/JSP/account/search/searchOk.do",
                 data : params,
@@ -284,38 +332,7 @@ const agreement_check = () => {
             });
         }
         document.getElementById('search').addEventListener('click', search);
-
-        function verification(targetForm) {
-            var params = $(targetForm).serialize();
-            $.ajax({
-                url : "<%=request.getContextPath() %>/Resources/JSP/account/search/verificationOk.do",
-                data : params,
-                success : function(result){
-                    if(result)
-                        $("#result").html("고객님의 아이디는 <span class='font-blue4'>"+result+"</span>입니다.");
-                    else
-                        $("#result").text("검색된 아이디가 없습니다. 입력하신 정보를 다시 확인해주세요.");
-                },
-                error : function(){
-                    alert("계정 찾기에 실패했습니다.");
-                }
-            });
-        }
-
-
-        document.getElementById('authorizeBtn').addEventListener('click', () => {
-            const type = document.querySelector('input[name="veri-type"]:checked');
-            const name = document.getElementById('username');
-            const phone = document.getElementById('userphone');
-            name.value = document.getElementById(type.id + '-name').value;
-            phone.value = document.getElementById(type.id + '-phone').value;
-
-
-
-            setTimeout(() => {
-                verification('#verificationForm');
-            }, 4500);
-        });
+        document.getElementById('authorizeBtn').addEventListener('click', () => { setTimeout(search, 4500) });
         document.getElementById('authorizeBtn2').addEventListener('click', () => { setTimeout(search, 4500) });
     }
 

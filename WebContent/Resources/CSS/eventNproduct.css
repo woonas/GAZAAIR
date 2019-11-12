@@ -1,0 +1,169 @@
+@charset "UTF-8";
+@import url("layout.css") screen;
+
+/* ----------------------------------------------- */
+/* 베스트상품 best_product.html */
+/* 추천상품 recommend_product.html */
+/* ----------------------------------------------- */
+
+.best-product .tab-menu1 li.on:before {
+    width: 1em;
+    height: 0.5em;
+    margin-left: -30px;
+    margin-top: 20px;
+}
+
+.best-product .tab-menu1 li { background-color: #fff; }
+
+.tab-content-container { margin-top: 70px; }
+.product-wrapper {
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 50px;
+    display: flex;
+}
+.product-wrapper>div { height: 100%; }
+.change-order>.product-info-wrapper { order: -1; }
+.img-wrapper>img { width: 100%;}
+.product-info-wrapper {
+    background-color: rgba(255, 235, 205, 0.3);
+    padding: 60px 30px 20px;
+}
+.product-info-wrapper>p:first-of-type {
+    font-size: 300%;
+    color: #bbb;
+    margin-bottom: 20px;
+    font-weight: 100;
+}
+.product-info-wrapper>p:nth-of-type(2) {
+    font-size: 200%;
+    margin-bottom: 30px;
+}
+.product-info-wrapper>p:nth-of-type(3) {
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+
+.btn-booking {
+    border-radius: 0px;
+    font-size: 85%;
+    margin: 0 6px;
+    padding: 12px 46px 12px 46px;
+}
+
+.tab-menu1 { z-index: 200; }
+.tab-content-container {
+    animation: fadeInDown 1.5s;
+}
+@keyframes fadeInDown {
+    from { opacity:0.2; transform: translatey(-30px); }
+    to { opacity:1; transform: translatey(0); }
+}
+
+/* ----------------------------------------------- */
+/* 이벤트리스트 alliance_event.html */
+/* ----------------------------------------------- */
+
+.product-row { margin: 20px auto; }
+.product-row>div {
+    width: calc(50% - 5px) !important;
+    border: 1px solid transparent;
+}
+.product-row>div:hover { border: 1px solid #aaa; }
+.product-row>div:hover>div:first-of-type { opacity: 0.8; }
+.product-row>div:first-of-type { margin-right: 5px; }
+.product-row>div:nth-of-type(2) { margin-left: 5px; }
+.product-row .col-half div:first-of-type {
+    width: 240px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    overflow:hidden;
+}
+
+.seperatorLogo {
+    width: 80%;
+    margin: 5px auto 10px;
+    border: 1px solid #aaa;
+    border-top: 0;
+}
+.product-detail {
+    height:200px;
+    background-color: rgba(250,250,250,0.9);
+}
+.product-detail>a{ text-decoration: none; }
+.product-detail>a>p {
+    margin-top: 25px;
+    margin-left: 10%;
+    font-size: 150%;
+    color: #555;
+}
+
+.product-row>div>div:nth-of-type(2) {
+    width: 55%;
+    height: 200px;
+}
+
+.list-type1 {
+    padding-top: 10px;
+    border: none;
+}
+
+.list-type1>li {
+    margin-left: 5%;
+    margin-bottom: 8px;
+    list-style-type: none;
+    color: #555;
+}
+
+
+/* ----------------------------------------------- */
+/* 이벤트 상세페이지 event_detail.html */
+/* ----------------------------------------------- */
+
+
+#event-select {
+    width: 300px;
+    padding: 0 45px 0 15px;
+    background-image: url(../IMG/icon/bg_select_arrow.png);
+    background-repeat: no-repeat;
+    background-size: 12px 8px;
+    background-position: right 13px top 50%;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    line-height: 40px;
+    font-size: 100%;
+    color: #555;
+    height: 46px;
+    margin-right: 10px;
+    border: 1px solid #f3f3f3;
+    border-bottom: 1px solid #ddd;
+    background-color: #f3f3f3;
+    border-radius: 0 !important;
+}
+
+#event-select:hover {
+    background-color: #fff;
+    border: 1px solid #36f;
+}
+
+.event-title-wrapper {
+    overflow: hidden;
+    padding: 21px 25px;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #ddd;
+}
+
+.event-title {
+    line-height: 46px;
+    font-size: 140%;
+}
+
+#Tolist {
+    border-radius: 0;
+    padding: 10px 30px;
+    font-size: 130%;
+    float: right;
+}
