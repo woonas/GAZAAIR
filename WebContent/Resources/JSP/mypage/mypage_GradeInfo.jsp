@@ -126,11 +126,10 @@
         </div>
         <div id="tab-2-container" class="tab-content-container hidden">
         	<ul class="list-type2 last-note bg-gray6">
-				<li>GAZA 클럽 우수회원이란 실버등급을 제외한 골드 이상 회원을 뜻합니다.</li>
-				<li>2018년 10월 1일부터는 ‘기준일’로부터 매 24개월간의 자격 조건 및 자격 유지 조건에 아시아나 제휴카드 이용 실적이 반영되어 우수회원 자격을 보다 쉽게 획득하실 수 있도록 하였습니다.</li>
+				<li>아시아나클럽 우수회원에게 제공되는 다양한 우대서비스를 확인하세요.</li>
 			</ul>
 			<br><br>
-			<div class="h2Text"><h2>승급 기준</h2></div>
+			<div class="h2Text"><h2>등급별 혜택</h2></div>
 			<br>
 			<table class="table-list">
 	            <col-group>
@@ -157,7 +156,6 @@
 	                    <td class="text-align-center">평생</td>
 	                    <td class="text-align-center">평생</td>
 	                </tr>
-	                
 	                <tr>
 	                    <td class="bg-gray5">공제 마일리지 할인쿠폰<br>(승급 후)</td>
 	                    <td class="text-align-center">-</td>
@@ -166,7 +164,6 @@
 	                    <td class="text-align-center">매 24개월간 아시아나항공편 및 스타얼라이언스 항공편 10만 탑승마일 적립 또는 아시아나항공 100회 탑승시 2매 (좌석 승급 공제마일 50% 할인 또는 마일리지 항공권 1만 마일 할인)</td>
 	                    <td class="text-align-center">아시아나항공편 10만 탑승마일 적립 시 마다 2매 (좌석 승급 공제마일 50% 할인 또는 마일리지 항공권 1만 마일 할인)</td>
 	                </tr>
-	                
 	                <tr>
 	                    <td class="bg-gray5" rowspan="2">한국 소재 라운지 이용</td>
 	                    <td class="text-align-center" rowspan="2">비즈니스 클래스라운지 이용권 2매(승급 및 자격 유지실적 충족 시)</td>
@@ -175,76 +172,78 @@
 	                    <td class="text-align-center">2018.12.31. 까지승급 시 최상위라운지 이용2019.1.1. 부터승급 시 차상위라운지 이용</td>
 	                    <td class="text-align-center">최상위 라운지(동반자 1인 포함)</td>
 	                </tr>
-	                
 	                <tr>
 	                	<td class="text-align-center" colspan="3">2018. 7. 1. 부터 인천공항 최상위 라운지 이용 우수회원 혜택은아시아나항공이 운항하는 정기 항공편 탑승 시에만 가능</td>
 	                </tr>
-	                
 	                <tr>
 	                    <td class="bg-gray5">해외 소재 라운지 이용</td>
 	                    <td class="text-align-center">-</td>
 	                    <td class="text-align-center" colspan="4">스타얼라이언스 골드 비즈니스 라운지, 계약 비즈니스 라운지</td>
 	                </tr>
-	                
 	                <tr>
-	                    <td class="bg-gray5"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
+	                    <td class="bg-gray5">탑승 전용<br/>수속카운터 이용</td>
+	                    <td class="text-align-center">전용 카운터(골드 전용 카운터가 있는 경우에 한함)</td>
+	                    <td class="text-align-center">전용 카운터(없는 경우 비즈니스 카운터 이용)</td>
+	                    <td class="text-align-center">소지하신 항공권의 차상위 카운터</td>
+	                    <td class="text-align-center">최상위 카운터</td>
+	                    <td class="text-align-center">최상위 카운터</td>
 	                </tr>
-	                
 	                <tr>
-	                    <td class="bg-gray5"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
+	                    <td class="bg-gray5">우수회원 탑승<br/>보너스 마일리지</td>
+	                    <td class="text-align-center">5%</td>
+	                    <td class="text-align-center">10%</td>
+	                    <td class="text-align-center">15%</td>
+	                    <td class="text-align-center">15%</td>
+	                    <td class="text-align-center">20%</td>
 	                </tr>
-	                
 	                <tr>
-	                    <td class="bg-gray5"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
+	                    <td class="bg-gray5" rowspan="4">무료 추가 수하물<br/>(아시아나항공)</td>
+	                    <td class="text-align-center bg-gray5" colspan="5">국제선</td>
 	                </tr>
-	                
 	                <tr>
-	                    <td class="bg-gray5"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
+	                  	<td class="text-align-center">1Piece 중 9kg 무료</td>
+	                    <td class="text-align-center" colspan="4">1Piece(개당 무게는 탑승 클래스 기준)<br/>* 이코노미 클래스 탑승 시 골드 혜택(1Piece 중 9kg 무료) 선택 가능</td>
 	                </tr>
-	                
 	                <tr>
-	                    <td class="bg-gray5"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
+	                    <td class="text-align-center bg-gray5" colspan="5">국제선</td>
 	                </tr>
-	                
 	                <tr>
-	                    <td class="bg-gray5"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
-	                    <td class="text-align-center"></td>
+	                    <td class="text-align-center">10kg</td>
+	                    <td class="text-align-center">20kg</td>
+	                    <td class="text-align-center">30kg</td>
+	                    <td class="text-align-center">30kg</td>
+	                    <td class="text-align-center">30kg</td>
 	                </tr>
-	                
-	                
-	                
-	               
-	                
-	            </tbody>
+	                <tr>
+	                	<td class="bg-gray5">무료 추가 수하물<br/>(스타얼라이언스)</td>
+	                    <td class="text-align-center">-</td>
+	                    <td class="text-align-center" colspan="4">1Piece(개당 무게는 탑승 클래스 기준)</td>
+	               </tr>
+	                <tr>
+	                	<td class="bg-gray5">성수기 마일리지 적용</td>
+	                    <td class="text-align-center">50% 추가공제</td>
+	                    <td class="text-align-center">50% 추가공제</td>
+	                    <td class="text-align-center">미적용</td>
+	                    <td class="text-align-center">미적용</td>
+	                    <td class="text-align-center">미적용</td>
+	                </tr>
+	                <tr>
+	                	<td class="bg-gray5">우선 탑승</td>
+	                    <td class="text-align-center">-</td>
+	                    <td class="text-align-center">가능</td>
+	                    <td class="text-align-center">가능</td>
+	                    <td class="text-align-center">가능</td>
+	                    <td class="text-align-center">가능</td>
+	                </tr>
+	                  <tr>
+	                	<td class="bg-gray5">마일리지 유효기간</td>
+	                    <td class="text-align-center">10년</td>
+	                    <td class="text-align-center">12년</td>
+	                    <td class="text-align-center">12년</td>
+	                    <td class="text-align-center">12년</td>
+	                    <td class="text-align-center">12년</td>
+	                </tr>
+	              </tbody>
 	        </table>
         </div>
         		
