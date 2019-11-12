@@ -20,4 +20,7 @@ const tabletabEvent = (type) => {
    else if (location.pathname.indexOf('fare') !== -1) {
         tabEvent('.tab-menu1');
     }
+   else if (location.pathname.indexOf('Grade') !== -1) {
+       tabEvent('.tab-menu1');
+   }
 })();

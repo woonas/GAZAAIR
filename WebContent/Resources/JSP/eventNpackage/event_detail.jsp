@@ -29,6 +29,5 @@
         <img src="<%=request.getContextPath()%>${vo.eventImg }" alt="" style="width:100%">
     </section>
     <%@ include file="../common/footer.jspf" %>
-    <script src="../../JS/common.js"></script>
 </body>
 </html>
