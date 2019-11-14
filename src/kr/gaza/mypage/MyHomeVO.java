@@ -6,18 +6,44 @@ public class MyHomeVO {
 	private String memberNameEng;
 	private String memberGrade;
 	private int memberFlightCnt;
-	private int myMileage; // ï¿½ï¿½ë°¡ï¿½É¸ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½
+	private int myMileage; 
 	private int needMileage;
+	//´Ù¸¥ Å×ÀÌºí¿¡¼­ °®°í¿Â °ªµé
+	private int seatReserveNum;
+	private String payDate;
 	
 	
-	
+	public String getPayDate() {
+		return payDate;
+	}
+	public void setPayDate(String payDate) {
+		this.payDate = payDate;
+	}
+	public int getOrderNum() {
+		return orderNum;
+	}
+	public void setOrderNum(int orderNum) {
+		this.orderNum = orderNum;
+	}
+	public int getOrderedFilghtNum() {
+		return orderedFilghtNum;
+	}
+	public void setOrderedFilghtNum(int orderedFilghtNum) {
+		this.orderedFilghtNum = orderedFilghtNum;
+	}
+	public int getSeatReserveNum() {
+		return seatReserveNum;
+	}
+	public void setSeatReserveNum(int seatReserveNum) {
+		this.seatReserveNum = seatReserveNum;
+	}
 	public int getNeedMileage() {
 		return needMileage;
 	}
 	public void setNeedMileage(int needMileage) {
 		this.needMileage = needMileage;
 	}
-	private int favoriteCnt; // ï¿½ï¿½ï¿½É³ë¼±ï¿½ï¿½ï¿½ï¿½
+	private int favoriteCnt; 
 	
 	
 	

@@ -7,7 +7,6 @@
         <meta charset="UTF-8">
         <title>예약내역</title>
         <link rel="stylesheet" href="../../CSS/my_page.css">
-        <link rel="stylesheet" href="<%=request.getContextPath() %>/Resources/CSS/navNfooter.css" type="text/css"/>
         <script>window.onbeforeunload = () => window.scrollTo(0, 0)</script>
     </head>
     <body>
@@ -176,7 +175,7 @@
                 <li>마일리지 좌석승급의 경우 추후 홈페이지에서 여정변경 및 환불이 불가합니다.</li>
             </ul>
         </section>
-    
+    	<%@ include file="../common/footer.jspf" %>
         <!-- Moment Js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
     
@@ -184,9 +183,8 @@
         <link rel="stylesheet" href="../../../Vendor/javascript-datepicker-lightpick/css/lightpick.css">
         <!-- Lightpick JS -->
         <script src="../../../Vendor/javascript-datepicker-lightpick/js/lightpick.js"></script>
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="../../JS/common.js"></script>
         <script src="../../JS/mypage.js"></script>
-        <%@ include file="../common/footer.jspf" %>
     </body>
 </html>

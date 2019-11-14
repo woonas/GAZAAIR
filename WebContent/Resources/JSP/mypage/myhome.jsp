@@ -17,7 +17,7 @@
             <div class="maintop">
                 <div class="row clearfix">
                     <div id="nameDiv">
-                        <div id="name-ko"><a href="#" class="font-white">홍길동 님</a></div>
+                        <div id="name-ko"><a href="#" class="font-white">${vo.memberNameKor}</a></div>
                         <div id="name-eng" class="font-gray3">HONG GIL DONG</div>
                     </div>
                     <div>

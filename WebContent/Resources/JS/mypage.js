@@ -23,6 +23,59 @@ const calendarEvent = () => {
     });
 };
 
+function periodInit(months) {
+	const date1 = document.getElementById('flightDate-1');
+	const date2 = document.getElementById('flightDate-2');
+	
+	if (months === "custom") {
+		date1.value = date2.value = "";
+		date1.removeAttribute('disabled');
+		date1.removeAttribute('disabled');
+	} else {
+		const now = new Date();
+		date2.value = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`;
+		const tempDate = new Date(now.getFullYear(), now.getMonth()-months, now.getDate());
+		date1.value = `${tempDate.getFullYear()}-${tempDate.getMonth()+1}-${tempDate.getDate()}`;
+		date1.setAttribute('disabled' , 'disabled');
+		date2.setAttribute('disabled' , 'disabled');
+	}
+};
+
+$(function(){
+	$("#btn-search1").click(function(){
+		$.ajax({
+			url:"reservation_list.jsp",
+			success:function(result){
+				$("#result").css("display","block")
+			},
+			error:function(e){
+				alert(e)
+			}
+			
+		});
+	});	
+});
+
+/*$(function(){
+	$("#replyFrm").submit(function(){
+		//ajax로 댓글 Db에 저장하기			form에 있는 데이터를 직렬화하는 기능이다.
+		var params = $("#replyFrm").serialize(); //?num=asad&comment=asd
+		$.ajax({
+			url:"/WebMVC/board/replyForm.do",
+			data:params,
+			success:function(result){
+				$("#replyList").html(result);
+				$("#coment").val("");
+			},
+			error:function(){
+				alert("댓글쓰기 에러 발생");
+			}
+		});
+	});
+		
+	
+});*/
+
 
 /**********************************************************************/
 
@@ -190,6 +243,18 @@ function classSelcetClose(){
 
      else if(location.pathname.indexOf('reservation_list') !== -1) {
          calendarEvent();
+         let checkedPeriod = document.querySelector('input[type=radio][name=period]:checked');
+    	 periodInit(checkedPeriod.id.split('-')[2]);
+    	 
+    	 const periodRadios = document.querySelectorAll('input[type=radio][name=period]');
+    	 periodRadios.forEach(periodRadio => {
+    		periodRadio.addEventListener('change', () => {
+    			checkedPeriod = document.querySelector('input[type=radio][name=period]:checked');
+    	    	periodInit(checkedPeriod.id.split('-')[2]);
+    		}); 
+    	 });
+    	 
+    	
      }
 
      else if(location.pathname.indexOf('purchase_list') !== -1) {
@@ -199,7 +264,7 @@ function classSelcetClose(){
      else if(location.pathname.indexOf('interested_route') !== -1) {
          openPicker('.open-airport-picker', true);
      }
-
+	 
 
      //Todo 나중에 함수하고 다시 체크
      else if(location.pathname.indexOf('reserveStatus') !== -1){
