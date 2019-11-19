@@ -39,6 +39,7 @@ function periodInit(months) {
 		date1.setAttribute('disabled' , 'disabled');
 		date2.setAttribute('disabled' , 'disabled');
 		
+		
 	}
 };
 

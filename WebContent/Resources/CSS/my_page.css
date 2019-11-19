@@ -543,7 +543,11 @@ input[type=checkbox][id^=fold-btn-] + label>img { vertical-align: bottom; }
 /* ----------------------------------------------- */
 /* 주문 상세내역  purchase_detail.html*/
 /* ----------------------------------------------- */
-
+.purchase-title{
+	padding-bottom: 30px;
+	padding-top: 30px;			
+}
+.td-center td{ text-align:center; }
 
 
 /* ----------------------------------------------- */
