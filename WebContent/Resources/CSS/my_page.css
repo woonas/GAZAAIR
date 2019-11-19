@@ -549,5 +549,3 @@ input[type=checkbox][id^=fold-btn-] + label>img { vertical-align: bottom; }
 /* ----------------------------------------------- */
 /* 예약 상세내역  reservation_detail.html*/
 /* ----------------------------------------------- */
-
-#result{display:none}

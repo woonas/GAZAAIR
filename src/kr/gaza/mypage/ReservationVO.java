@@ -8,7 +8,30 @@ public class ReservationVO {
 	private String departTime;
 	private String arriveTime;
 	private String airplaneName;
+	private int payNum;
+	private int orderedFlightNum;
+	private int productNum;
 	
+	
+	
+	public int getProductNum() {
+		return productNum;
+	}
+	public void setProductNum(int productNum) {
+		this.productNum = productNum;
+	}
+	public int getPayNum() {
+		return payNum;
+	}
+	public void setPayNum(int payNum) {
+		this.payNum = payNum;
+	}
+	public int getOrderedFlightNum() {
+		return orderedFlightNum;
+	}
+	public void setOrderedFlightNum(int orderedFlightNum) {
+		this.orderedFlightNum = orderedFlightNum;
+	}
 	public int getFlightNum() {
 		return flightNum;
 	}

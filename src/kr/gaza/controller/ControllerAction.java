@@ -32,7 +32,7 @@ public class ControllerAction extends HttpServlet {
 			propObject.load(fis);
 			fis.close();
 		}catch(Exception e) {
-			System.out.println("프로퍼티 생성 에러...");
+			System.out.println("�봽濡쒗띁�떚 �깮�꽦 �뿉�윭...");
 			e.printStackTrace();
 		}
 		Set key = propObject.keySet();
@@ -46,7 +46,7 @@ public class ControllerAction extends HttpServlet {
 				map.put(k, command);
 			}
 		}catch(Exception e) {
-			System.out.println("맵 생성에러...");
+			System.out.println("留� �깮�꽦�뿉�윭...");
 			e.printStackTrace();
 		}
 	}

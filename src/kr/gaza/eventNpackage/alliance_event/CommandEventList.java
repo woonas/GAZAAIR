@@ -12,7 +12,7 @@ public class CommandEventList implements CommandService {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("lst", new EventDAO().getAllRecord());
-		System.out.println("dd");
+
 		return "event_list.jsp";
 	}
 }

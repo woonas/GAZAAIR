@@ -19,150 +19,69 @@
                 <li>탑승일이 지난 예약기록은 ‘항공권 구매내역’에서 확인하실 수 있습니다. <a href="" class="font-brown">구매내역 페이지로 이동</a></li>
                 <li class="font-red">타인의 항공권을 예약/발권하신 경우 ‘예약정보로 찾기’를 통해 예약조회 서비스를 이용하실 수 있습니다.</li>
             </ul>
-            
-             <div class="reservation-inquire">
-                <div class="reservation-list-container">
-                    <div class="row clearfix">
-                        <div class="col-fourth">조회 기간</div>
-                        <div class="col-three-fourth">
-                            <input type="radio" class="radio3" name="search-type1" id="search-period" checked>
-                            <label for="search-period">기간으로 조회</label>
-                            <input type="radio" class="radio3 hide-next" name="search-type1" id="search-since-join">
-                            <label for="search-since-join">가입일로부터 조회</label>
-                            <br><br>
-                            <div class="row clearfix">
-                                <div class="col-eighth">
-                                    <input type="radio" class="radio1" name="period" id="month-1-1" checked>
-                                    <label for="month-1-1">1개월</label>
-                                </div>
-                                <div class="col-eighth">
-                                    <input type="radio" class="radio1" name="period" id="month-1-6">
-                                    <label for="month-1-6">6개월</label>
-                                </div>
-                                <div class="col-eighth">
-                                    <input type="radio" class="radio1" name="period" id="month-1-12">
-                                    <label for="month-1-12">1년</label>
-                                </div>
-                                <div class="col-eighth">
-                                    <input type="radio" class="radio1" name="period" id="month-1-60">
-                                    <label for="month-1-60">5년</label>
-                                </div>
-                                <div class="col-eighth">
-                                    <input type="radio" class="radio1" name="period" id="month-1-custom">
-                                    <label for="month-1-custom">직접입력</label>
-                                </div>
-                            </div>
-                            <br>
-                            <input type="button" class="blueBtn" value="조회하기" id="btn-search1">
-                            <div>
-                                <input type="text" id="flightDate-1" readonly> 부터 ~
-                                <input type="text" id="flightDate-2" readonly> 까지
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="result">
-                    <div class="reserve-table">
-                        <div class="section-title">
-                            <span class="font-brown">2019.09.05</span>부터
-                        <span class="font-brown">2019.10.05</span>까지 조회 결과
-                        </div>
-                        <div>
-                            <table>
-                                <colgroup>
-                                    <col style="width: 100px;" />
-                                    <col style="width: 200px" />
-                                    <col style="width: 350px" />
-                                    <col style="width: 200px" />
-                                    <col style="width: 200px" />
-                                    <col style="width: 110px" />
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>여정</th>
-                                        <th>일자</th>
-                                        <th>출발 - 도착지</th>
-                                        <th>출발 - 도착 시간</th>
-                                        <th>편명</th>
-                                        <th>상세 보기</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div>01</div>
-                                        </td>
-                                        <td>
-                                            <div>2019/01/01 (일)</div>
-                                        </td>
-                                        <td>
-                                            <div>샌프란시스코 → 뉴욕</div>
-                                        </td>
-                                        <td>
-                                            <div>20:20 → 02:30</div>
-                                        </td>
-                                        <td>
-                                            <div>OZGO1234</div>
-                                        </td>
-                                        <td>
-                                            <div><a href="reservation_detail.html"><input type="button" class="blueBtn" value="상세보기"
-                                                                                          id="detail1"></a></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div>02</div>
-                                        </td>
-                                        <td>
-                                            <div>2019/01/01 (일)</div>
-                                        </td>
-                                        <td>
-                                            <div>뉴욕 → 샌프란시스코</div>
-                                        </td>
-                                        <td>
-                                            <div>20:20 → 02:30</div>
-                                        </td>
-                                        <td>
-                                            <div>OZGO1234</div>
-                                        </td>
-                                        <td>
-                                            <div><a href="reservation_detail.html"><input type="button" class="blueBtn" value="상세보기"
-                                                                                          id="detail2"></a></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div>03</div>
-                                        </td>
-                                        <td>
-                                            <div>2019/01/01 (일)</div>
-                                        </td>
-                                        <td>
-                                            <div>샌프란시스코 → 뉴욕</div>
-                                        </td>
-                                        <td>
-                                            <div>20:20 → 02:30</div>
-                                        </td>
-                                        <td>
-                                            <div>OZGO1234</div>
-                                        </td>
-                                        <td>
-                                            <div><a href="reservation_detail.html"><input type="button" class="blueBtn" value="상세보기"
-                                                                                          id="detail3"></a></div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+
+            <div id="result">  
+            	<c:if test="${lst.size() == 0}">
+            		<div class="no-record">
+		                <p>온라인에서 확인 가능한 예약내역이 없습니다.</p>
+				                예약 관련 구매/환불 영수증 확인을 원하실 경우 구매내역 메뉴을 이용해주세요. <br>
+				                아시아나항공 온라인 이외의 경로에서 예약한 내역을 확인하고 싶으실 경우 <span class="font-brown">예약센터 1588-8000</span> 또는 각 구매처로 연락 주시기
+				                바랍니다.
+            		</div>
+            	</c:if>
+            	<c:if test="${lst.size() != 0}">
+	                <div class="reserve-table">
+	                    <div>
+	                        <table>
+	                            <colgroup>
+	                                <col style="width: 100px;" />
+	                                <col style="width: 200px" />
+	                                <col style="width: 350px" />
+	                                <col style="width: 250px" />
+	                                <col style="width: 150px" />
+	                                <col style="width: 110px" />
+	                            </colgroup>
+	                            <thead>
+	                                <tr>
+	                                    <th>여정</th>
+	                                    <th>일자</th>
+	                                    <th>출발 - 도착지</th>
+	                                    <th>출발 - 도착 시간</th>
+	                                    <th>편명</th>
+	                                    <th>상세 보기</th>
+	                                </tr>
+	                            </thead>
+	                            <tbody>
+	                            <c:forEach var="vo" items="${lst}">
+	                                <tr>
+	                                    <td>
+	                                        <div>${vo.flightNum}</div>
+	                                    </td>
+	                                    <td>
+	                                        <div>2019/01/01 (일)</div>
+	                                    </td>
+	                                    <td>
+	                                        <div>${vo.depart } → ${vo.arrive }</div>
+	                                    </td>
+	                                    <td>
+	                                        <div>${vo.departTime } → ${vo.arriveTime }</div>
+	                                    </td>
+	                                    <td>
+	                                        <div>${vo.airplaneName }</div>
+	                                    </td>
+	                                    <td>
+	                                        <div><a href="reservation_detail.html"><input type="button" class="blueBtn" value="상세보기"
+	                                                                                      id="detail1"></a></div>
+	                                    </td>
+	                                </tr>
+	                            </c:forEach>    
+	                            </tbody>
+	                        </table>
+	                    </div>
+	                </div>
+	            </c:if>
             </div>
-            <div class="no-record">
-                <p>온라인에서 확인 가능한 예약내역이 없습니다.</p>
-                예약 관련 구매/환불 영수증 확인을 원하실 경우 구매내역 메뉴을 이용해주세요. <br>
-                아시아나항공 온라인 이외의 경로에서 예약한 내역을 확인하고 싶으실 경우 <span class="font-brown">예약센터 1588-8000</span> 또는 각 구매처로 연락 주시기
-                바랍니다.
-            </div>
+           
     
             <ul class="list-type2 last-note bg-gray6">
                 <li class="list-inside-title">유의사항</li>
