@@ -547,8 +547,16 @@ input[type=checkbox][id^=fold-btn-] + label>img { vertical-align: bottom; }
 	padding-bottom: 30px;
 	padding-top: 30px;			
 }
-.td-center td{ text-align:center; }
+#purchase-table td{ text-align:center; }
 
+#purchase-table input[type="button"][id^="detail"] {
+    padding: 5px 15px;
+    border-radius: 0;
+}
+#no-data{ 
+	text-align:center;
+	border-right:none;
+}
 
 /* ----------------------------------------------- */
 /* 예약 상세내역  reservation_detail.html*/

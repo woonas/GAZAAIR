@@ -38,10 +38,14 @@ function periodInit(months) {
 		date1.value = `${tempDate.getFullYear()}-${tempDate.getMonth()+1}-${tempDate.getDate()}`;
 		date1.setAttribute('disabled' , 'disabled');
 		date2.setAttribute('disabled' , 'disabled');
+		document.getElementById('startDate').innerHTML = date1.value
+		document.getElementById('endDate').innerHTML = date2.value
 		
 		
 	}
 };
+
+
 
 
 

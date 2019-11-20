@@ -18,22 +18,22 @@
                 <div class="row clearfix">
                     <div id="nameDiv">
                         <div id="name-ko"><a href="#" class="font-white">${vo.memberNameKor}</a></div>
-                        <div id="name-eng" class="font-gray3">HONG GIL DONG</div>
+                        <div id="name-eng" class="font-gray3">${vo.memberNameEng}</div>
                     </div>
                     <div>
                         <div><a href = "" class="font-gray3">총 탑승횟수</a></div>
-                        <div id="tripNo">3</div>
+                        <div id="tripNo">${vo.memberFlightCnt }</div>
                     </div>
                 </div>
 
                 <div class="row clearfix">
                     <div>
-                        <div id="grade"><a href="#" class="font-white">실버</a></div>
+                        <div id="grade"><a href="#" class="font-white">${vo.memberGrade }</a></div>
                         <div id="memberNo">777 888 9999</div>
                     </div>
                     <div>
                         <div><a href = "" class="font-gray3">소멸 예정 마일리지</a></div>
-                        <div id="mileage">473830</div>
+                        <div id="mileage">${vo.myMileage }</div>
                     </div>
                 </div>
                 <div id="boarding">
@@ -76,7 +76,7 @@
                             <div>
                                 <span class="font-blue4">
                                     +
-                                    <span id="usergradeup">20,394</span>
+                                    <span id="usergradeup">${vo.needMileage }</span>
                                     마일
                                 </span>
                                 <span style="font-size: 80%">적립시 등급상승</span>
